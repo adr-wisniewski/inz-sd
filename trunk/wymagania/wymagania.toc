@@ -1,0 +1,111 @@
+\select@language {polish}
+\select@language {polish}
+\contentsline {chapter}{\numberline {1}S\IeC {\l }ownik}{3}
+\contentsline {chapter}{\numberline {2}Wymagania funkcjonalne}{4}
+\contentsline {chapter}{\numberline {3}Przypadki u\IeC {\.z}ycia}{7}
+\contentsline {section}{\numberline {3.1}Aktorzy}{7}
+\contentsline {chapter}{\numberline {4}Projekt bazy danych}{8}
+\contentsline {section}{\numberline {4.1}Fragment bazy danych zwi\IeC {\k a}zany z incydentami}{8}
+\contentsline {subsection}{\numberline {4.1.1}INCIDENTS}{8}
+\contentsline {paragraph}{INCIDENT\_ID}{8}
+\contentsline {paragraph}{IMPACT}{8}
+\contentsline {paragraph}{URGENCY}{8}
+\contentsline {paragraph}{STATUS\_CODE}{8}
+\contentsline {paragraph}{REVIEW}{8}
+\contentsline {paragraph}{PRIORITY}{8}
+\contentsline {paragraph}{AUTHOR}{8}
+\contentsline {paragraph}{CATEGORY\_CODE}{8}
+\contentsline {paragraph}{TYPE}{8}
+\contentsline {paragraph}{CREATION\_DATE}{8}
+\contentsline {paragraph}{CLOSURE\_DATE}{8}
+\contentsline {subsection}{\numberline {4.1.2}INCIDENT\_CATEGORIES}{8}
+\contentsline {paragraph}{CATEGORY\_CODE}{9}
+\contentsline {paragraph}{NAME}{9}
+\contentsline {paragraph}{PARENT\_CATEGORY}{9}
+\contentsline {paragraph}{GROUP\_ID}{9}
+\contentsline {subsection}{\numberline {4.1.3}INCIDENT\_STATUSES}{9}
+\contentsline {paragraph}{STATUS\_CODE}{9}
+\contentsline {paragraph}{NAME}{9}
+\contentsline {subsection}{\numberline {4.1.4}SUPPORT\_GROUPS}{9}
+\contentsline {paragraph}{GROUP\_ID}{9}
+\contentsline {paragraph}{NAME}{9}
+\contentsline {subsection}{\numberline {4.1.5}GROUP\_MEMBER}{9}
+\contentsline {paragraph}{GROUP\_ID}{9}
+\contentsline {paragraph}{EMPLOYEE\_ID}{9}
+\contentsline {subsection}{\numberline {4.1.6}EMPLOYEES}{9}
+\contentsline {paragraph}{EMPLOYEE\_ID}{9}
+\contentsline {paragraph}{NAME}{9}
+\contentsline {paragraph}{SURNAME}{9}
+\contentsline {section}{\numberline {4.2}Fragment bazy danych zwi\IeC {\k a}zany z konfiguracj\IeC {\k a}}{10}
+\contentsline {subsection}{\numberline {4.2.1}CONFIGURATION\_ITEMS}{10}
+\contentsline {paragraph}{ITEM\_ID}{10}
+\contentsline {paragraph}{TYPE\_ID}{10}
+\contentsline {subsection}{\numberline {4.2.2}ITEM\_TYPES}{10}
+\contentsline {paragraph}{TYPE\_ID}{10}
+\contentsline {paragraph}{NAME}{10}
+\contentsline {paragraph}{PARENT\_ID}{10}
+\contentsline {subsection}{\numberline {4.2.3}ATTRIBUTE\_ITEM\_TYPE}{10}
+\contentsline {paragraph}{ATTRIBUTE\_ID}{10}
+\contentsline {paragraph}{TYPE\_ID}{10}
+\contentsline {subsection}{\numberline {4.2.4}ATTRIBUTE\_TYPES}{10}
+\contentsline {paragraph}{ATTRIBUTE\_ID}{10}
+\contentsline {paragraph}{ATTRIBUTE\_NAME}{10}
+\contentsline {subsection}{\numberline {4.2.5}ATTRIBUTE\_VALUES}{10}
+\contentsline {paragraph}{ATTRIBUTE\_ID}{10}
+\contentsline {paragraph}{ITEM\_ID}{10}
+\contentsline {paragraph}{VALUE}{10}
+\contentsline {subsection}{\numberline {4.2.6}RELATIONSHIP\_TYPES}{10}
+\contentsline {paragraph}{RELATIONSHIP\_TYPE\_ID}{11}
+\contentsline {paragraph}{NAME}{11}
+\contentsline {subsection}{\numberline {4.2.7}RELATIONSHIP\_ROLES}{11}
+\contentsline {paragraph}{RELATIONSHIP\_TYPE\_ID}{11}
+\contentsline {paragraph}{RELATIONSHIP\_ROLE\_ID}{11}
+\contentsline {paragraph}{NAME}{11}
+\contentsline {subsection}{\numberline {4.2.8}RELATIONSHIPS}{11}
+\contentsline {paragraph}{RELATIONSHIP\_TYPE\_ID}{11}
+\contentsline {paragraph}{RELATIONSHIP\_ID}{11}
+\contentsline {subsection}{\numberline {4.2.9}RELATIONSHIP\_ITEM}{11}
+\contentsline {paragraph}{RELATIONSHIP\_TYPE\_ID}{11}
+\contentsline {paragraph}{RELATIONSHIP\_ROLE\_ID}{11}
+\contentsline {paragraph}{RELATIONSHIP\_ID}{11}
+\contentsline {paragraph}{ITEM\_ID}{11}
+\contentsline {section}{\numberline {4.3}Fragment bazy danych zwi\IeC {\k a}zany z zmianami}{11}
+\contentsline {subsection}{\numberline {4.3.1}CAB}{11}
+\contentsline {paragraph}{CAB\_ID}{11}
+\contentsline {paragraph}{NAME}{11}
+\contentsline {subsection}{\numberline {4.3.2}CAB\_MEMBER}{11}
+\contentsline {paragraph}{RFC\_ID}{11}
+\contentsline {paragraph}{EMPLOYEE\_ID}{12}
+\contentsline {paragraph}{ROLE\_ID}{12}
+\contentsline {paragraph}{CAB\_MEMBER\_ROLES}{12}
+\contentsline {paragraph}{ROLE\_ID}{12}
+\contentsline {paragraph}{NAME}{12}
+\contentsline {subsection}{\numberline {4.3.3}RFC}{12}
+\contentsline {paragraph}{RFC\_ID}{12}
+\contentsline {paragraph}{CREATION\_DATE}{12}
+\contentsline {paragraph}{TYPE\_CODE}{12}
+\contentsline {paragraph}{PRIORITY}{12}
+\contentsline {paragraph}{IS\_URGENT}{12}
+\contentsline {paragraph}{REVIEW}{12}
+\contentsline {paragraph}{COST}{12}
+\contentsline {paragraph}{IMPACT}{12}
+\contentsline {paragraph}{ESTIMATED\_TIME}{12}
+\contentsline {paragraph}{CATEGORY}{12}
+\contentsline {paragraph}{STATUS\_CODE}{12}
+\contentsline {subsection}{\numberline {4.3.4}RFC\_STATUSES}{12}
+\contentsline {paragraph}{STATUS\_CODE}{12}
+\contentsline {paragraph}{NAME}{12}
+\contentsline {subsection}{\numberline {4.3.5}RFC\_TYPES}{12}
+\contentsline {paragraph}{TYPE\_CODE}{12}
+\contentsline {paragraph}{NAME}{13}
+\contentsline {paragraph}{PARENT\_CODE}{13}
+\contentsline {chapter}{\numberline {5}Technologia wykonania}{17}
+\contentsline {chapter}{\numberline {6}Wykorzystywane narz\IeC {\k e}dzia}{18}
+\contentsline {section}{\numberline {6.1}Oracle Database 10g Express Edition}{18}
+\contentsline {section}{\numberline {6.2}Apache Tomcat}{18}
+\contentsline {section}{\numberline {6.3}Spring framework 3.0}{18}
+\contentsline {section}{\numberline {6.4}SpringSource Tool Suite}{18}
+\contentsline {section}{\numberline {6.5}Netbeans}{18}
+\contentsline {section}{\numberline {6.6}JDeveloper}{18}
+\contentsline {section}{\numberline {6.7}Rational Software Architect}{18}
+\contentsline {section}{\numberline {6.8}dojotoolkit}{18}

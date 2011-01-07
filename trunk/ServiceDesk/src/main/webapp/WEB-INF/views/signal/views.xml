@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	
+	<definition name="signal/typelist" extends="standard-layout">
+		<put-attribute name="title" value="Signal types" />
+		<put-attribute name="body" value="/WEB-INF/views/signal/typelist.jsp" />
+	</definition>
+	
+	<definition name="signal/edittype" extends="standard-layout">
+		<put-attribute name="title" value="Edit signal type" />
+		<put-attribute name="body" value="/WEB-INF/views/signal/edittype.jsp" />
+		<put-attribute name="action_name" value="edittype"/>
+	</definition>
+	
+	<definition name="signal/addtype" extends="standard-layout">
+		<put-attribute name="title" value="Add signal type" />
+		<put-attribute name="body" value="/WEB-INF/views/signal/edittype.jsp" />
+		<put-attribute name="action_name" value="addtype"/>
+	</definition>
+				  
+	<definition name="signal/generatorlist" extends="standard-layout">
+		<put-attribute name="title" value="Signal generators" />
+		<put-attribute name="body" value="/WEB-INF/views/signal/generatorlist.jsp" />
+	</definition>
+	
+	<definition name="signal/editgenerator" extends="standard-layout">
+		<put-attribute name="title" value="Edit generator" />
+		<put-attribute name="body" value="/WEB-INF/views/signal/editgenerator.jsp" />
+	</definition>
+	
+	<definition name="signal/addgenerator" extends="standard-layout">
+		<put-attribute name="title" value="Add generator" />
+		<put-attribute name="body" value="/WEB-INF/views/signal/editgenerator.jsp" />
+	</definition>
+	
+	<definition name="signal/preview" extends="standard-layout">
+		<put-attribute name="title" value="Preview" />
+		<put-attribute name="body" value="/WEB-INF/views/signal/preview.jsp" />
+	</definition>
+	
+</tiles-definitions>

@@ -1,0 +1,318 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Implementacja}
+\label{implementacja} % Always give a unique label
+
+Rozdzia³ ten zawiera opis implementacji fragmentów systemu Service Desk. \linebreak Na~wstêpie zosta³y zaprezentowane wykorzystane technologie. Przedstawiono równie¿ narzêdzia zastosowane w procesie wytwarzania oprogramowania. Na koñcu zosta³y omówione pakiety aplikacji.
+
+%\begin{figure}[h!]
+%  \centering
+%  \includegraphics[width=22cm,angle=90]{img/maven-dependencies.png}
+%	\caption{Wykorzystane biblioteki}
+%\end{figure}
+
+\section{Technologie}
+
+Autor postanowi³ wykonaæ system jako aplikacjê WWW w technologii J2EE z~interfejsem u¿ytkownika w postaci przegl¹darki. Takie rozwi¹zanie pozwoli na~zminimalizowanie kosztów wdro¿enia i aktualizacji systemu, a tak¿e umo¿liwi jego skalowanie w zale¿noœci od potrzeb. Ponadto pozwoli to na zdalny dostêp do~zasobów systemu poza stanowiskiem pracy, co mo¿e byæ wa¿ne np. dla kadry mened¿erskiej i specjalistów grup wsparcia.
+
+\subsection*{Spring framework}
+
+Tworzenie aplikacji WWW przy pomocy standardowej biblioteki Java jest zajêciem trudnym. Ka¿dy twórca jest zmuszony do rozwi¹zania podstawowych problemów samodzielnie. Autor zdecydowa³ siê na skorzystanie z gotowego szkieletu Spring Framework. G³ównym powodem jest wsparcie dla wzorca IoC\footnote{IoC - Inversion of Control}, poprzez wstrzykiwanie zale¿noœci\footnote{DI - Dependency Injection}. Odpowiedzialnoœæ za tworzenie powi¹zañ pomiêdzy obiektami jest przeniesiona do kontenera IoC. Jest to odwrócenie sterowania w~sensie tworzenia oraz wi¹zania obiektów. W Spring Framework kontener umo¿liwia u¿ywanie aspektów, wiêc mo¿na dodaæ obs³ugê transakcji, logowanie oraz~zarz¹dzanie bezpieczeñstwem bez ingerencji w istniej¹cy kod. U¿ycie tej techniki wp³ywa pozytywnie na ³atwoœæ testowania obiektów, poniewa¿ powi¹zania pomiêdzy obiektami s¹ luŸne \cite{spring_refdoc}.
+
+\subsection*{Hibernate}
+
+Warstwa dostêpu do danych zosta³a stworzona w technologii Hibernate. Jest to framework do realizacji dostêpu do danych. Zapewnia translacjê danych pomiêdzy relacyjn¹ baz¹ danych a œwiatem obiektowym \cite{hibernate_refdoc}, \cite{hibakc} Mapowanie relacyjno-obiektowe zosta³o utworzone przy pomocy adnotacji JPA\footnote{JPA -- Java Persistence Annotations} (a nie plików XML). Daje to mo¿liwoœæ zamiany technologii Hibernate na inn¹ technologiê obs³uguj¹c¹ standard JPA, przyk³adowo Oracle TopLink.
+
+\subsection*{Spring Security}
+
+Warstwa bezpieczeñstwa zosta³a utworzona za pomoc¹ biblioteki Spring Security. G³ównym powodem takiego wyboru jest ³atwoœæ integracji tej biblioteki ze Spring Framework oraz bogata funkcjonalnoœæ \cite{spingsec_refdoc}.
+Warstwa bezpieczeñstwa zosta³a zrealizowana jako osobny aspekt, co umo¿liwia rozdzielenie bezpieczeñstwa od logiki biznesowej oraz pozosta³ych warstw.
+
+\subsection*{Spring Web Services}
+
+Do implementacji us³ug sieciowych\footnote{Us³uga sieciowa -- (ang. Web Service)} wykorzystano bibliotekê Spring Web\newline
+Services. W tym przypadku powodem jest ³atwoœæ integracji z Spring Framework, poniewa¿ s¹ to produkty tej samej firmy. Kolejn¹ zalet¹ tej biblioteki jest podejœcie do tworzenia us³ug Contract First. Us³ugê sieciow¹ rozpoczyna siê od utworzenia WSDL\footnote{WSDL -- Web Services Description Language}, a nastêpnie kodu w jêzyku wysokiego poziomu implementuj¹cego ten kontrakt. Istnieje drugie podejœcie Contract Last. Polega ono na wygenerowaniu kontraktu z kodu Javy. Contract First w porównaniu do Contract Last cechujê siê lepsz¹ stabilnoœci¹, w tym drugim, przy wprowadzaniu zmian, mo¿e dojœæ do~zmiany kontraktu, co ma negatywny wp³yw na klientów us³ugi \cite{spingws_refdoc}.
+
+\subsection*{JasperReports}
+
+Do implementacji raportów wykorzystano JasperReports. Jest to biblioteka stworzona w technologii Java umo¿liwiaj¹ca elastyczne tworzenie raportów w sposób niezale¿ny od Ÿród³a danych oraz od formatu wynikowego. Skorzystano z narzêdzia iReport, które umo¿liwia zarz¹dzanie procesem tworzenia raportów przy pomocy graficznego interfejsu u¿ytkownika \cite{ireport}. Przypomina to tworzenie interfejsu u¿ytkownika przy pomocy narzêdzi typu RAD\footnote{RAD -- Rapid Application Development}. Twórca raportu wybiera elementy z palety oraz przenosi je na formatkê projektu. Nastêpnie przy pomocy widoku w³aœciwoœci ustawia parametry obiektów \cite{jasperreports}.
+Wa¿nym powodem wyboru tej technologii jest ³atwoœæ integracji ze Spring Framework. Dostêpna jest klasa reprezentuj¹ca widok bêd¹cy raportem wykonanym w JasperReports.
+
+\subsection*{jQuery}
+
+Przy implementacji warstwy prezentacji wykorzystano bibliotekê Open Source jQuery. Jest to biblioteka u³atwiaj¹ca tworzenie dynamicznych stron przy pomocy JavaScript \cite{jquery}. Skorzystano z nastêpuj¹cych wtyczek (ang. plugin):
+
+\begin{itemize}
+\item tablica z sortowaniem\cite{jquerytablesorter_refdoc};
+\item kontrolka do wyboru daty\cite{jqueryui_refdoc};
+\item zak³adki\cite{jqueryui_refdoc};
+\item kontrolka w postaci drzewa\cite{jquerytree_refdoc};
+\item rozwijane menu\cite{jquerymenu_refdoc};
+\end{itemize}
+
+\section{Wykorzystane narzêdzia}
+
+\subsection*{Rational Software Architect}
+
+Wykorzystany do utworzenia diagramów UML wstêpnego projektu, który zosta³ za³¹czony na p³ycie CD.
+
+\subsection*{JDeveloper}
+
+Wykorzystany do utworzenia diagramów tabel oraz wygenerowania kodu SQL. Projekt JDeveloper oraz wygenerowane skrypty zosta³y za³¹czone na p³ycie CD.
+
+\subsection*{SpringSource Tool Suite}
+
+Wykorzystany jako IDE do stworzenia aplikacji w Spring framework.
+
+\subsection*{Oracle Database 10g Express Edition}
+
+Wykorzystana jako relacyjna baza danych.
+
+\subsection*{Apache Tomcat}
+
+Kontener serwletów.
+
+\subsection*{iReport}
+
+Do utworzenia szablonów raportów JasperReports.
+
+%\pagebreak
+\section{Pakiety aplikacji}
+
+Niniejsza sekcja zawiera omówienie pakietów aplikacji. G³ówny pakiet aplikacji to \texttt{sd}. W pierwszej kolejnoœci pakiety zosta³y podzielone wg wybranych procesów: pakiet \texttt{im} - proces zarz¹dzania incydentami, pakiet \texttt{pm} -  proces zarz¹dzania problemami, pakiet \texttt{em} - proces zarz¹dzania zdarzeniami, pakiet \texttt{rf} - proces zarz¹dzania zleceniami. Na drugim poziomie pakiety podzielono wg warstw aplikacji, które zosta³y omówione w sekcji \ref{warstwy_aplikacji}:
+
+\begin{description}
+\item[dao --] warstwa dostêpu do danych;
+\item[domain --] warstwa domenowa;
+\item[web --] kontrolery stron;
+\item[service --] warstwa us³ugowa;
+\item[validator --] warstwa walidacji;
+\end{description}
+
+Wystêpuj¹ równie¿ pakiety \texttt{editor}, które s¹ odpowiedzialne za dokonanie przekszta³cenia parametrów ¿¹dania HTTP na obiekt wybranej klasy. Przyk³adowo, mo¿e to byæ przekszta³cenie identyfikatora kategorii incydentów na obiekt klasy \texttt{IncidentCategory}.
+
+\subsection{sd.im}
+
+Rysunek \ref{rys:im_pakiet} przedstawia diagram pakietów odpowiedzialnych za proces zarz¹dzania incydentami.
+
+\begin{figure}[ht!]
+	\begin{center}
+	  	\includegraphics[width=1.0\textwidth]{img/package/im-diagram.png}
+		\caption{Diagram pakietów dla zarz¹dzania incydentami}
+		\label{rys:im_pakiet}
+	\end{center}
+\end{figure}
+
+\subsubsection{sd.im.dao}
+
+W tym pakiecie znajduj¹ siê klasy dostêpu do danych odpowiedzialne za pobieranie oraz zapisywanie do bazy danych obiektów domenowych.
+
+\subsubsection{sd.im.domain}
+
+W tym pakiecie s¹ klasy domenowe zwi¹zane z incydentami. G³ówn¹ klas¹ jest Incident, pozosta³e klasy to s³owniki: priorytet, kategoria, wp³yw, status oraz pilnoœæ incydentu.
+
+\subsubsection{sd.im.app}
+
+W tym pakiecie jest klasa reprezentuj¹ca kryterium wyszukiwania incydentów.
+
+\subsubsection{sd.im.web}
+
+Jest to pakiet pe³ni¹cy rolê kontrolera. Wykorzystuje us³ugi z pakietu sd.im.service. Dokonuje konfiguracji warstwy prezentacji. Korzysta z pakietu sd.im.validator przy walidacji.
+
+\subsubsection{sd.im.service}
+
+Pakiet zawieraj¹cy klasy us³ugowe. Wykorzystuje on pakiet sd.pm.dao do operacji w bazie danych.
+
+\paragraph{Zawiera nastêpuj¹ce us³ugi:}
+
+\begin{itemize}
+\item dodanie incydentu,
+\item edycja incydentu,
+\item dodanie komentarza dla incydentu,
+\item pobranie wszystkich wartoœci danego s³ownika.
+\end{itemize}
+
+%\pagebreak
+\subsection{sd.pm}
+
+Rysunek \ref{rys:pm_pakiet} przedstawia diagram pakietów odpowiedzialnych za proces zarz¹dzania problemami.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/package/pm-diagram.png}
+	\caption{Diagram pakietów dla zarz¹dzania problemami}
+	\label{rys:pm_pakiet}
+\end{figure}
+
+\subsubsection{sd.pm.dao}
+
+Pakiet odpowiedzialny za pobieranie oraz zapisywanie do bazy danych obiektów domenowych z pakietu sd.pm.domain. 
+
+\subsubsection{sd.pm.domain}
+
+Pakiet zawieraj¹cy obiekty domenowe zwi¹zane z problemami. G³ówn¹ klas¹ jest Problem. Pozosta³e klasy reprezentuj¹ s³owniki: kategoria, status, priorytet, wp³yw oraz pilnoœæ.
+
+\subsubsection{sd.pm.app}
+
+Pakiet zawieraj¹cy klasy reprezentuj¹c¹ kryterium wyszukiwania problemów.
+
+\subsubsection{sd.pm.web}
+
+Jest to pakiet pe³ni¹cy rolê kontrolera. Wykorzystuje us³ugi z pakietu sd.pm.service. Dokonuje konfiguracji warstwy prezentacji. Korzysta z pakietu sd.pm.validator przy walidacji.
+
+\subsubsection{sd.pm.service}
+
+Pakiet zawieraj¹cy klasy us³ugowe. Wykorzystuje on pakiet sd.pm.dao do operacji w bazie danych.
+
+\paragraph{Zawiera nastêpuj¹ce us³ugi:}
+
+\begin{itemize}
+\item dodanie problemu,
+\item edycja problemu,
+\item dodanie komentarza dla problemu,
+\item pobranie wszystkich wartoœci danego s³ownika.
+\end{itemize}
+
+\subsubsection{sd.pm.validator}
+
+Pakiet odpowiedzialny za sprawdzanie poprawnoœci przy zapisywaniu problemów.
+
+\subsubsection{sd.pm.editor}
+
+Jest to pakiet, który dokonuje przekszta³cenia napisu na obiekt konkretnej klasy. Dla ka¿dej klasy s³ownikowej istnieje klasa edytora, która przekszta³ca napis reprezentuj¹cy identyfikator na konkretny obiekt. Pakiet jest wykorzystywany do zamiany parametrów ¿¹dania HTTP na obiekt wybranej klasy, przyk³adowo umo¿liwia to zamianê identyfikatora kategorii problemu na obiekt klasy \texttt{ProblemCategory}. Jest to eleganckie podejœcie, poniewa¿ umo¿liwia to operowanie na obiektach, a nie na napisach.
+
+%\pagebreak
+\subsection{sd.em}
+
+Rysunek \ref{rys:em_pakiet} przedstawia diagram pakietów odpowiedzialnych za proces zarz¹dzania zdarzeniami.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/package/em-diagram.png}
+	\caption{Diagram pakietów dla zarz¹dzania zdarzeniami}
+	\label{rys:em_pakiet}
+\end{figure}
+
+\subsubsection{sd.em.dao}
+
+Pakiet odpowiedzialny za pobieranie oraz zapisywanie do bazy danych obiektów domenowych z pakietu sd.em.domain. 
+
+\subsubsection{sd.em.domain}
+
+W tym pakiecie s¹ klasy domenowe zwi¹zane ze zdarzeniami. G³ówn¹ klas¹ jest Event, pozosta³e klasy to s³owniki: kategoria, status oraz ranga.
+
+\subsubsection{sd.em.app}
+
+W tym pakiecie jest klasa reprezentuj¹ca kryterium wyszukiwania zdarzeñ.
+
+\subsubsection{sd.em.web}
+
+Jest to pakiet pe³ni¹cy rolê kontrolera. Wykorzystuje us³ugi z pakietu sd.em.service. Dokonuje konfiguracji warstwy prezentacji. Korzysta z pakietu sd.em.validator przy walidacji.
+
+\subsubsection{sd.em.service}
+
+Pakiet zawieraj¹cy klasy us³ugowe. Wykorzystuje on pakiet sd.em.dao do operacji w bazie danych.
+
+\paragraph{Zawiera nastêpuj¹ce us³ugi:}
+
+\begin{itemize}
+\item dodanie zdarzenia,
+\item edycja zdarzenia,
+\item dodanie komentarza dla zdarzenia,
+\item pobranie wszystkich wartoœci danego s³ownika.
+\end{itemize}
+
+%\pagebreak
+\subsection{sd.rf}
+
+Rysunek \ref{rys:rf_pakiet} przedstawia diagram pakietów odpowiedzialnych za proces zarz¹dzania zleceniami.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/package/rf-diagram.png}
+	\caption{Diagram pakietów dla zarz¹dzania zleceniami}
+	\label{rys:rf_pakiet}
+\end{figure}
+
+
+\subsubsection{sd.rf.dao}
+
+Pakiet odpowiedzialny za pobieranie oraz zapisywanie do bazy danych obiektów domenowych z pakietu sd.rf.domain. 
+
+\subsubsection{sd.rf.domain}
+
+W tym pakiecie s¹ klasy domenowe zwi¹zane ze zleceniami. G³ówn¹ klas¹ jest ServiceRequest, pozosta³e klasy to s³owniki: kategoria, status oraz priorytet.
+
+\subsubsection{sd.rf.app}
+
+Pakiet zawierajacy kryterium wyszukiwania zleceñ.
+
+\subsubsection{sd.rf.web}
+
+Jest to pakiet pe³ni¹cy rolê kontrolera. Wykorzystuje us³ugi z pakietu sd.rf.service. Dokonuje konfiguracji warstwy prezentacji. Korzysta z pakietu sd.rf.validator przy walidacji.
+
+\subsubsection{sd.rf.service}
+
+Pakiet zawieraj¹cy klasy us³ugowe. Wykorzystuje on pakiet sd.rf.dao do operacji w bazie danych.
+
+\paragraph{Zawiera nastêpuj¹ce us³ugi:}
+
+\begin{itemize}
+\item dodanie zlecenia,
+\item edycja zlecenia,
+\item dodanie komentarza dla zlecenia,
+\item pobranie wszystkich wartoœci danego s³ownika.
+\end{itemize}
+
+%\pagebreak
+\subsection{sd.signal}
+
+Rysunek \ref{rys:signal_pakiet} przedstawia diagram pakietów odpowiedzialnych za zarz¹dzanie sygna³ami.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/package/signals-diagram.png}
+	\caption{Diagram pakietów dla zarz¹dzania sygna³ami}
+	\label{rys:signal_pakiet}
+\end{figure}
+
+\subsubsection{sd.signal.dao}
+
+Pakiet odpowiedzialny za pobieranie oraz zapisywanie do bazy danych obiektów domenowych z pakietu sd.signal.domain. 
+
+\subsubsection{sd.signal.domain}
+
+Pakiet zawieraj¹cy klasy domenowe reprezentuj¹ce sygna³ oraz generator sygna³ów.
+
+\subsubsection{sd.signal.web}
+
+Jest to pakiet pe³ni¹cy rolê kontrolera. Wykorzystuje us³ugi z pakietu sd.signal.service. Dokonuje konfiguracji warstwy prezentacji. Korzysta z pakietu sd.signal.validator przy walidacji.
+
+\subsubsection{sd.signal.service}
+
+Pakiet zawieraj¹cy klasy us³ugowe. Wykorzystuje on pakiet sd.rf.dao do operacji w bazie danych.
+
+\paragraph{Zawiera nastêpuj¹ce us³ugi:}
+
+\begin{itemize}
+\item dodanie typu sygna³u,
+\item edycja typu sygna³u,
+\item dodanie generatora sygna³ów,
+\item edycja generatora sygna³ów,
+\item pobranie sygna³ów dla danego generatora,
+\item pobranie wszystkich wartoœci danego s³ownika.
+\end{itemize}
+
+\subsubsection{sd.signal.jobs}
+
+Pakiet zawieraj¹cy klasy reprezentuj¹ce zadania (job). Pierwsze zadanie odpowiedzialne jest za zarz¹dzanie generatorami sygna³ów. Sprawdza ono co pewien kwant czasu, czy istnieje gotowy generator. Drugie zadanie odpowiedzialne jest za wysy³anie wiadomoœci e-mail dla sygna³ów.
+
+\subsubsection{sd.signal.mapper}
+
+Jest to pakiet dokonuj¹cy przekszta³cenia wiersza z rezultatu zapytania na obiekt klasy Signal. Jest to wykorzystywane przy dostêpie do bazy danych przy pomocy biblioteki JDBC.

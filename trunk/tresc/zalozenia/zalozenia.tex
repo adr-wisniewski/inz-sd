@@ -1,0 +1,233 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Wymagania}
+\label{wymagania} % Always give a unique label
+
+W tym rozdziale opisano wymagania dla realizowanego fragmentu systemu\linebreak
+Service Desk. Wymagania dotycz¹ wybranych procesów przedstawionych w sekcji \ref{wybrane_procesy}.
+
+\section{Wymagania funkcjonalne}
+\label{wymagania_funkcjonalne}
+
+\subsection{Zarz¹dzanie incydentami}
+\begin{itemize}
+\item IM.1 -- System Service Desk powinien umo¿liwiaæ zg³aszanie nowych incydentów klientom us³ugi.
+\item IM.2 -- Pracownik pierwszej linii powinien mieæ mo¿liwoœæ przypisania incydentu do~siebie.
+\item IM.3 -- System powinien umo¿liwiaæ sprawdzenie us³ug, z których korzysta klient.
+\item IM.4 -- Przy rozwi¹zywaniu incydentu pracownik pierwszej linii powinien mieæ mo¿liwoœæ wyszukiwania gotowych rozwi¹zañ w bazie znanych b³êdów.
+\item IM.5 -- System powinien umo¿liwiaæ dodawanie komentarzy do incydentu wszystkim zainteresowanym.
+\item IM.6 -- System powinien przechowywaæ pe³n¹ historiê incydentu.
+\item IM.7 -- System powinien umo¿liwiaæ skonfigurowanie regu³ eskalacji z~uwzglêdnieniem umów SLA.
+\item IM.8 -- System powinien umo¿liwiaæ wyszukiwanie incydentów.
+\item IM.9 -- Klient us³ugi powinien mieæ mo¿liwoœæ przegl¹dania wszystkich incydentów, które zg³osi³.
+\item IM.10 -- System powinien powiadamiaæ klienta o zmianie statusu incydentu. \item IM.11 -- System powinien powiadamiaæ serwisanta oraz mened¿era grupy o~nowo przypisanych incydentach.
+\end{itemize}
+
+\subsection{Zarz¹dzanie problemami}
+\begin{itemize}
+\item PM.1 -- System powinien umo¿liwiaæ zg³aszanie nowych problemów.
+\item PM.2 -- System powinien umo¿liwiaæ powi¹zanie incydentów z problemem. \item PM.3 -- System powinien umo¿liwiaæ dodawanie rozwi¹zañ tymczasowych oraz~sta³ych dla problemów.
+\item PM.4 -- System powinien umo¿liwiaæ dodawanie znanych b³êdów do KEDB.
+\item PM.5 -- System powinien umo¿liwiaæ wyszukiwanie problemów.
+\end{itemize}
+
+\subsection{Zarz¹dzanie zdarzeniami}
+\begin{itemize}
+\item EM.1 -- System powinien udostêpniaæ interfejs do dodawania zdarzeñ innym systemom.
+\item EM.2 -- System powinien umo¿liwiaæ automatyczne wygenerowanie incydentu dla wybranych zdarzeñ.
+\item EM.3 -- System powinien umo¿liwiaæ wyszukiwanie zdarzeñ.
+\end{itemize}
+
+\subsection{Zarz¹dzanie zleceniami}
+\begin{itemize}
+\item RF.1 -- System powinien umo¿liwiaæ konfiguracjê kategorii standardowych zmian.
+\item RF.2 -- System powinien umo¿liwiaæ zg³aszanie standardowych zmian przez~klientów us³ugi.
+\end{itemize}
+
+\section{Wymagania niefunkcjonalne}
+\subsection{NF.WOL -- Wolumetria}
+\begin{itemize}
+	\item NF.WOL.1 -- System powinien obs³u¿yæ co najmniej 1 000 000 incydentów.
+	\item NF.WOL.2 -- System powinien obs³u¿yæ co najmniej 10 000 pracowników oraz~klientów.
+	\item NF.WOL.3 -- System powinien zak³adaæ przysz³y wzrost obci¹¿enia i~byæ dostosowany do przeskalowania.
+\end{itemize}
+
+\subsection{NF.SPR -- Sprawnoœæ i efektywnoœæ}
+
+\begin{itemize}
+	\item NF.SPR.1 -- Czas odpowiedzi aplikacji, w 99\% przypadków nie powinien przekroczyæ 1 sekundy. 
+	\item NF.SPR.2 -- System powinien umo¿liwiaæ jednoczesn¹ pracê co najmniej 10 pracowników.
+\end{itemize}
+
+
+\subsection{NF.SEC -- Bezpieczeñstwo (security)}
+\begin{itemize}
+	\item NF.SEC.1 -- Dostêp do systemu mo¿e uzyskaæ tylko uwierzytelniony u¿ytkownik.
+	\item NF.SEC.2 -- U¿ytkownik posiada dostêp tylko do danych i funkcji systemu niezbêdnych do wykonywanej przez niego pracy.
+	\item NF.SEC.3 -- System musi byæ odporny na awarie pojedynczych noœników dyskowych.
+\end{itemize}
+
+\subsection{NF.SAF -- Bezpieczeñstwo (safety)}
+\begin{itemize}
+	\item NF.SAF.1 -- Historia kopii zapasowych powinna umo¿liwiæ odtworzenie danych sprzed ostatnich 10 lat.
+\end{itemize}
+
+
+\subsection{NF.NZW -- Niezawodnoœæ i dostêpnoœæ}
+\begin{itemize}
+	\item NF.NZW.1 -- ¯adna akcja u¿ytkownika systemu nie mo¿e powodowaæ niedostêpnoœci systemu.
+	\item NF.NZW.2 -- ¯adna odpowiedzialna akcja administratora systemu nie powinna powodowaæ niedostêpnoœci systemu.
+	\item NF.NZW.3 -- Dostêpnoœæ systemu musi wynosiæ co najmniej 99.99\% w ci¹gu roku w godzinach pracy.
+	\item NF.NZW.4 -- Œredni czas do odtworzenia systemu po awarii (MTTR) powinien byæ mniejszy ni¿ 4h w godzinach pracy. RTO\footnote{RTO -- Recovery Time Objective} jedynie w przypadku katastrofy oœrodka przetwarzania mo¿e wynieœæ jeden dzieñ roboczy.
+	\item NF.NZW.5 -- Utrata zatwierdzonych danych w~przypadku awarii powinna wynosiæ 0 (RPO - Recovery Point Objective), a~w~przypadku katastrofy oœrodka przetwarzania nie wiêcej ni¿ jeden dzieñ roboczy.
+	\item NF.NZW.6 -- System musi byæ odporny na niezale¿ne awarie noœników dyskowych (MTTF co najmniej 1 000 000 lat).
+\end{itemize}
+
+\subsection{NF.ERG -- Ergonomia}
+\begin{itemize}
+	\item NF.ERG.1 -- Wszystkie interfejsy u¿ytkownika powinny byæ utrzymane w~jednolitej konwencji graficznej.
+	\item NF.ERG.2 -- System powinien byæ poprawnie u¿ytkowany po najwy¿ej 24 godzinach szkolenia. Liczba b³êdów wykonanych przez u¿ytkownika nie powinna przekraczaæ 2 dziennie.
+\end{itemize}
+
+\subsection{NF.STA -- Standardy u¿ywane przez system}
+\begin{itemize}
+	\item NF.STA.1 -- Kodowanie znaków w systemie musi byæ w standardzie UTF-8.
+	\item NF.STA.2 -- System musi umo¿liwiaæ zapisywanie generowanych raportów do~formatu PDF (ISO 32000-1:2008).
+\end{itemize}
+
+\subsection{NF.PRZ -- Przenoœnoœæ}
+\begin{itemize}
+	\item NF.PRZ.1 -- System powinien wspieraæ przegl¹darki internetowe w podanych wersjach: Firefox 3.x oraz Google Chrome 3.x.
+	\item NF.STA.2 -- Przegl¹darka nie powinna wymagaæ ¿adnej konfiguracji poza~w³¹czeniem obs³ugi technologii Cookies i JavaScript.
+\end{itemize}
+
+
+
+\subsection{Konkluzja}
+
+Wymagania niezawodnoœci i dostêpnoœci nie mog¹ byæ zapewnione przez sam projekt, ale wymagaj¹ odpowiednich dzia³añ na etapie eksploatacji, przyk³adowo: codzienne sk³adowanie kopii zapasowej i~archivelogów na zewn¹trz oœrodka przetwarzania. Na~etapie projektu mo¿na jedynie wybraæ w³aœciwe narzêdzia oraz~komponenty systemu, co~zosta³o dokonane w ramach pracy. Opis implementacji sytemu, zawieraj¹cy omówienie wybranych narzêdzi oraz technologii, przedstawiono w~rozdziale \ref{implementacja}. Przygotowanie procedur eksploatacyjnych wykracza poza zakres niniejszej pracy.
+
+
+Podjête decyzje projektowe, wybrane narzêdzia, komponenty systemu, odpowiedni sprzêt oraz~w³aœciwe procedury na~etapie eksploatacji zapewni¹ realizacjê wymagañ niefunkcjonalnych.
+
+\section{Elementy realizuj¹ce wymagania}
+
+Niniejsza sekcja przedstawia elementy realizuj¹ce wymagania funkcjonalne opisane w sekcji \ref{wymagania_funkcjonalne}.
+
+\subsection{Zarz¹dzanie zdarzeniami}
+\begin{itemize}
+	\item EM.WS	-- Web Service umo¿liwiaj¹cy dodawanie listy zdarzeñ (ang. Event). Ka¿de ze zdarzeñ mo¿e wygenerowaæ incydent, wtedy zdarzenie zostanie automatycznie powi¹zane z tym incydentem.
+	\item EM.CARD -- Karta ze szczegó³ami zdarzenia. Dla ka¿dego zdarzenia prezentowane s¹ informacje o identyfikatorze, dacie zdarzenia, dacie dodania do systemu, randze, kategorii oraz temacie. Dodatkowo ka¿de zdarzenia posiada listê parametrów w postaci: klucz, wartoœæ. Dla zdarzeñ, które wygenerowa³y incydent jest odnoœnik do karty incydentu.
+	\item EM.SEARCH	-- Wyszukiwanie zdarzeñ po identyfikatorze, zakresie daty zg³oszenia, zakresie daty wyst¹pienia, temacie, randze i kategorii.
+	\item EM.REPORT	-- Raportowanie dotycz¹ce zdarzeñ
+	\begin{itemize}
+		\item EM.REPORT.CAT	-- Raport zdarzeñ wg kategorii.
+		\item EM.REPORT.SIG	-- Raport zdarzeñ wg rangi zdarzenia.
+		\item EM.REPORT.INC	-- Raport zdarzeñ, które wygenerowa³y incydent.
+	\end{itemize}
+\end{itemize}
+
+	
+\subsection{Zarz¹dzanie incydentami}	
+\begin{itemize}
+	\item IM.ADD --	Dodawanie incydentów. Nale¿y podaæ temat incydentu oraz opis. Przy braku podania dowolnego z pól system zg³osi wyj¹tek.
+	\begin{itemize}
+		\item IM.ADD.FOR --	Dodanie incydentu dla dowolnego pracownika. Funkcjonalnoœæ dostêpna tylko dla pracowników pierwszej linii wsparcia. W~takim wypadku nale¿y wybraæ Ÿród³o zg³oszenia: e-mail lub telefon.
+	\end{itemize}
+	\item IM.CARD -- Karta ze szczegó³ami incydentu. Dla ka¿dego incydentu prezentowane s¹ informacje o identyfikatorze, przypisanej us³udze, priorytecie, statusie, osobie, która zg³osi³a incydent, dacie zg³oszenia, terminie rozwi¹zania, dacie rozwi¹zania, dacie zamkniêcia, temacie oraz opisie. Termin rozwi¹zania jest wyliczany na podstawie daty dodania oraz umowy SLA\footnote{SLA -- Service Level Agreement}. Data rozwi¹zania jest ustawiona automatycznie, gdy incydent zmieni status na~rozwi¹zany (ang. Resolved), analogicznie jest z dat¹ zamkniêcia. Dodatkowo prezentowane s¹ dane kontaktowe osoby zg³aszaj¹ce incydent: telefon, telefon komórkowy i adres e-mail.
+	\begin{itemize}
+		\item IM.CARD.ADD.PM --	Dodanie problemu z poziomu karty incydentu. Dodany problem automatycznie zostanie powi¹zany z incydentem.
+		\item IM.CARD.COMMENT -- Dodanie komentarza na karcie incydentu.
+		\item IM.CARD.ASSIGN -- Przypisanie incydentu do aktualnie zalogowanego u¿ytkownika.
+		\item IM.CARD.SERVICES -- Prezentowane s¹ us³ugi, z których korzysta klient.
+%		\item IM.CARD.CIS -- Prezentowanie listy powi¹zanych elementów (ang. Configuration Item) u¿ytkownika zg³aszaj¹cego incydent na karcie.
+	\end{itemize}
+	\item	IM.SEARCH	--	Wyszukiwanie incydentów po identyfikatorze, zakresie daty zg³oszenia, fragmencie tematu, osobie zg³aszaj¹cej, statusie, priorytecie, wp³ywie, kategorii, serwisancie oraz grupie wsparcia.
+	\item	IM.MYOPEN	--	Widok z list¹ otwartych incydentów dla aktualnie zalogowanego u¿ytkownika.
+	\item	IM.MYCLOS	--	Widok z list¹ zamkniêtych incydentów dla aktualnie zalogowanego u¿ytkownika.
+	\item	IM.NOTASSIGN -- Widok z list¹ incydentów nie przypisanych do ¿adnego serwisanta.
+	\item	IM.MYASSIGN -- Widok z list¹ incydentów przypisanych do aktualnie zalogowanego pracownika.
+	\item IM.REPORT -- Raportowanie dotycz¹ce incydentów
+	\begin{itemize}
+		\item	IM.REPORT.CAT	--	Raport incydentów wg kategorii
+		\item	IM.REPORT.SRC	--	Raport incydentów wg Ÿród³a
+		\item	IM.REPORT.PRI	--	Raport incydentów wg priorytetu
+		\item	IM.REPORT.SG	--	Raport incydentów wg grupy wsparcia oraz serwisanta
+	\end{itemize}
+	\item IM.SG.DETAILS -- Widok ze szczegó³owymi danymi na temat grupy wsparcia. Prezentowane s¹ nastêpuj¹ce dane: nazwa grupy, manager grupy, lista cz³onków grupy.
+	\item	IM.HISTORY	--	Prezentowanie historii incydentu w postaci listy akcji okreœlonego typu.
+%	\item	IM.ATTACH	--	Mo¿liwoœæ za³¹czenia pliku na karcie incydentu.
+	\item	IM.SG.MAN	--	Stworzenie formularza master-detail do zarz¹dzania grupami wsparcia oraz list¹ pracowników w grupie.
+\end{itemize}
+
+
+\subsection{Zarz¹dzanie problemami}
+\begin{itemize} 
+	\item PM.ADD	--	Dodawanie problemów. Nale¿y podaæ temat problemu oraz opis. Przy braku podania dowolnego z pól system zg³osi wyj¹tek.
+	\item PM.CARD	--	Karta ze szczegó³ami problemu. Dla ka¿dego problemu prezentowane s¹ informacje o identyfikatorze, dacie zg³oszenia, dacie zamkniêcia, serwisancie, grupie wsparcia, osobie zg³aszaj¹cej, temacie oraz opisie.
+	\begin{itemize}
+		\item	PM.CARD.COMMENT	-- Dodanie komentarza na karcie problemu.
+%		\item	PM.CARD.ADD.RFC	--	Dodanie RFC z poziomu karty problemu.
+	\end{itemize}
+	\item PM.SEARCH	-- Wyszukiwanie problemów po identyfikatorze, zakresie daty zg³oszenia, fragmencie tematu, osobie zg³aszaj¹cej, statusie, priorytecie, wp³ywie, kategorii, serwisancie i grupie wsparcia.
+	\item PM.KEDB -- Zarz¹dzanie znanymi b³êdami
+	\begin{itemize}
+		\item	PM.KEDB.SEARCH	--	Wyszukiwanie znanych b³êdów po identyfikatorze, temacie, kategorii, symptomach, g³ównej przyczynie oraz rozwi¹zaniu tymczasowym.
+		\item	PM.KEDB.KE	--	Zamiana problemu w znany b³¹d (ang. known error). Funkcjonalnoœæ dostêpna dla mened¿era problemów.
+	\end{itemize}
+	\item	PM.SOL	--	Dodanie rozwi¹zania oraz rozwi¹zania tymczasowego dla problemu.
+	\item	PM.ASSOC.I	--	Powi¹zanie incydentu z problemem.
+%	\item	PM.ASSOC.RFC	--	Powi¹zanie problemu z RFC.
+\end{itemize}
+	
+\subsection{Zarz¹dzanie zleceniami}
+\begin{itemize}
+	\item RF.ADD	--	Dodawanie zleceñ. Wybranie kategorii zlecenia. Ka¿da kategoria zawiera listê parametrów, które nale¿y podaæ. Przyk³adowo: zg³oszenie instalacji nowego oprogramowania mo¿e zawieraæ nazwê aplikacji oraz wersjê aplikacji.
+	\item RF.CARD	--	Karta szczegó³ów zlecenia. Dla ka¿dego zlecenia prezentowane s¹ informacje o identyfikatorze zg³oszenia, osobie, która doda³a zg³oszenie, kategorii, statusie, terminie rozwi¹zania, dacie zg³oszenia, dacie zamkniêcia, serwisancie oraz grupie. Dodatkowo istnieje lista parametrów zale¿nych od~kategorii zlecenia.
+	\begin{itemize}
+		\item RF.CARD.COMMENT -- Dodanie komentarza na karcie zlecenia.
+	\end{itemize}
+	\item	RF.CONF	--	Stworzenie formularza master-detail do zarz¹dzania kategoriami zleceñ oraz list¹ parametrów zlecenia. U¿ytkownik z rol¹ mened¿era zleceñ ma mo¿liwoœæ dodawania nowych kategorii zleceñ i ustalania parametrów tych kategorii.
+\end{itemize}
+
+\subsection{Administracja}
+\begin{itemize}
+	\item	ADMIN.SE --	Wyszukiwanie pracowników po identyfikatorze, loginie, imieniu oraz nazwisku.
+\end{itemize}
+
+\subsection{Zarz¹dzanie pracownikami}	
+\begin{itemize}
+	\item EMP.DETAILS -- Widok ze szczegó³owymi danymi na temat pracownika lub klienta: imiê, nazwisko, telefon komórkowy, telefon, e-mail, departament, stanowisko i mened¿er pracownika. Dodatkowo prezentowane s¹ us³ugi, z~których korzysta pracownik lub klient.
+	\item EMP.ROLES	-- Administrator systemu ma mo¿liwoœæ zarz¹dzania rolami pracownika.
+\end{itemize}
+
+\subsection{Zarz¹dzanie sygna³ami}
+\begin{itemize}
+	\item SIG.TRG	--	Wygenerowanie sygna³u okreœlonego typu w wyniku zmiany stanu zdarzenia. Przyk³adowo wygenerowanie sygna³u po zmianie statusu incydentu na rozwi¹zany. Sytuacje, w których generowany jest sygna³ s¹ z~góry ustalone w aplikacji.
+	\item SIG.EMAIL	--	Zadanie (job) wysy³aj¹ce wiadomoœci e-mail dla dodanych sygna³ów. Treœæ e-maila jest tworzona na podstawie szablonu typu sygna³u, analogicznie z tematem wiadomoœci e-mail. Wiadomoœæ e-mail jest wysy³ana do osoby, dla której zosta³ wygenerowany sygna³.
+	\item SIG.TYPE	--	Zarz¹dzanie typami sygna³ów. Dla ka¿dego typu powinien zostaæ okreœlony szablon wiadomoœci, wype³niany za pomoc¹ atrybutów obiektu. Analogicznie jest z tematem wiadomoœci. Ka¿dy typ sygna³u powinien byæ okreœlonej rangi: informacja, ostrze¿enie lub b³¹d.
+	\begin{itemize}
+		\item SIG.TYPE.F	--	Stworzenie formularza do zarz¹dzania typami sygna³ów.
+		\item SIG.TYPE.F.MSG	--	Podanie szablonu wiadomoœci.
+		\item SIG.TYPE.F.SUB	--	Podanie szablonu tematu wiadomoœci.
+	\end{itemize}
+	\item SIG.HOME	--	Prezentacja sygna³ów u¿ytkownika na stronie g³ównej.
+	\item SIG.GEN -- Zarz¹dzanie generatorami sygna³ów. Ka¿dy generator jest uruchamiany co pewien kwant czasu. Generator dotyczy konkretnego obiektu: incydentu, problemu lub zlecenia. Sprawdza, czy istniej¹ obiekty spe³niaj¹ce podane kryterium. Dla zadanego kryterium generuje sygna³ okreœlonego typu dla okreœlonego pracownika, który ustalany jest na zasadzie po³¹czenia z tym obiektem. Przyk³adowo pracownik mo¿e byæ osob¹, która zg³osi³a incydent, mened¿erem tego pracownika, serwisantem, mened¿erem grupy, mened¿erem serwisanta itd.
+	\begin{itemize}
+		\item	SIG.GEN.F	--	Stworzenie formularza do zarz¹dzania generatorami.
+		\item	SIG.GEN.F.ADD	--	Mo¿liwoœæ dodawania nowych generatorów.
+		\item	SIG.GEN.F.DEL	--	Mo¿liwoœæ usuwania generatorów.
+		\item	SIG.GEN.F.EDIT	--	Mo¿liwoœæ edycji generatorów.
+		\item	SIG.GEN.F.TIME	--	Ustawienie czêstotliwoœci generatora.
+		\item	SIG.GEN.F.ON	--	W³¹czenie/wy³¹czenie generatora.
+		\item	SIG.GEN.F.EMP	--	Wybranie kategorii pracownika z ustalonej listy: serwisant, zg³aszaj¹cy, mened¿er grupy, mened¿er grupy nadrzêdnej, mened¿er serwisanta lub mened¿er zg³aszaj¹cego.
+		\item	SIG.GEN.F.CRIT	--	Podanie kryterium w polu tekstowym.
+		\item	SIG.GEN.F.PREVIEW	--	Podgl¹d obiektów aktualnie spe³niaj¹cych kryterium zadane przez generator.
+	\end{itemize}
+\end{itemize}

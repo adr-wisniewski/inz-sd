@@ -1,0 +1,89 @@
+/*form dl dt,
+form dl dd
+{
+    display:block;
+    float:left;
+    line-height:22px;
+    margin-top:8px;
+}
+
+form dl dt
+{
+    clear:both;
+    padding:0 1em;
+    text-align:right;
+    width:15em;
+}
+
+form dl input,
+form dl select,
+form dl textarea
+{
+    width: 30em;
+}
+
+
+form dl input[type="checkbox"],
+form dl input[type="submit"]
+{
+    vertical-align: middle;
+    width: auto;
+}*/
+
+input[type="text"], select, textarea
+{
+    border: 1px solid;
+    padding: 3px;
+    width: 375px;
+}
+
+input[type="radio"], input[type="checkbox"]
+{
+    margin-left:0;
+}
+
+button[type="submit"]
+{
+    margin: 0 0.25em 0 0;
+    min-width: 6em;
+}
+
+button[type="submit"] span
+{
+    display: inline-block;
+    padding: 0 10px 0 20px
+}
+
+.tablesorter thead td
+{
+    padding: 0 4px;
+}
+
+.tablesorter thead td input, .tablesorter thead td select
+{
+    width: 100%;
+}
+
+.tablesorter thead td input[type="text"]
+{
+    margin-left: -2px;
+}
+
+.error
+{
+    margin-left:0.25em;
+    vertical-align: top;
+    line-height: 24px;
+}
+
+.errorBox {
+    border:2px solid;
+    display: block;
+    margin: 0 0 6px;
+    min-height: 50px;
+    padding: 6px 12px 6px 62px;
+}
+
+.actionButtonForm {
+    display: inline-block;
+}

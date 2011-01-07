@@ -1,0 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Podsumowanie}
+\label{podsumowanie} % Always give a unique label
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ITIL jest to zbiór praktyk umo¿liwiaj¹cy: redukcjê kosztów poprzez zarz¹dzanie IT w sposób analogiczny do zarz¹dzania biznesem, skupienie uwagi na potrzebach klientów oraz ci¹g³e doskonalenie organizacji. Autor zrealizowa³ fragment systemu Service Desk, zgodny z zaleceniami ITIL v3, obejmuj¹cy procesy: zarz¹dzania incydentami, zarz¹dzania problemami i zarz¹dzania zdarzeniami. Zrealizowany fragment systemu mo¿e zostaæ wykorzystany przez ma³ej lub œredniej wielkoœci firmê w dziale obs³ugi klienta. Proces zarz¹dzania incydentami umo¿liwia zwiêkszenie dostêpnoœci oferowanych us³ug IT oraz dostosowanie dzia³alnoœci IT do priorytetów biznesowych. Natomiast proces zarz¹dzania problemami umo¿liwia szybsze rozwi¹zywanie incydentów oraz identyfikacjê trwa³ych rozwi¹zañ, co wp³ywa na zredukowanie liczby incydentów.
+
+Zrealizowany system jest ³atwo konfigurowalny. Ka¿da organizacja mo¿e dostosowaæ wartoœci s³owników do w³asnych potrzeb. Wszystkie komunikaty zawarte s¹ w pliku w³aœciwoœci, co pozwala na modyfikacjê dowolnego komunikatu bez ingerencji w kod aplikacji, dodatkowo umo¿liwia to zmianê jêzyka. Najwiêksz¹ zalet¹ systemu jest elastyczne rozwi¹zanie dla eskalacji: sygna³y. System pozwala na~utworzenie dowolnej liczby poziomów eskalacji, okreœlenie odbiorców komunikatów, konfiguracjê treœci komunikatów oraz kryteriów eskalacji. Co wiêcej, zaproponowane rozwi¹zanie mo¿e zostaæ wykorzystane do przypominania pracownikom o dowolnych zadaniach do zrealizowania.
+
+Istniej¹cy fragment systemu mo¿na zintegrowaæ z fragmentem systemu realizowanym przez Adriana Wiœniewskiego w ramach dyplomowej pracy in¿ynierskiej obejmuj¹cym procesy: zarz¹dzania konfiguracj¹ oraz zarz¹dzania zmian¹. Proces zarz¹dzania konfiguracj¹ umo¿liwi lepsz¹ analizê przyczyny powstawania danego incydentu. Natomiast proces zarz¹dzania zmian¹ pozwoli na kontrolowanie cyklu ¿ycia zmian. Jest to istotny proces, poniewa¿ rozwi¹zanie problemu czêsto wymaga wprowadzenia zmiany w infrastrukturze IT. Fragment zrealizowany w~ramach niniejszej pracy we wspó³pracy z fragmentem realizowanym przez\linebreak Adriana Wiœniewskiego obejmuje wszystkie procesy Service Support z ITIL~v2.
+
+
+Przy implementacji systemu wykorzystano nowoczesne narzêdzia wspieraj¹ce prace programisty, projektanta oraz analityka. Skorzystano z nowoczesnego œrodowiska IDE SpringSource Tool Suite, które wspiera tworzenie aplikacji WWW w~technologii J2EE opartych o Spring Framework oraz Hibernate. U¿yto narzêdzia JDeveloper, które umo¿liwi³o utworzenie diagramów tabel, z których zosta³ wygenerowany skrypt SQL. Wykorzystano równie¿ narzêdzie Rational Software Architect do utworzenia wstêpnego projektu: diagramów klas, diagramów sekwencji i diagramów aktywnoœci. Do implementacji raportów wykorzystano gotowe rozwi¹zanie Open Source: Jasper Reports.
+Utworzona aplikacja, jak na fragment systemu, jest stosunkowo z³o¿ona. Kod Ÿród³owy zawiera 10 KLOC\footnote{KLOC - Kilo Lines Of Code} (bez komentarzy oraz pustych linii), testy jednostkowe 2 KLOC, konfiguracyjne pliki XML 1,1 KLOC, strony JSP 2,3 KLOC. Baza danych sk³ada siê z 56 tabel.
+
+
+Dalszy kierunek rozwoju systemu to zwiêkszenie poziomu automatyzacji. Nowoczesne systemy Service Desk dokonuj¹ analizy CMDB przy okreœlaniu wp³ywu incydentu. Kolejnym nierozwi¹zanym problemem pozostaje naniesienie kalendarza przy liczeniu czasu rozwi¹zania incydentów. System powinien uwzglêdniaæ dni robocze, godziny pracy serwisantów oraz godziny dostêpnoœci us³ugi. Niektóre systemy Service Desk umo¿liwiaj¹ naniesienie wielu kalendarzy, jest to potrzebne, gdy klienci maj¹ ró¿ne godziny dostêpnoœci dla tej samej us³ugi. Kolejny aspekt zwi¹zany z automatyzacj¹ i kalendarzem to przydzielanie zg³oszeñ serwisantom. Nowoczesny system powinien przydzielaæ zg³oszenia serwisantom w sposób sprawiedliwy uwzglêdniaj¹c obci¹¿enie, dni robocze i urlopy.
+Nie rozwi¹zano równie¿ problemu kontroli widocznoœci incydentów dla poszczególnych ról. Przyk³adowo serwisant widzi w systemie tylko swoje incydenty, mened¿er grupy ma dostêpne incydenty przypisane do jego grupy. Oczywiœcie nie ka¿da organizacja chce narzucaæ takie poziomy widocznoœci. Wynika z tego, ¿e taka kontrola powinna byæ ³atwo konfigurowalna, aby by³o mo¿liwe utworzenie wielu poziomów widocznoœci. Przy realizacji tego wymagania warto rozwa¿yæ wykorzystanie Oracle Virtual Private Database.
+Nastêpny problem zwi¹zany jest z raportowaniem. Dla systemu Service Desk powinien zostaæ utworzony Data Mart, który bêdzie umo¿liwia³ tworzenie wielowymiarowych analiz. Aktualne istniej¹ce raporty maj¹ charakter operacyjny. Podejœcie to wymaga tworzenia zbyt wielu raportów. Istniej¹ systemy zawieraj¹ce ponad sto ró¿nych raportów. Nie jest to najlepsze podejœcie, poniewa¿ nikt nie dysponuje wystarczaj¹c¹ iloœci¹ czasu do przegl¹dania takiego ogromu informacji. U¿ytkownicy powinni mieæ mo¿liwoœæ tworzyæ raporty osobiœcie w sposób analogiczny jak s¹ tworzone tabele przestawne w programie Excel. Potrzebne jest równie¿ umo¿liwienie poruszania po hierarchii wymiarów za pomoc¹ opcji Drill Up, Drill Down. Przy realizacji tego wymagania warto rozwa¿yæ narzêdzie Business Objects lub podobne.

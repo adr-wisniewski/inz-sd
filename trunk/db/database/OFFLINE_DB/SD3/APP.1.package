@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<package xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">67760d2b-0a65-4d06-8300-c01e9a7f28c6</identifier>
+  </ID>
+  <name>APP</name>
+  <bodySource>CREATE OR REPLACE
+PACKAGE BODY APP AS
+
+
+
+  PROCEDURE set_user(user_id NUMBER) AS
+  BEGIN
+    CURRENT_USER_ID := user_id;
+  END set_user;
+
+  FUNCTION get_user RETURN NUMBER AS
+  BEGIN
+    RETURN CURRENT_USER_ID;
+  END get_user;
+
+END APP;</bodySource>
+  <methods>
+    <method>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2d00a382-1326-4bba-9d82-e34512745d92</identifier>
+      </ID>
+      <name>SET_USER</name>
+      <callSpecWithContext>false</callSpecWithContext>
+      <final>false</final>
+      <instantiable>true</instantiable>
+      <overriding>false</overriding>
+      <parameters>
+        <parameter>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">c8e216f3-fd26-4e47-9b64-9111fda90492</identifier>
+          </ID>
+          <name>USER_ID</name>
+          <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+            <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+            <typeName>NUMBER</typeName>
+          </dataTypeID>
+          <noCopy>false</noCopy>
+        </parameter>
+      </parameters>
+    </method>
+    <method>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">69b7786d-878d-47c9-8d24-e5734b9c2d36</identifier>
+      </ID>
+      <name>GET_USER</name>
+      <callSpecWithContext>false</callSpecWithContext>
+      <final>false</final>
+      <instantiable>true</instantiable>
+      <overriding>false</overriding>
+      <returnTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+        <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+        <typeName>NUMBER</typeName>
+      </returnTypeID>
+    </method>
+  </methods>
+  <schema>
+    <name>SD3</name>
+  </schema>
+  <source>CREATE OR REPLACE 
+PACKAGE APP AS 
+  CURRENT_USER_ID NUMBER := 0;
+  
+  PROCEDURE set_user(user_id NUMBER);
+  FUNCTION get_user RETURN NUMBER;
+
+END APP;</source>
+</package>

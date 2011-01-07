@@ -1,0 +1,210 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Testy i ocena}
+\label{testy} % Always give a unique label
+
+\section{Œrodowiska testowe}
+
+System by³ testowany na nastêpuj¹cych œrodowiskach:
+
+\subsection*{Œrodowisko 1}
+
+\begin{description}
+	\item[System operacyjny:] Windows 7 Ultimate 64 bitowy
+	\item[Procesor:] Intel Core(TM) i5 CPU 750 2,67 GHz
+	\item[RAM:] 4,00 GB
+	\item[Baza danych:] Oracle 10g Express Edition
+	\item[Kontener serwletów:] SpringSource tc Server v6.0
+	\item[JDK:]  jdk1.6.0\_17 (64 bitowa)
+\end{description}
+
+\subsection*{Œrodowisko 2}
+
+\begin{description}
+	\item[System operacyjny:] Windows 7 Professional 64 bitowy
+	\item[Procesor:] Intel Core(TM) i3 CPU M350 2,27 GHz
+	\item[RAM:] 4,00 GB
+	\item[Baza danych:] Oracle 10g Express Edition
+	\item[Kontener serwletów:] Apache Tomcat 6.0.29
+	\item[JDK:] jdk1.6.0\_21
+\end{description}
+
+\section{Testy jednostkowe}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/UnitTest_pokrycie.png}
+	\caption{Pokrycie testów jednostkowych}
+	\label{rys:testy_jednostkowe}
+\end{figure}
+
+Do przetestowania aplikacji zosta³ stworzony przyk³adowy zestaw testów jednostkowych. Rysunek \ref{rys:testy_jednostkowe} pokazuje ich pokrycie. Pokrycie utworzonego zestawu testów nie jest wysokie, poniewa¿ s¹ to tylko przyk³adowe testy jednostkowe. Dla~systemów u¿ywanych w œrodowiskach produkcyjnych, nale¿a³oby d¹¿yæ do~pe³nego pokrycia.
+
+Autor w pocz¹tkowym etapie rozwoju aplikacji tworzy³ j¹ zgodnie z technik¹ TDD\footnote{TDD -- Test-driven development}. Jest to najlepsza technika do tworzenia testów jednostkowych, poniewa¿ powinny one powstawaæ równolegle z kodem aplikacji. W przypadku tej techniki powstaj¹ nawet przed utworzeniem kodu.
+ 
+Autor zrezygnowa³ z utworzenia pe³nego zestawu testów jednostkowych, poniewa¿ zrealizowany system nie bêdzie wykorzystywany w œrodowisku produkcyjnym, nie bêdzie potrzeby pielêgnacji oraz utrzymywania systemu, a testy jednostkowe tworzone s¹ g³ównie po to, aby zmniejszyæ koszty utrzymania systemu, u³atwiæ proces refaktoryzacji oraz wprowadzania nowych funkcjonalnoœci.
+Dodatkowo same testy jednostkowe nie gwarantuj¹ dzia³ania systemu. Do przetestowania systemu lepsze s¹ testy funkcjonalne, które zosta³y omówione w nastêpnej sekcji.
+
+Testy jednostkowe umo¿liwi³y wykrycie drobnych b³êdów, które zosta³y zidentyfikowane szybciej ni¿ przy pomocy testów funkcjonalnych. Po pewnym czasie rozwoju aplikacji zdecydowanie wiêcej b³êdów zosta³o wykrytych przy pomocy testów funkcjonalnych, co by³o kolejnym powodem zaprzestania dalszego rozwoju zestawu testów jednostkowych.
+
+\section{Przyk³adowe testy funkcjonalne}
+
+\subsection{Cykl ¿ycia incydentu}
+
+\subsubsection*{Cel}
+
+Test sprawdza standardowy cykl ¿ycia incydentu od momentu zg³oszenia przez klienta dodania do momentu dokonania rozwi¹zania.
+
+\subsubsection*{Kroki}
+
+\begin{enumerate}
+\item Zaloguj siê na u¿ytkownika \texttt{USER1/USER1}.
+\item Dodaj nowy incydent.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Zostanie wyœwietlony komunikat: \textit{Dodano pomyœlnie incydent}.
+	\end{itemize}
+
+\item Wyloguj siê i zaloguj na u¿ytkownika \texttt{1\_LINE/1\_LINE}.
+\item Wybierz opcje \texttt{Zarz¹dzanie incydentami->Nie przypisane incydenty}.
+\item Kliknij w temat dodanego incydentu.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Zostanie wyœwietlona karta incydentu.
+	\end{itemize}
+
+\item Przypisz \texttt{1\_LINE} jako serwisanta.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Zostanie wyœwietlony komunikat: \textit{Zapisano pomyœlnie incydent}.
+	\end{itemize}
+
+\item Ustaw priorytet, wp³yw oraz pilnoœæ. Dokonaj zapisania.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Zostanie wyœwietlony komunikat: \textit{Zapisano pomyœlnie incydent}.
+	\end{itemize}
+
+\item Przypisz \texttt{2\_LINE} jako serwisanta.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Zostanie wyœwietlony komunikat: \textit{Zapisano pomyœlnie incydent}.
+	\end{itemize}
+
+\item PrzejdŸ na stronê g³ówn¹.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Dla dodanego incydentu powinny zostaæ wygenerowane dwa sygna³y: o przypisaniu incydentu oraz o odpisaniu.
+	\end{itemize}
+
+\item Wyloguj siê i zaloguj na u¿ytkownika \texttt{2\_LINE/2\_LINE}.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Dla dodanego incydentu powinien zostaæ wygenerowany jeden sygna³ o przypisaniu incydentu.
+	\end{itemize}
+
+\item PrzejdŸ na kartê dodanego incydentu, poprzez klikniêcie w ostatni¹ kolumne w wygenerowanym sygnale.
+
+\item Dodaj nowy problem.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Zostanie wyœwietlony komunikat: \textit{Dodano pomyœlnie problem}.
+	\end{itemize}
+
+\item Wyloguj siê i zaloguj na u¿ytkownika \texttt{PBR\_MAN/PBR\_MAN}.
+
+\item Wyszukaj dodany problem w zak³adce: \texttt{Zarz¹dzanie problemami->Szukaj problemów}.
+
+\item PrzejdŸ na kartê problemu.
+
+\item Dodaj rozwi¹zanie tymczasowe.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Zostanie wyœwietlony komunikat: \textit{Dodano rozwi¹zanie}.
+	\end{itemize}
+
+\item Dodaj nowy znany b³¹d, poprzez zaznaczenie checkbox-a: \texttt{Znany b³¹d}.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Zostanie wyœwietlony komunikat: \textit{Zapisano pomyœlnie problem}.
+	\end{itemize}
+
+\item Wyloguj siê i zaloguj na u¿ytkownika \texttt{2\_LINE/2\_LINE}.
+
+\item Wybierz opcje \texttt{Zarz¹dzanie problemami->Baza znanych b³êdów}.
+
+\item Wyszukaj dodany znany b³¹d. Skopiuj rozwi¹zanie b³êdu.
+
+\item PrzejdŸ na kartê incydentu. Wklej skopiowane rozwi¹zanie w pole: \texttt{Rozwi¹zanie}. Zmieñ status incydentu na rozwi¹zany. Dokonaj zapisania.
+
+	\textit{\underline{Punkty weryfikacyjne:}}
+	\begin{itemize}
+	\item Zostanie wyœwietlony komunikat: \textit{Zapisano pomyœlnie incydent}.
+	\item Zosta³a zmieniona data rozwi¹zania na bie¿¹c¹ datê.
+	\end{itemize}
+
+\end{enumerate}
+
+\subsection{Ocena testów funkcjonalnych}
+
+Testy funkcjonalne umo¿liwi³y zidentyfikowanie b³êdów, które nie zosta³y wykryte podczas testów jednostkowych. Aplikacja by³a testowana w trakcie powstawania. Wiêkszoœæ b³êdów zosta³a wykryta w krótkim okresie czasu licz¹c od momentu ich pojawienia siê, co mia³o pozytywny wp³yw na czas ich rozwi¹zania. Podczas wiêkszych zmian systemu powstawa³y dodatkowe b³êdy, ale dziêki zestawowi standardowych testów funkcjonalnych by³y szybko wykrywane.
+
+Wszystkie testy by³y przeprowadzane rêcznie, co niestety jest czasoch³onne. Do testowania aplikacji warto wykorzystaæ narzêdzie umo¿liwiaj¹ce testowanie automatyczne. Przyk³adem takiego narzêdzia jest IBM Rational Functional\newline Tester.
+
+\section{Testy wydajnoœciowe}
+
+\subsection{Metoda mierzenia czasu}
+
+Do mierzenia czasu zosta³ utworzony Handler Interceptor. Jest to klasa implementuj¹ca interfejs \texttt{org.springframework.web.servler.HandlerInterceptor}. Interfejs zawiera trzy metody. Do mierzenia czasu zosta³y wykorzystane dwie. Metoda \texttt{preHandle} wywo³ywana jest przed obs³u¿eniem ¿¹dania, natomiast metoda \texttt{afterCompletion} po zrenderowaniu widoku \cite{spring_recipes}. Takie podejœcie umo¿liwia zmierzenie czasu ¿¹dania, od momentu otrzymania ¿¹dania na~serwerze, po zrenderowanie widoku. Jest to w przybli¿eniu czas obs³u¿enia ¿¹dania na serwerze. Pominiête s¹ czynnoœci wykonywane przez kontener serwletów przed i po ¿¹daniu oraz czynnoœci wykonywane przez kontener IoC, które w ma³ym stopniu wp³ywaj¹ na czas ¿¹dania. Wynika z tego, ¿e takie podejœcie do mierzenia czasu jest poprawne, poniewa¿ mierzona jest zdecydowana wiêkszoœæ czasu spêdzonego na~serwerze. Aczkolwiek pomijany jest czas transportu oraz czas zrenderowania widoku w przegl¹darce. Oba czasy oczywiœcie s¹ odczuwalne przez klienta, ale nie wchodz¹ w sk³ad systemu. Czas zrenderowania widoku zale¿y od wykorzystywanej przegl¹darki przez u¿ytkownika oraz od mocy obliczeniowej stacji roboczej u¿ytkownika, natomiast czas transportu zale¿y od sieci. Czas zrenderowania widoku na œrodowisku pierwszym waha siê w okolicach 10 ms.
+
+Taka metoda mierzenia czasu ma zaletê ³atwoœci dodania do istniej¹cego kodu. Nie trzeba dokonywaæ zmian. Ca³y algorytm mierzenia jest zawarty w jednej klasie. Wystarczy w pliku konfiguracyjnym dodaæ nowy Interceptor, co zajmujê tylko jedn¹ linijkê kodu. Nie trzeba równie¿ dokonywaæ ponownej kompilacji kodu, co równie¿ jest ogromn¹ zalet¹.
+
+\subsection{Testy wydajnoœciowe}
+
+Jest to rodzaj testów polegaj¹cych na badaniu czasu odpowiedzi krytycznych dla~biznesu funkcji. Kryterium testów jest dokonanie sprawdzenia, czy funkcje wykonywane s¹ w akceptowalnym czasie. Zosta³y przetestowane dwie funkcjonalnoœci: dodawania incydentów i wyszukiwania incydentów, poniewa¿ s¹ to najczêœciej wykonywane czynnoœci w systemie Service Desk.
+
+Ka¿dy z testów przeprowadzono wielokrotnie, a nastêpnie wyliczono wartoœæ œredni¹.
+
+\subsubsection{Dodanie incydentu}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/testy_im_add.png}
+	\caption{Czas dodania incydentu w zale¿noœci od liczby incydentów w bazie danych}
+	\label{rys:testy_im_add}
+\end{figure}
+
+Rysunek \ref{rys:testy_im_add} przedstawia czas dodania incydentu w zale¿noœci od liczby incydentów w bazie danych. Zgodnie z oczekiwaniami czas ten praktycznie nie zale¿y od liczby incydentów. Œredni czas nie przekracza 120 ms, co jest akceptowaln¹ wartoœci¹ dla u¿ytkownika koñcowego.
+
+\subsubsection{Wyszukiwanie incydentów}
+
+Rysunek \ref{rys:testy_im_search} przedstawia czas wyszukiwania incydentów w zale¿noœci od liczby incydentów w bazie danych. Zgodnie z oczekiwaniami czas ten wzrasta proporcjonalnie do liczby incydentów. Wyszukiwanie incydentów trwa d³u¿ej ni¿ dodawanie incydentów, ale w tym przypadku œrednie czasy s¹ równie¿ akceptowalne dla u¿ytkownika koñcowego, poniewa¿ nie przekraczaj¹ nawet 170 ms.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/testy_im_search.png}
+	\caption{Czas wyszukiwania incydentów w zale¿noœci od liczby incydentów w bazie danych}
+	\label{rys:testy_im_search}
+\end{figure}
+
+\subsubsection{Ocena testów wydajnoœciowych}
+
+Przeprowadzone testy wydajnoœciowe wykaza³y, ¿e najwa¿niejsze funkcje systemu: dodawania nowych incydentów oraz wyszukiwania incydentów, wykonywane s¹ w akceptowalnym czasie.
+
+Za³ó¿my, ¿e firma posiada tysi¹c klientów. Ka¿dy klient zg³asza jeden incydent na miesi¹c. Je¿eli czas dzia³ania systemu wynosi cztery lata, to system powinien obs³u¿yæ 48 tys. incydentów. Przeprowadzone testy udowodni³y równie¿, ¿e system potrafi obs³u¿yæ taki wolumen danych.

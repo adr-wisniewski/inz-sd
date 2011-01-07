@@ -1,0 +1,232 @@
+\chapter{Wsparcie systemu dla firmy Red Host S.A.}
+\label{sec:aplikacja}
+
+W tym rozdziale zostanie przedstawiona zrealizowana aplikacja i przyk³adowe scenariusze jej wykorzystania.
+
+\section{Scenariusz u¿ycia na poziomie biznesowym}
+
+Sekcja ta zwiera przyk³adowy scenariusz na poziomie biznesowym. Przedstawiono cykl ¿ycia incydentu od momentu zg³oszenia przez klienta korzystaj¹cego z us³ugi do momentu zamkniêcia incydentu.
+
+\begin{enumerate}
+\item Klient zg³asza nowy incydent.
+\item Pracownik pierwszej linii sprawdza nieprzypisane incydenty oraz dokonuje przypisania incydentu do w³asnej osoby.
+\item Pracownik pierwszej linii ustawia podstawowe dane dotycz¹ce incydentu. Podejmuje próbê znalezienia rozwi¹zania, wykorzystuj¹c KEDB. Nie znajduje rozwi¹zania. Po pewnym czasie zostaje wys³ane powiadomienie do~mened¿era incydentów o zbli¿aj¹cym siê terminie rozwi¹zania incydentu.
+\item Mened¿er incydentów dokonuje eskalacji incydentów do pracownika drugiej linii.
+\item Pracownik drugiej linii zostaje powiadomiony drog¹ mailow¹ o nowo przypisanym incydencie.
+\item Pracownik drugiej linii dokonuje analizy incydentu wykorzystuj¹c w tym celu CMDB. Po dokonaniu analizy stwierdza, ¿e incydent jest zwi¹zany z~istnieniem problemu, wiêc dodaje nowy problem.
+\item W trakcie analizy oraz diagnozy problemu zostaje znalezione rozwi¹zanie tymczasowe oraz rozwi¹zanie sta³e.
+\item Mened¿er problemów dodaje nowy znany b³¹d.
+\item Rozwi¹zanie tymczasowe zostaje wykorzystane do rozwi¹zania incydentu. Pracownik drugiej linii zmienia status incydentu na rozwi¹zany.
+\item Pracownik pierwszej linii wysy³a zapytanie do klienta, czy incydent zosta³ pomyœlnie rozwi¹zany. Po otrzymaniu pozytywnej odpowiedzi dokonuje zamkniêcia incydentu.
+\item W celu rozwi¹zania problemu nale¿y dokonaæ zmiany w infrastrukturze. Zostaje zg³oszone RFC.
+\end{enumerate}
+
+\section{Scenariusz u¿ycia na poziomie systemowym}
+
+Na podstawie scenariusza biznesowego przedstawiono scenariusz u¿ycia na poziomie systemowym.
+
+\subsection{Zg³oszenie incydentu}
+
+W sytuacji naruszenia poziomu us³ug w umowie SLA, klient ma mo¿liwoœæ zg³oszenia incydentu w aplikacji poprzez formularz WWW (rysunek: \ref{rys:dodanieIncydentu_klient}). Klient musi podaæ temat incydentu oraz opisaæ szczegó³owo co siê wydarzy³o.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/app/dodanieIncydentu_klient.png}
+	\caption{Formularz nowego incydentu}
+	\label{rys:dodanieIncydentu_klient}
+\end{figure}
+
+
+Klient mo¿e równie¿ zg³osiæ incydent drog¹ telefoniczn¹ lub mailow¹. W takim przypadku pracownik pierwszej linii doda nowy incydent w imieniu klienta. Czynnoœæ ta jest bardzo podobna do zg³oszenia incydentu bezpoœrednio przez klienta, ró¿nica jest taka, ¿e pracownik musi wyszukaæ klienta w bazie oraz wybraæ Ÿród³o: e-mail lub telefon. Dodatkowe dane do wype³nienia zosta³y pokazane na rysunku: \ref{rys:dodanieIncydentu_serwisant}.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/app/dodanieIncydentu_serwisant.png}
+	\caption{Formularz nowego incydentu - szczegó³y}
+	\label{rys:dodanieIncydentu_serwisant}
+\end{figure}
+
+\subsection{Przypisanie incydentu}
+
+W zrealizowanym systemie pracownik pierwszej linii dokonuje przypisania do~incydentu samodzielnie. Pracownik pierwszej linii ma dostêpn¹ funkcjonalnoœæ podejrzenia nieprzypisanych incydentów. Po wybraniu incydentu zostanie przeniesiony do karty incydentu. Karta incydentu jest najwa¿niejszym widokiem zwi¹zanym z zarz¹dzaniem incydentami. W tym miejscu zawarte s¹ szczegó³owe dane dotycz¹ce incydentu. Dostêpna jest równie¿ mo¿liwoœæ przypisania serwisanta do~incydentu, co widoczne jest na rysunku: \ref{rys:kartaIncydentu_przypisanie}.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/app/kartaIncydentu_przypisanie.png}
+	\caption{Karta incydentu - przypisanie serwisanta}
+	\label{rys:kartaIncydentu_przypisanie}
+\end{figure}
+
+Takie podejœcie mo¿e spowodowaæ, ¿e nie wszystkie incydenty zostan¹ przypisane w ustalonym czasie. Aby zapobiec takiej sytuacji istnieje mo¿liwoœæ utworzenia generatora sygna³ów \ref{generatorySygnalow}, który bêdzie odpowiedzialny za powiadomienie mened¿era incydentów o wszystkich nieprzypisanych incydentach w ustalonym czasie. W przyk³adowych danych zosta³y skonfigurowane dwa generatory: pierwszy powiadamia mened¿era incydentów o nieprzypisanych incydentach po dwóch godzinach od czasu zg³oszenia incydentu, drugi po czterech godzinach.
+W takim podejœciu nale¿y równie¿ pamiêtaæ o systemie wynagrodzeñ dla pracowników pierwszej linii. Wysokoœæ premii powinna zale¿eæ od liczby odebranych incydentów. Aplikacja umo¿liwia wygenerowanie raportu o liczbie incydentów przypisanych do danej grupy/pracownika w podanym okresie czasu.
+
+\subsection{Karta incydentu}
+
+Rysunek \ref{rys:kartaIncydentu_podstawowe} przedstawia obszar na karcie incydentu zawieraj¹cy podstawowe informacje o incydencie, czyli: identyfikator, priorytet, aktualny status, przypisany serwisant, data zg³oszenia, termin rozwi¹zania, data rozwi¹zania, data zamkniêcia, temat oraz opis.
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/app/kartaIncydentu_podstawowe.png}
+	\caption{Karta incydentu - dane podstawowe}
+	\label{rys:kartaIncydentu_podstawowe}
+\end{figure}
+
+Poni¿ej umiejscowione s¹ szczegó³y. Obszar ten podlega edycji. Najwa¿niejszym elementem jest us³uga przypisana do incydentu. Na liœcie us³ug do wyboru s¹ tylko us³ugi dostêpne dla klienta, który zg³osi³ incydent. W tym miejscu istnieje mo¿liwoœæ dokonania zmiany niektórych atrybutów zawartych w obszarze podstawowym. Dodatkowo mo¿na przypisaæ kategorie incydentu, wybraæ grupe wsparcia oraz wpisaæ rozwi¹zanie, co jest pokazane na rysunku: \ref{rys:kartaIncydentu_szczegoly}.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/app/kartaIncydentu_szczegoly.png}
+	\caption{Karta incydentu - szczegó³y}
+	\label{rys:kartaIncydentu_szczegoly}
+\end{figure}
+
+\subsection{Eskalacja}
+
+Po up³ywie okreœlonego czasu nie rozwi¹zany incydent powinien zostaæ eskalowany do pracownika drugiej linii. W aplikacji zosta³y utworzone generatory sygna³ów, co zosta³o szczegó³owo opisane w sekcji \ref{sygnaly}. Istnieje mo¿liwoœæ skonfigurowania zasad powiadamiania odpowiednich pracowników. W tym przypadku nale¿y poinformowaæ mened¿era incydentów o koniecznoœci przekierowania sygna³u do pracownika drugiej linii. Istnieje równie¿ mo¿liwoœæ poinformowania bezpoœredniego prze³o¿onego pracownika pierwszej linii. Mened¿er po otrzymaniu wiadomoœci e-mail dokonuje przypisania pracownika drugiej linii, w taki sam sposób jak to zrobi³ pracownik pierwszej linii, zosta³o to przedstawione na rysunku: \ref{rys:kartaIncydentu_przypisanie}. Sygna³y widoczne s¹ równie¿ w aplikacji, ka¿dy zalogowany u¿ytkownik na stronie g³ównej ma dostêpn¹ tabelê z sygna³ami (rysunek: \ref{rys:sygnaly}).
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/app/sygnaly.png}
+	\caption{Sygna³y na stronie g³ównej}
+	\label{rys:sygnaly}
+\end{figure}
+
+Ka¿dy sygna³ zawiera równie¿ odnoœnik do karty obiektu, którego dotyczy. W~tym przypadku bêdzie to odnoœnik do karty incydentu. Umo¿liwia to przyspieszenie nawigacji po systemie.
+
+\subsection{Powiadomienie pracownika drugiej linii}
+
+W sytuacji, gdy incydent zostanie przypisany do pracownika drugiej linii, zostanie on powiadomiony drog¹ mailow¹. Do tego celu równie¿ zosta³y wykorzystane sygna³y, co zosta³o opisane w sekcji: \ref{sygnaly}.
+
+\subsection{Historia incydentu}
+
+
+Dla ka¿dego incydentu przechowywana jest pe³na historia. Rysunek \ref{rys:kartaIncydentu_historia} przedstawia obszar z histori¹ incydentu. W tym miejscu widoczna jest ka¿da zmiana. Przy zmianie atrybutu prezentowana jest stara oraz nowa wartoœæ. Dziêki temu, ka¿dy serwisant zajmuj¹cy siê danym incydentem ma mo¿liwoœæ podejrzenia wszystkich czynnoœci dokonanych w przesz³oœci.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/app/kartaIncydentu_historia.png}
+	\caption{Karta incydentu - historia}
+	\label{rys:kartaIncydentu_historia}
+\end{figure}
+
+\subsection{Dodanie problemu}
+
+W trakcie analizy incydentu mo¿e siê okazaæ, ¿e incydent zwi¹zany jest z istnieniem problemu. Na karcie incydentu serwisant ma mo¿liwoœæ dodania nowego problemu, co widoczne jest na rysunku: \ref{rys:kartaIncydentu_dodanieProblemu}. 
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[width=1.0\textwidth]{img/app/kartaIncydentu_dodanieProblemu.png}
+	\caption{Karta incydentu - dodanie problemu}
+	\label{rys:kartaIncydentu_dodanieProblemu}
+\end{figure}
+
+Dodanie problemu w taki sposób spowoduje jego automatyczne powi¹zanie z~incydentem. Bêdzie to widoczne na karcie problemu (rysunek: \ref{rys:kartaProblemu_incydenty}).
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[width=1.0\textwidth]{img/app/kartaProblemu_incydenty.png}
+	\caption{Karta problemu - powi¹zane incydenty}
+	\label{rys:kartaProblemu_incydenty}
+\end{figure}
+
+Istnieje równie¿ mo¿liwoœæ przypisania nowych incydentów do problemu, jak równie¿ usuniêcia przypisania, w przypadku pope³nienia b³êdu.
+
+\subsection{Karta problemu}
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[width=1.0\textwidth]{img/app/kartaProblemu_podstawowe.png}
+	\caption{Karta problemu - dane podstawowe}
+	\label{rys:kartaProblemu_podstawowe}
+\end{figure}
+
+
+Karta problemu zawiera wszystkie dane zwi¹zane z problemem. Jest to widok bardzo podobny do karty incydentu. Tutaj równie¿ dostêpne s¹ podstawowe dane dotycz¹ce problemu: identyfikator problemu, priorytet, status, data zg³oszenia oraz data zamkniêcia. Widoczne s¹ one na rysunku \ref{rys:kartaProblemu_podstawowe}.
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[width=1.0\textwidth]{img/app/kartaProblemu_szczegoly.png}
+	\caption{Karta problemu - dane szczegó³y}
+	\label{rys:kartaProblemu_szczegoly}
+\end{figure}
+
+Ponadto dostêpne s¹ szczegó³owe informacje dotycz¹ce problemu (rysunek \ref{rys:kartaProblemu_szczegoly}). W~tym miejscu mo¿na dokonaæ edycji niektórych danych podstawowych: priorytetu, statusu oraz danych dodatkowych: wp³ywu, pilnoœci, kategorii, serwisanta oraz grupy wsparcia.
+
+\subsection{Analiza problemu}
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[width=1.0\textwidth]{img/app/kartaProblemu_analiza.png}
+	\caption{Karta problemu - analiza}
+	\label{rys:kartaProblemu_analiza}
+\end{figure}
+
+Ka¿dy problem powinien zostaæ dok³adnie przeanalizowany, aby móc zidentyfikowaæ jego symptomy, okreœliæ szczegó³owy wp³yw na biznes oraz ustaliæ g³ówn¹ przyczynê jego wyst¹pienia (rysunek \ref{rys:kartaProblemu_analiza}).
+
+\subsection{Rozwi¹zanie tymczasowe}
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[width=1.0\textwidth]{img/app/kartaProblemu_rozwiazanie.png}
+	\caption{Karta problemu - analiza}
+	\label{rys:kartaProblemu_rozwiazanie}
+\end{figure}
+
+W trakcie analizy problemu mo¿e zostaæ znalezione rozwi¹zanie tymczasowe lub rozwi¹zanie sta³e. Na karcie problemu istnieje mo¿liwoœæ dodania rozwi¹zania dla~problemu, co pokazuje rysunek \ref{rys:kartaProblemu_rozwiazanie}. Po wybraniu jednej z opcji zostanie wyœwietlony formularz do uzupe³nienia szczegó³ów rozwi¹zania: tematu oraz opisu.
+
+
+W przypadku, gdy istnieje rozwi¹zanie tymczasowe, mo¿na dodaæ nowy znany b³¹d. Ta czynnoœæ mo¿e zostaæ wykonana tylko przez mened¿era problemów, poprzez zaznaczenie opcji widocznej na rysunku \ref{rys:kartaProblemu_znanyBlad}.
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics{img/app/kartaProblemu_znanyBlad.png}
+	\caption{Karta problemu - znany b³¹d}
+	\label{rys:kartaProblemu_znanyBlad}
+\end{figure}
+
+Znane b³êdy s¹ dostêpne w KEDB. W aplikacji jest dostêpna funkcjonalnoœæ wyszukiwania znanych b³êdów (rysunek: \ref{rys:kedb}). 
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[width=1.0\textwidth]{img/app/kedb.png}
+	\caption{Wyszukiwanie znanych b³êdów}
+	\label{rys:kedb}
+\end{figure}
+
+\subsection{Rozwi¹zanie incydentu}
+
+Rozwi¹zanie tymczasowe znalezione w trakcie analizy problemu, mo¿e zostaæ wykorzystane do rozwi¹zania incydentu. W aplikacji, w celu rozwi¹zania incydentu, nale¿y zmieniæ status incydentu na rozwi¹zany oraz podaæ treœæ rozwi¹zania, co jest pokazane na rysunku: \ref{rys:kartaIncydentu_rozwiazanie}.
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[width=1.0\textwidth]{img/app/kartaIncydentu_rozwiazanie.png}
+	\caption{Karta incydentu - rozwi¹zanie}
+	\label{rys:kartaIncydentu_rozwiazanie}
+\end{figure}
+
+\subsection{Zamkniêcie incydentu}
+
+Po wdro¿eniu rozwi¹zania, nale¿y wys³aæ zapytanie do klienta, czy wszystko funkcjonujê prawid³owo. Rysunek \ref{rys:kartaIncydentu_zglaszajacy} przedstawia szczegó³owe dane o zg³aszaj¹cym, miêdzy innymi znajduje siê tam lista telefonów oraz adres e-mail.
+
+\begin{figure}[!ht]
+  \centering
+\includegraphics[width=1.0\textwidth]{img/app/kartaIncydentu_zglaszajacy.png}
+	\caption{Karta incydentu - szczegó³y zg³aszaj¹cego}
+	\label{rys:kartaIncydentu_zglaszajacy}
+
+\end{figure}
+
+Po otrzymaniu pozytywnej odpowiedzi mo¿na zamkn¹æ incydent. Czynnoœæ ta dokonywana jest w podobny sposób jak rozwi¹zanie, co zosta³o pokazane na~rysunku: \ref{rys:kartaIncydentu_rozwiazanie}, wystarczy zmieniæ status incydentu na zamkniêty.
+
+\section{Podsumowanie}
+Zrealizowany fragment systemu dotyczy procesów zarz¹dzania incydentami oraz~zarz¹dzania problemami. W ramach procesu zarz¹dzania incydentami uda³o siê zrealizowaæ funkcjonalnoœci zg³oszenia nowego incydentu, przydzielania incydentów, wyszukiwania incydentów, dodawania komentarzy, które umo¿liwiaj¹ komunikacjê pomiêdzy pracownikiem technicznym a klientem us³ugi. Dla ka¿dego incydentu przechowywana jest pe³na historia, co umo¿liwia szybsze przyswojenie nowym pracownikom. Zosta³o zaprojektowane oraz zaimplementowane rozwi¹zanie dla~eskalacji: sygna³y. Ka¿da organizacja ma mo¿liwoœæ okreœlenia regu³ eskalacji dla w³asnych potrzeb bez ingerencji programisty.
+W ramach procesu zarz¹dzania problemami zrealizowano funkcjonalnoœci dodawania nowych problemów, powi¹zania problemu z list¹ incydentów, dodania rozwi¹zania problemu (tymczasowego oraz sta³ego) oraz dodawania znanych b³êdów, które dostêpne s¹ w KEDB. Dla~obu procesów zosta³y zrealizowane przyk³adowe raporty. 
+
+
+W zrealizowanym fragmencie systemu brakuje powi¹zania z procesem zarz¹dzania konfiguracj¹. W~trakcie analizy incydentu warto skorzystaæ z~CMDB w~celu okreœlenia wp³ywu incydentu oraz zidentyfikowania przyczyny jego powstania.
+W systemie brakuje równie¿ mo¿liwoœci zg³oszenia RFC, poniewa¿ rozwi¹zanie problemu, czêsto zwi¹zane jest z dokonaniem zmiany w infrastrukturze IT. W~tej pracy zrezygnowano z wy¿ej wymienionych funkcjonalnoœci, poniewa¿ s¹ one tematem pracy dyplomowej in¿ynierskiej Adriana Wiœniewskiego. 
+
+
+Kolejnym problemem systemu jest automatyzacja. Nowoczesne systemy \linebreak
+Service Desk automatycznie przydzielaj¹ zg³oszenia dla serwisantów. Niektóre z nich uwzglêdniaj¹ przy tym urlopy serwisantów oraz ich obci¹¿enie.
