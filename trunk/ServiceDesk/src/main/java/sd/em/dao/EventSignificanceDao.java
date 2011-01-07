@@ -1,8 +1,8 @@
 package sd.em.dao;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.em.domain.EventSignificance;
 
-public interface EventSignificanceDao extends DictionaryPropertyDao<EventSignificance> {
+public interface EventSignificanceDao extends DictionaryDao<EventSignificance, String> {
 
 }

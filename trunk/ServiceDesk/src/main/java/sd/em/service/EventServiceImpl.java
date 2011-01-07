@@ -48,6 +48,7 @@ public class EventServiceImpl implements EventService {
         this.employeeService = employeeService;
     }
 
+    @Override
     public void add(Event event, boolean addIncident) {
         if (addIncident) {
             Incident incident = new Incident();
@@ -62,19 +63,23 @@ public class EventServiceImpl implements EventService {
         eventDao.save(event);
     }
 
+    @Override
     public void addAll(List<Event> event) {
         // TODO Auto-generated method stub
     }
 
+    @Override
     public List<Event> search(EventSearchCriteria searchCriteria) {
         return eventDao.search(searchCriteria);
     }
 
+    @Override
     public List<EventSignificance> getAllSignificanceTypes() {
-        return eventTypeDao.fetchAll();
+        return eventTypeDao.getAll();
     }
 
-    public Event getById(Integer id) {
-        return eventDao.getById(id);
+    @Override
+    public Event get(Integer id) {
+        return eventDao.get(id);
     }
 }

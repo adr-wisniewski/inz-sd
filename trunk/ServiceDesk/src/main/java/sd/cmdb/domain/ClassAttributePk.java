@@ -8,6 +8,10 @@ package sd.cmdb.domain;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 /**
  *
@@ -18,6 +22,15 @@ public class ClassAttributePk implements Serializable {
     private Integer classId;
     private Integer attributeNo;
 
+    public ClassAttributePk() {
+        // empty
+    }
+
+    public ClassAttributePk(Integer classId, Integer attributeNo) {
+        this.classId = classId;
+        this.attributeNo = attributeNo;
+    }
+
     @Column(name = "CLASS_ID", precision = 10)
     public Integer getClassId() {
         return classId;
@@ -27,6 +40,8 @@ public class ClassAttributePk implements Serializable {
         this.classId = classId;
     }
 
+    @SequenceGenerator(name = "C2_CLASS_ATTRIBUTES_SEQ", sequenceName = "C2_CLASS_ATTRIBUTES_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "C2_CLASS_ATTRIBUTES_SEQ")
     @Column(name = "ATTRIBUTE_NO", precision = 10)
     public Integer getAttributeNo() {
         return attributeNo;

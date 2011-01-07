@@ -19,7 +19,7 @@ public interface EmployeeService {
 	 * @param employeeId identyfikator pracownika
 	 * @return pracownik
 	 */
-	public Employee findById(Integer employeeId);
+	public Employee get(Integer employeeId);
 	
 	/**
 	 * Wyszukuje pracownikow po kryterium

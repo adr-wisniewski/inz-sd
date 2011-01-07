@@ -27,40 +27,25 @@
     </ui:propertyList>
 
     <p class="buttons">
-        <ui:actionButton label="edit.label" cssClass="edit">
-            <jsp:attribute name="action">
-                <spring:url value="/cmdb/item/class/{id}/edit">
-                    <spring:param name="id">
-                        ${itemClass.id}
-                    </spring:param>
-                </spring:url>
-            </jsp:attribute>
-        </ui:actionButton>
-
-        <ui:actionButton label="delete.label" cssClass="delete">
-           <jsp:attribute name="action">
-                <spring:url value="/cmdb/item/class/{id}/delete">
-                    <spring:param name="id">
-                        ${itemClass.id}
-                    </spring:param>
-                </spring:url>
-            </jsp:attribute>
-        </ui:actionButton>
+        <ui:actionButton label="edit.label" 
+                         action="/cmdb/item/class/${itemClass.id}/edit"
+                         cssClass="edit"/>
+            
+        <ui:actionButton label="delete.label" 
+                         action="/cmdb/item/class/${itemClass.id}/delete"
+                         cssClass="delete"/>
     </p>
 </ui:panel>
 
 <ui:panel caption="cmdb.item.class.attributes">
-    <cmdb:attributeList list="${itemClass.attributes}" />
+    <cmdb:attributeList list="${itemClass.attributes}" 
+        editUrl="/cmdb/class/${itemClass.id}/attribute/{id}/edit"
+        deleteUrl="/cmdb/class/${itemClass.id}/attribute/{id}/delete" />
+    
     <p class="buttons">
-         <ui:actionButton label="add.label" cssClass="add">
-                <jsp:attribute name="action">
-                    <spring:url value="/cmdb/class/{id}/attribute/add">
-                        <spring:param name="id">
-                            ${itemClass.id}
-                        </spring:param>
-                    </spring:url>
-                </jsp:attribute>
-        </ui:actionButton>
+        <ui:actionButton label="add.label" 
+                         action="/cmdb/class/${itemClass.id}/attribute/add"
+                         cssClass="add" />
     </p>
 </ui:panel>
 

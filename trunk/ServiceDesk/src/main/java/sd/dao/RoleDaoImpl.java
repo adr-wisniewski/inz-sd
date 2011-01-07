@@ -7,10 +7,10 @@ import sd.domain.Role;
 
 @Repository
 @Transactional
-public class RoleDaoImpl extends GenericHibernateDao<Role> implements RoleDao {
+public class RoleDaoImpl extends GenericHibernateDao<Role,String> implements RoleDao {
 	
 	public RoleDaoImpl() {
-		super(Role.class);
+		super(Role.class,String.class);
 	}
 
 	public Role findByCode(String roleCode) {

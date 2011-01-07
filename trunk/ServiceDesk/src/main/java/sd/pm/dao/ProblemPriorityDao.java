@@ -3,7 +3,7 @@
  */
 package sd.pm.dao;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.pm.domain.ProblemPriority;
 
 /** 
@@ -12,5 +12,5 @@ import sd.pm.domain.ProblemPriority;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public interface ProblemPriorityDao extends DictionaryPropertyDao<ProblemPriority> {
+public interface ProblemPriorityDao extends DictionaryDao<ProblemPriority, String> {
 }

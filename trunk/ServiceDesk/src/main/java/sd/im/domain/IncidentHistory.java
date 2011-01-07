@@ -1,5 +1,6 @@
 package sd.im.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -11,15 +12,17 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 import sd.domain.Employee;
+import sd.infrastructure.domain.DomainObject;
 import sd.scm.domain.Service;
 
 @Entity
 @Table(name = "INCIDENTS_HISTORY")
 @NamedQueries({
     @NamedQuery(name = "Incident.history", query = "SELECT h FROM IncidentHistory h WHERE h.incidentId = ? ORDER BY h.changeDate")})
-public class IncidentHistory {
+public class IncidentHistory implements DomainObject<Integer>, Serializable {
 	@Id
 	@Column(name = "HISTORY_ID")
 	private Integer id;
@@ -29,6 +32,7 @@ public class IncidentHistory {
 	private Employee employee;
     
 	@Column(name = "CHANGE_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
 	private Date changeDate;
 	
 	@Column(name = "INCIDENT_ID")
@@ -39,6 +43,7 @@ public class IncidentHistory {
 	private IncidentCategory category;
 
 	@Column(name = "CLOSURE_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
 	private Date closureDate;
 
 	@Column(name = "DESCRIPTION")
@@ -56,6 +61,7 @@ public class IncidentHistory {
 	private String resolution;
 
 	@Column(name = "RESOLUTION_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
 	private Date resolutionDate;
 
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -78,6 +84,7 @@ public class IncidentHistory {
 	private Employee supportGroupMember;
 
 	@Column(name = "TARGET_RESOLUTION_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
 	private Date targetResolutionDate;
 
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -109,6 +116,7 @@ public class IncidentHistory {
 		return description;
 	}
 
+        @Override
 	public Integer getId() {
 		return id;
 	}
@@ -169,6 +177,7 @@ public class IncidentHistory {
 		this.description = description;
 	}
 
+    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

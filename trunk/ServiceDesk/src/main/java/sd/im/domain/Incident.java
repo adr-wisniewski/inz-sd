@@ -3,6 +3,7 @@
  */
 package sd.im.domain;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
@@ -23,11 +24,13 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 import sd.domain.Comment;
 import sd.domain.Employee;
 import sd.em.domain.Event;
 import sd.event.domain.IEvent;
+import sd.infrastructure.domain.DomainObject;
 import sd.scm.domain.Service;
 
 /** 
@@ -39,8 +42,8 @@ import sd.scm.domain.Service;
 @Entity
 @Table(name = "INCIDENTS")
 @NamedQueries({
-    @NamedQuery(name = "Incident.findById", query = "SELECT i FROM Incident i WHERE i.id = ?")})
-public class Incident implements IEvent {
+    @NamedQuery(name = "Incident.get", query = "SELECT i FROM Incident i WHERE i.id = ?")})
+public class Incident implements DomainObject<Integer>, IEvent, Serializable {
 
     /**
      * <!-- begin-UML-doc -->
@@ -56,6 +59,7 @@ public class Incident implements IEvent {
     /* (non-Javadoc)
      * @see sd.im.domain.Event#getId()
      */
+    @Override
     public Integer getId() {
         // begin-user-code
         return id;
@@ -65,6 +69,7 @@ public class Incident implements IEvent {
     /* (non-Javadoc)
      * @see sd.im.domain.Event#setId(java.lang.Integer)
      */
+    @Override
     public void setId(Integer id) {
         // begin-user-code
         this.id = id;
@@ -169,6 +174,7 @@ public class Incident implements IEvent {
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
     @Column(name = "CREATION_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date creationDate;
 
     /**
@@ -186,6 +192,7 @@ public class Incident implements IEvent {
     /* (non-Javadoc)
      * @see sd.im.domain.Event#setCreationDate(java.util.Date)
      */
+    @Override
     public void setCreationDate(Date creationDate) {
         // begin-user-code
         this.creationDate = creationDate;
@@ -302,6 +309,7 @@ public class Incident implements IEvent {
      *
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
+    @Override
     public Employee getAuthor() {
         // begin-user-code
         return author;
@@ -314,12 +322,14 @@ public class Incident implements IEvent {
      *
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
+    @Override
     public void setAuthor(Employee author) {
         // begin-user-code
         this.author = author;
         // end-user-code
     }
     @Column(name = "RESOLUTION_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date resolutionDate;
 
     public Date getResolutionDate() {
@@ -341,6 +351,7 @@ public class Incident implements IEvent {
     /* (non-Javadoc)
      * @see sd.im.domain.Event#getComments()
      */
+    @Override
     public List<Comment> getComments() {
         // begin-user-code
         return comments;
@@ -350,6 +361,7 @@ public class Incident implements IEvent {
     /* (non-Javadoc)
      * @see sd.im.domain.Event#setComments(java.util.Set)
      */
+    @Override
     public void setComments(List<Comment> comments) {
         // begin-user-code
         this.comments = comments;
@@ -374,6 +386,7 @@ public class Incident implements IEvent {
     /* (non-Javadoc)
      * @see sd.im.domain.Event#addComment(sd.domain.Comment)
      */
+    @Override
     public void addComment(Comment comment) {
         comment.setIncident(this);
         comments.add(comment);
@@ -480,6 +493,7 @@ public class Incident implements IEvent {
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
     @Column(name = "CLOSURE_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date closureDate;
 
     /**
@@ -570,6 +584,7 @@ public class Incident implements IEvent {
         // end-user-code
     }
     @Column(name = "TARGET_RESOLUTION_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date targetResolutionDate;
 
     public Date getTargetResolutionDate() {

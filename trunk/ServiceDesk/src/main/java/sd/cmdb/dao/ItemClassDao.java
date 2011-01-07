@@ -5,26 +5,19 @@
 
 package sd.cmdb.dao;
 
-import java.io.Serializable;
 import java.util.List;
 import sd.cmdb.domain.ItemClass;
 import sd.cmdb.domain.helper.ItemClassCriteria;
-import sd.tree.HierarchyDao;
+import sd.infrastructure.dao.CrudDao;
+import sd.infrastructure.dao.HierarchyDao;
 
 /**
  *
  * @author Adrian
  */
-public interface ItemClassDao extends HierarchyDao<ItemClass>
+public interface ItemClassDao extends CrudDao<ItemClass, Integer>, HierarchyDao<ItemClass, Integer>
 {
-    public List<ItemClass> getAll();
-    public ItemClass       getById(Integer id);
     public ItemClass       getByName(String name);
     public List<ItemClass> searchByCriteria(ItemClassCriteria criteria);
-
-    public void save(ItemClass itemClass);
-    public void update(ItemClass itemClass);
-    public void delete(ItemClass itemClass);
-    public void evict(ItemClass itemClass);
 }
 

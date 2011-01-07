@@ -1,5 +1,6 @@
 package sd.rf.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -9,13 +10,14 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import sd.dictionary.DictionaryProperty;
-import sd.tree.HierarchyItem;
+import sd.infrastructure.domain.HierarchicalDomainObject;
 
 @Entity
 @Table(name = "CATEGORIES_RF")
-public class RequestCategory implements DictionaryProperty, HierarchyItem {
+public class RequestCategory implements DictionaryProperty<String>, HierarchicalDomainObject<String>, Serializable {
 	@Id    
     @Column(name = "CATEGORY_CODE")
 	private String code;
@@ -29,6 +31,7 @@ public class RequestCategory implements DictionaryProperty, HierarchyItem {
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="category")
 	private List<RequestAttributeType> attributeTypes;
 	
+    @Override
 	public String getCode() {
 		return code;
 	}
@@ -37,6 +40,7 @@ public class RequestCategory implements DictionaryProperty, HierarchyItem {
 		this.code = code;
 	}
 
+    @Override
 	public String getName() {
 		return name;
 	}
@@ -53,10 +57,17 @@ public class RequestCategory implements DictionaryProperty, HierarchyItem {
 		this.attributeTypes = attributeTypes;
 	}
 
+	@Override
 	public String getId() {
 		return code;
 	}
 
+        @Override
+        public void setId(String code) {
+            this.code = code;
+        }
+
+    @Override
 	public String getParentId() {
 		return parentCode;
 	}

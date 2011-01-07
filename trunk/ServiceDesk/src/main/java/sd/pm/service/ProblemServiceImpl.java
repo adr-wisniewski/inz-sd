@@ -173,8 +173,9 @@ public class ProblemServiceImpl extends GenericEventService<Problem, ProblemDao,
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<ProblemCategory> getAllCategories() {
-		return problemCategoryDao.fetchAll();
+		return problemCategoryDao.getAll();
 	}
 
 	/** 
@@ -183,8 +184,9 @@ public class ProblemServiceImpl extends GenericEventService<Problem, ProblemDao,
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<ProblemStatus> getAllStatuses() {
-		return problemStatusDao.fetchAll();
+		return problemStatusDao.getAll();
 	}
 
 	/** 
@@ -193,8 +195,9 @@ public class ProblemServiceImpl extends GenericEventService<Problem, ProblemDao,
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<ProblemUrgency> getAllUrgencies() {
-		return problemUrgencyDao.fetchAll();
+		return problemUrgencyDao.getAll();
 	}
 
 	/** 
@@ -203,8 +206,9 @@ public class ProblemServiceImpl extends GenericEventService<Problem, ProblemDao,
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<ProblemImpact> getAllImpacts() {
-		return problemImpactDao.fetchAll();
+		return problemImpactDao.getAll();
 	}
 
 	/** 
@@ -213,12 +217,14 @@ public class ProblemServiceImpl extends GenericEventService<Problem, ProblemDao,
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<ProblemPriority> getAllPriorities() {
-		return problemPriorityDao.fetchAll();
+		return problemPriorityDao.getAll();
 	}
 	
+    @Override
 	public List<SupportGroup> getAllGroups() {
-		return supportGroupDao.fetchAll();
+		return supportGroupDao.getAll();
 	}
 	
 	/** 
@@ -227,6 +233,7 @@ public class ProblemServiceImpl extends GenericEventService<Problem, ProblemDao,
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public void addSolution(Problem problem, Solution solution) {
 		problem.addSolution(solution);
 		solution.setCreationDate(new Date());
@@ -241,6 +248,7 @@ logger.info(solution.toString());
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public void associate(Problem problem, Set<String> incidentIds) {
 		//Set<Incident> incidents = new HashSet<Incident>();
 		for(String s : incidentIds) {
@@ -259,17 +267,20 @@ logger.info(solution.toString());
 		
 	}
 
+    @Override
 	public void deleteIncident(Problem problem, Integer incidentId) {
 		problem.removeIncident(incidentService.getById(incidentId));
 		eventDao.save(problem);
 	}
 	
+    @Override
 	public void add(Problem problem) {
 		problem.setStatus(ProblemStatus.OPEN);
 		
 		super.add(problem);
 	}
 	
+    @Override
 	public void edit(Problem problem) {
 		if(problem.getStatus().equals(ProblemStatus.CLOSED)) {
 			problem.setClosureDate(new Date());
@@ -278,6 +289,7 @@ logger.info(solution.toString());
 		super.edit(problem);
 	}
 
+    @Override
 	public List<KnownError> search(KnownErrorSearchCriteria searchCriteria) {
 		return knownErrorDao.search(searchCriteria);
 	}

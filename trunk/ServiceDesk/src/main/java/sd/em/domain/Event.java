@@ -1,5 +1,6 @@
 package sd.em.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -16,46 +17,52 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 import sd.im.domain.Incident;
+import sd.infrastructure.domain.DomainObject;
 
 @Entity
 @Table(name="EVENTS")
-public class Event {
+public class Event implements DomainObject<Integer>, Serializable{
 	@Id
 	@SequenceGenerator(name = "event_seq", sequenceName = "event_id_seq")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "event_seq")
-    @Column(name = "EVENT_ID")
+        @Column(name = "EVENT_ID")
 	private Integer id;
 	
 	@Column(name = "CREATION_DATE")
+        @Temporal(javax.persistence.TemporalType.DATE)
 	private Date creationDate;
 	
 	@Column(name = "SUBJECT")
 	private String subject;
 
 	@Column(name = "EVENT_DATE")
+        @Temporal(javax.persistence.TemporalType.DATE)
 	private Date eventDate;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="CATEGORY_CODE")
+        @JoinColumn(name="CATEGORY_CODE")
 	private EventCategory category;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="SIGNIFICANCE_CODE")
+        @JoinColumn(name="SIGNIFICANCE_CODE")
 	private EventSignificance significance;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="INCIDENT_ID")
+        @JoinColumn(name="INCIDENT_ID")
 	private Incident incident; 
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="event")
 	private List<EventParameter> parameters = new LinkedList<EventParameter>();
 	
+        @Override
 	public Integer getId() {
 		return id;
 	}
 
+        @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

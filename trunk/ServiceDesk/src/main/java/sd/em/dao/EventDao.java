@@ -6,7 +6,7 @@ import sd.em.app.EventSearchCriteria;
 import sd.em.domain.Event;
 
 public interface EventDao {
-	public Event getById(Integer id);
+	public Event get(Integer id);
 	
 	public void save(Event event);
 

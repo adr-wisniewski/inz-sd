@@ -3,13 +3,14 @@
  */
 package sd.pm.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import sd.dictionary.DictionaryProperty;
-import sd.tree.HierarchyItem;
+import sd.infrastructure.domain.HierarchicalDomainObject;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -19,7 +20,7 @@ import sd.tree.HierarchyItem;
  */
 @Entity
 @Table(name = "CATEGORIES_PM")
-public class ProblemCategory implements DictionaryProperty, HierarchyItem {
+public class ProblemCategory implements DictionaryProperty<String>, HierarchicalDomainObject<String>, Serializable {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -35,6 +36,7 @@ public class ProblemCategory implements DictionaryProperty, HierarchyItem {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public String getCode() {
 		// begin-user-code
 		return code;
@@ -67,6 +69,7 @@ public class ProblemCategory implements DictionaryProperty, HierarchyItem {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public String getName() {
 		// begin-user-code
 		return name;
@@ -120,9 +123,15 @@ public class ProblemCategory implements DictionaryProperty, HierarchyItem {
 		this.name = name;
 	}
 
+        @Override
 	public String getId() {
 		return code;
 	}
+
+        @Override
+        public void setId(String code) {
+            this.code = code;
+        }
 	
 	@Column(name="parent_category")
 	private String parentCode;
@@ -135,6 +144,7 @@ public class ProblemCategory implements DictionaryProperty, HierarchyItem {
 		this.parentCode = parentCode;
 	}
 
+    @Override
 	public String getParentId() {
 		return parentCode;
 	}

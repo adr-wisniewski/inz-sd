@@ -1,8 +1,8 @@
 package sd.signal.dao;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.signal.domain.SignalObjectType;
 
-public interface SignalObjectTypeDao extends DictionaryPropertyDao<SignalObjectType> {
+public interface SignalObjectTypeDao extends DictionaryDao<SignalObjectType, String> {
 
 }

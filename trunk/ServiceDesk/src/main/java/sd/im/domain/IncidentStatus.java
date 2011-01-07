@@ -3,6 +3,7 @@
  */
 package sd.im.domain;
 
+import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,7 +20,7 @@ import sd.dictionary.DictionaryProperty;
  */
 @Entity
 @Table(name = "STATUSES_IM")
-public class IncidentStatus implements DictionaryProperty {
+public class IncidentStatus implements DictionaryProperty<String>, Serializable {
 	/**
 	 * Status dla otwartego incydentu 
 	 */
@@ -51,6 +52,7 @@ public class IncidentStatus implements DictionaryProperty {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public String getCode() {
 		// begin-user-code
 		return code;
@@ -83,6 +85,7 @@ public class IncidentStatus implements DictionaryProperty {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public String getName() {
 		// begin-user-code
 		return name;
@@ -135,6 +138,16 @@ public class IncidentStatus implements DictionaryProperty {
 		this.code = code;
 		this.name = name;
 	}
+
+    @Override
+    public String getId() {
+        return getCode();
+    }
+
+    @Override
+    public void setId(String id) {
+        setCode(id);
+    }
 	
 	
 }

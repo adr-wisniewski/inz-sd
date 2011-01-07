@@ -3,6 +3,7 @@
  */
 package sd.im.domain;
 
+import java.io.Serializable;
 import sd.dictionary.DictionaryProperty;
 
 import javax.persistence.Basic;
@@ -19,7 +20,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "IMPACT_TYPES_IM")
-public class IncidentImpact implements DictionaryProperty {
+public class IncidentImpact implements DictionaryProperty<String>, Serializable {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -36,6 +37,7 @@ public class IncidentImpact implements DictionaryProperty {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public String getCode() {
 		// begin-user-code
 		return code;
@@ -68,6 +70,7 @@ public class IncidentImpact implements DictionaryProperty {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public String getName() {
 		// begin-user-code
 		return name;
@@ -120,4 +123,14 @@ public class IncidentImpact implements DictionaryProperty {
 			return false;
 		return true;
 	}
+
+    @Override
+    public String getId() {
+        return getCode();
+    }
+
+    @Override
+    public void setId(String id) {
+        setCode(id);
+    }
 }

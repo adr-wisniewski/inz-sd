@@ -1,5 +1,6 @@
 package sd.pm.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,10 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import sd.infrastructure.domain.DomainObject;
 
 @Entity
 @Table(name="KNOWN_ERRORS_V")
-public class KnownError {
+public class KnownError implements DomainObject<Integer>, Serializable {
 	@Id
 	@Column(name="PROBLEM_ID")
 	private Integer id;
@@ -31,10 +33,12 @@ public class KnownError {
 	@JoinColumn(name="CATEGORY_CODE")
 	private ProblemCategory category;
 
+        @Override
 	public Integer getId() {
 		return id;
 	}
 
+        @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

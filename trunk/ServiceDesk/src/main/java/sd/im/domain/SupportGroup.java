@@ -3,6 +3,7 @@
  */
 package sd.im.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -20,6 +21,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import sd.domain.Employee;
+import sd.infrastructure.domain.DomainObject;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -29,7 +31,7 @@ import sd.domain.Employee;
  */
 @Entity
 @Table(name = "SUPPORT_GROUPS")
-public class SupportGroup {
+public class SupportGroup implements DomainObject<Integer>, Serializable {
 	
 	@Id
 	@SequenceGenerator(name = "group_seq", sequenceName = "SUPPORT_GROUP_ID")
@@ -37,10 +39,12 @@ public class SupportGroup {
 	@Column(name="GROUP_ID")
 	private Integer id;
 	
+    @Override
 	public Integer getId() {
 		return id;
 	}
 
+    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

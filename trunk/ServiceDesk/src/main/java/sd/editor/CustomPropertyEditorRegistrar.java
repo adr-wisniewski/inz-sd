@@ -8,9 +8,6 @@ import org.springframework.beans.PropertyEditorRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Component;
-import sd.cmdb.dao.ItemClassDao;
-import sd.cmdb.domain.ItemClass;
-import sd.cmdb.editor.ItemClassEditor;
 
 import sd.dao.EmployeeDao;
 import sd.dao.RoleDao;
@@ -139,8 +136,6 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
 	private SignalReceiverTypeDao signalReceiverTypeDao;
 	@Autowired
 	private ServiceDao serviceDao;
-        @Autowired
-        private ItemClassDao itemClassDao;
 	
 	public void setIncidentPriorityDao(IncidentPriorityDao incidentPriorityDao) {
 		this.incidentPriorityDao = incidentPriorityDao;
@@ -243,10 +238,6 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
 		this.serviceDao = serviceDao;
 	}
 
-        public void setItemClassDao(ItemClassDao itemClassDao) {
-		this.itemClassDao = itemClassDao;
-	}
-
         @Override
 	public void registerCustomEditors(PropertyEditorRegistry registry) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -284,7 +275,5 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
     	registry.registerCustomEditor(SignalReceiverType.class, new SignalReceiverTypeEditor( signalReceiverTypeDao ));
     	
     	registry.registerCustomEditor(Service.class, new ServiceEditor( serviceDao ));
-
-        registry.registerCustomEditor(ItemClass.class, new ItemClassEditor( itemClassDao ));
     }
 }

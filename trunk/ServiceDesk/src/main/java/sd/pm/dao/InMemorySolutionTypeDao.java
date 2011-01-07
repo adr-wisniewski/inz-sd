@@ -17,9 +17,13 @@ import sd.pm.domain.SolutionType;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public class InMemorySolutionTypeDao extends GenericInMemoryDao<SolutionType> implements
+public class InMemorySolutionTypeDao extends GenericInMemoryDao<SolutionType,String> implements
 		SolutionTypeDao {
-	
+
+    public InMemorySolutionTypeDao() {
+        super(SolutionType.class,String.class);
+    }
+
 	@Override
 	protected List<SolutionType> initValues() {
 		return Arrays.asList(

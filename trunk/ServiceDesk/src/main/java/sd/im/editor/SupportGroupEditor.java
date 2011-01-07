@@ -15,7 +15,7 @@ public class SupportGroupEditor extends PropertyEditorSupport{
 
 	public void setAsText(String text) {
 		try {
-			setValue(supportGroupDao.findById(Integer.parseInt(text)));
+			setValue(supportGroupDao.get(Integer.parseInt(text)));
 		}
 		catch(NumberFormatException e) {
 			setValue(null);

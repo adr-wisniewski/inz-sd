@@ -3,7 +3,7 @@
  */
 package sd.pm.dao;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.pm.domain.ProblemUrgency;
 
 /** 
@@ -12,5 +12,5 @@ import sd.pm.domain.ProblemUrgency;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public interface ProblemUrgencyDao extends DictionaryPropertyDao<ProblemUrgency> {
+public interface ProblemUrgencyDao extends DictionaryDao<ProblemUrgency, String> {
 }

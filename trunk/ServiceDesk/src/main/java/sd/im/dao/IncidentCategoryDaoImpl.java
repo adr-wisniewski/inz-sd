@@ -3,11 +3,14 @@
  */
 package sd.im.dao;
 
+import java.io.Serializable;
+import java.util.List;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import sd.dao.GenericHibernateDao;
 import sd.im.domain.IncidentCategory;
+import sd.infrastructure.domain.HierarchicalDomainObject;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -17,10 +20,9 @@ import sd.im.domain.IncidentCategory;
  */
 @Repository
 @Transactional
-public class IncidentCategoryDaoImpl extends GenericHibernateDao<IncidentCategory> implements IncidentCategoryDao {
+public class IncidentCategoryDaoImpl extends GenericHibernateDao<IncidentCategory,String> implements IncidentCategoryDao {
 
 	public IncidentCategoryDaoImpl() {
-		super(IncidentCategory.class);
+		super(IncidentCategory.class, String.class);
 	}
-	
 }

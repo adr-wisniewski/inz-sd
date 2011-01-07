@@ -1084,7 +1084,7 @@ INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.im.domain.Inc
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.im.domain.IncidentUrgency
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.im.domain.IncidentUrgency on table URGENCY_TYPES_IM
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.im.domain.Incident
-INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Incident.findById => SELECT i FROM Incident i WHERE i.id = ?
+INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Incident.get => SELECT i FROM Incident i WHERE i.id = ?
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.im.domain.Incident on table INCIDENTS
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.im.domain.SupportGroup
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.im.domain.SupportGroup on table SUPPORT_GROUPS
@@ -1094,7 +1094,7 @@ INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.im.domain.Inc
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.domain.Comment
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.domain.Comment on table COMMENTS
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.domain.Employee
-INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Employee.findById => SELECT e FROM Employee e WHERE e.id = ?
+INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Employee.get => SELECT e FROM Employee e WHERE e.id = ?
 INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Employee.findByLogin => SELECT e FROM Employee e WHERE e.login = ?
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.domain.Employee on table EMPLOYEES
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.domain.Role
@@ -1117,7 +1117,7 @@ INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.pm.domain.Pro
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.pm.domain.SolutionType
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.pm.domain.SolutionType on table SOLUTION_TYPES
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.pm.domain.Problem
-INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Problem.findById => SELECT p FROM Problem p WHERE p.id = ?
+INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Problem.get => SELECT p FROM Problem p WHERE p.id = ?
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.pm.domain.Problem on table PROBLEMS
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.pm.domain.Solution
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.pm.domain.Solution on table SOLUTIONS
@@ -6044,7 +6044,7 @@ INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.im.domain.Inc
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.im.domain.IncidentUrgency
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.im.domain.IncidentUrgency on table URGENCY_TYPES_IM
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.im.domain.Incident
-INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Incident.findById => SELECT i FROM Incident i WHERE i.id = ?
+INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Incident.get => SELECT i FROM Incident i WHERE i.id = ?
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.im.domain.Incident on table INCIDENTS
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.im.domain.SupportGroup
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.im.domain.SupportGroup on table SUPPORT_GROUPS
@@ -6054,7 +6054,7 @@ INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.im.domain.Inc
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.domain.Comment
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.domain.Comment on table COMMENTS
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.domain.Employee
-INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Employee.findById => SELECT e FROM Employee e WHERE e.id = ?
+INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Employee.get => SELECT e FROM Employee e WHERE e.id = ?
 INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Employee.findByLogin => SELECT e FROM Employee e WHERE e.login = ?
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.domain.Employee on table EMPLOYEES
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.domain.Role
@@ -6077,7 +6077,7 @@ INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.pm.domain.Pro
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.pm.domain.SolutionType
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.pm.domain.SolutionType on table SOLUTION_TYPES
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.pm.domain.Problem
-INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Problem.findById => SELECT p FROM Problem p WHERE p.id = ?
+INFO : org.hibernate.cfg.annotations.QueryBinder - Binding Named query: Problem.get => SELECT p FROM Problem p WHERE p.id = ?
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.pm.domain.Problem on table PROBLEMS
 INFO : org.hibernate.cfg.AnnotationBinder - Binding entity from annotated class: sd.pm.domain.Solution
 INFO : org.hibernate.cfg.annotations.EntityBinder - Bind entity sd.pm.domain.Solution on table SOLUTIONS

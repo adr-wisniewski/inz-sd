@@ -26,16 +26,13 @@ import sd.cmdb.validator.ItemClassValidator;
  * @author Adrian
  */
 @Controller
-@RequestMapping(value = "/cmdb/item/class")
+@RequestMapping(value = "/cmdb/item/class/*")
 @PreAuthorize("hasRole('CN_ITC_ADD')")
 @SessionAttributes(ItemClassAddController.MODEL_ITEMCLASS)
 public class ItemClassAddController extends BaseController {
     public static final String MODEL_ITEMCLASS = "itemClass";
     public static final String VIEW_ADD = "/cmdb/item/class/add";
     public static final String VIEW_FORM_EXPIRED = "/sd/formExpired";
-
-    @Autowired
-    private ItemClassValidator itemClassValidator;
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
@@ -54,18 +51,20 @@ public class ItemClassAddController extends BaseController {
     }
 
     @RequestMapping(value="/new", method = RequestMethod.POST)
-    public String saveNewInstance(
+    public String saveNewInstance(ModelMap map,
             @ModelAttribute(MODEL_ITEMCLASS) ItemClass itemClass,
             BindingResult bindingResult, 
             SessionStatus status) {
 
-        itemClassValidator.validate(itemClass, bindingResult);
-        if(bindingResult.hasErrors())
+        try {
+            classService.addItemClass(itemClass);
+            messageStorage.addMessage("cmdb.message.item.class.added", itemClass.getName());
+            status.setComplete();
+            return String.format("redirect:/cmdb/item/class/%d", itemClass.getIdentifier());
+        }
+        catch(BusinessConstraintException ex) {
+            map.addAllAttributes(results.getModel());
             return "prg:/cmdb/item/class/new";
-
-        administrationService.addItemClass(itemClass);
-        messageStorage.addMessage("cmdb.message.item.class.added", itemClass.getName());
-        status.setComplete();
-        return String.format("redirect:/cmdb/item/class/%d", itemClass.getIdentifier());
+        }
     }
 }

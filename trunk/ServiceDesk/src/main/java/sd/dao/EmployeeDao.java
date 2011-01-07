@@ -12,7 +12,7 @@ public interface EmployeeDao {
 	 * @param employeeId id pracownika
 	 * @return pracownik
 	 */
-	public Employee findById(Integer employeeId);
+	public Employee get(Integer employeeId);
 	
 	/**
 	 * Wyszukuje pracownika po loginie

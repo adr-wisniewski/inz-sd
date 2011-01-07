@@ -15,7 +15,7 @@ public interface SignalGeneratorService {
 	
 	public List<Signal> getSignals(SignalGenerator g);
 	
-	public List<SignalGenerator> fetchAll();
+	public List<SignalGenerator> getAll();
 
 	public SignalGenerator getById(Integer generatorId);
 

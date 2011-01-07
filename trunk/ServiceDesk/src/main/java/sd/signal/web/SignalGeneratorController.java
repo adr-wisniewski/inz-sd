@@ -76,7 +76,7 @@ public class SignalGeneratorController {
 
 	@RequestMapping(value=LIST_GENERATOR_ACTION, method=RequestMethod.GET)
 	public String listGenerators(ModelMap model) {
-		model.addAttribute("generators", signalGeneratorService.fetchAll());
+		model.addAttribute("generators", signalGeneratorService.getAll());
 		return LIST_GENERATOR_VIEW;
 	}
 

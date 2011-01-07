@@ -40,11 +40,11 @@ public class InMemoryProblemDao implements ProblemDao {
 
 	/** 
 	 * /* (non-Javadoc)
-	 *  * @see ProblemDao#fetchAll()
+	 *  * @see ProblemDao#getAll()
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public List<Problem> fetchAll() {
+	public List<Problem> getAll() {
 		return problems;
 	}
 

@@ -1,5 +1,6 @@
 package sd.signal.domain;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -13,12 +14,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 import org.hibernate.annotations.Type;
+import sd.infrastructure.domain.DomainObject;
 
 @Entity
 @Table(name="SIGNAL_GENERATORS")
-public class SignalGenerator {
+public class SignalGenerator implements DomainObject<Integer>, Serializable {
 	@Column(name="CRITERION")
 	private String criterion;
 	
@@ -39,6 +42,7 @@ public class SignalGenerator {
 	private Integer id;
 	
 	@Column(name="LAST_RUN_DATE")
+        @Temporal(javax.persistence.TemporalType.DATE)
 	private Date lastRunDate;
 	
 	@Column(name="LAST_RUN_STATUS")
@@ -76,6 +80,7 @@ public class SignalGenerator {
 		return frequency;
 	}
 
+    @Override
 	public Integer getId() {
 		return id;
 	}
@@ -146,6 +151,7 @@ public class SignalGenerator {
 		this.frequency = frequency;
 	}
 
+    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

@@ -17,10 +17,10 @@ import sd.pm.domain.ProblemUrgency;
  */
 @Repository
 @Transactional
-public class ProblemUrgencyDaoImpl extends GenericHibernateDao<ProblemUrgency> implements ProblemUrgencyDao {
+public class ProblemUrgencyDaoImpl extends GenericHibernateDao<ProblemUrgency,String> implements ProblemUrgencyDao {
 
 	public ProblemUrgencyDaoImpl() {
-		super(ProblemUrgency.class);
+		super(ProblemUrgency.class, String.class);
 	}
 
 }

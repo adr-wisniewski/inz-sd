@@ -1,5 +1,6 @@
 package sd.signal.domain;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import sd.dictionary.DictionaryProperty;
 
 @Entity
 @Table(name="SIGNAL_OBJECT_TYPES")
-public class SignalObjectType implements DictionaryProperty {
+public class SignalObjectType implements DictionaryProperty<String>, Serializable {
 	@Id
 	@Column(name="OBJECT_CODE")
 	private String code;
@@ -35,6 +36,7 @@ public class SignalObjectType implements DictionaryProperty {
 	@Column(name="DETAILS_URL")
 	private String detailsURL;
 	
+    @Override
 	public String getCode() {
 		return code;
 	}
@@ -67,6 +69,7 @@ public class SignalObjectType implements DictionaryProperty {
 		this.attributeTypes = attributeTypes;
 	}
 	
+    @Override
 	public String getName() {
 		return name;
 	}
@@ -89,4 +92,14 @@ public class SignalObjectType implements DictionaryProperty {
 				+ code + ", idColumnName=" + idColumnName + ", name=" + name
 				+ ", viewName=" + viewName + "]";
 	}
+
+    @Override
+    public String getId() {
+        return getCode();
+    }
+
+    @Override
+    public void setId(String id) {
+        setCode(id);
+    }
 }

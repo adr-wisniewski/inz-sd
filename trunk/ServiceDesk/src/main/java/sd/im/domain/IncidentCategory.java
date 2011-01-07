@@ -3,13 +3,14 @@
  */
 package sd.im.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import sd.dictionary.DictionaryProperty;
-import sd.tree.HierarchyItem;
+import sd.infrastructure.domain.HierarchicalDomainObject;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -19,7 +20,7 @@ import sd.tree.HierarchyItem;
  */
 @Entity
 @Table(name = "CATEGORIES_IM")
-public class IncidentCategory implements DictionaryProperty, HierarchyItem {	
+public class IncidentCategory implements DictionaryProperty<String>, HierarchicalDomainObject<String>, Serializable {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -123,9 +124,15 @@ public class IncidentCategory implements DictionaryProperty, HierarchyItem {
 	/**
 	 * 
 	 */
+        @Override
 	public String getId() {
 		return code;
 	}
+      
+        @Override
+        public void setId(String code) {
+            this.code = code;
+        }
 	
 	@Column(name="parent_category")
 	private String parentCode;

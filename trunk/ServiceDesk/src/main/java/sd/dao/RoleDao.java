@@ -1,9 +1,9 @@
 package sd.dao;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.domain.Role;
 
-public interface RoleDao extends DictionaryPropertyDao<Role> {
+public interface RoleDao extends DictionaryDao<Role, String> {
 	/**
 	 * @param roleCode kod roli
 	 * @return zwraca role na podstawie kodu

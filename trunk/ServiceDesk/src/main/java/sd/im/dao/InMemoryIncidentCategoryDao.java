@@ -19,8 +19,12 @@ import sd.im.domain.IncidentCategory;
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
 
-public class InMemoryIncidentCategoryDao extends GenericInMemoryDao<IncidentCategory> implements
-		IncidentCategoryDao {
+public class InMemoryIncidentCategoryDao extends GenericInMemoryDao<IncidentCategory, String> 
+        implements IncidentCategoryDao {
+
+        public InMemoryIncidentCategoryDao() {
+            super(IncidentCategory.class,String.class);
+        }
 
 	@Override
 	protected List<IncidentCategory> initValues() {
@@ -31,10 +35,5 @@ public class InMemoryIncidentCategoryDao extends GenericInMemoryDao<IncidentCate
 								new IncidentCategory("CAT2", "Software"),
 						}
 		);
-	}
-
-	public IncidentCategory findById(Serializable id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

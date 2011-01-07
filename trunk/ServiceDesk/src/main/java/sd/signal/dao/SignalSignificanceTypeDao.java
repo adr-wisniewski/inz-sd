@@ -1,8 +1,8 @@
 package sd.signal.dao;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.signal.domain.SignalSignificanceType;
 
-public interface SignalSignificanceTypeDao extends DictionaryPropertyDao<SignalSignificanceType> {
+public interface SignalSignificanceTypeDao extends DictionaryDao<SignalSignificanceType, String> {
 
 }

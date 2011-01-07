@@ -17,9 +17,13 @@ import sd.im.domain.IncidentSource;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public class InMemoryIncidentSourceDao extends GenericInMemoryDao<IncidentSource> implements
+public class InMemoryIncidentSourceDao extends GenericInMemoryDao<IncidentSource,String> implements
 		IncidentSourceDao {
-	
+    
+	public InMemoryIncidentSourceDao() {
+            super(IncidentSource.class,String.class);
+        }
+
 	@Override
 	protected List<IncidentSource> initValues() {
 		return Arrays.asList(

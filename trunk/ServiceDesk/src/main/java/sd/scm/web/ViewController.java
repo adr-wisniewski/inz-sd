@@ -33,7 +33,7 @@ public class ViewController {
 	
 	@RequestMapping(value = ACTION_NAME, method = RequestMethod.GET)
 	public String details(ModelMap map, @RequestParam("id") Integer serviceId) {
-		Service service = serviceService.findById(serviceId);
+		Service service = serviceService.get(serviceId);
 		map.addAttribute("service", service);
 
 		return VIEW_NAME;

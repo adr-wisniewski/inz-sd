@@ -9,6 +9,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -19,19 +20,21 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import sd.tree.HierarchyItem;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import sd.infrastructure.domain.HierarchicalDomainObject;
 
 /**
  *
  * @author Adrian
  */
-@Entity
+@Entity 
 @Table(name="C2_ITEM_CLASSES")
 @PrimaryKeyJoinColumn(name = "CLASS_ID")
 @NamedQueries(
     @NamedQuery(name="ItemClass.findByName", query="from ItemClass as clazz where clazz.name = :name")
 )
-public class ItemClass extends ElementClass implements HierarchyItem {
+public class ItemClass extends ElementClass implements HierarchicalDomainObject<Integer> {
     
     protected ItemClass parent;
     protected Set<ItemClass> children = new HashSet<ItemClass>();
@@ -67,15 +70,11 @@ public class ItemClass extends ElementClass implements HierarchyItem {
         this.children = children;
     }
 
-    @Override
-    @Transient
-    public String getId() {
-        return getIdentifier() != null ? getIdentifier().toString() : null;
-    }
+
 
     @Override
     @Transient
-    public String getParentId() {
+    public Integer getParentId() {
         return getParent() == null ? null : getParent().getId();
     }
 

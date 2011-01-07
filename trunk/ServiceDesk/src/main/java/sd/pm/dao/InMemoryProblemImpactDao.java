@@ -17,8 +17,12 @@ import sd.pm.domain.ProblemImpact;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public class InMemoryProblemImpactDao extends GenericInMemoryDao<ProblemImpact> implements ProblemImpactDao {
-	
+public class InMemoryProblemImpactDao extends GenericInMemoryDao<ProblemImpact,String> implements ProblemImpactDao {
+
+    public InMemoryProblemImpactDao() {
+        super(ProblemImpact.class,String.class);
+    }
+
 	@Override
 	protected List<ProblemImpact> initValues() {
 		return Arrays.asList(

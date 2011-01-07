@@ -6,59 +6,93 @@
 
 <tiles-definitions>
 	
-	<!-- Pages -->
-        <definition name="/cmdb/item/class" extends="standard-layout">
-            <put-attribute name="title" value="cmdb.title.item.class" />
-            <put-attribute name="body" value="/WEB-INF/views/cmdb/item/class.jsp" />
-	</definition>
+    <!-- Pages -->
+    <definition name="/cmdb/item/class" extends="standard-layout">
+        <put-attribute name="title" value="cmdb.title.item.class" />
+        <put-attribute name="body" value="/WEB-INF/views/cmdb/item/class.jsp" />
+    </definition>
 
-        <definition name="/cmdb/item/class/browse" extends="standard-layout">
-            <put-attribute name="title" value="cmdb.item.class.browse" />
-            <put-attribute name="body" value="/WEB-INF/views/cmdb/item/class/browse.jsp" />
-	</definition>
+    <definition name="/cmdb/item/class/browse" extends="standard-layout">
+        <put-attribute name="title" value="cmdb.item.class.browse" />
+        <put-attribute name="body" value="/WEB-INF/views/cmdb/item/class/browse.jsp" />
+    </definition>
 
-        <definition name="/cmdb/item/class/search" extends="standard-layout">
-            <put-attribute name="title" value="cmdb.item.class.search" />
-            <put-attribute name="body" value="/WEB-INF/views/cmdb/item/class/search.jsp" />
-	</definition>
+    <definition name="/cmdb/item/class/search" extends="standard-layout">
+        <put-attribute name="title" value="cmdb.item.class.search" />
+        <put-attribute name="body" value="/WEB-INF/views/cmdb/item/class/search.jsp" />
+    </definition>
 
-        <definition name="/cmdb/item/class/view" extends="standard-layout">
-            <put-attribute name="title" value="cmdb.item.class.view" />
-            <put-attribute name="title_args" value="${itemClass.name}" />
-            <put-attribute name="body" value="/WEB-INF/views/cmdb/item/class/view.jsp" />
-	</definition>
+    <definition name="/cmdb/item/class/view" extends="standard-layout">
+        <put-attribute name="title" value="cmdb.item.class.view" />
+        <put-attribute name="title_args" value="${itemClass.name}" />
+        <put-attribute name="body" value="/WEB-INF/views/cmdb/item/class/view.jsp" />
+    </definition>
 
-        <definition name="/cmdb/item/class/edit" extends="standard-layout">
-            <put-attribute name="title" value="cmdb.item.class.edit" />
-            <put-attribute name="title_args" value="${itemClass.name}" />
-            <put-attribute name="body">
-                <definition template="/WEB-INF/views/cmdb/item/class/edit.jsp">
-                    <put-attribute name="submitLabel" value="edit.label" />
-                    <put-attribute name="submitCssClass" value="editsubmit" />
-                </definition>
-            </put-attribute>
-	</definition>
+    <definition name="/cmdb/item/class/edit" extends="standard-layout">
+        <put-attribute name="title" value="cmdb.item.class.edit" />
+        <put-attribute name="title_args" value="${itemClass.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/cmdb/item/class/edit.jsp">
+                <put-attribute name="submitLabel" value="edit.label" />
+                <put-attribute name="submitCssClass" value="editsubmit" />
+            </definition>
+        </put-attribute>
+    </definition>
 
-        <definition name="/cmdb/item/class/add" extends="standard-layout">
-            <put-attribute name="title" value="cmdb.item.class.add" />
-            <put-attribute name="body">
-                <definition template="/WEB-INF/views/cmdb/item/class/edit.jsp">
-                    <put-attribute name="submitLabel" value="add.label" />
-                    <put-attribute name="submitCssClass" value="add" />
-                </definition>
-            </put-attribute>
-	</definition>
+    <definition name="/cmdb/item/class/add" extends="standard-layout">
+        <put-attribute name="title" value="cmdb.item.class.add" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/cmdb/item/class/edit.jsp">
+                <put-attribute name="submitLabel" value="add.label" />
+                <put-attribute name="submitCssClass" value="add" />
+            </definition>
+        </put-attribute>
+    </definition>
 
-        <definition name="/cmdb/item/class/delete" extends="standard-layout">
-            <put-attribute name="title" value="cmdb.item.class.delete" />
-            <put-attribute name="title_args" value="${itemClass.name}" />
-            <put-attribute name="body">
-                <definition template="/WEB-INF/views/cmdb/common/confirm.jsp">
-                    <put-attribute name="caption" value="confirm.action" />
-                    <put-attribute name="text" value="cmdb.item.class.delete.text" />
-                    <put-attribute name="text_args" value="${itemClass.name}" />
-                </definition>
-            </put-attribute>
-	</definition>
-	
+    <definition name="/cmdb/item/class/delete" extends="standard-layout">
+        <put-attribute name="title" value="cmdb.item.class.delete" />
+        <put-attribute name="title_args" value="${itemClass.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/cmdb/common/confirm.jsp">
+                <put-attribute name="caption" value="confirm.action" />
+                <put-attribute name="text" value="cmdb.item.class.delete.text" />
+                <put-attribute name="text_args" value="${itemClass.name}" />
+            </definition>
+        </put-attribute>
+    </definition>
+
+    <definition name="/cmdb/class/attribute/add" extends="standard-layout">
+        <put-attribute name="title" value="cmdb.class.attribute.add" />
+        <put-attribute name="title_args" value="${elementClass.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/cmdb/class/attribute/edit.jsp">
+                <put-attribute name="submitLabel" value="add.label" />
+                <put-attribute name="submitCssClass" value="add" />
+            </definition>
+        </put-attribute>
+    </definition>
+
+    <definition name="/cmdb/class/attribute/edit" extends="standard-layout">
+        <put-attribute name="title" value="cmdb.class.attribute.edit" />
+        <put-attribute name="title_args" value="${attribute.name}, ${elementClass.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/cmdb/class/attribute/edit.jsp">
+                <put-attribute name="submitLabel" value="edit.label" />
+                <put-attribute name="submitCssClass" value="editsubmit" />
+            </definition>
+        </put-attribute>
+    </definition>
+
+    <definition name="/cmdb/class/attribute/delete" extends="standard-layout">
+        <put-attribute name="title" value="cmdb.class.attribute.delete" />
+        <put-attribute name="title_args" value="${attribute.name}, ${elementClass.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/cmdb/common/confirm.jsp">
+                <put-attribute name="caption" value="confirm.action" />
+                <put-attribute name="text" value="cmdb.class.attribute.delete.text" />
+                <put-attribute name="text_args" value="${attribute.name}, ${elementClass.name}" />
+            </definition>
+        </put-attribute>
+    </definition>
+
 </tiles-definitions>

@@ -5,8 +5,6 @@
 
 package sd.cmdb.domain.helper;
 
-import org.hibernate.Criteria;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.util.StringUtils;
 
 /**
@@ -58,26 +56,6 @@ public class ItemClassCriteria {
 
     public Boolean getAbstraction() {
             return abstraction;
-    }
-
-    public void initCriteria(Criteria criteria) {
-        if(id != null)
-            criteria.add(Restrictions.eq("id", id));
-
-        if(StringUtils.hasText(parentName))
-        {
-            criteria.createAlias("parent", "p");
-            criteria.add(Restrictions.like("p.name", parentName));
-        }
-
-        if(StringUtils.hasText(name))
-            criteria.add(Restrictions.like("name", name));
-
-        if(StringUtils.hasText(description))
-            criteria.add(Restrictions.like("description", description));
-
-        if(abstraction != null)
-            criteria.add(Restrictions.eq("abstraction", abstraction));
     }
 
     public boolean isInitialized()

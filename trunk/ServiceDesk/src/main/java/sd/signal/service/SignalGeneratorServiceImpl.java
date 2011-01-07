@@ -40,7 +40,7 @@ public class SignalGeneratorServiceImpl implements SignalGeneratorService {
 
 	public List<SignalGenerator> getReadyGenerators() {
 		List<SignalGenerator> result = new LinkedList<SignalGenerator>();
-		for(SignalGenerator g : this.signalGeneratorDao.fetchAll()) {	
+		for(SignalGenerator g : this.signalGeneratorDao.getAll()) {	
 			if(g.isReady()) {
 				result.add(g);
 			}
@@ -80,12 +80,12 @@ public class SignalGeneratorServiceImpl implements SignalGeneratorService {
 		}
 	}
 
-	public List<SignalGenerator> fetchAll() {
-		return signalGeneratorDao.fetchAll();
+	public List<SignalGenerator> getAll() {
+		return signalGeneratorDao.getAll();
 	}
 
 	public SignalGenerator getById(Integer generatorId) {
-		return signalGeneratorDao.findById(generatorId);
+		return signalGeneratorDao.get(generatorId);
 	}
 
 	public void add(SignalGenerator generator) {
@@ -99,11 +99,11 @@ public class SignalGeneratorServiceImpl implements SignalGeneratorService {
 	}
 
 	public List<SignalReceiverType> getAllSignalReceiverTypes() {
-		return signalReceiverTypeDao.fetchAll();
+		return signalReceiverTypeDao.getAll();
 	}
 
 	public List<SignalType> getAllSignalTypes() {
-		return signalTypeDao.fetchAll();
+		return signalTypeDao.getAll();
 	}
 
 	public List<Signal> getSignals(SignalGenerator g) {

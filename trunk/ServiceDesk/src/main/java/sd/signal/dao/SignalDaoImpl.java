@@ -18,17 +18,18 @@ import sd.signal.mapper.SignalMapper;
 
 @Repository
 @Transactional
-public class SignalDaoImpl extends GenericHibernateDao<Signal> implements SignalDao {
+public class SignalDaoImpl extends GenericHibernateDao<Signal,Integer> implements SignalDao {
 	@Autowired
 	private DataSource dataSource;
 	@Autowired
 	private EmployeeDao employeeDao;
 	
 	public SignalDaoImpl() {
-		super(Signal.class);
+		super(Signal.class, Integer.class);
 	}
 	
 	@SuppressWarnings("deprecation")
+        @Override
 	public List<Signal> generateSignals(SignalGenerator generator) {
 		SimpleJdbcTemplate template = new SimpleJdbcTemplate(dataSource);
 		return template.query(generator.getQuery(), new SignalMapper(generator.getType(), employeeDao));

@@ -3,7 +3,7 @@ package sd.tree.app;
 import java.util.LinkedList;
 import java.util.List;
 
-import sd.tree.HierarchyItem;
+import sd.infrastructure.domain.HierarchicalDomainObject;
 
 public abstract class TreeBuilder{
 //	private static Logger logger = Logger.getLogger(TreeBuilder.class);
@@ -20,10 +20,10 @@ public abstract class TreeBuilder{
 		List<TreeItem> values = new LinkedList<TreeItem>();
 		TreeItem current = null;
 		
-		//opakuj HierarchyItem w TreeItem:
+		//opakuj HierarchicalDomainObject w TreeItem:
 		for(Object i : items) {
-			if(i instanceof HierarchyItem) {
-				HierarchyItem hierarchyItem = (HierarchyItem)i;
+			if(i instanceof HierarchicalDomainObject) {
+				HierarchicalDomainObject hierarchyItem = (HierarchicalDomainObject)i;
 				TreeItem item = new TreeItem(hierarchyItem);
 				if(hierarchyItem.getId().equals(currentValue)) {
 					current = item;

@@ -17,9 +17,13 @@ import sd.pm.domain.ProblemUrgency;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public class InMemoryProblemUrgencyDao extends GenericInMemoryDao<ProblemUrgency> implements
+public class InMemoryProblemUrgencyDao extends GenericInMemoryDao<ProblemUrgency,String> implements
 		ProblemUrgencyDao {
-	
+
+    public InMemoryProblemUrgencyDao() {
+        super(ProblemUrgency.class,String.class);
+    }
+
 	@Override
 	protected List<ProblemUrgency> initValues() {
 		return Arrays.asList(

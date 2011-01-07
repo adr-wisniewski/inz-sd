@@ -17,10 +17,10 @@ import sd.im.domain.IncidentStatus;
  */
 @Repository
 @Transactional
-public class IncidentStatusDaoImpl extends GenericHibernateDao<IncidentStatus> implements IncidentStatusDao {
+public class IncidentStatusDaoImpl extends GenericHibernateDao<IncidentStatus,String> implements IncidentStatusDao {
 
 	public IncidentStatusDaoImpl() {
-		super(IncidentStatus.class);
+		super(IncidentStatus.class,String.class);
 	}
 
 }

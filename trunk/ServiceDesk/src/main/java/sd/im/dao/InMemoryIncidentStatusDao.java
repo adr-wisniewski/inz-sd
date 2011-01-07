@@ -6,8 +6,6 @@ package sd.im.dao;
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
-
 import sd.dao.GenericInMemoryDao;
 import sd.im.domain.IncidentStatus;
 
@@ -17,9 +15,13 @@ import sd.im.domain.IncidentStatus;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public class InMemoryIncidentStatusDao extends GenericInMemoryDao<IncidentStatus> implements
+public class InMemoryIncidentStatusDao extends GenericInMemoryDao<IncidentStatus,String> implements
 		IncidentStatusDao {
-	
+
+        public InMemoryIncidentStatusDao() {
+            super(IncidentStatus.class,String.class);
+        }
+
 	@Override
 	protected List<IncidentStatus> initValues() {
 		return Arrays.asList(

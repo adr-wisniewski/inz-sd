@@ -11,21 +11,24 @@ import sd.rf.domain.ServiceRequest;
 
 @Repository
 @Transactional
-public class RequestDaoImpl extends GenericHibernateDao<ServiceRequest> implements RequestDao {
+public class RequestDaoImpl extends GenericHibernateDao<ServiceRequest,Integer> implements RequestDao {
 
 	public RequestDaoImpl() {
-		super(ServiceRequest.class);
+		super(ServiceRequest.class, Integer.class);
 	}
 
-	public ServiceRequest findById(Integer id) {
-		return super.findById(id);
+    @Override
+	public ServiceRequest get(Integer id) {
+		return super.get(id);
 	}
 
+    @Override
 	public List<ServiceRequest> search(RequestSearchCriteria searchCriteria) {
 		return super.search(searchCriteria);
 	}
 
+    @Override
 	public ServiceRequest getById(Integer id) {
-		return super.findById(id);
+		return super.get(id);
 	}
 }

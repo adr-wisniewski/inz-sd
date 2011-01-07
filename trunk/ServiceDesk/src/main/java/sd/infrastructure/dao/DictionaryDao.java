@@ -1,9 +1,12 @@
 /**
  * 
  */
-package sd.dictionary;
+package sd.infrastructure.dao;
 
+import java.io.Serializable;
 import java.util.List;
+import sd.dictionary.DictionaryProperty;
+import sd.infrastructure.domain.DomainObject;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -12,7 +15,7 @@ import java.util.List;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public interface DictionaryPropertyDao<P extends DictionaryProperty> {
+public interface DictionaryDao<Type extends DictionaryProperty<Id>, Id extends Serializable> extends Dao<Type, Id> {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * Zwraca wszystkie mozliwe wartosci slownika.
@@ -20,5 +23,5 @@ public interface DictionaryPropertyDao<P extends DictionaryProperty> {
 	 * @return
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public List<P> fetchAll();
+	public List<Type> getAll();
 }

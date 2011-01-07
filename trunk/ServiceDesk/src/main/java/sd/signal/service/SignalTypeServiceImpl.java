@@ -28,8 +28,8 @@ public class SignalTypeServiceImpl implements SignalTypeService {
 		this.signalTypeDao = signalTypeDao;
 	}
 
-	public List<SignalType> fetchAll() {
-		return signalTypeDao.fetchAll();
+	public List<SignalType> getAll() {
+		return signalTypeDao.getAll();
 	}
 
 	public void edit(SignalType signalType) {
@@ -41,11 +41,11 @@ public class SignalTypeServiceImpl implements SignalTypeService {
 	}
 
 	public List<SignalObjectType> getAllObjectTypes() {
-		return signalObjectTypeDao.fetchAll();
+		return signalObjectTypeDao.getAll();
 	}
 
 	public List<SignalSignificanceType> getAllSignificanceTypes() {
-		return signalSignificanceTypeDao.fetchAll();
+		return signalSignificanceTypeDao.getAll();
 	}
 
 }

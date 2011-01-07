@@ -10,12 +10,13 @@ import sd.im.domain.IncidentHistory;
 
 @Repository
 @Transactional
-public class IncidentHistoryDaoImpl extends GenericHibernateDao<IncidentHistory> implements IncidentHistoryDao {
+public class IncidentHistoryDaoImpl extends GenericHibernateDao<IncidentHistory, Integer> implements IncidentHistoryDao {
 
 	public IncidentHistoryDaoImpl() {
-		super(IncidentHistory.class);
+		super(IncidentHistory.class, Integer.class);
 	}
 
+    @Override
 	public List<IncidentHistory> findIncidentHistory(Integer incidentId) {
 		return findByNamedQuery("Incident.history", incidentId);
 	}

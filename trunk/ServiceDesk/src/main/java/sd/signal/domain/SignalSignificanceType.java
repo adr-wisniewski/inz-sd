@@ -1,5 +1,6 @@
 package sd.signal.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,7 +10,7 @@ import sd.dictionary.DictionaryProperty;
 
 @Entity
 @Table(name="SIGNAL_SIGNIFICANCE_TYPES")
-public class SignalSignificanceType implements DictionaryProperty {
+public class SignalSignificanceType implements DictionaryProperty<String>, Serializable {
 	@Id
 	@Column(name="SIGNIFICANCE_CODE")
 	private String code;
@@ -20,6 +21,7 @@ public class SignalSignificanceType implements DictionaryProperty {
 	@Column(name="CSS_CLASS")
 	private String cssClass;
 	
+    @Override
 	public String getCode() {
 		return code;
 	}
@@ -28,6 +30,7 @@ public class SignalSignificanceType implements DictionaryProperty {
 		this.code = code;
 	}
 
+    @Override
 	public String getName() {
 		return name;
 	}
@@ -48,4 +51,14 @@ public class SignalSignificanceType implements DictionaryProperty {
 	public String toString() {
 		return "SignalSignificanceType [code=" + code + ", name=" + name + "]";
 	}
+
+    @Override
+    public String getId() {
+        return getCode();
+    }
+
+    @Override
+    public void setId(String id) {
+        setCode(id);
+    }
 }

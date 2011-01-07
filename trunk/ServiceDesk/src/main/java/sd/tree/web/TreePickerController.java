@@ -1,9 +1,11 @@
 package sd.tree.web;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -17,21 +19,24 @@ import sd.em.dao.EventCategoryDao;
 import sd.im.dao.IncidentCategoryDao;
 import sd.pm.dao.ProblemCategoryDao;
 import sd.rf.dao.RequestCategoryDao;
-import sd.tree.HierarchyDao;
-import sd.tree.HierarchyItem;
+import sd.infrastructure.dao.HierarchyDao;
+import sd.infrastructure.domain.HierarchicalDomainObject;
 import sd.tree.NullHierarchyItem;
 import sd.tree.app.TreeBuilder;
 
 @Controller
 @SessionAttributes({"source", "name"})
 public class TreePickerController {
+
+        @Autowired
+        protected ConversionService conversionService;
+
+	private Map<String, HierarchyDao<?, ?>> dataSources = new HashMap<String, HierarchyDao<?, ?>>();
 	
-	private Map<String, HierarchyDao<?>> dataSources = new HashMap<String, HierarchyDao<?>>();
-	
-	public void registerDataSource(String dataSourceName, HierarchyDao<?> dao) {
+	public void registerDataSource(String dataSourceName, HierarchyDao<?, ?> dao) {
 		this.dataSources.put(dataSourceName, dao);
 	}
-	
+
 	@Autowired
 	public void setIncidentCategoryDao(IncidentCategoryDao dao) {
 		registerDataSource("categories_im", dao);
@@ -57,7 +62,7 @@ public class TreePickerController {
             registerDataSource("itemclass_cmdb", dao);
 	}
 	
-	public HierarchyDao<?> getDataSource(String dataSourceName) {
+	public HierarchyDao<?, ?> getDataSource(String dataSourceName) {
 		return this.dataSources.get(dataSourceName);
 	}
 	
@@ -65,14 +70,29 @@ public class TreePickerController {
 	public String showView(ModelMap model, @RequestParam("source") String dataSourceName, @RequestParam("name") String name, @RequestParam("value") String value) {
 		model.addAttribute("source", dataSourceName);
 		model.addAttribute("name", name);
-		model.addAttribute("roots", TreeBuilder.buildTree(getDataSource(dataSourceName).fetchAll(), value));
+		model.addAttribute("roots", TreeBuilder.buildTree(getDataSource(dataSourceName).getAll(), value));
 		return "sd/treePicker";
 	}
 	
 	@RequestMapping(value="/sd/treePickerChoose", method = RequestMethod.GET)
 	public String onChoose(ModelMap model, @RequestParam("id") String itemId, @ModelAttribute("source") String dataSourceName) {
-                HierarchyItem item = itemId.equals("null") ? NullHierarchyItem.INSTANCE : getDataSource(dataSourceName).findById(itemId);
-                model.addAttribute("item", item);
-		return "sd/treePickerChoose";
+
+            HierarchicalDomainObject<?> item = NullHierarchyItem.INSTANCE;
+
+            if(!itemId.equals("null")) {
+
+                HierarchyDao<?, ?> dao = getDataSource(dataSourceName);
+                Class<? extends Serializable> targetClass = dao.getIdClass();
+                item = wtf(targetClass, dao, itemId);
+            }
+
+            model.addAttribute("item", item);
+            return "sd/treePickerChoose";
 	}
+
+        protected <Id extends Serializable> HierarchicalDomainObject<Id>
+                wtf(Class<Id> clazz, HierarchyDao<?, ?> dao, String itemId) {
+            HierarchyDao<?, Id> typedDao = (HierarchyDao<?, Id>)dao;
+            return typedDao.get(conversionService.convert(itemId, clazz));
+        }
 }

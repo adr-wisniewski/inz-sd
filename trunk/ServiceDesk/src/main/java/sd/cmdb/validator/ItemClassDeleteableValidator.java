@@ -34,19 +34,19 @@ public class ItemClassDeleteableValidator implements Validator {
     protected void hasNoChildrenClasses(ItemClass itemClass, Errors errors)
     {
         if(itemClass.getChildren().size() > 0)
-            errors.reject("cmdb.item.class.validate.deleteable[haschildren]");
+            errors.reject("cmdb.item.class.validate.deleteable.haschildren");
     }
 
     protected void hasNoInstances(ItemClass itemClass, Errors errors)
     {
         //@TODO: finish this
-        // errors.reject("cmdb.item.class.validate.deleteable[hasinstances]");
+        // errors.reject("cmdb.item.class.validate.deleteable.hasinstances");
     }
 
     protected void isNotUsedByRelationships(ItemClass itemClass, Errors errors)
     {
         //@TODO: finish this
-        // errors.reject("cmdb.item.class.validate.deleteable[usedbyrelationship]", Object[] relationship.getName());
+        // errors.reject("cmdb.item.class.validate.deleteable.usedbyrelationship", Object[] relationship.getName());
     }
 
 }

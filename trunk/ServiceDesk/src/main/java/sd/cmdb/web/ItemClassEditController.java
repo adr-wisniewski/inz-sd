@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import sd.cmdb.domain.ItemClass;
 import sd.cmdb.validator.ItemClassEditableValidator;
-import sd.cmdb.validator.ItemClassValidator;
-import sd.cmdb.web.BaseController;
 
 /**
  *
@@ -43,8 +41,7 @@ public class ItemClassEditController extends BaseController {
 
     @RequestMapping(method=RequestMethod.GET)
     public String editGet(ModelMap map, @PathVariable("id") ItemClass itemClass) {
-            map.addAttribute(MODEL_ITEMCLASS, itemClass);
-
+        map.addAttribute(MODEL_ITEMCLASS, itemClass);
         return VIEW_EDIT;
     }
 
@@ -57,7 +54,7 @@ public class ItemClassEditController extends BaseController {
         if(bindingResult.hasErrors())
             return String.format("prg:/cmdb/item/class/%s/edit", itemClass.getId());
 
-        administrationService.updateItemClass(itemClass);
+        classService.updateItemClass(itemClass);
         messageStorage.addMessage("cmdb.message.item.class.edited", itemClass.getName());
         return String.format("redirect:/cmdb/item/class/%s", itemClass.getId());
     }

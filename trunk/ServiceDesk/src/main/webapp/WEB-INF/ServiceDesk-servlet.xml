@@ -31,6 +31,11 @@
         <property name="interceptors">
             <list>
                 <bean class="sd.web.MeasurementInterceptor" />
+                <bean class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
+                    <property name="sessionFactory">
+                        <ref bean="sessionFactory"/>
+                    </property>
+                </bean>
                 <bean class="sd.web.MessageInterceptor" />
                 <bean class="sd.web.PrgInterceptor" />
             </list>
@@ -86,6 +91,6 @@
     </bean>
 
     <!--bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" abstract="true">
-        <property name="defaultErrorView" value="error"/>
+        <property name="defaultErrorView" value="defaultError"/>
     </bean-->
 </beans>

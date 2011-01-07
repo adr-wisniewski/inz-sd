@@ -8,9 +8,9 @@ import sd.signal.domain.SignalObjectType;
 
 @Repository
 @Transactional
-public class SignalObjectTypeDaoImpl extends GenericHibernateDao<SignalObjectType> implements SignalObjectTypeDao {
+public class SignalObjectTypeDaoImpl extends GenericHibernateDao<SignalObjectType,String> implements SignalObjectTypeDao {
 
 	public SignalObjectTypeDaoImpl() {
-		super(SignalObjectType.class);
+		super(SignalObjectType.class, String.class);
 	}
 }

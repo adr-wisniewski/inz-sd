@@ -72,19 +72,19 @@ public class RequestServiceImpl extends GenericEventService<ServiceRequest, Requ
 	}
 
 	public List<RequestCategory> getAllCategories() {
-		return requestCategoryDao.fetchAll();
+		return requestCategoryDao.getAll();
 	}
 
 
 	public List<RequestPriority> getAllPriorities() {
-		return requestPriorityDao.fetchAll();
+		return requestPriorityDao.getAll();
 	}
 
 	public List<RequestStatus> getAllStatuses() {
-		return requestStatusDao.fetchAll();
+		return requestStatusDao.getAll();
 	}
 
 	public List<SupportGroup> getAllGroups() {
-		return supportGroupDao.fetchAll();
+		return supportGroupDao.getAll();
 	}
 }

@@ -30,7 +30,7 @@ public interface IEventDao<E extends IEvent> {
 	 * @return
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public List<E> fetchAll();
+	public List<E> getAll();
 	
 	/** 
 	 * <!-- begin-UML-doc -->

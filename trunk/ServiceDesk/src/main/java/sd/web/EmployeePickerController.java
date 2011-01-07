@@ -89,7 +89,7 @@ public class EmployeePickerController {
 	 */
 	@RequestMapping(value = CHOOSE_ACTION_NAME, method = RequestMethod.GET)
 	public String chooseEmployee(ModelMap map, @RequestParam("id") Integer employeeId) {
-		map.addAttribute("employee", employeeService.findById(employeeId));
+		map.addAttribute("employee", employeeService.get(employeeId));
 		return CHOOSE_VIEW_NAME;
 	}
 	

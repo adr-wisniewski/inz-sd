@@ -1,5 +1,6 @@
 package sd.signal.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -15,7 +16,7 @@ import sd.dictionary.DictionaryProperty;
 
 @Entity
 @Table(name="SIGNAL_TYPES")
-public class SignalType implements DictionaryProperty{
+public class SignalType implements DictionaryProperty<Integer>, Serializable{
 	@Id
 	@SequenceGenerator(name = "signal_type_seq", sequenceName = "SIGNAL_TYPE_ID_SEQ")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "signal_type_seq")
@@ -39,14 +40,17 @@ public class SignalType implements DictionaryProperty{
     @JoinColumn(name="OBJECT_CODE")
 	private SignalObjectType objectType;
 
+    @Override
 	public Integer getId() {
 		return id;
 	}
 
+    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
+    @Override
 	public String getName() {
 		return name;
 	}
@@ -95,6 +99,7 @@ public class SignalType implements DictionaryProperty{
 				+ ", subjectTemplate=" + subjectTemplate + "]";
 	}
 
+    @Override
 	public String getCode() {
 		return Integer.toString(id);
 	}

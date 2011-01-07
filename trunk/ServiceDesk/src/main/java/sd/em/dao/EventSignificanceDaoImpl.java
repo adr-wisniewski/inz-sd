@@ -8,10 +8,10 @@ import sd.em.domain.EventSignificance;
 
 @Repository
 @Transactional
-public class EventSignificanceDaoImpl extends GenericHibernateDao<EventSignificance> implements EventSignificanceDao {
+public class EventSignificanceDaoImpl extends GenericHibernateDao<EventSignificance, String> implements EventSignificanceDao {
 
 	public EventSignificanceDaoImpl() {
-		super(EventSignificance.class);
+		super(EventSignificance.class, String.class);
 	}
 
 }

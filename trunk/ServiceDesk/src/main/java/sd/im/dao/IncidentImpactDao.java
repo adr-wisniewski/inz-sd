@@ -3,7 +3,7 @@
  */
 package sd.im.dao;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.im.domain.IncidentImpact;
 
 /** 
@@ -12,5 +12,5 @@ import sd.im.domain.IncidentImpact;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public interface IncidentImpactDao extends DictionaryPropertyDao<IncidentImpact> {
+public interface IncidentImpactDao extends DictionaryDao<IncidentImpact, String> {
 }

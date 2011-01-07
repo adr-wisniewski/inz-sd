@@ -4,10 +4,10 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import sd.tree.HierarchyItem;
+import sd.infrastructure.domain.HierarchicalDomainObject;
 
 public class TreeItem {
-	private HierarchyItem value;
+	private HierarchicalDomainObject value;
 	
 	private List<TreeItem> childs = new LinkedList<TreeItem>();
 	
@@ -19,7 +19,7 @@ public class TreeItem {
 	
 	private boolean leaf = true;
 	
-	public TreeItem(HierarchyItem item) {
+	public TreeItem(HierarchicalDomainObject item) {
 		this.value = item;
 	}
 
@@ -28,14 +28,14 @@ public class TreeItem {
 	}
 	
 	public String getId() {
-		return value.getId();
+		return String.valueOf(value.getId());
 	}
 	
-	public HierarchyItem getValue() {
+	public HierarchicalDomainObject getValue() {
 		return value;
 	}
 
-	public void setValue(HierarchyItem value) {
+	public void setValue(HierarchicalDomainObject value) {
 		this.value = value;
 	}
 

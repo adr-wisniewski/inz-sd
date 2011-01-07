@@ -8,14 +8,9 @@ import sd.im.domain.SupportGroup;
 
 @Repository
 @Transactional
-public class SupportGroupDaoImpl extends GenericHibernateDao<SupportGroup> implements SupportGroupDao {
+public class SupportGroupDaoImpl extends GenericHibernateDao<SupportGroup,Integer> implements SupportGroupDao {
 
 	public SupportGroupDaoImpl() {
-		super(SupportGroup.class);
+		super(SupportGroup.class, Integer.class);
 	}
-
-	public SupportGroup findById(Integer id) {
-		return super.findById(id);
-	}
-
 }

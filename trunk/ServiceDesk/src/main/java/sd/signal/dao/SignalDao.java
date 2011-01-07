@@ -11,7 +11,7 @@ public interface SignalDao {
 	
 	public void save(Signal signal);
 	
-	public List<Signal> fetchAll();
+	public List<Signal> getAll();
 
 	public List<Signal> fetchSignalsToSendEmail();
 

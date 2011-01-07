@@ -8,14 +8,9 @@ import sd.signal.domain.SignalGenerator;
 
 @Repository
 @Transactional
-public class SignalGeneratorDaoImpl extends GenericHibernateDao<SignalGenerator> implements SignalGeneratorDao {
+public class SignalGeneratorDaoImpl extends GenericHibernateDao<SignalGenerator,Integer> implements SignalGeneratorDao {
 
 	public SignalGeneratorDaoImpl() {
-		super(SignalGenerator.class);
+		super(SignalGenerator.class, Integer.class);
 	}
-
-	public SignalGenerator findById(Integer generatorId) {
-		return super.findById(generatorId);
-	}
-	
 }

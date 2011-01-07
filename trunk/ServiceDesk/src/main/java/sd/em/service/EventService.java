@@ -15,5 +15,5 @@ public interface EventService {
 
 	public List<EventSignificance> getAllSignificanceTypes();
 	
-	public Event getById(Integer id);
+	public Event get(Integer id);
 }

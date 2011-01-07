@@ -99,7 +99,7 @@ public class EditEventController {
 	 */
 	@RequestMapping(value = EDIT_ACTION_NAME, method = RequestMethod.GET)
 	public String showForm(ModelMap model, @RequestParam("id") Integer eventId) {
-		Event event = eventService.getById(eventId);
+		Event event = eventService.get(eventId);
 		model.addAttribute("event", event);
 		return VIEW_NAME;
 	}

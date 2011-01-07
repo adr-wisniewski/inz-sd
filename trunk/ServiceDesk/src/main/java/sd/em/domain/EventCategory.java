@@ -4,13 +4,14 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import sd.dictionary.DictionaryProperty;
-import sd.tree.HierarchyItem;
+import sd.infrastructure.domain.HierarchicalDomainObject;
 
 @Entity
 @Table(name = "CATEGORIES_EM")
-public class EventCategory implements DictionaryProperty, HierarchyItem {	
+public class EventCategory implements DictionaryProperty<String>, HierarchicalDomainObject<String> {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -120,9 +121,16 @@ public class EventCategory implements DictionaryProperty, HierarchyItem {
 	/**
 	 * 
 	 */
+	@Override
+        @Transient
 	public String getId() {
 		return code;
 	}
+
+        @Override
+        public void setId(String code) {
+            this.code = code;
+        }
 	
 	@Column(name="parent_category")
 	private String parentCode;

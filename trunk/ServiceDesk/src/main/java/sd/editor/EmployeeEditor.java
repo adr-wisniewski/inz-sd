@@ -16,7 +16,7 @@ public class EmployeeEditor extends PropertyEditorSupport{
     @Override
     public void setAsText(String text) {
             try {
-                    setValue(employeeDao.findById(Integer.parseInt(text)));
+                    setValue(employeeDao.get(Integer.parseInt(text)));
             }
             catch(NumberFormatException e) {
                     setValue(null);

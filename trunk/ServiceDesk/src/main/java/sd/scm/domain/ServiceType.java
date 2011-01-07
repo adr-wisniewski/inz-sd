@@ -1,5 +1,6 @@
 package sd.scm.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,7 +11,7 @@ import sd.dictionary.DictionaryProperty;
 
 @Entity
 @Table(name="SERVICE_TYPES")
-public class ServiceType implements DictionaryProperty {
+public class ServiceType implements DictionaryProperty<String>, Serializable {
 	@Id
 	@Column(name="SERVICE_TYPE_CODE")
 	private String code;
@@ -18,6 +19,7 @@ public class ServiceType implements DictionaryProperty {
 	@Column(name="NAME")
 	private String name;
 
+    @Override
 	public String getCode() {
 		return code;
 	}
@@ -26,6 +28,7 @@ public class ServiceType implements DictionaryProperty {
 		this.code = code;
 	}
 
+    @Override
 	public String getName() {
 		return name;
 	}
@@ -58,4 +61,14 @@ public class ServiceType implements DictionaryProperty {
 			return false;
 		return true;
 	}
+
+    @Override
+    public String getId() {
+        return getCode();
+    }
+
+    @Override
+    public void setId(String id) {
+        setCode(id);
+    }
 }

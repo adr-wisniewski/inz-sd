@@ -17,7 +17,7 @@ public interface RequestDao extends IEventDao<ServiceRequest>{
 	 * @param id identyfikator żądania
 	 * @return zwraca żądanie o podanym id
 	 */
-	public ServiceRequest findById(Integer id);
+	public ServiceRequest get(Integer id);
 
 	/**
 	 * Wyszukuje żądań spełniających podane kryterium

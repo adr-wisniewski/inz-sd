@@ -1,5 +1,6 @@
 package sd.em.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,7 +10,7 @@ import sd.dictionary.DictionaryProperty;
 
 @Entity
 @Table(name="EVENT_SIGNIFICANCE_TYPES")
-public class EventSignificance implements DictionaryProperty {
+public class EventSignificance implements DictionaryProperty<String>, Serializable {
 	public static final EventSignificance INFO = new EventSignificance("INFO", "INFO");
 	
 	public static final EventSignificance WARNING = new EventSignificance("WARN", "WARN");
@@ -23,6 +24,7 @@ public class EventSignificance implements DictionaryProperty {
 	@Column(name="NAME")
 	private String name;
 
+        @Override
 	public String getCode() {
 		return code;
 	}
@@ -31,6 +33,7 @@ public class EventSignificance implements DictionaryProperty {
 		this.code = code;
 	}
 
+        @Override
 	public String getName() {
 		return name;
 	}
@@ -84,4 +87,14 @@ public class EventSignificance implements DictionaryProperty {
 	public String toString() {
 		return "EventSignificance [code=" + code + ", name=" + name + "]";
 	}
+
+    @Override
+    public String getId() {
+        return getCode();
+    }
+
+    @Override
+    public void setId(String id) {
+        setCode(id);
+    }
 }

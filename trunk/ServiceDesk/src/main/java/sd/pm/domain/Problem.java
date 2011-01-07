@@ -3,6 +3,7 @@
  */
 package sd.pm.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -26,6 +27,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 import org.hibernate.annotations.Type;
 
@@ -34,6 +36,7 @@ import sd.domain.Employee;
 import sd.event.domain.IEvent;
 import sd.im.domain.Incident;
 import sd.im.domain.SupportGroup;
+import sd.infrastructure.domain.DomainObject;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -44,8 +47,8 @@ import sd.im.domain.SupportGroup;
 @Entity
 @Table(name = "PROBLEMS")
 @NamedQueries({
-    @NamedQuery(name = "Problem.findById", query = "SELECT p FROM Problem p WHERE p.id = ?")})
-public class Problem implements IEvent {
+    @NamedQuery(name = "Problem.get", query = "SELECT p FROM Problem p WHERE p.id = ?")})
+public class Problem implements DomainObject<Integer>, IEvent, Serializable {
 
     /**
      * <!-- begin-UML-doc -->
@@ -64,6 +67,7 @@ public class Problem implements IEvent {
      *
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
+    @Override
     public Integer getId() {
         // begin-user-code
         return id;
@@ -76,6 +80,7 @@ public class Problem implements IEvent {
      *
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
+    @Override
     public void setId(Integer id) {
         // begin-user-code
         this.id = id;
@@ -149,6 +154,7 @@ public class Problem implements IEvent {
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
     @Column(name = "CREATION_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date creationDate;
 
     /**
@@ -169,6 +175,7 @@ public class Problem implements IEvent {
      *
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
+    @Override
     public void setCreationDate(Date creationDate) {
         // begin-user-code
         this.creationDate = creationDate;
@@ -180,6 +187,7 @@ public class Problem implements IEvent {
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
     @Column(name = "CLOSURE_DATE", updatable = false, insertable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date closureDate;
 
     /**
@@ -537,6 +545,7 @@ public class Problem implements IEvent {
      *
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
+    @Override
     public List<Comment> getComments() {
         return comments;
     }
@@ -547,6 +556,7 @@ public class Problem implements IEvent {
      *
      * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
      */
+    @Override
     public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
@@ -708,6 +718,7 @@ public class Problem implements IEvent {
         return null;
     }
 
+    @Override
     public void addComment(Comment comment) {
         comment.setProblem(this);
         comments.add(comment);
@@ -750,10 +761,12 @@ public class Problem implements IEvent {
     @JoinColumn(name = "AUTHOR")
     private Employee author;
 
+    @Override
     public Employee getAuthor() {
         return author;
     }
 
+    @Override
     public void setAuthor(Employee author) {
         this.author = author;
     }

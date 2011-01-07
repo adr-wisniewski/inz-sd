@@ -18,22 +18,25 @@ import sd.pm.domain.ProblemCategory;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public class InMemoryProblemCategoryDao extends GenericInMemoryDao<ProblemCategory> implements
+public class InMemoryProblemCategoryDao extends GenericInMemoryDao<ProblemCategory,String> implements
 		ProblemCategoryDao {
 
-	@Override
-	protected List<ProblemCategory> initValues() {
-		return Arrays.asList(
-						new ProblemCategory[] {
-								new ProblemCategory("CAT1", "Hardware"),
-								new ProblemCategory("CAT2", "Software"),
-						}
-		);
-	}
+    public InMemoryProblemCategoryDao() {
+        super(ProblemCategory.class,String.class);
+    }
 
-	public ProblemCategory findById(Serializable id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
+    protected List<ProblemCategory> initValues() {
+        return Arrays.asList(
+            new ProblemCategory[] {
+                            new ProblemCategory("CAT1", "Hardware"),
+                            new ProblemCategory("CAT2", "Software"),
+            }
+        );
+    }
+
+    public ProblemCategory get(String id) {
+            // TODO Auto-generated method stub
+            return null;
+    }
 }

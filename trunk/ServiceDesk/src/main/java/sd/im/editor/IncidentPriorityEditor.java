@@ -3,7 +3,7 @@
  */
 package sd.im.editor;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.dictionary.DictionaryPropertyEditor;
 import sd.im.domain.IncidentPriority;
 
@@ -15,7 +15,7 @@ import sd.im.domain.IncidentPriority;
  */
 public class IncidentPriorityEditor extends DictionaryPropertyEditor<IncidentPriority> {
 
-	public IncidentPriorityEditor(DictionaryPropertyDao<IncidentPriority> dictionaryPropertyDao) {
+	public IncidentPriorityEditor(DictionaryDao<IncidentPriority, String> dictionaryPropertyDao) {
 		super(dictionaryPropertyDao);
 	}
 }

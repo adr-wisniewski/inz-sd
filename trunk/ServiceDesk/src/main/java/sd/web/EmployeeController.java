@@ -40,7 +40,7 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/sd/employeeDetails", method = RequestMethod.GET)
 	public String details(ModelMap map, @RequestParam("id") Integer employeeId) {
-		Employee employee = employeeService.findById(employeeId);
+		Employee employee = employeeService.get(employeeId);
 		map.addAttribute("employee", employee);
 
 		map.addAttribute("roles", employeeService.findAllRoles());

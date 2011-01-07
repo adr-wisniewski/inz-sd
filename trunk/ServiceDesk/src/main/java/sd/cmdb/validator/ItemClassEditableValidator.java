@@ -16,8 +16,11 @@ import sd.cmdb.domain.ItemClass;
  *
  * @author Adrian
  */
-@Component
 public class ItemClassEditableValidator extends ItemClassValidator {
+
+    public ItemClassEditableValidator(ItemClass sameNameClass) {
+        super(sameNameClass);
+    }
 
     @Override
     public void validate(Object target, Errors errors) {
@@ -29,16 +32,16 @@ public class ItemClassEditableValidator extends ItemClassValidator {
 
     private void checkParentChanged(ItemClass itemClass, Errors errors)
     {
-        ItemClass reference = clazzService.getItemClassById(itemClass.getIdentifier());
+        /*ItemClass reference = clazzService.getItemClassById(itemClass.getIdentifier());
 
         // parent wasn't changed, skip
         if(itemClass.getParent() == reference.getParent())
             return;
 
         if(reference.getChildren().size() > 0)
-            errors.rejectValue("parent", "cmdb.item.class.validate.editable.parent[haschildren]");
+            errors.rejectValue("parent", "cmdb.item.class.validate.editable.haschildren");
 
         // sanitize parent value
-        itemClass.setParent(reference.getParent());
+        itemClass.setParent(reference.getParent());*/
     }
 }

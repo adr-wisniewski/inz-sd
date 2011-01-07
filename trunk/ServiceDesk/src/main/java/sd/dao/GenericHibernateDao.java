@@ -10,9 +10,11 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import sd.app.SearchCriteria;
+import sd.infrastructure.dao.Dao;
+import sd.infrastructure.domain.DomainObject;
 
 
-public class GenericHibernateDao<Property> {
+public class GenericHibernateDao<Property extends DomainObject<Id>, Id extends Serializable> implements Dao<Property, Id> {
 	private SessionFactory sessionFactory;
 	/**
 	 * Klasa 
@@ -20,23 +22,22 @@ public class GenericHibernateDao<Property> {
 	 * Wykorzystywane przy wyszukiwaniu do pobraniu wszystkich wartosci.
 	 * UWAGA !!! Nie wiem jak pobrac klase z Property.
 	 */
-	private Class<?> propertyClass;
+	private Class<Property> typeClass;
+        private Class<Id> idClass;
 
-	public Class<?> getPropertyClass() {
-		return propertyClass;
-	}
-
-	public String getPropertyClassName() {
-		return propertyClass.getName();
+        @Override
+	public Class<Property> getTypeClass() {
+		return typeClass;
 	}
 	
-	public void setPropertyClass(Class<?> propertyClass) {
-		this.propertyClass = propertyClass;
-	}
+        @Override
+	public Class<Id> getIdClass() {
+            return idClass;
+        }
 
-	public GenericHibernateDao(Class<?> propertyClass) {
-		super();
-		this.propertyClass = propertyClass;
+	public GenericHibernateDao(Class<Property> propertyClass, Class<Id> idClass) {
+		this.typeClass = propertyClass;
+                this.idClass = idClass;
 	}
 	
 	@Autowired
@@ -45,8 +46,8 @@ public class GenericHibernateDao<Property> {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Property> fetchAll() {
-		return getSession().createQuery("from " + getPropertyClassName()).list();
+	public List<Property> getAll() {
+		return getSession().createQuery("from " + getTypeClass().getName()).list();
 	}
 	
 	public void save(Property object) {
@@ -54,8 +55,8 @@ public class GenericHibernateDao<Property> {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public Property findById(Serializable id) {
-		return (Property)getSession().get(propertyClass, id);
+	public Property get(Id id) {
+		return (Property)getSession().get(typeClass, id);
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -70,7 +71,7 @@ public class GenericHibernateDao<Property> {
 	
 	@SuppressWarnings("unchecked")
 	public List<Property> search(SearchCriteria<Property> searchCriteria) {
-		Criteria criteria = getSession().createCriteria(propertyClass);
+		Criteria criteria = getSession().createCriteria(typeClass);
 		searchCriteria.initCriteria(criteria);
 		return criteria.list();
 	}

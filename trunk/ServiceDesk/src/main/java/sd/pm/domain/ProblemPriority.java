@@ -3,6 +3,7 @@
  */
 package sd.pm.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -18,7 +19,7 @@ import sd.dictionary.DictionaryProperty;
  */
 @Entity
 @Table(name = "PRIORITY_TYPES_PM")
-public class ProblemPriority implements DictionaryProperty {
+public class ProblemPriority implements DictionaryProperty<String>, Serializable {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -34,6 +35,7 @@ public class ProblemPriority implements DictionaryProperty {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public String getCode() {
 		// begin-user-code
 		return code;
@@ -66,6 +68,7 @@ public class ProblemPriority implements DictionaryProperty {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public String getName() {
 		// begin-user-code
 		return name;
@@ -118,5 +121,15 @@ public class ProblemPriority implements DictionaryProperty {
 		this.code = code;
 		this.name = name;
 	}
+
+    @Override
+    public String getId() {
+        return getCode();
+    }
+
+    @Override
+    public void setId(String id) {
+        setCode(id);
+    }
 	
 }

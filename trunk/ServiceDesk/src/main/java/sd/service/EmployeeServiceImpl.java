@@ -37,8 +37,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDao.findByLogin(login);
 	}
 
-	public Employee findById(Integer employeeId) {
-		return employeeDao.findById(employeeId);
+	public Employee get(Integer employeeId) {
+		return employeeDao.get(employeeId);
 	}
 
 	public List<Employee> search(EmployeeSearchCriteria employeeSearchCriteria) {
@@ -46,7 +46,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	public List<Role> findAllRoles() {
-		return roleDao.fetchAll();
+		return roleDao.getAll();
 	}
 
 	public void setRoles(Employee employee, Set<String> roles) {

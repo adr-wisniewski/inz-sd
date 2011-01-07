@@ -156,12 +156,14 @@ public class IncidentServiceImpl extends GenericEventService<Incident, IncidentD
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<IncidentCategory> getAllCategories() {
-		return incidentCategoryDao.fetchAll();
+		return incidentCategoryDao.getAll();
 	}
 
+    @Override
 	public List<SupportGroup> getAllGroups() {
-		return supportGroupDao.fetchAll();
+		return supportGroupDao.getAll();
 	}
 
 	/** 
@@ -170,8 +172,9 @@ public class IncidentServiceImpl extends GenericEventService<Incident, IncidentD
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<IncidentImpact> getAllImpacts() {
-		return incidentImpactDao.fetchAll();
+		return incidentImpactDao.getAll();
 	}
 
 	/** 
@@ -180,8 +183,9 @@ public class IncidentServiceImpl extends GenericEventService<Incident, IncidentD
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<IncidentPriority> getAllPriorities() {
-		return incidentPriorityDao.fetchAll();
+		return incidentPriorityDao.getAll();
 	}
 
 	/** 
@@ -190,8 +194,9 @@ public class IncidentServiceImpl extends GenericEventService<Incident, IncidentD
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<IncidentSource> getAllSources() {
-		return incidentSourceDao.fetchAll();
+		return incidentSourceDao.getAll();
 	}
 	
 	/** 
@@ -200,8 +205,9 @@ public class IncidentServiceImpl extends GenericEventService<Incident, IncidentD
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<IncidentStatus> getAllStatuses() {
-		return incidentStatusDao.fetchAll();
+		return incidentStatusDao.getAll();
 	}
 	
 	/** 
@@ -210,10 +216,12 @@ public class IncidentServiceImpl extends GenericEventService<Incident, IncidentD
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public List<IncidentUrgency> getAllUrgencies() {
-		return incidentUrgencyDao.fetchAll();
+		return incidentUrgencyDao.getAll();
 	}
 
+    @Override
 	public IncidentSearchCriteria getCurrentUserClosedIncidentsSearchCriteria() {
 		IncidentSearchCriteria searchCriteria = new IncidentSearchCriteria();
 		searchCriteria.setAuthor(employeeService.getCurrentUser());
@@ -226,6 +234,7 @@ public class IncidentServiceImpl extends GenericEventService<Incident, IncidentD
 	 * (non-Javadoc)
 	 * @see sd.im.service.IncidentService#getCurrentUserOpenIncidentsSearchCriteria()
 	 */
+    @Override
 	public IncidentSearchCriteria getCurrentUserOpenIncidentsSearchCriteria() {
 		IncidentSearchCriteria searchCriteria = new IncidentSearchCriteria();
 		searchCriteria.setAuthor(employeeService.getCurrentUser());
@@ -243,10 +252,12 @@ public class IncidentServiceImpl extends GenericEventService<Incident, IncidentD
 		return creation;
 	}
 
+    @Override
 	public SupportGroup getGroupById(Integer groupId) {
-		return supportGroupDao.findById(groupId);
+		return supportGroupDao.get(groupId);
 	}
 	
+    @Override
 	public List<HistoryActions> getHistory(Incident incident) {
 		Iterator<IncidentHistory> it = incidentHistoryDao.findIncidentHistory(incident.getId()).iterator();
 		List<HistoryActions> actions = new LinkedList<HistoryActions>();
@@ -348,11 +359,13 @@ public class IncidentServiceImpl extends GenericEventService<Incident, IncidentD
 		this.supportGroupDao = supportGroupDao;
 	}
 
+    @Override
         public void accept(Incident incident) {
                 incident.setSupportGroupMember(employeeService.getCurrentUser());
                 this.eventDao.save(incident);
         }
 
+    @Override
         public IncidentSearchCriteria getCurrentUserAssignedIncidentsSearchCriteria() {
                 IncidentSearchCriteria searchCriteria = new IncidentSearchCriteria();
 		searchCriteria.setSupportGroupMember(employeeService.getCurrentUser());

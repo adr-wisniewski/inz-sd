@@ -1,5 +1,6 @@
 package sd.signal.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,10 +19,12 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 import org.hibernate.annotations.Type;
 
 import sd.domain.Employee;
+import sd.infrastructure.domain.DomainObject;
 
 
 @Entity
@@ -30,11 +33,12 @@ import sd.domain.Employee;
     @NamedQuery(name = "Signal.email", query = "SELECT s FROM Signal s WHERE s.sent = false"),
     @NamedQuery(name = "Signal.findByEmployee", query = "SELECT s FROM Signal s WHERE s.receiver = ?")
 })
-public class Signal {
+public class Signal implements DomainObject<Integer>, Serializable {
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="signal")
 	private List<SignalAttribute> attributes = new LinkedList<SignalAttribute>();
 	
 	@Column(name="CREATION_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
 	private Date creationDate;
 	
 	@Column(name="ERROR_MESSAGE")
@@ -81,6 +85,7 @@ public class Signal {
 		return errorMessage;
 	}
 
+    @Override
 	public Integer getId() {
 		return id;
 	}
@@ -110,7 +115,7 @@ public class Signal {
 	}
 
 	private String mergeTemplateIntoString(String template) {
-		String result = new String(template);
+		String result = template;
 		
 		for(SignalAttribute a : attributes) {
 			String value = a.getValue() != null ? a.getValue() : "";
@@ -133,6 +138,7 @@ public class Signal {
 		this.errorMessage = errorMessage;
 	}
 
+    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

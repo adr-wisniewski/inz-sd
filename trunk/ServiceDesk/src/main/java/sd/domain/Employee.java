@@ -3,6 +3,7 @@
  */
 package sd.domain;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -22,6 +23,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import sd.infrastructure.domain.DomainObject;
 
 import sd.scm.domain.Service;
 
@@ -37,9 +39,9 @@ import sd.scm.domain.Service;
 @Entity
 @Table(name="EMPLOYEES")
 @NamedQueries({
-    @NamedQuery(name = "Employee.findById", query = "SELECT e FROM Employee e WHERE e.id = ?"),
+    @NamedQuery(name = "Employee.get", query = "SELECT e FROM Employee e WHERE e.id = ?"),
     @NamedQuery(name = "Employee.findByLogin", query = "SELECT e FROM Employee e WHERE e.login = ?")})
-public class Employee {
+public class Employee implements DomainObject<Integer>, Serializable {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -57,6 +59,7 @@ public class Employee {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public Integer getId() {
 		// begin-user-code
 		return id;
@@ -69,6 +72,7 @@ public class Employee {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public void setId(Integer id) {
 		// begin-user-code
 		this.id = id;

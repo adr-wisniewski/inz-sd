@@ -29,11 +29,9 @@ public class ItemClassDeleteController extends BaseController {
     protected static final String VIEW_DELETE = "/cmdb/item/class/delete";
     protected static final String MODEL_ITEMCLASS = "itemClass";
 
-    @Autowired
-    private ItemClassDeleteableValidator itemClassDeleteableValidator;
-
     @RequestMapping(method=RequestMethod.GET)
-    public String deleteGet(ModelMap map, @PathVariable("id") ItemClass itemClass) {
+    public String deleteGet(ModelMap map, @PathVariable("id") Integer classId) {
+        ItemClass itemClass = classService.loadItemClass(classId);
         map.addAttribute(MODEL_ITEMCLASS, itemClass);
         return VIEW_DELETE;
     }
@@ -41,26 +39,21 @@ public class ItemClassDeleteController extends BaseController {
     @RequestMapping(method=RequestMethod.POST)
     public String deletePost(
             ModelMap map,
-            @PathVariable("id") ItemClass itemClass,
+            @PathVariable("id") Integer classId,
             @RequestParam("submit") String submit)
     {
         if(!submit.equals("ok"))
-            return String.format( "redirect:/cmdb/item/class/%s", itemClass.getId());
+            return String.format( "redirect:/cmdb/item/class/%d", classId);
 
-        DataBinder binder = new DataBinder(itemClass, "target");
-        binder.setValidator(itemClassDeleteableValidator);
-        binder.validate();
-        BindingResult results = binder.getBindingResult();
-
-        if(results.hasErrors())
-        {
+        try {
+            ItemClass itemClass = classService.deleteItemClass(classId);
+            messageStorage.addMessage("cmdb.message.item.class.deleted", itemClass.getName());
+            return "redirect:/cmdb/item/class/";
+        }
+        catch(BusinessConstraintException ex) {
             map.addAttribute(MODEL_ITEMCLASS, itemClass);
             map.addAllAttributes(results.getModel());
             return String.format("prg:/cmdb/item/class/%s/delete", itemClass.getId());
         }
-
-        administrationService.deleteItemClass(itemClass);
-        messageStorage.addMessage("cmdb.message.item.class.deleted", itemClass.getName());
-        return "redirect:/cmdb/item/class/";
     }
 }

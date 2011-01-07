@@ -3,7 +3,7 @@
  */
 package sd.rf.dao;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.rf.domain.RequestStatus;
 
 /** 
@@ -12,5 +12,5 @@ import sd.rf.domain.RequestStatus;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public interface RequestStatusDao extends DictionaryPropertyDao<RequestStatus> {
+public interface RequestStatusDao extends DictionaryDao<RequestStatus, String> {
 }

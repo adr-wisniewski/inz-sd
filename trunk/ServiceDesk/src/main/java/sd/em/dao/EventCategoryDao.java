@@ -3,9 +3,9 @@
  */
 package sd.em.dao;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.em.domain.EventCategory;
-import sd.tree.HierarchyDao;
+import sd.infrastructure.dao.HierarchyDao;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -13,5 +13,5 @@ import sd.tree.HierarchyDao;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public interface EventCategoryDao extends DictionaryPropertyDao<EventCategory>, HierarchyDao<EventCategory> {
+public interface EventCategoryDao extends DictionaryDao<EventCategory, String>, HierarchyDao<EventCategory,String> {
 }

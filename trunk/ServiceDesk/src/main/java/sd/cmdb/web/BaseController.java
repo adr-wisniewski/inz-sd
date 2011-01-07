@@ -6,7 +6,7 @@
 package sd.cmdb.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import sd.cmdb.service.ClassService;
+import sd.cmdb.service.ClassServiceFacade;
 import sd.web.MessageContextHolder;
 
 /**
@@ -17,7 +17,7 @@ import sd.web.MessageContextHolder;
 public class BaseController
 {
     @Autowired
-    protected ClassService administrationService;
+    protected ClassServiceFacade classService;
 
     @Autowired
     protected MessageContextHolder messageStorage;

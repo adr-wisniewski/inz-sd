@@ -6,15 +6,15 @@ import sd.dao.GenericHibernateDao;
 import sd.scm.domain.Service;
 
 @Repository
-public class ServiceDaoImpl extends GenericHibernateDao<Service> implements ServiceDao {
+public class ServiceDaoImpl extends GenericHibernateDao<Service,Integer> implements ServiceDao {
 
 	public ServiceDaoImpl() {
-		super(Service.class);
+		super(Service.class, Integer.class);
 	}
 
 	@Override
-	public Service findById(Integer id) {
-		return super.findById(id);
+	public Service get(Integer id) {
+		return super.get(id);
 	}
 
 }

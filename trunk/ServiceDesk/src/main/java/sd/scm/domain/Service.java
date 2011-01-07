@@ -1,5 +1,6 @@
 package sd.scm.domain;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -15,11 +16,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import sd.domain.Employee;
+import sd.infrastructure.domain.DomainObject;
 import sd.slm.domain.Agreement;
 
 @Entity
 @Table(name="SERVICES")
-public class Service {
+public class Service implements DomainObject<Integer>, Serializable {
 	@Id
 	@Column(name="SERVICE_ID")
 	private Integer id;
@@ -56,10 +58,12 @@ public class Service {
         @JoinColumn(name="EMPLOYEE_ID", nullable=false, updatable=false) })
 	private List<Employee> managers = new LinkedList<Employee>();
 
+    @Override
 	public Integer getId() {
 		return id;
 	}
 
+    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

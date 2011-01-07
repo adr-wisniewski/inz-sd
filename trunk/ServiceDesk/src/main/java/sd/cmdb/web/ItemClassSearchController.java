@@ -25,7 +25,7 @@ import sd.tree.app.TreeBuilder;
  * @author Adrian
  */
 @Controller
-@RequestMapping(value = "/cmdb/item/class")
+@RequestMapping(value = "/cmdb/item/class/*")
 @PreAuthorize("hasRole('CN_ITC_VIE')")
 public class ItemClassSearchController extends BaseController {
     protected static final String VIEW_SEARCH = "/cmdb/item/class/search";
@@ -47,17 +47,19 @@ public class ItemClassSearchController extends BaseController {
             map.addAttribute(MODEL_CRITERIA, criteria);
         }
 
-        map.addAttribute(MODEL_ITEMCLASSES, administrationService.searchItemClass(criteria));
+        map.addAttribute(MODEL_ITEMCLASSES, classService.searchItemClass(criteria));
         return VIEW_SEARCH;
     }
 
     @RequestMapping(value = "/browse")
-    public String browse(ModelMap map, @RequestParam(value="id", required=false) String id) {
-        if(id != null)
-            return String.format( "redirect:/cmdb/item/class/%s", id);
-
-        List<ItemClass> items = administrationService.getAllItemClasses();
+    public String browse(ModelMap map) {
+        List<ItemClass> items = classService.getAllItemClasses();
         map.addAttribute(MODEL_ITEMCLASSES, TreeBuilder.buildTree(items, ""));
         return VIEW_BROWSE;
+    }
+
+    @RequestMapping(value = "/browse", params={"id"})
+    public String browseid(@RequestParam(value="id", required=false) String id) {
+       return String.format( "redirect:/cmdb/item/class/%s", id);
     }
 }

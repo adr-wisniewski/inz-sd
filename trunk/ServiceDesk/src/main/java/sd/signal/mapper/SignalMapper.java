@@ -27,7 +27,7 @@ public class SignalMapper implements ParameterizedRowMapper<Signal> {
 		Signal signal = new Signal();
 		
 		signal.setCreationDate(new Date());
-		signal.setReceiver(employeeDao.findById(rs.getInt("employee_id")));
+		signal.setReceiver(employeeDao.get(rs.getInt("employee_id")));
 		signal.setType(signalType);
 		signal.setSent(false);
 		signal.setObjectId(rs.getInt(signalType.getObjectType().getIdColumnName()));

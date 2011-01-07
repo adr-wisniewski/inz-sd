@@ -5,11 +5,14 @@
 
 package sd.tree;
 
+import java.io.Serializable;
+import sd.infrastructure.domain.HierarchicalDomainObject;
+
 /**
  *
  * @author Adrian
  */
-public class NullHierarchyItem implements HierarchyItem {
+public class NullHierarchyItem implements HierarchicalDomainObject<String> {
 
     static final public NullHierarchyItem INSTANCE = new NullHierarchyItem();
     
@@ -24,6 +27,11 @@ public class NullHierarchyItem implements HierarchyItem {
     }
 
     @Override
+    public void setId(String id) {
+        // do nothing
+    }
+
+    @Override
     public String getParentId() {
         return null;
     }
@@ -32,5 +40,4 @@ public class NullHierarchyItem implements HierarchyItem {
     public String getName() {
         return null;
     }
-
 }

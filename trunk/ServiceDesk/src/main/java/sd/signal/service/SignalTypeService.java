@@ -7,7 +7,7 @@ import sd.signal.domain.SignalSignificanceType;
 import sd.signal.domain.SignalType;
 
 public interface SignalTypeService {
-	public List<SignalType> fetchAll();
+	public List<SignalType> getAll();
 
 	public void edit(SignalType signalType);
 

@@ -7,13 +7,14 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 import sd.cmdb.domain.ItemClass;
-import sd.cmdb.service.ClassService;
 
-@Component
 public class ItemClassValidator implements Validator {
-	
-    @Autowired
-    protected ClassService clazzService;
+
+    private ItemClass sameNameClass;
+
+    public ItemClassValidator(ItemClass sameNameClass) {
+        this.sameNameClass = sameNameClass;
+    }
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -34,8 +35,7 @@ public class ItemClassValidator implements Validator {
     }
 
     protected void checkUniqueName(ItemClass target, Errors errors) {
-        ItemClass reference = clazzService.getItemClassByName(target.getName());
-        if(reference != null && !reference.getIdentifier().equals(target.getIdentifier()))
+        if(sameNameClass != null && !sameNameClass.getIdentifier().equals(target.getIdentifier()))
             errors.rejectValue("name", "cmdb.item.class.validate.name.notunique");
     }
 
@@ -44,10 +44,8 @@ public class ItemClassValidator implements Validator {
         // cannot be parent to itself
         ItemClass parent = target.getParent();
 
-        while(parent != null)
-        {
-            if(target.equals(parent))
-            {
+        while(parent != null) {
+            if(target.equals(parent)) {
                 errors.rejectValue("parent", "cmdb.item.class.validate.parent.recursive");
                 break;
             }

@@ -14,7 +14,7 @@ public class ServiceEditor extends PropertyEditorSupport {
 
 	public void setAsText(String text) {
 		try {
-			setValue(serviceDao.findById(Integer.parseInt(text)));
+			setValue(serviceDao.get(Integer.parseInt(text)));
 		}
 		catch(NumberFormatException e) {
 			setValue(null);

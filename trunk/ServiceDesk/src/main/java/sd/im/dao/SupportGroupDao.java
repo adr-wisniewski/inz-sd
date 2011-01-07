@@ -10,11 +10,11 @@ public interface SupportGroupDao {
 	 * @param id identyfikator grupy
 	 * @return zwraca grupe po id
 	 */
-	public SupportGroup findById(Integer id);
+	public SupportGroup get(Integer id);
 	
 	/**
 	 * 
 	 * @return zwraca wszystkei grupy
 	 */
-	public List<SupportGroup> fetchAll();
+	public List<SupportGroup> getAll();
 }

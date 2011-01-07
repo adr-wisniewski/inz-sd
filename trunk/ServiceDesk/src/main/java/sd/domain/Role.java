@@ -1,5 +1,6 @@
 package sd.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -13,12 +14,13 @@ import sd.dictionary.DictionaryProperty;
 @Table(name="ROLES")
 @NamedQueries({
     @NamedQuery(name = "Role.findByCode", query = "SELECT r FROM Role r WHERE r.code = ?")})
-public class Role implements DictionaryProperty {
+public class Role implements DictionaryProperty<String>, Serializable {
 	
 	@Id
 	@Column(name="ROLE_CODE")
 	private String code;
 	
+        @Override
 	public String getCode() {
 		return code;
 	}
@@ -38,8 +40,19 @@ public class Role implements DictionaryProperty {
 		this.description = description;
 	}
 
+    @Override
 	public String getName() {
 		return description;
 	}
+
+    @Override
+    public String getId() {
+        return getCode();
+    }
+
+    @Override
+    public void setId(String id) {
+        setCode(id);
+    }
 	
 }

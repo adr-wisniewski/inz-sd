@@ -1,5 +1,6 @@
 package sd.rf.domain;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
@@ -18,15 +19,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 import sd.domain.Comment;
 import sd.domain.Employee;
 import sd.event.domain.IEvent;
 import sd.im.domain.SupportGroup;
+import sd.infrastructure.domain.DomainObject;
 
 @Entity
 @Table(name="REQUESTS")
-public class ServiceRequest implements IEvent {
+public class ServiceRequest implements DomainObject<Integer>, IEvent, Serializable {
 	@Id
 	@SequenceGenerator(name = "request_seq", sequenceName = "event_id_seq")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "request_seq")
@@ -42,9 +45,11 @@ public class ServiceRequest implements IEvent {
 	private List<RequestAttribute> attributes;
 	
 	@Column(name="CREATION_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
 	private Date creationDate;
 	
 	@Column(name="CLOSURE_DATE")
+    @Temporal(javax.persistence.TemporalType.DATE)
 	private Date closureDate;
 	
 	@ManyToOne(fetch=FetchType.EAGER)
@@ -63,10 +68,12 @@ public class ServiceRequest implements IEvent {
 	@OrderBy("creationDate")
 	private List<Comment> comments = new LinkedList<Comment>();
 	
+    @Override
 	public Integer getId() {
 		return id;
 	}
 
+    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -87,6 +94,7 @@ public class ServiceRequest implements IEvent {
 		this.attributes = attributes;
 	}
 	
+    @Override
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
@@ -95,10 +103,12 @@ public class ServiceRequest implements IEvent {
 		return creationDate;
 	}
 
+    @Override
 	public Employee getAuthor() {
 		return author;
 	}
 
+    @Override
 	public void setAuthor(Employee author) {
 		this.author = author;
 	}
@@ -127,15 +137,18 @@ public class ServiceRequest implements IEvent {
 		this.closureDate = closureDate;
 	}
 
+    @Override
 	public void addComment(Comment comment) {
 		comments.add(comment);
 		comment.setRequest(this);
 	}
 
+    @Override
 	public List<Comment> getComments() {
 		return comments;
 	}
 
+    @Override
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
 	}
@@ -165,6 +178,7 @@ public class ServiceRequest implements IEvent {
 	}
 	
 	@Column(name = "TARGET_RESOLUTION_DATE")
+        @Temporal(javax.persistence.TemporalType.DATE)
 	private Date targetResolutionDate;
 	
 	public Date getTargetResolutionDate() {

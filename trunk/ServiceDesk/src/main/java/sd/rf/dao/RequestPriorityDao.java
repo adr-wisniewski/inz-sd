@@ -3,7 +3,7 @@
  */
 package sd.rf.dao;
 
-import sd.dictionary.DictionaryPropertyDao;
+import sd.infrastructure.dao.DictionaryDao;
 import sd.rf.domain.RequestPriority;
 
 /** 
@@ -12,5 +12,5 @@ import sd.rf.domain.RequestPriority;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-public interface RequestPriorityDao extends DictionaryPropertyDao<RequestPriority> {
+public interface RequestPriorityDao extends DictionaryDao<RequestPriority, String> {
 }

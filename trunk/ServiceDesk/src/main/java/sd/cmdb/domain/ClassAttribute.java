@@ -6,19 +6,26 @@
 package sd.cmdb.domain;
 
 import java.io.Serializable;
+import javax.persistence.Cacheable;
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 /**
  *
  * @author Adrian
  */
-@Entity
+@Entity @Cacheable
+@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Table(name="C2_CLASS_ATTRIBUTES")
 public class ClassAttribute implements Serializable {
 
@@ -27,7 +34,7 @@ public class ClassAttribute implements Serializable {
     private String description;
     private ElementClass elementClass;
 
-    @Id
+    @EmbeddedId
     public ClassAttributePk getId() {
         return id;
     }

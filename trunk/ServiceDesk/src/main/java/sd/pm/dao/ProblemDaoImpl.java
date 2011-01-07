@@ -19,10 +19,10 @@ import sd.pm.domain.Problem;
  */
 @Repository
 @Transactional
-public class ProblemDaoImpl extends GenericHibernateDao<Problem> implements ProblemDao {
+public class ProblemDaoImpl extends GenericHibernateDao<Problem,Integer> implements ProblemDao {
 	
 	public ProblemDaoImpl() {
-		super(Problem.class);
+		super(Problem.class, Integer.class);
 	}
 
 	/** 
@@ -31,8 +31,9 @@ public class ProblemDaoImpl extends GenericHibernateDao<Problem> implements Prob
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+        @Override
 	public Problem getById(Integer id) {
-		List<Problem> result = this.findByNamedQuery("Problem.findById", id);
+		List<Problem> result = this.findByNamedQuery("Problem.get", id);
 		
 		if(result.size() == 1) {
 			return result.get(0);

@@ -56,11 +56,11 @@ public class InMemoryIncidentDao implements IncidentDao {
 
 	/** 
 	 * /* (non-Javadoc)
-	 *  * @see IncidentDao#fetchAll()
+	 *  * @see IncidentDao#getAll()
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	public List<Incident> fetchAll() {
+	public List<Incident> getAll() {
 		return incidents;
 	}
 

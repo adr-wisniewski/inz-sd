@@ -17,10 +17,10 @@ import sd.em.domain.EventCategory;
  */
 @Repository
 @Transactional
-public class EventCategoryDaoImpl extends GenericHibernateDao<EventCategory> implements EventCategoryDao {
+public class EventCategoryDaoImpl extends GenericHibernateDao<EventCategory,String> implements EventCategoryDao {
 
 	public EventCategoryDaoImpl() {
-		super(EventCategory.class);
+		super(EventCategory.class, String.class);
 	}
 	
 }

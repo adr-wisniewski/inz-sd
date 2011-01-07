@@ -19,10 +19,10 @@ import sd.im.domain.Incident;
  */
 @Repository
 @Transactional
-public class IncidentDaoImpl extends GenericHibernateDao<Incident> implements IncidentDao {
+public class IncidentDaoImpl extends GenericHibernateDao<Incident,Integer> implements IncidentDao {
 
 	public IncidentDaoImpl() {
-		super(Incident.class);
+		super(Incident.class, Integer.class);
 	}
 
 	/** 
@@ -31,8 +31,9 @@ public class IncidentDaoImpl extends GenericHibernateDao<Incident> implements In
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public Incident getById(Integer id) {
-		List<Incident> result = this.findByNamedQuery("Incident.findById", id);
+		List<Incident> result = this.findByNamedQuery("Incident.get", id);
 		
 		if(result.size() == 1) {
 			return result.get(0);

@@ -73,7 +73,7 @@ public class SignalController {
 
 	@RequestMapping(value=LIST_TYPES_ACTION, method=RequestMethod.GET)
 	public String listTypes(ModelMap model) {
-		model.addAttribute("signal_types", signalTypeService.fetchAll());
+		model.addAttribute("signal_types", signalTypeService.getAll());
 		return LIST_TYPES_VIEW;
 	}
 	
