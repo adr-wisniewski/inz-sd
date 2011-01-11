@@ -11,41 +11,36 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
-import org.springframework.validation.Validator;
 import sd.cmdb.domain.ClassAttribute;
 import sd.cmdb.domain.ItemClass;
-import sd.cmdb.service.ClassServiceFacade;
+import sd.cmdb.service.ItemClassCrudService;
+import sd.infrastructure.validation.AbstractValidator;
 
 /**
  *
  * @author Adrian
  */
 @Component
-public class ClassAttributeValidator implements Validator {
+public class ClassAttributeValidator extends AbstractValidator<ClassAttribute> {
 
     @Autowired
-    protected ClassServiceFacade clazzService;
+    protected ItemClassCrudService itemClassCrudService;
 
     @Override
-    public boolean supports(Class<?> clazz) {
-        return clazz.equals(ClassAttribute.class);
+    public void doValidate(ClassAttribute target, Errors errors) {
+        checkSimple(target, errors);
+        checkUniqueName(target, errors);
     }
 
-    @Override
-    public void validate(Object target, Errors errors) {
-        // simple properties
+    protected void checkSimple(ClassAttribute target, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "cmdb.class.attribute.validate.name.empty");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "cmdb.class.attribute.validate.description.empty");
-
-        ClassAttribute original = (ClassAttribute)target;
-        checkUniqueName(original, errors);
     }
 
     private void checkUniqueName(final ClassAttribute target, Errors errors) {
-        ItemClass itemClass = clazzService.getItemClassById(target.getId().getClassId());
+        ItemClass itemClass = itemClassCrudService.get(target.getId().getClassId());
 
         // create predicate
-        final String name = target.getName();
         Predicate<ClassAttribute> predicate = new Predicate<ClassAttribute>() {
             @Override
             public boolean apply(ClassAttribute input) {

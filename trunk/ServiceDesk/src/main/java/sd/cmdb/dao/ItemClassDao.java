@@ -15,7 +15,7 @@ import sd.infrastructure.dao.HierarchyDao;
  *
  * @author Adrian
  */
-public interface ItemClassDao extends CrudDao<ItemClass, Integer>, HierarchyDao<ItemClass, Integer>
+public interface ItemClassDao extends HierarchyDao<ItemClass, Integer>, CrudDao<ItemClass, Integer>
 {
     public ItemClass       getByName(String name);
     public List<ItemClass> searchByCriteria(ItemClassCriteria criteria);

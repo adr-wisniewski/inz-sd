@@ -10,7 +10,6 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 /**
@@ -18,15 +17,15 @@ import javax.persistence.SequenceGenerator;
  * @author Adrian
  */
 @Embeddable
-public class ClassAttributePk implements Serializable {
+public class ClassAttributeId implements Serializable {
     private Integer classId;
     private Integer attributeNo;
 
-    public ClassAttributePk() {
+    public ClassAttributeId() {
         // empty
     }
 
-    public ClassAttributePk(Integer classId, Integer attributeNo) {
+    public ClassAttributeId(Integer classId, Integer attributeNo) {
         this.classId = classId;
         this.attributeNo = attributeNo;
     }
@@ -54,10 +53,10 @@ public class ClassAttributePk implements Serializable {
     
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof ClassAttributePk)) {
+        if (!(obj instanceof ClassAttributeId)) {
             return false;
         }
-        final ClassAttributePk other = (ClassAttributePk) obj;
+        final ClassAttributeId other = (ClassAttributeId) obj;
         if (getClassId() != other.getClassId() && (getClassId() == null || !getClassId().equals(other.getClassId()))) {
             return false;
         }

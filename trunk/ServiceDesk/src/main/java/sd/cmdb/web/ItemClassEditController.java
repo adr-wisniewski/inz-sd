@@ -5,7 +5,6 @@
 
 package sd.cmdb.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,8 +15,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import sd.cmdb.domain.ItemClass;
-import sd.cmdb.validator.ItemClassEditableValidator;
+import sd.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -26,13 +27,10 @@ import sd.cmdb.validator.ItemClassEditableValidator;
 @Controller
 @RequestMapping(value = "/cmdb/item/class/{id}/edit")
 @PreAuthorize("hasRole('CN_ITC_EDI')")
-public class ItemClassEditController extends BaseController {
+@SessionAttributes(types=ItemClass.class)
+public class ItemClassEditController extends ItemClassBaseController {
 
     protected final String VIEW_EDIT = "/cmdb/item/class/edit";
-    protected final String MODEL_ITEMCLASS = "itemClass";
-
-    @Autowired
-    private ItemClassEditableValidator itemClassEditableValidator;
 
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder) {
@@ -41,21 +39,24 @@ public class ItemClassEditController extends BaseController {
 
     @RequestMapping(method=RequestMethod.GET)
     public String editGet(ModelMap map, @PathVariable("id") ItemClass itemClass) {
-        map.addAttribute(MODEL_ITEMCLASS, itemClass);
+        map.addAttribute(itemClass);
         return VIEW_EDIT;
     }
 
     @RequestMapping(method=RequestMethod.POST)
-    public String editPost(@PathVariable("id") Integer id, @ModelAttribute(MODEL_ITEMCLASS) ItemClass itemClass, BindingResult bindingResult) {
+    public String editPost(ModelMap map,
+            @ModelAttribute ItemClass itemClass,
+            BindingResult bindingResult,
+            SessionStatus status) {
 
-        itemClass.setIdentifier(id);
-        itemClassEditableValidator.validate(itemClass, bindingResult);
-
-        if(bindingResult.hasErrors())
+        try {
+            itemClassCrudService.update(itemClass, bindingResult);
+            messageStorage.addMessage("cmdb.message.item.class.edited", itemClass.getName());
+            status.setComplete();
+            return String.format("redirect:/cmdb/item/class/%s", itemClass.getId());
+        } catch(BusinessConstraintViolationException ex) {
+            map.addAllAttributes(ex.getErrors().getModel());
             return String.format("prg:/cmdb/item/class/%s/edit", itemClass.getId());
-
-        classService.updateItemClass(itemClass);
-        messageStorage.addMessage("cmdb.message.item.class.edited", itemClass.getName());
-        return String.format("redirect:/cmdb/item/class/%s", itemClass.getId());
+        }
     }
 }

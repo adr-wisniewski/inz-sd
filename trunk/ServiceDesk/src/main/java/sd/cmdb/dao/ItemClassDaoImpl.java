@@ -16,11 +16,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 import sd.cmdb.domain.ItemClass;
 import sd.cmdb.domain.helper.ItemClassCriteria;
 import sd.infrastructure.dao.AbstractHibernateCrudDao;
+import sd.infrastructure.domain.DomainObject;
 
 /**
  *
@@ -28,11 +30,6 @@ import sd.infrastructure.dao.AbstractHibernateCrudDao;
  */
 @Repository
 public class ItemClassDaoImpl extends AbstractHibernateCrudDao<ItemClass, Integer> implements ItemClassDao {
-
-    @Autowired
-    public ItemClassDaoImpl(SessionFactory sessionFactory) {
-        super(ItemClass.class, Integer.class, sessionFactory);
-    }
 
     @Override
     public ItemClass getByName(String name) {
@@ -83,5 +80,10 @@ public class ItemClassDaoImpl extends AbstractHibernateCrudDao<ItemClass, Intege
     @Override
     public List<ItemClass> getAll() {
         return getHibernateTemplate().loadAll(ItemClass.class);
+    }
+
+    @Override
+    public ItemClass get(Integer id) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

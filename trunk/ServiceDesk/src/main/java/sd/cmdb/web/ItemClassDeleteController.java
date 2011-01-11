@@ -11,12 +11,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.DataBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import sd.cmdb.domain.ItemClass;
 import sd.cmdb.validator.ItemClassDeleteableValidator;
+import sd.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -25,35 +29,43 @@ import sd.cmdb.validator.ItemClassDeleteableValidator;
 @Controller
 @RequestMapping(value = "/cmdb/item/class/{id}/delete")
 @PreAuthorize("hasRole('CN_ITC_DEL')")
-public class ItemClassDeleteController extends BaseController {
+@SessionAttributes(types=ItemClass.class)
+public class ItemClassDeleteController extends ItemClassBaseController {
     protected static final String VIEW_DELETE = "/cmdb/item/class/delete";
-    protected static final String MODEL_ITEMCLASS = "itemClass";
 
     @RequestMapping(method=RequestMethod.GET)
     public String deleteGet(ModelMap map, @PathVariable("id") Integer classId) {
-        ItemClass itemClass = classService.loadItemClass(classId);
-        map.addAttribute(MODEL_ITEMCLASS, itemClass);
+        ItemClass itemClass = itemClassCrudService.load(classId);
+        map.addAttribute(itemClass);
         return VIEW_DELETE;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String deletePost(
             ModelMap map,
-            @PathVariable("id") Integer classId,
-            @RequestParam("submit") String submit)
+            @ModelAttribute ItemClass itemClass,
+            @RequestParam("submit") String submit,
+            SessionStatus status)
     {
-        if(!submit.equals("ok"))
-            return String.format( "redirect:/cmdb/item/class/%d", classId);
+        String viewName;
 
         try {
-            ItemClass itemClass = classService.deleteItemClass(classId);
-            messageStorage.addMessage("cmdb.message.item.class.deleted", itemClass.getName());
-            return "redirect:/cmdb/item/class/";
+            if(submit.equals("ok")) {
+                itemClassCrudService.delete(itemClass);
+                messageStorage.addMessage("cmdb.message.item.class.deleted", itemClass.getName());
+                viewName = "redirect:/cmdb/item/class/";
+            }
+            else {
+                viewName =  String.format( "redirect:/cmdb/item/class/%d", itemClass.getId());
+            }
+            
+            status.setComplete();
         }
-        catch(BusinessConstraintException ex) {
-            map.addAttribute(MODEL_ITEMCLASS, itemClass);
-            map.addAllAttributes(results.getModel());
-            return String.format("prg:/cmdb/item/class/%s/delete", itemClass.getId());
+        catch(BusinessConstraintViolationException ex) {
+            map.addAllAttributes(ex.getErrors().getModel());
+            viewName = String.format("prg:/cmdb/item/class/%s/delete", itemClass.getId());
         }
+
+        return viewName;
     }
 }

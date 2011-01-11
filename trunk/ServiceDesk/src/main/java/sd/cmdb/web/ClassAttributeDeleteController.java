@@ -5,76 +5,79 @@
 
 package sd.cmdb.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.DataBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import sd.cmdb.domain.ClassAttribute;
-import sd.cmdb.domain.ElementClass;
-import sd.cmdb.validator.ClassAttributeDeleteableValidator;
+import sd.cmdb.domain.ClassAttributeId;
+import sd.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
  * @author Adrian
  */
 @Controller
-@RequestMapping(value = "/cmdb/class/{classid}/attribute/{attrid}/delete")
+@RequestMapping(value = "/cmdb/class/{classid}/attribute/{attrno}/delete")
 @PreAuthorize("hasRole('CN_ATR_DEL')")
-public class ClassAttributeDeleteController extends BaseController {
-    public static final String MODEL_ELEMENTCLASS = "elementClass";
-    public static final String MODEL_ATTRIBUTE = "attribute";
+@SessionAttributes(types=ClassAttribute.class)
+public class ClassAttributeDeleteController extends ItemClassBaseController {
     public static final String PATH_CLASS = "classid";
-    public static final String PATH_ATTR = "attrid";
+    public static final String PATH_ATTR = "attrno";
     public static final String VIEW_DELETE = "/cmdb/class/attribute/delete";
-
-    @Autowired
-    private ClassAttributeDeleteableValidator classAttributeDeleteableValidator;
 
     @RequestMapping(method=RequestMethod.GET)
     public String deleteGet(ModelMap map,
-            @PathVariable(PATH_CLASS) ElementClass elementClass,
-            @PathVariable(PATH_ATTR) ClassAttribute classAttribute) {
-        map.addAttribute(MODEL_ELEMENTCLASS, elementClass);
-        map.addAttribute(MODEL_ATTRIBUTE, classAttribute);
+            @PathVariable(PATH_CLASS) Integer classId,
+            @PathVariable(PATH_ATTR) Integer attrNo) {
+
+        ClassAttributeId classAttributeId = new ClassAttributeId(classId, attrNo);
+        ClassAttribute classAttribute = classAttributeCrudService.load(classAttributeId);
+
+        map.addAttribute(classAttribute);
         return VIEW_DELETE;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String deletePost(
             ModelMap map,
-            @PathVariable(PATH_CLASS) ElementClass elementClass,
-            @PathVariable(PATH_ATTR) ClassAttribute classAttribute,
-            @RequestParam("submit") String submit)
+            @RequestParam("submit") String submit,
+            @ModelAttribute ClassAttribute classAttribute,
+            SessionStatus status)
     {
-        if(!submit.equals("ok"))
-            return String.format( "redirect:/cmdb/class/%d", elementClass.getIdentifier());
 
-        DataBinder binder = new DataBinder(elementClass, "target");
-        binder.setValidator(classAttributeDeleteableValidator);
-        binder.validate();
-        BindingResult results = binder.getBindingResult();
+        String viewName;
 
-        if(results.hasErrors())
-        {
-            map.addAttribute(MODEL_ELEMENTCLASS, elementClass);
-            map.addAttribute(MODEL_ATTRIBUTE, classAttribute);
-            map.addAllAttributes(results.getModel());
-            return String.format("prg:/cmdb/class/%d/attribute/%d/delete",
-                    classAttribute.getId().getClassId(),
-                    classAttribute.getId().getAttributeNo());
+        try {
+            if(submit.equals("ok")) {
+                classAttributeCrudService.delete(classAttribute);
+                messageStorage.addMessage("cmdb.message.class.attribute.deleted",
+                classAttribute.getName(),
+                classAttribute.getElementClass().getName());
+
+                viewName = String.format("redirect:/cmdb/class/%d",
+                        classAttribute.getId().getClassId());
+            }
+            else {
+                viewName =  String.format( "redirect:/cmdb/class/%d",
+                        classAttribute.getId().getClassId());
+            }
+
+            status.setComplete();
+        }
+        catch(BusinessConstraintViolationException ex) {
+            map.addAllAttributes(ex.getErrors().getModel());
+            viewName = String.format("prg:/cmdb/class/%d/attribute/%d/delete",
+                classAttribute.getId().getClassId(),
+                classAttribute.getId().getAttributeNo());
         }
 
-        classService.deleteClassAttribute(classAttribute);
-        messageStorage.addMessage("cmdb.message.class.attribute.deleted",
-                classAttribute.getName(),
-                elementClass.getName());
-        
-        return String.format("redirect:/cmdb/class/%d", elementClass.getIdentifier());
+        return viewName;
     }
 }

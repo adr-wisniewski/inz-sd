@@ -19,10 +19,14 @@ public class AbstractVersionedDomainObject<Id extends Serializable> extends Abst
     private Integer version;
 
     @Version
-    @Column(name = "version", precision = 10)
+    @Column(name = "VERSION", precision = 10)
     @Override
     public Integer getVersion() {
             return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 
 }

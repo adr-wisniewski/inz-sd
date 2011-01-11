@@ -5,7 +5,6 @@
 
 package sd.cmdb.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import sd.cmdb.domain.ClassAttribute;
-import sd.cmdb.domain.ElementClass;
-import sd.cmdb.validator.ClassAttributeValidator;
+import sd.cmdb.domain.ClassAttributeId;
+import sd.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -29,15 +28,10 @@ import sd.cmdb.validator.ClassAttributeValidator;
 @Controller
 @RequestMapping(value = "/cmdb/class/{classid}/attribute/*")
 @PreAuthorize("hasRole('CN_ATR_ADD')")
-@SessionAttributes(ClassAttributeAddController.MODEL_ATTRIBUTE)
-public class ClassAttributeAddController extends BaseController {
-    public static final String MODEL_ATTRIBUTE = "attribute";
-    public static final String MODEL_ELEMENTCLASS = "elementClass";
+@SessionAttributes(types=ClassAttribute.class)
+public class ClassAttributeAddController extends ItemClassBaseController {
     public static final String PATH_CLASS = "classid";
     public static final String VIEW_ADD = "/cmdb/class/attribute/add";
-
-    @Autowired
-    private ClassAttributeValidator classAttributeValidator;
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
@@ -46,38 +40,45 @@ public class ClassAttributeAddController extends BaseController {
     }
     
     @RequestMapping(value="/add", method = RequestMethod.GET)
-    public String creteNewInstance(ModelMap map, @PathVariable(PATH_CLASS) ElementClass elementClass) {
-            map.addAttribute(MODEL_ATTRIBUTE, new ClassAttribute());
-            map.addAttribute(MODEL_ELEMENTCLASS, elementClass);
-            return String.format("redirect:/cmdb/class/%d/attribute/new", elementClass.getIdentifier());
+    public String creteNewInstance(ModelMap map, 
+            @PathVariable(PATH_CLASS) Integer classid) {
+
+        ClassAttributeId classAttributeId = new ClassAttributeId(classid, null);
+
+        ClassAttribute classAttribute = new ClassAttribute();
+        classAttribute.setId(classAttributeId);
+        map.addAttribute(new ClassAttribute());
+
+        return String.format("redirect:/cmdb/class/%d/attribute/new",
+                classAttribute.getId().getClassId());
     }
 
     @RequestMapping(value="/new", method = RequestMethod.GET)
-    public String showNewInstance(ModelMap map, @ModelAttribute(MODEL_ATTRIBUTE) ClassAttribute classAttribute, @PathVariable(PATH_CLASS) ElementClass elementClass) {
-        map.addAttribute(MODEL_ELEMENTCLASS, elementClass);
+    public String showNewInstance(ModelMap map, ClassAttribute classAttribute) {
         return VIEW_ADD;
     }
 
     @RequestMapping(value="/new", method = RequestMethod.POST)
-    public String saveNewInstance(
-            @ModelAttribute(MODEL_ATTRIBUTE) ClassAttribute classAttribute,
+    public String saveNewInstance(ModelMap map,
+            @ModelAttribute ClassAttribute classAttribute,
             BindingResult bindingResult,
-            @PathVariable(PATH_CLASS) ElementClass elementClass,
             SessionStatus status) {
 
-        classAttribute.getId().setClassId(elementClass.getIdentifier());
-
-        classAttributeValidator.validate(classAttribute, bindingResult);
-        if(bindingResult.hasErrors())
-            return String.format("redirect:/cmdb/class/%d/attribute/new",
-                    elementClass.getIdentifier());
-
-        classService.addClassAttribute(classAttribute);
-        messageStorage.addMessage("cmdb.message.class.attribute.added", 
+        try {
+            classAttributeCrudService.add(classAttribute, bindingResult);
+            messageStorage.addMessage("cmdb.message.class.attribute.added",
                 classAttribute.getName(),
-                elementClass.getName());
-        
-        status.setComplete();
-        return String.format("redirect:/cmdb/class/%d", elementClass.getIdentifier());
+                classAttribute.getElementClass().getName());
+            status.setComplete();
+
+            return String.format("redirect:/cmdb/item/class/%d",
+                    classAttribute.getElementClass().getId());
+        }
+        catch(BusinessConstraintViolationException ex) {
+            map.addAllAttributes(ex.getErrors().getModel());
+
+            return String.format("prg:/cmdb/class/%d/attribute/new",
+                    classAttribute.getElementClass().getId());
+        }
     }
 }

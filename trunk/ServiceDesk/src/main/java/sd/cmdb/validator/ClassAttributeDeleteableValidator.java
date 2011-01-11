@@ -5,29 +5,25 @@
 
 package sd.cmdb.validator;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import org.springframework.validation.Validator;
 import sd.cmdb.domain.ClassAttribute;
-import sd.cmdb.service.ClassServiceFacade;
+import sd.infrastructure.validation.AbstractValidator;
 
 /**
  *
  * @author Adrian
  */
 @Component
-public class ClassAttributeDeleteableValidator implements Validator {
-    @Autowired
-    protected ClassServiceFacade clazzService;
+public class ClassAttributeDeleteableValidator extends AbstractValidator<ClassAttribute> {
 
     @Override
-    public boolean supports(Class<?> clazz) {
-        return clazz.equals(ClassAttribute.class);
+    protected void doValidate(ClassAttribute target, Errors errors) {
+        checkIsUsed(target, errors);
     }
 
-    @Override
-    public void validate(Object target, Errors errors) {
-        // TODO: add delete attribute constraints
+    private void checkIsUsed(ClassAttribute target, Errors errors) {
+        // TODO: finish this
     }
+
 }

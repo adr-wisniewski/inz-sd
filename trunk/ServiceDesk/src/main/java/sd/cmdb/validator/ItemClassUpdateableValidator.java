@@ -5,29 +5,23 @@
 
 package sd.cmdb.validator;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import org.springframework.validation.Validator;
-import sd.cmdb.dao.ItemClassDao;
 import sd.cmdb.domain.ItemClass;
 
 /**
  *
  * @author Adrian
  */
-public class ItemClassEditableValidator extends ItemClassValidator {
+@Component
+public class ItemClassUpdateableValidator extends ItemClassValidator {
 
-    public ItemClassEditableValidator(ItemClass sameNameClass) {
-        super(sameNameClass);
-    }
 
     @Override
-    public void validate(Object target, Errors errors) {
+    public void doValidate(ItemClass target, Errors errors) {
         super.validate(target, errors);
 
-        ItemClass itemClass = (ItemClass)target;
-        checkParentChanged(itemClass, errors);
+        checkParentChanged(target, errors);
     }
 
     private void checkParentChanged(ItemClass itemClass, Errors errors)

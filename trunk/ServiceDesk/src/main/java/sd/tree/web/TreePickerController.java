@@ -83,15 +83,15 @@ public class TreePickerController {
 
                 HierarchyDao<?, ?> dao = getDataSource(dataSourceName);
                 Class<? extends Serializable> targetClass = dao.getIdClass();
-                item = wtf(targetClass, dao, itemId);
+                item = omg(targetClass, dao, itemId);
             }
 
             model.addAttribute("item", item);
             return "sd/treePickerChoose";
 	}
 
-        protected <Id extends Serializable> HierarchicalDomainObject<Id>
-                wtf(Class<Id> clazz, HierarchyDao<?, ?> dao, String itemId) {
+        private <Id extends Serializable> HierarchicalDomainObject<Id>
+                omg(Class<Id> clazz, HierarchyDao<?, ?> dao, String itemId) {
             HierarchyDao<?, Id> typedDao = (HierarchyDao<?, Id>)dao;
             return typedDao.get(conversionService.convert(itemId, clazz));
         }

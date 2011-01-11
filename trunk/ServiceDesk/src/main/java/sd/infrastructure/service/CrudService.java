@@ -6,6 +6,7 @@
 package sd.infrastructure.service;
 
 import java.io.Serializable;
+import org.springframework.validation.BindingResult;
 import sd.infrastructure.domain.DomainObject;
 
 /**
@@ -16,7 +17,7 @@ public interface CrudService<Type extends DomainObject<Id>, Id extends Serializa
     public Type load(Id id);
     public Type get(Id id);
 
-    public void add(Type object);
-    public void update(Type object);
+    public void add(Type object, BindingResult bindingResult);
+    public void update(Type object, BindingResult bindingResult);
     public void delete(Type object);
 }

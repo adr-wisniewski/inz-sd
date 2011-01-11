@@ -2,40 +2,35 @@ package sd.cmdb.validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
-import org.springframework.validation.Validator;
 import sd.cmdb.domain.ItemClass;
+import sd.cmdb.service.ItemClassService;
+import sd.infrastructure.validation.AbstractValidator;
 
-public class ItemClassValidator implements Validator {
+@Component
+public class ItemClassValidator extends AbstractValidator<ItemClass> {
 
-    private ItemClass sameNameClass;
-
-    public ItemClassValidator(ItemClass sameNameClass) {
-        this.sameNameClass = sameNameClass;
-    }
-
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return clazz.equals(ItemClass.class);
-    }
+    @Autowired
+    protected ItemClassService itemClassService;
 
     @Override
-    public void validate(Object target, Errors errors) {
+    public void doValidate(ItemClass target, Errors errors) {
+        checkSimple(target, errors);
+        checkUniqueName(target, errors);
+        checkParentChain(target, errors);
+    }
 
-        // simple properties
+    protected void checkSimple(ItemClass target, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "cmdb.item.class.validate.name.empty");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "cmdb.item.class.validate.description.empty");
         ValidationUtils.rejectIfEmpty(errors, "abstraction", "cmdb.item.class.validate.abstraction.empty");
-
-        ItemClass original = (ItemClass)target;
-        checkUniqueName(original, errors);
-        checkParentChain(original, errors);
     }
 
     protected void checkUniqueName(ItemClass target, Errors errors) {
-        if(sameNameClass != null && !sameNameClass.getIdentifier().equals(target.getIdentifier()))
+        ItemClass sameNameClass = itemClassService.getByName(target.getName());
+
+        if(sameNameClass != null && !sameNameClass.getId().equals(target.getId()))
             errors.rejectValue("name", "cmdb.item.class.validate.name.notunique");
     }
 

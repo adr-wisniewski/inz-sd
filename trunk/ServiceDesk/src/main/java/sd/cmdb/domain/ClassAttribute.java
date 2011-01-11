@@ -11,14 +11,12 @@ import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parameter;
+import sd.infrastructure.domain.AbstractVersionedDomainObject;
 
 /**
  *
@@ -27,21 +25,11 @@ import org.hibernate.annotations.Parameter;
 @Entity @Cacheable
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Table(name="C2_CLASS_ATTRIBUTES")
-public class ClassAttribute implements Serializable {
+public class ClassAttribute extends AbstractVersionedDomainObject<ClassAttributeId> implements Serializable {
 
-    private ClassAttributePk id;
     private String name;
     private String description;
     private ElementClass elementClass;
-
-    @EmbeddedId
-    public ClassAttributePk getId() {
-        return id;
-    }
-
-    public void setId(ClassAttributePk id) {
-        this.id = id;
-    }
 
     @Column(name = "NAME", length = 200)
     public String getName() {

@@ -5,8 +5,10 @@
 
 package sd.infrastructure.dao;
 
+import sd.infrastructure.util.GenericUtil;
 import java.io.Serializable;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import sd.infrastructure.domain.DomainObject;
 
@@ -16,21 +18,22 @@ import sd.infrastructure.domain.DomainObject;
  */
 public abstract class AbstractHibernateCrudDao<Type extends DomainObject<Id>, Id extends Serializable> extends HibernateDaoSupport implements CrudDao<Type, Id> {
 
-    protected Class<Type> typeClass;
-    protected Class<Id> idClass;
+    protected Class<Type> typeClass = (Class<Type>)GenericUtil.getTypeArgument(AbstractHibernateCrudDao.class, getClass(),0);
+    protected Class<Id> idClass = (Class<Id>)GenericUtil.getTypeArgument(AbstractHibernateCrudDao.class, getClass(), 1);
 
-    public AbstractHibernateCrudDao(Class<Type> typeClass, Class<Id> idClass, SessionFactory sessionFactory) {
-        this.typeClass = typeClass;
-        this.idClass = idClass;
-        setSessionFactory(sessionFactory);
-    }
-
+    @Override
     public Class<Type> getTypeClass() {
         return typeClass;
     }
 
+    @Override
     public Class<Id> getIdClass() {
         return idClass;
+    }
+
+    @Autowired
+    public void setHibernateSessionFactory(SessionFactory sessionFactory) {
+        setSessionFactory(sessionFactory);
     }
 
     @Override

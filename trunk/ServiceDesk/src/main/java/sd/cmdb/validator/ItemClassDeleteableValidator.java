@@ -9,26 +9,20 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import sd.cmdb.domain.ItemClass;
+import sd.infrastructure.validation.AbstractValidator;
 
 /**
  *
  * @author Adrian
  */
 @Component
-public class ItemClassDeleteableValidator implements Validator {
+public class ItemClassDeleteableValidator extends AbstractValidator<ItemClass> {
 
     @Override
-    public boolean supports(Class<?> clazz) {
-        return clazz.equals(ItemClass.class);
-    }
-
-    @Override
-    public void validate(Object target, Errors errors) {
-        ItemClass itemClass = (ItemClass)target;
-
-        hasNoChildrenClasses(itemClass, errors);
-        hasNoInstances(itemClass, errors);
-        isNotUsedByRelationships(itemClass, errors);
+    public void doValidate(ItemClass target, Errors errors) {
+        hasNoChildrenClasses(target, errors);
+        hasNoInstances(target, errors);
+        isNotUsedByRelationships(target, errors);
     }
 
     protected void hasNoChildrenClasses(ItemClass itemClass, Errors errors)

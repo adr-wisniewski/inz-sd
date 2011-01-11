@@ -20,7 +20,7 @@ import sd.cmdb.domain.ItemClass;
 @Controller
 @RequestMapping(value = "/cmdb/item/class/*")
 @PreAuthorize("hasRole('CN_ITC_VIE')")
-public class ItemClassViewController extends BaseController {
+public class ItemClassViewController extends ItemClassBaseController {
     protected static final String VIEW_MAIN = "/cmdb/item/class";
     protected static final String VIEW_VIEW = "/cmdb/item/class/view";
     protected static final String MODEL_ITEMCLASS = "itemClass";

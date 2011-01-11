@@ -47,7 +47,7 @@ abstract public class ElementClass extends AbstractVersionedDomainObject<Integer
 
     /**
      * @return the id
-     */
+     
     @Id
     @SequenceGenerator(name = "C2_CLASS_SEQ", sequenceName = "C2_CLASS_SEQ")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "C2_CLASS_SEQ")
@@ -55,7 +55,7 @@ abstract public class ElementClass extends AbstractVersionedDomainObject<Integer
     @Override
     public Integer getId() {
         return super.getId();
-    }
+    }*/
 
     /**
      * @return the abstraction
