@@ -14,8 +14,6 @@ import sd.infrastructure.domain.DomainObject;
  */
 public interface CrudDao<Type extends DomainObject<Id>, Id extends Serializable> extends Dao<Type, Id> {
     public Type load(Id id);
-    public Type get(Id id);
-
     public void persist(Type object);
     public void remove(Type object);
     public Type merge(Type object);

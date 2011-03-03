@@ -15,23 +15,20 @@ public abstract class TreeBuilder{
 	 * @return lista korzeni
 	 */
 	@SuppressWarnings("unchecked")
-	public static List<TreeItem> buildTree(List items, String currentValue) {
+	public static List<TreeItem> buildTree(List<? extends HierarchicalDomainObject> items, String currentValue) {
 		List<TreeItem> roots = new LinkedList<TreeItem>();
 		List<TreeItem> values = new LinkedList<TreeItem>();
 		TreeItem current = null;
 		
 		//opakuj HierarchicalDomainObject w TreeItem:
-		for(Object i : items) {
-			if(i instanceof HierarchicalDomainObject) {
-				HierarchicalDomainObject hierarchyItem = (HierarchicalDomainObject)i;
-				TreeItem item = new TreeItem(hierarchyItem);
-				if(hierarchyItem.getId().equals(currentValue)) {
-					current = item;
-					item.setCurrent(true);
-				}
-				values.add(item);
-				roots.add(item);
-			}
+		for(HierarchicalDomainObject hierarchyItem : items) {
+                    TreeItem item = new TreeItem(hierarchyItem);
+                    if(hierarchyItem.getId().equals(currentValue)) {
+                            current = item;
+                            item.setCurrent(true);
+                    }
+                    values.add(item);
+                    roots.add(item);
 		}
 		
 		//ustaw dzieci:

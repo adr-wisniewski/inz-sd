@@ -13,5 +13,4 @@ import java.io.Serializable;
  */
 public interface DomainObject<Id extends Serializable> {
     public Id getId();
-    public void setId(Id id);
 }

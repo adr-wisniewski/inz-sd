@@ -25,10 +25,6 @@ public class InMemoryIncidentImpactDao
         new IncidentImpact("U", "Affects User"),
         new IncidentImpact("G", "Affects Group"),
     };
-
-    public InMemoryIncidentImpactDao() {
-        super(IncidentImpact.class,String.class);
-    }
     
     @Override
     protected List<IncidentImpact> initValues() {

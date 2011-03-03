@@ -10,28 +10,18 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- import the dataSource definition -->
-    <import resource="dataSource.xml"/>
-	
-	<!-- Session Factory: -->
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-            <!--property name="dataSource" ref="dataSource" /-->
-            <property name="packagesToScan">
-                <list>
-                    <value>sd.domain</value>
-                    <value>sd.*.domain</value>
-                </list>
-            </property>
-            <property name="configLocation">
-                <value>classpath:hibernate.cfg.xml</value>
-            </property>
-	</bean>
+    <!-- Session Factory: -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+        <property name="configLocation">
+            <value>classpath:hibernate.cfg.xml</value>
+        </property>
+    </bean>
 
 
-	<!--  Transaction Manager: -->
-	<tx:annotation-driven transaction-manager="transactionManager"/>
-	
-	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
+    <!--  Transaction Manager: -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+            <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
 </beans>

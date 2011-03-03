@@ -134,7 +134,6 @@ public class RequestStatus implements DictionaryProperty<String>, Serializable {
         return getCode();
     }
 
-    @Override
     public void setId(String id) {
         setId(id);
     }

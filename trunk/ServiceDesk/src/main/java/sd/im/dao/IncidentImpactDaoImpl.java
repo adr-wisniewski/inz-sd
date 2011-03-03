@@ -19,9 +19,5 @@ import sd.im.domain.IncidentImpact;
 @Repository
 @Transactional
 public class IncidentImpactDaoImpl extends GenericHibernateDao<IncidentImpact,String> implements IncidentImpactDao {
-
-	public IncidentImpactDaoImpl() {
-		super(IncidentImpact.class,String.class);
-	}
 	
 }

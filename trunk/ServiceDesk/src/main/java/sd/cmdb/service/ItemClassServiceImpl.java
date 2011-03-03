@@ -7,33 +7,42 @@ package sd.cmdb.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sd.cmdb.dao.ItemClassDao;
 import sd.cmdb.domain.ItemClass;
-import sd.cmdb.domain.helper.ItemClassCriteria;
 
 /**
  *
  * @author Adrian
  */
 @Service
+@Transactional
+@PreAuthorize("hasRole('CN_ITC_VIE')")
 public class ItemClassServiceImpl implements ItemClassService {
 
     @Autowired
-    protected ItemClassDao dao;
+    protected ItemClassDao itemClassDao;
 
     @Override
-    public List<ItemClass> search(ItemClassCriteria criteria) {
-        return dao.searchByCriteria(criteria);
+    public List<ItemClass> getAll() {
+        return itemClassDao.getAll();
+    }
+
+    @Override
+    public ItemClass load(Integer id) {
+        return itemClassDao.load(id);
+    }
+
+    @Override
+    public ItemClass loadByName(String classname) {
+        return itemClassDao.loadByName(classname);
     }
 
     @Override
     public ItemClass getByName(String name) {
-        return dao.getByName(name);
+        return itemClassDao.getByName(name);
     }
 
-    @Override
-    public List<ItemClass> getAll() {
-        return dao.getAll();
-    }
 }

@@ -18,10 +18,6 @@ import sd.im.domain.IncidentPriority;
 public class InMemoryIncidentPriorityDao extends GenericInMemoryDao<IncidentPriority, String> implements
 		IncidentPriorityDao {
 
-    public InMemoryIncidentPriorityDao() {
-        super(IncidentPriority.class,String.class);
-    }
-
 	@Override
 	protected List<IncidentPriority> initValues() {
 		return Arrays.asList(

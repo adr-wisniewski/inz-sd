@@ -19,8 +19,4 @@ import sd.rf.domain.RequestStatus;
 @Transactional
 public class RequestStatusDaoImpl extends GenericHibernateDao<RequestStatus,String> implements RequestStatusDao {
 
-	public RequestStatusDaoImpl() {
-		super(RequestStatus.class, String.class);
-	}
-
 }

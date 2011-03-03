@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import sd.cmdb.dao.ItemClassDao;
+import sd.cmdb.dao.UniversalItemClassDao;
 
 import sd.em.dao.EventCategoryDao;
 import sd.im.dao.IncidentCategoryDao;
@@ -58,7 +58,7 @@ public class TreePickerController {
 	}
 
         @Autowired
-	public void setItemClassDao(ItemClassDao dao) {
+	public void setItemClassDao(UniversalItemClassDao dao) {
             registerDataSource("itemclass_cmdb", dao);
 	}
 	

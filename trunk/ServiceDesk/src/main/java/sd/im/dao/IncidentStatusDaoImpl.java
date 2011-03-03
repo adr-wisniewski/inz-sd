@@ -19,8 +19,4 @@ import sd.im.domain.IncidentStatus;
 @Transactional
 public class IncidentStatusDaoImpl extends GenericHibernateDao<IncidentStatus,String> implements IncidentStatusDao {
 
-	public IncidentStatusDaoImpl() {
-		super(IncidentStatus.class,String.class);
-	}
-
 }

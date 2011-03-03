@@ -13,7 +13,7 @@ import sd.infrastructure.domain.DomainObject;
  *
  * @author Adrian
  */
-public interface CrudService<Type extends DomainObject<Id>, Id extends Serializable> {
+public interface CrudService<Type extends DomainObject<Id>, Id extends Serializable> extends Service {
     public Type load(Id id);
     public Type get(Id id);
 

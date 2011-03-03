@@ -19,17 +19,14 @@ import sd.pm.domain.ProblemPriority;
  */
 public class InMemoryProblemPriorityDao extends GenericInMemoryDao<ProblemPriority,String> implements
 		ProblemPriorityDao {
-    public InMemoryProblemPriorityDao() {
-        super(ProblemPriority.class,String.class);
-    }
 
-	@Override
-	protected List<ProblemPriority> initValues() {
-		return Arrays.asList(
-						new ProblemPriority[] {
-								new ProblemPriority("CAT1", "Hardware"),
-								new ProblemPriority("CAT2", "Software"),
-						}
-		);
-	}
+    @Override
+    protected List<ProblemPriority> initValues() {
+            return Arrays.asList(
+                                            new ProblemPriority[] {
+                                                            new ProblemPriority("CAT1", "Hardware"),
+                                                            new ProblemPriority("CAT2", "Software"),
+                                            }
+            );
+    }
 }

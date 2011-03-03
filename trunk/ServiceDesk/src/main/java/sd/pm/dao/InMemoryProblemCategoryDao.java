@@ -3,11 +3,8 @@
  */
 package sd.pm.dao;
 
-import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
-
-import org.springframework.stereotype.Repository;
 
 import sd.dao.GenericInMemoryDao;
 import sd.pm.domain.ProblemCategory;
@@ -21,11 +18,7 @@ import sd.pm.domain.ProblemCategory;
 public class InMemoryProblemCategoryDao extends GenericInMemoryDao<ProblemCategory,String> implements
 		ProblemCategoryDao {
 
-    public InMemoryProblemCategoryDao() {
-        super(ProblemCategory.class,String.class);
-    }
-
-
+    @Override
     protected List<ProblemCategory> initValues() {
         return Arrays.asList(
             new ProblemCategory[] {
@@ -33,10 +26,5 @@ public class InMemoryProblemCategoryDao extends GenericInMemoryDao<ProblemCatego
                             new ProblemCategory("CAT2", "Software"),
             }
         );
-    }
-
-    public ProblemCategory get(String id) {
-            // TODO Auto-generated method stub
-            return null;
     }
 }

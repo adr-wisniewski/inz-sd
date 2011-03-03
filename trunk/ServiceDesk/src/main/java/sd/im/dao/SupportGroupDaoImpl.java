@@ -10,7 +10,4 @@ import sd.im.domain.SupportGroup;
 @Transactional
 public class SupportGroupDaoImpl extends GenericHibernateDao<SupportGroup,Integer> implements SupportGroupDao {
 
-	public SupportGroupDaoImpl() {
-		super(SupportGroup.class, Integer.class);
-	}
 }

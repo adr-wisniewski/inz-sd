@@ -13,13 +13,9 @@ import sd.pm.domain.KnownError;
 @Transactional
 public class KnownErrorDaoImpl extends GenericHibernateDao<KnownError,Integer> implements KnownErrorDao {
 
-	public KnownErrorDaoImpl() {
-		super(KnownError.class, Integer.class);
-	}
-
-        @Override
-	public List<KnownError> search(KnownErrorSearchCriteria searchCriteria) {
-		return super.search(searchCriteria);
-	}
+    @Override
+    public List<KnownError> search(KnownErrorSearchCriteria searchCriteria) {
+            return super.search(searchCriteria);
+    }
 	
 }

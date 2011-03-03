@@ -44,7 +44,6 @@ public class SupportGroup implements DomainObject<Integer>, Serializable {
 		return id;
 	}
 
-    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

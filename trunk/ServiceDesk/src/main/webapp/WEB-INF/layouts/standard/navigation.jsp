@@ -52,23 +52,23 @@
     <menu:menuItem url="/rf/search" name="search_request.label" role="SEARCH_RF"/>
 </menu:menuGroup>
 
-<menu:menuGroup name="cmdb.menu.caption" id="menu-cn">
-    <menu:compositeMenuItem url="/cmdb/item" name="cmdb.menu.item">
-        <menu:menuItem url="/cmdb/item/add" name="cmdb.menu.item.add" role="CN_ITM_ADD" icon="add"/>
-        <menu:menuItem url="/cmdb/item/browse" name="cmdb.menu.item.browse" role="CN_ITM_VIE" icon="search"/>
-        <menu:menuItem url="/cmdb/item/search" name="cmdb.menu.item.search" role="CN_ITM_VIE" icon="search"/>
+<menu:menuGroup name="menu.cmdb.caption" id="menu-cn">
+    <menu:compositeMenuItem url="/cmdb/item" name="menu.cmdb.item">
+        <menu:menuItem url="/cmdb/item/add" name="menu.cmdb.item.add" role="CN_ITM_ADD" icon="add"/>
+        <menu:menuItem url="/cmdb/item/browse" name="menu.cmdb.item.browse" role="CN_ITM_VIE" icon="search"/>
+        <menu:menuItem url="/cmdb/item/search" name="menu.cmdb.item.search" role="CN_ITM_VIE" icon="search"/>
     </menu:compositeMenuItem>
 
-    <menu:compositeMenuItem url="/cmdb/item/class" name="cmdb.menu.item.class">
-        <menu:menuItem url="/cmdb/item/class/add" name="cmdb.menu.item.class.add" role="CN_ITC_ADD" icon="add"/>
-        <menu:menuItem url="/cmdb/item/class/browse" name="cmdb.menu.item.class.browse" role="CN_ITC_VIE" icon="search"/>
-        <menu:menuItem url="/cmdb/item/class/search" name="cmdb.menu.item.class.search" role="CN_ITC_VIE" icon="search"/>
+    <menu:compositeMenuItem url="/cmdb/item/class" name="menu.cmdb.item.class">
+        <menu:menuItem url="/cmdb/item/class/add" name="menu.cmdb.item.class.add" role="CN_ITC_ADD" icon="add"/>
+        <menu:menuItem url="/cmdb/item/class/browse" name="menu.cmdb.item.class.browse" role="CN_ITC_VIE" icon="search"/>
+        <menu:menuItem url="/cmdb/item/class/search" name="menu.cmdb.item.class.search" role="CN_ITC_VIE" icon="search"/>
     </menu:compositeMenuItem>
 
-    <menu:compositeMenuItem url="/cmdb/relationship/class" name="cmdb.menu.relationship.class">
-        <menu:menuItem url="/cmdb/relationship/class/add" name="cmdb.menu.item.class.add" role="CN_RLT_ADD" icon="add"/>
-        <menu:menuItem url="/cmdb/relationship/class/browse" name="cmdb.menu.item.class.browse" role="CN_RLT_VIE" icon="search"/>
-        <menu:menuItem url="/cmdb/relationship/class/search" name="cmdb.menu.item.class.search" role="CN_RLT_VIE" icon="search"/>
+    <menu:compositeMenuItem url="/cmdb/relationship/class" name="menu.cmdb.relationship.class">
+        <menu:menuItem url="/cmdb/relationship/class/add" name="menu.cmdb.item.class.add" role="CN_RLT_ADD" icon="add"/>
+        <menu:menuItem url="/cmdb/relationship/class/browse" name="menu.cmdb.item.class.browse" role="CN_RLT_VIE" icon="search"/>
+        <menu:menuItem url="/cmdb/relationship/class/search" name="menu.cmdb.item.class.search" role="CN_RLT_VIE" icon="search"/>
     </menu:compositeMenuItem>
 </menu:menuGroup>
 

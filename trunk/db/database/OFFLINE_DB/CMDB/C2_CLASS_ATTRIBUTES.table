@@ -7,6 +7,28 @@
   <columns>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8c166136-8f00-403d-a90d-fe57611a5ce3</identifier>
+      </ID>
+      <name>ATTRIBUTE_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c1b25b9f-128e-4115-9311-c8ac4023baac</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">c555ed31-bbaf-42f0-a000-5c20c33ae40b</identifier>
       </ID>
       <name>CLASS_ID</name>
@@ -39,12 +61,12 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">8c166136-8f00-403d-a90d-fe57611a5ce3</identifier>
+        <identifier class="java.lang.String">ba0e4796-534e-4fb3-ab16-80fd643f1b62</identifier>
       </ID>
-      <name>ATTRIBUTE_NO</name>
+      <name>VERSION</name>
       <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">c1b25b9f-128e-4115-9311-c8ac4023baac</identifier>
+          <identifier class="java.lang.String">fba20be9-bca7-41f4-8d13-b33dbdff6525</identifier>
         </ID>
         <attributeValues>
           <entry>
@@ -103,6 +125,28 @@
       </dataTypeUsage>
       <notNull>true</notNull>
     </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f75cbadb-b767-42ef-98c0-5ea612681599</identifier>
+      </ID>
+      <name>DISPLAY_NO</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">997fa3ba-3ccc-4264-a79b-e7035725c6de</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
   </columns>
   <constraints>
     <constraint class="oracle.javatools.db.FKConstraint">
@@ -144,18 +188,7 @@
       <name>C2_CLASS_ATTRIBUTES_PK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>CLASS_ID</name>
-          <identifier class="java.lang.String">c555ed31-bbaf-42f0-a000-5c20c33ae40b</identifier>
-          <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>C2_CLASS_ATTRIBUTES</name>
-            <identifier class="java.lang.String">34400feb-dc06-4e6e-8019-38c9ff71dc71</identifier>
-            <schemaName>CMDB</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <type>COLUMN</type>
-        </columnID>
-        <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>ATTRIBUTE_NO</name>
+          <name>ATTRIBUTE_ID</name>
           <identifier class="java.lang.String">8c166136-8f00-403d-a90d-fe57611a5ce3</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>C2_CLASS_ATTRIBUTES</name>

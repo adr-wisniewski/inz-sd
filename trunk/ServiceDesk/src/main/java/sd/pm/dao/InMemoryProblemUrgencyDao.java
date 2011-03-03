@@ -20,17 +20,13 @@ import sd.pm.domain.ProblemUrgency;
 public class InMemoryProblemUrgencyDao extends GenericInMemoryDao<ProblemUrgency,String> implements
 		ProblemUrgencyDao {
 
-    public InMemoryProblemUrgencyDao() {
-        super(ProblemUrgency.class,String.class);
+    @Override
+    protected List<ProblemUrgency> initValues() {
+            return Arrays.asList(
+                                            new ProblemUrgency[] {
+                                                            new ProblemUrgency("CAT1", "Hardware"),
+                                                            new ProblemUrgency("CAT2", "Software"),
+                                            }
+            );
     }
-
-	@Override
-	protected List<ProblemUrgency> initValues() {
-		return Arrays.asList(
-						new ProblemUrgency[] {
-								new ProblemUrgency("CAT1", "Hardware"),
-								new ProblemUrgency("CAT2", "Software"),
-						}
-		);
-	}
 }

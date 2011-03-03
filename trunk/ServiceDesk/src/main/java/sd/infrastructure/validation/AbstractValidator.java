@@ -15,7 +15,7 @@ import sd.infrastructure.util.GenericUtil;
  */
 public abstract class AbstractValidator<Type> implements Validator {
 
-    protected Class<Type> typeClass = (Class<Type>)GenericUtil
+    private Class<Type> typeClass = (Class<Type>)GenericUtil
             .getTypeArgument(AbstractValidator.class, getClass(), 0);
 
     @Override

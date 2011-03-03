@@ -13,10 +13,6 @@ import sd.em.domain.Event;
 @Transactional
 public class EventDaoImpl extends GenericHibernateDao<Event, Integer> implements EventDao {
 
-	public EventDaoImpl() {
-		super(Event.class, Integer.class);
-	}
-
         @Override
 	public List<Event> search(EventSearchCriteria searchCriteria) {
 		return super.search(searchCriteria);

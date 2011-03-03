@@ -36,6 +36,7 @@ public class IncidentCategory implements DictionaryProperty<String>, Hierarchica
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public String getCode() {
 		// begin-user-code
 		return code;
@@ -68,6 +69,7 @@ public class IncidentCategory implements DictionaryProperty<String>, Hierarchica
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+    @Override
 	public String getName() {
 		// begin-user-code
 		return name;
@@ -128,8 +130,7 @@ public class IncidentCategory implements DictionaryProperty<String>, Hierarchica
 	public String getId() {
 		return code;
 	}
-      
-        @Override
+
         public void setId(String code) {
             this.code = code;
         }
@@ -145,6 +146,7 @@ public class IncidentCategory implements DictionaryProperty<String>, Hierarchica
 		this.parentCode = parentCode;
 	}
 
+    @Override
 	public String getParentId() {
 		return parentCode;
 	}

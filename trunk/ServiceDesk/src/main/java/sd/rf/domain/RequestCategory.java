@@ -62,7 +62,6 @@ public class RequestCategory implements DictionaryProperty<String>, Hierarchical
 		return code;
 	}
 
-        @Override
         public void setId(String code) {
             this.code = code;
         }

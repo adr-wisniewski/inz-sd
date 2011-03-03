@@ -18,8 +18,4 @@ import sd.pm.domain.ProblemCategory;
 @Transactional
 public class ProblemCategoryDaoImpl extends GenericHibernateDao<ProblemCategory,String> implements ProblemCategoryDao {
 
-	public ProblemCategoryDaoImpl() {
-		super(ProblemCategory.class, String.class);
-	}
-
 }

@@ -19,17 +19,13 @@ import sd.pm.domain.ProblemStatus;
 public class InMemoryProblemStatusDao extends GenericInMemoryDao<ProblemStatus,String> implements
 		ProblemStatusDao {
 
-    public InMemoryProblemStatusDao() {
-        super(ProblemStatus.class,String.class);
+    @Override
+    protected List<ProblemStatus> initValues() {
+            return Arrays.asList(
+                                            new ProblemStatus[] {
+                                                            new ProblemStatus("CAT1", "Hardware"),
+                                                            new ProblemStatus("CAT2", "Software"),
+                                            }
+            );
     }
-
-	@Override
-	protected List<ProblemStatus> initValues() {
-		return Arrays.asList(
-						new ProblemStatus[] {
-								new ProblemStatus("CAT1", "Hardware"),
-								new ProblemStatus("CAT2", "Software"),
-						}
-		);
-	}
 }

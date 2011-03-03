@@ -62,7 +62,6 @@ public class SignalReceiverType implements DictionaryProperty<String>, Serializa
         return getCode();
     }
 
-    @Override
     public void setId(String id) {
         setCode(id);
     }

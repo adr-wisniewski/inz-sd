@@ -21,10 +21,6 @@ import sd.pm.domain.Problem;
 @Transactional
 public class ProblemDaoImpl extends GenericHibernateDao<Problem,Integer> implements ProblemDao {
 	
-	public ProblemDaoImpl() {
-		super(Problem.class, Integer.class);
-	}
-
 	/** 
 	 * /* (non-Javadoc)
 	 *  * @see ProblemDao#getById(Integer id)

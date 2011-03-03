@@ -11,8 +11,4 @@ import sd.signal.domain.SignalSignificanceType;
 @Transactional
 public class SignalSignificanceTypeDaoImpl extends GenericHibernateDao<SignalSignificanceType,String> implements SignalSignificanceTypeDao {
 
-	public SignalSignificanceTypeDaoImpl() {
-		super(SignalSignificanceType.class, String.class);
-	}
-
 }

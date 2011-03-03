@@ -22,7 +22,4 @@ import sd.infrastructure.domain.HierarchicalDomainObject;
 @Transactional
 public class IncidentCategoryDaoImpl extends GenericHibernateDao<IncidentCategory,String> implements IncidentCategoryDao {
 
-	public IncidentCategoryDaoImpl() {
-		super(IncidentCategory.class, String.class);
-	}
 }

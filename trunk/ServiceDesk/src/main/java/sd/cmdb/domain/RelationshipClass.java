@@ -21,6 +21,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+import sd.cmdb.domain.helper.EntityClassVisitor;
 
 /**
  *
@@ -29,7 +30,7 @@ import org.hibernate.annotations.CascadeType;
 @Entity
 @Table(name="C2_RELATION_CLASSES")
 @PrimaryKeyJoinColumn(name = "CLASS_ID")
-public class RelationshipClass extends ElementClass {
+public class RelationshipClass extends AbstractEntityClass {
     protected RelationshipClass parent;
     protected Set<RelationshipClass> children;
     protected Quantity quantity;
@@ -37,14 +38,15 @@ public class RelationshipClass extends ElementClass {
     protected String reverseLabel;
     protected ItemType sourceType;
     protected ItemType targetType;
-    protected ItemClass sourceClass;
-    protected ItemClass targetClass;
+    protected UniversalItemClass sourceUniversalItemClass;
+    protected UniversalItemClass targetUniversalItemClass;
 
     /**
      * @return the parent
      */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PARENT_CLASS_ID")
+    @Override
     public RelationshipClass getParent() {
         return parent;
     }
@@ -56,11 +58,18 @@ public class RelationshipClass extends ElementClass {
         this.parent = parent;
     }
 
+    @Override
+    @Transient
+    public Integer getParentId() {
+        return parent.getId();
+    }
+
     /**
      * @return the children
      */
     @OneToMany(mappedBy="parent", fetch = FetchType.LAZY)
     @Cascade(value = {CascadeType.DELETE_ORPHAN})
+    @Override
     public Set<RelationshipClass> getChildren() {
         return children;
     }
@@ -157,55 +166,60 @@ public class RelationshipClass extends ElementClass {
     }
 
     /**
-     * @return the sourceClass
+     * @return the sourceItemClass
      */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "SOURCE_CLASS_ID")
-    public ItemClass getSourceClass() {
-        return sourceClass;
+    public UniversalItemClass getSourceItemClass() {
+        return sourceUniversalItemClass;
     }
 
     /**
-     * @param sourceClass the sourceClass to set
+     * @param sourceItemClass the sourceItemClass to set
      */
-    public void setSourceClass(ItemClass sourceClass) {
-        this.sourceClass = sourceClass;
+    public void setSourceItemClass(UniversalItemClass sourceClass) {
+        this.sourceUniversalItemClass = sourceClass;
     }
 
     /**
-     * @return the targetClass
+     * @return the targetItemClass
      */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "TARGET_CLASS_ID")
-    public ItemClass getTargetClass() {
-        return targetClass;
+    public UniversalItemClass getTargetItemClass() {
+        return targetUniversalItemClass;
     }
 
     /**
-     * @param targetClass the targetClass to set
+     * @param targetItemClass the targetItemClass to set
      */
-    public void setTargetClass(ItemClass targetClass) {
-        this.targetClass = targetClass;
+    public void setTargetItemClass(UniversalItemClass targetClass) {
+        this.targetUniversalItemClass = targetClass;
     }
 
     @Override
     @Transient
-    public List<ClassAttribute> getInheritedAttributes() {
+    public List<Attribute> getInheritedAttributes() {
         if(getParent() == null)
-            return new LinkedList<ClassAttribute>();
+            return new LinkedList<Attribute>();
 
         return getParent().getAllAttributes();
     }
 
     @Override
     @Transient
-    public List<ClassAttribute> getAllAttributes() {
-        List<ClassAttribute> allAttributes = new LinkedList<ClassAttribute>();
+    public List<Attribute> getAllAttributes() {
+        List<Attribute> allAttributes = new LinkedList<Attribute>();
         allAttributes.addAll(getAttributes());
 
         if(getParent() != null)
             allAttributes.addAll(getParent().getAllAttributes());
 
         return allAttributes;
+    }
+
+    @Override
+    public void accept(EntityClassVisitor visitor) {
+        visitor.visit(this);
     }
 }

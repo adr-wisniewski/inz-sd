@@ -10,8 +10,4 @@ import sd.signal.domain.SignalReceiverType;
 @Transactional
 public class SignalReceiverTypeDaoImpl extends GenericHibernateDao<SignalReceiverType,String> implements SignalReceiverTypeDao {
 
-	public SignalReceiverTypeDaoImpl() {
-		super(SignalReceiverType.class, String.class);
-	}
-	
 }

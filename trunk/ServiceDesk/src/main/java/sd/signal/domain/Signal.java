@@ -138,7 +138,6 @@ public class Signal implements DomainObject<Integer>, Serializable {
 		this.errorMessage = errorMessage;
 	}
 
-    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

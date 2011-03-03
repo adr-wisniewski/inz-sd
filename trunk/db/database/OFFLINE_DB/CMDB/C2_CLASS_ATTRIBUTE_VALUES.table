@@ -29,12 +29,12 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">21ff771a-3aeb-4eb0-bdd4-2ee4fb73a1a1</identifier>
+        <identifier class="java.lang.String">cd9cf99a-4fc5-43e4-b409-0c7cc1b70e45</identifier>
       </ID>
-      <name>CLASS_ID</name>
+      <name>ATTRIBITE_ID</name>
       <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">0d694d7f-8c53-4962-83e5-637e736e4ae4</identifier>
+          <identifier class="java.lang.String">530db67b-1ca5-4e9f-b4c9-b9a8ac9ce688</identifier>
         </ID>
         <attributeValues>
           <entry>
@@ -51,12 +51,12 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">cd9cf99a-4fc5-43e4-b409-0c7cc1b70e45</identifier>
+        <identifier class="java.lang.String">93f0f768-4d6d-4750-b02e-09cc6c318cf1</identifier>
       </ID>
-      <name>ATTRIBITE_NO</name>
+      <name>VERSION</name>
       <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">530db67b-1ca5-4e9f-b4c9-b9a8ac9ce688</identifier>
+          <identifier class="java.lang.String">a0c489f9-7392-4fc1-bd99-855dcb793884</identifier>
         </ID>
         <attributeValues>
           <entry>
@@ -129,24 +129,13 @@
     </constraint>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">00c12b35-101f-40a2-8595-19c75d7b8514</identifier>
+        <identifier class="java.lang.String">29ee82fa-3510-4020-bee2-47434ad6b60e</identifier>
       </ID>
       <name>C2_CLASS_ATTRIBUTE_VALUES_FK2</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>CLASS_ID</name>
-          <identifier class="java.lang.String">21ff771a-3aeb-4eb0-bdd4-2ee4fb73a1a1</identifier>
-          <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>C2_CLASS_ATTRIBUTE_VALUES</name>
-            <identifier class="java.lang.String">f4923560-3032-4dcd-8f27-f413a0a71ba0</identifier>
-            <schemaName>CMDB</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <type>COLUMN</type>
-        </columnID>
-        <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>ENTITY_ID</name>
-          <identifier class="java.lang.String">9a5d832b-8e2b-48a6-87f9-f77c12cb4af5</identifier>
+          <name>ATTRIBITE_ID</name>
+          <identifier class="java.lang.String">cd9cf99a-4fc5-43e4-b409-0c7cc1b70e45</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>C2_CLASS_ATTRIBUTE_VALUES</name>
             <identifier class="java.lang.String">f4923560-3032-4dcd-8f27-f413a0a71ba0</identifier>
@@ -179,17 +168,6 @@
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>ENTITY_ID</name>
           <identifier class="java.lang.String">9a5d832b-8e2b-48a6-87f9-f77c12cb4af5</identifier>
-          <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>C2_CLASS_ATTRIBUTE_VALUES</name>
-            <identifier class="java.lang.String">f4923560-3032-4dcd-8f27-f413a0a71ba0</identifier>
-            <schemaName>CMDB</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <type>COLUMN</type>
-        </columnID>
-        <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>CLASS_ID</name>
-          <identifier class="java.lang.String">21ff771a-3aeb-4eb0-bdd4-2ee4fb73a1a1</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>C2_CLASS_ATTRIBUTE_VALUES</name>
             <identifier class="java.lang.String">f4923560-3032-4dcd-8f27-f413a0a71ba0</identifier>

@@ -22,10 +22,6 @@ import sd.im.domain.IncidentCategory;
 public class InMemoryIncidentCategoryDao extends GenericInMemoryDao<IncidentCategory, String> 
         implements IncidentCategoryDao {
 
-        public InMemoryIncidentCategoryDao() {
-            super(IncidentCategory.class,String.class);
-        }
-
 	@Override
 	protected List<IncidentCategory> initValues() {
 

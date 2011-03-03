@@ -7,17 +7,16 @@ package sd.cmdb.dao;
 
 import java.util.List;
 import sd.cmdb.domain.ItemClass;
-import sd.cmdb.domain.helper.ItemClassCriteria;
-import sd.infrastructure.dao.CrudDao;
-import sd.infrastructure.dao.HierarchyDao;
+import sd.infrastructure.dao.Dao;
 
 /**
  *
  * @author Adrian
  */
-public interface ItemClassDao extends HierarchyDao<ItemClass, Integer>, CrudDao<ItemClass, Integer>
-{
-    public ItemClass       getByName(String name);
-    public List<ItemClass> searchByCriteria(ItemClassCriteria criteria);
-}
+public interface ItemClassDao extends Dao<ItemClass, Integer> {
+    public ItemClass load(Integer id);
+    public List<ItemClass> getAll();
 
+    public ItemClass getByName(String name);
+    public ItemClass loadByName(String name);
+}

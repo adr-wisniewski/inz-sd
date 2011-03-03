@@ -9,10 +9,7 @@ import sd.domain.Role;
 @Transactional
 public class RoleDaoImpl extends GenericHibernateDao<Role,String> implements RoleDao {
 	
-	public RoleDaoImpl() {
-		super(Role.class,String.class);
-	}
-
+        @Override
 	public Role findByCode(String roleCode) {
 		return findByNamedQuery("Role.findByCode", roleCode).get(0);
 	}

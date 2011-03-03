@@ -13,6 +13,5 @@ import sd.infrastructure.domain.DomainObject;
  * @author Adrian
  */
 public interface Dao<Type extends DomainObject<Id>, Id extends Serializable> {
-    public Class<Type> getTypeClass();
-    public Class<Id> getIdClass();
+    public Type get(Id id);
 }

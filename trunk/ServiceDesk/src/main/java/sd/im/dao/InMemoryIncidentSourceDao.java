@@ -19,10 +19,6 @@ import sd.im.domain.IncidentSource;
  */
 public class InMemoryIncidentSourceDao extends GenericInMemoryDao<IncidentSource,String> implements
 		IncidentSourceDao {
-    
-	public InMemoryIncidentSourceDao() {
-            super(IncidentSource.class,String.class);
-        }
 
 	@Override
 	protected List<IncidentSource> initValues() {

@@ -18,7 +18,5 @@ import sd.im.domain.IncidentSource;
 @Repository
 @Transactional
 public class IncidentSourceDaoImpl extends GenericHibernateDao<IncidentSource,String> implements IncidentSourceDao {
-	public IncidentSourceDaoImpl() {
-		super(IncidentSource.class,String.class);
-	}
+
 }

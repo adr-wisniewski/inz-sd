@@ -177,7 +177,6 @@ public class IncidentHistory implements DomainObject<Integer>, Serializable {
 		this.description = description;
 	}
 
-    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

@@ -57,7 +57,6 @@ public class SignalSignificanceType implements DictionaryProperty<String>, Seria
         return getCode();
     }
 
-    @Override
     public void setId(String id) {
         setCode(id);
     }

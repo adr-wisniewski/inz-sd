@@ -5,8 +5,8 @@ package sd.dao;
 
 import java.io.Serializable;
 import java.util.List;
-import sd.infrastructure.dao.Dao;
 import sd.infrastructure.domain.DomainObject;
+import sd.infrastructure.util.GenericUtil;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -14,27 +14,26 @@ import sd.infrastructure.domain.DomainObject;
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
-abstract public class GenericInMemoryDao<Type extends DomainObject<Id>, Id extends Serializable> implements Dao<Type, Id> {
+abstract public class GenericInMemoryDao<Type extends DomainObject<Id>, Id extends Serializable>  {
 
-        protected Class<Type> typeClass;
-        protected Class<Id> idClass;
+        private Class<Type> typeClass = (Class<Type>)GenericUtil
+            .getTypeArgument(GenericInMemoryDao.class, getClass(), 0);
 
-        public GenericInMemoryDao(Class<Type> typeClass, Class<Id> idClass) {
-            this.typeClass = typeClass;
-            this.idClass = idClass;
+        private Class<Id> idClass = (Class<Id>)GenericUtil
+            .getTypeArgument(GenericInMemoryDao.class, getClass(), 1);
+
+	public Class<Type> getTypeClass() {
+		return typeClass;
+	}
+
+        public Class<Id> getIdClass() {
+		return idClass;
+	}
+
+
+        public GenericInMemoryDao() {
             this.values = initValues();
         }
-
-        @Override
-        public Class<Type> getTypeClass() {
-            return typeClass;
-        }
-
-        @Override
-        public Class<Id> getIdClass() {
-            return idClass;
-        }
-
 
         /**
 	 * <!-- begin-UML-doc -->

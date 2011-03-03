@@ -20,17 +20,13 @@ import sd.pm.domain.SolutionType;
 public class InMemorySolutionTypeDao extends GenericInMemoryDao<SolutionType,String> implements
 		SolutionTypeDao {
 
-    public InMemorySolutionTypeDao() {
-        super(SolutionType.class,String.class);
+    @Override
+    protected List<SolutionType> initValues() {
+            return Arrays.asList(
+                                            new SolutionType[] {
+                                                            new SolutionType("CAT1", "Hardware"),
+                                                            new SolutionType("CAT2", "Software"),
+                                            }
+            );
     }
-
-	@Override
-	protected List<SolutionType> initValues() {
-		return Arrays.asList(
-						new SolutionType[] {
-								new SolutionType("CAT1", "Hardware"),
-								new SolutionType("CAT2", "Software"),
-						}
-		);
-	}
 }

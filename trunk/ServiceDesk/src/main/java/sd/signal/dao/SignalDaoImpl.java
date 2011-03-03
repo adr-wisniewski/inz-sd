@@ -19,35 +19,34 @@ import sd.signal.mapper.SignalMapper;
 @Repository
 @Transactional
 public class SignalDaoImpl extends GenericHibernateDao<Signal,Integer> implements SignalDao {
-	@Autowired
-	private DataSource dataSource;
-	@Autowired
-	private EmployeeDao employeeDao;
-	
-	public SignalDaoImpl() {
-		super(Signal.class, Integer.class);
-	}
-	
-	@SuppressWarnings("deprecation")
-        @Override
-	public List<Signal> generateSignals(SignalGenerator generator) {
-		SimpleJdbcTemplate template = new SimpleJdbcTemplate(dataSource);
-		return template.query(generator.getQuery(), new SignalMapper(generator.getType(), employeeDao));
-	}
+    @Autowired
+    private DataSource dataSource;
+    @Autowired
+    private EmployeeDao employeeDao;
 
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-	}
 
-	public void setEmployeeDao(EmployeeDao employeeDao) {
-		this.employeeDao = employeeDao;
-	}
+    @SuppressWarnings("deprecation")
+    @Override
+    public List<Signal> generateSignals(SignalGenerator generator) {
+            SimpleJdbcTemplate template = new SimpleJdbcTemplate(dataSource);
+            return template.query(generator.getQuery(), new SignalMapper(generator.getType(), employeeDao));
+    }
 
-	public List<Signal> fetchSignalsToSendEmail() {
-		return this.findByNamedQuery("Signal.email");
-	}
+    public void setDataSource(DataSource dataSource) {
+            this.dataSource = dataSource;
+    }
 
-	public List<Signal> getSignalsForEmployee(Employee employee) {
-		return this.findByNamedQuery("Signal.findByEmployee", employee);
-	}
+    public void setEmployeeDao(EmployeeDao employeeDao) {
+            this.employeeDao = employeeDao;
+    }
+
+    @Override
+    public List<Signal> fetchSignalsToSendEmail() {
+            return this.findByNamedQuery("Signal.email");
+    }
+
+    @Override
+    public List<Signal> getSignalsForEmployee(Employee employee) {
+            return this.findByNamedQuery("Signal.findByEmployee", employee);
+    }
 }

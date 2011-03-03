@@ -19,8 +19,4 @@ import sd.pm.domain.SolutionType;
 @Transactional
 public class SolutionTypeDaoImpl extends GenericHibernateDao<SolutionType,String> implements SolutionTypeDao {
 
-	public SolutionTypeDaoImpl() {
-		super(SolutionType.class, String.class);
-	}
-
 }

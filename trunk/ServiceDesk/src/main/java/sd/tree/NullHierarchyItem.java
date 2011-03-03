@@ -16,19 +16,13 @@ public class NullHierarchyItem implements HierarchicalDomainObject<String> {
 
     static final public NullHierarchyItem INSTANCE = new NullHierarchyItem();
     
-    private NullHierarchyItem()
-    {
-
+    private NullHierarchyItem() {
+        // do nothing
     }
 
     @Override
     public String getId() {
         return null;
-    }
-
-    @Override
-    public void setId(String id) {
-        // do nothing
     }
 
     @Override

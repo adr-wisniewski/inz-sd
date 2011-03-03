@@ -19,8 +19,4 @@ import sd.rf.domain.RequestPriority;
 @Transactional
 public class RequestPriorityDaoImpl extends GenericHibernateDao<RequestPriority,String> implements RequestPriorityDao {
 
-	public RequestPriorityDaoImpl() {
-		super(RequestPriority.class, String.class);
-	}
-
 }

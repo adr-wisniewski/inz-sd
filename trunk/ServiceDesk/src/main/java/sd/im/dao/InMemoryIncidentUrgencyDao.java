@@ -20,10 +20,6 @@ import sd.im.domain.IncidentUrgency;
 public class InMemoryIncidentUrgencyDao extends GenericInMemoryDao<IncidentUrgency,String> implements
 		IncidentUrgencyDao {
 
-        public InMemoryIncidentUrgencyDao() {
-            super(IncidentUrgency.class,String.class);
-        }
-
 	@Override
 	protected List<IncidentUrgency> initValues() {
 		return Arrays.asList(

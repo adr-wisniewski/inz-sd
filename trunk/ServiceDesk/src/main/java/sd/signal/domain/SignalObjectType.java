@@ -98,7 +98,6 @@ public class SignalObjectType implements DictionaryProperty<String>, Serializabl
         return getCode();
     }
 
-    @Override
     public void setId(String id) {
         setCode(id);
     }

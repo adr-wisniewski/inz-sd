@@ -26,18 +26,20 @@
 
     <security:global-method-security pre-post-annotations="enabled" />
 
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean" />
+
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
         <property name="order" value="1" />
         <property name="interceptors">
             <list>
-                <bean class="sd.web.MeasurementInterceptor" />
+                <bean class="sd.infrastructure.spring.MeasurementInterceptor" />
                 <bean class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
                     <property name="sessionFactory">
                         <ref bean="sessionFactory"/>
                     </property>
                 </bean>
-                <bean class="sd.web.MessageInterceptor" />
-                <bean class="sd.web.PrgInterceptor" />
+                <bean class="sd.infrastructure.spring.MessageInterceptor" />
+                <bean class="sd.infrastructure.spring.PrgInterceptor" />
             </list>
         </property>
     </bean>
@@ -46,9 +48,6 @@
         <property name="webBindingInitializer">
             <!-- Configures Spring MVC DataBinder instances -->
             <bean class="org.springframework.web.bind.support.ConfigurableWebBindingInitializer">
-                <property name="bindingErrorProcessor">
-                    <bean class="sd.spring.ExtendedBindingErrorProcessor" />
-                </property>
                 <property name="propertyEditorRegistrars">
                     <list>
                         <ref bean="customPropertyEditorRegistrar" />

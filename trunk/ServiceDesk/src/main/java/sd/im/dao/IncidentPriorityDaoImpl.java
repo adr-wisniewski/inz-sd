@@ -19,8 +19,4 @@ import sd.im.domain.IncidentPriority;
 @Transactional
 public class IncidentPriorityDaoImpl extends GenericHibernateDao<IncidentPriority,String> implements IncidentPriorityDao {
 
-	public IncidentPriorityDaoImpl() {
-		super(IncidentPriority.class,String.class);
-	}
-	
 }

@@ -16,14 +16,14 @@
 <table class="tablesorter">
     <thead>
         <tr>
-            <th><spring:message code="cmdb.class.attribute.field.name" /></th>
-            <th><spring:message code="cmdb.class.attribute.field.description" /></th>
-            <th><spring:message code="cmdb.class.attribute.field.class" /></th>
+            <th><spring:message code="field.cmdb.class.attribute.name" /></th>
+            <th><spring:message code="field.cmdb.class.attribute.description" /></th>
+            <th><spring:message code="field.cmdb.class.attribute.class" /></th>
+            <c:if test="${not empty editUrl or not empty deleteUrl}">
             <th>
-                <c:if test="${not empty editUrl or not empty deleteUrl}">
                      <spring:message code="actions" />
-                </c:if>
             </th>
+            </c:if>
         </tr>
     </thead>
     <tbody>
@@ -36,8 +36,9 @@
                     ${attribute.description}
                 </td>
                 <td>
-                    ${attribute.elementClass.name}
+                    ${attribute.entityClass.name}
                 </td>
+                <c:if test="${not empty editUrl or not empty deleteUrl}">
                 <td>
                     <c:if test="${not empty editUrl}">
                         <ui:actionButton label="edit.label" cssClass="edit">
@@ -58,12 +59,13 @@
                         </ui:actionButton>
                     </c:if>
                 </td>
+                </c:if>
             </tr>
         </c:forEach>
         <c:if test="${empty list}">
             <tr>
                 <td colspan="20">
-                    <spring:message code="cmdb.class.attribute.emptylist" />
+                    <spring:message code="field.cmdb.class.attribute.emptylist" />
                 </td>
             </tr>
         </c:if>

@@ -18,10 +18,6 @@ import sd.im.domain.IncidentStatus;
 public class InMemoryIncidentStatusDao extends GenericInMemoryDao<IncidentStatus,String> implements
 		IncidentStatusDao {
 
-        public InMemoryIncidentStatusDao() {
-            super(IncidentStatus.class,String.class);
-        }
-
 	@Override
 	protected List<IncidentStatus> initValues() {
 		return Arrays.asList(

@@ -18,7 +18,4 @@ import sd.im.domain.IncidentUrgency;
 @Repository
 @Transactional
 public class IncidentUrgencyDaoImpl extends GenericHibernateDao<IncidentUrgency,String> implements IncidentUrgencyDao {
-	public IncidentUrgencyDaoImpl() {
-		super(IncidentUrgency.class,String.class);
-	}
 }

@@ -72,7 +72,6 @@ public class Employee implements DomainObject<Integer>, Serializable {
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-    @Override
 	public void setId(Integer id) {
 		// begin-user-code
 		this.id = id;

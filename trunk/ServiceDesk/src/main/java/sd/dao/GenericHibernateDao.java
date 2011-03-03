@@ -6,38 +6,28 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import sd.app.SearchCriteria;
-import sd.infrastructure.dao.Dao;
 import sd.infrastructure.domain.DomainObject;
+import sd.infrastructure.util.GenericUtil;
 
 
-public class GenericHibernateDao<Property extends DomainObject<Id>, Id extends Serializable> implements Dao<Property, Id> {
+public class GenericHibernateDao<Property extends DomainObject<Id>, Id extends Serializable> {
 	private SessionFactory sessionFactory;
-	/**
-	 * Klasa 
-	 * 
-	 * Wykorzystywane przy wyszukiwaniu do pobraniu wszystkich wartosci.
-	 * UWAGA !!! Nie wiem jak pobrac klase z Property.
-	 */
-	private Class<Property> typeClass;
-        private Class<Id> idClass;
 
-        @Override
+	private Class<Property> typeClass = (Class<Property>)GenericUtil
+            .getTypeArgument(GenericHibernateDao.class, getClass(), 0);
+
+        private Class<Id> idClass = (Class<Id>)GenericUtil
+            .getTypeArgument(GenericHibernateDao.class, getClass(), 1);
+
 	public Class<Property> getTypeClass() {
 		return typeClass;
 	}
-	
-        @Override
-	public Class<Id> getIdClass() {
-            return idClass;
-        }
 
-	public GenericHibernateDao(Class<Property> propertyClass, Class<Id> idClass) {
-		this.typeClass = propertyClass;
-                this.idClass = idClass;
+        public Class<Id> getIdClass() {
+		return idClass;
 	}
 	
 	@Autowired

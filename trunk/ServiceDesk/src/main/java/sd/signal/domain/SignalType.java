@@ -45,7 +45,6 @@ public class SignalType implements DictionaryProperty<Integer>, Serializable{
 		return id;
 	}
 
-    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

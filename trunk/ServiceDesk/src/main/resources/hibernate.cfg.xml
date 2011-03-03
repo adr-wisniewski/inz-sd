@@ -4,7 +4,7 @@
   <session-factory>
     <!-- connection -->
     <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
-    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
     <property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521:xe</property>
     <property name="hibernate.connection.username">sd</property>
     <property name="hibernate.connection.password">sd</property>
@@ -46,11 +46,20 @@
     <mapping class="sd.domain.Job"/>
     <mapping class="sd.domain.Role"/>
 
-    <mapping class="sd.cmdb.domain.ClassAttribute"/>
-    <mapping class="sd.cmdb.domain.ClassAttributeId"/>
-    <mapping class="sd.cmdb.domain.ElementClass"/>
-    <mapping class="sd.cmdb.domain.ItemClass"/>
+    <mapping class="sd.cmdb.domain.AbstractEntityClass"/>
+    <mapping class="sd.cmdb.domain.Attribute"/>
+    <mapping class="sd.cmdb.domain.AttributeValue"/>
+    <mapping class="sd.cmdb.domain.EmployeeItem"/>
+    <mapping class="sd.cmdb.domain.Entity"/>
+    <mapping class="sd.cmdb.domain.IncidentItem"/>
+    <!--mapping class="sd.cmdb.domain.Item"/-->
+    <mapping class="sd.cmdb.domain.ProblemItem"/>
+    <mapping class="sd.cmdb.domain.Relationship"/>
     <mapping class="sd.cmdb.domain.RelationshipClass"/>
+    <!--mapping class="sd.cmdb.domain.RfcItem"/-->
+    <mapping class="sd.cmdb.domain.ServiceItem"/>
+    <mapping class="sd.cmdb.domain.UniversalItem"/>
+    <mapping class="sd.cmdb.domain.UniversalItemClass"/>
 
     <mapping class="sd.em.domain.Event"/>
     <mapping class="sd.em.domain.EventCategory"/>

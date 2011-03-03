@@ -11,19 +11,15 @@ import sd.domain.Employee;
 @Transactional
 public class EmployeeDaoImpl extends GenericHibernateDao<Employee, Integer> implements EmployeeDao {
 
-	public EmployeeDaoImpl() {
-		super(Employee.class, Integer.class);
-	}
+    @Override
+    public Employee get(Integer employeeId) {
+            List<Employee> result = findByNamedQuery("Employee.get", employeeId);
+            return result.get(0);
+    }
 
     @Override
-	public Employee get(Integer employeeId) {
-		List<Employee> result = findByNamedQuery("Employee.get", employeeId);
-		return result.get(0);
-	}
-
-    @Override
-	public Employee findByLogin(String login) {
-		List<Employee> result = findByNamedQuery("Employee.findByLogin", login);
-		return result.get(0);
-	}
+    public Employee findByLogin(String login) {
+            List<Employee> result = findByNamedQuery("Employee.findByLogin", login);
+            return result.get(0);
+    }
 }

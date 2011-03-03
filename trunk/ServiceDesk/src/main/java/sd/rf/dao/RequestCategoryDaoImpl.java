@@ -10,10 +10,4 @@ import sd.rf.domain.RequestCategory;
 @Transactional
 public class RequestCategoryDaoImpl extends GenericHibernateDao<RequestCategory,String> implements RequestCategoryDao {
 
-	public RequestCategoryDaoImpl() {
-		super(RequestCategory.class, String.class);
-	}
-
-	
-
 }

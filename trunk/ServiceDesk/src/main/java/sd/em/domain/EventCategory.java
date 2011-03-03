@@ -1,25 +1,28 @@
 package sd.em.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import sd.dictionary.DictionaryProperty;
 import sd.infrastructure.domain.HierarchicalDomainObject;
 
 @Entity
 @Table(name = "CATEGORIES_EM")
-public class EventCategory implements DictionaryProperty<String>, HierarchicalDomainObject<String> {
+public class EventCategory implements DictionaryProperty<String>, HierarchicalDomainObject<String>, Serializable {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
 	@Id    
-    @Column(name = "CATEGORY_CODE")
+        @Column(name = "CATEGORY_CODE")
 	private String code;
+
+        @Column(name="parent_category")
+	private String parentCode;
 
 	/** 
 	 * /**
@@ -27,6 +30,7 @@ public class EventCategory implements DictionaryProperty<String>, HierarchicalDo
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+        @Override
 	public String getCode() {
 		// begin-user-code
 		return code;
@@ -59,6 +63,7 @@ public class EventCategory implements DictionaryProperty<String>, HierarchicalDo
 	 * 
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
+        @Override
 	public String getName() {
 		// begin-user-code
 		return name;
@@ -122,18 +127,13 @@ public class EventCategory implements DictionaryProperty<String>, HierarchicalDo
 	 * 
 	 */
 	@Override
-        @Transient
 	public String getId() {
 		return code;
 	}
 
-        @Override
         public void setId(String code) {
             this.code = code;
         }
-	
-	@Column(name="parent_category")
-	private String parentCode;
 	
 	public String getParentCode() {
 		return parentCode;
@@ -143,6 +143,7 @@ public class EventCategory implements DictionaryProperty<String>, HierarchicalDo
 		this.parentCode = parentCode;
 	}
 
+        @Override
 	public String getParentId() {
 		return parentCode;
 	}

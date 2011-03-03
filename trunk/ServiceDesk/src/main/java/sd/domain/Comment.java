@@ -3,6 +3,7 @@
  */
 package sd.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -29,7 +30,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name="COMMENTS")
-public class Comment {
+public class Comment implements Serializable {
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -38,7 +39,7 @@ public class Comment {
 	@Id
 	@SequenceGenerator(name = "comment_seq", sequenceName = "comment_id_seq")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "comment_seq")
-    @Column(name = "COMMENT_ID")
+        @Column(name = "COMMENT_ID")
 	private Integer id;
 
 	/** 

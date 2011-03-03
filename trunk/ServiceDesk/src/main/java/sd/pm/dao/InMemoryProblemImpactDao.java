@@ -19,17 +19,13 @@ import sd.pm.domain.ProblemImpact;
  */
 public class InMemoryProblemImpactDao extends GenericInMemoryDao<ProblemImpact,String> implements ProblemImpactDao {
 
-    public InMemoryProblemImpactDao() {
-        super(ProblemImpact.class,String.class);
+    @Override
+    protected List<ProblemImpact> initValues() {
+            return Arrays.asList(
+                                            new ProblemImpact[] {
+                                                            new ProblemImpact("CAT1", "Hardware"),
+                                                            new ProblemImpact("CAT2", "Software"),
+                                            }
+            );
     }
-
-	@Override
-	protected List<ProblemImpact> initValues() {
-		return Arrays.asList(
-						new ProblemImpact[] {
-								new ProblemImpact("CAT1", "Hardware"),
-								new ProblemImpact("CAT2", "Software"),
-						}
-		);
-	}
 }

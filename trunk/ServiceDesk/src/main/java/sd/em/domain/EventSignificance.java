@@ -93,7 +93,6 @@ public class EventSignificance implements DictionaryProperty<String>, Serializab
         return getCode();
     }
 
-    @Override
     public void setId(String id) {
         setCode(id);
     }

@@ -143,7 +143,6 @@ public class SolutionType implements DictionaryProperty<String>, Serializable {
         return getCode();
     }
 
-    @Override
     public void setId(String id) {
         setCode(id);
     }

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import sd.cmdb.domain.ItemClass;
+import sd.cmdb.domain.UniversalItemClass;
 import sd.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
@@ -27,8 +27,8 @@ import sd.infrastructure.validation.BusinessConstraintViolationException;
 @Controller
 @RequestMapping(value = "/cmdb/item/class/{id}/edit")
 @PreAuthorize("hasRole('CN_ITC_EDI')")
-@SessionAttributes(types=ItemClass.class)
-public class ItemClassEditController extends ItemClassBaseController {
+@SessionAttributes(types=UniversalItemClass.class)
+public class ItemClassEditController extends ItemClassController {
 
     protected final String VIEW_EDIT = "/cmdb/item/class/edit";
 
@@ -38,20 +38,21 @@ public class ItemClassEditController extends ItemClassBaseController {
     }
 
     @RequestMapping(method=RequestMethod.GET)
-    public String editGet(ModelMap map, @PathVariable("id") ItemClass itemClass) {
+    public String editGet(ModelMap map, @PathVariable("id") Integer classId) {
+        UniversalItemClass itemClass = service.load(classId);
         map.addAttribute(itemClass);
         return VIEW_EDIT;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String editPost(ModelMap map,
-            @ModelAttribute ItemClass itemClass,
+            @ModelAttribute UniversalItemClass itemClass,
             BindingResult bindingResult,
             SessionStatus status) {
 
         try {
-            itemClassCrudService.update(itemClass, bindingResult);
-            messageStorage.addMessage("cmdb.message.item.class.edited", itemClass.getName());
+            service.update(itemClass, bindingResult);
+            messages.addMessage("message.cmdb.item.class.edited", itemClass.getName());
             status.setComplete();
             return String.format("redirect:/cmdb/item/class/%s", itemClass.getId());
         } catch(BusinessConstraintViolationException ex) {

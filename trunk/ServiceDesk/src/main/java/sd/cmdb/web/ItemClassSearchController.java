@@ -15,9 +15,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import sd.cmdb.domain.ItemClass;
+import sd.cmdb.domain.UniversalItemClass;
 import sd.cmdb.domain.helper.ItemClassCriteria;
-import sd.cmdb.web.ItemClassBaseController;
 import sd.tree.app.TreeBuilder;
 
 /**
@@ -27,7 +26,7 @@ import sd.tree.app.TreeBuilder;
 @Controller
 @RequestMapping(value = "/cmdb/item/class/*")
 @PreAuthorize("hasRole('CN_ITC_VIE')")
-public class ItemClassSearchController extends ItemClassBaseController {
+public class ItemClassSearchController extends ItemClassController {
     protected static final String VIEW_SEARCH = "/cmdb/item/class/search";
     protected static final String VIEW_BROWSE = "/cmdb/item/class/browse";
     protected static final String MODEL_CRITERIA = "itemClassCriteria";
@@ -47,19 +46,19 @@ public class ItemClassSearchController extends ItemClassBaseController {
             map.addAttribute(MODEL_CRITERIA, criteria);
         }
 
-        map.addAttribute(MODEL_ITEMCLASSES, itemClassService.search(criteria));
+        map.addAttribute(MODEL_ITEMCLASSES, service.search(criteria));
         return VIEW_SEARCH;
     }
 
     @RequestMapping(value = "/browse")
     public String browse(ModelMap map) {
-        List<ItemClass> items = itemClassService.getAll();
+        List<UniversalItemClass> items = service.getAll();
         map.addAttribute(MODEL_ITEMCLASSES, TreeBuilder.buildTree(items, ""));
         return VIEW_BROWSE;
     }
 
     @RequestMapping(value = "/browse", params={"id"})
-    public String browseid(@RequestParam(value="id", required=false) String id) {
-       return String.format( "redirect:/cmdb/item/class/%s", id);
+    public String browseid(@RequestParam("id") Integer id) {
+       return String.format( "redirect:/cmdb/item/class/%d", id);
     }
 }

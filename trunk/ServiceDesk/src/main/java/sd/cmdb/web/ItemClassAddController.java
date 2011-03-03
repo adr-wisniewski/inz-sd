@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import sd.cmdb.domain.ItemClass;
+import sd.cmdb.domain.UniversalItemClass;
 import sd.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
@@ -26,8 +26,8 @@ import sd.infrastructure.validation.BusinessConstraintViolationException;
 @Controller
 @RequestMapping(value = "/cmdb/item/class/*")
 @PreAuthorize("hasRole('CN_ITC_ADD')")
-@SessionAttributes(types=ItemClass.class)
-public class ItemClassAddController extends ItemClassBaseController {
+@SessionAttributes(types=UniversalItemClass.class)
+public class ItemClassAddController extends ItemClassController {
     public static final String VIEW_ADD = "/cmdb/item/class/add";
     public static final String VIEW_FORM_EXPIRED = "/sd/formExpired";
 
@@ -38,24 +38,24 @@ public class ItemClassAddController extends ItemClassBaseController {
 
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String creteNewInstance(ModelMap map) {
-            map.addAttribute(new ItemClass());
+            map.addAttribute(new UniversalItemClass());
             return "redirect:/cmdb/item/class/new";
     }
 
     @RequestMapping(value="/new", method = RequestMethod.GET)
-    public String showNewInstance(@ModelAttribute ItemClass itemClass) {
+    public String showNewInstance(@ModelAttribute UniversalItemClass itemClass) {
         return VIEW_ADD;
     }
 
     @RequestMapping(value="/new", method = RequestMethod.POST)
     public String saveNewInstance(ModelMap map,
-            @ModelAttribute ItemClass itemClass,
+            @ModelAttribute UniversalItemClass itemClass,
             BindingResult bindingResult, 
             SessionStatus status) {
 
         try {
-            itemClassCrudService.add(itemClass, bindingResult);
-            messageStorage.addMessage("cmdb.message.item.class.added", itemClass.getName());
+            service.add(itemClass, bindingResult);
+            messages.addMessage("message.cmdb.item.class.added", itemClass.getName());
             status.setComplete();
 
             return String.format("redirect:/cmdb/item/class/%d", itemClass.getId());

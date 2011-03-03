@@ -151,7 +151,6 @@ public class SignalGenerator implements DomainObject<Integer>, Serializable {
 		this.frequency = frequency;
 	}
 
-    @Override
 	public void setId(Integer id) {
 		this.id = id;
 	}

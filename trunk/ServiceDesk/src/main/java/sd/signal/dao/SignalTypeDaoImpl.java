@@ -9,7 +9,5 @@ import sd.signal.domain.SignalType;
 @Repository
 @Transactional
 public class SignalTypeDaoImpl extends GenericHibernateDao<SignalType,Integer> implements SignalTypeDao {
-    public SignalTypeDaoImpl() {
-        super(SignalType.class, Integer.class);
-    }
+
 }

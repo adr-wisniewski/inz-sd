@@ -10,7 +10,4 @@ import sd.signal.domain.SignalGenerator;
 @Transactional
 public class SignalGeneratorDaoImpl extends GenericHibernateDao<SignalGenerator,Integer> implements SignalGeneratorDao {
 
-	public SignalGeneratorDaoImpl() {
-		super(SignalGenerator.class, Integer.class);
-	}
 }

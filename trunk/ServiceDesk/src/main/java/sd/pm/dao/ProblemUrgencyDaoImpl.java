@@ -19,8 +19,4 @@ import sd.pm.domain.ProblemUrgency;
 @Transactional
 public class ProblemUrgencyDaoImpl extends GenericHibernateDao<ProblemUrgency,String> implements ProblemUrgencyDao {
 
-	public ProblemUrgencyDaoImpl() {
-		super(ProblemUrgency.class, String.class);
-	}
-
 }

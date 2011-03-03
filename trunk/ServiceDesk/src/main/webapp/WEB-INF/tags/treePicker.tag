@@ -1,7 +1,7 @@
 <%@ tag body-content="empty" description="Kontrolka do wyboru elementu hierarchii. Patrz sd.tree.*" %>
 <%@ attribute name="name" required="true" description="Nazwa kontrolki"%>
 <%@ attribute name="source" required="true" description="Nazwa zrodla danych"%>
-<%@ attribute name="value" required="true" type="sd.tree.HierarchyItem" description="wartosc kontrolki" %>
+<%@ attribute name="value" required="true" type="sd.infrastructure.domain.HierarchicalDomainObject" description="wartosc kontrolki" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sd" tagdir="/WEB-INF/tags" %>
 
