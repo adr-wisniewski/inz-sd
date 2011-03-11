@@ -12,5 +12,7 @@ import sd.cmdb.domain.helper.ItemClassVisitor;
  * @author Adrian
  */
 public interface ItemClass extends EntityClass {
+    @Override
+    public ItemClass getParent();
     public void accept(ItemClassVisitor visitor);
 }

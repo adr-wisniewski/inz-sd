@@ -27,14 +27,14 @@ import sd.infrastructure.validation.BusinessConstraintViolationException;
 @Controller
 @RequestMapping(value = "/cmdb/item/class/{id}/edit")
 @PreAuthorize("hasRole('CN_ITC_EDI')")
-@SessionAttributes(types=UniversalItemClass.class)
+@SessionAttributes("universalItemClass")
 public class ItemClassEditController extends ItemClassController {
 
     protected final String VIEW_EDIT = "/cmdb/item/class/edit";
 
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder) {
-        dataBinder.setDisallowedFields("identifier");
+        dataBinder.setDisallowedFields("id");
     }
 
     @RequestMapping(method=RequestMethod.GET)

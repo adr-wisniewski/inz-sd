@@ -5,13 +5,13 @@
 
 package sd.cmdb.domain;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import sd.cmdb.domain.helper.ItemVisitor;
 
 /**
  *
@@ -27,12 +27,18 @@ public class UniversalItem extends Item {
     private UniversalItemClass itemClass;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "GENERIC_CLASS_ID")
+    @JoinColumn(name = "CLASS_ID")
+    @Override
     public UniversalItemClass getItemClass() {
         return itemClass;
     }
 
     public void setItemClass(UniversalItemClass itemClass) {
         this.itemClass = itemClass;
+    }
+
+    @Override
+    public void accept(ItemVisitor visitor) {
+        visitor.visit(this);
     }
 }

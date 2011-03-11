@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import sd.cmdb.domain.helper.ItemVisitor;
 import sd.scm.domain.Service;
 
 /**
@@ -19,6 +21,7 @@ import sd.scm.domain.Service;
 @Table(name="C2_ITEMS_SERVICE")
 public class ServiceItem extends Item {
     private Service service;
+    private ServiceItemClass serviceItemClass;
 
     /**
      * @return the service
@@ -34,5 +37,20 @@ public class ServiceItem extends Item {
      */
     public void setService(Service service) {
         this.service = service;
+    }
+
+    @Override
+    @Transient
+    public ServiceItemClass getItemClass() {
+        return serviceItemClass;
+    }
+
+    public void setItemClass(ServiceItemClass serviceItemClass) {
+        this.serviceItemClass = serviceItemClass;
+    }
+
+    @Override
+    public void accept(ItemVisitor visitor) {
+        visitor.visit(this);
     }
 }

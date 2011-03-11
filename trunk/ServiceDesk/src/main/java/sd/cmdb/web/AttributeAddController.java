@@ -9,8 +9,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +26,7 @@ import sd.infrastructure.validation.BusinessConstraintViolationException;
 @Controller
 @RequestMapping(value = "/cmdb/class/{classid}/attribute/*")
 @PreAuthorize("hasRole('CN_ATR_ADD')")
-@SessionAttributes(types=Attribute.class)
+@SessionAttributes("attribute")
 public class AttributeAddController extends AttributeController {
     public static final String VIEW_ADD = "/cmdb/class/attribute/add";
 
@@ -70,9 +68,7 @@ public class AttributeAddController extends AttributeController {
                 attribute.getEntityClass().getName());
             status.setComplete();
 
-            EntityClassRedirectorVisitor visitor = new EntityClassRedirectorVisitor();
-            entityClass.accept(visitor);
-            return visitor.getRedirectUrl();
+            return EntityClassRedirectorVisitor.process(entityClass);
         }
         catch(BusinessConstraintViolationException ex) {
             map.addAllAttributes(ex.getErrors().getModel());

@@ -14,6 +14,7 @@ import sd.infrastructure.web.MessageContextHolder;
  * @author Adrian
  */
 public class ItemClassController {
+    
     @Autowired
     protected UniversalItemClassService service;
 

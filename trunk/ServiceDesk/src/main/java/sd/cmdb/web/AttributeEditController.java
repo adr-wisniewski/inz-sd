@@ -25,7 +25,7 @@ import sd.infrastructure.validation.BusinessConstraintViolationException;
 @Controller
 @RequestMapping(value = "/cmdb/class/{classid}/attribute/{attrno}/edit")
 @PreAuthorize("hasRole('CN_ATR_EDI')")
-@SessionAttributes(types=Attribute.class)
+@SessionAttributes("attribute")
 public class AttributeEditController extends AttributeController {
     public static final String VIEW_EDIT = "/cmdb/class/attribute/edit";
 
@@ -52,9 +52,7 @@ public class AttributeEditController extends AttributeController {
                     attribute.getEntityClass().getName());
             status.setComplete();
 
-            EntityClassRedirectorVisitor visitor = new EntityClassRedirectorVisitor();
-            attribute.getEntityClass().accept(visitor);
-            return visitor.getRedirectUrl();
+            return EntityClassRedirectorVisitor.process(attribute.getEntityClass());
         }
         catch(BusinessConstraintViolationException ex) {
             map.addAllAttributes(ex.getErrors().getModel());

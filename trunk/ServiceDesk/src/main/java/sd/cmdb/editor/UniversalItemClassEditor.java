@@ -17,7 +17,7 @@ import sd.cmdb.service.UniversalItemClassService;
  * @author Adrian
  */
 @Component
-public class ItemClassEditor extends PropertyEditorSupport
+public class UniversalItemClassEditor extends PropertyEditorSupport
 {
     @Autowired
     UniversalItemClassService service;

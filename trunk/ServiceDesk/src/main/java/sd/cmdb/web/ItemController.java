@@ -7,7 +7,6 @@ package sd.cmdb.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import sd.cmdb.service.ItemClassService;
-import sd.cmdb.service.UniversalItemClassService;
 import sd.cmdb.service.ItemService;
 import sd.infrastructure.web.MessageContextHolder;
 

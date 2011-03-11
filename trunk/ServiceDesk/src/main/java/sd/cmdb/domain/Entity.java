@@ -6,6 +6,7 @@
 package sd.cmdb.domain;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -32,7 +33,7 @@ public abstract class Entity implements VersionedDomainObject<Integer>, Serializ
     
     private Integer id;
     private Integer version;
-    private List<AttributeValue> attributeValues;
+    private List<AttributeValue> attributeValues = new ArrayList<AttributeValue>();
 
     /**
      * @return the id
@@ -71,14 +72,27 @@ public abstract class Entity implements VersionedDomainObject<Integer>, Serializ
         this.version = version;
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name="ENTITY_ID")
-    //@MapKey(name="attribute.name")
+    @OneToMany(mappedBy="pk.entity", cascade = CascadeType.ALL)
     public List<AttributeValue> getAttributeValues() {
         return attributeValues;
     }
 
     public void setAttributeValues(List<AttributeValue> attributeValues) {
         this.attributeValues = attributeValues;
+    }
+
+    public AttributeValue getAttributeValue(Attribute attribute) {
+        for(AttributeValue attributeValue: attributeValues) {
+            if(attributeValue.getAttribute().equals(attribute))
+                return attributeValue;
+        }
+
+        // create this attribute value instance
+        AttributeValue attributeValue = new AttributeValue();
+        attributeValue.setAttribute(attribute);
+        attributeValue.setEntity(this);
+        attributeValue.setValue(null);
+        attributeValues.add(attributeValue);
+        return attributeValue;
     }
 }

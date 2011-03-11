@@ -30,7 +30,7 @@ import sd.infrastructure.domain.VersionedDomainObject;
 @Cacheable
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Table(name="C2_CLASS_ATTRIBUTES")
-public class Attribute implements VersionedDomainObject<Integer>, Serializable {
+public class Attribute implements VersionedDomainObject<Integer>, Comparable<Attribute>, Serializable {
 
     private Integer id;
     private Integer version;
@@ -129,5 +129,10 @@ public class Attribute implements VersionedDomainObject<Integer>, Serializable {
         hash = 89 * hash + (this.entityClass != null ? this.entityClass.hashCode() : 0);
         hash = 89 * hash + (this.name != null ? this.name.hashCode() : 0);
         return hash;
+    }
+
+    @Override
+    public int compareTo(Attribute o) {
+        return getDisplayNo() - o.getDisplayNo();
     }
 }

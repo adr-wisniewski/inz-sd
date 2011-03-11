@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactoryUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Repository;
@@ -23,25 +24,12 @@ import sd.cmdb.domain.ItemClass;
  * @author Adrian
  */
 @Repository
-public class AdaptorItemClassDaoImpl implements AdaptorItemClassDao, ApplicationContextAware {
+public class AdaptorItemClassDaoImpl implements AdaptorItemClassDao {
 
-    protected ApplicationContext applicationContext;
+    @Autowired
     protected List<ItemClass> itemClasses;
 
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
-    }
-
     protected List<ItemClass> getItemClasses() {
-        if(itemClasses == null) {
-            if(applicationContext == null)
-                throw new IllegalStateException();
-
-            Map<String, ItemClass> classesMap = BeanFactoryUtils.beansOfTypeIncludingAncestors(applicationContext, ItemClass.class);
-            itemClasses = new ArrayList<ItemClass>(classesMap.values());
-        }
-
         return itemClasses;
     }
 

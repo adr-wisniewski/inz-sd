@@ -26,6 +26,7 @@ public interface EntityClass extends HierarchicalDomainObject<Integer> {
     
     public List<Attribute> getInheritedAttributes();
     public List<Attribute> getAllAttributes();
+    public List<Attribute> getAllAttributesSorted();
 
     public void accept(EntityClassVisitor visitor);
 }

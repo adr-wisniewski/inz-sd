@@ -17,10 +17,13 @@
         </a>
     </div>
 
-    <ul id="treepicker" class="treeview-black">
+            <ul id="treepicker" class="treeview-black <c:if test="${empty roots}">empty</c:if>">
         <c:forEach items="${roots}" var="i">
                 <sd:treeItem item="${i}" url="${url}"/>
         </c:forEach>
+        <c:if test="${empty roots}">
+            <spring:message code="null" />
+        </c:if>
     </ul>
 
     <script type="text/javascript">

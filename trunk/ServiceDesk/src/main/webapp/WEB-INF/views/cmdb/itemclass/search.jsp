@@ -4,8 +4,9 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="sd" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags/ui" %>
+<%@ taglib prefix="print" tagdir="/WEB-INF/tags/print" %>
 
-<ui:hint code="hint.cmdb.item.class.namesearch" />
+<ui:hint code="hint.cmdb.namesearch" />
 
 <ui:element>
     <form:form modelAttribute="itemClassCriteria" method="get">
@@ -13,11 +14,11 @@
         <table class="tablesorter">
             <thead>
                 <tr>
-                    <th><spring:message code="field.cmdb.item.class.id" /></th>
-                    <th><spring:message code="field.cmdb.item.class.name" /></th>
-                    <th><spring:message code="field.cmdb.item.class.description" /></th>
-                    <th><spring:message code="field.cmdb.item.class.parent.name" /></th>
-                    <th><spring:message code="field.cmdb.item.class.abstraction" /></th>
+                    <th><spring:message code="field.cmdb.entity.class.id" /></th>
+                    <th><spring:message code="field.cmdb.entity.class.name" /></th>
+                    <th><spring:message code="field.cmdb.entity.class.description" /></th>
+                    <th><spring:message code="field.cmdb.entity.class.parent.name" /></th>
+                    <th><spring:message code="field.cmdb.entity.class.abstraction" /></th>
                     <th></th>
                 </tr>
                 <tr>
@@ -67,12 +68,12 @@
                                     ${itemClass.parent.name}
                                 </c:when>
                                 <c:otherwise>
-                                    <spring:message code="field.cmdb.item.class.parent.empty" />
+                                    <spring:message code="field.cmdb.entity.class.parent.empty" />
                                 </c:otherwise>
                             </c:choose>
                         </td>
                         <td>
-                            ${itemClass.abstraction}
+                            <print:yesorno value="${itemClass.abstraction}" />
                         </td>
                     </tr>
                 </c:forEach>

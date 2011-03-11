@@ -8,6 +8,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="ui" tagdir="/WEB-INF/tags/ui" %>
+<%@taglib prefix="link" tagdir="/WEB-INF/tags/link" %>
 
 <%@attribute name="list" required="true" rtexprvalue="true" type="java.util.List" %>
 <%@attribute name="editUrl" required="false" rtexprvalue="true" %>
@@ -20,7 +21,7 @@
             <th><spring:message code="field.cmdb.class.attribute.description" /></th>
             <th><spring:message code="field.cmdb.class.attribute.class" /></th>
             <c:if test="${not empty editUrl or not empty deleteUrl}">
-            <th>
+            <th class="actions">
                      <spring:message code="actions" />
             </th>
             </c:if>
@@ -36,10 +37,10 @@
                     ${attribute.description}
                 </td>
                 <td>
-                    ${attribute.entityClass.name}
+                    <link:entityClass object="${attribute.entityClass}" />
                 </td>
                 <c:if test="${not empty editUrl or not empty deleteUrl}">
-                <td>
+                <td class="actions">
                     <c:if test="${not empty editUrl}">
                         <ui:actionButton label="edit.label" cssClass="edit">
                             <jsp:attribute name="action">

@@ -6,7 +6,7 @@
 package sd.cmdb.dao;
 
 import org.springframework.stereotype.Repository;
-import sd.cmdb.domain.EntityClass;
+import sd.cmdb.domain.AbstractEntityClass;
 import sd.infrastructure.dao.AbstractHibernateCrudDao;
 
 /**
@@ -14,6 +14,6 @@ import sd.infrastructure.dao.AbstractHibernateCrudDao;
  * @author Adrian
  */
 @Repository
-public class EntityClassDaoImpl extends AbstractHibernateCrudDao<EntityClass, Integer> implements EntityClassDao {
+public class EntityClassDaoImpl extends AbstractHibernateCrudDao<AbstractEntityClass, Integer> implements EntityClassDao {
 
 }

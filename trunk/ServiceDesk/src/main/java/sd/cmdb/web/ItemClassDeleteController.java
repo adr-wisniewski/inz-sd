@@ -25,7 +25,7 @@ import sd.infrastructure.validation.BusinessConstraintViolationException;
 @Controller
 @RequestMapping(value = "/cmdb/item/class/{id}/delete")
 @PreAuthorize("hasRole('CN_ITC_DEL')")
-@SessionAttributes(types=UniversalItemClass.class)
+@SessionAttributes("universalItemClass")
 public class ItemClassDeleteController extends ItemClassController {
     protected static final String VIEW_DELETE = "/cmdb/item/class/delete";
 

@@ -31,10 +31,16 @@ div.panel
         border: 1px inset;
     }
 
+    div.panel ul.treeview.empty
+    {
+        padding: 0.25em;
+}
+
     div.panel.hint
     {
 
     }
+
 
     div.panel.success
     {
@@ -114,4 +120,12 @@ div.panel
 
 table.tablesorter {
         margin: 0;
+}
+
+table.tablesorter thead tr .actions {
+    width: 165px;
+}
+
+table.tablesorter tbody tr .actions {
+    text-align: center;
 }

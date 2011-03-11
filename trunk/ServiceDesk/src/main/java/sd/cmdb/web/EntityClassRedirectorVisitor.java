@@ -5,8 +5,8 @@
 
 package sd.cmdb.web;
 
+import sd.cmdb.domain.EntityClass;
 import sd.cmdb.domain.ItemClass;
-import sd.cmdb.domain.UniversalItemClass;
 import sd.cmdb.domain.RelationshipClass;
 import sd.cmdb.domain.helper.EntityClassVisitor;
 
@@ -15,19 +15,26 @@ import sd.cmdb.domain.helper.EntityClassVisitor;
  * @author Adrian
  */
 public class EntityClassRedirectorVisitor implements EntityClassVisitor {
-    protected String redirectUrl;
+
+    EntityClassLinkVisitor decoratedVisitor = new EntityClassLinkVisitor();
+
+    public static String process(EntityClass target) {
+        EntityClassRedirectorVisitor visitor = new EntityClassRedirectorVisitor();
+        target.accept(visitor);
+        return visitor.getRedirectUrl();
+    }
 
     public String getRedirectUrl() {
-        return redirectUrl;
+        return "redirect:" + decoratedVisitor.getLinkUrl();
     }
 
     @Override
     public void visit(ItemClass itemClass) {
-        redirectUrl = String.format("redirect:/cmdb/item/class/%d", itemClass.getId());
+        decoratedVisitor.visit(itemClass);
     }
 
     @Override
-    public void visit(RelationshipClass relatioshipClass) {
-        redirectUrl = String.format("redirect:/cmdb/relationship/class/%d", relatioshipClass.getId());
+    public void visit(RelationshipClass relationshipClass) {
+        decoratedVisitor.visit(relationshipClass);
     }
 }

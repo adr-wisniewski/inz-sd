@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import sd.cmdb.domain.UniversalItemClass;
 
 /**
@@ -18,16 +17,15 @@ import sd.cmdb.domain.UniversalItemClass;
  * @author Adrian
  */
 @Controller
-
 @PreAuthorize("hasRole('CN_ITC_VIE')")
 public class ItemClassViewController extends ItemClassController {
-    protected static final String VIEW_MAIN = "/cmdb/item/class";
+    protected static final String VIEW_GENERAL = "/cmdb/item/class";
     protected static final String VIEW_VIEW = "/cmdb/item/class/view";
-    protected static final String MODEL_ITEMCLASS = "itemClass";
+    protected static final String MODEL_ITEMCLASS = "universalItemClass";
 
     @RequestMapping(value = "/cmdb/item/class")
     public String general() {
-        return VIEW_MAIN;
+        return VIEW_GENERAL;
     }
 
     @RequestMapping(value = "/cmdb/item/class/{id}")

@@ -6,6 +6,7 @@
 package sd.cmdb.domain;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.Cacheable;
@@ -21,6 +22,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.Version;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -117,6 +119,14 @@ abstract public class AbstractEntityClass implements EntityClass, VersionedDomai
 
     public void setAttributes(List<Attribute> attributes) {
         this.attributes = attributes;
+    }
+
+    @Transient
+    @Override
+    public List<Attribute> getAllAttributesSorted() {
+        List<Attribute> allAttributes = getAllAttributes();
+        Collections.sort(allAttributes);
+        return allAttributes;
     }
 
     @Override

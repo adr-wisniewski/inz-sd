@@ -15,13 +15,14 @@ import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 import sd.cmdb.domain.helper.EntityClassVisitor;
+import sd.cmdb.domain.helper.ItemClassVisitor;
 
 /**
  *
@@ -30,6 +31,9 @@ import sd.cmdb.domain.helper.EntityClassVisitor;
 @Entity
 @Table(name="C2_RELATION_CLASSES")
 @PrimaryKeyJoinColumn(name = "CLASS_ID")
+@NamedQueries(
+    @NamedQuery(name="RelationshipClass.findByName", query="from RelationshipClass as clazz where clazz.name = :name")
+)
 public class RelationshipClass extends AbstractEntityClass {
     protected RelationshipClass parent;
     protected Set<RelationshipClass> children;
@@ -40,6 +44,8 @@ public class RelationshipClass extends AbstractEntityClass {
     protected ItemType targetType;
     protected UniversalItemClass sourceUniversalItemClass;
     protected UniversalItemClass targetUniversalItemClass;
+    protected ItemClass sourceItemClass;
+    protected ItemClass targetItemClass;
 
     /**
      * @return the parent
@@ -68,7 +74,6 @@ public class RelationshipClass extends AbstractEntityClass {
      * @return the children
      */
     @OneToMany(mappedBy="parent", fetch = FetchType.LAZY)
-    @Cascade(value = {CascadeType.DELETE_ORPHAN})
     @Override
     public Set<RelationshipClass> getChildren() {
         return children;
@@ -95,12 +100,6 @@ public class RelationshipClass extends AbstractEntityClass {
      */
     public void setQuantity(Quantity quantity) {
         this.quantity = quantity;
-    }
-
-    @Transient
-    public boolean isBidirectional()
-    {
-        return getReverseLabel() != null;
     }
 
     /**
@@ -170,14 +169,14 @@ public class RelationshipClass extends AbstractEntityClass {
      */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "SOURCE_CLASS_ID")
-    public UniversalItemClass getSourceItemClass() {
+    public UniversalItemClass getSourceUniversalItemClass() {
         return sourceUniversalItemClass;
     }
 
     /**
      * @param sourceItemClass the sourceItemClass to set
      */
-    public void setSourceItemClass(UniversalItemClass sourceClass) {
+    public void setSourceUniversalItemClass(UniversalItemClass sourceClass) {
         this.sourceUniversalItemClass = sourceClass;
     }
 
@@ -186,15 +185,55 @@ public class RelationshipClass extends AbstractEntityClass {
      */
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "TARGET_CLASS_ID")
-    public UniversalItemClass getTargetItemClass() {
+    public UniversalItemClass getTargetUniversalItemClass() {
         return targetUniversalItemClass;
     }
 
     /**
      * @param targetItemClass the targetItemClass to set
      */
-    public void setTargetItemClass(UniversalItemClass targetClass) {
+    public void setTargetUniversalItemClass(UniversalItemClass targetClass) {
         this.targetUniversalItemClass = targetClass;
+    }
+
+    /**
+     * @return the sourceItemClass
+     */
+    @Transient
+    public ItemClass getSourceItemClass() {
+        return sourceItemClass;
+    }
+
+    /**
+     * @param sourceItemClass the sourceItemClass to set
+     */
+    public void setSourceItemClass(ItemClass sourceItemClass) {
+        ItemTypeResolver resolver = new ItemTypeResolver();
+        sourceItemClass.accept(resolver);
+        setSourceType(resolver.getItemType());
+        setSourceUniversalItemClass(resolver.getUniversalItemClass());
+
+        this.sourceItemClass = sourceItemClass;
+    }
+
+    /**
+     * @return the targetItemClass
+     */
+    @Transient
+    public ItemClass getTargetItemClass() {
+        return targetItemClass;
+    }
+
+    /**
+     * @param targetItemClass the targetItemClass to set
+     */
+    public void setTargetItemClass(ItemClass targetItemClass) {
+        ItemTypeResolver resolver = new ItemTypeResolver();
+        sourceItemClass.accept(resolver);
+        setTargetType(resolver.getItemType());
+        setTargetUniversalItemClass(resolver.getUniversalItemClass());
+        
+        this.targetItemClass = targetItemClass;
     }
 
     @Override
@@ -222,4 +261,50 @@ public class RelationshipClass extends AbstractEntityClass {
     public void accept(EntityClassVisitor visitor) {
         visitor.visit(this);
     }
+
+    protected static class ItemTypeResolver implements ItemClassVisitor {
+        private ItemType itemType;
+        private UniversalItemClass universalItemClass = null;
+
+        public ItemType getItemType() {
+            return itemType;
+        }
+
+        public UniversalItemClass getUniversalItemClass() {
+            return universalItemClass;
+        }
+
+        @Override
+        public void visit(UniversalItemClass universalItemClass) {
+            itemType = ItemType.UNIVERSAL;
+            this.universalItemClass = universalItemClass;
+        }
+
+        @Override
+        public void visit(EmployeeItemClass employeeItemClass) {
+            itemType = ItemType.EMPLOYEE;
+        }
+
+        @Override
+        public void visit(IncidentItemClass incidentItemClass) {
+            itemType = ItemType.INCIDENT;
+        }
+
+        @Override
+        public void visit(ProblemItemClass problemItemClass) {
+            itemType = ItemType.PROBLEM;
+        }
+
+        @Override
+        public void visit(RfcItemClass rfcItemClass) {
+            itemType = ItemType.RFC;
+        }
+
+        @Override
+        public void visit(ServiceItemClass serviceItemClass) {
+            itemType = ItemType.SERVICE;
+        }
+        
+    }
+
 }

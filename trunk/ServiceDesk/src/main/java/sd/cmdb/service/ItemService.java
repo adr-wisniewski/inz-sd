@@ -8,12 +8,13 @@ package sd.cmdb.service;
 import java.util.List;
 import sd.cmdb.domain.Item;
 import sd.cmdb.domain.ItemClass;
-import sd.infrastructure.service.CrudService;
 
 /**
  *
  * @author Adrian
  */
-public interface ItemService extends CrudService<Item, Integer> {
+public interface ItemService {
     public List<Item> getByClass(ItemClass itemClass);
+    public Item load(Integer id);
+    public Item get(Integer id);
 }

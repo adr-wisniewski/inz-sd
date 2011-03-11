@@ -11,7 +11,7 @@
 <%@attribute name="object" required="true" rtexprvalue="true" type="java.lang.Object"%>
 
 <c:choose>
-    <c:when test="${object != null}">
+    <c:when test="${not empty object}">
         <jsp:doBody />
     </c:when>
     <c:otherwise>

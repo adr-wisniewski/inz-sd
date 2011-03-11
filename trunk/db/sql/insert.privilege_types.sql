@@ -38,11 +38,16 @@ insert into privilege_types(privilege_code, description) values('MENU_CN', 'Menu
 insert into privilege_types(privilege_code, description) values('CN_ITM_VIE', 'Przegl¹danie elementów konfiguracji');
 insert into privilege_types(privilege_code, description) values('CN_ITM_ADD', 'Dodawanie elementów konfiguracji');
 insert into privilege_types(privilege_code, description) values('CN_ITM_EDI', 'Edycja elementów konfiguracji');
+insert into privilege_types(privilege_code, description) values('CN_ITM_DEL', 'Usuwanie elementów konfiguracji');
+
+insert into privilege_types(privilege_code, description) values('CN_RLT_ADD', 'Dodawanie relacji elementów konfiguracji');
+insert into privilege_types(privilege_code, description) values('CN_RLT_EDI', 'Edycja relacji elementów konfiguracji');
+insert into privilege_types(privilege_code, description) values('CN_RLT_DEL', 'Usuwanie relacji elementów konfiguracji');
 
 insert into privilege_types(privilege_code, description) values('CN_ITC_VIE', 'Przegl¹danie klas elementów');
 insert into privilege_types(privilege_code, description) values('CN_ITC_ADD', 'Dodawanie klas elementów');
 insert into privilege_types(privilege_code, description) values('CN_ITC_EDI', 'Edycja klas elementów');
-insert into privilege_types(privilege_code, description) values('CN_ITC_DEL', 'Edycja klas elementów');
+insert into privilege_types(privilege_code, description) values('CN_ITC_DEL', 'Usuwanie klas elementów');
 
 insert into privilege_types(privilege_code, description) values('CN_RLC_VIE', 'Przegl¹danie klas relacji');
 insert into privilege_types(privilege_code, description) values('CN_RLC_ADD', 'Dodawanie klas relacji');

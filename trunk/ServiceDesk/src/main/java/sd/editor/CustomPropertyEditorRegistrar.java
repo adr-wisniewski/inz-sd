@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Component;
 import sd.cmdb.domain.UniversalItemClass;
-import sd.cmdb.editor.ItemClassEditor;
+import sd.cmdb.editor.UniversalItemClassEditor;
 
 import sd.dao.EmployeeDao;
 import sd.dao.RoleDao;
@@ -139,7 +139,7 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
 	@Autowired
 	private ServiceDao serviceDao;
         @Autowired
-        private ItemClassEditor itemClassEditor;
+        private UniversalItemClassEditor itemClassEditor;
 	
 	public void setIncidentPriorityDao(IncidentPriorityDao incidentPriorityDao) {
 		this.incidentPriorityDao = incidentPriorityDao;

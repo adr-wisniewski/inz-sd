@@ -14,19 +14,19 @@
 <%@attribute name="cssClass" required="false" rtexprvalue="true"%>
 
 <c:set var="nameattr">
-    <c:if test="${name != null}">
-        name="${name}"
+    <c:if test="${pageScope.name != null}">
+        name="${pageScope.name}"
     </c:if>
 </c:set>
 
 <c:set var="valueattr">
-    <c:if test="${value != null}">
-        value="${value}"
+    <c:if test="${pageScope.value != null}">
+        value="${pageScope.value}"
     </c:if>
 </c:set>
 
-<button type="submit" ${nameattr} ${valueattr} class="${cssClass}">
+<button type="submit" ${pageScope.nameattr} ${pageScope.valueattr} class="${pageScope.cssClass}">
     <span>
-        <spring:message code="${code}" />
+        <spring:message code="${pageScope.code}" />
     </span>
 </button>

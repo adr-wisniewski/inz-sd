@@ -26,10 +26,9 @@ import sd.infrastructure.validation.BusinessConstraintViolationException;
 @Controller
 @RequestMapping(value = "/cmdb/item/class/*")
 @PreAuthorize("hasRole('CN_ITC_ADD')")
-@SessionAttributes(types=UniversalItemClass.class)
+@SessionAttributes("universalItemClass")
 public class ItemClassAddController extends ItemClassController {
     public static final String VIEW_ADD = "/cmdb/item/class/add";
-    public static final String VIEW_FORM_EXPIRED = "/sd/formExpired";
 
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {

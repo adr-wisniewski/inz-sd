@@ -56,7 +56,6 @@
     <menu:compositeMenuItem url="/cmdb/item" name="menu.cmdb.item">
         <menu:menuItem url="/cmdb/item/add" name="menu.cmdb.item.add" role="CN_ITM_ADD" icon="add"/>
         <menu:menuItem url="/cmdb/item/browse" name="menu.cmdb.item.browse" role="CN_ITM_VIE" icon="search"/>
-        <menu:menuItem url="/cmdb/item/search" name="menu.cmdb.item.search" role="CN_ITM_VIE" icon="search"/>
     </menu:compositeMenuItem>
 
     <menu:compositeMenuItem url="/cmdb/item/class" name="menu.cmdb.item.class">
@@ -66,9 +65,9 @@
     </menu:compositeMenuItem>
 
     <menu:compositeMenuItem url="/cmdb/relationship/class" name="menu.cmdb.relationship.class">
-        <menu:menuItem url="/cmdb/relationship/class/add" name="menu.cmdb.item.class.add" role="CN_RLT_ADD" icon="add"/>
-        <menu:menuItem url="/cmdb/relationship/class/browse" name="menu.cmdb.item.class.browse" role="CN_RLT_VIE" icon="search"/>
-        <menu:menuItem url="/cmdb/relationship/class/search" name="menu.cmdb.item.class.search" role="CN_RLT_VIE" icon="search"/>
+        <menu:menuItem url="/cmdb/relationship/class/add" name="menu.cmdb.relationship.class.add" role="CN_RLC_ADD" icon="add"/>
+        <menu:menuItem url="/cmdb/relationship/class/browse" name="menu.cmdb.relationship.class.browse" role="CN_RLC_VIE" icon="search"/>
+        <menu:menuItem url="/cmdb/relationship/class/search" name="menu.cmdb.relationship.class.search" role="CN_RLC_VIE" icon="search"/>
     </menu:compositeMenuItem>
 </menu:menuGroup>
 

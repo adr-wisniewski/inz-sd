@@ -7,48 +7,48 @@
 <%@ taglib prefix="print" tagdir="/WEB-INF/tags/print" %>
 <%@ taglib prefix="link" tagdir="/WEB-INF/tags/link" %>
 
-<ui:panel caption="fieldgroup.cmdb.item.class.simple">
+<ui:panel caption="fieldgroup.cmdb.entity.class.simple">
     <ui:propertyList>
-        <ui:propertyItem code="field.cmdb.item.class.name">
-            ${itemClass.name}
+        <ui:propertyItem code="field.cmdb.entity.class.name">
+            ${universalItemClass.name}
         </ui:propertyItem>
 
-        <ui:propertyItem code="field.cmdb.item.class.description">
-            ${itemClass.description}
+        <ui:propertyItem code="field.cmdb.entity.class.description">
+            ${universalItemClass.description}
         </ui:propertyItem>
 
-        <ui:propertyItem code="field.cmdb.item.class.abstraction">
-            <print:yesorno value="${itemClass.abstraction}" />
+        <ui:propertyItem code="field.cmdb.entity.class.abstraction">
+            <print:yesorno value="${universalItemClass.abstraction}" />
         </ui:propertyItem>
 
-        <ui:propertyItem code="field.cmdb.item.class.parent">
-            <link:itemClass object="${itemClass.parent}" />
+        <ui:propertyItem code="field.cmdb.entity.class.parent">
+            <link:itemClass object="${universalItemClass.parent}" />
         </ui:propertyItem>
     </ui:propertyList>
 
     <p class="buttons">
         <ui:actionButton label="edit.label" 
-                         action="/cmdb/item/class/${itemClass.id}/edit"
+                         action="/cmdb/item/class/${universalItemClass.id}/edit"
                          cssClass="edit"/>
             
         <ui:actionButton label="delete.label" 
-                         action="/cmdb/item/class/${itemClass.id}/delete"
+                         action="/cmdb/item/class/${universalItemClass.id}/delete"
                          cssClass="delete"/>
     </p>
 </ui:panel>
 
-<ui:panel caption="fieldgroup.cmdb.item.class.attributes">
-    <cmdb:attributeList list="${itemClass.attributes}" 
-        editUrl="/cmdb/class/${itemClass.id}/attribute/{id}/edit"
-        deleteUrl="/cmdb/class/${itemClass.id}/attribute/{id}/delete" />
+<ui:panel caption="fieldgroup.cmdb.entity.class.attributes">
+    <cmdb:attributeList list="${universalItemClass.attributes}"
+        editUrl="/cmdb/class/${universalItemClass.id}/attribute/{id}/edit"
+        deleteUrl="/cmdb/class/${universalItemClass.id}/attribute/{id}/delete" />
     
     <p class="buttons">
         <ui:actionButton label="add.label" 
-                         action="/cmdb/class/${itemClass.id}/attribute/add"
+                         action="/cmdb/class/${universalItemClass.id}/attribute/add"
                          cssClass="add" />
     </p>
 </ui:panel>
 
-<ui:panel caption="fieldgroup.cmdb.item.class.attributes.inherited">
-    <cmdb:attributeList list="${itemClass.inheritedAttributes}" />
+<ui:panel caption="fieldgroup.cmdb.entity.class.attributes.all">
+    <cmdb:attributeList list="${universalItemClass.allAttributes}" />
 </ui:panel>

@@ -9,7 +9,9 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import sd.cm.domain.Rfc;
+import sd.cmdb.domain.helper.ItemVisitor;
 
 /**
  *
@@ -19,6 +21,7 @@ import sd.cm.domain.Rfc;
 @Table(name="C2_ITEMS_RFC")
 public class RfcItem extends Item {
     private Rfc rfc;
+    private RfcItemClass rfcItemClass;
 
     /**
      * @return the rfc
@@ -34,5 +37,20 @@ public class RfcItem extends Item {
      */
     public void setRfc(Rfc rfc) {
         this.rfc = rfc;
+    }
+
+    @Override
+    @Transient
+    public RfcItemClass getItemClass() {
+        return rfcItemClass;
+    }
+
+    public void setItemClass(RfcItemClass rfcItemClass) {
+        this.rfcItemClass = rfcItemClass;
+    }
+
+    @Override
+    public void accept(ItemVisitor visitor) {
+        visitor.visit(this);
     }
 }

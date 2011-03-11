@@ -25,7 +25,7 @@ import sd.infrastructure.validation.BusinessConstraintViolationException;
 @Controller
 @RequestMapping(value = "/cmdb/class/{classid}/attribute/{attrno}/delete")
 @PreAuthorize("hasRole('CN_ATR_DEL')")
-@SessionAttributes(types=Attribute.class)
+@SessionAttributes("attribute")
 public class AttributeDeleteController extends AttributeController {
     public static final String VIEW_DELETE = "/cmdb/class/attribute/delete";
 
@@ -58,10 +58,7 @@ public class AttributeDeleteController extends AttributeController {
             }
 
             status.setComplete();
-
-            EntityClassRedirectorVisitor visitor = new EntityClassRedirectorVisitor();
-            attribute.getEntityClass().accept(visitor);
-            viewName = visitor.getRedirectUrl();
+            viewName = EntityClassRedirectorVisitor.process(attribute.getEntityClass());
         }
         catch(BusinessConstraintViolationException ex) {
             map.addAllAttributes(ex.getErrors().getModel());

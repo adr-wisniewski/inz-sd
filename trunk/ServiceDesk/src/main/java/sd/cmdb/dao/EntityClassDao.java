@@ -5,13 +5,13 @@
 
 package sd.cmdb.dao;
 
-import sd.cmdb.domain.EntityClass;
+import sd.cmdb.domain.AbstractEntityClass;
 import sd.infrastructure.dao.CrudDao;
 
 /**
  *
  * @author Adrian
  */
-public interface EntityClassDao extends CrudDao<EntityClass, Integer> {
+public interface EntityClassDao extends CrudDao<AbstractEntityClass, Integer> {
 
 }

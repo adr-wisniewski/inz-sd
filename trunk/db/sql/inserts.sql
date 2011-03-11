@@ -14,4 +14,5 @@
 @insert.support_groups.sql
 @insert.services.sql
 
-@insert.itemclass.sql
+@insert.cmdb.itemclass.sql
+@insert.cmdb.attributes.sql

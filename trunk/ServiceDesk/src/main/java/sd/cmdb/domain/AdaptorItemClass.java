@@ -5,6 +5,7 @@
 
 package sd.cmdb.domain;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
@@ -39,7 +40,7 @@ public abstract class AdaptorItemClass implements ItemClass {
     }
 
     @Override
-    public EntityClass getParent() {
+    public ItemClass getParent() {
         return null;
     }
 
@@ -61,6 +62,13 @@ public abstract class AdaptorItemClass implements ItemClass {
     @Override
     public List<Attribute> getAllAttributes() {
         return getAttributes();
+    }
+
+    @Override
+    public List<Attribute> getAllAttributesSorted() {
+        List<Attribute> allAttributes = getAllAttributes();
+        Collections.sort(allAttributes);
+        return allAttributes;
     }
 
     @Override

@@ -1,40 +1,13 @@
-/*form dl dt,
-form dl dd
-{
-    display:block;
-    float:left;
-    line-height:22px;
-    margin-top:8px;
-}
-
-form dl dt
-{
-    clear:both;
-    padding:0 1em;
-    text-align:right;
-    width:15em;
-}
-
-form dl input,
-form dl select,
-form dl textarea
-{
-    width: 30em;
-}
-
-
-form dl input[type="checkbox"],
-form dl input[type="submit"]
-{
-    vertical-align: middle;
-    width: auto;
-}*/
-
 input[type="text"], select, textarea
 {
     border: 1px solid;
     padding: 3px;
     width: 375px;
+}
+
+select
+{
+    width: 383px;
 }
 
 input[type="radio"], input[type="checkbox"]

@@ -9,7 +9,7 @@
 <tiles:importAttribute name="submitLabel" />
 <tiles:importAttribute name="submitCssClass" />
 
-<ui:panel caption="fieldgroup.cmdb.item.class.simple">
+<ui:panel caption="fieldgroup.cmdb.entity.class.simple">
     <form:form modelAttribute="attribute" method="post">
         <ui:errorList/>
         <ui:propertyList>

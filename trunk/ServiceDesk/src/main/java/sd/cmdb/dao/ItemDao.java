@@ -8,12 +8,18 @@ package sd.cmdb.dao;
 import java.util.List;
 import sd.cmdb.domain.Item;
 import sd.cmdb.domain.ItemClass;
-import sd.infrastructure.dao.CrudDao;
+import sd.cmdb.domain.UniversalItem;
 
 /**
  *
  * @author Adrian
  */
-public interface ItemDao extends CrudDao<Item, Integer> {
+public interface ItemDao {
     public List<Item> getByClass(ItemClass itemClass);
+
+    public Item load(Integer id);
+    public Item get(Integer id);
+    public void persist(UniversalItem object);
+    public void merge(UniversalItem object);
+    public void remove(UniversalItem object);
 }

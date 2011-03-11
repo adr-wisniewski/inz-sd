@@ -5,6 +5,7 @@
 
 package sd.cmdb.service;
 
+import sd.cmdb.domain.AbstractEntityClass;
 import sd.cmdb.domain.EntityClass;
 import sd.infrastructure.service.CrudService;
 
@@ -12,6 +13,6 @@ import sd.infrastructure.service.CrudService;
  *
  * @author Adrian
  */
-public interface EntityClassService extends CrudService<EntityClass, Integer> {
+public interface EntityClassService extends CrudService<AbstractEntityClass, Integer> {
 
 }

@@ -5,15 +5,11 @@
 
 package sd.cmdb.domain;
 
-import javax.persistence.Column;
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import java.util.Collections;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import sd.cmdb.domain.helper.ItemVisitor;
 
 /**
  *
@@ -23,5 +19,15 @@ import javax.persistence.Table;
 @Table(name="C2_ITEMS")
 @PrimaryKeyJoinColumn(name = "ITEM_ID")
 public abstract class Item extends Entity {
-   
+   @Transient
+   public abstract ItemClass getItemClass();
+
+   public abstract void accept(ItemVisitor visitor);
+
+   public void populateAttributeValues() {
+        for(Attribute attribute: getItemClass().getAllAttributes()) {
+            getAttributeValue(attribute);
+            Collections.sort(getAttributeValues());
+        }
+    }
 }

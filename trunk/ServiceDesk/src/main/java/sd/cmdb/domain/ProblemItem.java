@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import sd.cmdb.domain.helper.ItemVisitor;
 import sd.pm.domain.Problem;
 
 /**
@@ -19,6 +21,7 @@ import sd.pm.domain.Problem;
 @Table(name="C2_ITEMS_PROBLEM")
 public class ProblemItem extends Item {
     private Problem problem;
+    private ProblemItemClass problemItemClass;
 
     /**
      * @return the problem
@@ -34,5 +37,20 @@ public class ProblemItem extends Item {
      */
     public void setProblem(Problem problem) {
         this.problem = problem;
+    }
+
+    @Override
+    @Transient
+    public ProblemItemClass getItemClass() {
+        return problemItemClass;
+    }
+
+    public void setItemClass(ProblemItemClass problemItemClass) {
+        this.problemItemClass = problemItemClass;
+    }
+
+    @Override
+    public void accept(ItemVisitor visitor) {
+        visitor.visit(this);
     }
 }

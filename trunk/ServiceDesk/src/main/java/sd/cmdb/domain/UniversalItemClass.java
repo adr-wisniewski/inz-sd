@@ -5,6 +5,7 @@
 
 package sd.cmdb.domain;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -19,6 +20,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import org.springframework.util.CollectionUtils;
 import sd.cmdb.domain.helper.EntityClassVisitor;
 import sd.cmdb.domain.helper.ItemClassVisitor;
 import sd.infrastructure.domain.HierarchicalDomainObject;
@@ -96,7 +98,9 @@ public class UniversalItemClass extends AbstractEntityClass implements ItemClass
 
         if(getParent() != null)
             allAttributes.addAll(getParent().getAllAttributes());
+        
 
+        Collections.sort(allAttributes);
         return allAttributes;
     }
 

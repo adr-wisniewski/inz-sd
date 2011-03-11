@@ -22,7 +22,6 @@ import sd.tree.app.TreeBuilder;
  * @author Adrian
  */
 @Controller
-@RequestMapping(value = "/cmdb/item/*")
 @PreAuthorize("hasRole('CN_ITM_VIE')")
 public class ItemSearchController extends ItemController {
 
@@ -33,20 +32,20 @@ public class ItemSearchController extends ItemController {
     protected static final String VIEW_BROWSE_TREE = "/cmdb/item/browse/tree";
     protected static final String VIEW_BROWSE_CATEGORY = "/cmdb/item/browse/category";
 
-    @RequestMapping(value = "/browse")
+    @RequestMapping(value = "/cmdb/item/browse")
     public String browse(ModelMap map) {
         List<ItemClass> items = itemClassService.getAll();
         map.addAttribute(MODEL_ITEMCLASSES, TreeBuilder.buildTree(items, ""));
         return VIEW_BROWSE_TREE;
     }
 
-    @RequestMapping(value = "/browse", params={"id"})
+    @RequestMapping(value = "/cmdb/item/browse", params={"id"})
     public String browseId(@RequestParam("id") Integer id) {
         ItemClass itemClass = itemClassService.load(id);
         return String.format( "redirect:/cmdb/item/browse/%d", itemClass.getId());
     }
 
-    @RequestMapping(value = "/browse/{classid}")
+    @RequestMapping(value = "/cmdb/item/browse/{classid}")
     public String browseName(ModelMap map, @PathVariable(PATH_CLASSID) Integer id) {
         ItemClass itemClass = itemClassService.load(id);
         List<Item> items = service.getByClass(itemClass);

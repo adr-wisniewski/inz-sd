@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import sd.cmdb.domain.helper.ItemVisitor;
 import sd.domain.Employee;
 
 /**
@@ -18,7 +20,9 @@ import sd.domain.Employee;
 @javax.persistence.Entity
 @Table(name="C2_ITEMS_EMPLOYEE")
 public class EmployeeItem extends Item {
+
     private Employee employee;
+    private EmployeeItemClass employeeItemClass;
 
     /**
      * @return the employee
@@ -34,5 +38,20 @@ public class EmployeeItem extends Item {
      */
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    @Override
+    @Transient
+    public EmployeeItemClass getItemClass() {
+        return employeeItemClass;
+    }
+
+    public void setItemClass(EmployeeItemClass employeeItemClass) {
+        this.employeeItemClass = employeeItemClass;
+    }
+
+    @Override
+    public void accept(ItemVisitor visitor) {
+        visitor.visit(this);
     }
 }
