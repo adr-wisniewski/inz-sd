@@ -8,51 +8,62 @@
 <%@ taglib prefix="link" tagdir="/WEB-INF/tags/link" %>
 <%@ taglib prefix="print" tagdir="/WEB-INF/tags/print" %>
 
-<ui:panel caption="caption.cmdb.item.class.related">
+<ui:panel caption="caption.cmdb.item.class.overview" cssClass="overview">
     <h1><spring:message code="caption.cmdb.item.class.parent"/></h1>
-    <link:itemsByClass object="${itemClass.parent}" />
-
+    <p>
+        <link:itemsByClass object="${itemClass.parent}" />
+    </p>
+    
     <h1><spring:message code="caption.cmdb.item.class.children"/></h1>
+    <p>
+        <print:nullable object="${itemClass.children}">
+            <c:forEach items="${itemClass.children}" var="child">
+                <link:itemsByClass object="${child}" />
+            </c:forEach>
+        </print:nullable>
+    </p>
 
-    <print:nullable object="${itemClass.children}">
-        <c:forEach items="${itemClass.children}" var="child">
-            <link:itemsByClass object="${child}" />
-        </c:forEach>
-    </print:nullable>
+    <h1><spring:message code="caption.cmdb.item.class.description"/></h1>
+    <p>
+        <c:out value="${itemClass.description}" />
+    </p>
 </ui:panel>
 
 <ui:panel caption="caption.cmdb.item.items">
     <table class="tablesorter">
         <thead>
             <tr>
-                <th><spring:message code="field.cmdb.item.id" /></th>
-                <c:forEach items="${itemClass.allAttributesSorted}" var="attribute">
-                    <th>${attribute.name}</th>
-                </c:forEach>
-                <th class="actions"><spring:message code="caption.cmdb.actions" /></th>
+                <th><spring:message code="field.cmdb.item.class" /></th>
+                <th><spring:message code="field.cmdb.item.label" /></th>
+                <th><spring:message code="field.cmdb.item.overview" /></th>
+                <th class="actions2"><spring:message code="caption.cmdb.actions" /></th>
             </tr>
         </thead>
         <tbody>
             <c:forEach items="${items}" var="item">
                 <tr>
                     <td>
-                        <link:item object="${item}"/>
+                        <c:out value="${item.itemClass.name}" />
                     </td>
 
-                    <c:forEach items="${itemClass.allAttributesSorted}" var="attribute">
-                        <td>
-                            <cmdb:attributeValue attribute="${attribute}" entity="${item}" />
-                        </td>
-                    </c:forEach>
+                    <td>
+                        <c:out value="${item.label}" />
+                    </td>
 
-                    <td class="actions">
-                        <ui:actionButton label="edit.label"
-                             action="/cmdb/item/${item.id}/edit"
-                             cssClass="edit"/>
+                    <td>
+                        <c:out value="${item.overview}" />
+                    </td>
+                    
+                    <td class="actions2">
+                        <ui:actionButton label="details.label"
+                             action="/cmdb/item/${item.id}"
+                             cssClass="details"/>
 
                         <ui:actionButton label="delete.label"
+                             disabled="${readOnly}"
                              action="/cmdb/item/${item.id}/delete"
                              cssClass="delete"/>
+
                     </td>
                 </tr>
             </c:forEach>
@@ -65,4 +76,11 @@
             </c:if>
         </tbody>
     </table>
+
+    <p class="buttons">
+        <ui:actionButton action="/cmdb/item/add/${itemClass.id}"
+            disabled="${readOnly or itemClass.abstraction}"
+            label="add.label"
+            cssClass="add"/>
+    </p>
 </ui:panel>

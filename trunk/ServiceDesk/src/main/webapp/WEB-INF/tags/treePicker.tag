@@ -1,7 +1,7 @@
-<%@ tag body-content="empty" description="Kontrolka do wyboru elementu hierarchii. Patrz sd.tree.*" %>
+<%@ tag body-content="empty" description="Kontrolka do wyboru elementu hierarchii. Patrz servicedesk.tree.*" %>
 <%@ attribute name="name" required="true" description="Nazwa kontrolki"%>
 <%@ attribute name="source" required="true" description="Nazwa zrodla danych"%>
-<%@ attribute name="value" required="true" type="sd.infrastructure.domain.HierarchicalDomainObject" description="wartosc kontrolki" %>
+<%@ attribute name="value" required="true" type="servicedesk.infrastructure.domain.HierarchicalDomainObject" description="wartosc kontrolki" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sd" tagdir="/WEB-INF/tags" %>
 
@@ -13,4 +13,4 @@
 </script>
 
 <input type="hidden" id="${name}" name="${name}" value="${value.id}" />
-<input type="text" value="${value.name}" id="treePicker-${name}" onclick="pickItem('<c:url value="/sd/treePicker?name=${name}&amp;source=${source}&amp;value=" />', '${name}');" readonly="readonly" />
+<input type="text" value="${value.name}" id="treePicker-${name}" onclick="pickItem('<c:url value="/servicedesk/treePicker?name=${name}&amp;source=${source}&amp;value=" />', '${name}');" readonly="readonly" />

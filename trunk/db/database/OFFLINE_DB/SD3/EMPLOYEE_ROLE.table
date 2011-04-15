@@ -76,7 +76,7 @@
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">10</value>
+            <value class="java.lang.Long">40</value>
           </entry>
           <entry>
             <key>unit</key>
@@ -179,9 +179,9 @@
     </constraint>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">dde166e8-d824-42d5-8307-9489964f6ef9</identifier>
+        <identifier class="java.lang.String">cb8677c0-703e-4e94-9616-d8244caf07e1</identifier>
       </ID>
-      <name>EMPLOYEE_ROLE_ROLES_FK</name>
+      <name>EMPLOYEE_ROLE_ROLES_FK1</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>ROLE_CODE</name>
@@ -197,25 +197,6 @@
       </columnIDs>
       <deleteMode>0</deleteMode>
       <enabled>true</enabled>
-      <properties>
-        <entry>
-          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-          <value class="oracle.javatools.db.ReferenceID">
-            <name>EMPLOYEE_ROLE_ROLES_FK</name>
-            <childObjectNames>
-              <childObjectName>ROLE_CODE</childObjectName>
-            </childObjectNames>
-            <parent class="oracle.javatools.db.ReferenceID">
-              <name>EMPLOYEE_ROLE</name>
-              <identifier class="java.math.BigDecimal">17122</identifier>
-              <schemaName>SD3</schemaName>
-              <type>TABLE</type>
-            </parent>
-            <subType>FKConstraint</subType>
-            <type>CONSTRAINT</type>
-          </value>
-        </entry>
-      </properties>
       <referenceID class="oracle.javatools.db.IdentifierBasedID">
         <name>ROLES_PK</name>
         <identifier class="java.lang.String">2f9e59ca-34e0-4699-9c83-9b5770ee2bf9</identifier>
@@ -225,7 +206,6 @@
           <schemaName>SD3</schemaName>
           <type>TABLE</type>
         </parent>
-        <schemaName>SD3</schemaName>
         <type>CONSTRAINT</type>
       </referenceID>
     </constraint>

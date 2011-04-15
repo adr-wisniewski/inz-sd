@@ -8,10 +8,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="print" tagdir="/WEB-INF/tags/print" %>
-<%@attribute name="object" required="true" rtexprvalue="true" type="sd.cmdb.domain.EntityClass" %>
+<%@attribute name="object" required="true" rtexprvalue="true" type="servicedesk.cmdb.domain.EntityClass" %>
 
 <print:nullable object="${object}">
-    <spring:eval var="link" expression="T(sd.cmdb.web.EntityClassLinkVisitor).process(object)" />
+    <spring:eval var="link" expression="T(servicedesk.cmdb.web.EntityClassLinkVisitor).process(object)" />
     <a class="entityclass" href="${link}">
             ${object.name}
     </a>

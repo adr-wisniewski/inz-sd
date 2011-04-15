@@ -27,6 +27,28 @@
       </dataTypeUsage>
       <notNull>true</notNull>
     </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8930c013-3a60-4d1e-b7fa-b375204f08cc</identifier>
+      </ID>
+      <name>LABEL</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5ca62298-3f7f-4275-8974-56cf44c11b4f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">50</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
   </columns>
   <constraints>
     <constraint class="oracle.javatools.db.FKConstraint">
@@ -76,6 +98,27 @@
             <schemaName>CMDB</schemaName>
             <type>TABLE</type>
           </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+    </constraint>
+    <constraint class="oracle.javatools.db.UniqueConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">0b926aca-2efb-4cc0-a4ec-1658a2288256</identifier>
+      </ID>
+      <name>C2_ITEMS_UK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>LABEL</name>
+          <identifier class="java.lang.String">8930c013-3a60-4d1e-b7fa-b375204f08cc</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_ITEMS</name>
+            <identifier class="java.lang.String">6312780a-deaa-4364-ba2d-9ddd3b38d6f4</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>CMDB</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>

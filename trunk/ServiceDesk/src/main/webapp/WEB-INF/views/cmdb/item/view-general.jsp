@@ -17,6 +17,11 @@
                 <spring:message code="action.cmdb.item.browse"/>
             </a>
         </li>
+        <li>
+            <a href="/cmdb/item/search">
+                <spring:message code="action.cmdb.item.search"/>
+            </a>
+        </li>
     </ul>
 </ui:element>
 

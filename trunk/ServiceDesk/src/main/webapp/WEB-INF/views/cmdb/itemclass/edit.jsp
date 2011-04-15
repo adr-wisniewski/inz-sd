@@ -10,7 +10,7 @@
 <tiles:importAttribute name="submitCssClass" />
 
 <ui:panel caption="fieldgroup.cmdb.entity.class.simple">
-    <form:form modelAttribute="itemClass" method="post">
+    <form:form modelAttribute="universalItemClass" method="post">
         <ui:errorList/>
         <ui:propertyList>
             <ui:propertyItem code="field.cmdb.entity.class.name" label="name">
@@ -18,19 +18,19 @@
                 <form:errors path="name" cssClass="error" />
             </ui:propertyItem>
 
-            <ui:propertyItem code="field.cmdb.entity.class.description" label="description">
-                <form:textarea path="description" rows="4" cols="60" />
-                <form:errors path="description" cssClass="error" />
-            </ui:propertyItem>
-
-            <ui:propertyItem code="field.cmdb.entity.class.parent" label="description">
-                <sd:treePicker name="parent" value="${itemClass.parent}" source="universalitemclass_cmdb"/>
-                <form:errors path="parent" cssClass="error" />
-            </ui:propertyItem>
-
             <ui:propertyItem code="field.cmdb.entity.class.abstraction" label="description">
                 <form:checkbox path="abstraction" />
                 <form:errors path="abstraction" cssClass="error" />
+            </ui:propertyItem>
+
+            <ui:propertyItem code="field.cmdb.entity.class.parent" label="description">
+                <sd:treePicker name="parent" value="${universalItemClass.parent}" source="universalitemclass_cmdb"/>
+                <form:errors path="parent" cssClass="error" />
+            </ui:propertyItem>
+
+            <ui:propertyItem code="field.cmdb.entity.class.description" label="description">
+                <form:textarea path="description" rows="4" cols="60" />
+                <form:errors path="description" cssClass="error" />
             </ui:propertyItem>
 
             <ui:propertyItem>

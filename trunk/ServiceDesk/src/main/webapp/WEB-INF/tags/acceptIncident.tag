@@ -10,7 +10,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <%-- The list of normal or fragment attributes can be specified here: --%>
-<%@attribute name="incident" type="sd.im.domain.Incident" %>
+<%@attribute name="incident" type="servicedesk.im.domain.Incident" %>
 
 <%-- any content can be specified here e.g.: --%>
 <security:authorize ifAnyGranted="ACCEPT_IM">

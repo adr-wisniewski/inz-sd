@@ -7,6 +7,9 @@ button span,
     background-repeat: no-repeat;
 }
 
+div.dashboardpanel .header {
+    background: url("../../images/default/panel/white-top-bottom.gif") repeat-x scroll 0 -1px transparent;
+}
 
 #navigation h5 {
     background-image: 
@@ -66,12 +69,18 @@ button.delete span
     background-image: url("../../images/actions/with-shadows/badge-circle-cross-16.png");
 }
 
+button.details span
+{
+    background-image: url("../../images/actions/with-shadows/search-16.png");
+}
+
 button.search span
 {
     background-image: url("../../images/actions/with-shadows/search-16.png");
 }
 
 button.ok span,
+button.pick span,
 button.editsubmit span
 {
     background-image: url("../../images/actions/with-shadows/badge-circle-check-16.png");
@@ -83,3 +92,7 @@ button.cancel span,
     background-image: url("../../images/actions/with-shadows/badge-circle-minus-16.png");
 }
 
+button.goto span
+{
+    background-image: url("../../images/actions/with-shadows/arrow-right-16.png");
+}

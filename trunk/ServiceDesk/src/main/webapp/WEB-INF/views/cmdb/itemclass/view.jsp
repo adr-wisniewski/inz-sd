@@ -13,16 +13,16 @@
             ${universalItemClass.name}
         </ui:propertyItem>
 
-        <ui:propertyItem code="field.cmdb.entity.class.description">
-            ${universalItemClass.description}
-        </ui:propertyItem>
-
         <ui:propertyItem code="field.cmdb.entity.class.abstraction">
             <print:yesorno value="${universalItemClass.abstraction}" />
         </ui:propertyItem>
 
         <ui:propertyItem code="field.cmdb.entity.class.parent">
             <link:itemClass object="${universalItemClass.parent}" />
+        </ui:propertyItem>
+
+        <ui:propertyItem code="field.cmdb.entity.class.description">
+            ${universalItemClass.description}
         </ui:propertyItem>
     </ui:propertyList>
 

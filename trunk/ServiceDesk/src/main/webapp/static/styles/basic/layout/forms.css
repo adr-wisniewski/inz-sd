@@ -15,13 +15,18 @@ input[type="radio"], input[type="checkbox"]
     margin-left:0;
 }
 
-button[type="submit"]
+a.action, a.action:link, a.action:visited, a.action:hover, a.action:active {
+    text-decoration: none;
+    cursor: default;
+}
+
+button
 {
     margin: 0 0.25em 0 0;
     min-width: 6em;
 }
 
-button[type="submit"] span
+button span
 {
     display: inline-block;
     padding: 0 10px 0 20px

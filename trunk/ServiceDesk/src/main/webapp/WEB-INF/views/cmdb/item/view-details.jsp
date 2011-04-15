@@ -11,7 +11,15 @@
 <ui:panel caption="caption.cmdb.item.attributes">
     <ui:propertyList>
         <ui:propertyItem code="field.cmdb.item.id">
-            ${item.id}
+            <c:out value="${item.id}" />
+        </ui:propertyItem>
+
+        <ui:propertyItem code="field.cmdb.item.label">
+            <c:out value="${item.label}" />
+        </ui:propertyItem>
+
+        <ui:propertyItem code="field.cmdb.item.overview">
+            <c:out value="${item.overview}" />
         </ui:propertyItem>
 
         <c:forEach items="${item.itemClass.allAttributesSorted}" var="attribute">
@@ -22,16 +30,33 @@
     </ui:propertyList>
 
     <p class="buttons">
-        <ui:actionButton label="edit.label"
-            action="/cmdb/item/${item.id}/edit"
-            cssClass="edit"/>
 
-        <ui:actionButton label="delete.label"
-            action="/cmdb/item/${item.id}/delete"
-            cssClass="delete"/>
+        <c:choose>
+            <c:when test="${detailView != null}">
+                <ui:actionButton label="caption.cmdb.item.goto.specificModule"
+                    action="${detailView}"
+                    cssClass="goto"/>
+            </c:when>
+            <c:otherwise>
+                <ui:actionButton label="edit.label"
+                    action="/cmdb/item/${item.id}/edit"
+                    cssClass="edit"/>
+
+                <ui:actionButton label="delete.label"
+                    action="/cmdb/item/${item.id}/delete"
+                    cssClass="delete"/>
+            </c:otherwise>
+        </c:choose>
+
+  
+        
     </p>
 </ui:panel>
 
-<ui:panel caption="caption.cmdb.item.relationships">
-    
-</ui:panel>
+<c:forEach items="${sourceRelationships}" var="relationshipClass">
+    <cmdb:relatedItems relationshipClass="${relationshipClass}" reverse="${false}" />
+</c:forEach>
+
+<c:forEach items="${targetRelationships}" var="relationshipClass">
+    <cmdb:relatedItems relationshipClass="${relationshipClass}" reverse="${true}" />
+</c:forEach>

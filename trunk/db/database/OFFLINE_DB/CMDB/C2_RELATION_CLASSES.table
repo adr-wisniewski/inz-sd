@@ -29,28 +29,6 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">2b8af9fa-fa3b-4458-94a4-a60bfe586e80</identifier>
-      </ID>
-      <name>QUANTITY</name>
-      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
-        <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">f229c02f-1eed-4025-9f28-34a355fffc42</identifier>
-        </ID>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">1</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
-          <typeName>CHAR</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>true</notNull>
-    </column>
-    <column>
-      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">e89d18ff-4b7e-4c63-bb67-0b90f6400844</identifier>
       </ID>
       <name>SOURCE_TYPE</name>
@@ -217,17 +195,17 @@
         <arguments>
           <argument class="oracle.javatools.db.sql.WhereObject">
             <ID class="oracle.javatools.db.IdentifierBasedID">
-              <identifier class="java.lang.String">ae2cf326-3403-4d84-8688-aea43a5d4f87</identifier>
+              <identifier class="java.lang.String">4436eb28-7d37-4986-bd88-8ea9b7381607</identifier>
             </ID>
             <arguments>
               <argument class="oracle.javatools.db.sql.Comparison">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">371d31b7-4ce3-4c4a-9deb-387171ebe875</identifier>
+                  <identifier class="java.lang.String">7e9509b5-a812-4a5c-8198-9821f61e1b08</identifier>
                 </ID>
                 <comparator>5</comparator>
                 <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">006944c2-18db-40d8-8c09-ef6ef50c53c2</identifier>
+                    <identifier class="java.lang.String">3bd1328e-dac7-4674-b310-fffe6a80091f</identifier>
                   </ID>
                   <objectID class="oracle.javatools.db.IdentifierBasedID">
                     <name>SOURCE_TYPE</name>
@@ -245,19 +223,19 @@
                 </leftExpression>
                 <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">8e4e338f-e09d-4c10-8b93-5a806c06b9ac</identifier>
+                    <identifier class="java.lang.String">9d2af2db-6cfc-4170-80c8-f5a2b5e957a3</identifier>
                   </ID>
-                  <SQLText>&apos;ITM&apos;</SQLText>
+                  <SQLText>&apos;UNI&apos;</SQLText>
                 </rightExpression>
               </argument>
               <argument class="oracle.javatools.db.sql.Comparison">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">d705ede0-8f35-4b37-b636-2225dfd14cef</identifier>
+                  <identifier class="java.lang.String">37b78e4d-7c4a-4fdb-8ef0-8d96a1395958</identifier>
                 </ID>
                 <comparator>44</comparator>
                 <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">4fb092c4-6efa-444d-b953-872425a21954</identifier>
+                    <identifier class="java.lang.String">88477382-3a0e-4ce5-9d81-d7dfa6cc8cd0</identifier>
                   </ID>
                   <objectID class="oracle.javatools.db.IdentifierBasedID">
                     <name>SOURCE_CLASS_ID</name>
@@ -279,17 +257,17 @@
           </argument>
           <argument class="oracle.javatools.db.sql.WhereObject">
             <ID class="oracle.javatools.db.IdentifierBasedID">
-              <identifier class="java.lang.String">758e1aaf-25de-415a-9787-35b7f011f445</identifier>
+              <identifier class="java.lang.String">e2dc3ed7-b1af-4a32-ba75-1e4422c1547d</identifier>
             </ID>
             <arguments>
               <argument class="oracle.javatools.db.sql.Comparison">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">567a3dda-1140-4c69-a7c0-074b68d5842a</identifier>
+                  <identifier class="java.lang.String">d6cb756a-3040-4c29-9cad-cebe2b2f83d5</identifier>
                 </ID>
                 <comparator>6</comparator>
                 <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">cf338f11-fd8e-4e2e-80ed-c3f6d25344d8</identifier>
+                    <identifier class="java.lang.String">81fa0eb4-c00b-4f9b-a188-07aba645efe5</identifier>
                   </ID>
                   <objectID class="oracle.javatools.db.IdentifierBasedID">
                     <name>SOURCE_TYPE</name>
@@ -307,19 +285,19 @@
                 </leftExpression>
                 <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">65bd9960-4216-407a-b0d4-7f08be3f9e04</identifier>
+                    <identifier class="java.lang.String">3d5ed48b-976c-4a60-bdea-9f7edcbafca2</identifier>
                   </ID>
-                  <SQLText>&apos;ITM&apos;</SQLText>
+                  <SQLText>&apos;UNI&apos;</SQLText>
                 </rightExpression>
               </argument>
               <argument class="oracle.javatools.db.sql.Comparison">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">d771438d-4954-4cbb-8ef7-c689a632540c</identifier>
+                  <identifier class="java.lang.String">e47e6a89-1691-4548-a0d5-9a670d6caeee</identifier>
                 </ID>
                 <comparator>43</comparator>
                 <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">c45ba989-be19-43f5-9852-070374ffa1af</identifier>
+                    <identifier class="java.lang.String">902e5250-377a-4442-9e77-edbfd994530e</identifier>
                   </ID>
                   <objectID class="oracle.javatools.db.IdentifierBasedID">
                     <name>SOURCE_CLASS_ID</name>
@@ -338,6 +316,36 @@
               </argument>
             </arguments>
             <operator>372</operator>
+          </argument>
+          <argument class="oracle.javatools.db.sql.Comparison">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">81959068-a113-4808-a665-63c35d5eb98b</identifier>
+            </ID>
+            <comparator>5</comparator>
+            <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">29d4408c-6460-4dc0-9c78-60d130eb3065</identifier>
+              </ID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>SOURCE_TYPE</name>
+                <identifier class="java.lang.String">e89d18ff-4b7e-4c63-bb67-0b90f6400844</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>C2_RELATION_CLASSES</name>
+                  <identifier class="java.lang.String">81176eb9-4135-4400-ade8-ec73a92a73fd</identifier>
+                  <schemaName>CMDB</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </objectID>
+              <outerJoin>false</outerJoin>
+              <qualified>false</qualified>
+            </leftExpression>
+            <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">1f4ccdcd-e75f-436c-8ced-0ad401bd86e4</identifier>
+              </ID>
+              <SQLText>&apos;ANY&apos;</SQLText>
+            </rightExpression>
           </argument>
         </arguments>
         <operator>373</operator>
@@ -356,17 +364,17 @@
         <arguments>
           <argument class="oracle.javatools.db.sql.WhereObject">
             <ID class="oracle.javatools.db.IdentifierBasedID">
-              <identifier class="java.lang.String">43f08c61-5868-4df7-9697-f862b12eaec3</identifier>
+              <identifier class="java.lang.String">6c43e20c-79c4-4ebf-b6dd-0b97ff502d55</identifier>
             </ID>
             <arguments>
               <argument class="oracle.javatools.db.sql.Comparison">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">2777d37f-ee5a-49a0-90b7-2f6ed29df0a4</identifier>
+                  <identifier class="java.lang.String">81170c50-0a41-404f-b873-d6f48b696bba</identifier>
                 </ID>
                 <comparator>5</comparator>
                 <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">048b9e1b-e182-4bed-9e70-d68f99347897</identifier>
+                    <identifier class="java.lang.String">39505bb8-8217-4e43-ad70-d6d643c18556</identifier>
                   </ID>
                   <objectID class="oracle.javatools.db.IdentifierBasedID">
                     <name>TARGET_TYPE</name>
@@ -384,19 +392,19 @@
                 </leftExpression>
                 <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">626877a8-c1c6-46a0-b5f9-1d1d097cf36c</identifier>
+                    <identifier class="java.lang.String">97333159-cb07-4a28-8df7-0436ef056576</identifier>
                   </ID>
-                  <SQLText>&apos;ITM&apos;</SQLText>
+                  <SQLText>&apos;UNI&apos;</SQLText>
                 </rightExpression>
               </argument>
               <argument class="oracle.javatools.db.sql.Comparison">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">7192f8b3-c4d8-49ad-b91a-75ba8ec64aeb</identifier>
+                  <identifier class="java.lang.String">d59531b7-44b6-40a4-9541-407c9719f5b7</identifier>
                 </ID>
                 <comparator>44</comparator>
                 <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">8fa97701-4a04-4403-a82b-a1a5c55b5a75</identifier>
+                    <identifier class="java.lang.String">5ff5d759-694e-409f-8b4a-8298f0825468</identifier>
                   </ID>
                   <objectID class="oracle.javatools.db.IdentifierBasedID">
                     <name>TARGET_CLASS_ID</name>
@@ -418,17 +426,17 @@
           </argument>
           <argument class="oracle.javatools.db.sql.WhereObject">
             <ID class="oracle.javatools.db.IdentifierBasedID">
-              <identifier class="java.lang.String">e1824358-9915-4cf3-9860-5eb1319e9cbc</identifier>
+              <identifier class="java.lang.String">4dfeb10c-e13c-404b-a20b-f0593ccdc7b5</identifier>
             </ID>
             <arguments>
               <argument class="oracle.javatools.db.sql.Comparison">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">e675908f-927d-4061-997a-34a91f4447a6</identifier>
+                  <identifier class="java.lang.String">5b619621-7709-4d42-896e-ed6880665f49</identifier>
                 </ID>
                 <comparator>6</comparator>
                 <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">82c6955a-ba20-4098-b6ba-25fb3521e76a</identifier>
+                    <identifier class="java.lang.String">87db4e24-5e27-4c1a-a430-bae70ef5efeb</identifier>
                   </ID>
                   <objectID class="oracle.javatools.db.IdentifierBasedID">
                     <name>TARGET_TYPE</name>
@@ -446,19 +454,19 @@
                 </leftExpression>
                 <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">0ec1488c-a54e-4381-9d13-74021177a3d9</identifier>
+                    <identifier class="java.lang.String">76e09d1f-a01a-4df4-ba41-a836c598879d</identifier>
                   </ID>
-                  <SQLText>&apos;ITM&apos;</SQLText>
+                  <SQLText>&apos;UNI&apos;</SQLText>
                 </rightExpression>
               </argument>
               <argument class="oracle.javatools.db.sql.Comparison">
                 <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">9a49a1b7-b907-4f95-84a1-257fd49d968a</identifier>
+                  <identifier class="java.lang.String">a532f2e5-d6f4-4776-9424-a994a81f670d</identifier>
                 </ID>
                 <comparator>43</comparator>
                 <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
                   <ID class="oracle.javatools.db.IdentifierBasedID">
-                    <identifier class="java.lang.String">96c2090c-dc44-4c15-b848-c4f19cbacea3</identifier>
+                    <identifier class="java.lang.String">534f2355-1ddd-4a43-af1c-ace2dbdaeeb7</identifier>
                   </ID>
                   <objectID class="oracle.javatools.db.IdentifierBasedID">
                     <name>TARGET_CLASS_ID</name>
@@ -478,73 +486,38 @@
             </arguments>
             <operator>372</operator>
           </argument>
-        </arguments>
-        <operator>373</operator>
-      </checkConditionFragment>
-      <enabled>true</enabled>
-    </constraint>
-    <constraint class="oracle.javatools.db.CheckConstraint">
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">14547763-5dad-4e1d-9c95-9e547bafe825</identifier>
-      </ID>
-      <name>C2_RELATION_CLASS_CHK3</name>
-      <checkConditionFragment class="oracle.javatools.db.sql.WhereObject">
-        <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">21868dc8-64cd-4144-a3eb-8e782ffb5efc</identifier>
-        </ID>
-        <arguments>
-          <argument class="oracle.javatools.db.sql.SetOperation">
+          <argument class="oracle.javatools.db.sql.Comparison">
             <ID class="oracle.javatools.db.IdentifierBasedID">
-              <identifier class="java.lang.String">5494bbe4-ef44-4237-8c1d-b0f1a42ead6e</identifier>
+              <identifier class="java.lang.String">d631b9de-ff18-45f9-a8be-d9e8c6901170</identifier>
             </ID>
-            <arguments>
-              <argument class="oracle.javatools.db.sql.ColumnUsage">
-                <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">7564a2b3-90c1-4d1d-8583-290205f58fe2</identifier>
-                </ID>
-                <objectID class="oracle.javatools.db.IdentifierBasedID">
-                  <name>QUANTITY</name>
-                  <identifier class="java.lang.String">2b8af9fa-fa3b-4458-94a4-a60bfe586e80</identifier>
-                  <parent class="oracle.javatools.db.IdentifierBasedID">
-                    <name>C2_RELATION_CLASSES</name>
-                    <identifier class="java.lang.String">81176eb9-4135-4400-ade8-ec73a92a73fd</identifier>
-                    <schemaName>CMDB</schemaName>
-                    <type>TABLE</type>
-                  </parent>
-                  <type>COLUMN</type>
-                </objectID>
-                <outerJoin>false</outerJoin>
-                <qualified>false</qualified>
-              </argument>
-              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
-                <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">a79fed98-7a33-42a7-8561-f4946888de38</identifier>
-                </ID>
-                <SQLText>&apos;?&apos;</SQLText>
-              </argument>
-              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
-                <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">f4a39768-02ba-4983-8734-3de62f2acb8d</identifier>
-                </ID>
-                <SQLText>&apos;1&apos;</SQLText>
-              </argument>
-              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
-                <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">b1da9e27-2431-473a-ae92-ff43fb49ada1</identifier>
-                </ID>
-                <SQLText>&apos;*&apos;</SQLText>
-              </argument>
-              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
-                <ID class="oracle.javatools.db.IdentifierBasedID">
-                  <identifier class="java.lang.String">85988a91-083c-4bfa-8bd4-0ae79e562320</identifier>
-                </ID>
-                <SQLText>&apos;+&apos;</SQLText>
-              </argument>
-            </arguments>
-            <operator>705</operator>
+            <comparator>5</comparator>
+            <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">81c306a7-34f8-4391-bb7c-f026cc73d2e7</identifier>
+              </ID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>TARGET_TYPE</name>
+                <identifier class="java.lang.String">99d0aa50-c03e-4ca7-b543-5d5e49de0542</identifier>
+                <parent class="oracle.javatools.db.IdentifierBasedID">
+                  <name>C2_RELATION_CLASSES</name>
+                  <identifier class="java.lang.String">81176eb9-4135-4400-ade8-ec73a92a73fd</identifier>
+                  <schemaName>CMDB</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </objectID>
+              <outerJoin>false</outerJoin>
+              <qualified>false</qualified>
+            </leftExpression>
+            <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">b1a9ad9b-5187-43a3-b48d-7855450655c2</identifier>
+              </ID>
+              <SQLText>&apos;ANY&apos;</SQLText>
+            </rightExpression>
           </argument>
         </arguments>
-        <operator>372</operator>
+        <operator>373</operator>
       </checkConditionFragment>
       <enabled>true</enabled>
     </constraint>

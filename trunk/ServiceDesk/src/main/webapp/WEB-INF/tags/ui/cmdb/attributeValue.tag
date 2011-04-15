@@ -1,6 +1,6 @@
 <%@tag description="put the tag description here" pageEncoding="UTF-8"%>
-<%@attribute name="attribute" required="true" rtexprvalue="true" type="sd.cmdb.domain.Attribute"%>
-<%@attribute name="entity" required="true" rtexprvalue="true" type="sd.cmdb.domain.Entity"%>
+<%@attribute name="attribute" required="true" rtexprvalue="true" type="servicedesk.cmdb.domain.Attribute"%>
+<%@attribute name="entity" required="true" rtexprvalue="true" type="servicedesk.cmdb.domain.Entity"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 

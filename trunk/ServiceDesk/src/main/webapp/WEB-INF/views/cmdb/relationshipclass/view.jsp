@@ -13,10 +13,6 @@
             ${relationshipClass.name}
         </ui:propertyItem>
 
-        <ui:propertyItem code="field.cmdb.entity.class.description">
-            ${relationshipClass.description}
-        </ui:propertyItem>
-
         <ui:propertyItem code="field.cmdb.entity.class.abstraction">
             <print:yesorno value="${relationshipClass.abstraction}" />
         </ui:propertyItem>
@@ -25,24 +21,24 @@
             <link:relationshipClass object="${relationshipClass.parent}" />
         </ui:propertyItem>
 
-        <ui:propertyItem code="field.cmdb.relationship.class.label">
-            ${relationshipClass.label}
-        </ui:propertyItem>
-
-        <ui:propertyItem code="field.cmdb.relationship.class.labelReverse">
-            ${relationshipClass.labelReverse}
-        </ui:propertyItem>
-
-        <ui:propertyItem code="field.cmdb.relationship.class.quantity">
-            ${relationshipClass.quantity}
-        </ui:propertyItem>
-
         <ui:propertyItem code="field.cmdb.relationship.class.sourceItemClass">
             <link:itemClass object="${relationshipClass.sourceItemClass}" />
         </ui:propertyItem>
 
         <ui:propertyItem code="field.cmdb.relationship.class.targetItemClass">
             <link:itemClass object="${relationshipClass.targetItemClass}" />
+        </ui:propertyItem>
+
+        <ui:propertyItem code="field.cmdb.relationship.class.label">
+            ${relationshipClass.label}
+        </ui:propertyItem>
+
+        <ui:propertyItem code="field.cmdb.relationship.class.reverseLabel">
+            ${relationshipClass.reverseLabel}
+        </ui:propertyItem>
+
+        <ui:propertyItem code="field.cmdb.entity.class.description">
+            ${relationshipClass.description}
         </ui:propertyItem>
 
     </ui:propertyList>

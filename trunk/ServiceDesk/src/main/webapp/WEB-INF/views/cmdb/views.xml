@@ -153,7 +153,12 @@
         </put-attribute>
     </definition>
 
-    <!-- ITEMS BROWSE -->
+    <!-- ITEMS SEARCH -->
+    <definition name="/cmdb/item/search" extends="standard-layout">
+        <put-attribute name="title" value="titles.cmdb.item.search" />
+        <put-attribute name="body" value="/WEB-INF/views/cmdb/item/search.jsp" />
+    </definition>
+
     <definition name="/cmdb/item/browse/tree" extends="standard-layout">
         <put-attribute name="title" value="titles.cmdb.item.browse.tree" />
         <put-attribute name="body" value="/WEB-INF/views/cmdb/item/browse-tree.jsp" />
@@ -173,6 +178,7 @@
 
     <definition name="/cmdb/item/view/details" extends="standard-layout">
         <put-attribute name="title" value="titles.cmdb.item.view.details" />
+        <put-attribute name="title_args" value="${item.label}" />
         <put-attribute name="body" value="/WEB-INF/views/cmdb/item/view-details.jsp" />
     </definition>
 
@@ -208,6 +214,51 @@
             <definition template="/WEB-INF/views/cmdb/common/confirm.jsp">
                 <put-attribute name="caption" value="confirm.action" />
                 <put-attribute name="text" value="caption.cmdb.item.delete" />
+                <put-attribute name="text_args" value="" />
+            </definition>
+        </put-attribute>
+    </definition>
+
+    <!-- ITEM PICKER -->
+    <definition name="/cmdb/item/picker" extends="empty-layout">
+            <put-attribute name="title" value="titles.cmdb.item.pick" />
+            <put-attribute name="title_args" value="${itemClass.name}" />
+            <put-attribute name="body" value="/WEB-INF/views/cmdb/item/pick.jsp" />
+    </definition>
+
+    <definition name="/cmdb/item/picker/choose" extends="empty-layout">
+            <put-attribute name="title" value="titles.cmdb.item.pick" />
+            <put-attribute name="title_args" value="${itemClass.name}" />
+            <put-attribute name="body" value="/WEB-INF/views/cmdb/item/pick-choose.jsp" />
+    </definition>
+
+    <!-- RELATIONSHIP CRUD -->
+    <definition name="/cmdb/relationship/add" extends="standard-layout">
+        <put-attribute name="title" value="titles.cmdb.relationship.add" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/cmdb/relationship/edit.jsp">
+                <put-attribute name="submitLabel" value="add.label" />
+                <put-attribute name="submitCssClass" value="add" />
+            </definition>
+        </put-attribute>
+    </definition>
+
+    <definition name="/cmdb/relationship/edit" extends="standard-layout">
+        <put-attribute name="title" value="titles.cmdb.relationship.edit" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/cmdb/relationship/edit.jsp">
+                <put-attribute name="submitLabel" value="edit.label" />
+                <put-attribute name="submitCssClass" value="editsubmit" />
+            </definition>
+        </put-attribute>
+    </definition>
+
+    <definition name="/cmdb/relationship/delete" extends="standard-layout">
+        <put-attribute name="title" value="titles.cmdb.relationship.delete" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/cmdb/common/confirm.jsp">
+                <put-attribute name="caption" value="confirm.action" />
+                <put-attribute name="text" value="caption.cmdb.relationship.delete" />
                 <put-attribute name="text_args" value="" />
             </definition>
         </put-attribute>

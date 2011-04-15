@@ -18,9 +18,9 @@
                 <form:errors path="name" cssClass="error" />
             </ui:propertyItem>
 
-            <ui:propertyItem code="field.cmdb.entity.class.description" label="description">
-                <form:textarea path="description" rows="4" cols="60" />
-                <form:errors path="description" cssClass="error" />
+            <ui:propertyItem code="field.cmdb.entity.class.abstraction" label="description">
+                <form:checkbox path="abstraction" />
+                <form:errors path="abstraction" cssClass="error" />
             </ui:propertyItem>
 
             <ui:propertyItem code="field.cmdb.entity.class.parent" label="description">
@@ -28,9 +28,14 @@
                 <form:errors path="parent" cssClass="error" />
             </ui:propertyItem>
 
-            <ui:propertyItem code="field.cmdb.entity.class.abstraction" label="description">
-                <form:checkbox path="abstraction" />
-                <form:errors path="abstraction" cssClass="error" />
+            <ui:propertyItem code="field.cmdb.relationship.class.sourceItemClass" label="sourceItemClass">
+                <sd:treePicker name="sourceItemClass" value="${relationshipClass.sourceItemClass}" source="itemclass_cmdb"/>
+                <form:errors path="sourceItemClass" cssClass="error" />
+            </ui:propertyItem>
+
+            <ui:propertyItem code="field.cmdb.relationship.class.targetItemClass" label="targetItemClass">
+                <sd:treePicker name="targetItemClass" value="${relationshipClass.targetItemClass}" source="itemclass_cmdb"/>
+                <form:errors path="targetItemClass" cssClass="error" />
             </ui:propertyItem>
 
             <ui:propertyItem code="field.cmdb.relationship.class.label" label="label">
@@ -43,25 +48,9 @@
                 <form:errors path="reverseLabel" cssClass="error" />
             </ui:propertyItem>
 
-            <ui:propertyItem code="field.cmdb.relationship.class.quantity" label="quantity">
-                <form:select path="quantity">
-                    <spring:eval expression="T(sd.cmdb.domain.Quantity).values()" var="quantities" />
-                    <c:forEach items="${quantities}" var="quantity">
-                        <spring:message code="${quantity.code}" var="label"/>
-                        <form:option label="${label}" value="${quantity.representation}"/>
-                    </c:forEach>
-                </form:select>
-                <form:errors path="quantity" cssClass="error" />
-            </ui:propertyItem>
-
-            <ui:propertyItem code="field.cmdb.relationship.class.sourceItemClass" label="sourceItemClass">
-                <sd:treePicker name="sourceItemClass" value="${relationshipClass.sourceItemClass}" source="itemclass_cmdb"/>
-                <form:errors path="sourceItemClass" cssClass="error" />
-            </ui:propertyItem>
-
-            <ui:propertyItem code="field.cmdb.relationship.class.targetItemClass" label="targetItemClass">
-                <sd:treePicker name="targetItemClass" value="${relationshipClass.targetItemClass}" source="itemclass_cmdb"/>
-                <form:errors path="targetItemClass" cssClass="error" />
+            <ui:propertyItem code="field.cmdb.entity.class.description" label="description">
+                <form:textarea path="description" rows="4" cols="60" />
+                <form:errors path="description" cssClass="error" />
             </ui:propertyItem>
 
             <ui:propertyItem>

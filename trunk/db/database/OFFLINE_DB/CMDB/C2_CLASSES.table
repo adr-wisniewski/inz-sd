@@ -47,28 +47,7 @@
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>true</notNull>
-    </column>
-    <column>
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">930827e0-7f76-4066-b8d6-a2b86cd2d6fc</identifier>
-      </ID>
-      <name>IS_ABSTRACT</name>
-      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
-        <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">3c38ba0d-eeae-4d3f-bbed-95636de1569b</identifier>
-        </ID>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">1</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
-          <typeName>CHAR</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
+      <default class="java.lang.String">0</default>
       <notNull>true</notNull>
     </column>
     <column>
@@ -111,6 +90,28 @@
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
           <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
           <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">930827e0-7f76-4066-b8d6-a2b86cd2d6fc</identifier>
+      </ID>
+      <name>IS_ABSTRACT</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3c38ba0d-eeae-4d3f-bbed-95636de1569b</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
         </dataTypeID>
       </dataTypeUsage>
       <notNull>true</notNull>
@@ -179,26 +180,6 @@
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>CLASS_ID</name>
           <identifier class="java.lang.String">ef00f3b9-8019-4a09-b111-253ad53bbe1f</identifier>
-          <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>C2_CLASSES</name>
-            <identifier class="java.lang.String">1d466aea-6268-41b8-8473-cb1f79ac11d5</identifier>
-            <schemaName>CMDB</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <type>COLUMN</type>
-        </columnID>
-      </columnIDs>
-      <enabled>true</enabled>
-    </constraint>
-    <constraint class="oracle.javatools.db.UniqueConstraint">
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">5295bd58-b314-49c6-a75d-7fcb8ef20b23</identifier>
-      </ID>
-      <name>C2_CLASS_UK1</name>
-      <columnIDs>
-        <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>NAME</name>
-          <identifier class="java.lang.String">f69fe217-0615-4637-8456-72379711df61</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>C2_CLASSES</name>
             <identifier class="java.lang.String">1d466aea-6268-41b8-8473-cb1f79ac11d5</identifier>

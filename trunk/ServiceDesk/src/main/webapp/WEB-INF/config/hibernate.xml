@@ -15,6 +15,11 @@
         <property name="configLocation">
             <value>classpath:hibernate.cfg.xml</value>
         </property>
+        <property name="eventListeners">
+            <map>
+                <entry key="pre-insert" value-ref="authoredDomainObjectEventListener">
+            </map>
+        </property>
     </bean>
 
 

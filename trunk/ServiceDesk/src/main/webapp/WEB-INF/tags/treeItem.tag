@@ -1,5 +1,5 @@
 <%@ tag body-content="empty" description="Drzewo" %>
-<%@ attribute name="item" required="true" description="Element hierarchii" type="sd.tree.app.TreeItem"%>
+<%@ attribute name="item" required="true" description="Element hierarchii" type="servicedesk.tree.app.TreeItem"%>
 <%@ attribute name="url" required="true" description="adres URL"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>

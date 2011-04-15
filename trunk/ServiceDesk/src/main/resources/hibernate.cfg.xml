@@ -14,7 +14,7 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
     <property name="hibernate.use_sql_comments">true</property>
-    <!-- envers -->
+    <!-- listeners -->
     <property name="hibernate.ejb.event.post-insert">
         org.hibernate.ejb.event.EJB3PostInsertEventListener,org.hibernate.envers.event.AuditEventListener
     </property>
@@ -40,72 +40,75 @@
     <!--property name="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</prop-->
 
     <!-- mappings -->
-    <mapping class="sd.domain.Comment"/>
-    <mapping class="sd.domain.Department"/>
-    <mapping class="sd.domain.Employee"/>
-    <mapping class="sd.domain.Job"/>
-    <mapping class="sd.domain.Role"/>
+    <mapping class="servicedesk.domain.Comment"/>
+    <mapping class="servicedesk.domain.Department"/>
+    <mapping class="servicedesk.domain.Employee"/>
+    <mapping class="servicedesk.domain.Job"/>
+    <mapping class="servicedesk.domain.Role"/>
 
-    <mapping class="sd.cmdb.domain.AbstractEntityClass"/>
-    <mapping class="sd.cmdb.domain.Attribute"/>
-    <mapping class="sd.cmdb.domain.AttributeValue"/>
-    <mapping class="sd.cmdb.domain.AttributeValuePk"/>
-    <mapping class="sd.cmdb.domain.EmployeeItem"/>
-    <mapping class="sd.cmdb.domain.Entity"/>
-    <mapping class="sd.cmdb.domain.IncidentItem"/>
-    <mapping class="sd.cmdb.domain.ProblemItem"/>
-    <mapping class="sd.cmdb.domain.Relationship"/>
-    <mapping class="sd.cmdb.domain.RelationshipClass"/>
-    <!--mapping class="sd.cmdb.domain.RfcItem"/-->
-    <mapping class="sd.cmdb.domain.ServiceItem"/>
-    <mapping class="sd.cmdb.domain.UniversalItem"/>
-    <mapping class="sd.cmdb.domain.UniversalItemClass"/>
+    <mapping class="servicedesk.cmdb.domain.AbstractEntityClass"/>
+    <mapping class="servicedesk.cmdb.domain.Attribute"/>
+    <mapping class="servicedesk.cmdb.domain.AttributeValue"/>
+    <mapping class="servicedesk.cmdb.domain.AttributeValuePk"/>
+    <mapping class="servicedesk.cmdb.domain.EmployeeItem"/>
+    <mapping class="servicedesk.cmdb.domain.Entity"/>
+    <mapping class="servicedesk.cmdb.domain.IncidentItem"/>
+    <mapping class="servicedesk.cmdb.domain.ProblemItem"/>
+    <mapping class="servicedesk.cmdb.domain.Relationship"/>
+    <mapping class="servicedesk.cmdb.domain.RelationshipClass"/>
+    <!--mapping class="servicedesk.cmdb.domain.RfcItem"/-->
+    <mapping class="servicedesk.cmdb.domain.ServiceItem"/>
+    <mapping class="servicedesk.cmdb.domain.UniversalItem"/>
+    <mapping class="servicedesk.cmdb.domain.UniversalItemClass"/>
 
-    <mapping class="sd.em.domain.Event"/>
-    <mapping class="sd.em.domain.EventCategory"/>
-    <mapping class="sd.em.domain.EventParameter"/>
-    <mapping class="sd.em.domain.EventSignificance"/>
+    <mapping class="servicedesk.em.domain.Event"/>
+    <mapping class="servicedesk.em.domain.EventCategory"/>
+    <mapping class="servicedesk.em.domain.EventParameter"/>
+    <mapping class="servicedesk.em.domain.EventSignificance"/>
 
-    <mapping class="sd.im.domain.Incident"/>
-    <mapping class="sd.im.domain.IncidentCategory"/>
-    <mapping class="sd.im.domain.IncidentHistory"/>
-    <mapping class="sd.im.domain.IncidentImpact"/>
-    <mapping class="sd.im.domain.IncidentPriority"/>
-    <mapping class="sd.im.domain.IncidentSource"/>
-    <mapping class="sd.im.domain.IncidentStatus"/>
-    <mapping class="sd.im.domain.IncidentUrgency"/>
-    <mapping class="sd.im.domain.SupportGroup"/>
+    <mapping class="servicedesk.im.domain.Incident"/>
+    <mapping class="servicedesk.im.domain.IncidentCategory"/>
+    <mapping class="servicedesk.im.domain.IncidentHistory"/>
+    <mapping class="servicedesk.im.domain.IncidentImpact"/>
+    <mapping class="servicedesk.im.domain.IncidentPriority"/>
+    <mapping class="servicedesk.im.domain.IncidentSource"/>
+    <mapping class="servicedesk.im.domain.IncidentStatus"/>
+    <mapping class="servicedesk.im.domain.IncidentUrgency"/>
+    <mapping class="servicedesk.im.domain.SupportGroup"/>
 
-    <mapping class="sd.pm.domain.KnownError"/>
-    <mapping class="sd.pm.domain.Problem"/>
-    <mapping class="sd.pm.domain.ProblemCategory"/>
-    <mapping class="sd.pm.domain.ProblemImpact"/>
-    <mapping class="sd.pm.domain.ProblemPriority"/>
-    <mapping class="sd.pm.domain.ProblemStatus"/>
-    <mapping class="sd.pm.domain.ProblemUrgency"/>
-    <mapping class="sd.pm.domain.Solution"/>
-    <mapping class="sd.pm.domain.SolutionType"/>
+    <mapping class="servicedesk.pm.domain.KnownError"/>
+    <mapping class="servicedesk.pm.domain.Problem"/>
+    <mapping class="servicedesk.pm.domain.ProblemCategory"/>
+    <mapping class="servicedesk.pm.domain.ProblemImpact"/>
+    <mapping class="servicedesk.pm.domain.ProblemPriority"/>
+    <mapping class="servicedesk.pm.domain.ProblemStatus"/>
+    <mapping class="servicedesk.pm.domain.ProblemUrgency"/>
+    <mapping class="servicedesk.pm.domain.Solution"/>
+    <mapping class="servicedesk.pm.domain.SolutionType"/>
 
-    <mapping class="sd.rf.domain.RequestAttribute"/>
-    <mapping class="sd.rf.domain.RequestAttributeType"/>
-    <mapping class="sd.rf.domain.RequestCategory"/>
-    <mapping class="sd.rf.domain.RequestPriority"/>
-    <mapping class="sd.rf.domain.RequestStatus"/>
-    <mapping class="sd.rf.domain.ServiceRequest"/>
+    <mapping class="servicedesk.rf.domain.RequestAttribute"/>
+    <mapping class="servicedesk.rf.domain.RequestAttributeType"/>
+    <mapping class="servicedesk.rf.domain.RequestCategory"/>
+    <mapping class="servicedesk.rf.domain.RequestPriority"/>
+    <mapping class="servicedesk.rf.domain.RequestStatus"/>
+    <mapping class="servicedesk.rf.domain.ServiceRequest"/>
 
-    <mapping class="sd.scm.domain.Service"/>
-    <mapping class="sd.scm.domain.ServiceType"/>
+    <mapping class="servicedesk.scm.domain.Service"/>
+    <mapping class="servicedesk.scm.domain.ServiceType"/>
 
-    <mapping class="sd.signal.domain.Signal"/>
-    <mapping class="sd.signal.domain.SignalAttribute"/>
-    <mapping class="sd.signal.domain.SignalGenerator"/>
-    <mapping class="sd.signal.domain.SignalObjectAttributeType"/>
-    <mapping class="sd.signal.domain.SignalObjectType"/>
-    <mapping class="sd.signal.domain.SignalReceiverType"/>
-    <mapping class="sd.signal.domain.SignalSignificanceType"/>
-    <mapping class="sd.signal.domain.SignalType"/>
+    <mapping class="servicedesk.signal.domain.Signal"/>
+    <mapping class="servicedesk.signal.domain.SignalAttribute"/>
+    <mapping class="servicedesk.signal.domain.SignalGenerator"/>
+    <mapping class="servicedesk.signal.domain.SignalObjectAttributeType"/>
+    <mapping class="servicedesk.signal.domain.SignalObjectType"/>
+    <mapping class="servicedesk.signal.domain.SignalReceiverType"/>
+    <mapping class="servicedesk.signal.domain.SignalSignificanceType"/>
+    <mapping class="servicedesk.signal.domain.SignalType"/>
 
-    <mapping class="sd.slm.domain.Agreement"/>
+    <mapping class="servicedesk.slm.domain.Agreement"/>
 
+
+    <mapping class="servicedesk.common.announcements.domain.Announcement"/>
+    <mapping class="servicedesk.common.attachments.domain.Attachment"/>
   </session-factory>
 </hibernate-configuration>

@@ -118,14 +118,55 @@ div.panel
         margin: 6px 0 0 0;
     }
 
+    div.panel.overview
+    {
+
+    }
+
+        div.panel.overview p
+        {
+            margin-bottom: 0.5em;
+        }
+
 table.tablesorter {
         margin: 0;
 }
 
-table.tablesorter thead tr .actions {
-    width: 165px;
+table.tablesorter thead tr .actions1 {
+    width: 105px;
 }
 
-table.tablesorter tbody tr .actions {
+table.tablesorter thead tr .actions2 {
+    width: 195px;
+}
+
+table.tablesorter thead tr .actions1,
+table.tablesorter tbody tr .actions2 {
     text-align: center;
 }
+
+div.dashboardpanel .header{
+    border: 1px solid;
+    padding: 5px 3px 4px 5px;
+}
+
+div.dashboardpanel .item {
+    padding: 6px;
+}
+
+    div.dashboardpanel .item .time {
+        margin: 4px 0;
+        text-indent: 1em;
+    }
+
+    div.dashboardpanel .item .author {
+        text-align: right;
+    }
+
+    div.dashboardpanel hr:last-child {
+        display: none;
+    }
+
+
+
+

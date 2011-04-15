@@ -2,7 +2,8 @@ a, a:link, a:visited, a:hover, a:active, a:hover {
     color: #3B5998;
 }
 
-#navigation h5 {
+#navigation h5,
+div.dashboardpanel .header{
     color: #15428B;
 }
 
@@ -32,13 +33,24 @@ div.panel.success {
     color: #adcdf8;
 }
 
-#pagetitle em {
+#pagetitle em,
+div.panel h1.caption em {
     color: #FFEE5C;
 }
 
 div.panel.hint .content em
 {
- color: #EF9B0F;
+    color: #EF9B0F;
+}
+
+div.dashboardpanel .item .title
+{
+    color: #003264;
+}
+
+div.dashboardpanel .item .time
+{
+    color: #AAAADC;
 }
 
 div.panel ul.treeview, .element {
@@ -49,7 +61,7 @@ body {
     background-color: #F3F3F3;
 }
 
-table.currents, div.panel {
+table.currents, div.panel, div.dashboardpanel {
     background-color: #FFFACD
 }
 
@@ -108,6 +120,10 @@ input[type="text"], select, textarea
 .element,
 #pagetitle {
     border-color: #E48400;
+}
+
+div.dashboardpanel .header {
+    border-color: #BEBEDC;
 }
 
 #navigation h5 {

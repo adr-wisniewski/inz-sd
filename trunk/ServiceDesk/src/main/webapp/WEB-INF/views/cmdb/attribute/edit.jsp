@@ -28,6 +28,11 @@
                 <form:errors path="displayNo" cssClass="error" />
             </ui:propertyItem>
 
+            <ui:propertyItem code="field.cmdb.class.attribute.overview" label="overview">
+                <form:checkbox path="overview" />
+                <form:errors path="overview" cssClass="error" />
+            </ui:propertyItem>
+
              <ui:propertyItem>
                  <ui:submit code="${submitLabel}" cssClass="${submitCssClass}" />
             </ui:propertyItem>

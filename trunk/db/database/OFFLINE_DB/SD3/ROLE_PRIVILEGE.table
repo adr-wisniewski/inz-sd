@@ -17,7 +17,7 @@
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">10</value>
+            <value class="java.lang.Long">40</value>
           </entry>
           <entry>
             <key>unit</key>
@@ -76,7 +76,7 @@
         <attributeValues>
           <entry>
             <key>size</key>
-            <value class="java.lang.Long">10</value>
+            <value class="java.lang.Long">40</value>
           </entry>
           <entry>
             <key>unit</key>
@@ -127,7 +127,7 @@
   <constraints>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">00625f58-d3fc-413d-984a-f8827d11aac9</identifier>
+        <identifier class="java.lang.String">582bb4a1-d572-403b-8c67-005a4b0e8f3d</identifier>
       </ID>
       <name>ROLE_PRIVILEGE_PRIVILEGE__FK1</name>
       <columnIDs>
@@ -140,31 +140,11 @@
             <schemaName>SD3</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>SD3</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
       <deleteMode>0</deleteMode>
       <enabled>true</enabled>
-      <properties>
-        <entry>
-          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-          <value class="oracle.javatools.db.ReferenceID">
-            <name>ROLE_PRIVILEGE_PRIVILEGE__FK1</name>
-            <childObjectNames>
-              <childObjectName>PRIVILEGE_CODE</childObjectName>
-            </childObjectNames>
-            <parent class="oracle.javatools.db.ReferenceID">
-              <name>ROLE_PRIVILEGE</name>
-              <identifier class="java.math.BigDecimal">17076</identifier>
-              <schemaName>SD3</schemaName>
-              <type>TABLE</type>
-            </parent>
-            <subType>FKConstraint</subType>
-            <type>CONSTRAINT</type>
-          </value>
-        </entry>
-      </properties>
       <referenceID class="oracle.javatools.db.IdentifierBasedID">
         <name>PRIVILEGE_TYPES_PK</name>
         <identifier class="java.lang.String">1bb52ec6-ec43-4189-a193-833d5e254b0e</identifier>
@@ -174,15 +154,14 @@
           <schemaName>SD3</schemaName>
           <type>TABLE</type>
         </parent>
-        <schemaName>SD3</schemaName>
         <type>CONSTRAINT</type>
       </referenceID>
     </constraint>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">eef052a2-670d-4bba-9730-5a800a1fbce5</identifier>
+        <identifier class="java.lang.String">7553306d-1953-40ed-b0f6-d4d6db146468</identifier>
       </ID>
-      <name>ROLE_PRIVILEGE_ROLES_FK</name>
+      <name>ROLE_PRIVILEGE_ROLES_FK1</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>ROLE_CODE</name>
@@ -193,31 +172,11 @@
             <schemaName>SD3</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>SD3</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
       <deleteMode>0</deleteMode>
       <enabled>true</enabled>
-      <properties>
-        <entry>
-          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-          <value class="oracle.javatools.db.ReferenceID">
-            <name>ROLE_PRIVILEGE_ROLES_FK</name>
-            <childObjectNames>
-              <childObjectName>ROLE_CODE</childObjectName>
-            </childObjectNames>
-            <parent class="oracle.javatools.db.ReferenceID">
-              <name>ROLE_PRIVILEGE</name>
-              <identifier class="java.math.BigDecimal">17076</identifier>
-              <schemaName>SD3</schemaName>
-              <type>TABLE</type>
-            </parent>
-            <subType>FKConstraint</subType>
-            <type>CONSTRAINT</type>
-          </value>
-        </entry>
-      </properties>
       <referenceID class="oracle.javatools.db.IdentifierBasedID">
         <name>ROLES_PK</name>
         <identifier class="java.lang.String">2f9e59ca-34e0-4699-9c83-9b5770ee2bf9</identifier>
@@ -227,7 +186,6 @@
           <schemaName>SD3</schemaName>
           <type>TABLE</type>
         </parent>
-        <schemaName>SD3</schemaName>
         <type>CONSTRAINT</type>
       </referenceID>
     </constraint>
@@ -246,7 +204,6 @@
             <schemaName>SD3</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>SD3</schemaName>
           <type>COLUMN</type>
         </columnID>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
@@ -258,7 +215,6 @@
             <schemaName>SD3</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>SD3</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>

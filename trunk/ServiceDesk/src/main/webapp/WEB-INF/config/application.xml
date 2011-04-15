@@ -12,19 +12,36 @@
 
     <aop:aspectj-autoproxy/>
 
-    <context:component-scan base-package="sd.app" />
-    <context:component-scan base-package="sd.dao" />
-    <context:component-scan base-package="sd.domain" />
-    <context:component-scan base-package="sd.editor" />
-    <context:component-scan base-package="sd.service" />
-    <context:component-scan base-package="sd.validator" />
-    <context:component-scan base-package="sd.*.app" />
-    <context:component-scan base-package="sd.*.dao" />
-    <context:component-scan base-package="sd.*.domain" />
-    <context:component-scan base-package="sd.*.editor" />
-    <context:component-scan base-package="sd.*.service" />
-    <context:component-scan base-package="sd.*.validator" />
-    
-    <context:component-scan base-package="sd.infrastructure.validation" />
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="basenames">
+            <list>
+                <value>classpath:org/springframework/security/messages</value>
+                <value>classpath:messages</value>
+                <value>classpath:common.messages</value>
+                <value>classpath:cmdb.messages</value>
+            </list>
+        </property>
+    </bean>
 
+    <context:component-scan base-package="servicedesk.app" />
+    <context:component-scan base-package="servicedesk.dao" />
+    <context:component-scan base-package="servicedesk.domain" />
+    <context:component-scan base-package="servicedesk.editor" />
+    <context:component-scan base-package="servicedesk.service" />
+    <context:component-scan base-package="servicedesk.validator" />
+    <context:component-scan base-package="servicedesk.*.app" />
+    <context:component-scan base-package="servicedesk.*.dao" />
+    <context:component-scan base-package="servicedesk.*.domain" />
+    <context:component-scan base-package="servicedesk.*.editor" />
+    <context:component-scan base-package="servicedesk.*.service" />
+    <context:component-scan base-package="servicedesk.*.validator" />
+    <context:component-scan base-package="servicedesk.common.*.app" />
+    <context:component-scan base-package="servicedesk.common.*.dao" />
+    <context:component-scan base-package="servicedesk.common.*.domain" />
+    <context:component-scan base-package="servicedesk.common.*.editor" />
+    <context:component-scan base-package="servicedesk.common.*.service" />
+    <context:component-scan base-package="servicedesk.common.*.validator" />
+    
+    <context:component-scan base-package="servicedesk.infrastructure.*" />
 </beans>

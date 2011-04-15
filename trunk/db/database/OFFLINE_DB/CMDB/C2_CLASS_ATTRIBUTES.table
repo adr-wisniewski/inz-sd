@@ -79,6 +79,7 @@
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
+      <default class="java.lang.String">0</default>
       <notNull>true</notNull>
     </column>
     <column>
@@ -147,8 +148,83 @@
       </dataTypeUsage>
       <notNull>true</notNull>
     </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">aa8dd7e0-d913-4353-b340-713d426581c0</identifier>
+      </ID>
+      <name>IS_OVERVIEW</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">646f7aa8-6397-458e-ab01-8a059f639500</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
   </columns>
   <constraints>
+    <constraint class="oracle.javatools.db.CheckConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">eb372566-9872-43c8-bd06-ee66fd1ba147</identifier>
+      </ID>
+      <name>C2_CLASS_ATTRIBUTES_CHK1</name>
+      <checkConditionFragment class="oracle.javatools.db.sql.WhereObject">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">90c0daf5-ad37-43a5-ae76-42a058fc1202</identifier>
+        </ID>
+        <arguments>
+          <argument class="oracle.javatools.db.sql.SetOperation">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">5bce4c4a-975f-4cb3-83b2-a33726a8a7fb</identifier>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">7cbfd2c2-385d-45a9-bdd9-fc9ac5b32d09</identifier>
+                </ID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>IS_KEY</name>
+                  <identifier class="java.lang.String">aa8dd7e0-d913-4353-b340-713d426581c0</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>C2_CLASS_ATTRIBUTES</name>
+                    <identifier class="java.lang.String">34400feb-dc06-4e6e-8019-38c9ff71dc71</identifier>
+                    <schemaName>CMDB</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>false</qualified>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">8cfc519b-8e8b-4795-96ad-75f8384a4a66</identifier>
+                </ID>
+                <SQLText>&apos;Y&apos;</SQLText>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">8b86febc-2dd6-4122-9e6f-dd68efff151b</identifier>
+                </ID>
+                <SQLText>&apos;N&apos;</SQLText>
+              </argument>
+            </arguments>
+            <operator>705</operator>
+          </argument>
+        </arguments>
+        <operator>372</operator>
+      </checkConditionFragment>
+      <enabled>true</enabled>
+    </constraint>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">4d4d54a0-95cd-4301-8007-f70e5c76f729</identifier>

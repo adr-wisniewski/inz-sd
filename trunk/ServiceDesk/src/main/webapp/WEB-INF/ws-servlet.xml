@@ -12,7 +12,7 @@
         detected by Spring-WS, similar to the way Controllers are picked up in Spring Web MVC.
     </description>
 
-   <!-- <context:component-scan base-package="sd.em.ws" /> -->
+   <!-- <context:component-scan base-package="servicedesk.em.ws" /> -->
 
     <import resource="config/hibernate.xml"/>
     <import resource="config/application.xml"/>
@@ -50,7 +50,7 @@
     </bean>
 
 
-    <bean id="eventEndpoint" class="sd.em.ws.EndPoint">
+    <bean id="eventEndpoint" class="servicedesk.em.ws.EndPoint">
         <description>
             This endpoint handles event logging requests
         </description>
@@ -81,45 +81,45 @@
     </bean>
 
 <!--
-    <bean id="eventService" class="sd.em.service.EventServiceImpl">
+    <bean id="eventService" class="servicedesk.em.service.EventServiceImpl">
         <property name="eventDao" ref="eventDao"/>
         <property name="employeeService" ref="employeeService"/>
         <property name="incidentService" ref="incidentService"/>
     </bean>
 
-    <bean id="eventDao" class="sd.em.dao.EventDaoImpl">
+    <bean id="eventDao" class="servicedesk.em.dao.EventDaoImpl">
     	<property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 
-	<bean id="eventSignificanceDao" class="sd.em.dao.EventSignificanceDaoImpl">
+	<bean id="eventSignificanceDao" class="servicedesk.em.dao.EventSignificanceDaoImpl">
     	<property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 
-	<bean id="eventSignificanceEditor" class="sd.em.editor.EventSignificanceEditor">
+	<bean id="eventSignificanceEditor" class="servicedesk.em.editor.EventSignificanceEditor">
 		<constructor-arg ref="eventSignificanceDao" />
 	</bean>
 
-	<bean id="eventCategoryDao" class="sd.em.dao.EventCategoryDaoImpl">
+	<bean id="eventCategoryDao" class="servicedesk.em.dao.EventCategoryDaoImpl">
     	<property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 
-	<bean id="eventCategoryEditor" class="sd.em.editor.EventCategoryEditor">
+	<bean id="eventCategoryEditor" class="servicedesk.em.editor.EventCategoryEditor">
 		<constructor-arg ref="eventCategoryDao" />
 	</bean>
 
-	<bean id="employeeDao" class="sd.dao.EmployeeDaoImpl">
+	<bean id="employeeDao" class="servicedesk.dao.EmployeeDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<bean id="employeeService" class="sd.service.EmployeeServiceImpl">
+	<bean id="employeeService" class="servicedesk.service.EmployeeServiceImpl">
 		<property name="employeeDao" ref="employeeDao"/>
 	</bean>
 
-	<bean id="incidentDao" class="sd.im.dao.IncidentDaoImpl">
+	<bean id="incidentDao" class="servicedesk.im.dao.IncidentDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
-	<bean id="incidentService" class="sd.im.service.IncidentServiceImpl">
+	<bean id="incidentService" class="servicedesk.im.service.IncidentServiceImpl">
 		<property name="incidentDao" ref="incidentDao"/>
 		<property name="employeeService" ref="employeeService"/>
 	</bean>

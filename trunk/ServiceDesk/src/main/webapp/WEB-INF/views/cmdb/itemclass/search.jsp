@@ -19,7 +19,7 @@
                     <th><spring:message code="field.cmdb.entity.class.description" /></th>
                     <th><spring:message code="field.cmdb.entity.class.parent.name" /></th>
                     <th><spring:message code="field.cmdb.entity.class.abstraction" /></th>
-                    <th></th>
+                    <th class="actions1"><spring:message code="caption.cmdb.actions" /></th>
                 </tr>
                 <tr>
                     <td>
@@ -74,6 +74,11 @@
                         </td>
                         <td>
                             <print:yesorno value="${itemClass.abstraction}" />
+                        </td>
+                        <td class="actions1">
+                            <ui:actionButton label="details.label"
+                                action="/cmdb/item/class/${itemClass.id}"
+                                cssClass="details"/>
                         </td>
                     </tr>
                 </c:forEach>

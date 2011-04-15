@@ -13,12 +13,24 @@
     <form:form modelAttribute="universalItem" method="post">
         <ui:errorList/>
         <ui:propertyList>
+
+            <ui:propertyItem code="field.cmdb.item.label" label="label">
+                <form:checkbox path="label" />
+                <form:errors path="label" cssClass="error" />
+            </ui:propertyItem>
+
             <c:forEach items="${universalItem.attributeValues}" var="attributeValue" varStatus="status">
                 <ui:propertyItem label="attributeValues${status.index}.value" caption="${attributeValue.attribute.name}">
                     <form:input path="attributeValues[${status.index}].value" />
                     <form:errors path="attributeValues[${status.index}].value" cssClass="error" />
                 </ui:propertyItem>
             </c:forEach>
+
+            <c:if test="${empty universalItem.attributeValues}">
+                <ui:propertyItem>
+                    <spring:message code="caption.cmdb.item.noattributes"/>
+                </ui:propertyItem>
+            </c:if>
 
             <ui:propertyItem>
                  <ui:submit code="${submitLabel}" cssClass="${submitCssClass}" />

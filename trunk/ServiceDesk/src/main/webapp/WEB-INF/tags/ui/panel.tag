@@ -7,11 +7,12 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <%@attribute name="caption" required="true" %>
+<%@attribute name="captionArgs" required="false" %>
 <%@attribute name="cssClass" required="false" %>
 
 <div class="element panel ${cssClass}">
     <h1 class="caption">
-        <spring:message code="${caption}" />
+        <spring:message code="${caption}" arguments="${captionArgs}"/>
     </h1>
     <div class="content">
         <jsp:doBody/>

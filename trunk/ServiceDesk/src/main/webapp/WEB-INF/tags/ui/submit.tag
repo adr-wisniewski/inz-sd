@@ -12,6 +12,7 @@
 <%@attribute name="name" required="false"%>
 <%@attribute name="value" required="false" rtexprvalue="true"%>
 <%@attribute name="cssClass" required="false" rtexprvalue="true"%>
+<%@attribute name="disabled" rtexprvalue="true" required="false" type="java.lang.Boolean"%>
 
 <c:set var="nameattr">
     <c:if test="${pageScope.name != null}">
@@ -25,7 +26,7 @@
     </c:if>
 </c:set>
 
-<button type="submit" ${pageScope.nameattr} ${pageScope.valueattr} class="${pageScope.cssClass}">
+<button <c:if test="${disabled == true}">disabled="disabled"</c:if> type="submit" ${pageScope.nameattr} ${pageScope.valueattr} class="${pageScope.cssClass}">
     <span>
         <spring:message code="${pageScope.code}" />
     </span>
