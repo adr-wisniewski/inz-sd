@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.cmdb.domain.RelationshipClass;
-import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -26,7 +26,7 @@ import servicedesk.infrastructure.validation.BusinessConstraintViolationExceptio
 @RequestMapping(value = "/cmdb/relationship/class/{id}/delete")
 @PreAuthorize("hasRole('CMDB_RELATIONSHIPCLASS_DELETE')")
 @SessionAttributes("relationshipClass")
-public class RelationshipClassDeleteController extends BaseRelationshipClassController {
+public class RelationshipClassDeleteController extends AbstractRelationshipClassController {
     protected static final String VIEW_DELETE = "/cmdb/relationship/class/delete";
 
     @RequestMapping(method=RequestMethod.GET)

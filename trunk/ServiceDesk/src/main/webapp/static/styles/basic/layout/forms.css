@@ -4,9 +4,12 @@ input[type="text"], select, textarea
     padding: 3px;
     width: 375px;
 }
+textarea {
+    height: 8em;
+    resize: vertical;
+}
 
-select
-{
+select {
     width: 383px;
 }
 

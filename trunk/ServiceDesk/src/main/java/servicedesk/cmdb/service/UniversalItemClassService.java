@@ -8,7 +8,7 @@ package servicedesk.cmdb.service;
 import java.util.List;
 import servicedesk.cmdb.domain.UniversalItemClass;
 import servicedesk.cmdb.domain.helper.ItemClassCriteria;
-import servicedesk.infrastructure.service.CrudService;
+import servicedesk.infrastructure.general.service.CrudService;
 
 /**
  *

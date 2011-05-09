@@ -54,7 +54,7 @@
         <put-attribute name="title" value="titles.cmdb.item.class.delete" />
         <put-attribute name="title_args" value="${universalItemClass.name}" />
         <put-attribute name="body">
-            <definition template="/WEB-INF/views/cmdb/common/confirm.jsp">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
                 <put-attribute name="caption" value="confirm.action" />
                 <put-attribute name="text" value="caption.cmdb.item.class.delete" />
                 <put-attribute name="text_args" value="${universalItemClass.name}" />
@@ -110,7 +110,7 @@
         <put-attribute name="title" value="titles.cmdb.relationship.class.delete" />
         <put-attribute name="title_args" value="${relationshipClass.name}" />
         <put-attribute name="body">
-            <definition template="/WEB-INF/views/cmdb/common/confirm.jsp">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
                 <put-attribute name="caption" value="confirm.action" />
                 <put-attribute name="text" value="caption.cmdb.relationship.class.delete" />
                 <put-attribute name="text_args" value="${relationshipClass.name}" />
@@ -145,7 +145,7 @@
         <put-attribute name="title" value="titles.cmdb.class.attribute.delete" />
         <put-attribute name="title_args" value="${attribute.name}, ${attribute.entityClass.name}" />
         <put-attribute name="body">
-            <definition template="/WEB-INF/views/cmdb/common/confirm.jsp">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
                 <put-attribute name="caption" value="confirm.action" />
                 <put-attribute name="text" value="caption.cmdb.class.attribute.delete" />
                 <put-attribute name="text_args" value="${attribute.name}, ${attribute.entityClass.name}" />
@@ -211,7 +211,7 @@
     <definition name="/cmdb/item/delete" extends="standard-layout">
         <put-attribute name="title" value="titles.cmdb.item.delete" />
         <put-attribute name="body">
-            <definition template="/WEB-INF/views/cmdb/common/confirm.jsp">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
                 <put-attribute name="caption" value="confirm.action" />
                 <put-attribute name="text" value="caption.cmdb.item.delete" />
                 <put-attribute name="text_args" value="" />
@@ -256,7 +256,7 @@
     <definition name="/cmdb/relationship/delete" extends="standard-layout">
         <put-attribute name="title" value="titles.cmdb.relationship.delete" />
         <put-attribute name="body">
-            <definition template="/WEB-INF/views/cmdb/common/confirm.jsp">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
                 <put-attribute name="caption" value="confirm.action" />
                 <put-attribute name="text" value="caption.cmdb.relationship.delete" />
                 <put-attribute name="text_args" value="" />

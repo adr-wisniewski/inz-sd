@@ -7,7 +7,7 @@ package servicedesk.cmdb.service;
 
 import org.springframework.validation.BindingResult;
 import servicedesk.cmdb.domain.UniversalItem;
-import servicedesk.infrastructure.service.CrudService;
+import servicedesk.infrastructure.general.service.CrudService;
 
 /**
  *

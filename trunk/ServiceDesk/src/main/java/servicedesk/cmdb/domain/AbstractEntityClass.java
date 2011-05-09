@@ -29,7 +29,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.NaturalId;
 import org.springframework.core.style.ToStringCreator;
 import org.springframework.util.StringUtils;
-import servicedesk.infrastructure.domain.VersionedDomainObject;
+import servicedesk.infrastructure.general.domain.VersionedDomainObject;
 
 /**
  *

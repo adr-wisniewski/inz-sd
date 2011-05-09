@@ -12,12 +12,15 @@ alter session set nls_date_language='AMERICAN';
 @insert.jobs.sql
 @insert.departments.sql
 @insert.employees.sql
-@insert.employee_roles.sql
+@insert.users.sql
+@insert.user_roles.sql
 @insert.support_groups.sql
 @insert.services.sql
 
 @insert.cmdb.itemclass.sql
 @insert.cmdb.relationshipclass.sql
 @insert.cmdb.items.sql
+
+@insert.change.rfc.sql
 
 commit;

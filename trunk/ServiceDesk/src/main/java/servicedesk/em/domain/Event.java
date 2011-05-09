@@ -20,7 +20,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 import servicedesk.im.domain.Incident;
-import servicedesk.infrastructure.domain.DomainObject;
+import servicedesk.infrastructure.general.domain.DomainObject;
 
 @Entity
 @Table(name="EVENTS")

@@ -23,7 +23,7 @@
                     <th><c:out value="${attribute.name}"/></th>
                 </c:forEach>
 
-                <th class="actions2"><spring:message code="caption.cmdb.actions" /></th>
+                <th class="actions2"><spring:message code="caption.actions" /></th>
             </tr>
         </thead>
         <tbody>

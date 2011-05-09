@@ -3,7 +3,7 @@
  */
 package servicedesk.im.dao;
 
-import servicedesk.infrastructure.dao.DictionaryDao;
+import servicedesk.infrastructure.general.dao.DictionaryDao;
 import servicedesk.im.domain.IncidentSource;
 
 /** 

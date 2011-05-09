@@ -30,7 +30,7 @@ import servicedesk.domain.Comment;
 import servicedesk.domain.Employee;
 import servicedesk.em.domain.Event;
 import servicedesk.event.domain.IEvent;
-import servicedesk.infrastructure.domain.DomainObject;
+import servicedesk.infrastructure.general.domain.DomainObject;
 import servicedesk.scm.domain.Service;
 
 /** 

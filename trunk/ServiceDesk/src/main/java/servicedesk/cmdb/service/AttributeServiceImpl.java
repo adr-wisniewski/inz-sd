@@ -5,6 +5,7 @@
 
 package servicedesk.cmdb.service;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ import servicedesk.cmdb.dao.AttributeDao;
 import servicedesk.cmdb.domain.Attribute;
 import servicedesk.cmdb.validator.AttributeDeleteValidator;
 import servicedesk.cmdb.validator.AttributeAddValidator;
-import servicedesk.infrastructure.validation.Validated;
+import servicedesk.infrastructure.general.validation.Validated;
 
 /**
  *
@@ -59,4 +60,8 @@ public class AttributeServiceImpl implements AttributeService {
         attributeDao.remove(object);
     }
 
+    @Override
+    public List<Attribute> getAll() {
+        return attributeDao.getAll();
+    }
 }

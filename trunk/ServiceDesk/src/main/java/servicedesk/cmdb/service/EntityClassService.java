@@ -7,7 +7,7 @@ package servicedesk.cmdb.service;
 
 import servicedesk.cmdb.domain.AbstractEntityClass;
 import servicedesk.cmdb.domain.EntityClass;
-import servicedesk.infrastructure.service.CrudService;
+import servicedesk.infrastructure.general.service.CrudService;
 
 /**
  *

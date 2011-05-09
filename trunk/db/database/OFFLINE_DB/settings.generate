@@ -11,6 +11,36 @@
    <value n="schemaNames" v="false"/>
    <list n="schemaObjectDescriptors">
       <hash>
+         <value n="name" v="RFC"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_IMPACT"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_IMPACT_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_PRIORITY"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_PRIORITY_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
          <value n="name" v="C2_AUTOINSERT_EMPLOYEES"/>
          <value n="schemaName" v="CMDB"/>
          <value n="type" v="TRIGGER"/>
@@ -141,6 +171,21 @@
          <value n="type" v="SEQUENCE"/>
       </hash>
       <hash>
+         <value n="name" v="DEPARTMENTS"/>
+         <value n="schemaName" v="HR"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="EMPLOYEES"/>
+         <value n="schemaName" v="HR"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="JOBS"/>
+         <value n="schemaName" v="HR"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
          <value n="name" v="ADD_SIGNAL"/>
          <value n="schemaName" v="SD3"/>
          <value n="type" v="PROCEDURE"/>
@@ -154,11 +199,6 @@
          <value n="name" v="APP"/>
          <value n="schemaName" v="SD3"/>
          <value n="type" v="PACKAGE"/>
-      </hash>
-      <hash>
-         <value n="name" v="AUTHORITIES"/>
-         <value n="schemaName" v="SD3"/>
-         <value n="type" v="VIEW"/>
       </hash>
       <hash>
          <value n="name" v="CATEGORIES_EM"/>
@@ -206,24 +246,9 @@
          <value n="type" v="SEQUENCE"/>
       </hash>
       <hash>
-         <value n="name" v="DEPARTMENTS"/>
-         <value n="schemaName" v="SD3"/>
-         <value n="type" v="TABLE"/>
-      </hash>
-      <hash>
-         <value n="name" v="EMPLOYEES"/>
-         <value n="schemaName" v="SD3"/>
-         <value n="type" v="TABLE"/>
-      </hash>
-      <hash>
          <value n="name" v="EMPLOYEE_ID_SEQ"/>
          <value n="schemaName" v="SD3"/>
          <value n="type" v="SEQUENCE"/>
-      </hash>
-      <hash>
-         <value n="name" v="EMPLOYEE_ROLE"/>
-         <value n="schemaName" v="SD3"/>
-         <value n="type" v="TABLE"/>
       </hash>
       <hash>
          <value n="name" v="EMPLOYEE_SERVICE"/>
@@ -331,11 +356,6 @@
          <value n="type" v="TRIGGER"/>
       </hash>
       <hash>
-         <value n="name" v="JOBS"/>
-         <value n="schemaName" v="SD3"/>
-         <value n="type" v="TABLE"/>
-      </hash>
-      <hash>
          <value n="name" v="KNOWN_ERRORS_V"/>
          <value n="schemaName" v="SD3"/>
          <value n="type" v="VIEW"/>
@@ -357,11 +377,6 @@
       </hash>
       <hash>
          <value n="name" v="PRIORITY_TYPES_RF"/>
-         <value n="schemaName" v="SD3"/>
-         <value n="type" v="TABLE"/>
-      </hash>
-      <hash>
-         <value n="name" v="PRIVILEGE_TYPES"/>
          <value n="schemaName" v="SD3"/>
          <value n="type" v="TABLE"/>
       </hash>
@@ -394,16 +409,6 @@
          <value n="name" v="REQ_ATTR_ID_SEQ"/>
          <value n="schemaName" v="SD3"/>
          <value n="type" v="SEQUENCE"/>
-      </hash>
-      <hash>
-         <value n="name" v="ROLES"/>
-         <value n="schemaName" v="SD3"/>
-         <value n="type" v="TABLE"/>
-      </hash>
-      <hash>
-         <value n="name" v="ROLE_PRIVILEGE"/>
-         <value n="schemaName" v="SD3"/>
-         <value n="type" v="TABLE"/>
       </hash>
       <hash>
          <value n="name" v="SERVICES"/>
@@ -551,9 +556,34 @@
          <value n="type" v="TABLE"/>
       </hash>
       <hash>
+         <value n="name" v="PRIVILEGE_TYPES"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ROLES"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ROLE_PRIVILEGE"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
          <value n="name" v="USERS"/>
-         <value n="schemaName" v="SD3"/>
-         <value n="type" v="VIEW"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="USERS_SEQ"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="USER_ROLE"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
       </hash>
    </list>
    <value n="sourceApplicationName" v="ServiceDeskApplication.jws"/>

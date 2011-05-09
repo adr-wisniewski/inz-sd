@@ -8,7 +8,7 @@ package servicedesk.common.announcement.service;
 import java.util.Collection;
 import java.util.Date;
 import servicedesk.common.announcement.domain.Announcement;
-import servicedesk.infrastructure.service.CrudService;
+import servicedesk.infrastructure.general.service.CrudService;
 
 /**
  *
@@ -16,5 +16,4 @@ import servicedesk.infrastructure.service.CrudService;
  */
 public interface AnnouncementService extends CrudService<Announcement, Integer> {
     public Collection<Announcement> getUpToDate(Date date);
-    public Collection<Announcement> getAll();
 }

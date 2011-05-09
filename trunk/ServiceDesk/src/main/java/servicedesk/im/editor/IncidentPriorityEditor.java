@@ -3,7 +3,7 @@
  */
 package servicedesk.im.editor;
 
-import servicedesk.infrastructure.dao.DictionaryDao;
+import servicedesk.infrastructure.general.dao.DictionaryDao;
 import servicedesk.dictionary.DictionaryPropertyEditor;
 import servicedesk.im.domain.IncidentPriority;
 

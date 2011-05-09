@@ -26,7 +26,7 @@ import servicedesk.tree.app.TreeBuilder;
 @Controller
 @RequestMapping(value = "/cmdb/relationship/class/*")
 @PreAuthorize("hasRole('CMDB_RELATIONSHIPCLASS_VIEW')")
-public class RelationshipClassSearchController extends BaseRelationshipClassController {
+public class RelationshipClassSearchController extends AbstractRelationshipClassController {
     protected static final String VIEW_SEARCH = "/cmdb/relationship/class/search";
     protected static final String VIEW_BROWSE = "/cmdb/relationship/class/browse";
     protected static final String MODEL_CRITERIA = "relationshipClassCriteria";

@@ -7,7 +7,7 @@ package servicedesk.cmdb.dao;
 
 import java.util.List;
 import servicedesk.cmdb.domain.ItemClass;
-import servicedesk.infrastructure.dao.Dao;
+import servicedesk.infrastructure.general.dao.Dao;
 
 /**
  *

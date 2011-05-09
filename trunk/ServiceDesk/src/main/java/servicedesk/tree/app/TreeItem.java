@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import servicedesk.infrastructure.domain.HierarchicalDomainObject;
+import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 
 public class TreeItem {
 	private HierarchicalDomainObject value;

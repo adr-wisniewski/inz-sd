@@ -20,7 +20,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.cmdb.domain.ItemClass;
 import servicedesk.cmdb.domain.UniversalItem;
 import servicedesk.cmdb.domain.UniversalItemClass;
-import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -30,7 +30,7 @@ import servicedesk.infrastructure.validation.BusinessConstraintViolationExceptio
 @RequestMapping(value = "/cmdb/item/*")
 @PreAuthorize("hasRole('CMDB_ITEM_ADD')")
 @SessionAttributes("universalItem")
-public class UniversalItemAddController extends BaseUniversalItemController {
+public class UniversalItemAddController extends AbstractUniversalItemController {
 
     public static final String VIEW_ADD_CLASS = "/cmdb/item/add/class";
     public static final String VIEW_ADD_EDIT = "/cmdb/item/add/attributes";

@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.cmdb.domain.UniversalItemClass;
-import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -28,7 +28,7 @@ import servicedesk.infrastructure.validation.BusinessConstraintViolationExceptio
 @RequestMapping(value = "/cmdb/item/class/{id}/edit")
 @PreAuthorize("hasRole('CMDB_ITEMCLASS_EDIT')")
 @SessionAttributes("universalItemClass")
-public class ItemClassEditController extends BaseItemClassController {
+public class ItemClassEditController extends AbstractItemClassController {
 
     protected final String VIEW_EDIT = "/cmdb/item/class/edit";
 

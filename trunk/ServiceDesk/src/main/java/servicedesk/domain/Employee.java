@@ -3,8 +3,10 @@
  */
 package servicedesk.domain;
 
+import servicedesk.infrastructure.security.domain.Role;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -23,7 +25,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import servicedesk.infrastructure.domain.DomainObject;
+import javax.persistence.Transient;
+import servicedesk.infrastructure.general.domain.DomainObject;
 
 import servicedesk.scm.domain.Service;
 
@@ -39,8 +42,8 @@ import servicedesk.scm.domain.Service;
 @Entity
 @Table(name="EMPLOYEES")
 @NamedQueries({
-    @NamedQuery(name = "Employee.get", query = "SELECT e FROM Employee e WHERE e.id = ?"),
-    @NamedQuery(name = "Employee.findByLogin", query = "SELECT e FROM Employee e WHERE e.login = ?")})
+    @NamedQuery(name = "Employee.get", query = "SELECT e FROM Employee e WHERE e.id = ?")
+    /*,@NamedQuery(name = "Employee.findByLogin", query = "SELECT e FROM Employee e WHERE e.login = ?")*/})
 public class Employee implements DomainObject<Integer>, Serializable {
 	/** 
 	 * <!-- begin-UML-doc -->
@@ -78,7 +81,7 @@ public class Employee implements DomainObject<Integer>, Serializable {
 		// end-user-code
 	}
 	
-	@Column(name = "LOGIN")
+	/*@Column(name = "LOGIN")
 	private String login;
 	
 	public String getLogin() {
@@ -87,7 +90,7 @@ public class Employee implements DomainObject<Integer>, Serializable {
 
 	public void setLogin(String login) {
 		this.login = login;
-	}
+	}*/
 
 	/** 
 	 * <!-- begin-UML-doc -->
@@ -285,11 +288,12 @@ public class Employee implements DomainObject<Integer>, Serializable {
 		this.manager = manager;
 	}
 
-	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinTable(name="EMPLOYEE_ROLE", joinColumns = { 
-        @JoinColumn(name="EMPLOYEE_ID", nullable=false, updatable=false) }, inverseJoinColumns = { 
-        @JoinColumn(name="ROLE_CODE", nullable=false, updatable=false) })
-	private List<Role> authorities;
+	//@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+        //@JoinTable(name="EMPLOYEE_ROLE", joinColumns = {
+        //@JoinColumn(name="EMPLOYEE_ID", nullable=false, updatable=false) }, inverseJoinColumns = {
+        //@JoinColumn(name="ROLE_CODE", nullable=false, updatable=false) })
+	@Transient
+        private List<Role> authorities = new LinkedList<Role>();
 
 	public List<Role> getAuthorities() {
 		return authorities;
@@ -322,7 +326,7 @@ public class Employee implements DomainObject<Integer>, Serializable {
 	@Override
 	public String toString() {
 		return "Employee [email=" + email + ", firstname=" + firstname
-				+ ", id=" + id + ", lastname=" + lastname + ", login=" + login
+				+ ", id=" + id + ", lastname=" + lastname //+ ", login=" + login
 				+ ", mobilePhone=" + mobilePhone + ", phoneNumber="
 				+ phoneNumber + "]";
 	}

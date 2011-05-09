@@ -20,7 +20,7 @@ import javax.persistence.Table;
 import javax.persistence.Version;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import servicedesk.infrastructure.domain.VersionedDomainObject;
+import servicedesk.infrastructure.general.domain.VersionedDomainObject;
 
 /**
  *

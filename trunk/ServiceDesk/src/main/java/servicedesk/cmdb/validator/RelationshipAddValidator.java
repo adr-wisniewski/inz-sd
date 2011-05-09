@@ -13,7 +13,7 @@ import servicedesk.cmdb.domain.ItemClass;
 import servicedesk.cmdb.domain.Relationship;
 import servicedesk.cmdb.domain.helper.EntityClassUtils;
 import servicedesk.cmdb.service.RelationshipService;
-import servicedesk.infrastructure.validation.AbstractValidator;
+import servicedesk.infrastructure.general.validation.AbstractValidator;
 
 /**
  *

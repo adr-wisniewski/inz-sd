@@ -8,19 +8,25 @@ import org.springframework.beans.PropertyEditorRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Component;
+import servicedesk.change.dao.RfcImpactDao;
+import servicedesk.change.dao.RfcPriorityDao;
+import servicedesk.change.domain.RfcImpact;
+import servicedesk.change.domain.RfcPriority;
+import servicedesk.change.domain.RfcState;
+import servicedesk.change.editor.RfcStateEditor;
+import servicedesk.cmdb.dao.ItemClassDao;
+import servicedesk.cmdb.dao.ItemDao;
+import servicedesk.cmdb.dao.RelationshipClassDao;
+import servicedesk.cmdb.dao.UniversalItemClassDao;
 import servicedesk.cmdb.domain.Item;
 import servicedesk.cmdb.domain.ItemClass;
 import servicedesk.cmdb.domain.RelationshipClass;
 import servicedesk.cmdb.domain.UniversalItemClass;
-import servicedesk.cmdb.editor.ItemClassEditor;
-import servicedesk.cmdb.editor.ItemEditor;
-import servicedesk.cmdb.editor.RelationshipClassEditor;
-import servicedesk.cmdb.editor.UniversalItemClassEditor;
 
 import servicedesk.dao.EmployeeDao;
 import servicedesk.dao.RoleDao;
 import servicedesk.domain.Employee;
-import servicedesk.domain.Role;
+import servicedesk.infrastructure.security.domain.Role;
 import servicedesk.em.dao.EventCategoryDao;
 import servicedesk.em.dao.EventSignificanceDao;
 import servicedesk.em.domain.EventCategory;
@@ -48,6 +54,7 @@ import servicedesk.im.editor.IncidentSourceEditor;
 import servicedesk.im.editor.IncidentStatusEditor;
 import servicedesk.im.editor.IncidentUrgencyEditor;
 import servicedesk.im.editor.SupportGroupEditor;
+import servicedesk.infrastructure.general.editor.DomainObjectEditor;
 import servicedesk.pm.dao.ProblemCategoryDao;
 import servicedesk.pm.dao.ProblemImpactDao;
 import servicedesk.pm.dao.ProblemPriorityDao;
@@ -145,13 +152,19 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
 	@Autowired
 	private ServiceDao serviceDao;
         @Autowired
-        private UniversalItemClassEditor universalItemClassEditor;
+        private UniversalItemClassDao universalItemClassDao;
         @Autowired
-        private ItemEditor itemEditor;
+        private ItemDao itemDao;
         @Autowired
-        private ItemClassEditor itemClassEditor;
+        private ItemClassDao itemClassDao;
         @Autowired
-        private RelationshipClassEditor relationshipClassEditor;
+        private RelationshipClassDao relationshipClassDao;
+        @Autowired
+        private RfcPriorityDao rfcPriorityDao;
+        @Autowired
+        private RfcImpactDao rfcImpactDao;
+        @Autowired
+        private RfcStateEditor rfcStateEditor;
 	
 	public void setIncidentPriorityDao(IncidentPriorityDao incidentPriorityDao) {
 		this.incidentPriorityDao = incidentPriorityDao;
@@ -292,9 +305,13 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
     	
     	registry.registerCustomEditor(Service.class, new ServiceEditor( serviceDao ));
 
-        registry.registerCustomEditor(UniversalItemClass.class, universalItemClassEditor);
-        registry.registerCustomEditor(Item.class, itemEditor);
-        registry.registerCustomEditor(ItemClass.class, itemClassEditor);
-        registry.registerCustomEditor(RelationshipClass.class, relationshipClassEditor);
+        registry.registerCustomEditor(UniversalItemClass.class, new DomainObjectEditor(universalItemClassDao));
+        registry.registerCustomEditor(Item.class, new DomainObjectEditor(itemDao));
+        registry.registerCustomEditor(ItemClass.class, new DomainObjectEditor(itemClassDao));
+        registry.registerCustomEditor(RelationshipClass.class, new DomainObjectEditor(relationshipClassDao));
+    
+        registry.registerCustomEditor(RfcPriority.class, new DomainObjectEditor( rfcPriorityDao ));
+        registry.registerCustomEditor(RfcImpact.class, new DomainObjectEditor( rfcImpactDao ));
+        registry.registerCustomEditor(RfcState.class, rfcStateEditor);
     }
 }

@@ -21,8 +21,8 @@ import servicedesk.em.dao.EventCategoryDao;
 import servicedesk.im.dao.IncidentCategoryDao;
 import servicedesk.pm.dao.ProblemCategoryDao;
 import servicedesk.rf.dao.RequestCategoryDao;
-import servicedesk.infrastructure.dao.HierarchyDao;
-import servicedesk.infrastructure.domain.HierarchicalDomainObject;
+import servicedesk.infrastructure.general.dao.HierarchyDao;
+import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 import servicedesk.tree.NullHierarchyItem;
 import servicedesk.tree.app.TreeBuilder;
 

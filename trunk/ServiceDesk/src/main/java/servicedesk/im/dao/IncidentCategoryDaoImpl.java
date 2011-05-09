@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import servicedesk.dao.GenericHibernateDao;
 import servicedesk.im.domain.IncidentCategory;
-import servicedesk.infrastructure.domain.HierarchicalDomainObject;
+import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 
 /** 
  * <!-- begin-UML-doc -->

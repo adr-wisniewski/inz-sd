@@ -8,7 +8,7 @@ package servicedesk.cmdb.domain;
 import java.util.List;
 import java.util.Set;
 import servicedesk.cmdb.domain.helper.EntityClassVisitor;
-import servicedesk.infrastructure.domain.HierarchicalDomainObject;
+import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 
 /**
  *

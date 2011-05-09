@@ -20,7 +20,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.cmdb.domain.Item;
 import servicedesk.cmdb.domain.Relationship;
 import servicedesk.cmdb.domain.RelationshipClass;
-import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -30,7 +30,7 @@ import servicedesk.infrastructure.validation.BusinessConstraintViolationExceptio
 @RequestMapping(value = "/cmdb/relationship/*")
 @PreAuthorize("hasRole('CMDB_RELATIONSHIP_ADD')")
 @SessionAttributes({"relationship", "origin"})
-public class RelationshipAddController extends BaseRelationshipController {
+public class RelationshipAddController extends AbstractRelationshipController {
 
     public static final String VIEW_ADD = "/cmdb/relationship/add";
 

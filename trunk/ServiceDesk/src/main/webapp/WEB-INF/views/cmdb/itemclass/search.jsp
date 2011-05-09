@@ -19,7 +19,7 @@
                     <th><spring:message code="field.cmdb.entity.class.description" /></th>
                     <th><spring:message code="field.cmdb.entity.class.parent.name" /></th>
                     <th><spring:message code="field.cmdb.entity.class.abstraction" /></th>
-                    <th class="actions1"><spring:message code="caption.cmdb.actions" /></th>
+                    <th class="actions1"><spring:message code="caption.actions" /></th>
                 </tr>
                 <tr>
                     <td>
@@ -86,7 +86,7 @@
                     <c:when test="${not itemClassCriteria.initialized}">
                         <tr>
                             <td colspan="20">
-                                <spring:message code="caption.cmdb.query_empty" />
+                                <spring:message code="caption.query_empty" />
                             </td>
                         </tr>
                     </c:when>

@@ -9,8 +9,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import servicedesk.app.SearchCriteria;
-import servicedesk.infrastructure.domain.DomainObject;
-import servicedesk.infrastructure.util.GenericUtil;
+import servicedesk.infrastructure.general.domain.DomainObject;
+import servicedesk.infrastructure.general.util.GenericUtil;
 
 
 public class GenericHibernateDao<Property extends DomainObject<Id>, Id extends Serializable> {
@@ -48,6 +48,11 @@ public class GenericHibernateDao<Property extends DomainObject<Id>, Id extends S
 	public Property get(Id id) {
 		return (Property)getSession().get(typeClass, id);
 	}
+        
+        @SuppressWarnings("unchecked")
+	public Property load(Id id) {
+		return (Property)getSession().load(typeClass, id);
+	}
 	
 	@SuppressWarnings("unchecked")
 	public List<Property> findByNamedQuery(String queryName, Object value) {
@@ -66,7 +71,7 @@ public class GenericHibernateDao<Property extends DomainObject<Id>, Id extends S
 		return criteria.list();
 	}
 	
-	private Session getSession() {
+	protected Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
 	

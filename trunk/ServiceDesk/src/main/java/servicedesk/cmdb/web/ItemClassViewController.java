@@ -18,7 +18,7 @@ import servicedesk.cmdb.domain.UniversalItemClass;
  */
 @Controller
 @PreAuthorize("hasRole('CMDB_ITEMCLASS_VIEW')")
-public class ItemClassViewController extends BaseItemClassController {
+public class ItemClassViewController extends AbstractItemClassController {
     protected static final String VIEW_GENERAL = "/cmdb/item/class";
     protected static final String VIEW_VIEW = "/cmdb/item/class/view";
     protected static final String MODEL_ITEMCLASS = "universalItemClass";

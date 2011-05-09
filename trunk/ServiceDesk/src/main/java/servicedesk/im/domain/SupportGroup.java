@@ -21,7 +21,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import servicedesk.domain.Employee;
-import servicedesk.infrastructure.domain.DomainObject;
+import servicedesk.infrastructure.general.domain.DomainObject;
 
 /** 
  * <!-- begin-UML-doc -->

@@ -36,7 +36,7 @@ import servicedesk.domain.Employee;
 import servicedesk.event.domain.IEvent;
 import servicedesk.im.domain.Incident;
 import servicedesk.im.domain.SupportGroup;
-import servicedesk.infrastructure.domain.DomainObject;
+import servicedesk.infrastructure.general.domain.DomainObject;
 
 /** 
  * <!-- begin-UML-doc -->

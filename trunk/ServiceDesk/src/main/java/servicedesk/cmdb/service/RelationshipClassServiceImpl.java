@@ -18,7 +18,7 @@ import servicedesk.cmdb.domain.helper.RelationshipClassCriteria;
 import servicedesk.cmdb.validator.RelationshipClassAddValidator;
 import servicedesk.cmdb.validator.RelationshipClassDeleteValidator;
 import servicedesk.cmdb.validator.RelationshipClassUpdateValidator;
-import servicedesk.infrastructure.validation.Validated;
+import servicedesk.infrastructure.general.validation.Validated;
 
 /**
  *

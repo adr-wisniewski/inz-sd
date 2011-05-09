@@ -4,7 +4,7 @@
 package servicedesk.dictionary;
 
 import java.io.Serializable;
-import servicedesk.infrastructure.domain.DomainObject;
+import servicedesk.infrastructure.general.domain.DomainObject;
 
 /** 
  * <!-- begin-UML-doc -->

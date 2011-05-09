@@ -3,7 +3,7 @@
  */
 package servicedesk.pm.dao;
 
-import servicedesk.infrastructure.dao.DictionaryDao;
+import servicedesk.infrastructure.general.dao.DictionaryDao;
 import servicedesk.pm.domain.ProblemUrgency;
 
 /** 

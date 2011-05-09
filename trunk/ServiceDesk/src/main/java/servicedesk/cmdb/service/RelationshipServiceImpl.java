@@ -6,6 +6,7 @@
 package servicedesk.cmdb.service;
 
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import servicedesk.cmdb.dao.RelationshipDao;
 import servicedesk.cmdb.domain.Relationship;
 import servicedesk.cmdb.validator.RelationshipAddValidator;
 import servicedesk.cmdb.validator.RelationshipDeleteValidator;
-import servicedesk.infrastructure.validation.Validated;
+import servicedesk.infrastructure.general.validation.Validated;
 
 /**
  *
@@ -63,6 +64,11 @@ public class RelationshipServiceImpl implements RelationshipService {
     @Override
     public Relationship getSame(Relationship target) {
         return dao.getSame(target);
+    }
+
+    @Override
+    public List<Relationship> getAll() {
+        return dao.getAll();
     }
 
 }

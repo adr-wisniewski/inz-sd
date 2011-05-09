@@ -18,7 +18,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 import servicedesk.cmdb.domain.UniversalItemClass;
 import servicedesk.cmdb.domain.helper.ItemClassCriteria;
-import servicedesk.infrastructure.dao.AbstractHibernateCrudDao;
+import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
 
 /**
  *

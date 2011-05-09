@@ -3,7 +3,7 @@
 <%@ taglib prefix="sd" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags/ui" %>
 
-<ui:element cssClass="dashboard">
-    <ui:announcements announcements="${announcements}" />
-</ui:element>
+
+<ui:announcements announcements="${announcements}" />
+
 

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.cmdb.domain.Attribute;
 import servicedesk.cmdb.domain.EntityClass;
-import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -27,7 +27,7 @@ import servicedesk.infrastructure.validation.BusinessConstraintViolationExceptio
 @RequestMapping(value = "/cmdb/class/{classid}/attribute/*")
 @PreAuthorize("hasRole('CMDB_ATTRIBUTE_ADD')")
 @SessionAttributes("attribute")
-public class AttributeAddController extends BaseAttributeController {
+public class AttributeAddController extends AbstractAttributeController {
     public static final String VIEW_ADD = "/cmdb/class/attribute/add";
 
     @RequestMapping(value="/add", method = RequestMethod.GET)

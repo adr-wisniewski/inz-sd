@@ -21,7 +21,7 @@ import servicedesk.cmdb.domain.helper.ItemCriteria;
  */
 @Controller
 @SessionAttributes({"itemCriteria"})
-public class ItemPickerController extends BaseItemController {
+public class ItemPickerController extends AbstractItemController {
 
     public static final String VIEW_NAME = "/cmdb/item/picker";
     public static final String CHOOSE_VIEW_NAME = "/cmdb/item/picker/choose";

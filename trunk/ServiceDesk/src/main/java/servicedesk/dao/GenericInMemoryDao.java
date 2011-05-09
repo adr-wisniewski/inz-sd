@@ -5,8 +5,9 @@ package servicedesk.dao;
 
 import java.io.Serializable;
 import java.util.List;
-import servicedesk.infrastructure.domain.DomainObject;
-import servicedesk.infrastructure.util.GenericUtil;
+import org.springframework.dao.DataRetrievalFailureException;
+import servicedesk.infrastructure.general.domain.DomainObject;
+import servicedesk.infrastructure.general.util.GenericUtil;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -78,6 +79,15 @@ abstract public class GenericInMemoryDao<Type extends DomainObject<Id>, Id exten
 	
 	public Type get(Id id) {
 		return values.get(0);
+	}
+        
+        public Type load(Id id) {
+                Type object = get(id);
+                
+                if(object == null)
+                    throw new DataRetrievalFailureException("Identifier not found:" + id);
+            
+		return object;
 	}
 
 	/** 

@@ -18,8 +18,8 @@ import servicedesk.common.announcement.domain.Announcement;
  * @author Adrian
  */
 @Controller
-@PreAuthorize("COMMON_ANNOUNCEMENT_CRUD")
-public class AnnouncementViewController extends AnnouncementController {
+@PreAuthorize("hasRole('COMMON_ANNOUNCEMENT_CRUD')")
+public class AnnouncementViewController extends AbstractAnnouncementController {
     protected static final String VIEW_GENERAL = "/common/announcement/";
     protected static final String VIEW_VIEW = "/common/announcement/view";
     protected static final String MODEL_ANNOUNCEMENT = "announcement";

@@ -21,6 +21,7 @@
     <context:component-scan base-package="servicedesk.web" />
     <context:component-scan base-package="servicedesk.*.web" />
     <context:component-scan base-package="servicedesk.common.*.web" />
+    <context:component-scan base-package="servicedesk.infrastructure.*.web" />
 
     <mvc:resources mapping="/favicon.ico" location="/static/favicon.ico"/>
     <mvc:resources mapping="/static/**" location="/static/"/>
@@ -33,14 +34,14 @@
         <property name="order" value="1" />
         <property name="interceptors">
             <list>
-                <bean class="servicedesk.infrastructure.spring.MeasurementInterceptor" />
+                <bean class="servicedesk.infrastructure.general.spring.MeasurementInterceptor" />
                 <bean class="org.springframework.orm.hibernate3.support.OpenSessionInViewInterceptor">
                     <property name="sessionFactory">
                         <ref bean="sessionFactory"/>
                     </property>
                 </bean>
-                <bean class="servicedesk.infrastructure.spring.MessageInterceptor" />
-                <bean class="servicedesk.infrastructure.spring.PrgInterceptor" />
+                <bean class="servicedesk.infrastructure.general.spring.MessageInterceptor" />
+                <bean class="servicedesk.infrastructure.general.spring.PrgInterceptor" />
             </list>
         </property>
     </bean>

@@ -27,7 +27,7 @@ import servicedesk.cmdb.domain.helper.ItemVisitor;
  */
 @Controller
 @PreAuthorize("hasRole('CMDB_ITEM_VIEW')")
-public class ItemViewController extends BaseItemController {
+public class ItemViewController extends AbstractItemController {
 
     protected static final String MODEL_SOURCE_RELATIONSHIPCLASSES = "sourceRelationships";
     protected static final String MODEL_TARGET_RELATIONSHIPCLASSES = "targetRelationships";

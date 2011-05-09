@@ -9,7 +9,46 @@
     <!-- ITEM CLASS SEARCH -->
     <definition name="/common/announcement/" extends="standard-layout">
         <put-attribute name="title" value="titles.common.announcements" />
-        <put-attribute name="body" value="/WEB-INF/views/common/announcements/index.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/common/announcement/index.jsp" />
+    </definition>
+
+    <definition name="/common/announcement/view" extends="standard-layout">
+        <put-attribute name="title" value="titles.common.announcement.view" />
+        <put-attribute name="title_args" value="${announcement.title}" />
+        <put-attribute name="body" value="/WEB-INF/views/common/announcement/view.jsp" />
+    </definition>
+
+    <definition name="/common/announcement/add" extends="standard-layout">
+        <put-attribute name="title" value="titles.common.announcement.add" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/common/announcement/edit.jsp">
+                <put-attribute name="submitLabel" value="add.label" />
+                <put-attribute name="submitCssClass" value="add" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <definition name="/common/announcement/edit" extends="standard-layout">
+        <put-attribute name="title" value="titles.common.announcement.edit" />
+        <put-attribute name="title_args" value="${announcement.title}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/common/announcement/edit.jsp">
+                <put-attribute name="submitLabel" value="edit.label" />
+                <put-attribute name="submitCssClass" value="editsubmit" />
+            </definition>
+        </put-attribute>
+    </definition>
+
+    <definition name="/common/announcement/delete" extends="standard-layout">
+        <put-attribute name="title" value="titles.common.announcement.delete" />
+        <put-attribute name="title_args" value="${announcement.title}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
+                <put-attribute name="caption" value="confirm.action" />
+                <put-attribute name="text" value="caption.common.announcement.delete" />
+                <put-attribute name="text_args" value="${announcement.title}" />
+            </definition>
+        </put-attribute>
     </definition>
 
 </tiles-definitions>

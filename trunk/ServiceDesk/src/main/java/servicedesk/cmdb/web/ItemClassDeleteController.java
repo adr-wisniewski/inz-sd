@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.cmdb.domain.UniversalItemClass;
-import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -26,7 +26,7 @@ import servicedesk.infrastructure.validation.BusinessConstraintViolationExceptio
 @RequestMapping(value = "/cmdb/item/class/{id}/delete")
 @PreAuthorize("hasRole('CMDB_ITEMCLASS_DELETE')")
 @SessionAttributes("universalItemClass")
-public class ItemClassDeleteController extends BaseItemClassController {
+public class ItemClassDeleteController extends AbstractItemClassController {
     protected static final String VIEW_DELETE = "/cmdb/item/class/delete";
 
     @RequestMapping(method=RequestMethod.GET)
@@ -56,7 +56,7 @@ public class ItemClassDeleteController extends BaseItemClassController {
         }
         catch(BusinessConstraintViolationException ex) {
             map.addAllAttributes(ex.getErrors().getModel());
-            return String.format("prg:/cmdb/item/class/%s/delete", itemClass.getId());
+            return String.format("prg:/cmdb/item/class/%d/delete", itemClass.getId());
         }
     }
 }

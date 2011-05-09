@@ -9,7 +9,7 @@ import java.util.List;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.stereotype.Repository;
 import servicedesk.cmdb.domain.Relationship;
-import servicedesk.infrastructure.dao.AbstractHibernateCrudDao;
+import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
 
 /**
  *

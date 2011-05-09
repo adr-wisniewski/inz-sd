@@ -25,7 +25,7 @@ import servicedesk.domain.Comment;
 import servicedesk.domain.Employee;
 import servicedesk.event.domain.IEvent;
 import servicedesk.im.domain.SupportGroup;
-import servicedesk.infrastructure.domain.DomainObject;
+import servicedesk.infrastructure.general.domain.DomainObject;
 
 @Entity
 @Table(name="REQUESTS")

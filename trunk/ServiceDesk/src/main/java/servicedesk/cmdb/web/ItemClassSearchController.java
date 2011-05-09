@@ -26,7 +26,7 @@ import servicedesk.tree.app.TreeBuilder;
 @Controller
 @RequestMapping(value = "/cmdb/item/class/*")
 @PreAuthorize("hasRole('CMDB_ITEMCLASS_VIEW')")
-public class ItemClassSearchController extends BaseItemClassController {
+public class ItemClassSearchController extends AbstractItemClassController {
     protected static final String VIEW_SEARCH = "/cmdb/item/class/search";
     protected static final String VIEW_BROWSE = "/cmdb/item/class/browse";
     protected static final String MODEL_CRITERIA = "itemClassCriteria";

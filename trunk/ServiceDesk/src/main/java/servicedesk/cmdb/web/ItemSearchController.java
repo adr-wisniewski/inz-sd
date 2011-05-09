@@ -31,7 +31,7 @@ import servicedesk.tree.app.TreeBuilder;
  */
 @Controller
 @PreAuthorize("hasRole('CMDB_ITEM_VIEW')")
-public class ItemSearchController extends BaseItemController {
+public class ItemSearchController extends AbstractItemController {
 
     protected static final String PATH_CLASSID = "classid";
     protected static final String MODEL_READONLY = "readOnly";

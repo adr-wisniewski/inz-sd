@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import servicedesk.cmdb.domain.EntityClass;
-import servicedesk.infrastructure.validation.AbstractValidator;
+import servicedesk.infrastructure.general.validation.AbstractValidator;
 
 /**
  *

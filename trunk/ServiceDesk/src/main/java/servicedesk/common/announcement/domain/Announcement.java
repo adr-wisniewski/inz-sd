@@ -5,7 +5,7 @@
 
 package servicedesk.common.announcement.domain;
 
-import com.sun.istack.internal.NotNull;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
@@ -25,11 +25,12 @@ import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import org.hibernate.annotations.Immutable;
 import servicedesk.common.attachment.domain.Attachment;
 import servicedesk.common.attachment.domain.HasAttachments;
 import servicedesk.domain.Employee;
-import servicedesk.infrastructure.domain.AuthoredDomainObject;
-import servicedesk.infrastructure.domain.DomainObject;
+import servicedesk.infrastructure.general.domain.CreatorMarked;
+import servicedesk.infrastructure.general.domain.DomainObject;
 
 /**
  *
@@ -38,13 +39,13 @@ import servicedesk.infrastructure.domain.DomainObject;
 @Entity
 @Table(name="ANNOUNCEMENTS")
 @NamedQueries(
-    @NamedQuery(name="Announcement.upToDate", query="from Announcement as a where a.publicationTime <= :date")
+    @NamedQuery(name="Announcement.upToDate", query="from Announcement as a where a.publicationTime <= :date order by a.publicationTime desc")
 )
-public class Announcement implements AuthoredDomainObject<Integer>, HasAttachments, Serializable {
+public class Announcement implements DomainObject<Integer>, CreatorMarked, HasAttachments, Serializable {
     private Integer id;
     private String title;
     private String content;
-    private Employee author;
+    private Employee creator;
     private Date publicationTime;
     private Set<Attachment> attachments;
 
@@ -70,8 +71,8 @@ public class Announcement implements AuthoredDomainObject<Integer>, HasAttachmen
     /**
      * @return the title
      */
-    @NotNull
-    @Column(name="TITLE", length = 500)
+    
+    @Column(name="TITLE", length = 500, nullable=false)
     public String getTitle() {
         return title;
     }
@@ -86,8 +87,7 @@ public class Announcement implements AuthoredDomainObject<Integer>, HasAttachmen
     /**
      * @return the content
      */
-    @NotNull
-    @Column(name="CONTENT", length = 4000)
+    @Column(name="CONTENT", length = 4000, nullable=false)
     public String getContent() {
         return content;
     }
@@ -104,16 +104,18 @@ public class Announcement implements AuthoredDomainObject<Integer>, HasAttachmen
      */
     @ManyToOne(fetch=FetchType.EAGER, optional=false)
     @JoinColumn(name="AUTHOR")
+    @Immutable
     @Override
-    public Employee getAuthor() {
-        return author;
+    public Employee getCreator() {
+        return creator;
     }
 
     /**
      * @param author the author to set
      */
-    public void setAuthor(Employee author) {
-        this.author = author;
+    @Override
+    public void setCreator(Employee creator) {
+        this.creator = creator;
     }
 
     /**
@@ -136,7 +138,7 @@ public class Announcement implements AuthoredDomainObject<Integer>, HasAttachmen
      * @return the attachments
      */
     @Override
-    @ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.ALL)
+    @ManyToMany(cascade=CascadeType.ALL)
     @JoinTable(name="ANNOUNCEMENT_ATTACHMENTS",
         joinColumns=@JoinColumn(name="ANNOUNCEMENT_ID"),
         inverseJoinColumns=@JoinColumn(name="ATTACHMENT_ID")

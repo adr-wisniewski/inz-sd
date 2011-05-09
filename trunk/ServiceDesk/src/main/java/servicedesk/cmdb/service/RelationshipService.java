@@ -6,7 +6,7 @@
 package servicedesk.cmdb.service;
 
 import servicedesk.cmdb.domain.Relationship;
-import servicedesk.infrastructure.service.CrudService;
+import servicedesk.infrastructure.general.service.CrudService;
 
 /**
  *

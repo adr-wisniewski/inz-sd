@@ -8,7 +8,7 @@ package servicedesk.common.announcement.dao;
 import java.util.Collection;
 import java.util.Date;
 import servicedesk.common.announcement.domain.Announcement;
-import servicedesk.infrastructure.dao.CrudDao;
+import servicedesk.infrastructure.general.dao.CrudDao;
 
 /**
  *
@@ -16,5 +16,4 @@ import servicedesk.infrastructure.dao.CrudDao;
  */
 public interface AnnouncementDao extends CrudDao<Announcement, Integer> {
     public Collection<Announcement> getUpToDate(Date date);
-    public Collection<Announcement> getAll();
 }

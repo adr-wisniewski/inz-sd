@@ -3,9 +3,9 @@
  */
 package servicedesk.pm.dao;
 
-import servicedesk.infrastructure.dao.DictionaryDao;
+import servicedesk.infrastructure.general.dao.DictionaryDao;
 import servicedesk.pm.domain.ProblemCategory;
-import servicedesk.infrastructure.dao.HierarchyDao;
+import servicedesk.infrastructure.general.dao.HierarchyDao;
 
 /** 
  * <!-- begin-UML-doc -->

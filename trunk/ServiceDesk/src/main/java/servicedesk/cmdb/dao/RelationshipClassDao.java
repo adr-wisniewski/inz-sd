@@ -9,8 +9,8 @@ import java.util.List;
 import servicedesk.cmdb.domain.ItemClass;
 import servicedesk.cmdb.domain.RelationshipClass;
 import servicedesk.cmdb.domain.helper.RelationshipClassCriteria;
-import servicedesk.infrastructure.dao.CrudDao;
-import servicedesk.infrastructure.dao.HierarchyDao;
+import servicedesk.infrastructure.general.dao.CrudDao;
+import servicedesk.infrastructure.general.dao.HierarchyDao;
 
 /**
  *

@@ -5,13 +5,13 @@
 
 package servicedesk.cmdb.service;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import servicedesk.cmdb.dao.EntityClassDao;
 import servicedesk.cmdb.domain.AbstractEntityClass;
-import servicedesk.cmdb.domain.EntityClass;
 
 /**
  *
@@ -47,6 +47,11 @@ public class EntityClassServiceImpl implements EntityClassService {
     @Override
     public void delete(AbstractEntityClass object) {
         dao.remove(object);
+    }
+
+    @Override
+    public List<AbstractEntityClass> getAll() {
+        return dao.getAll();
     }
 
 }

@@ -7,6 +7,7 @@ package servicedesk.cmdb.service;
 
 import freemarker.template.utility.Collections12;
 import java.util.Collections;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import org.springframework.validation.BindingResult;
 import servicedesk.cmdb.dao.UniversalItemDao;
 import servicedesk.cmdb.domain.UniversalItem;
 import servicedesk.cmdb.validator.UniversalItemPreAddValidator;
-import servicedesk.infrastructure.validation.Validated;
+import servicedesk.infrastructure.general.validation.Validated;
 
 /**
  *
@@ -67,6 +68,11 @@ public class UniversalItemServiceImpl implements UniversalItemService {
     public void preAdd(UniversalItem item, BindingResult bindingResult) {
         item.getAttributeValues().clear();
         item.populateAttributeValues();
+    }
+
+    @Override
+    public List<UniversalItem> getAll() {
+        return dao.getAll();
     }
 
 }

@@ -8,8 +8,8 @@ package servicedesk.cmdb.dao;
 import java.util.List;
 import servicedesk.cmdb.domain.UniversalItemClass;
 import servicedesk.cmdb.domain.helper.ItemClassCriteria;
-import servicedesk.infrastructure.dao.CrudDao;
-import servicedesk.infrastructure.dao.HierarchyDao;
+import servicedesk.infrastructure.general.dao.CrudDao;
+import servicedesk.infrastructure.general.dao.HierarchyDao;
 
 /**
  *

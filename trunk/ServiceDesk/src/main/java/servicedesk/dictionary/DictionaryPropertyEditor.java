@@ -3,7 +3,7 @@
  */
 package servicedesk.dictionary;
 
-import servicedesk.infrastructure.dao.DictionaryDao;
+import servicedesk.infrastructure.general.dao.DictionaryDao;
 import java.beans.PropertyEditorSupport;
 import java.io.Serializable;
 import java.util.HashMap;

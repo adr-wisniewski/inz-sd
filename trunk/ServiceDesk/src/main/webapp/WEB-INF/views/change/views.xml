@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	
+    <!-- RFC SEARCH -->
+    <definition name="/change/rfc" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/index.jsp" />
+    </definition>
+
+    <!-- RFC CRUD -->
+    <definition name="/change/rfc/view" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.view" />
+        <put-attribute name="title_args" value="${rfc.id}, ${rfc.title}" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/view.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/add" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.add" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/add.jsp" />
+    </definition>
+
+</tiles-definitions>

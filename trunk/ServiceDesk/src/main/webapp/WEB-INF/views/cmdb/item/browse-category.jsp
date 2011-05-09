@@ -36,7 +36,7 @@
                 <th><spring:message code="field.cmdb.item.class" /></th>
                 <th><spring:message code="field.cmdb.item.label" /></th>
                 <th><spring:message code="field.cmdb.item.overview" /></th>
-                <th class="actions2"><spring:message code="caption.cmdb.actions" /></th>
+                <th class="actions2"><spring:message code="caption.actions" /></th>
             </tr>
         </thead>
         <tbody>

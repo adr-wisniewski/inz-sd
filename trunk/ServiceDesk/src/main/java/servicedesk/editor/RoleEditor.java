@@ -2,7 +2,7 @@ package servicedesk.editor;
 
 import servicedesk.dao.RoleDao;
 import servicedesk.dictionary.DictionaryPropertyEditor;
-import servicedesk.domain.Role;
+import servicedesk.infrastructure.security.domain.Role;
 
 public class RoleEditor extends DictionaryPropertyEditor<Role> {
 

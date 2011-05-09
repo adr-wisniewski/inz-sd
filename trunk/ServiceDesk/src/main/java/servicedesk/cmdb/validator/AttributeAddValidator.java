@@ -14,7 +14,7 @@ import org.springframework.validation.ValidationUtils;
 import servicedesk.cmdb.domain.Attribute;
 import servicedesk.cmdb.domain.EntityClass;
 import servicedesk.cmdb.service.UniversalItemClassService;
-import servicedesk.infrastructure.validation.AbstractValidator;
+import servicedesk.infrastructure.general.validation.AbstractValidator;
 
 /**
  *

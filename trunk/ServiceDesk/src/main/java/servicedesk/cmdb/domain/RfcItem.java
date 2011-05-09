@@ -5,8 +5,6 @@
 
 package servicedesk.cmdb.domain;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -54,7 +52,7 @@ public class RfcItem extends Item {
     @Override
     public String getOverview() {
         StringBuilder builder = new StringBuilder();
-        //TODO: finish
+        builder.append(rfc.getTitle());
         return builder.toString();
     }
 }

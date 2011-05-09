@@ -81,7 +81,7 @@
                     <c:when test="${not relationshipClassCriteria.initialized}">
                         <tr>
                             <td colspan="20">
-                                <spring:message code="caption.cmdb.query_empty" />
+                                <spring:message code="caption.query_empty" />
                             </td>
                         </tr>
                     </c:when>

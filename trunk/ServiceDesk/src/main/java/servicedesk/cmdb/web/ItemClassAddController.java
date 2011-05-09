@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.cmdb.domain.UniversalItemClass;
-import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -27,7 +27,7 @@ import servicedesk.infrastructure.validation.BusinessConstraintViolationExceptio
 @RequestMapping(value = "/cmdb/item/class/*")
 @PreAuthorize("hasRole('CMDB_ITEMCLASS_ADD')")
 @SessionAttributes("universalItemClass")
-public class ItemClassAddController extends BaseItemClassController {
+public class ItemClassAddController extends AbstractItemClassController {
     public static final String VIEW_ADD = "/cmdb/item/class/add";
 
     @InitBinder

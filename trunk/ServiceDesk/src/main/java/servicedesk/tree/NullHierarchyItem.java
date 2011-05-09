@@ -6,7 +6,7 @@
 package servicedesk.tree;
 
 import java.io.Serializable;
-import servicedesk.infrastructure.domain.HierarchicalDomainObject;
+import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 
 /**
  *

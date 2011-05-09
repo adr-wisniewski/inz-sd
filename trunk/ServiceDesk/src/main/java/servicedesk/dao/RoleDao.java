@@ -1,7 +1,7 @@
 package servicedesk.dao;
 
-import servicedesk.infrastructure.dao.DictionaryDao;
-import servicedesk.domain.Role;
+import servicedesk.infrastructure.general.dao.DictionaryDao;
+import servicedesk.infrastructure.security.domain.Role;
 
 public interface RoleDao extends DictionaryDao<Role, String> {
 	/**

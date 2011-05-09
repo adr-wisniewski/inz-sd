@@ -3,9 +3,9 @@
  */
 package servicedesk.im.dao;
 
-import servicedesk.infrastructure.dao.DictionaryDao;
+import servicedesk.infrastructure.general.dao.DictionaryDao;
 import servicedesk.im.domain.IncidentCategory;
-import servicedesk.infrastructure.dao.HierarchyDao;
+import servicedesk.infrastructure.general.dao.HierarchyDao;
 
 /** 
  * <!-- begin-UML-doc -->

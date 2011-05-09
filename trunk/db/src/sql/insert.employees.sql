@@ -1,32 +1,31 @@
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED)
-               values(0          ,'SYS'  ,'SYS'  ,'-'         ,'-'         ,'-'  ,'SYSTEM', 'secret', 0);
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(0,'SYS','SYS','-','-','-');
      
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000000, '1_LINE','1', '100', '200', '1_LINE@firma.com.pl','1_LINE1','1_LINE1', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000010, '2_LINE','1', '100', '200', '2_LINE@firma.com.pl','2_LINE1','2_LINE1', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000020, '3_LINE','1', '100', '200', '3_LINE@firma.com.pl','3_LINE1','3_LINE1', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000030, 'ADMIN','1', '100', '200', 'ADMIN@firma.com.pl','ADMIN1','ADMIN1', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000040, 'INC_MAN','1', '100', '200', 'INC_MAN@firma.com.pl','INC_MAN1','INC_MAN1', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000050, 'PRB_GR','1', '100', '200', 'PRB_GR@firma.com.pl','PRB_GR1','PRB_GR1', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000060, 'PRB_MAN','1', '100', '200', 'PRB_MAN@firma.com.pl','PRB_MAN1','PRB_MAN1', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000070, 'USER','1', '100', '200', 'USER@firma.com.pl','USER1','USER1', 1);
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000000, '1_LINE','1', '100', '200', '1_LINE@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000010, '2_LINE','1', '100', '200', '2_LINE@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000020, '3_LINE','1', '100', '200', '3_LINE@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000030, 'ADMIN','1', '100', '200', 'ADMIN@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000040, 'INC_MAN','1', '100', '200', 'INC_MAN@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000050, 'PRB_GR','1', '100', '200', 'PRB_GR@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000060, 'PRB_MAN','1', '100', '200', 'PRB_MAN@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000070, 'USER','1', '100', '200', 'USER@firma.com.pl');
                 
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000001, '1_LINE','2', '100', '200', '1_LINE@firma.com.pl','1_LINE2','1_LINE2', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000011, '2_LINE','2', '100', '200', '2_LINE@firma.com.pl','2_LINE2','2_LINE2', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000021, '3_LINE','2', '100', '200', '3_LINE@firma.com.pl','3_LINE2','3_LINE2', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000031, 'ADMIN','2', '100', '200', 'ADMIN@firma.com.pl','ADMIN2','ADMIN2', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000041, 'INC_MAN','2', '100', '200', 'INC_MAN@firma.com.pl','INC_MAN2','INC_MAN2', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000051, 'PRB_GR','2', '100', '200', 'PRB_GR@firma.com.pl','PRB_GR2','PRB_GR2', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000061, 'PRB_MAN','2', '100', '200', 'PRB_MAN@firma.com.pl','PRB_MAN2','PRB_MAN2', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000071, 'USER','2', '100', '200', 'USER@firma.com.pl','USER2','USER2', 1);
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000001, '1_LINE','2', '100', '200', '1_LINE@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000011, '2_LINE','2', '100', '200', '2_LINE@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000021, '3_LINE','2', '100', '200', '3_LINE@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000031, 'ADMIN','2', '100', '200', 'ADMIN@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000041, 'INC_MAN','2', '100', '200', 'INC_MAN@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000051, 'PRB_GR','2', '100', '200', 'PRB_GR@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000061, 'PRB_MAN','2', '100', '200', 'PRB_MAN@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000071, 'USER','2', '100', '200', 'USER@firma.com.pl');
 
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(2000001, 'CN_MAN','2', '100', '200', 'CN_MAN@firma.com.pl','CN_MAN','CN_MAN', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(2000002, 'CN_ADMIN','2', '100', '200', 'CN_ADMIN@firma.com.pl','CN_ADMIN','CN_ADMIN', 1);
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(2000001, 'CN_MAN','2', '100', '200', 'CN_MAN@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(2000002, 'CN_ADMIN','2', '100', '200', 'CN_ADMIN@firma.com.pl');
 
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000072, 'Service','Manager', '100', '200', 'USER@firma.com.pl','SMAN1','SMAN1', 1);
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000072, 'Service','Manager', '100', '200', 'USER@firma.com.pl');
 
 
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000101, 'Network','manager', '100', '200', 'GR1@firma.com.pl','GR1','GR1', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000102, 'MySQL','manager', '100', '200', 'GR2@firma.com.pl','GR2','GR2', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000103, 'Oracle','manager', '100', '200', 'GR3@firma.com.pl','GR3','GR3', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000104, 'Servers','manager', '100', '200', 'GR4@firma.com.pl','GR4','GR4', 1);
-insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL,LOGIN,PASSWORD,ENABLED) values(1000105, 'E-Mail','manager', '100', '200', 'GR5@firma.com.pl','GR5','GR5', 1);
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000101, 'Network','manager', '100', '200', 'GR1@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000102, 'MySQL','manager', '100', '200', 'GR2@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000103, 'Oracle','manager', '100', '200', 'GR3@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000104, 'Servers','manager', '100', '200', 'GR4@firma.com.pl');
+insert into employees(EMPLOYEE_ID,NAME,SURNAME,PHONE_NUMBER,MOBILE_PHONE,EMAIL) values(1000105, 'E-Mail','manager', '100', '200', 'GR5@firma.com.pl');

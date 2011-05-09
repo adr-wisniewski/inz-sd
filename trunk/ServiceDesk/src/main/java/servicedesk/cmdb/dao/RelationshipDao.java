@@ -6,7 +6,7 @@
 package servicedesk.cmdb.dao;
 
 import servicedesk.cmdb.domain.Relationship;
-import servicedesk.infrastructure.dao.CrudDao;
+import servicedesk.infrastructure.general.dao.CrudDao;
 
 /**
  *

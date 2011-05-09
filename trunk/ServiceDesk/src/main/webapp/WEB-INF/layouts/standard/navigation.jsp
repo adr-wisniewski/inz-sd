@@ -13,6 +13,31 @@
     <menu:menuItem url="/j_spring_security_logout" name="logout.label" name_args="${username}" />
 </menu:menuGroup>
 
+<menu:menuGroup name="menu.cmdb.caption" id="menu-cmdb">
+    <menu:compositeMenuItem url="/cmdb/item" name="menu.cmdb.item">
+        <menu:menuItem url="/cmdb/item/add" name="menu.cmdb.item.add" role="CMDB_ITEM_ADD" icon="add"/>
+        <menu:menuItem url="/cmdb/item/browse" name="menu.cmdb.item.browse" role="CMDB_ITEM_VIEW" icon="search"/>
+        <menu:menuItem url="/cmdb/item/search" name="menu.cmdb.item.search" role="CMDB_ITEM_VIEW" icon="search"/>
+    </menu:compositeMenuItem>
+
+    <menu:compositeMenuItem url="/cmdb/item/class" name="menu.cmdb.item.class">
+        <menu:menuItem url="/cmdb/item/class/add" name="menu.cmdb.item.class.add" role="CMDB_ITEMCLASS_ADD" icon="add"/>
+        <menu:menuItem url="/cmdb/item/class/browse" name="menu.cmdb.item.class.browse" role="CMDB_ITEMCLASS_VIEW" icon="search"/>
+        <menu:menuItem url="/cmdb/item/class/search" name="menu.cmdb.item.class.search" role="CMDB_ITEMCLASS_VIEW" icon="search"/>
+    </menu:compositeMenuItem>
+
+    <menu:compositeMenuItem url="/cmdb/relationship/class" name="menu.cmdb.relationship.class">
+        <menu:menuItem url="/cmdb/relationship/class/add" name="menu.cmdb.relationship.class.add" role="CMDB_RELATIONSHIPCLASS_ADD" icon="add"/>
+        <menu:menuItem url="/cmdb/relationship/class/browse" name="menu.cmdb.relationship.class.browse" role="CMDB_RELATIONSHIPCLASS_VIEW" icon="search"/>
+        <menu:menuItem url="/cmdb/relationship/class/search" name="menu.cmdb.relationship.class.search" role="CMDB_RELATIONSHIPCLASS_VIEW" icon="search"/>
+    </menu:compositeMenuItem>
+</menu:menuGroup>
+
+<menu:menuGroup name="menu.change" id="menu-change">
+    <menu:menuItem url="/change/rfc/add" name="menu.change.rfc.add" role="CHANGE_RFC_ADD" icon="add"/>
+    <menu:menuItem url="/change/rfc" name="menu.change.rfc" role="CHANGE_RFC_VIEW" icon="search"/>
+</menu:menuGroup>
+
 <menu:menuGroup name="em.label" id="menu-em">
     <menu:menuItem url="/em/search" name="search_events.label" role="SEARCH_EM"/>
     <menu:compositeMenuItem name="reports.label" url="#">
@@ -52,29 +77,8 @@
     <menu:menuItem url="/rf/search" name="search_request.label" role="SEARCH_RF"/>
 </menu:menuGroup>
 
-<menu:menuGroup name="menu.cmdb.caption" id="menu-cn">
-    <menu:compositeMenuItem url="/cmdb/item" name="menu.cmdb.item">
-        <menu:menuItem url="/cmdb/item/add" name="menu.cmdb.item.add" role="CMDB_ITEM_ADD" icon="add"/>
-        <menu:menuItem url="/cmdb/item/browse" name="menu.cmdb.item.browse" role="CMDB_ITEM_VIEW" icon="search"/>
-        <menu:menuItem url="/cmdb/item/search" name="menu.cmdb.item.search" role="CMDB_ITEM_VIEW" icon="search"/>
-    </menu:compositeMenuItem>
-
-    <menu:compositeMenuItem url="/cmdb/item/class" name="menu.cmdb.item.class">
-        <menu:menuItem url="/cmdb/item/class/add" name="menu.cmdb.item.class.add" role="CMDB_ITEMCLASS_ADD" icon="add"/>
-        <menu:menuItem url="/cmdb/item/class/browse" name="menu.cmdb.item.class.browse" role="CMDB_ITEMCLASS_VIEW" icon="search"/>
-        <menu:menuItem url="/cmdb/item/class/search" name="menu.cmdb.item.class.search" role="CMDB_ITEMCLASS_VIEW" icon="search"/>
-    </menu:compositeMenuItem>
-
-    <menu:compositeMenuItem url="/cmdb/relationship/class" name="menu.cmdb.relationship.class">
-        <menu:menuItem url="/cmdb/relationship/class/add" name="menu.cmdb.relationship.class.add" role="CMDB_RELATIONSHIPCLASS_ADD" icon="add"/>
-        <menu:menuItem url="/cmdb/relationship/class/browse" name="menu.cmdb.relationship.class.browse" role="CMDB_RELATIONSHIPCLASS_VIEW" icon="search"/>
-        <menu:menuItem url="/cmdb/relationship/class/search" name="menu.cmdb.relationship.class.search" role="CMDB_RELATIONSHIPCLASS_VIEW" icon="search"/>
-    </menu:compositeMenuItem>
-</menu:menuGroup>
-
-
 <menu:menuGroup name="administration.label" id="menu-admin">
-    <menu:menuItem url="/common/announcement" name="menu.common.announdements" role="COMMON_ANNOUNCEMENT_CRUD"/>
+    <menu:menuItem url="/common/announcement" name="menu.common.announcements" role="COMMON_ANNOUNCEMENT_CRUD"/>
     <menu:menuItem url="/servicedesk/searchEmployee" name="search_employees.label" role="ADMIN"/>
     <menu:compositeMenuItem name="signals.label" url="#">
         <menu:menuItem url="/signal/addtype" name="add_type.label" role="ADMIN"/>

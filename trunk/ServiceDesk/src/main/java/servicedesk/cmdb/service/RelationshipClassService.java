@@ -9,7 +9,7 @@ import java.util.List;
 import servicedesk.cmdb.domain.ItemClass;
 import servicedesk.cmdb.domain.RelationshipClass;
 import servicedesk.cmdb.domain.helper.RelationshipClassCriteria;
-import servicedesk.infrastructure.service.CrudService;
+import servicedesk.infrastructure.general.service.CrudService;
 
 /**
  *

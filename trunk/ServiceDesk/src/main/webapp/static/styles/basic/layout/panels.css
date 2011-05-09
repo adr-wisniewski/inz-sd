@@ -150,20 +150,14 @@ div.dashboardpanel .header{
     padding: 5px 3px 4px 5px;
 }
 
-div.dashboardpanel .item {
-    padding: 6px;
+div.panel .item {
 }
 
-    div.dashboardpanel .item .time {
-        margin: 4px 0;
-        text-indent: 1em;
-    }
-
-    div.dashboardpanel .item .author {
+    div.panel .item .signature {
         text-align: right;
     }
 
-    div.dashboardpanel hr:last-child {
+    div.panel hr:last-child {
         display: none;
     }
 

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.cmdb.domain.Attribute;
-import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -26,7 +26,7 @@ import servicedesk.infrastructure.validation.BusinessConstraintViolationExceptio
 @RequestMapping(value = "/cmdb/class/{classid}/attribute/{attrno}/delete")
 @PreAuthorize("hasRole('CMDB_ATTRIBUTE_DELETE')")
 @SessionAttributes("attribute")
-public class AttributeDeleteController extends BaseAttributeController {
+public class AttributeDeleteController extends AbstractAttributeController {
     public static final String VIEW_DELETE = "/cmdb/class/attribute/delete";
 
     @ModelAttribute

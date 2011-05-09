@@ -5,7 +5,6 @@
 
 package servicedesk.common.attachment.domain;
 
-import com.sun.istack.internal.NotNull;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import servicedesk.infrastructure.domain.DomainObject;
+import servicedesk.infrastructure.general.domain.DomainObject;
 
 /**
  *
@@ -50,8 +49,7 @@ public class Attachment implements DomainObject<Integer>, Serializable {
     /**
      * @return the fileName
      */
-    @NotNull
-    @Column(name="NAME", length = 500)
+    @Column(name="NAME", length = 500, nullable=false)
     public String getName() {
         return name;
     }
@@ -68,8 +66,7 @@ public class Attachment implements DomainObject<Integer>, Serializable {
      * @return the fileSize
      */
     @Lob
-    @NotNull
-    @Column(name="`DATA`")
+    @Column(name="`DATA`", nullable=false)
     public byte[] getData() {
         return data;
     }

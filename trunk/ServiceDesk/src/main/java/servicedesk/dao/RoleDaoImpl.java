@@ -3,7 +3,7 @@ package servicedesk.dao;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import servicedesk.domain.Role;
+import servicedesk.infrastructure.security.domain.Role;
 
 @Repository
 @Transactional

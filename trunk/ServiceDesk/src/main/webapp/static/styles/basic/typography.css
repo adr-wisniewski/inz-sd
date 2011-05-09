@@ -1,7 +1,22 @@
-@font-face
-{
+@font-face {
     font-family: "BleedingCowboys";
     src: url("../../fonts/Bleeding_Cowboys.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "darkgard";
+    src: url("../../fonts/darkgard.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "gotyk";
+    src: url("../../fonts/Gotyk.ttf") format("truetype");
+}
+
+
+@font-face {
+    font-family: "secesja";
+    src: url("../../fonts/Secesja.ttf") format("truetype");
 }
 
 #logo
@@ -99,17 +114,17 @@ a, a:link, a:visited, a:hover, a:active
     font-weight: bold;
 }
 
-div.dashboardpanel .item .title {
+div.panel .item .title {
     font-weight: bold;
-}
-
-div.dashboardpanel .item .time
-{
-    font-style: oblique;
 }
 
 #logo,
 #pagetitle h1
 {
     text-shadow: 1px 2px 4px black;
+}
+
+#navigation li em
+{
+    font-style: normal;
 }

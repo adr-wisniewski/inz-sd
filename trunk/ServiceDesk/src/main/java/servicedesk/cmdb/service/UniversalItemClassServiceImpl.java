@@ -17,7 +17,7 @@ import servicedesk.cmdb.domain.helper.ItemClassCriteria;
 import servicedesk.cmdb.validator.UniversalItemClassAddValidator;
 import servicedesk.cmdb.validator.UniversalItemClassDeleteValidator;
 import servicedesk.cmdb.validator.UniversalItemClassUpdateValidator;
-import servicedesk.infrastructure.validation.Validated;
+import servicedesk.infrastructure.general.validation.Validated;
 
 /**
  *

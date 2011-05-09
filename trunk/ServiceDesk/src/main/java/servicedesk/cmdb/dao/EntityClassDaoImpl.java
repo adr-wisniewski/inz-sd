@@ -7,7 +7,7 @@ package servicedesk.cmdb.dao;
 
 import org.springframework.stereotype.Repository;
 import servicedesk.cmdb.domain.AbstractEntityClass;
-import servicedesk.infrastructure.dao.AbstractHibernateCrudDao;
+import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
 
 /**
  *

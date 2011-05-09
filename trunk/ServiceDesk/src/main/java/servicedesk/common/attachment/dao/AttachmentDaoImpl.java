@@ -7,7 +7,7 @@ package servicedesk.common.attachment.dao;
 
 import org.springframework.stereotype.Repository;
 import servicedesk.common.attachment.domain.Attachment;
-import servicedesk.infrastructure.dao.AbstractHibernateCrudDao;
+import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
 
 /**
  *

@@ -3,7 +3,7 @@ package servicedesk.tree.app;
 import java.util.LinkedList;
 import java.util.List;
 
-import servicedesk.infrastructure.domain.HierarchicalDomainObject;
+import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 
 public abstract class TreeBuilder{
 //	private static Logger logger = Logger.getLogger(TreeBuilder.class);

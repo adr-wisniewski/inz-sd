@@ -8,7 +8,7 @@ package servicedesk.cmdb.validator;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import servicedesk.cmdb.domain.Attribute;
-import servicedesk.infrastructure.validation.AbstractValidator;
+import servicedesk.infrastructure.general.validation.AbstractValidator;
 
 /**
  *

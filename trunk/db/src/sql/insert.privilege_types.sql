@@ -59,6 +59,11 @@ insert into privilege_types(privilege_code, description) values('CMDB_ATTRIBUTE_
 insert into privilege_types(privilege_code, description) values('CMDB_ATTRIBUTE_EDIT', 'Edycja atrybutów klas');
 insert into privilege_types(privilege_code, description) values('CMDB_ATTRIBUTE_DELETE', 'Usuwanie atrybutów klas');
 
+insert into privilege_types(privilege_code, description) values('CHANGE_RFC_VIEW', 'Przegl¹danie wniosków zmian');
+insert into privilege_types(privilege_code, description) values('CHANGE_RFC_ADD', 'Dodawanie wniosków zmian');
+insert into privilege_types(privilege_code, description) values('CHANGE_RFC_EDIT', 'Edycja wniosków zmian');
+insert into privilege_types(privilege_code, description) values('CHANGE_RFC_DELETE', 'Usuwanie wniosków zmian');
+
 insert into privilege_types(privilege_code, description) values('ADMIN', 'Administracja');
 insert into privilege_types(privilege_code, description) values('COMMON_ANNOUNCEMENT_CRUD', 'Dodawanie/Edycja/Usuwanie og³oszeñ');
 

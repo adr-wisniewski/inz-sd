@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.cmdb.domain.Relationship;
-import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -28,7 +28,7 @@ import servicedesk.infrastructure.validation.BusinessConstraintViolationExceptio
 @RequestMapping(value = "/cmdb/relationship/{id}/edit")
 @PreAuthorize("hasRole('CMDB_RELATIONSHIP_EDIT')")
 @SessionAttributes("relationship")
-public class RelationshipEditController extends BaseRelationshipController {
+public class RelationshipEditController extends AbstractRelationshipController {
     protected final String VIEW_EDIT = "/cmdb/relationship/edit";
 
     @InitBinder

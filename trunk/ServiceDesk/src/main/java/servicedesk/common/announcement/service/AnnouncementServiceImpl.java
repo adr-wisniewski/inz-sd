@@ -7,6 +7,7 @@ package servicedesk.common.announcement.service;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ import org.springframework.validation.BindingResult;
 import servicedesk.common.announcement.dao.AnnouncementDao;
 import servicedesk.common.announcement.domain.Announcement;
 import servicedesk.common.announcement.validator.AnnouncementSimpleValidator;
-import servicedesk.infrastructure.validation.Validated;
+import servicedesk.infrastructure.general.validation.Validated;
 
 /**
  *
@@ -45,28 +46,28 @@ public class AnnouncementServiceImpl implements AnnouncementService {
     }
 
     @Override
-    @PreAuthorize("hasRole('COMMON_ANNOUNCEMENT_ADD')")
+    @PreAuthorize("hasRole('COMMON_ANNOUNCEMENT_CRUD')")
     @Validated(validator=AnnouncementSimpleValidator.class)
     public void add(Announcement object, BindingResult bindingResult) {
         dao.persist(object);
     }
 
     @Override
-    @PreAuthorize("hasRole('COMMON_ANNOUNCEMENT_EDIT')")
+    @PreAuthorize("hasRole('COMMON_ANNOUNCEMENT_CRUD')")
     @Validated(validator=AnnouncementSimpleValidator.class)
     public void update(Announcement object, BindingResult bindingResult) {
         dao.merge(object);
     }
 
     @Override
-    @PreAuthorize("hasRole('COMMON_ANNOUNCEMENT_DELETE')")
+    @PreAuthorize("hasRole('COMMON_ANNOUNCEMENT_CRUD')")
     //@Validated(validator=AnnouncementDeleteValidator.class)
     public void delete(Announcement object) {
         dao.remove(object);
     }
 
     @Override
-    public Collection<Announcement> getAll() {
+    public List<Announcement> getAll() {
         return dao.getAll();
     }
 

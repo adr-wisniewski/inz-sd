@@ -5,7 +5,7 @@ import java.util.Set;
 
 import servicedesk.app.EmployeeSearchCriteria;
 import servicedesk.domain.Employee;
-import servicedesk.domain.Role;
+import servicedesk.infrastructure.security.domain.Role;
 
 public interface EmployeeService {
 	/**

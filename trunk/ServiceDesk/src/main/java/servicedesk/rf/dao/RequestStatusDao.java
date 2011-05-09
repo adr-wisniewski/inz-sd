@@ -3,7 +3,7 @@
  */
 package servicedesk.rf.dao;
 
-import servicedesk.infrastructure.dao.DictionaryDao;
+import servicedesk.infrastructure.general.dao.DictionaryDao;
 import servicedesk.rf.domain.RequestStatus;
 
 /** 

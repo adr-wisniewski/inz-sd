@@ -21,7 +21,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.Version;
-import servicedesk.infrastructure.domain.VersionedDomainObject;
+import servicedesk.infrastructure.general.domain.VersionedDomainObject;
 
 /**
  *

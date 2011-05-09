@@ -6,7 +6,7 @@ import org.springframework.validation.Errors;
 import servicedesk.cmdb.domain.ItemClass;
 import servicedesk.cmdb.domain.UniversalItemClass;
 import servicedesk.cmdb.service.ItemClassService;
-import servicedesk.infrastructure.validation.AbstractValidator;
+import servicedesk.infrastructure.general.validation.AbstractValidator;
 
 @Component
 public class UniversalItemClassAddValidator extends AbstractValidator<UniversalItemClass> {

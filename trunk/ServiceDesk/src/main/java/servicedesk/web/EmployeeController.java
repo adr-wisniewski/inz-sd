@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import servicedesk.app.EmployeeSearchCriteria;
 import servicedesk.domain.Employee;
-import servicedesk.domain.Role;
+import servicedesk.infrastructure.security.domain.Role;
 import servicedesk.service.EmployeeService;
 import servicedesk.util.CheckboxSelection;
 import servicedesk.util.FormUtils;

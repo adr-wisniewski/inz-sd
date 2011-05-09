@@ -3,9 +3,9 @@
  */
 package servicedesk.em.dao;
 
-import servicedesk.infrastructure.dao.DictionaryDao;
+import servicedesk.infrastructure.general.dao.DictionaryDao;
 import servicedesk.em.domain.EventCategory;
-import servicedesk.infrastructure.dao.HierarchyDao;
+import servicedesk.infrastructure.general.dao.HierarchyDao;
 
 /** 
  * <!-- begin-UML-doc -->

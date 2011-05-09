@@ -13,7 +13,7 @@ import servicedesk.app.EmployeeSearchCriteria;
 import servicedesk.dao.EmployeeDao;
 import servicedesk.dao.RoleDao;
 import servicedesk.domain.Employee;
-import servicedesk.domain.Role;
+import servicedesk.infrastructure.security.domain.Role;
 
 @Service
 @Transactional

@@ -2,7 +2,8 @@
 div.panel.hint .content,
 div.panel.success .content,
 button span,
-.error
+.error,
+input.datetime
 {
     background-repeat: no-repeat;
 }
@@ -95,4 +96,9 @@ button.cancel span,
 button.goto span
 {
     background-image: url("../../images/actions/with-shadows/arrow-right-16.png");
+}
+
+input.datetime {
+    background-image: url("../../images/clock.png");
+    background-position:right center;
 }

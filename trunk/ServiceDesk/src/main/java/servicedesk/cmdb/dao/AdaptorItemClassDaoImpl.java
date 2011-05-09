@@ -5,17 +5,9 @@
 
 package servicedesk.cmdb.dao;
 
-import com.google.common.base.Predicate;
-import com.google.common.collect.Iterables;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.NoSuchElementException;
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactoryUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.dao.DataRetrievalFailureException;
 import org.springframework.stereotype.Repository;
 import servicedesk.cmdb.domain.ItemClass;
 
@@ -42,6 +34,16 @@ public class AdaptorItemClassDaoImpl implements AdaptorItemClassDao {
         }
 
         return null;
+    }
+    
+    @Override
+    public ItemClass load(Integer id) {
+        ItemClass itemClass = get(id);
+        
+        if(itemClass == null)
+            throw new DataRetrievalFailureException("Identifier not found: " + id);
+        
+        return itemClass;
     }
 
     @Override

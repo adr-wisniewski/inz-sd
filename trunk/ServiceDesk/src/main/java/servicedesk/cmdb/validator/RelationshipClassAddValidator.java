@@ -12,7 +12,7 @@ import org.springframework.validation.ValidationUtils;
 import servicedesk.cmdb.domain.ItemClass;
 import servicedesk.cmdb.domain.RelationshipClass;
 import servicedesk.cmdb.service.RelationshipClassService;
-import servicedesk.infrastructure.validation.AbstractValidator;
+import servicedesk.infrastructure.general.validation.AbstractValidator;
 
 /**
  *

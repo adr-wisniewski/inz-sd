@@ -23,7 +23,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import servicedesk.cmdb.domain.helper.EntityClassVisitor;
 import servicedesk.cmdb.domain.helper.ItemClassVisitor;
-import servicedesk.infrastructure.domain.HierarchicalDomainObject;
+import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 
 /**
  *

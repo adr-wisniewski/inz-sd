@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.cmdb.domain.UniversalItem;
-import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -26,7 +26,7 @@ import servicedesk.infrastructure.validation.BusinessConstraintViolationExceptio
 @RequestMapping(value = "/cmdb/item/{id}/delete")
 @PreAuthorize("hasRole('CMDB_ITEM_DELETE')")
 @SessionAttributes("universalItem")
-public class UniversalItemDeleteController extends BaseUniversalItemController {
+public class UniversalItemDeleteController extends AbstractUniversalItemController {
     protected static final String VIEW_DELETE = "/cmdb/item/delete";
 
     @RequestMapping(method=RequestMethod.GET)

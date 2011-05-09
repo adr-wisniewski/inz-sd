@@ -1,11 +1,13 @@
 package servicedesk.dao;
 
 import java.util.List;
+import org.springframework.dao.support.DataAccessUtils;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import servicedesk.domain.Employee;
+import servicedesk.infrastructure.security.domain.User;
 
 @Repository
 @Transactional
@@ -19,7 +21,7 @@ public class EmployeeDaoImpl extends GenericHibernateDao<Employee, Integer> impl
 
     @Override
     public Employee findByLogin(String login) {
-            List<Employee> result = findByNamedQuery("Employee.findByLogin", login);
-            return result.get(0);
+            List<User> result = getSession().getNamedQuery("User.findByLogin").setParameter("login", login).list();
+            return DataAccessUtils.singleResult(result).getEmployee();
     }
 }

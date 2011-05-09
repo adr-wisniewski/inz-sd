@@ -17,7 +17,7 @@
                     <th><spring:message code="field.cmdb.item.class" /></th>
                     <th><spring:message code="field.cmdb.item.label" /></th>
                     <th><spring:message code="field.cmdb.item.overview" /></th>
-                    <th class="actions1"><spring:message code="caption.cmdb.actions" /></th>
+                    <th class="actions1"><spring:message code="caption.actions" /></th>
                 </tr>
                 <tr>
                     <td>
@@ -57,7 +57,7 @@
                     <c:when test="${not criteria.initialized}">
                         <tr>
                             <td colspan="20">
-                                <spring:message code="caption.cmdb.query_empty" />
+                                <spring:message code="caption.query_empty" />
                             </td>
                         </tr>
                     </c:when>

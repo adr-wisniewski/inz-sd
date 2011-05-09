@@ -17,7 +17,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 import org.hibernate.annotations.Type;
-import servicedesk.infrastructure.domain.DomainObject;
+import servicedesk.infrastructure.general.domain.DomainObject;
 
 @Entity
 @Table(name="SIGNAL_GENERATORS")

@@ -23,9 +23,7 @@
     </s:http>
 
     <s:authentication-manager alias="auth-man">
-        <s:authentication-provider>
-            <s:jdbc-user-service data-source-ref="dataSource" />
-        </s:authentication-provider>
+        <s:authentication-provider user-service-ref="springSecurityUserDetailsService" />
     </s:authentication-manager>
 
 </beans>

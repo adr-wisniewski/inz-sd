@@ -18,7 +18,7 @@ import servicedesk.cmdb.domain.RelationshipClass;
  */
 @Controller
 @PreAuthorize("hasRole('CMDB_RELATIONSHIPCLASS_VIEW')")
-public class RelationshipClassViewController extends BaseRelationshipClassController {
+public class RelationshipClassViewController extends AbstractRelationshipClassController {
     protected static final String VIEW_GENERAL = "/cmdb/relationship/class";
     protected static final String VIEW_VIEW = "/cmdb/relationship/class/view";
 

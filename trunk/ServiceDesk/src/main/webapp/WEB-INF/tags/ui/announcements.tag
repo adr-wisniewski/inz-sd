@@ -4,37 +4,53 @@
 <%@ taglib prefix="sd" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags/ui" %>
 <%@ taglib prefix="link" tagdir="/WEB-INF/tags/link" %>
-<%@ attribute name="announcements" required="true" rtexprvalue="true" type="java.util.Collection"  %>
+<%@ taglib prefix="print" tagdir="/WEB-INF/tags/print" %>
+<%@ attribute name="announcements" required="true" rtexprvalue="true" type="java.util.Collection" %>
+<%@ attribute name="buttons" required="false" fragment="true" %>
+<%@ attribute name="bottom" required="false" fragment="true" %>
 
-<div class="dashboardpanel announcements">
-    <div class="header">
+<%@ variable name-given="announcement" variable-class="servicedesk.common.announcement.domain.Announcement" %>
+
+<ui:element cssClass="announcements panel">
+    <h1 class="caption">
         <spring:message code="news.label" />
+    </h1>
+    <div class="content">
+        <c:forEach items="${announcements}" var="announcement">
+            <div class="item">
+                <div class="title">
+                    ${announcement.title}
+                </div>
+                <div class="body">
+                    ${announcement.content}
+                </div>
+                <div class="signature">
+                    <print:datetime datetime="${announcement.publicationTime}" /> 
+                    -
+                    <link:employee object="${announcement.creator}" />
+                </div>
+                <c:if test="${not empty pageScope.buttons}">
+                    <div>
+                        <jsp:invoke fragment="buttons" />
+                    </div>
+                </c:if>
+            </div>
+
+            <hr class="horizontal-line">
+        </c:forEach>
+
+        <c:if test="${empty announcements}">
+            <div class="item">
+                <div class="body">
+                    <spring:message code="caption.common.announcements.empty" />
+                </div>
+            </div>
+        </c:if>
+
+        <c:if test="${not empty pageScope.bottom}">
+            <div>
+                <jsp:invoke fragment="bottom" />
+            </div>
+        </c:if>
     </div>
-
-    <c:forEach items="${announcements}" var="announcement">
-        <div class="item">
-            <div class="title">
-                ${announcement.title}
-            </div>
-            <div class="time">
-                ${announcement.publicationTime}
-            </div>
-            <div class="content">
-                ${announcement.content}
-            </div>
-            <div class="author">
-                <link:employee object="${announcement.author}" />
-            </div>
-        </div>
-
-        <hr class="horizontal-line">
-    </c:forEach>
-
-    <c:if test="${empty announcements}">
-        <div class="item">
-            <div class="content">
-                <spring:message code="common.caption.announcements.empty" />
-            </div>
-        </div>
-    </c:if>
-</div>
+</ui:element>
