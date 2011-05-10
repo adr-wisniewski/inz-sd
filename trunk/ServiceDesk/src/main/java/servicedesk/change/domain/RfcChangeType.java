@@ -2,12 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package servicedesk.infrastructure.general.domain;
+package servicedesk.change.domain;
 
 /**
  *
  * @author Adrian
  */
-public interface CreationMarked extends CreatorMarked, CreationTimeMarked {
-    
+public enum RfcChangeType {
+    ADDED,
+    MODIFIED,
+    DELETED;
 }

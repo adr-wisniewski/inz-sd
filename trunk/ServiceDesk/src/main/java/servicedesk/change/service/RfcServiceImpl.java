@@ -13,6 +13,10 @@ import org.springframework.validation.BindingResult;
 import servicedesk.change.dao.RfcDao;
 import servicedesk.change.domain.Rfc;
 import servicedesk.change.domain.helper.RfcCriteria;
+import servicedesk.change.validator.RfcAddValidator;
+import servicedesk.infrastructure.general.dao.HistoryDao;
+import servicedesk.infrastructure.general.domain.HistoryRecord;
+import servicedesk.infrastructure.general.validation.Validated;
 
 /**
  *
@@ -26,6 +30,14 @@ public class RfcServiceImpl implements RfcService {
     @Autowired
     protected RfcDao dao;
     
+    @Autowired
+    private HistoryDao history;
+    
+    @Override
+    public List<HistoryRecord<Rfc>> getChanges(Integer id) {
+        return history.getChanges(Rfc.class, id);
+    }
+    
     @Override
     public Rfc load(Integer id) {
         return dao.load(id);
@@ -37,7 +49,7 @@ public class RfcServiceImpl implements RfcService {
     }
 
     @PreAuthorize("hasRole('CHANGE_RFC_ADD')")
-    //TODO: @Validated(validator=RfcAddValidator.class)
+    @Validated(validator=RfcAddValidator.class)
     @Override
     public void add(Rfc object, BindingResult bindingResult) {
         dao.persist(object);

@@ -34,8 +34,19 @@
 </menu:menuGroup>
 
 <menu:menuGroup name="menu.change" id="menu-change">
+    
     <menu:menuItem url="/change/rfc/add" name="menu.change.rfc.add" role="CHANGE_RFC_ADD" icon="add"/>
-    <menu:menuItem url="/change/rfc" name="menu.change.rfc" role="CHANGE_RFC_VIEW" icon="search"/>
+    
+    <menu:compositeMenuItem url="/change/rfc/browse" name="menu.change.rfc.browse">
+        <menu:menuItem url="/change/rfc/created" name="menu.change.rfc.created" role="CHANGE_RFC_ADD" icon="search"/>
+        <menu:menuItem url="/change/rfc" name="menu.change.rfc" role="CHANGE_RFC_VIEW" icon="search"/>
+    </menu:compositeMenuItem>
+    
+    <menu:compositeMenuItem url="/change/rfc/manage" name="menu.change.rfc.manage">
+        <menu:menuItem url="/change/rfc/unassigned" name="menu.change.rfc.unassigned" role="CHANGE_RFC_MANAGE" icon="search"/>
+        <menu:menuItem url="/change/rfc/managed" name="menu.change.rfc.managed" role="CHANGE_RFC_MANAGE" icon="search"/>
+    </menu:compositeMenuItem>
+    
 </menu:menuGroup>
 
 <menu:menuGroup name="em.label" id="menu-em">

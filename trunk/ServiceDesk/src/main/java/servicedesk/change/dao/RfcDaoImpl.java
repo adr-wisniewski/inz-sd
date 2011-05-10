@@ -50,11 +50,11 @@ public class RfcDaoImpl extends AbstractHibernateCrudDao<Rfc, Integer> implement
         if(searchCriteria.getId() != null)
             hibernateCriteria.add(Restrictions.eq("id", searchCriteria.getId()));
 
-        if(searchCriteria.getCreationTimestampMax() != null)
-            hibernateCriteria.add(Restrictions.le("creationTimestamp", searchCriteria.getCreationTimestampMax()));
+        if(searchCriteria.getTimestampMax() != null)
+            hibernateCriteria.add(Restrictions.le("timestamp", searchCriteria.getTimestampMax()));
         
-        if(searchCriteria.getCreationTimestampMin() != null)
-            hibernateCriteria.add(Restrictions.ge("creationTimestamp", searchCriteria.getCreationTimestampMin()));
+        if(searchCriteria.getTimestampMin() != null)
+            hibernateCriteria.add(Restrictions.ge("timestamp", searchCriteria.getTimestampMin()));
 
         if(searchCriteria.getCreator() != null)
             hibernateCriteria.add(Restrictions.eq("creator", searchCriteria.getCreator()));

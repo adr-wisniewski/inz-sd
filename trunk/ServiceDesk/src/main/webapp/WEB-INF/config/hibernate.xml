@@ -10,18 +10,66 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- Session Factory: -->
+    <!-- Event listeners -->                    
+    <bean name="creatorMarkedPersistEventListener" class="servicedesk.infrastructure.general.dao.CreatorMarkedPersistEventListener" />
+    <bean name="creationTimeMarkedPersistEventListener" class="servicedesk.infrastructure.general.dao.CreationTimeMarkedPersistEventListener" />
+    <bean name="defaultPersistEventListener" class="org.hibernate.event.def.DefaultPersistEventListener" />
+    
+    <bean name="callbackHandler" class="org.hibernate.ejb.event.EntityCallbackHandler" />
+    <bean name="auditEventListener" class="org.hibernate.envers.event.AuditEventListener" />
+    <bean name="ejb3PostInsertEventListener" class="org.hibernate.ejb.event.EJB3PostInsertEventListener">
+        <property name="callbackHandler" ref="callbackHandler" />
+    </bean>
+    <bean name="ejb3PostUpdateEventListener" class="org.hibernate.ejb.event.EJB3PostUpdateEventListener">
+        <property name="callbackHandler" ref="callbackHandler" />
+    </bean>
+    <bean name="ejb3PostDeleteEventListener" class="org.hibernate.ejb.event.EJB3PostDeleteEventListener">
+        <property name="callbackHandler" ref="callbackHandler" />
+    </bean>
+    
+    <!-- Session Factory -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
         <property name="configLocation">
             <value>classpath:hibernate.cfg.xml</value>
         </property>
+        <property name="eventListeners">
+            <map>
+                <entry key="post-insert">
+                    <list>
+                        <ref bean="creatorMarkedPersistEventListener" />
+                        <ref bean="creationTimeMarkedPersistEventListener" />
+                        <ref bean="defaultPersistEventListener" />
+                    </list>
+                </entry>
+                <entry key="post-insert">
+                    <list>
+                        <ref bean="ejb3PostInsertEventListener" />
+                        <ref bean="auditEventListener" />
+                    </list>
+                </entry>
+                <entry key="post-update">
+                    <list>
+                        <ref bean="ejb3PostUpdateEventListener" />
+                        <ref bean="auditEventListener" />
+                    </list>
+                </entry>
+                <entry key="post-delete">
+                    <list>
+                        <ref bean="ejb3PostDeleteEventListener" />
+                        <ref bean="auditEventListener" />
+                    </list>
+                </entry>
+                <entry key="pre-collection-update" value-ref="auditEventListener" />
+                <entry key="pre-collection-remove" value-ref="auditEventListener" />
+                <entry key="post-collection-recreate" value-ref="auditEventListener" />
+            </map>
+        </property>  
     </bean>
 
-
-    <!--  Transaction Manager: -->
+    <!--  Transaction Manager -->
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-            <property name="sessionFactory" ref="sessionFactory" />
+        <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 </beans>

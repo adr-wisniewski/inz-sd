@@ -6,6 +6,7 @@ package servicedesk.change.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import servicedesk.change.dao.RfcPriorityDao;
@@ -17,6 +18,7 @@ import servicedesk.change.domain.RfcPriority;
  */
 @Service
 @Transactional
+@PreAuthorize("hasRole('CHANGE_RFC_VIEW')")
 public class RfcPriorityServiceImpl implements RfcPriorityService {
 
     @Autowired

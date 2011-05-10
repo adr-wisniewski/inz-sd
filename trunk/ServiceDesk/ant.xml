@@ -40,7 +40,7 @@
         <hibernatetool destdir="target/generated-sources/schema">
             <classpath refid="maven.compile.classpath" />
             <annotationconfiguration configurationfile="src/main/resources/hibernate.cfg.xml" />
-            <hbm2ddl
+            <hbm2ddl 
                 drop="false"
                 create="true"
                 update="false"

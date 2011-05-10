@@ -14,8 +14,8 @@ import org.hibernate.event.PersistEvent;
 import org.hibernate.event.PersistEventListener;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-import servicedesk.infrastructure.general.domain.CreatorMarked;
-import servicedesk.infrastructure.general.domain.CreatorMarked;
+import servicedesk.infrastructure.general.domain.CreatorAutomaticallyMarked;
+import servicedesk.infrastructure.general.domain.CreatorAutomaticallyMarked;
 import servicedesk.infrastructure.general.spring.SpringSecurityUserAdapter;
 import servicedesk.infrastructure.security.domain.User;
 
@@ -29,15 +29,10 @@ public class CreatorMarkedPersistEventListener implements PersistEventListener {
     @Override
     public void onPersist(PersistEvent event) throws HibernateException {
 
-        if(event.getObject() instanceof CreatorMarked) {
-            CreatorMarked entity = (CreatorMarked)event.getObject();
-
-            Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-
-            if (!(principal instanceof SpringSecurityUserAdapter))
-                throw new IllegalStateException("AuthoredDomainObjectEventListener requires use of SpringSecurityUserAdapter as authenticationfreeeeeeeeeeeeeeeeeeeeeeeefd");
-
-            User user = ((SpringSecurityUserAdapter)principal).getUser();
+        if(event.getObject() instanceof CreatorAutomaticallyMarked) {
+            CreatorAutomaticallyMarked entity = (CreatorAutomaticallyMarked)event.getObject();
+            SpringSecurityUserAdapter principal = (SpringSecurityUserAdapter)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            User user = principal.getUser();
             entity.setCreator(user.getEmployee());
         }
     }

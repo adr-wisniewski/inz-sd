@@ -11,46 +11,41 @@
 
 <%@ variable name-given="announcement" variable-class="servicedesk.common.announcement.domain.Announcement" %>
 
-<ui:element cssClass="announcements panel">
-    <h1 class="caption">
-        <spring:message code="news.label" />
-    </h1>
-    <div class="content">
-        <c:forEach items="${announcements}" var="announcement">
-            <div class="item">
-                <div class="title">
-                    ${announcement.title}
-                </div>
-                <div class="body">
-                    ${announcement.content}
-                </div>
-                <div class="signature">
-                    <print:datetime datetime="${announcement.publicationTime}" /> 
-                    -
-                    <link:employee object="${announcement.creator}" />
-                </div>
-                <c:if test="${not empty pageScope.buttons}">
-                    <div>
-                        <jsp:invoke fragment="buttons" />
-                    </div>
-                </c:if>
+<ui:panel caption="news.label" cssClass="announcements">
+    <c:forEach items="${announcements}" var="announcement">
+        <div class="item">
+            <div class="title">
+                ${announcement.title}
             </div>
-
-            <hr class="horizontal-line">
-        </c:forEach>
-
-        <c:if test="${empty announcements}">
-            <div class="item">
-                <div class="body">
-                    <spring:message code="caption.common.announcements.empty" />
+            <div class="body">
+                ${announcement.content}
+            </div>
+            <div class="signature">
+                <print:datetime datetime="${announcement.publicationTime}" /> 
+                -
+                <link:employee object="${announcement.creator}" />
+            </div>
+            <c:if test="${not empty pageScope.buttons}">
+                <div>
+                    <jsp:invoke fragment="buttons" />
                 </div>
-            </div>
-        </c:if>
+            </c:if>
+        </div>
 
-        <c:if test="${not empty pageScope.bottom}">
-            <div>
-                <jsp:invoke fragment="bottom" />
+        <hr class="horizontal-line">
+    </c:forEach>
+
+    <c:if test="${empty announcements}">
+        <div class="item">
+            <div class="body">
+                <spring:message code="caption.common.announcements.empty" />
             </div>
-        </c:if>
-    </div>
-</ui:element>
+        </div>
+    </c:if>
+
+    <c:if test="${not empty pageScope.bottom}">
+        <div>
+            <jsp:invoke fragment="bottom" />
+        </div>
+    </c:if>
+</ui:panel>

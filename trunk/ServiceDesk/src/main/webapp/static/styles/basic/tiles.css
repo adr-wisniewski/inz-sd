@@ -1,6 +1,6 @@
 .errorBox,
-div.panel.hint .content,
-div.panel.success .content,
+div.panel.hint > .content,
+div.panel.success > .content,
 button span,
 .error,
 input.datetime
@@ -29,8 +29,8 @@ div.dashboardpanel .header {
 }
 
 .errorBox,
-div.panel.hint .content,
-div.panel.success .content
+div.panel.hint > .content,
+div.panel.success > .content
 {
     background-position:6px 6px;
 }
@@ -45,12 +45,12 @@ div.panel.success .content
     background-image: url("../../images/error_icon.png");
 }
 
-div.panel.hint .content
+div.panel.hint > .content
 {
     background-image: url("../../images/info_icon.png");
 }
 
-div.panel.success .content
+div.panel.success > .content
 {
     background-image: url("../../images/success_icon.png");
 }

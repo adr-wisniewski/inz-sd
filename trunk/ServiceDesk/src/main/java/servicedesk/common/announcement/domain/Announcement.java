@@ -29,7 +29,7 @@ import org.hibernate.annotations.Immutable;
 import servicedesk.common.attachment.domain.Attachment;
 import servicedesk.common.attachment.domain.HasAttachments;
 import servicedesk.domain.Employee;
-import servicedesk.infrastructure.general.domain.CreatorMarked;
+import servicedesk.infrastructure.general.domain.CreatorAutomaticallyMarked;
 import servicedesk.infrastructure.general.domain.DomainObject;
 
 /**
@@ -41,7 +41,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 @NamedQueries(
     @NamedQuery(name="Announcement.upToDate", query="from Announcement as a where a.publicationTime <= :date order by a.publicationTime desc")
 )
-public class Announcement implements DomainObject<Integer>, CreatorMarked, HasAttachments, Serializable {
+public class Announcement implements DomainObject<Integer>, CreatorAutomaticallyMarked, HasAttachments, Serializable {
     private Integer id;
     private String title;
     private String content;

@@ -8,17 +8,17 @@ div.panel
     position: relative;
 }
 
-    div.panel .content
+    div.panel > .content
     {
         padding: 6px;
     }
 
-    div.panel .content p
+    div.panel > .content p
     {
         /*margin: 0 0 6px 0;*/
     }
     
-    div.panel h1.caption
+    div.panel > h1.caption
     {
         line-height: 24px;
         padding-left: 12px;
@@ -48,8 +48,8 @@ div.panel
     }
 
 
-        div.panel.hint .content,
-        div.panel.success .content
+        div.panel.hint > .content,
+        div.panel.success > .content
         {
            min-height: 50px;
            padding: 6px 6px 6px 62px;

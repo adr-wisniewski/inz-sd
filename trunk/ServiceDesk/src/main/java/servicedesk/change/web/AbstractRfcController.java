@@ -19,7 +19,7 @@ import servicedesk.infrastructure.general.web.MessageContextHolder;
 public class AbstractRfcController {
     @Autowired
     protected RfcService service;
-    
+       
     @Autowired
     protected RfcPriorityService priorityService;
     

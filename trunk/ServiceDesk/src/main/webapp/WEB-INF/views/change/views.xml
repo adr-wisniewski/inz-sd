@@ -6,6 +6,18 @@
 
 <tiles-definitions>
 	
+    <!-- RFC -->
+    <definition name="/change/rfc/browse" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.browse" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/browse.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/manage" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.manage" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/manage.jsp" />
+    </definition>
+    
+        
     <!-- RFC SEARCH -->
     <definition name="/change/rfc" extends="standard-layout">
         <put-attribute name="title" value="titles.change.rfc" />

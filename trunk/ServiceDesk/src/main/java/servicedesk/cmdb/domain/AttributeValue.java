@@ -23,15 +23,15 @@ import javax.persistence.Version;
 @Table(name="C2_CLASS_ATTRIBUTE_VALUES")
 public class AttributeValue implements Comparable<AttributeValue>, Serializable {
 
-    private AttributeValuePk pk = new AttributeValuePk();
+    private AttributeValueId pk = new AttributeValueId();
     private String value;
 
     @Id
-    public AttributeValuePk getPk() {
+    public AttributeValueId getPk() {
         return pk;
     }
 
-    public void setPk(AttributeValuePk pk) {
+    public void setPk(AttributeValueId pk) {
         this.pk = pk;
     }
 
@@ -44,7 +44,7 @@ public class AttributeValue implements Comparable<AttributeValue>, Serializable 
         this.value = value;
     }
 
-        @Transient
+    @Transient
     public Entity getEntity() {
         return getPk().getEntity();
     }

@@ -10,7 +10,6 @@ import java.util.Date;
  *
  * @author Adrian
  */
-public interface CreationTimeMarked {
-    public Date getCreationTimestamp();
-    public void setCreationTimestamp(Date timestamp);
+public interface TimestampAutomaticallyMarked extends Timestamped {
+    public void setTimestamp(Date timestamp);
 }

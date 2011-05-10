@@ -23,7 +23,7 @@
 
 // initialise plugins
 jQuery(function(){
-        $(".tablesorter").tablesorter({widgets: ['zebra']});
+        $(".tablesorter").not(".custom").tablesorter({widgets: ['zebra']});
         $(".buttonGroup input:button, .buttonGroup input:submit, .buttonGroup a").button();
         $(".button").button();
         $("#navigation .menuGroup").collapsible_menu();

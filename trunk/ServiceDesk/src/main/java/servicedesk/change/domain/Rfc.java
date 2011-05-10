@@ -2,6 +2,9 @@ package servicedesk.change.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -12,25 +15,29 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.RelationTargetAuditMode;
 import servicedesk.domain.Employee;
-import servicedesk.infrastructure.general.domain.CreationMarked;
+import servicedesk.infrastructure.general.domain.CreationAutomaticallyMarked;
 import servicedesk.infrastructure.general.domain.DomainObject;
 
 @Entity
 @Table(name = "RFC")
-public class Rfc implements DomainObject<Integer>, CreationMarked, Serializable {
+public class Rfc implements DomainObject<Integer>, CreationAutomaticallyMarked, Serializable {
     private Integer id;
     private RfcState state = RfcState.NEW;
     private Employee creator;
-    private Date creationTimestamp;
+    private Date timestamp;
     private String title;
     private String description;
     private Employee manager;
     private RfcPriority priority;
     private RfcImpact impact;
+    private List<RfcComment> comments = new LinkedList<RfcComment>();
     
     @Id
     @SequenceGenerator(name = "RFC_SEQ", sequenceName = "RFC_SEQ")
@@ -56,6 +63,7 @@ public class Rfc implements DomainObject<Integer>, CreationMarked, Serializable 
     /**
      * @param title the title to set
      */
+    @Audited
     public void setTitle(String title) {
         this.title = title;
     }
@@ -71,6 +79,7 @@ public class Rfc implements DomainObject<Integer>, CreationMarked, Serializable 
     /**
      * @param description the description to set
      */
+    @Audited
     public void setDescription(String description) {
         this.description = description;
     }
@@ -80,6 +89,7 @@ public class Rfc implements DomainObject<Integer>, CreationMarked, Serializable 
      */
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="PRIORITY")
+    @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
     public RfcPriority getPriority() {
         return priority;
     }
@@ -96,6 +106,7 @@ public class Rfc implements DomainObject<Integer>, CreationMarked, Serializable 
      */
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="IMPACT")
+    @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
     public RfcImpact getImpact() {
         return impact;
     }
@@ -131,16 +142,16 @@ public class Rfc implements DomainObject<Integer>, CreationMarked, Serializable 
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     @Column(name="CREATIONTIME", nullable=false)
     @Override
-    public Date getCreationTimestamp() {
-        return creationTimestamp;
+    public Date getTimestamp() {
+        return timestamp;
     }
 
     /**
      * @param creationTime the creationTime to set
      */
     @Override
-    public void setCreationTimestamp(Date creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
     /**
@@ -148,6 +159,7 @@ public class Rfc implements DomainObject<Integer>, CreationMarked, Serializable 
      */
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "`STATE`")
+    @Audited
     public RfcState getState() {
         return state;
     }
@@ -164,6 +176,7 @@ public class Rfc implements DomainObject<Integer>, CreationMarked, Serializable 
      */
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="MANAGER")
+    @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
     public Employee getManager() {
         return manager;
     }
@@ -174,4 +187,20 @@ public class Rfc implements DomainObject<Integer>, CreationMarked, Serializable 
     public void setManager(Employee manager) {
         this.manager = manager;
     }
+
+    /**
+     * @return the comments
+     */
+    @OneToMany(mappedBy="id.rfc", cascade = CascadeType.ALL)
+    public List<RfcComment> getComments() {
+        return comments;
+    }
+
+    /**
+     * @param comments the comments to set
+     */
+    public void setComments(List<RfcComment> comments) {
+        this.comments = comments;
+    }
+    
 }

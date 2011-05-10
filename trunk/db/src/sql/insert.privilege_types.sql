@@ -63,6 +63,7 @@ insert into privilege_types(privilege_code, description) values('CHANGE_RFC_VIEW
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_ADD', 'Dodawanie wniosków zmian');
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_EDIT', 'Edycja wniosków zmian');
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_DELETE', 'Usuwanie wniosków zmian');
+insert into privilege_types(privilege_code, description) values('CHANGE_RFC_MANAGE', 'Zarz¹dzanie wnioskami zmian');
 
 insert into privilege_types(privilege_code, description) values('ADMIN', 'Administracja');
 insert into privilege_types(privilege_code, description) values('COMMON_ANNOUNCEMENT_CRUD', 'Dodawanie/Edycja/Usuwanie og³oszeñ');

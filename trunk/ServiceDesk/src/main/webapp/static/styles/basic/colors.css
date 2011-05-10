@@ -38,7 +38,7 @@ div.panel h1.caption em {
     color: #FFEE5C;
 }
 
-div.panel.hint .content em
+div.panel.hint > .content em
 {
     color: #EF9B0F;
 }
@@ -78,7 +78,7 @@ div.panel.success .caption {
     background-color: #007000;
 }
 
-div.panel.success .content {
+div.panel.success > .content {
     background-color: #D0F0C0;
 }
 

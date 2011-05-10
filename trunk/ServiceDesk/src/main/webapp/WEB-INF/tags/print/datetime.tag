@@ -7,6 +7,7 @@
 <c:if test="${empty wrap}">
     <span class="datetime">
 </c:if>
+        
 <fmt:formatDate value="${datetime}" type="both" pattern="MM/dd/yyyy HH:mm" />
 <c:if test="${empty wrap}">
     </span>

@@ -6,9 +6,10 @@
 package servicedesk.infrastructure.general.dao;
 
 import org.hibernate.envers.RevisionListener;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import servicedesk.infrastructure.general.domain.AuditRevisionEntity;
+import servicedesk.infrastructure.general.spring.SpringSecurityUserAdapter;
+import servicedesk.infrastructure.security.domain.User;
 
 /**
  *
@@ -20,10 +21,10 @@ public class AuditRevisionListener implements RevisionListener {
     public void newRevision(Object revisionEntity) {
         AuditRevisionEntity revision = (AuditRevisionEntity)revisionEntity;
 
-        // TODO: inject username
-        // TODO: change username to userid
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        revision.setUsername(authentication.getName());
+        SpringSecurityUserAdapter principal = (SpringSecurityUserAdapter)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = principal.getUser();
+                
+        revision.setInstigator(user.getEmployee());
     }
 
 }

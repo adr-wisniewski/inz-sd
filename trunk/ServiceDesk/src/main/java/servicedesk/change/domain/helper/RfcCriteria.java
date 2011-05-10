@@ -19,13 +19,15 @@ public class RfcCriteria {
     private Integer id;
     private RfcState state;
     private Employee creator;
-    private Date creationTimestampMin;
-    private Date creationTimestampMax;
+    private Date timestampMin;
+    private Date timestampMax;
     private String title;
     private String description;
     private Employee manager;
     private RfcPriority priority;
     private RfcImpact impact;
+    private boolean allowEmptyQueries;
+    
 
     /**
      * @return the id
@@ -70,31 +72,31 @@ public class RfcCriteria {
     }
 
     /**
-     * @return the creationTimestampMin
+     * @return the timestampMin
      */
-    public Date getCreationTimestampMin() {
-        return creationTimestampMin;
+    public Date getTimestampMin() {
+        return timestampMin;
     }
 
     /**
-     * @param creationTimestampMin the creationTimestampMin to set
+     * @param timestampMin the timestampMin to set
      */
-    public void setCreationTimestampMin(Date creationTimestampMin) {
-        this.creationTimestampMin = creationTimestampMin;
+    public void setTimestampMin(Date timestampMin) {
+        this.timestampMin = timestampMin;
     }
 
     /**
-     * @return the creationTimestampMax
+     * @return the timestampMax
      */
-    public Date getCreationTimestampMax() {
-        return creationTimestampMax;
+    public Date getTimestampMax() {
+        return timestampMax;
     }
 
     /**
-     * @param creationTimestampMax the creationTimestampMax to set
+     * @param timestampMax the timestampMax to set
      */
-    public void setCreationTimestampMax(Date creationTimestampMax) {
-        this.creationTimestampMax = creationTimestampMax;
+    public void setTimestampMax(Date timestampMax) {
+        this.timestampMax = timestampMax;
     }
 
     /**
@@ -170,14 +172,29 @@ public class RfcCriteria {
     public boolean isInitialized()
     {
         return
-            id != null
+            allowEmptyQueries        
+            || id != null
             || state != null
             || creator != null
-            || creationTimestampMin != null
-            || creationTimestampMax != null
+            || timestampMin != null
+            || timestampMax != null
             || StringUtils.hasText(title)
             || StringUtils.hasText(description)
             || priority != null
             || impact != null;     
+    }
+
+    /**
+     * @return the queryWhenEmpty
+     */
+    public boolean isAllowEmptyQueries() {
+        return allowEmptyQueries;
+    }
+
+    /**
+     * @param queryWhenEmpty the queryWhenEmpty to set
+     */
+    public void setAllowEmptyQueries(boolean queryWhenEmpty) {
+        this.allowEmptyQueries = queryWhenEmpty;
     }
 }

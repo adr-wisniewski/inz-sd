@@ -10,7 +10,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.event.PersistEvent;
 import org.hibernate.event.PersistEventListener;
 import org.springframework.stereotype.Component;
-import servicedesk.infrastructure.general.domain.CreationTimeMarked;
+import servicedesk.infrastructure.general.domain.TimestampAutomaticallyMarked;
 
 /**
  *
@@ -21,9 +21,9 @@ public class CreationTimeMarkedPersistEventListener implements PersistEventListe
     @Override
     public void onPersist(PersistEvent event) throws HibernateException {
 
-        if(event.getObject() instanceof CreationTimeMarked) {
-            CreationTimeMarked entity = (CreationTimeMarked)event.getObject();
-            entity.setCreationTimestamp(new Date());
+        if(event.getObject() instanceof TimestampAutomaticallyMarked) {
+            TimestampAutomaticallyMarked entity = (TimestampAutomaticallyMarked)event.getObject();
+            entity.setTimestamp(new Date());
         }
     }
 

@@ -10,7 +10,70 @@
 <ui:element>
     <form:form modelAttribute="rfcCriteria" method="get">
         <form:errors path="*" cssClass="error" />
-        <table class="tablesorter">
+        <script type="text/javascript">   
+            $.tablesorter.addParser({  
+               id: "rfc_priority",  
+               is: function(s) {  
+                   return false;  
+               },  
+               format: function(s) {  
+                   var values = {
+                        <c:forEach items="${priorities}" var="priority">
+                        "${priority.name}": ${priority.viewOrder},         
+                        </c:forEach>
+                   };
+
+                   return values[$.trim(s)];
+               },  
+               type: "numeric"  
+            });
+            
+            $.tablesorter.addParser({  
+               id: "rfc_impact",  
+               is: function(s) {  
+                   return false;  
+               },  
+               format: function(s) {  
+                   var values = {
+                        <c:forEach items="${impacts}" var="impacts">
+                        "${impacts.name}": ${impacts.viewOrder},         
+                        </c:forEach>
+                   };
+
+                   return values[$.trim(s)];
+               },  
+               type: "numeric"  
+            });
+            
+            $.tablesorter.addParser({  
+               id: "rfc_state",  
+               is: function(s) {  
+                   return false;  
+               },  
+               format: function(s) {  
+                   var values = {
+                        <c:forEach items="${states}" var="state">
+                        "${state.name}": ${state.id},         
+                        </c:forEach>
+                   };
+
+                   return values[$.trim(s)];
+               },  
+               type: "numeric"  
+            });  
+            
+            jQuery(function(){
+                $(".custom.tablesorter.rfcs").tablesorter({   
+                    widgets: ['zebra'],
+                    headers: {
+                        3 : { sorter : 'rfc_priority' }, 
+                        4 : { sorter : 'rfc_impact' },
+                        5 : { sorter : 'rfc_state' },
+                    }
+                });
+            });
+        </script> 
+        <table class="custom tablesorter rfcs">
             <thead>
                 <tr>
                     <th><spring:message code="field.change.rfc.id" /></th>
@@ -73,17 +136,21 @@
                             ${rfc.description}
                         </td>
                         <td>
-                            ${rfc.priority.name}
+                            <print:nullable object="${rfc.priority}">
+                                ${rfc.priority.name}
+                            </print:nullable>
                         </td>
                         <td>
-                            ${rfc.impact.name}
+                            <print:nullable object="${rfc.impact}">
+                                ${rfc.impact.name}
+                            </print:nullable>
                         </td>
                         <td>
                             ${rfc.state.name}
                         </td>
                         <td class="actions1">
                             <ui:actionButton label="details.label"
-                                action="/change/rfc/${itemClass.id}"
+                                action="/change/rfc/${rfc.id}"
                                 cssClass="details"/>
                         </td>
                     </tr>

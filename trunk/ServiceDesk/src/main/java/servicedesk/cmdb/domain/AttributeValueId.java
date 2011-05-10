@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -16,7 +16,7 @@ import javax.persistence.ManyToOne;
  * @author Adrian
  */
 @Embeddable
-public class AttributeValuePk implements Serializable {
+public class AttributeValueId implements Serializable {
     private Entity entity;
     private Attribute attribute;
 
@@ -60,7 +60,7 @@ public class AttributeValuePk implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final AttributeValuePk other = (AttributeValuePk) obj;
+        final AttributeValueId other = (AttributeValueId) obj;
         if (this.entity != other.entity && (this.entity == null || !this.entity.equals(other.entity))) {
             return false;
         }

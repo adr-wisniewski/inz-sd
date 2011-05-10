@@ -26,6 +26,8 @@
     <mapping class="servicedesk.infrastructure.security.domain.User"/>
     <mapping class="servicedesk.infrastructure.security.domain.Privilege"/>
 
+    <mapping class="servicedesk.infrastructure.general.domain.AuditRevisionEntity"/>
+    
     <mapping class="servicedesk.common.announcement.domain.Announcement"/>
     <mapping class="servicedesk.common.attachment.domain.Attachment"/>
 
@@ -37,7 +39,7 @@
     <mapping class="servicedesk.cmdb.domain.AbstractEntityClass"/>
     <mapping class="servicedesk.cmdb.domain.Attribute"/>
     <mapping class="servicedesk.cmdb.domain.AttributeValue"/>
-    <mapping class="servicedesk.cmdb.domain.AttributeValuePk"/>
+    <mapping class="servicedesk.cmdb.domain.AttributeValueId"/>
     <mapping class="servicedesk.cmdb.domain.EmployeeItem"/>
     <mapping class="servicedesk.cmdb.domain.Entity"/>
     <mapping class="servicedesk.cmdb.domain.IncidentItem"/>
@@ -50,6 +52,8 @@
     <mapping class="servicedesk.cmdb.domain.UniversalItemClass"/>
     
     <mapping class="servicedesk.change.domain.Rfc"/>
+    <mapping class="servicedesk.change.domain.RfcComment"/>
+    <mapping class="servicedesk.change.domain.RfcCommentId"/>
     <mapping class="servicedesk.change.domain.RfcPriority"/>
     <mapping class="servicedesk.change.domain.RfcImpact"/>
 
@@ -98,40 +102,6 @@
     <mapping class="servicedesk.signal.domain.SignalType"/>
 
     <mapping class="servicedesk.slm.domain.Agreement"/>
-
-    <!-- listeners -->
-    <event type="create">
-        <listener class="servicedesk.infrastructure.general.dao.CreatorMarkedPersistEventListener"/>
-        <listener class="servicedesk.infrastructure.general.dao.CreationTimeMarkedPersistEventListener"/>
-        <listener class="org.hibernate.event.def.DefaultPersistEventListener"/>
-    </event>
-
-    <event type="post-insert">
-        <!--listener class="org.hibernate.ejb.event.EJB3PostInsertEventListener"/-->
-        <listener class="org.hibernate.envers.event.AuditEventListener"/>
-    </event>
-
-    <event type="post-update">
-        <!--listener class="org.hibernate.ejb.event.EJB3PostUpdateEventListener"/-->
-        <listener class="org.hibernate.envers.event.AuditEventListener"/>
-    </event>
-
-    <event type="post-delete">
-        <!--listener class="org.hibernate.ejb.event.EJB3PostDeleteEventListener"/-->
-        <listener class="org.hibernate.envers.event.AuditEventListener"/>
-    </event>
-
-    <event type="pre-collection-update">
-        <listener class="org.hibernate.envers.event.AuditEventListener"/>
-    </event>
-
-    <event type="pre-collection-remove">
-        <listener class="org.hibernate.envers.event.AuditEventListener"/>
-    </event>
-
-    <event type="post-collection-recreate">
-        <listener class="org.hibernate.envers.event.AuditEventListener"/>
-    </event>
 
   </session-factory>
 </hibernate-configuration>
