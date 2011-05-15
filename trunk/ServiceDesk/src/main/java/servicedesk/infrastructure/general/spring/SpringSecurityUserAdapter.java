@@ -23,6 +23,7 @@ import servicedesk.infrastructure.security.domain.User;
  * @author Adrian
  */
 public class SpringSecurityUserAdapter implements UserDetails {
+    private static final long serialVersionUID = 1L;
 
     private User adapted;
     private Collection<GrantedAuthority> authorities;
@@ -85,6 +86,7 @@ public class SpringSecurityUserAdapter implements UserDetails {
     }
 
     private static class AuthorityComparator implements Comparator<GrantedAuthority>, Serializable {
+        private static final long serialVersionUID = 1L;
         @Override
         public int compare(GrantedAuthority g1, GrantedAuthority g2) {
             return g1.getAuthority().compareTo(g2.getAuthority());

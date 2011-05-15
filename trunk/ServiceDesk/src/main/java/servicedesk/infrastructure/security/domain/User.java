@@ -34,6 +34,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
     @NamedQuery(name="User.findByLogin", query="from User as user where user.login = :login")
 )
 public class User implements DomainObject<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer Id;
     private String login;
     private String password;

@@ -10,6 +10,7 @@ package servicedesk.common.attachment.helper;
  * @author Adrian
  */
 public class AttachmentLoadException extends RuntimeException {
+    private static final long serialVersionUID = 1L;
 
     public AttachmentLoadException(Throwable cause) {
         super(cause);

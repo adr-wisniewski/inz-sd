@@ -22,6 +22,7 @@ import servicedesk.pm.domain.Problem;
 @javax.persistence.Entity
 @Table(name="C2_ITEMS_PROBLEM")
 public class ProblemItem extends Item {
+    private static final long serialVersionUID = 1L;
     private Problem problem;
     private ProblemItemClass problemItemClass;
 

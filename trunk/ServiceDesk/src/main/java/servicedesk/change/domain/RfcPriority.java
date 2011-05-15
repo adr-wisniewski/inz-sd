@@ -5,7 +5,6 @@
 package servicedesk.change.domain;
 
 import java.io.Serializable;
-import java.util.Comparator;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,8 +14,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import servicedesk.infrastructure.general.domain.DomainObject;
-import servicedesk.infrastructure.general.domain.ViewOrdered;
+import servicedesk.infrastructure.general.domain.NamedDomainObject;
 
 /**
  *
@@ -24,12 +22,13 @@ import servicedesk.infrastructure.general.domain.ViewOrdered;
  */
 @Entity
 @Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
-@Table(name="RFC_PRIORITY")
-public class RfcPriority implements DomainObject<Integer>, ViewOrdered, Serializable {
+@Table(name="RFC_PRIORITIES")
+public class RfcPriority implements NamedDomainObject<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer id;
     private String name;
     private Boolean urgent;
-    private Integer viewOrder;
+    private Integer order;
 
     /**
      * @return the id
@@ -37,7 +36,7 @@ public class RfcPriority implements DomainObject<Integer>, ViewOrdered, Serializ
     @Id
     @SequenceGenerator(name = "RFC_PRIORITY_SEQ", sequenceName = "RFC_PRIORITY_SEQ")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RFC_PRIORITY_SEQ")
-    @Column(name = "ID", precision = 10)
+    @Column(name = "PRIORITY_ID", precision = 10)
     @Override
     public Integer getId() {
         return id;
@@ -54,6 +53,7 @@ public class RfcPriority implements DomainObject<Integer>, ViewOrdered, Serializ
      * @return the name
      */
     @Column(name = "NAME", length = 200, nullable=false)
+    @Override
     public String getName() {
         return name;
     }
@@ -82,18 +82,17 @@ public class RfcPriority implements DomainObject<Integer>, ViewOrdered, Serializ
     }
 
     /**
-     * @return the viewOrder
+     * @return the order
      */
-    @Column(name = "VIEW_ORDER", precision = 4, nullable=false)
-    @Override
-    public Integer getViewOrder() {
-        return viewOrder;
+    @Column(name = "`ORDER`", precision = 4, nullable=false)
+    public Integer getOrder() {
+        return order;
     }
 
     /**
-     * @param viewOrder the viewOrder to set
+     * @param order the order to set
      */
-    public void setViewOrder(Integer viewOrder) {
-        this.viewOrder = viewOrder;
+    public void setOrder(Integer order) {
+        this.order = order;
     }
 }

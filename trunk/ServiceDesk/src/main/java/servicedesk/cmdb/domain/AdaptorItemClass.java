@@ -51,11 +51,6 @@ public abstract class AdaptorItemClass implements ItemClass {
     }
 
     @Override
-    public Integer getParentId() {
-        return null;
-    }
-
-    @Override
     public Set<? extends EntityClass> getChildren() {
         return null;
     }

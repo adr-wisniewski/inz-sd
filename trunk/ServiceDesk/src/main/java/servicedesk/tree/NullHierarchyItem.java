@@ -5,7 +5,8 @@
 
 package servicedesk.tree;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 
 /**
@@ -26,12 +27,17 @@ public class NullHierarchyItem implements HierarchicalDomainObject<String> {
     }
 
     @Override
-    public String getParentId() {
+    public NullHierarchyItem getParent() {
         return null;
     }
 
     @Override
     public String getName() {
         return null;
+    }
+
+    @Override
+    public List<NullHierarchyItem> getChildren() {
+        return new ArrayList<NullHierarchyItem>(0);
     }
 }

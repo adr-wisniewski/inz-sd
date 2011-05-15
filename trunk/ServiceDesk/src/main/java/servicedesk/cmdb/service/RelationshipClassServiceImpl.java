@@ -67,6 +67,11 @@ public class RelationshipClassServiceImpl implements RelationshipClassService {
     public RelationshipClass getByName(String name) {
         return dao.getByName(name);
     }
+    
+    @Override
+    public RelationshipClass loadByName(String name) {
+        return dao.loadByName(name);
+    }
 
     @Override
     public List<RelationshipClass> getAll() {
@@ -87,5 +92,4 @@ public class RelationshipClassServiceImpl implements RelationshipClassService {
     public List<RelationshipClass> getAllForTargetClass(ItemClass itemClass) {
         return dao.getAllForTargetClass(itemClass);
     }
-
 }

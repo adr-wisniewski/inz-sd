@@ -12,6 +12,7 @@ import org.springframework.validation.BindingResult;
  * @author Adrian
  */
 public class BusinessConstraintViolationException extends RuntimeException {
+    private static final long serialVersionUID = 1L;
 
     private BindingResult errors;
 

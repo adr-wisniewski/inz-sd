@@ -4,7 +4,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 
-
 <input type="text" id="${name}" name="${name}" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${value}" />" readonly="readonly" />
 
 <script type="text/javascript">

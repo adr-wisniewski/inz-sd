@@ -13,4 +13,4 @@
 </script>
 
 <input type="hidden" id="${name}" name="${name}" value="${value.id}" />
-<input type="text" value="${value.name}" id="treePicker-${name}" onclick="pickItem('<c:url value="/servicedesk/treePicker?name=${name}&amp;source=${source}&amp;value=" />', '${name}');" readonly="readonly" />
+<input class="picker" type="text" value="${value.name}" id="treePicker-${name}" onclick="pickItem('<c:url value="/servicedesk/treePicker?name=${name}&amp;source=${source}&amp;value=" />', '${name}');" readonly="readonly" />

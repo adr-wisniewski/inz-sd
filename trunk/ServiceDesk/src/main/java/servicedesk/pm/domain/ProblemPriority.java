@@ -20,6 +20,7 @@ import servicedesk.dictionary.DictionaryProperty;
 @Entity
 @Table(name = "PRIORITY_TYPES_PM")
 public class ProblemPriority implements DictionaryProperty<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->

@@ -21,6 +21,7 @@ import servicedesk.dictionary.DictionaryProperty;
 @Entity
 @Table(name = "URGENCY_TYPES_IM")
 public class IncidentUrgency implements DictionaryProperty<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->

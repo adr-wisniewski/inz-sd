@@ -45,6 +45,7 @@ import servicedesk.scm.domain.Service;
     @NamedQuery(name = "Employee.get", query = "SELECT e FROM Employee e WHERE e.id = ?")
     /*,@NamedQuery(name = "Employee.findByLogin", query = "SELECT e FROM Employee e WHERE e.login = ?")*/})
 public class Employee implements DomainObject<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->

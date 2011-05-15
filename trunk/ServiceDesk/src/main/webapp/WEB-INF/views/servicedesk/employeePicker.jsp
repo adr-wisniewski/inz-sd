@@ -10,11 +10,11 @@
 	<table class="tablesorter">
 		<thead>
 			<tr>
-				<th>Id</th>
+				<th class="fit">Id</th>
 				<th>Login</th>
 				<th><spring:message code="firstname.label" /></th>
 				<th><spring:message code="lastname.label" /></th>
-				<th></th>
+				<th class="fit noSort"></th>
 			</tr>
 			<tr>
 				<td>

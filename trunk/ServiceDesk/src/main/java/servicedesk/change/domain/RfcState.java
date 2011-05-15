@@ -10,6 +10,7 @@ package servicedesk.change.domain;
  */
 public enum RfcState {
     NEW("Nowy"),
+    REOPENED("Apelacja"),
     ASSIGNED("Przypisany"),
     ALLOCATED("Zaalokowany"),
     AUTHORIZED("Autoryzowany");

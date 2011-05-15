@@ -7,6 +7,7 @@ package servicedesk.change.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import servicedesk.change.service.RfcCategoryService;
 import servicedesk.change.service.RfcImpactService;
 import servicedesk.change.service.RfcPriorityService;
 import servicedesk.change.service.RfcService;
@@ -25,6 +26,9 @@ public class AbstractRfcController {
     
     @Autowired
     protected RfcImpactService impactService;
+    
+    @Autowired
+    protected RfcCategoryService categoryService;
 
     @Autowired
     protected MessageContextHolder messages;

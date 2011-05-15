@@ -5,16 +5,12 @@
 
 package servicedesk.infrastructure.general.dao;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.util.Map;
 import org.hibernate.HibernateException;
 import org.hibernate.event.PersistEvent;
 import org.hibernate.event.PersistEventListener;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-import servicedesk.infrastructure.general.domain.CreatorAutomaticallyMarked;
 import servicedesk.infrastructure.general.domain.CreatorAutomaticallyMarked;
 import servicedesk.infrastructure.general.spring.SpringSecurityUserAdapter;
 import servicedesk.infrastructure.security.domain.User;
@@ -25,6 +21,7 @@ import servicedesk.infrastructure.security.domain.User;
  */
 @Component
 public class CreatorMarkedPersistEventListener implements PersistEventListener {
+    private static final long serialVersionUID = 1L;
 
     @Override
     public void onPersist(PersistEvent event) throws HibernateException {

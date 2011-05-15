@@ -20,6 +20,7 @@ import servicedesk.im.domain.Incident;
 @javax.persistence.Entity
 @Table(name="C2_ITEMS_INCIDENT")
 public class IncidentItem extends Item {
+    private static final long serialVersionUID = 1L;
     private Incident incident;
     private IncidentItemClass incidentItemClass;
 

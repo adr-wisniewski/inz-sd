@@ -31,6 +31,7 @@ import servicedesk.infrastructure.general.domain.VersionedDomainObject;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Table(name="C2_CLASS_ATTRIBUTES")
 public class Attribute implements VersionedDomainObject<Integer>, Comparable<Attribute>, Serializable {
+    private static final long serialVersionUID = 1L;
 
     private Integer id;
     private Integer version;

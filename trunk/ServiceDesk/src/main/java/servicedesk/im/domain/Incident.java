@@ -44,6 +44,7 @@ import servicedesk.scm.domain.Service;
 @NamedQueries({
     @NamedQuery(name = "Incident.get", query = "SELECT i FROM Incident i WHERE i.id = ?")})
 public class Incident implements DomainObject<Integer>, IEvent, Serializable {
+    private static final long serialVersionUID = 1L;
 
     /**
      * <!-- begin-UML-doc -->

@@ -12,6 +12,7 @@ import servicedesk.dictionary.DictionaryProperty;
 @Entity
 @Table(name="SERVICE_TYPES")
 public class ServiceType implements DictionaryProperty<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="SERVICE_TYPE_CODE")
 	private String code;

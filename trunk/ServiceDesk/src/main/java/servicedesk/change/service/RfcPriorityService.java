@@ -4,13 +4,13 @@
  */
 package servicedesk.change.service;
 
-import java.util.List;
 import servicedesk.change.domain.RfcPriority;
+import servicedesk.infrastructure.general.service.CrudService;
+import servicedesk.infrastructure.general.service.NamedService;
 
 /**
  *
  * @author Adrian
  */
-public interface RfcPriorityService {
-    public List<RfcPriority> getAll();
+public interface RfcPriorityService extends CrudService<RfcPriority, Integer>, NamedService<RfcPriority, Integer> {
 }

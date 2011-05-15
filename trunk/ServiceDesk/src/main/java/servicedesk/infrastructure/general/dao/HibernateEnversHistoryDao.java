@@ -45,19 +45,19 @@ public class HibernateEnversHistoryDao
         
         HibernateCallback<List<HistoryRecord<Type>>> callback = new HibernateCallback<List<HistoryRecord<Type>>>() {
             @Override
+            @SuppressWarnings("unchecked")
             public List<HistoryRecord<Type>> doInHibernate(Session session) throws HibernateException, SQLException
             {
                 AuditReader auditReader = AuditReaderFactory.get(session);
                 AuditQuery query = auditReader.createQuery()
                     .forRevisionsOfEntity(type, false, true)
                     .add(AuditEntity.id().eq(id))
-                    .addOrder(AuditEntity.revisionNumber().desc());
+                    .addOrder(AuditEntity.revisionNumber().asc());
                 
                 List resultList = query.getResultList();
                 List<HistoryRecord<Type>> result = new ArrayList<HistoryRecord<Type>>(resultList.size());
                
-                HistoryRecord<Type> younger = null;
-                for(Object o : query.getResultList()) {
+                for(Object o : resultList) {
                     Object[] oa = (Object[])o;
   
                     HistoryRecord<Type> record = new HistoryRecord<Type>();
@@ -65,12 +65,8 @@ public class HibernateEnversHistoryDao
                     record.setObject((Type)oa[0]);
                     record.setRevison((AuditRevisionEntity)oa[1]);
                     record.setRevisonType((RevisionType)oa[2]);
-                    
-                    if(younger != null)
-                        younger.setPrevious(record);
-                    
+ 
                     result.add(record);
-                    younger = record;
                 }
                 
                 return result;

@@ -39,6 +39,7 @@ public class MessageInterceptor implements HandlerInterceptor {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         // add previously retrived messages to modelmap
+        @SuppressWarnings("unchecked")
         List<String> messages = (List<String>) request.getAttribute(REQUEST_KEY);
         modelAndView.addObject(MODEL_KEY, messages);
     }

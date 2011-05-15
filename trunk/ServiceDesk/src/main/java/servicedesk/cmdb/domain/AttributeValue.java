@@ -6,14 +6,10 @@
 package servicedesk.cmdb.domain;
 
 import java.io.Serializable;
-import javax.persistence.AssociationOverride;
-import javax.persistence.AssociationOverrides;
 import javax.persistence.Column;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.persistence.Version;
 
 /**
  *
@@ -22,6 +18,7 @@ import javax.persistence.Version;
 @javax.persistence.Entity
 @Table(name="C2_CLASS_ATTRIBUTE_VALUES")
 public class AttributeValue implements Comparable<AttributeValue>, Serializable {
+    private static final long serialVersionUID = 1L;
 
     private AttributeValueId pk = new AttributeValueId();
     private String value;

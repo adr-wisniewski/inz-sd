@@ -22,6 +22,7 @@ import servicedesk.domain.Employee;
 @javax.persistence.Entity
 @Table(name="C2_ITEMS_EMPLOYEE")
 public class EmployeeItem extends Item {
+    private static final long serialVersionUID = 1L;
     private Employee employee;
     private EmployeeItemClass employeeItemClass;
 

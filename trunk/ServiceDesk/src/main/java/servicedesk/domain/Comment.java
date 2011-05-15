@@ -31,6 +31,7 @@ import java.util.Date;
 @Entity
 @Table(name="COMMENTS")
 public class Comment implements Serializable {
+    private static final long serialVersionUID = 1L;
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->

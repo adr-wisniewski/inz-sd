@@ -19,7 +19,7 @@
                format: function(s) {  
                    var values = {
                         <c:forEach items="${priorities}" var="priority">
-                        "${priority.name}": ${priority.viewOrder},         
+                        "${priority.name}": ${priority.order},         
                         </c:forEach>
                    };
 
@@ -36,7 +36,7 @@
                format: function(s) {  
                    var values = {
                         <c:forEach items="${impacts}" var="impacts">
-                        "${impacts.name}": ${impacts.viewOrder},         
+                        "${impacts.name}": ${impacts.order},         
                         </c:forEach>
                    };
 
@@ -68,7 +68,7 @@
                     headers: {
                         3 : { sorter : 'rfc_priority' }, 
                         4 : { sorter : 'rfc_impact' },
-                        5 : { sorter : 'rfc_state' },
+                        5 : { sorter : 'rfc_state' }
                     }
                 });
             });
@@ -76,13 +76,13 @@
         <table class="custom tablesorter rfcs">
             <thead>
                 <tr>
-                    <th><spring:message code="field.change.rfc.id" /></th>
+                    <th class="fit"><spring:message code="field.change.rfc.id" /></th>
                     <th><spring:message code="field.change.rfc.title" /></th>
                     <th><spring:message code="field.change.rfc.description" /></th>
-                    <th><spring:message code="field.change.rfc.priority" /></th>
-                    <th><spring:message code="field.change.rfc.impact" /></th>
-                    <th><spring:message code="field.change.rfc.state" /></th>
-                    <th class="actions1"><spring:message code="caption.actions" /></th>
+                    <th class="fit"><spring:message code="field.change.rfc.priority" /></th>
+                    <th class="fit"><spring:message code="field.change.rfc.impact" /></th>
+                    <th class="fit"><spring:message code="field.change.rfc.state" /></th>
+                    <th class="fit noSort"><spring:message code="caption.actions" /></th>
                 </tr>
                 <tr>
                     <td>
@@ -148,7 +148,7 @@
                         <td>
                             ${rfc.state.name}
                         </td>
-                        <td class="actions1">
+                        <td class="actions">
                             <ui:actionButton label="details.label"
                                 action="/change/rfc/${rfc.id}"
                                 cssClass="details"/>

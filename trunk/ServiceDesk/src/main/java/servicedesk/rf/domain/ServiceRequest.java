@@ -30,6 +30,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 @Entity
 @Table(name="REQUESTS")
 public class ServiceRequest implements DomainObject<Integer>, IEvent, Serializable {
+    private static final long serialVersionUID = 1L;
 	@Id
 	@SequenceGenerator(name = "request_seq", sequenceName = "event_id_seq")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "request_seq")

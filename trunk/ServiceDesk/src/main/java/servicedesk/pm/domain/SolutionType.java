@@ -34,6 +34,7 @@ public class SolutionType implements DictionaryProperty<String>, Serializable {
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
 	public static final SolutionType PERMANENT = new SolutionType("PERM", "Permanent");
+    private static final long serialVersionUID = 1L;
 
 
 	/** 

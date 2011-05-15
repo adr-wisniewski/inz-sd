@@ -42,6 +42,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
     @NamedQuery(name="Announcement.upToDate", query="from Announcement as a where a.publicationTime <= :date order by a.publicationTime desc")
 )
 public class Announcement implements DomainObject<Integer>, CreatorAutomaticallyMarked, HasAttachments, Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer id;
     private String title;
     private String content;

@@ -17,6 +17,7 @@ public class RfcController extends AbstractRfcController {
     
     static protected final String VIEW_BROWSE = "/change/rfc/browse";
     static protected final String VIEW_MANAGE = "/change/rfc/manage";
+    static protected final String VIEW_ADMINISTER = "/change/rfc/administer";
     
     @RequestMapping(value = "/browse")
     public String browse() {
@@ -26,5 +27,10 @@ public class RfcController extends AbstractRfcController {
     @RequestMapping(value = "/manage")
     public String manage() {
         return VIEW_MANAGE;
+    }
+    
+    @RequestMapping(value = "/administer")
+    public String administer() {
+        return VIEW_ADMINISTER;
     }
 }

@@ -66,6 +66,28 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">770ab9ff-b294-41b8-a7e2-928a165a89af</identifier>
+      </ID>
+      <name>LAST_EDIT_BY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">003d1e81-1907-4549-9d92-a6f86e39e6d8</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">21b5e517-6fe3-46ce-a1bc-ffee842988c4</identifier>
       </ID>
       <name>IMPACT_CODE</name>
@@ -1159,6 +1181,44 @@
     </constraint>
     <constraint class="oracle.javatools.db.FKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b31bd969-4d11-47f9-ad40-5758aa420f7e</identifier>
+      </ID>
+      <name>INCIDENTS_EMPLOYEES_FK2</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>LAST_EDIT_BY</name>
+          <identifier class="java.lang.String">770ab9ff-b294-41b8-a7e2-928a165a89af</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>INCIDENTS</name>
+            <identifier class="java.lang.String">1a82df75-c4bd-4208-8265-d48fe7230208</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD3</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.OFFLINE_ONLY</key>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>EMPLOYEES_PK</name>
+        <identifier class="java.lang.String">b69d4833-56ab-4c04-a8a1-ce6a5b1e5786</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>EMPLOYEES</name>
+          <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
+          <schemaName>HR</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">5ba1f6d0-cde4-46e1-82d9-2419595b1932</identifier>
       </ID>
       <name>INCIDENTS_IMPACT_TYPES_FK</name>
@@ -1328,7 +1388,6 @@
             <schemaName>SD3</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>SD3</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>

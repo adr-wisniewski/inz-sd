@@ -17,7 +17,7 @@
                     <th><spring:message code="field.cmdb.item.class" /></th>
                     <th><spring:message code="field.cmdb.item.label" /></th>
                     <th><spring:message code="field.cmdb.item.overview" /></th>
-                    <th class="actions1"><spring:message code="caption.actions" /></th>
+                    <th class="fit noSort"><spring:message code="caption.actions" /></th>
                 </tr>
                 <tr>
                     <td>
@@ -46,7 +46,7 @@
                         <td>
                             ${item.overview}
                         </td>
-                        <td class="actions1">
+                        <td class="actions">
                             <ui:actionButton label="details.label"
                                 action="/cmdb/item/${item.id}"
                                 cssClass="details"/>

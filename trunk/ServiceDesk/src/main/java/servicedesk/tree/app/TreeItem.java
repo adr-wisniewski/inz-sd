@@ -7,7 +7,7 @@ import java.util.List;
 import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 
 public class TreeItem {
-	private HierarchicalDomainObject value;
+	private HierarchicalDomainObject<?> value;
 	
 	private List<TreeItem> childs = new LinkedList<TreeItem>();
 	
@@ -19,7 +19,7 @@ public class TreeItem {
 	
 	private boolean leaf = true;
 	
-	public TreeItem(HierarchicalDomainObject item) {
+	public TreeItem(HierarchicalDomainObject<?> item) {
 		this.value = item;
 	}
 
@@ -31,11 +31,11 @@ public class TreeItem {
 		return String.valueOf(value.getId());
 	}
 	
-	public HierarchicalDomainObject getValue() {
+	public HierarchicalDomainObject<?> getValue() {
 		return value;
 	}
 
-	public void setValue(HierarchicalDomainObject value) {
+	public void setValue(HierarchicalDomainObject<?> value) {
 		this.value = value;
 	}
 
@@ -49,7 +49,11 @@ public class TreeItem {
 	}
 	
 	public boolean isParent(TreeItem other) {
-		return this.getValue().getId().equals(other.getValue().getParentId());
+            
+            if(other.getValue().getParent() == null)
+                return false;
+            
+            return this.getValue().getId().equals(other.getValue().getParent().getId());
 	}
 
 	public TreeItem getParent() {

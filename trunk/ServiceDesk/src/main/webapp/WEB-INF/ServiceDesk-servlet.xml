@@ -80,7 +80,7 @@
         <property name="order" value="0"></property>
     </bean>
 
-    <!--bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" abstract="true">
+    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" abstract="true">
         <property name="defaultErrorView" value="defaultError"/>
-    </bean-->
+    </bean>
 </beans>

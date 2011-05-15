@@ -10,15 +10,17 @@ import servicedesk.cmdb.domain.UniversalItemClass;
 import servicedesk.cmdb.domain.helper.ItemClassCriteria;
 import servicedesk.infrastructure.general.dao.CrudDao;
 import servicedesk.infrastructure.general.dao.HierarchyDao;
+import servicedesk.infrastructure.general.dao.NamedDao;
 
 /**
  *
  * @author Adrian
  */
-public interface UniversalItemClassDao extends HierarchyDao<UniversalItemClass, Integer>, CrudDao<UniversalItemClass, Integer>
+public interface UniversalItemClassDao 
+    extends HierarchyDao<UniversalItemClass, Integer>, 
+        CrudDao<UniversalItemClass, Integer>,
+        NamedDao<UniversalItemClass, Integer> 
 {
-    public UniversalItemClass       getByName(String name);
-    public UniversalItemClass       loadByName(String name);
     public List<UniversalItemClass> searchByCriteria(ItemClassCriteria criteria);
 }
 

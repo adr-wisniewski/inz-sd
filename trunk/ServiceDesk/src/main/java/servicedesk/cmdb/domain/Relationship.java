@@ -26,6 +26,7 @@ import javax.persistence.Transient;
     @NamedQuery(name="Relationship.findSame", query="from Relationship as rel where rel.relationshipClass = :clazz and rel.sourceItem = :source and rel.targetItem = :target")
 )
 public class Relationship extends Entity {
+    private static final long serialVersionUID = 1L;
     private RelationshipClass relationshipClass;
     private Item sourceItem;
     private Item targetItem;

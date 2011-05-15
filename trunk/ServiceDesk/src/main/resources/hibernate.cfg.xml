@@ -20,7 +20,7 @@
     <property name="hibernate.cache.use_second_level_cache">false</property>
     <property name="hibernate.cache.use_query_cache">false</property>
     <!--property name="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</prop-->
-
+    
     <!-- mappings -->
     <mapping class="servicedesk.infrastructure.security.domain.Role"/>
     <mapping class="servicedesk.infrastructure.security.domain.User"/>
@@ -52,8 +52,7 @@
     <mapping class="servicedesk.cmdb.domain.UniversalItemClass"/>
     
     <mapping class="servicedesk.change.domain.Rfc"/>
-    <mapping class="servicedesk.change.domain.RfcComment"/>
-    <mapping class="servicedesk.change.domain.RfcCommentId"/>
+    <mapping class="servicedesk.change.domain.RfcCategory"/>
     <mapping class="servicedesk.change.domain.RfcPriority"/>
     <mapping class="servicedesk.change.domain.RfcImpact"/>
 

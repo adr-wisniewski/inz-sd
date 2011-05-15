@@ -12,8 +12,7 @@
 
 <script type="text/javascript" src="<c:url value="/static/scripts/jquery/jquery-1.6.js" /> "></script>
 <script type="text/javascript" src="<c:url value="/static/scripts/jquery/hoverIntent.js" /> "></script>
-<script type="text/javascript" src="<c:url value="/static/scripts/jquery/superfish.js" /> "></script>
-<script type="text/javascript" src="<c:url value="/static/scripts/jquery/jquery.tablesorter.min.js" /> "></script>
+<script type="text/javascript" src="<c:url value="/static/scripts/jquery/jquery.tablesorter.js" /> "></script>
 <script type="text/javascript" src="<c:url value="/static/scripts/jquery/jquery.cookie.js" /> "></script>
 <script type="text/javascript" src="<c:url value="/static/scripts/jquery/jquery.treeview.js" /> "></script>
 <script type="text/javascript" src="<c:url value="/static/scripts/jquery/jquery-ui-1.8.12.custom.min.js" /> "></script>

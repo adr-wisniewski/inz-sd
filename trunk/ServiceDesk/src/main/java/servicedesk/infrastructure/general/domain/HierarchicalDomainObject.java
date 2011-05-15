@@ -1,22 +1,23 @@
 package servicedesk.infrastructure.general.domain;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 /**
  * 
+ * @param <Id> 
  * @author PKalanski
  *
  * Interfejs dla obiektow tworzacych hierarchie
  */
-public interface HierarchicalDomainObject<Id extends Serializable> extends DomainObject<Id> {
+public interface HierarchicalDomainObject<Id extends Serializable> extends NamedDomainObject<Id> {
 	/**
-	 * @return unikalny identyfikator elementu hierarchii
+	 * @return obiekt rodzica
 	 */
-	public Id getParentId();
+        public HierarchicalDomainObject<Id> getParent();
         
-	/**
-	 * 
-	 * @return nazwa elementu
+        /**
+	 * @return kolekcja obiektów potomnych
 	 */
-	public String getName();
+        public Collection<? extends HierarchicalDomainObject<Id>>  getChildren();
 }

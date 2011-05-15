@@ -16,14 +16,14 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 import servicedesk.change.domain.Rfc;
 import servicedesk.change.domain.helper.RfcCriteria;
-import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
+import servicedesk.infrastructure.general.dao.AbstractHibernateDao;
 
 /**
  *
  * @author Adrian
  */
 @Repository
-public class RfcDaoImpl extends AbstractHibernateCrudDao<Rfc, Integer> implements RfcDao {
+public class RfcDaoImpl extends AbstractHibernateDao<Rfc, Integer> implements RfcDao {
 
 
     @Override
@@ -33,6 +33,7 @@ public class RfcDaoImpl extends AbstractHibernateCrudDao<Rfc, Integer> implement
 
         HibernateCallback<List<Rfc>> callback = new HibernateCallback<List<Rfc>>() {
             @Override
+            @SuppressWarnings("unchecked")
             public List<Rfc> doInHibernate(Session session) throws HibernateException, SQLException
             {
                 Criteria criteria = session.createCriteria(Rfc.class);

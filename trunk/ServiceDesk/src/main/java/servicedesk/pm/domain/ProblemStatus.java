@@ -29,6 +29,7 @@ public class ProblemStatus implements DictionaryProperty<String>, Serializable {
 	 * Status dla zamknietego problemu
 	 */
 	public static final ProblemStatus CLOSED = new ProblemStatus("CLOS", "Closed");
+    private static final long serialVersionUID = 1L;
 	
 	/** 
 	 * <!-- begin-UML-doc -->

@@ -20,6 +20,7 @@ import servicedesk.dictionary.DictionaryProperty;
 @Entity
 @Table(name = "IMPACT_TYPES_PM")
 public class ProblemImpact implements DictionaryProperty<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->

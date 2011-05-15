@@ -20,6 +20,7 @@ import servicedesk.cmdb.domain.helper.ItemVisitor;
 @javax.persistence.Entity
 @Table(name="C2_ITEMS_RFC")
 public class RfcItem extends Item {
+    private static final long serialVersionUID = 1L;
     private Rfc rfc;
     private RfcItemClass rfcItemClass;
 

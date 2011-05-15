@@ -12,32 +12,19 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 import servicedesk.cmdb.domain.UniversalItemClass;
 import servicedesk.cmdb.domain.helper.ItemClassCriteria;
-import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
+import servicedesk.infrastructure.general.dao.AbstractHibernateDao;
 
 /**
  *
  * @author Adrian
  */
 @Repository
-public class UniversalItemClassDaoImpl extends AbstractHibernateCrudDao<UniversalItemClass, Integer> implements UniversalItemClassDao {
-
-    @Override
-    public UniversalItemClass getByName(String name) {
-        List<UniversalItemClass> list = getHibernateTemplate().findByNamedQueryAndNamedParam("UniversalItemClass.findByName", "name", name);
-        return DataAccessUtils.singleResult(list);
-    }
-    
-    @Override
-    public UniversalItemClass loadByName(String name) {
-        List<UniversalItemClass> list = getHibernateTemplate().findByNamedQueryAndNamedParam("UniversalItemClass.findByName", "name", name);
-        return DataAccessUtils.requiredSingleResult(list);
-    }
+public class UniversalItemClassDaoImpl extends AbstractHibernateDao<UniversalItemClass, Integer> implements UniversalItemClassDao {
 
     @Override
     public List<UniversalItemClass> searchByCriteria(final ItemClassCriteria searchcriteria) {
@@ -47,6 +34,7 @@ public class UniversalItemClassDaoImpl extends AbstractHibernateCrudDao<Universa
         return getHibernateTemplate().execute(new HibernateCallback<List<UniversalItemClass>>() {
 
             @Override
+            @SuppressWarnings("unchecked")
             public List<UniversalItemClass> doInHibernate(Session session)
                     throws HibernateException, SQLException
             {

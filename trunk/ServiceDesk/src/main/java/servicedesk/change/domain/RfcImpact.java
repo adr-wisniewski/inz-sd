@@ -14,8 +14,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import servicedesk.infrastructure.general.domain.DomainObject;
-import servicedesk.infrastructure.general.domain.ViewOrdered;
+import servicedesk.infrastructure.general.domain.NamedDomainObject;
 
 /**
  *
@@ -23,11 +22,12 @@ import servicedesk.infrastructure.general.domain.ViewOrdered;
  */
 @Entity
 @Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
-@Table(name="RFC_IMPACT")
-public class RfcImpact implements DomainObject<Integer>, ViewOrdered, Serializable   {
+@Table(name="RFC_IMPACTS")
+public class RfcImpact implements NamedDomainObject<Integer>, Serializable   {
+    private static final long serialVersionUID = 1L;
     private Integer id;
     private String name;
-    private Integer viewOrder;
+    private Integer order;
 
     /**
      * @return the id
@@ -35,7 +35,7 @@ public class RfcImpact implements DomainObject<Integer>, ViewOrdered, Serializab
     @Id
     @SequenceGenerator(name = "RFC_IMPACT_SEQ", sequenceName = "RFC_IMPACT_SEQ")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RFC_IMPACT_SEQ")
-    @Column(name = "ID", precision = 10)
+    @Column(name = "IMPACT_ID", precision = 10)
     @Override
     public Integer getId() {
         return id;
@@ -52,6 +52,7 @@ public class RfcImpact implements DomainObject<Integer>, ViewOrdered, Serializab
      * @return the name
      */
     @Column(name = "NAME", length = 200, nullable=false)
+    @Override
     public String getName() {
         return name;
     }
@@ -64,18 +65,17 @@ public class RfcImpact implements DomainObject<Integer>, ViewOrdered, Serializab
     }
 
     /**
-     * @return the viewOrder
+     * @return the order
      */
-    @Column(name = "VIEW_ORDER", precision = 4, nullable=false)
-    @Override
-    public Integer getViewOrder() {
-        return viewOrder;
+    @Column(name = "`ORDER`", precision = 4, nullable=false)
+    public Integer getOrder() {
+        return order;
     }
 
     /**
-     * @param viewOrder the viewOrder to set
+     * @param order the order to set
      */
-    public void setViewOrder(Integer viewOrder) {
-        this.viewOrder = viewOrder;
+    public void setOrder(Integer order) {
+        this.order = order;
     }
 }

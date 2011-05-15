@@ -13,6 +13,7 @@ import servicedesk.cmdb.domain.ItemClass;
 import servicedesk.cmdb.domain.RelationshipClass;
 import servicedesk.cmdb.service.RelationshipClassService;
 import servicedesk.infrastructure.general.validation.AbstractValidator;
+import servicedesk.infrastructure.general.validation.ValidatorUtils;
 
 /**
  *
@@ -31,7 +32,7 @@ public class RelationshipClassAddValidator extends AbstractValidator<Relationshi
     protected void doValidate(RelationshipClass target, Errors errors) {
         entityClassAddValidator.doValidate(target, errors);
         checkSimple(target, errors);
-        checkUniqueName(target, errors);
+        ValidatorUtils.rejectNotUniqueName(target, errors, relationshipClassService, "validate.cmdb.relationship.class.name.notunique");
         checkLiskovSubstitution(target, errors);
     }
 
@@ -39,12 +40,6 @@ public class RelationshipClassAddValidator extends AbstractValidator<Relationshi
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "label", "validate.cmdb.relationship.class.label.empty");
         ValidationUtils.rejectIfEmpty(errors, "sourceItemClass", "validate.cmdb.relationship.class.sourceItemClass.empty");
         ValidationUtils.rejectIfEmpty(errors, "targetItemClass", "validate.cmdb.relationship.class.targetItemClass.empty");
-    }
-
-    protected void checkUniqueName(RelationshipClass target, Errors errors) {
-        RelationshipClass sameNameClass = relationshipClassService.getByName(target.getName());
-        if(sameNameClass != null && !sameNameClass.getId().equals(target.getId()))
-            errors.rejectValue("name", "validate.cmdb.relationship.class.name.notunique");
     }
 
     private void checkLiskovSubstitution(RelationshipClass target, Errors errors) {

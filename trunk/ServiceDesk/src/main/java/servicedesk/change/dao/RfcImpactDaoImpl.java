@@ -9,7 +9,7 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.springframework.stereotype.Repository;
 import servicedesk.change.domain.RfcImpact;
-import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
+import servicedesk.infrastructure.general.dao.AbstractHibernateDao;
 
 /**
  *
@@ -17,11 +17,12 @@ import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
  */
 @Repository
 public class RfcImpactDaoImpl 
-    extends AbstractHibernateCrudDao<RfcImpact, Integer> 
+    extends AbstractHibernateDao<RfcImpact, Integer> 
     implements RfcImpactDao {
     
     @Override
+    @SuppressWarnings("unchecked")
     public List<RfcImpact> getAll() {
-        return getHibernateTemplate().findByCriteria(DetachedCriteria.forClass(RfcImpact.class).addOrder(Order.asc("viewOrder")));
+        return getHibernateTemplate().findByCriteria(DetachedCriteria.forClass(RfcImpact.class).addOrder(Order.asc("order")));
     }
 }

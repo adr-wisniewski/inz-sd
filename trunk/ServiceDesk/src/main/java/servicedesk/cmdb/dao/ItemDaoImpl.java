@@ -84,6 +84,13 @@ public class ItemDaoImpl extends HibernateDaoSupport implements ItemDao {
     public Item get(Integer id) {
         return postprocess(getHibernateTemplate().get(Item.class, id));
     }
+    
+    @Override
+    public List<Item> getAll() {
+        List<Item> result = getHibernateTemplate().loadAll(Item.class);
+        postprocess(result);
+        return result;
+    }
 
     @Override
     public void persist(UniversalItem object) {
@@ -127,6 +134,7 @@ public class ItemDaoImpl extends HibernateDaoSupport implements ItemDao {
                 Criteria criteria = session.createCriteria(Item.class);
                 initSearchCriteria(criteria, itemCriteria);
 
+                @SuppressWarnings("unchecked")
                 Iterable<Item> result = postprocess(criteria.list());
 
                 if(itemCriteria.getItemClass() != null) {
@@ -167,6 +175,7 @@ public class ItemDaoImpl extends HibernateDaoSupport implements ItemDao {
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         public void visit(UniversalItemClass universalItemClass) {
            items = getHibernateTemplate().findByNamedQueryAndNamedParam(
                "UniversalItem.findByClass", "itemClass", itemClass
@@ -174,26 +183,31 @@ public class ItemDaoImpl extends HibernateDaoSupport implements ItemDao {
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         public void visit(EmployeeItemClass employeeItemClass) {
             items = (List)getHibernateTemplate().loadAll(EmployeeItem.class);
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         public void visit(IncidentItemClass incidentItemClass) {
             items = (List)getHibernateTemplate().loadAll(IncidentItem.class);
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         public void visit(ProblemItemClass problemItemClass) {
             items = (List)getHibernateTemplate().loadAll(ProblemItem.class);
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         public void visit(RfcItemClass rfcItemClass) {
             items = (List)getHibernateTemplate().loadAll(RfcItem.class);
         }
 
         @Override
+        @SuppressWarnings("unchecked")
         public void visit(ServiceItemClass serviceItemClass) {
             items = (List)getHibernateTemplate().loadAll(ServiceItem.class);
         }

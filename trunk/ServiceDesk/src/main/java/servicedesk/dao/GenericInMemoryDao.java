@@ -12,14 +12,18 @@ import servicedesk.infrastructure.general.util.GenericUtil;
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
+ * @param <Type> 
+ * @param <Id> 
  * @author User
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
 abstract public class GenericInMemoryDao<Type extends DomainObject<Id>, Id extends Serializable>  {
 
+    @SuppressWarnings("unchecked")
         private Class<Type> typeClass = (Class<Type>)GenericUtil
             .getTypeArgument(GenericInMemoryDao.class, getClass(), 0);
 
+    @SuppressWarnings("unchecked")
         private Class<Id> idClass = (Class<Id>)GenericUtil
             .getTypeArgument(GenericInMemoryDao.class, getClass(), 1);
 
@@ -44,10 +48,8 @@ abstract public class GenericInMemoryDao<Type extends DomainObject<Id>, Id exten
 	private List<Type> values;
 	
 	/** 
-	 * /**
-	 *  * @param values the values to set
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+         * @param values 
+         * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
 	public void setValues(List<Type> values) {
 		// begin-user-code
@@ -96,5 +98,5 @@ abstract public class GenericInMemoryDao<Type extends DomainObject<Id>, Id exten
 	 * @return
 	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	 */
-	abstract protected List<Type> initValues();
+	protected abstract List<Type> initValues();
 }

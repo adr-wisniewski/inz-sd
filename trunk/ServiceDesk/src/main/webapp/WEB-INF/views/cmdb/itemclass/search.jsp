@@ -14,12 +14,12 @@
         <table class="tablesorter">
             <thead>
                 <tr>
-                    <th><spring:message code="field.cmdb.entity.class.id" /></th>
+                    <th class="fit"><spring:message code="field.cmdb.entity.class.id" /></th>
                     <th><spring:message code="field.cmdb.entity.class.name" /></th>
                     <th><spring:message code="field.cmdb.entity.class.description" /></th>
                     <th><spring:message code="field.cmdb.entity.class.parent.name" /></th>
-                    <th><spring:message code="field.cmdb.entity.class.abstraction" /></th>
-                    <th class="actions1"><spring:message code="caption.actions" /></th>
+                    <th class="fit"><spring:message code="field.cmdb.entity.class.abstraction" /></th>
+                    <th class="fit noSort"><spring:message code="caption.actions" /></th>
                 </tr>
                 <tr>
                     <td>
@@ -75,7 +75,7 @@
                         <td>
                             <print:yesorno value="${itemClass.abstraction}" />
                         </td>
-                        <td class="actions1">
+                        <td class="actions">
                             <ui:actionButton label="details.label"
                                 action="/cmdb/item/class/${itemClass.id}"
                                 cssClass="details"/>

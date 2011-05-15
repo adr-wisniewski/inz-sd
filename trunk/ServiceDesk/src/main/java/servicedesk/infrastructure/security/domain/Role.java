@@ -21,6 +21,7 @@ import servicedesk.dictionary.DictionaryProperty;
 @NamedQueries({
     @NamedQuery(name = "Role.findByCode", query = "SELECT r FROM Role r WHERE r.code = ?")})
 public class Role implements DictionaryProperty<String>, Serializable {
+    private static final long serialVersionUID = 1L;
     private String code;
     private String description;
     private Collection<Privilege> privileges;

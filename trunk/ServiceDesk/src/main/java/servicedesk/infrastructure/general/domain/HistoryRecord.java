@@ -12,11 +12,10 @@ import org.hibernate.envers.RevisionType;
  *
  * @author Adrian
  */
-public class HistoryRecord<Type extends DomainObject<? extends Serializable>> implements Timestamped {
+public class HistoryRecord<Type extends DomainObject<? extends Serializable>> {
     private Type object;
     private AuditRevisionEntity revison;
     private RevisionType revisonType;
-    private HistoryRecord<Type> previous;
 
     public HistoryRecord() {
         
@@ -62,24 +61,5 @@ public class HistoryRecord<Type extends DomainObject<? extends Serializable>> im
      */
     public void setRevisonType(RevisionType revisonType) {
         this.revisonType = revisonType;
-    }
-
-    @Override
-    public Date getTimestamp() {
-        return revison.getTimestamp();
-    }
-
-    /**
-     * @return the previous
-     */
-    public HistoryRecord<Type> getPrevious() {
-        return previous;
-    }
-
-    /**
-     * @param previous the previous to set
-     */
-    public void setPrevious(HistoryRecord<Type> previous) {
-        this.previous = previous;
     }
 }

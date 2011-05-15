@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <References xmlns="http://xmlns.oracle.com/adf/jndi">
-   <Reference name="hr" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="hr" xmlns="">
+   <Reference name="localDatabase" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="localDatabase" xmlns="">
       <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
       <RefAddresses>
          <StringRefAddr addrType="sid">

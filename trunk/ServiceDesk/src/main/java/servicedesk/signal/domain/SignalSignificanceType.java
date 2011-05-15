@@ -11,6 +11,7 @@ import servicedesk.dictionary.DictionaryProperty;
 @Entity
 @Table(name="SIGNAL_SIGNIFICANCE_TYPES")
 public class SignalSignificanceType implements DictionaryProperty<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="SIGNIFICANCE_CODE")
 	private String code;

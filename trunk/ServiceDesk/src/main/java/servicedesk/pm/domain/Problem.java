@@ -49,6 +49,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 @NamedQueries({
     @NamedQuery(name = "Problem.get", query = "SELECT p FROM Problem p WHERE p.id = ?")})
 public class Problem implements DomainObject<Integer>, IEvent, Serializable {
+    private static final long serialVersionUID = 1L;
 
     /**
      * <!-- begin-UML-doc -->

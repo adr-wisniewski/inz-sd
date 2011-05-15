@@ -20,6 +20,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope(value="session", proxyMode=ScopedProxyMode.TARGET_CLASS)
 public class ListMessageContextHolder implements MessageContextHolder {
+    private static final long serialVersionUID = 1L;
 
     transient private MessageSource messageSource;
 

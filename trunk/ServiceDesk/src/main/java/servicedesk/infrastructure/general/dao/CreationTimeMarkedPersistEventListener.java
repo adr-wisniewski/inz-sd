@@ -18,6 +18,7 @@ import servicedesk.infrastructure.general.domain.TimestampAutomaticallyMarked;
  */
 @Component
 public class CreationTimeMarkedPersistEventListener implements PersistEventListener {
+    private static final long serialVersionUID = 1L;
     @Override
     public void onPersist(PersistEvent event) throws HibernateException {
 

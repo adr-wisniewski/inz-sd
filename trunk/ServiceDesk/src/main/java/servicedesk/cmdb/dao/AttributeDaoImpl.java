@@ -7,14 +7,14 @@ package servicedesk.cmdb.dao;
 
 import org.springframework.stereotype.Repository;
 import servicedesk.cmdb.domain.Attribute;
-import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
+import servicedesk.infrastructure.general.dao.AbstractHibernateDao;
 
 /**
  *
  * @author Adrian
  */
 @Repository
-public class AttributeDaoImpl extends AbstractHibernateCrudDao<Attribute, Integer> implements AttributeDao {
+public class AttributeDaoImpl extends AbstractHibernateDao<Attribute, Integer> implements AttributeDao {
 
 }
 

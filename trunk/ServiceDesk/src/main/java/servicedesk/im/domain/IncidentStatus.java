@@ -35,6 +35,7 @@ public class IncidentStatus implements DictionaryProperty<String>, Serializable 
 	 * Status dla rozwiazanego incydentu
 	 */
 	public static final IncidentStatus RESOLVED = new IncidentStatus("RESO", "Resolved");
+    private static final long serialVersionUID = 1L;
 	
 	/** 
 	 * <!-- begin-UML-doc -->

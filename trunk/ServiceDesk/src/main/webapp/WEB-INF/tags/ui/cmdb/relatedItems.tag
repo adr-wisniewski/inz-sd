@@ -23,7 +23,7 @@
                     <th><c:out value="${attribute.name}"/></th>
                 </c:forEach>
 
-                <th class="actions2"><spring:message code="caption.actions" /></th>
+                <th class="fit"><spring:message code="caption.actions" /></th>
             </tr>
         </thead>
         <tbody>
@@ -46,7 +46,7 @@
                         <td><cmdb:attributeValue attribute="${attribute}" entity="${relationship}" /></td>
                     </c:forEach>
 
-                    <td class="actions2">
+                    <td class="actions">
                         <ui:actionButton label="edit.label"
                              action="/cmdb/relationship/${relationship.id}/edit"
                              cssClass="edit"/>

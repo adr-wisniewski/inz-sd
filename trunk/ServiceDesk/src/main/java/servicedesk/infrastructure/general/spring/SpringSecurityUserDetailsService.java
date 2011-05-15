@@ -7,6 +7,7 @@ package servicedesk.infrastructure.general.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -35,4 +36,13 @@ public class SpringSecurityUserDetailsService implements UserDetailsService {
         return new SpringSecurityUserAdapter(user);
     }
 
+    public User getCurrentUser() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (!(principal instanceof SpringSecurityUserAdapter))
+            throw new IllegalStateException("AuthoredDomainObjectEventListener requires use of SpringSecurityUserAdapter as authentication");
+
+        User user = ((SpringSecurityUserAdapter)principal).getUser();
+        return user;
+    }
 }

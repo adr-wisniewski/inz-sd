@@ -10,8 +10,10 @@ import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Component;
 import servicedesk.change.dao.RfcImpactDao;
 import servicedesk.change.dao.RfcPriorityDao;
+import servicedesk.change.dao.RfcResolutionDao;
 import servicedesk.change.domain.RfcImpact;
 import servicedesk.change.domain.RfcPriority;
+import servicedesk.change.domain.RfcResolution;
 import servicedesk.change.domain.RfcState;
 import servicedesk.change.editor.RfcStateEditor;
 import servicedesk.cmdb.dao.ItemClassDao;
@@ -164,7 +166,10 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
         @Autowired
         private RfcImpactDao rfcImpactDao;
         @Autowired
+        private RfcResolutionDao rfcResolutionDao;
+        @Autowired
         private RfcStateEditor rfcStateEditor;
+        
 	
 	public void setIncidentPriorityDao(IncidentPriorityDao incidentPriorityDao) {
 		this.incidentPriorityDao = incidentPriorityDao;
@@ -305,13 +310,14 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
     	
     	registry.registerCustomEditor(Service.class, new ServiceEditor( serviceDao ));
 
-        registry.registerCustomEditor(UniversalItemClass.class, new DomainObjectEditor(universalItemClassDao));
-        registry.registerCustomEditor(Item.class, new DomainObjectEditor(itemDao));
-        registry.registerCustomEditor(ItemClass.class, new DomainObjectEditor(itemClassDao));
-        registry.registerCustomEditor(RelationshipClass.class, new DomainObjectEditor(relationshipClassDao));
+        registry.registerCustomEditor(UniversalItemClass.class, new DomainObjectEditor<UniversalItemClass>(universalItemClassDao));
+        registry.registerCustomEditor(Item.class, new DomainObjectEditor<Item>(itemDao));
+        registry.registerCustomEditor(ItemClass.class, new DomainObjectEditor<ItemClass>(itemClassDao));
+        registry.registerCustomEditor(RelationshipClass.class, new DomainObjectEditor<RelationshipClass>(relationshipClassDao));
     
-        registry.registerCustomEditor(RfcPriority.class, new DomainObjectEditor( rfcPriorityDao ));
-        registry.registerCustomEditor(RfcImpact.class, new DomainObjectEditor( rfcImpactDao ));
+        registry.registerCustomEditor(RfcPriority.class, new DomainObjectEditor<RfcPriority>( rfcPriorityDao ));
+        registry.registerCustomEditor(RfcImpact.class, new DomainObjectEditor<RfcImpact>( rfcImpactDao ));
+        registry.registerCustomEditor(RfcResolution.class, new DomainObjectEditor<RfcResolution>( rfcResolutionDao ));
         registry.registerCustomEditor(RfcState.class, rfcStateEditor);
     }
 }

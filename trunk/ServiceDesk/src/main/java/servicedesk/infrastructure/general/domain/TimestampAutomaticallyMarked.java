@@ -10,6 +10,7 @@ import java.util.Date;
  *
  * @author Adrian
  */
-public interface TimestampAutomaticallyMarked extends Timestamped {
+public interface TimestampAutomaticallyMarked {
+    public Date getTimestamp();
     public void setTimestamp(Date timestamp);
 }

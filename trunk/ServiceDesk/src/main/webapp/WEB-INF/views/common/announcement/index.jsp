@@ -23,7 +23,9 @@
         </ui:actionButton>
     </jsp:attribute>
     <jsp:attribute name="bottom">
-        <ui:actionButton label="add.label" cssClass="add" action="/common/announcement/add" />
+        <p class="buttons">
+            <ui:actionButton label="add.label" cssClass="add" action="/common/announcement/add" />
+        </p>
     </jsp:attribute>
 </ui:announcements>
 

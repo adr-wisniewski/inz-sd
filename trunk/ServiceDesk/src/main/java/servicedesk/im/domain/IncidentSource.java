@@ -26,6 +26,7 @@ import servicedesk.dictionary.DictionaryProperty;
 public class IncidentSource implements DictionaryProperty<String>, Serializable {
 	public static final IncidentSource EVENT = new IncidentSource("EVNT", "Event");
 	public static final IncidentSource WEB_FORM = new IncidentSource("FORM", "Web-Form");
+    private static final long serialVersionUID = 1L;
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->

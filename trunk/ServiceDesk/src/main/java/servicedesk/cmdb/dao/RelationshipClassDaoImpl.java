@@ -100,8 +100,16 @@ public class RelationshipClassDaoImpl extends HibernateDaoSupport implements Rel
 
     @Override
     public RelationshipClass getByName(String name) {
+        @SuppressWarnings("unchecked")
         List<RelationshipClass> list = getHibernateTemplate().findByNamedQueryAndNamedParam("RelationshipClass.findByName", "name", name);
         return postprocess(DataAccessUtils.singleResult(list));
+    }
+    
+    @Override
+    public RelationshipClass loadByName(String name) {
+        @SuppressWarnings("unchecked")
+        List<RelationshipClass> list = getHibernateTemplate().findByNamedQueryAndNamedParam("RelationshipClass.findByName", "name", name);
+        return postprocess(DataAccessUtils.requiredSingleResult(list));
     }
 
     @Override
@@ -111,6 +119,7 @@ public class RelationshipClassDaoImpl extends HibernateDaoSupport implements Rel
 
         HibernateCallback<List<RelationshipClass>> callback = new HibernateCallback<List<RelationshipClass>>() {
             @Override
+            @SuppressWarnings("unchecked")
             public List<RelationshipClass> doInHibernate(Session session) throws HibernateException, SQLException {
                 Criteria criteria = session.createCriteria(RelationshipClass.class);
                 initSearchCriteria(criteria, searchcriteria);
@@ -174,6 +183,7 @@ public class RelationshipClassDaoImpl extends HibernateDaoSupport implements Rel
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public List<RelationshipClass> getAllForSourceClass(ItemClass itemClass) {
         List<RelationshipClass> result;
         GetForClassVisitor visitor = new GetForClassVisitor();
@@ -190,6 +200,7 @@ public class RelationshipClassDaoImpl extends HibernateDaoSupport implements Rel
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public List<RelationshipClass> getAllForTargetClass(ItemClass itemClass) {
         List<RelationshipClass> result;
         GetForClassVisitor visitor = new GetForClassVisitor();
@@ -204,7 +215,7 @@ public class RelationshipClassDaoImpl extends HibernateDaoSupport implements Rel
 
         return postprocess(result);
     }
-
+    
     protected static class GetForClassVisitor implements ItemClassVisitor {
         private ItemType type;
         private UniversalItemClass universalItemClass = null;

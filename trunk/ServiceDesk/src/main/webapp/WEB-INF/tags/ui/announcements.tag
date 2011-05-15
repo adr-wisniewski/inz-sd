@@ -44,8 +44,6 @@
     </c:if>
 
     <c:if test="${not empty pageScope.bottom}">
-        <div>
-            <jsp:invoke fragment="bottom" />
-        </div>
+        <jsp:invoke fragment="bottom" />
     </c:if>
 </ui:panel>

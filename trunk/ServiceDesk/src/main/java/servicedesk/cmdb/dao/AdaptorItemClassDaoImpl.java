@@ -5,9 +5,12 @@
 
 package servicedesk.cmdb.dao;
 
+import java.util.LinkedList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataRetrievalFailureException;
+import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.stereotype.Repository;
 import servicedesk.cmdb.domain.ItemClass;
 
@@ -54,6 +57,16 @@ public class AdaptorItemClassDaoImpl implements AdaptorItemClassDao {
         }
 
         return null;
+    }
+    
+    @Override
+    public ItemClass loadByName(String name) {
+        ItemClass result = getByName(name);
+        
+        if(result == null)
+            throw new EmptyResultDataAccessException(1);
+        
+        return result;
     }
 
     @Override

@@ -1,5 +1,7 @@
 set feedback off
 alter session set nls_date_language='AMERICAN';
+PROMPT === CREATING DATABASE ===
 @creates.sql
-@creates.audit.sql
+PROMPT === INSERTING DATA ===
 @inserts.sql
+PROMPT === ALL DONE ===

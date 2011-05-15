@@ -10,7 +10,7 @@
 </c:set>
 
 <input type="hidden" id="${name}" name="${name}" value="${value.id}" />
-<input type="text" value="${value.label}" id="itemPicker-${name}" readonly="readonly" onclick="${pick_script}" />
+<input class="picker" type="text" value="${value.label}" id="itemPicker-${name}" readonly="readonly" onclick="${pick_script}" />
 
 <c:if test="${not empty value}">
     <a href="/cmdb/item/${value.id}" target="_blank" class="standard_link">

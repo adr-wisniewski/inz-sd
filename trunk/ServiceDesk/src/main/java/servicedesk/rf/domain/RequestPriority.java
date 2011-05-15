@@ -11,6 +11,7 @@ import servicedesk.dictionary.DictionaryProperty;
 @Entity
 @Table(name = "PRIORITY_TYPES_RF")
 public class RequestPriority implements DictionaryProperty<String>, Serializable{
+    private static final long serialVersionUID = 1L;
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->

@@ -1,5 +1,6 @@
 package servicedesk.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import servicedesk.dictionary.DictionaryProperty;
@@ -15,7 +16,7 @@ public class HistoryBuilder {
 		this.actions = actions;
 	}
 
-	public <T extends DictionaryProperty> void addAttribute(T before, T after, HistoryActionType actionType) {
+	public <T extends DictionaryProperty<? extends Serializable>> void addAttribute(T before, T after, HistoryActionType actionType) {
 		if(before == null && after != null) {
 			actions.addAction(new HistoryAction(EMPTY_STRING, after.getName(), actionType));
 		}

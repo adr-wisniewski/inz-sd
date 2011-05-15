@@ -67,7 +67,7 @@ div.panel h1.caption,
 
 #logo h1,
 #navigation .menuGroup > ul {
-    background-image: -moz-linear-gradient(#008DB8, steelblue);
+    background: #008DB8;
 }
 
 .errorBox {
@@ -105,7 +105,12 @@ div.panel.success
 
 input[type="text"], select, textarea
 {
-    border-color: #BDC7D8
+    border-color: #BDC7D8;
+}
+
+.tablesorter thead input[type="text"], .tablesorter thead select, .tablesorter thead textarea
+{
+    border-color: #FCC200;
 }
 
 .errorBox {

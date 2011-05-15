@@ -1,9 +1,13 @@
 package servicedesk.em.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import servicedesk.dictionary.DictionaryProperty;
@@ -12,6 +16,7 @@ import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 @Entity
 @Table(name = "CATEGORIES_EM")
 public class EventCategory implements DictionaryProperty<String>, HierarchicalDomainObject<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -21,8 +26,12 @@ public class EventCategory implements DictionaryProperty<String>, HierarchicalDo
         @Column(name = "CATEGORY_CODE")
 	private String code;
 
-        @Column(name="parent_category")
-	private String parentCode;
+        @ManyToOne
+        @JoinColumn(name="parent_category")
+	private EventCategory parent;
+        
+        @OneToMany(mappedBy = "parent")
+        private List<EventCategory> children;
 
 	/** 
 	 * /**
@@ -120,7 +129,7 @@ public class EventCategory implements DictionaryProperty<String>, HierarchicalDo
 	@Override
 	public String toString() {
 		return "EventCategory [code=" + code + ", name=" + name
-				+ ", parentCode=" + parentCode + "]";
+                    + ", parentCode=" + (parent == null ? null : parent.getCode()) + "]";
 	}
 
 	/**
@@ -134,17 +143,33 @@ public class EventCategory implements DictionaryProperty<String>, HierarchicalDo
         public void setId(String code) {
             this.code = code;
         }
-	
-	public String getParentCode() {
-		return parentCode;
-	}
 
-	public void setParentCode(String parentCode) {
-		this.parentCode = parentCode;
-	}
-
+        /**
+         * @return the parent
+         */
         @Override
-	public String getParentId() {
-		return parentCode;
-	}
+        public EventCategory getParent() {
+            return parent;
+        }
+
+        /**
+         * @param parent the parent to set
+         */
+        public void setParent(EventCategory parent) {
+            this.parent = parent;
+        }
+
+        /**
+         * @return the children
+         */
+        public List<EventCategory> getChildren() {
+            return children;
+        }
+
+        /**
+         * @param children the children to set
+         */
+        public void setChildren(List<EventCategory> children) {
+            this.children = children;
+        }
 }

@@ -31,6 +31,7 @@ public class PrgInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
 
         String viewName = modelAndView.getViewName();
+        @SuppressWarnings("unchecked")
         Map<String, ?> model =
                 (Map<String, ?>)request.getSession().getAttribute(SESSION_MODEL_KEY);
 

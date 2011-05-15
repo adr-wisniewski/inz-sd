@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package servicedesk.cmdb.domain;
 
 import java.util.LinkedList;
@@ -29,16 +28,18 @@ import servicedesk.cmdb.domain.helper.ItemClassVisitor;
  * @author Adrian
  */
 @Entity
-@Table(name="C2_RELATION_CLASSES")
+@Table(name = "C2_RELATION_CLASSES")
 @PrimaryKeyJoinColumn(name = "CLASS_ID")
 @NamedQueries({
-    @NamedQuery(name="RelationshipClass.findByName", query="from RelationshipClass as clazz where clazz.name = :name"),
-    @NamedQuery(name="RelationshipClass.findForUniversalClass_source", query="from RelationshipClass as clazz where clazz.abstraction = false and clazz.sourceUniversalItemClass in (:parentChain)"),
-    @NamedQuery(name="RelationshipClass.findForUniversalClass_target", query="from RelationshipClass as clazz where clazz.abstraction = false and clazz.targetUniversalItemClass in (:parentChain)"),
-    @NamedQuery(name="RelationshipClass.findForType_source", query="from RelationshipClass as clazz where clazz.abstraction = false and clazz.sourceType = :type"),
-    @NamedQuery(name="RelationshipClass.findForType_target", query="from RelationshipClass as clazz where clazz.abstraction = false and clazz.targetType = :type")
+    @NamedQuery(name = "RelationshipClass.findByName", query = "from RelationshipClass as clazz where clazz.name = :name"),
+    @NamedQuery(name = "RelationshipClass.findForUniversalClass_source", query = "from RelationshipClass as clazz where clazz.abstraction = false and clazz.sourceUniversalItemClass in (:parentChain)"),
+    @NamedQuery(name = "RelationshipClass.findForUniversalClass_target", query = "from RelationshipClass as clazz where clazz.abstraction = false and clazz.targetUniversalItemClass in (:parentChain)"),
+    @NamedQuery(name = "RelationshipClass.findForType_source", query = "from RelationshipClass as clazz where clazz.abstraction = false and clazz.sourceType = :type"),
+    @NamedQuery(name = "RelationshipClass.findForType_target", query = "from RelationshipClass as clazz where clazz.abstraction = false and clazz.targetType = :type")
 })
 public class RelationshipClass extends AbstractEntityClass {
+
+    private static final long serialVersionUID = 1L;
     protected RelationshipClass parent;
     protected Set<RelationshipClass> children;
     protected List<Relationship> instances;
@@ -68,16 +69,10 @@ public class RelationshipClass extends AbstractEntityClass {
         this.parent = parent;
     }
 
-    @Override
-    @Transient
-    public Integer getParentId() {
-        return parent != null ? parent.getId() : null;
-    }
-
     /**
      * @return the children
      */
-    @OneToMany(mappedBy="parent", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
     @Override
     public Set<RelationshipClass> getChildren() {
         return children;
@@ -171,7 +166,7 @@ public class RelationshipClass extends AbstractEntityClass {
     }
 
     /**
-     * @param sourceItemClass the sourceItemClass to set
+     * @param sourceClass 
      */
     public void setSourceUniversalItemClass(UniversalItemClass sourceClass) {
         this.sourceUniversalItemClass = sourceClass;
@@ -187,7 +182,7 @@ public class RelationshipClass extends AbstractEntityClass {
     }
 
     /**
-     * @param targetItemClass the targetItemClass to set
+     * @param targetClass 
      */
     public void setTargetUniversalItemClass(UniversalItemClass targetClass) {
         this.targetUniversalItemClass = targetClass;
@@ -233,7 +228,7 @@ public class RelationshipClass extends AbstractEntityClass {
         targetItemClass.accept(resolver);
         setTargetType(resolver.getItemType());
         setTargetUniversalItemClass(resolver.getUniversalItemClass());
-        
+
         this.targetItemClass = targetItemClass;
     }
 
@@ -244,8 +239,9 @@ public class RelationshipClass extends AbstractEntityClass {
     @Override
     @Transient
     public List<Attribute> getInheritedAttributes() {
-        if(getParent() == null)
+        if (getParent() == null) {
             return new LinkedList<Attribute>();
+        }
 
         return getParent().getAllAttributes();
     }
@@ -256,8 +252,9 @@ public class RelationshipClass extends AbstractEntityClass {
         List<Attribute> allAttributes = new LinkedList<Attribute>();
         allAttributes.addAll(getAttributes());
 
-        if(getParent() != null)
+        if (getParent() != null) {
             allAttributes.addAll(getParent().getAllAttributes());
+        }
 
         return allAttributes;
     }
@@ -268,6 +265,7 @@ public class RelationshipClass extends AbstractEntityClass {
     }
 
     protected static class ItemTypeResolver implements ItemClassVisitor {
+
         private ItemType itemType;
         private UniversalItemClass universalItemClass = null;
 
@@ -309,6 +307,5 @@ public class RelationshipClass extends AbstractEntityClass {
         public void visit(ServiceItemClass serviceItemClass) {
             itemType = ItemType.SVC;
         }
-        
     }
 }

@@ -16,6 +16,7 @@ public class EventSignificance implements DictionaryProperty<String>, Serializab
 	public static final EventSignificance WARNING = new EventSignificance("WARN", "WARN");
 	
 	public static final EventSignificance EXCEPTION = new EventSignificance("EXCE", "EXCE");
+    private static final long serialVersionUID = 1L;
 	
 	@Id
 	@Column(name="SIGNIFICANCE_CODE")

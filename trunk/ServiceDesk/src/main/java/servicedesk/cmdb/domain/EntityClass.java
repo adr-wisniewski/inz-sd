@@ -16,12 +16,11 @@ import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
  */
 public interface EntityClass extends HierarchicalDomainObject<Integer> {
     public boolean isAbstraction();
-
-    @Override
-    public String getName();
     public String getDescription();
 
+    @Override
     public EntityClass getParent();
+    @Override
     public Set<? extends EntityClass> getChildren();
 
     public List<Attribute> getAttributes();

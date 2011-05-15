@@ -10,5 +10,5 @@ package servicedesk.infrastructure.general.service;
  * @author Adrian
  */
 public interface Service {
-
+    
 }

@@ -22,6 +22,7 @@ import servicedesk.slm.domain.Agreement;
 @Entity
 @Table(name="SERVICES")
 public class Service implements DomainObject<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="SERVICE_ID")
 	private Integer id;

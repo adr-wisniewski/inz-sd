@@ -25,6 +25,7 @@ import servicedesk.cmdb.domain.helper.ItemVisitor;
     @NamedQuery(name = "UniversalItem.findByClass", query = "from UniversalItem u where u.itemClass = :itemClass")
 })
 public class UniversalItem extends Item {
+    private static final long serialVersionUID = 1L;
 
     private UniversalItemClass itemClass;
 

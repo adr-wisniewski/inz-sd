@@ -3,6 +3,7 @@ div.panel.hint > .content,
 div.panel.success > .content,
 button span,
 .error,
+input.picker,
 input.datetime
 {
     background-repeat: no-repeat;
@@ -100,5 +101,10 @@ button.goto span
 
 input.datetime {
     background-image: url("../../images/clock.png");
+    background-position:right center;
+}
+
+input.picker {
+    background-image: url("../../images/picker.png");
     background-position:right center;
 }

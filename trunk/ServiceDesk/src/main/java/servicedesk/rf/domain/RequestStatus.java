@@ -26,6 +26,7 @@ public class RequestStatus implements DictionaryProperty<String>, Serializable {
 	 * Status dla zamknietego zadania
 	 */
 	public static final RequestStatus CLOSED = new RequestStatus("CLOS", "Closed");
+    private static final long serialVersionUID = 1L;
 	
 	/** 
 	 * <!-- begin-UML-doc -->

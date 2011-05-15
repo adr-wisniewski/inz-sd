@@ -20,6 +20,7 @@ import servicedesk.scm.domain.Service;
 @javax.persistence.Entity
 @Table(name="C2_ITEMS_SERVICE")
 public class ServiceItem extends Item {
+    private static final long serialVersionUID = 1L;
     private Service service;
     private ServiceItemClass serviceItemClass;
 

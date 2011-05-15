@@ -36,6 +36,7 @@ import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
     @NamedQuery(name="UniversalItemClass.findByName", query="from UniversalItemClass as clazz where clazz.name = :name")
 )
 public class UniversalItemClass extends AbstractEntityClass implements ItemClass, HierarchicalDomainObject<Integer> {
+    private static final long serialVersionUID = 1L;
 
     protected UniversalItemClass parent;
     protected Set<UniversalItemClass> children = new HashSet<UniversalItemClass>();
@@ -73,12 +74,6 @@ public class UniversalItemClass extends AbstractEntityClass implements ItemClass
      */
     public void setChildren(Set<UniversalItemClass> children) {
         this.children = children;
-    }
-
-    @Override
-    @Transient
-    public Integer getParentId() {
-        return getParent() == null ? null : getParent().getId();
     }
 
     @Override

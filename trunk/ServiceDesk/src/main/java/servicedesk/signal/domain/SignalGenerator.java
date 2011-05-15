@@ -22,6 +22,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 @Entity
 @Table(name="SIGNAL_GENERATORS")
 public class SignalGenerator implements DomainObject<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 	@Column(name="CRITERION")
 	private String criterion;
 	

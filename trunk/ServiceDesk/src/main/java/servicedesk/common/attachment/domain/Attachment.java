@@ -23,6 +23,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 @Entity
 @Table(name="ATTACHMENTS")
 public class Attachment implements DomainObject<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
     private Integer id;
     private String name;
     private byte[] data;

@@ -21,6 +21,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "IMPACT_TYPES_IM")
 public class IncidentImpact implements DictionaryProperty<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->

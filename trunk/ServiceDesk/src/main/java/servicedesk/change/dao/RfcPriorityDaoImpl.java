@@ -9,7 +9,7 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.springframework.stereotype.Repository;
 import servicedesk.change.domain.RfcPriority;
-import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
+import servicedesk.infrastructure.general.dao.AbstractHibernateDao;
 
 /**
  *
@@ -17,12 +17,13 @@ import servicedesk.infrastructure.general.dao.AbstractHibernateCrudDao;
  */
 @Repository
 public class RfcPriorityDaoImpl  
-    extends AbstractHibernateCrudDao<RfcPriority, Integer> 
+    extends AbstractHibernateDao<RfcPriority, Integer> 
     implements RfcPriorityDao {
     
     @Override
+    @SuppressWarnings("unchecked")
     public List<RfcPriority> getAll() {
-        return getHibernateTemplate().findByCriteria(DetachedCriteria.forClass(RfcPriority.class).addOrder(Order.asc("viewOrder")));
+        return getHibernateTemplate().findByCriteria(DetachedCriteria.forClass(RfcPriority.class).addOrder(Order.asc("order")));
     }
     
 }

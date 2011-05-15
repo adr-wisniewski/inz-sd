@@ -12,67 +12,64 @@ import servicedesk.app.SearchCriteria;
 import servicedesk.infrastructure.general.domain.DomainObject;
 import servicedesk.infrastructure.general.util.GenericUtil;
 
-
 public class GenericHibernateDao<Property extends DomainObject<Id>, Id extends Serializable> {
-	private SessionFactory sessionFactory;
 
-	private Class<Property> typeClass = (Class<Property>)GenericUtil
-            .getTypeArgument(GenericHibernateDao.class, getClass(), 0);
+    private SessionFactory sessionFactory;
+    @SuppressWarnings("unchecked")
+    private Class<Property> typeClass = (Class<Property>) GenericUtil.getTypeArgument(GenericHibernateDao.class, getClass(), 0);
+    @SuppressWarnings("unchecked")
+    private Class<Id> idClass = (Class<Id>) GenericUtil.getTypeArgument(GenericHibernateDao.class, getClass(), 1);
 
-        private Class<Id> idClass = (Class<Id>)GenericUtil
-            .getTypeArgument(GenericHibernateDao.class, getClass(), 1);
+    public Class<Property> getTypeClass() {
+        return typeClass;
+    }
 
-	public Class<Property> getTypeClass() {
-		return typeClass;
-	}
+    public Class<Id> getIdClass() {
+        return idClass;
+    }
 
-        public Class<Id> getIdClass() {
-		return idClass;
-	}
-	
-	@Autowired
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<Property> getAll() {
-		return getSession().createQuery("from " + getTypeClass().getName()).list();
-	}
-	
-	public void save(Property object) {
-		getSession().saveOrUpdate(object);
-	}
-	
-	@SuppressWarnings("unchecked")
-	public Property get(Id id) {
-		return (Property)getSession().get(typeClass, id);
-	}
-        
-        @SuppressWarnings("unchecked")
-	public Property load(Id id) {
-		return (Property)getSession().load(typeClass, id);
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<Property> findByNamedQuery(String queryName, Object value) {
-		return getSession().getNamedQuery(queryName).setParameter(0, value).list();
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<Property> findByNamedQuery(String queryName) {
-		return getSession().getNamedQuery(queryName).list();
-	}
-	
-	@SuppressWarnings("unchecked")
-	public List<Property> search(SearchCriteria<Property> searchCriteria) {
-		Criteria criteria = getSession().createCriteria(typeClass);
-		searchCriteria.initCriteria(criteria);
-		return criteria.list();
-	}
-	
-	protected Session getSession() {
-		return sessionFactory.getCurrentSession();
-	}
-	
+    @Autowired
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Property> getAll() {
+        return getSession().createQuery("from " + getTypeClass().getName()).list();
+    }
+
+    public void save(Property object) {
+        getSession().saveOrUpdate(object);
+    }
+
+    @SuppressWarnings("unchecked")
+    public Property get(Id id) {
+        return (Property) getSession().get(typeClass, id);
+    }
+
+    @SuppressWarnings("unchecked")
+    public Property load(Id id) {
+        return (Property) getSession().load(typeClass, id);
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Property> findByNamedQuery(String queryName, Object value) {
+        return getSession().getNamedQuery(queryName).setParameter(0, value).list();
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Property> findByNamedQuery(String queryName) {
+        return getSession().getNamedQuery(queryName).list();
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Property> search(SearchCriteria<Property> searchCriteria) {
+        Criteria criteria = getSession().createCriteria(typeClass);
+        searchCriteria.initCriteria(criteria);
+        return criteria.list();
+    }
+
+    protected Session getSession() {
+        return sessionFactory.getCurrentSession();
+    }
 }

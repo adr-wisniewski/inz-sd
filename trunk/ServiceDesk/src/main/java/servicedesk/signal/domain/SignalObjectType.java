@@ -17,6 +17,7 @@ import servicedesk.dictionary.DictionaryProperty;
 @Entity
 @Table(name="SIGNAL_OBJECT_TYPES")
 public class SignalObjectType implements DictionaryProperty<String>, Serializable {
+    private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="OBJECT_CODE")
 	private String code;

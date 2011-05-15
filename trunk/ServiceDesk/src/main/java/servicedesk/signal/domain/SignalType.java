@@ -17,6 +17,7 @@ import servicedesk.dictionary.DictionaryProperty;
 @Entity
 @Table(name="SIGNAL_TYPES")
 public class SignalType implements DictionaryProperty<Integer>, Serializable{
+    private static final long serialVersionUID = 1L;
 	@Id
 	@SequenceGenerator(name = "signal_type_seq", sequenceName = "SIGNAL_TYPE_ID_SEQ")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "signal_type_seq")

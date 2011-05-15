@@ -13,6 +13,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 @Entity
 @Table(name="KNOWN_ERRORS_V")
 public class KnownError implements DomainObject<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="PROBLEM_ID")
 	private Integer id;

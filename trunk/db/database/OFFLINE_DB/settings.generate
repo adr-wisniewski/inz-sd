@@ -11,27 +11,92 @@
    <value n="schemaNames" v="false"/>
    <list n="schemaObjectDescriptors">
       <hash>
+         <value n="name" v="AUDITREVISION"/>
+         <value n="schemaName" v="AUDIT"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUDITREVISION_SEQ"/>
+         <value n="schemaName" v="AUDIT"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITIES"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITIES_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITY_MEMBERS"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITY_TYPES"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITY_TYPES_MATRIX"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITY_TYPES_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
          <value n="name" v="RFC"/>
          <value n="schemaName" v="CHANGE"/>
          <value n="type" v="TABLE"/>
       </hash>
       <hash>
-         <value n="name" v="RFC_IMPACT"/>
+         <value n="name" v="RFC_AUD"/>
+         <value n="schemaName" v="AUDIT"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_CATEGORIES"/>
          <value n="schemaName" v="CHANGE"/>
          <value n="type" v="TABLE"/>
       </hash>
       <hash>
-         <value n="name" v="RFC_IMPACT_SEQ"/>
+         <value n="name" v="RFC_CATEGORIES_SEQ"/>
          <value n="schemaName" v="CHANGE"/>
          <value n="type" v="SEQUENCE"/>
       </hash>
       <hash>
-         <value n="name" v="RFC_PRIORITY"/>
+         <value n="name" v="RFC_IMPACTS"/>
          <value n="schemaName" v="CHANGE"/>
          <value n="type" v="TABLE"/>
       </hash>
       <hash>
-         <value n="name" v="RFC_PRIORITY_SEQ"/>
+         <value n="name" v="RFC_IMPACTS_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_PRIORITIES"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_PRIORITIES_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_RESOLUTIONS"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_RESOLUTIONS_SEQ"/>
          <value n="schemaName" v="CHANGE"/>
          <value n="type" v="SEQUENCE"/>
       </hash>

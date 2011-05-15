@@ -5,15 +5,12 @@
 
 package servicedesk.cmdb.dao;
 
-import java.util.List;
 import servicedesk.cmdb.domain.ItemClass;
-import servicedesk.infrastructure.general.dao.Dao;
+import servicedesk.infrastructure.general.dao.NamedDao;
 
 /**
  *
  * @author Adrian
  */
-public interface AdaptorItemClassDao extends Dao<ItemClass, Integer> {
-    public ItemClass getByName(String name);
-    public List<ItemClass> getAll();
+public interface AdaptorItemClassDao extends NamedDao<ItemClass, Integer> {
 }

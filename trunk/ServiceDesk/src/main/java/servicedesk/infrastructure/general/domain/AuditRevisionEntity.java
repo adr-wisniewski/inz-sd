@@ -13,8 +13,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import org.hibernate.envers.RevisionEntity;
 import org.hibernate.envers.RevisionNumber;
@@ -27,8 +29,10 @@ import servicedesk.infrastructure.general.dao.AuditRevisionListener;
  * @author Adrian
  */
 @Entity
+@Table(name="AUDITREVISION")
 @RevisionEntity(AuditRevisionListener.class)
 public class AuditRevisionEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int id;
     private Date timestamp;
     private Employee instigator;
@@ -73,7 +77,7 @@ public class AuditRevisionEntity implements Serializable {
      * @return the employee
      */
     @ManyToOne(fetch=FetchType.EAGER)
-    @Column(name="INSTIGATOR")
+    @JoinColumn(name="INSTIGATOR")
     public Employee getInstigator() {
         return instigator;
     }

@@ -25,6 +25,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 @Entity
 @Table(name="EVENTS")
 public class Event implements DomainObject<Integer>, Serializable{
+    private static final long serialVersionUID = 1L;
 	@Id
 	@SequenceGenerator(name = "event_seq", sequenceName = "event_id_seq")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "event_seq")

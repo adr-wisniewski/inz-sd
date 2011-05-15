@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import servicedesk.change.dao.RfcCategoryDao;
 import servicedesk.cmdb.dao.ItemClassDao;
 import servicedesk.cmdb.dao.RelationshipClassDao;
 import servicedesk.cmdb.dao.UniversalItemClassDao;
@@ -73,7 +74,12 @@ public class TreePickerController {
 	public void setRelationshipClassDao(RelationshipClassDao dao) {
             registerDataSource("relationshipclass_cmdb", dao);
 	}
-	
+        
+        @Autowired
+	public void setRfcCategoryDao(RfcCategoryDao dao) {
+            registerDataSource("rfccategory_change", dao);
+	}
+        
 	public HierarchyDao<?, ?> getDataSource(String dataSourceName) {
 		return this.dataSources.get(dataSourceName);
 	}
@@ -95,7 +101,7 @@ public class TreePickerController {
 
                 HierarchyDao<?, ?> dao = getDataSource(dataSourceName);
                 Class<? extends Serializable> targetClass = dao.getIdClass();
-                item = omg(targetClass, dao, itemId);
+                item = makeDaoTypedHack(targetClass, dao, itemId);
             }
 
             model.addAttribute("item", item);
@@ -103,7 +109,8 @@ public class TreePickerController {
 	}
 
         private <Id extends Serializable> HierarchicalDomainObject<Id>
-                omg(Class<Id> clazz, HierarchyDao<?, ?> dao, String itemId) {
+                makeDaoTypedHack(Class<Id> clazz, HierarchyDao<?, ?> dao, String itemId) {
+            @SuppressWarnings("unchecked")
             HierarchyDao<?, Id> typedDao = (HierarchyDao<?, Id>)dao;
             return typedDao.get(conversionService.convert(itemId, clazz));
         }

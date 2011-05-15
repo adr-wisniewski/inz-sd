@@ -4,6 +4,8 @@
  */
 package servicedesk.change.domain;
 
+import java.util.Date;
+import org.hibernate.envers.RevisionType;
 import servicedesk.change.domain.helper.Changeable;
 import servicedesk.domain.Employee;
 
@@ -12,40 +14,87 @@ import servicedesk.domain.Employee;
  * @author Adrian
  */
 public class RfcChange {
-    private RfcChangeType changeType;
+    private RevisionType changeType;
+    private Employee instigator;
+    private Date timestamp;
+    
     private Changeable<String> title;
     private Changeable<String> description;
     private Changeable<RfcPriority> priority;
     private Changeable<RfcImpact> impact;
+    private Changeable<RfcCategory> category;
     private Changeable<RfcState> state;
     private Changeable<Employee> manager;
-
-    public RfcChange() {
-        
-    }
+    private Changeable<String> comment;
     
-    public RfcChange(RfcChangeType changeType, Rfc previous, Rfc next) {
-        this.changeType = changeType;
+    public void initialize(Rfc previous, Rfc next) {
         title = new Changeable<String>(previous.getTitle(), next.getTitle());
         description = new Changeable<String>(previous.getDescription(), next.getDescription());
         priority = new Changeable<RfcPriority>(previous.getPriority(), next.getPriority());
         impact = new Changeable<RfcImpact>(previous.getImpact(), next.getImpact());
+        category = new Changeable<RfcCategory>(previous.getCategory(), next.getCategory());
         state = new Changeable<RfcState>(previous.getState(), next.getState());
         manager = new Changeable<Employee>(previous.getManager(), next.getManager());
+        comment = new Changeable<String>(previous.getComment(), next.getComment());
+    }
+    
+    public boolean isCreated() {
+        return changeType == RevisionType.ADD;
+    }
+    
+    public boolean isDeleted() {
+        return changeType == RevisionType.DEL;
+    }
+    
+    public boolean isProperitiesChanged() {
+        return title.isChanged() 
+                || description.isChanged()
+                || priority.isChanged()
+                || impact.isChanged()
+                || state.isChanged()
+                || manager.isChanged();
     }
     
     /**
      * @return the changeType
      */
-    public RfcChangeType getChangeType() {
+    public RevisionType getChangeType() {
         return changeType;
     }
 
     /**
      * @param changeType the changeType to set
      */
-    public void setChangeType(RfcChangeType changeType) {
+    public void setChangeType(RevisionType changeType) {
         this.changeType = changeType;
+    }
+
+    /**
+     * @return the instigator
+     */
+    public Employee getInstigator() {
+        return instigator;
+    }
+
+    /**
+     * @param instigator the instigator to set
+     */
+    public void setInstigator(Employee instigator) {
+        this.instigator = instigator;
+    }
+
+    /**
+     * @return the timestamp
+     */
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    /**
+     * @param timestamp the timestamp to set
+     */
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
     /**
@@ -105,6 +154,20 @@ public class RfcChange {
     }
 
     /**
+     * @return the category
+     */
+    public Changeable<RfcCategory> getCategory() {
+        return category;
+    }
+
+    /**
+     * @param category the category to set
+     */
+    public void setCategory(Changeable<RfcCategory> category) {
+        this.category = category;
+    }
+
+    /**
      * @return the state
      */
     public Changeable<RfcState> getState() {
@@ -130,5 +193,19 @@ public class RfcChange {
      */
     public void setManager(Changeable<Employee> manager) {
         this.manager = manager;
+    }
+
+    /**
+     * @return the comment
+     */
+    public Changeable<String> getComment() {
+        return comment;
+    }
+
+    /**
+     * @param comment the comment to set
+     */
+    public void setComment(Changeable<String> comment) {
+        this.comment = comment;
     }
 }

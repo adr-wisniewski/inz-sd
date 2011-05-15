@@ -20,6 +20,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 @Entity
 @Table(name="PRIVILEGE_TYPES")
 public class Privilege implements DomainObject<String>, Serializable {
+    private static final long serialVersionUID = 1L;
     private String code;
     private String description;
 

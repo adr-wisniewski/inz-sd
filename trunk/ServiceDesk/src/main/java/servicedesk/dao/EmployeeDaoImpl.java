@@ -21,6 +21,7 @@ public class EmployeeDaoImpl extends GenericHibernateDao<Employee, Integer> impl
 
     @Override
     public Employee findByLogin(String login) {
+        @SuppressWarnings("unchecked")
             List<User> result = getSession().getNamedQuery("User.findByLogin").setParameter("login", login).list();
             return DataAccessUtils.singleResult(result).getEmployee();
     }

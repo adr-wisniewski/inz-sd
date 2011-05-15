@@ -32,6 +32,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 @Entity
 @Table(name = "SUPPORT_GROUPS")
 public class SupportGroup implements DomainObject<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 	
 	@Id
 	@SequenceGenerator(name = "group_seq", sequenceName = "SUPPORT_GROUP_ID")

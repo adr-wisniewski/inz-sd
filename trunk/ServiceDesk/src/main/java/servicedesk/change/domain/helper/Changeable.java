@@ -20,7 +20,10 @@ public class Changeable<Type> {
     public Changeable(Type previousValue, Type nextValue) {
         this.previousValue = previousValue;
         this.nextValue = nextValue;
-        this.changed = this.previousValue == null && this.nextValue != null || !this.previousValue.equals(this.nextValue);
+        
+        this.changed =
+            this.previousValue == null && this.nextValue != null
+            || this.previousValue != null && !this.previousValue.equals(this.nextValue);
     }
     
     /**
@@ -40,15 +43,15 @@ public class Changeable<Type> {
     /**
      * @return the currentValue
      */
-    public Type getCurrentValue() {
+    public Type getNextValue() {
         return nextValue;
     }
 
     /**
      * @param currentValue the currentValue to set
      */
-    public void setCurrentValue(Type currentValue) {
-        this.nextValue = currentValue;
+    public void setNextValue(Type nextValue) {
+        this.nextValue = nextValue;
     }
 
     /**

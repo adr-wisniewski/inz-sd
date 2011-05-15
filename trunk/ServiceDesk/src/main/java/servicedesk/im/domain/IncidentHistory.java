@@ -23,6 +23,7 @@ import servicedesk.scm.domain.Service;
 @NamedQueries({
     @NamedQuery(name = "Incident.history", query = "SELECT h FROM IncidentHistory h WHERE h.incidentId = ? ORDER BY h.changeDate")})
 public class IncidentHistory implements DomainObject<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name = "HISTORY_ID")
 	private Integer id;

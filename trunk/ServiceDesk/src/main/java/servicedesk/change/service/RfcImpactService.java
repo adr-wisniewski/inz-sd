@@ -4,13 +4,13 @@
  */
 package servicedesk.change.service;
 
-import java.util.List;
 import servicedesk.change.domain.RfcImpact;
+import servicedesk.infrastructure.general.service.CrudService;
+import servicedesk.infrastructure.general.service.NamedService;
 
 /**
  *
  * @author Adrian
  */
-public interface RfcImpactService {
-    public List<RfcImpact> getAll();
+public interface RfcImpactService extends CrudService<RfcImpact, Integer>, NamedService<RfcImpact, Integer> {
 }

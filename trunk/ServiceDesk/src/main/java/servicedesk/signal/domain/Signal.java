@@ -34,6 +34,7 @@ import servicedesk.infrastructure.general.domain.DomainObject;
     @NamedQuery(name = "Signal.findByEmployee", query = "SELECT s FROM Signal s WHERE s.receiver = ?")
 })
 public class Signal implements DomainObject<Integer>, Serializable {
+    private static final long serialVersionUID = 1L;
 	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="signal")
 	private List<SignalAttribute> attributes = new LinkedList<SignalAttribute>();
 	

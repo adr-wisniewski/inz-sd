@@ -2,15 +2,19 @@ input[type="text"], select, textarea
 {
     border: 1px solid;
     padding: 3px;
-    width: 375px;
-}
-textarea {
-    height: 8em;
-    resize: vertical;
+    width: 100%;
+    -moz-box-sizing: border-box;
 }
 
-select {
-    width: 383px;
+input.datetime,
+input.picker {
+    padding-right: 22px;
+}
+
+textarea {
+    height: 8em;
+    min-height: 1.8em;
+    resize: vertical;
 }
 
 input[type="radio"], input[type="checkbox"]
@@ -32,22 +36,20 @@ button
 button span
 {
     display: inline-block;
-    padding: 0 10px 0 20px
-}
-
-.tablesorter thead td
-{
-    padding: 0 4px;
+    padding: 0 10px 0 20px;
+    -moz-box-sizing: border-box;
+    width: 100%;
 }
 
 .tablesorter thead td input, .tablesorter thead td select
 {
-    width: 100%;
+    vertical-align: middle;
+    height: 2em;
 }
 
-.tablesorter thead td input[type="text"]
-{
-    margin-left: -2px;
+select {
+    min-width: 100%;
+    width: -moz-fit-content;
 }
 
 .error
