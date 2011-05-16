@@ -8,7 +8,7 @@
 
 <ui:panel caption="caption.cmdb.item.pickclass">
     <form:form modelAttribute="universalItem" method="post">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.cmdb.item"/>
         <ui:propertyList>
             <ui:propertyItem code="field.cmdb.item.class" label="class">
                 <sd:treePicker name="itemClass" value="${universalItem.itemClass}" source="itemclass_cmdb"/>

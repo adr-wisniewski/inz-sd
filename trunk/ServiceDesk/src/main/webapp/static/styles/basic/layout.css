@@ -1,19 +1,12 @@
 #logo, #navigation {
-    position: absolute;
+    float: left;
+    clear: left;
     width: 220px;
-}
-
-#logo {
-    top: 0;
 }
 
 #logo h1 {
     border: 1px solid;
-    margin: 6px;
-}
-
-#navigation {
-    top: 85px;
+    margin: 0 6px 6px;
 }
 
 #page {

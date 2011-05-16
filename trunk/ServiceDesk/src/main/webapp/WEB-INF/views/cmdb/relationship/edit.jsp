@@ -12,7 +12,7 @@
 
 <ui:panel caption="caption.cmdb.relationship.properties">
     <form:form modelAttribute="relationship" method="post">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.cmdb.relationship"/>
         <ui:propertyList>
 
             <ui:propertyItem code="field.cmdb.relationship.sourceItem" label="sourceItem">

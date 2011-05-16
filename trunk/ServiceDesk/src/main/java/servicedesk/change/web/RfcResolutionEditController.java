@@ -24,20 +24,22 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/change/rfc/resolution/{id}/edit")
 @PreAuthorize("hasRole('CHANGE_RFC_RESOLUTION_CRUD')")
-@SessionAttributes("rfcResolution")
+@SessionAttributes(RfcResolutionEditController.MODEL_OBJECT)
 public class RfcResolutionEditController extends AbstractRfcResolutionController {
-    protected final String VIEW_EDIT = "/change/rfc/resolution/edit";
+    public static final String VIEW_EDIT = "/change/rfc/resolution/edit";
 
     @RequestMapping(method=RequestMethod.GET)
     public String editGet(ModelMap map, @PathVariable("id") Integer id) {
-        RfcResolution rfcResolution = service.load(id);
-        map.addAttribute(rfcResolution);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            RfcResolution rfcResolution = service.load(id);
+            map.addAttribute(MODEL_OBJECT, rfcResolution);
+        }
         return VIEW_EDIT;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String editPost(ModelMap map,
-            @ModelAttribute RfcResolution rfcResolution,
+            @ModelAttribute(MODEL_OBJECT) RfcResolution rfcResolution,
             BindingResult bindingResult,
             SessionStatus status) {
 

@@ -14,7 +14,10 @@ import servicedesk.infrastructure.general.web.MessageContextHolder;
  *
  * @author Adrian
  */
-abstract class AbstractUniversalItemController {
+public abstract class AbstractUniversalItemController {
+    
+    public static final String MODEL_OBJECT = "universalItem";
+    
     @Autowired
     protected UniversalItemService service;
 

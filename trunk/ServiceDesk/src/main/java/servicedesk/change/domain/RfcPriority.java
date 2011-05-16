@@ -34,8 +34,8 @@ public class RfcPriority implements NamedDomainObject<Integer>, Serializable {
      * @return the id
      */
     @Id
-    @SequenceGenerator(name = "RFC_PRIORITY_SEQ", sequenceName = "RFC_PRIORITY_SEQ")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RFC_PRIORITY_SEQ")
+    @SequenceGenerator(name = "RFC_PRIORITIES_SEQ", sequenceName = "RFC_PRIORITIES_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RFC_PRIORITIES_SEQ")
     @Column(name = "PRIORITY_ID", precision = 10)
     @Override
     public Integer getId() {

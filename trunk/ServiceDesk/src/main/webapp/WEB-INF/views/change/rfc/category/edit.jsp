@@ -11,25 +11,22 @@
 
 <ui:panel caption="fieldgroup.change.rfc.category.all">
     <form:form modelAttribute="rfcCategory" method="post">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.change.rfc.category"/>
         <ui:propertyList>
-            <ui:propertyItem code="field.change.rfc.category.id">
-                    ${rfcCategory.id}
-            </ui:propertyItem>
             
             <ui:propertyItem code="field.change.rfc.category.name" label="name">
                 <form:input path="name" />
                 <form:errors path="name" cssClass="error" />
             </ui:propertyItem>
             
-            <ui:propertyItem code="field.change.rfc.category.abstract" label="abstract">
-                <form:checkbox path="abstract" />
-                <form:errors path="abstract" cssClass="error" />
-            </ui:propertyItem>
-            
             <ui:propertyItem code="field.change.rfc.category.parent" label="parent">
                 <sd:treePicker name="parent" value="${rfcCategory.parent}" source="rfccategory_change"/>
                 <form:errors path="parent" cssClass="error" />
+            </ui:propertyItem>
+            
+            <ui:propertyItem code="field.change.rfc.category.abstraction" label="abstraction">
+                <form:checkbox path="abstraction" />
+                <form:errors path="abstraction" cssClass="error" />
             </ui:propertyItem>
 
             <ui:propertyItem>

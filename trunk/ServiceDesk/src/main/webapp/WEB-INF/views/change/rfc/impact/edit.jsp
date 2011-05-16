@@ -11,11 +11,8 @@
 
 <ui:panel caption="fieldgroup.change.rfc.impact.all">
     <form:form modelAttribute="rfcImpact" method="post">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.change.rfc.impact"/>
         <ui:propertyList>
-            <ui:propertyItem code="field.change.rfc.impact.id">
-                    ${rfcImpact.id}
-            </ui:propertyItem>
             
             <ui:propertyItem code="field.change.rfc.impact.name" label="name">
                 <form:input path="name" />

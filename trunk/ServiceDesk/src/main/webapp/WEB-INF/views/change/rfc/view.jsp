@@ -66,7 +66,7 @@
 
 <ui:panel caption="caption.change.rfc.actions">
     <form:form modelAttribute="rfc" method="post" action="/change/rfc/${rfc.id}/addComment">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.change.rfc"/>
         <ui:propertyList>
             <ui:propertyItem code="field.change.rfc.comment" label="comment">
                 <form:textarea path="comment" />

@@ -122,7 +122,7 @@ public class EditRequestController {
 	
 	@RequestMapping(value="/rf/category", method=RequestMethod.GET)
 	public String chooseCategory(ModelMap model) {
-		model.addAttribute("categories",  TreeBuilder.buildTree(requestService.getAllCategories(), ""));
+		model.addAttribute("categories",  TreeBuilder.buildTree(requestService.getAllCategories()));
 		return "rf/category";
 	}
 	

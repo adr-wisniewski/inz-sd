@@ -23,6 +23,7 @@ public abstract class AbstractRfcCategoryValidator extends AbstractValidator<Rfc
     
     protected void checkProperties(RfcCategory target, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "validate.change.rfc.category.name.empty");
+        ValidationUtils.rejectIfEmpty(errors, "abstraction", "validate.change.rfc.category.abstraction.empty");
         ValidatorUtils.rejectNotUniqueName(target, errors, categoryService, "validate.change.rfc.category.name.notunique");
         ValidatorUtils.rejectParentRecursive(target, errors, "validate.change.rfc.category.parent.recursive");
     } 

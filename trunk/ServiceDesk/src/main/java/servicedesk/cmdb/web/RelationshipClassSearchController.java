@@ -46,7 +46,7 @@ public class RelationshipClassSearchController extends AbstractRelationshipClass
     @RequestMapping(value = "/browse")
     public String browse(ModelMap map) {
         List<RelationshipClass> items = service.getAll();
-        map.addAttribute(MODEL_ITEMCLASSES, TreeBuilder.buildTree(items, ""));
+        map.addAttribute(MODEL_ITEMCLASSES, TreeBuilder.buildTree(items));
         return VIEW_BROWSE;
     }
 

@@ -36,8 +36,8 @@ public class RfcCategory implements HierarchicalDomainObject<Integer>, Serializa
      * @return the id
      */
     @Id
-    @SequenceGenerator(name = "RFC_CATEGORY_SEQ", sequenceName = "RFC_CATEGORY_SEQ")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RFC_CATEGORY_SEQ")
+    @SequenceGenerator(name = "RFC_CATEGORIES_SEQ", sequenceName = "RFC_CATEGORIES_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RFC_CATEGORIES_SEQ")
     @Column(name="CATEGORY_ID")
     @Override
     public Integer getId() {
@@ -101,6 +101,7 @@ public class RfcCategory implements HierarchicalDomainObject<Integer>, Serializa
     }
 
     @OneToMany(mappedBy = "parent")
+    @Override
     public List<RfcCategory> getChildren() {
         return children;
     }

@@ -27,20 +27,23 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/common/announcement/{id}/edit")
 @PreAuthorize("hasRole('COMMON_ANNOUNCEMENT_CRUD')")
-@SessionAttributes("announcement")
+@SessionAttributes(AnnouncementEditController.MODEL_OBJECT)
 public class AnnouncementEditController extends AbstractAnnouncementController {
-     protected final String VIEW_EDIT = "/common/announcement/edit";
+    protected final String VIEW_EDIT = "/common/announcement/edit";
+    public static final String MODEL_OBJECT = "announcement";
 
     @RequestMapping(method=RequestMethod.GET)
     public String editGet(ModelMap map, @PathVariable("id") Integer id) {
-        Announcement announcement = service.load(id);
-        map.addAttribute(announcement);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            Announcement announcement = service.load(id);
+            map.addAttribute(MODEL_OBJECT, announcement);
+        }
         return VIEW_EDIT;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String editPost(ModelMap map,
-            @ModelAttribute Announcement announcement,
+            @ModelAttribute(MODEL_OBJECT) Announcement announcement,
             BindingResult bindingResult,
             SessionStatus status) {
 

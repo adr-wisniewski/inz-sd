@@ -11,11 +11,8 @@
 
 <ui:panel caption="fieldgroup.change.rfc.priority.all">
     <form:form modelAttribute="rfcPriority" method="post">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.change.rfc.priority"/>
         <ui:propertyList>
-            <ui:propertyItem code="field.change.rfc.priority.id">
-                ${rfcPriority.id}
-            </ui:propertyItem>
             
             <ui:propertyItem code="field.change.rfc.priority.name" label="name">
                 <form:input path="name" />

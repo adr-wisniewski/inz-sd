@@ -11,7 +11,7 @@
 
 <ui:panel caption="caption.cmdb.item.attributes">
     <form:form modelAttribute="universalItem" method="post">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.cmdb.item"/>
         <ui:propertyList>
 
             <ui:propertyItem code="field.cmdb.item.label" label="label">

@@ -22,7 +22,8 @@ public abstract class AbstractRfcResolutionValidator extends AbstractValidator<R
     protected RfcResolutionService service;
 
     protected void checkProperties(RfcResolution target, Errors errors) {
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "validate.change.rfc.impact.name.empty");
-        ValidatorUtils.rejectNotUniqueName(target, errors, service, "validate.change.rfc.impact.name.notunique");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "validate.change.rfc.resolution.name.empty");
+        ValidationUtils.rejectIfEmpty(errors, "order", "validate.change.rfc.resolution.order.empty");
+        ValidatorUtils.rejectNotUniqueName(target, errors, service, "validate.change.rfc.resolution.name.notunique");
     }
 }

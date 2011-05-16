@@ -22,6 +22,7 @@ public abstract class AbstractRfcPriorityValidator extends AbstractValidator<Rfc
 
     protected void checkProperties(RfcPriority target, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "validate.change.rfc.priority.name.empty");
+        ValidationUtils.rejectIfEmpty(errors, "order", "validate.change.rfc.priority.order.empty");
         ValidatorUtils.rejectNotUniqueName(target, errors, service, "validate.change.rfc.priority.name.notunique");
     } 
 }

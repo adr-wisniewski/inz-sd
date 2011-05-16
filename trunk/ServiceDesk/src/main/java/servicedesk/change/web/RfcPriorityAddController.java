@@ -23,7 +23,7 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @PreAuthorize("hasRole('CHANGE_RFC_PRIORITY_CRUD')")
 @RequestMapping(value = "/change/rfc/priority/*")
-@SessionAttributes("rfcPriority")
+@SessionAttributes(AbstractRfcPriorityController.MODEL_OBJECT)
 public class RfcPriorityAddController extends AbstractRfcPriorityController {
     public static final String VIEW_ADD = "/change/rfc/priority/add";
 

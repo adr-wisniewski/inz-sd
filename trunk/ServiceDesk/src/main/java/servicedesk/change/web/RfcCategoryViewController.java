@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import servicedesk.change.domain.RfcCategory;
+import servicedesk.tree.app.TreeBuilder;
 
 /**
  *
@@ -26,8 +27,8 @@ public class RfcCategoryViewController extends AbstractRfcCategoryController {
     
     @RequestMapping
     public String all(ModelMap map) {
-        List<RfcCategory> categorys = service.getAll();
-        map.addAttribute(MODEL_IMPACTS, categorys);
+        List<RfcCategory> categories = service.getAll();
+        map.addAttribute(MODEL_IMPACTS, TreeBuilder.buildTree(categories));
         return VIEW_LIST;
     }
     

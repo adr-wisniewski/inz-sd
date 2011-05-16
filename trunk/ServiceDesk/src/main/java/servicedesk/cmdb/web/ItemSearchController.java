@@ -52,7 +52,7 @@ public class ItemSearchController extends AbstractItemController {
     @RequestMapping(value = "/cmdb/item/browse")
     public String browse(ModelMap map) {
         List<ItemClass> items = itemClassService.getAll();
-        map.addAttribute(MODEL_ITEMCLASSES, TreeBuilder.buildTree(items, ""));
+        map.addAttribute(MODEL_ITEMCLASSES, TreeBuilder.buildTree(items));
         return VIEW_BROWSE_TREE;
     }
 

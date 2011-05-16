@@ -11,11 +11,8 @@
 
 <ui:panel caption="fieldgroup.change.rfc.resolution.all">
     <form:form modelAttribute="rfcResolution" method="post">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.change.rfc.resolution"/>
         <ui:propertyList>
-            <ui:propertyItem code="field.change.rfc.resolution.id">
-                    ${rfcResolution.id}
-            </ui:propertyItem>
             
             <ui:propertyItem code="field.change.rfc.resolution.name" label="name">
                 <form:input path="name" />

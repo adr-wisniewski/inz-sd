@@ -25,21 +25,24 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/common/announcement/{id}/delete")
 @PreAuthorize("hasRole('COMMON_ANNOUNCEMENT_CRUD')")
-@SessionAttributes("announcement")
+@SessionAttributes(AnnouncementDeleteController.MODEL_OBJECT)
 public class AnnouncementDeleteController extends AbstractAnnouncementController {
-    protected static final String VIEW_DELETE = "/common/announcement/delete";
+    public static final String VIEW_DELETE = "/common/announcement/delete";
+    public static final String MODEL_OBJECT = "announcement";
 
     @RequestMapping(method=RequestMethod.GET)
     public String deleteGet(ModelMap map, @PathVariable("id") Integer id) {
-        Announcement announcement = service.load(id);
-        map.addAttribute(announcement);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            Announcement announcement = service.load(id);
+            map.addAttribute(MODEL_OBJECT, announcement);
+        }
         return VIEW_DELETE;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String deletePost(
             ModelMap map,
-            @ModelAttribute Announcement announcement,
+            @ModelAttribute(MODEL_OBJECT) Announcement announcement,
             @RequestParam("submit") String submit,
             SessionStatus status) {
 

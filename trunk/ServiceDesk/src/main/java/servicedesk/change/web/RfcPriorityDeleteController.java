@@ -24,21 +24,23 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/change/rfc/priority/{id}/delete")
 @PreAuthorize("hasRole('CHANGE_RFC_IMPACT_CRUD')")
-@SessionAttributes("rfcPriority")
+@SessionAttributes(AbstractRfcPriorityController.MODEL_OBJECT)
 public class RfcPriorityDeleteController extends AbstractRfcPriorityController {
     protected static final String VIEW_DELETE = "/change/rfc/priority/delete";
 
     @RequestMapping(method=RequestMethod.GET)
     public String deleteGet(ModelMap map, @PathVariable("id") Integer id) {
-        RfcPriority rfcPriority = service.load(id);
-        map.addAttribute(rfcPriority);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            RfcPriority rfcPriority = service.load(id);
+            map.addAttribute(MODEL_OBJECT,rfcPriority);
+        }
         return VIEW_DELETE;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String deletePost(
             ModelMap map,
-            @ModelAttribute RfcPriority rfcPriority,
+            @ModelAttribute(MODEL_OBJECT) RfcPriority rfcPriority,
             @RequestParam("submit") String submit,
             SessionStatus status) {
 

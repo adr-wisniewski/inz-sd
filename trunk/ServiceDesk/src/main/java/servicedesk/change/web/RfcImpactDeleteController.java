@@ -24,21 +24,23 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/change/rfc/impact/{id}/delete")
 @PreAuthorize("hasRole('CHANGE_RFC_IMPACT_CRUD')")
-@SessionAttributes("rfcImpact")
+@SessionAttributes(AbstractRfcImpactController.MODEL_OBJECT)
 public class RfcImpactDeleteController extends AbstractRfcImpactController {
     protected static final String VIEW_DELETE = "/change/rfc/impact/delete";
 
     @RequestMapping(method=RequestMethod.GET)
     public String deleteGet(ModelMap map, @PathVariable("id") Integer id) {
-        RfcImpact rfcImpact = service.load(id);
-        map.addAttribute(rfcImpact);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            RfcImpact rfcImpact = service.load(id);
+            map.addAttribute(MODEL_OBJECT, rfcImpact);
+        }
         return VIEW_DELETE;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String deletePost(
             ModelMap map,
-            @ModelAttribute RfcImpact rfcImpact,
+            @ModelAttribute(MODEL_OBJECT) RfcImpact rfcImpact,
             @RequestParam("submit") String submit,
             SessionStatus status) {
 

@@ -8,6 +8,11 @@ import servicedesk.infrastructure.general.domain.HierarchicalDomainObject;
 public abstract class TreeBuilder {
 //	private static Logger logger = Logger.getLogger(TreeBuilder.class);
 
+    
+    public static List<TreeItem> buildTree(List<? extends HierarchicalDomainObject<?>> items) {
+        return buildTree(items, ""); // start recursion
+    }
+    
     /**
      * Tworzy hierarchie z listy elementow hierarchii
      * 

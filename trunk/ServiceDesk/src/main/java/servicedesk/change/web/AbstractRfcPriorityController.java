@@ -15,6 +15,9 @@ import servicedesk.infrastructure.general.web.MessageContextHolder;
  * @author Adrian
  */
 public abstract class AbstractRfcPriorityController {
+    
+    public static final String MODEL_OBJECT = "rfcPriority";
+    
     @Autowired
     protected RfcPriorityService service;
 

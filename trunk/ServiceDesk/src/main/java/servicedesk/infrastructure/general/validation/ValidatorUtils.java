@@ -22,7 +22,7 @@ public final class ValidatorUtils {
     
     static public <Type extends NamedDomainObject<Id>, Id extends Serializable> 
     void rejectNotUniqueName(Type target, Errors errors, NamedService<Type,Id> service, String error) {
-        if(target.getName() != null) {
+        if(target.getName() != null && !errors.hasFieldErrors("name") ) {
             Type sameName = service.getByName(target.getName());
             if(sameName != null && !sameName.getId().equals(target.getId()))
             errors.rejectValue("name", error);
@@ -30,17 +30,20 @@ public final class ValidatorUtils {
     }
     
    static public void rejectParentRecursive(HierarchicalDomainObject<? extends Serializable> target, Errors errors, String error) {
-       // cannot be parent to itself
-        HierarchicalDomainObject<?> parent = target.getParent();
+       
+       if(!errors.hasFieldErrors("parent")) {
+            // cannot be parent to itself
+            HierarchicalDomainObject<?> parent = target.getParent();
 
-        while(parent != null) {
-            if(target.equals(parent)) {
-                errors.rejectValue("parent", error);
-                break;
+            while(parent != null) {
+                if(target.equals(parent)) {
+                    errors.rejectValue("parent", error);
+                    break;
+                }
+
+                parent = parent.getParent();
             }
-
-            parent = parent.getParent();
-        }
+       }
    }
    
    static public void rejectHasChildren(HierarchicalDomainObject<? extends Serializable> target, Errors errors, String error) {

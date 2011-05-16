@@ -29,7 +29,7 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/cmdb/item/*")
 @PreAuthorize("hasRole('CMDB_ITEM_ADD')")
-@SessionAttributes("universalItem")
+@SessionAttributes(AbstractUniversalItemController.MODEL_OBJECT)
 public class UniversalItemAddController extends AbstractUniversalItemController {
 
     public static final String VIEW_ADD_CLASS = "/cmdb/item/add/class";

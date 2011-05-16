@@ -21,7 +21,7 @@ import servicedesk.infrastructure.general.validation.Validated;
  * @author Adrian
  */
 @Service
-@Transactional
+@Transactional(readOnly=true)
 @PreAuthorize("hasRole('CHANGE_RFC_VIEW')")
 public class RfcImpactServiceImpl  implements RfcImpactService {
 
@@ -34,6 +34,7 @@ public class RfcImpactServiceImpl  implements RfcImpactService {
     }
 
     @PreAuthorize("hasRole('CHANGE_RFC_IMPACT_CRUD')")
+    @Transactional(readOnly=false)
     @Validated(validator=RfcImpactAddValidator.class)
     @Override
     public void add(RfcImpact object, BindingResult bindingResult) {

@@ -25,21 +25,24 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/cmdb/relationship/{id}/delete")
 @PreAuthorize("hasRole('CMDB_RELATIONSHIP_DELETE')")
-@SessionAttributes("relationship")
+@SessionAttributes(RelationshipDeleteController.MODEL_OBJECT)
 public class RelationshipDeleteController extends AbstractRelationshipController {
     protected static final String VIEW_DELETE = "/cmdb/relationship/delete";
+    public static final String MODEL_OBJECT = "relationship";
 
     @RequestMapping(method=RequestMethod.GET)
     public String deleteGet(ModelMap map, @PathVariable("id") Integer classId) {
-        Relationship relationship = relationshipService.load(classId);
-        map.addAttribute(relationship);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            Relationship relationship = relationshipService.load(classId);
+            map.addAttribute(MODEL_OBJECT, relationship);
+        }
         return VIEW_DELETE;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String deletePost(
             ModelMap map,
-            @ModelAttribute Relationship relationship,
+            @ModelAttribute(MODEL_OBJECT) Relationship relationship,
             @RequestParam("submit") String submit,
             SessionStatus status) {
 

@@ -27,9 +27,10 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/cmdb/relationship/{id}/edit")
 @PreAuthorize("hasRole('CMDB_RELATIONSHIP_EDIT')")
-@SessionAttributes("relationship")
+@SessionAttributes(RelationshipEditController.MODEL_OBJECT)
 public class RelationshipEditController extends AbstractRelationshipController {
     protected final String VIEW_EDIT = "/cmdb/relationship/edit";
+    public static final String MODEL_OBJECT = "relationship";
 
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder) {
@@ -40,15 +41,17 @@ public class RelationshipEditController extends AbstractRelationshipController {
 
     @RequestMapping(method=RequestMethod.GET)
     public String editGet(ModelMap map, @PathVariable("id") Integer classId) {
-        Relationship relationship = relationshipService.load(classId);
-        relationship.populateAttributeValues();
-        map.addAttribute(relationship);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            Relationship relationship = relationshipService.load(classId);
+            relationship.populateAttributeValues();
+            map.addAttribute(MODEL_OBJECT, relationship);
+        }
         return VIEW_EDIT;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String editPost(ModelMap map,
-            @ModelAttribute Relationship relationship,
+            @ModelAttribute(MODEL_OBJECT) Relationship relationship,
             BindingResult bindingResult,
             SessionStatus status) {
 

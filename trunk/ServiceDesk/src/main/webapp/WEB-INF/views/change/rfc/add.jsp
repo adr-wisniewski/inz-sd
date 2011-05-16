@@ -8,7 +8,7 @@
 
 <ui:panel caption="fieldgroup.change.rfc.new">
     <form:form modelAttribute="rfc" method="post">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.change.rfc"/>
         <ui:propertyList>
             <ui:propertyItem code="field.change.rfc.title" label="title">
                 <form:input path="title" />
@@ -18,6 +18,11 @@
             <ui:propertyItem code="field.change.rfc.description" label="description">
                 <form:textarea path="description" />
                 <form:errors path="description" cssClass="error" />
+            </ui:propertyItem>
+            
+            <ui:propertyItem code="field.change.rfc.category" label="category">
+                <sd:treePicker name="category" value="${rfc.category}" source="rfccategory_change"/>
+                <form:errors path="category" cssClass="error" />
             </ui:propertyItem>
 
             <ui:propertyItem>

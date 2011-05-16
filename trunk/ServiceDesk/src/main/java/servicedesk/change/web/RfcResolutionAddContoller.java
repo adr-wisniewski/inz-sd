@@ -23,7 +23,7 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @PreAuthorize("hasRole('CHANGE_RFC_RESOLUTION_CRUD')")
 @RequestMapping(value = "/change/rfc/resolution/*")
-@SessionAttributes("rfcResolution")
+@SessionAttributes(AbstractRfcResolutionController.MODEL_OBJECT)
 public class RfcResolutionAddContoller extends AbstractRfcResolutionController {
     public static final String VIEW_ADD = "/change/rfc/resolution/add";
 

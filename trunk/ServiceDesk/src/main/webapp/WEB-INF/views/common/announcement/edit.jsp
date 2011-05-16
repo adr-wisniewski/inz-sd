@@ -11,7 +11,7 @@
 
 <ui:panel caption="fieldgroup.common.announcement.simple">
     <form:form modelAttribute="announcement" method="post">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.common.announcement"/>
         <ui:propertyList>
             <ui:propertyItem code="field.common.announcement.title" label="title">
                 <form:input path="title" />

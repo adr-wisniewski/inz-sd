@@ -4,6 +4,7 @@
  */
 package servicedesk.change.validator;
 
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import servicedesk.change.domain.RfcCategory;
 
@@ -11,6 +12,7 @@ import servicedesk.change.domain.RfcCategory;
  *
  * @author Adrian
  */
+@Component
 public class RfcCategoryEditValidator extends AbstractRfcCategoryValidator {
     @Override
     protected void doValidate(RfcCategory target, Errors errors) {

@@ -43,9 +43,9 @@
     <context:component-scan base-package="servicedesk.common.*.editor" />
     <context:component-scan base-package="servicedesk.common.*.service" />
     <context:component-scan base-package="servicedesk.common.*.validator" />
-
     <context:component-scan base-package="servicedesk.infrastructure.*.dao" />
     <context:component-scan base-package="servicedesk.infrastructure.*.domain" />
+    <context:component-scan base-package="servicedesk.infrastructure.*.editor" />
     <context:component-scan base-package="servicedesk.infrastructure.*.service" />
     <context:component-scan base-package="servicedesk.infrastructure.*.spring" />
     <context:component-scan base-package="servicedesk.infrastructure.*.util" />

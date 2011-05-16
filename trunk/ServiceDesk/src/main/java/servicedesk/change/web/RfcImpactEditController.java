@@ -24,20 +24,22 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/change/rfc/impact/{id}/edit")
 @PreAuthorize("hasRole('CHANGE_RFC_IMPACT_CRUD')")
-@SessionAttributes("rfcImpact")
+@SessionAttributes(AbstractRfcImpactController.MODEL_OBJECT)
 public class RfcImpactEditController extends AbstractRfcImpactController {
     protected final String VIEW_EDIT = "/change/rfc/impact/edit";
 
     @RequestMapping(method=RequestMethod.GET)
     public String editGet(ModelMap map, @PathVariable("id") Integer id) {
-        RfcImpact rfcImpact = service.load(id);
-        map.addAttribute(rfcImpact);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            RfcImpact rfcImpact = service.load(id);
+            map.addAttribute(MODEL_OBJECT, rfcImpact);
+        }
         return VIEW_EDIT;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String editPost(ModelMap map,
-            @ModelAttribute RfcImpact rfcImpact,
+            @ModelAttribute(MODEL_OBJECT) RfcImpact rfcImpact,
             BindingResult bindingResult,
             SessionStatus status) {
 

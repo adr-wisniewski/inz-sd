@@ -11,7 +11,7 @@
 
 <ui:panel caption="fieldgroup.cmdb.entity.class.simple">
     <form:form modelAttribute="attribute" method="post">
-        <ui:errorList/>
+        <ui:errorList fieldPrefix="field.cmdb.class.attribute"/>
         <ui:propertyList>
             <ui:propertyItem code="field.cmdb.class.attribute.name" label="name">
                 <form:input path="name" />

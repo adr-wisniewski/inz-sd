@@ -33,8 +33,8 @@ public class RfcImpact implements NamedDomainObject<Integer>, Serializable   {
      * @return the id
      */
     @Id
-    @SequenceGenerator(name = "RFC_IMPACT_SEQ", sequenceName = "RFC_IMPACT_SEQ")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RFC_IMPACT_SEQ")
+    @SequenceGenerator(name = "RFC_IMPACTS_SEQ", sequenceName = "RFC_IMPACTS_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RFC_IMPACTS_SEQ")
     @Column(name = "IMPACT_ID", precision = 10)
     @Override
     public Integer getId() {

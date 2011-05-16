@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import servicedesk.change.domain.RfcImpact;
 import servicedesk.change.domain.RfcPriority;
+import servicedesk.change.domain.RfcResolution;
 import servicedesk.change.domain.RfcState;
 import servicedesk.change.domain.helper.RfcCriteria;
-import servicedesk.change.domain.helper.RfcChangeTimestampComparator;
 import servicedesk.infrastructure.general.spring.SpringSecurityUserDetailsService;
 
 /**
@@ -29,9 +29,6 @@ public class RfcViewController extends AbstractRfcController {
     protected static final String VIEW_SEARCH = "/change/rfc";
     protected static final String MODEL_RFCS = "rfcs";
     protected static final String MODEL_CRITERIA = "rfcCriteria";
-    
-    @Autowired
-    protected RfcChangeTimestampComparator rfcUpdateComparator;
     
     @Autowired
     protected SpringSecurityUserDetailsService userService;
@@ -48,19 +45,25 @@ public class RfcViewController extends AbstractRfcController {
         return result;
     }
     
+    @ModelAttribute("resolutions")
+    List<RfcResolution> populateResolutions() {
+        List<RfcResolution> result = resolutionService.getAll();
+        return result;
+    }
+    
     @ModelAttribute("states")
     RfcState[] populateStates() {
         return RfcState.values();
     }
     
-    @RequestMapping(value = "/change/rfc")
+    @RequestMapping(value = "")
     public String search(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
         criteria.setAllowEmptyQueries(true);
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }
     
-    @RequestMapping(value = "/change/rfc/created")
+    @RequestMapping(value = "/created")
     public String searchCreated(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
         criteria.setCreator(userService.getCurrentUser().getEmployee());
         criteria.setAllowEmptyQueries(true);
@@ -68,7 +71,7 @@ public class RfcViewController extends AbstractRfcController {
         return VIEW_SEARCH;
     }
     
-    @RequestMapping(value = "/change/rfc/unassigned")
+    @RequestMapping(value = "/unassigned")
     public String searchUnassigned(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
         criteria.setManager(null);
         criteria.setAllowEmptyQueries(true);
@@ -76,7 +79,7 @@ public class RfcViewController extends AbstractRfcController {
         return VIEW_SEARCH;
     }
     
-    @RequestMapping(value = "/change/rfc/managed")
+    @RequestMapping(value = "/managed")
     public String searchManaged(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
         criteria.setManager(userService.getCurrentUser().getEmployee());
         criteria.setAllowEmptyQueries(true);

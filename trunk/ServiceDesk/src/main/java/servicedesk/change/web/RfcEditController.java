@@ -18,6 +18,7 @@ import servicedesk.change.domain.Rfc;
 import servicedesk.change.domain.RfcChange;
 import servicedesk.change.domain.RfcImpact;
 import servicedesk.change.domain.RfcPriority;
+import servicedesk.change.domain.RfcResolution;
 import servicedesk.change.domain.RfcState;
 import servicedesk.infrastructure.general.validation.BusinessConstraintViolationException;
 
@@ -35,6 +36,7 @@ public class RfcEditController extends AbstractRfcController {
     protected static final String MODEL_CHANGES = "changes";
     protected static final String MODEL_PRIORITIES = "priorities";
     protected static final String MODEL_IMPACTS = "impacts";
+    protected static final String MODEL_RESOLUTIONS = "resolutions";
     protected static final String MODEL_STATES = "states";
     
     @RequestMapping(value = "", method=RequestMethod.GET)
@@ -53,11 +55,13 @@ public class RfcEditController extends AbstractRfcController {
         Rfc rfc = service.load(id);
         List<RfcPriority> priorities = priorityService.getAll();
         List<RfcImpact> impacts = impactService.getAll();
+        List<RfcResolution> resolutions = resolutionService.getAll();
         RfcState[] states = RfcState.values();
         
         map.addAttribute(rfc);
         map.addAttribute(MODEL_PRIORITIES, priorities);
         map.addAttribute(MODEL_IMPACTS, impacts);
+        map.addAttribute(MODEL_RESOLUTIONS, resolutions);
         map.addAttribute(MODEL_STATES, states);
         return VIEW_EDIT;
     }

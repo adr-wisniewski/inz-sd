@@ -18,14 +18,15 @@
         <ui:propertyItem code="field.change.rfc.category.name">
             ${rfcCategory.name}
         </ui:propertyItem>
+
+        <ui:propertyItem code="field.change.rfc.category.parent">
+            <link:rfcCategory object="${rfcCategory.parent}" />
+        </ui:propertyItem>
         
         <ui:propertyItem code="field.change.rfc.category.abstraction">
             <print:yesorno value="${rfcCategory.abstraction}" />
         </ui:propertyItem>
         
-        <ui:propertyItem code="field.change.rfc.category.order">
-            <link:rfcCategory object="${rfcCategory.parent}" />
-        </ui:propertyItem>
     </ui:propertyList>
     <p class="buttons">
         <ui:actionButton label="edit.label"

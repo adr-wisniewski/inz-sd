@@ -2,16 +2,20 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags/ui" %>
+<%@ taglib prefix="link" tagdir="/WEB-INF/tags/link" %>
 <%@ taglib prefix="menu" tagdir="/WEB-INF/tags/ui/menu" %>
 
 <c:set var="username" scope="page">
     <security:authentication property="name"></security:authentication>
 </c:set>
 
-<menu:menuGroup name="general.label" id="menu-general">
-    <menu:menuItem url="/" name="home.label" />
-    <menu:menuItem url="/j_spring_security_logout" name="logout.label" name_args="${username}" />
-</menu:menuGroup>
+<div id="greeting">
+    <spring:message code="common.greeting"/>
+    <em>${username}</em><br/>
+    
+    <a href="/"><spring:message code="home.label" /></a> |
+    <a href="/j_spring_security_logout"><spring:message code="logout.label" /></a>
+</div>
 
 <menu:menuGroup name="menu.cmdb.caption" id="menu-cmdb">
     <menu:compositeMenuItem url="/cmdb/item" name="menu.cmdb.item">

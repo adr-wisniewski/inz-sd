@@ -25,22 +25,24 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/cmdb/item/{id}/delete")
 @PreAuthorize("hasRole('CMDB_ITEM_DELETE')")
-@SessionAttributes("universalItem")
+@SessionAttributes(AbstractUniversalItemController.MODEL_OBJECT)
 public class UniversalItemDeleteController extends AbstractUniversalItemController {
     protected static final String VIEW_DELETE = "/cmdb/item/delete";
 
     @RequestMapping(method=RequestMethod.GET)
     public String deleteGet(ModelMap map, @PathVariable("id") Integer classId) {
-        // TODO: deleting of non universal items
-        UniversalItem item = service.load(classId);
-        map.addAttribute(item);
+        // TODO: deleting of non universal items??
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            UniversalItem item = service.load(classId);
+            map.addAttribute(MODEL_OBJECT, item);
+        }
         return VIEW_DELETE;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String deletePost(
             ModelMap map,
-            @ModelAttribute UniversalItem item,
+            @ModelAttribute(MODEL_OBJECT) UniversalItem item,
             @RequestParam("submit") String submit,
             SessionStatus status) {
 

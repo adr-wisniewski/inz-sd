@@ -68,7 +68,12 @@
             <level value="warn" />
             <appender-ref ref="hb" />
 	</logger>
-
+        
+        <!--logger name="org.hibernate.transaction">
+            <level value="debug" />
+            <appender-ref ref="hb" />
+	</logger-->
+        
         <!--logger name="org.hibernate.sql">
             <level value="debug" />
 	</logger>

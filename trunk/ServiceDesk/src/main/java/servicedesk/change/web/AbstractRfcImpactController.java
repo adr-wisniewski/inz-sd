@@ -15,6 +15,9 @@ import servicedesk.infrastructure.general.web.MessageContextHolder;
  * @author Adrian
  */
 public abstract class AbstractRfcImpactController {
+    
+    public static final String MODEL_OBJECT = "rfcImpact";
+    
     @Autowired
     protected RfcImpactService service;
 

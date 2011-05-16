@@ -71,11 +71,17 @@ public class RfcDaoImpl extends AbstractHibernateDao<Rfc, Integer> implements Rf
        
         if(searchCriteria.getPriority() != null)
             hibernateCriteria.add(Restrictions.eq("priority", searchCriteria.getPriority()));
+        
+        if(searchCriteria.getResolution() != null)
+            hibernateCriteria.add(Restrictions.eq("resolution", searchCriteria.getResolution()));
+        
+        if(searchCriteria.getCategory() != null)
+            hibernateCriteria.add(Restrictions.eq("category", searchCriteria.getCategory()));
  
         if(searchCriteria.getState() != null)
             hibernateCriteria.add(Restrictions.eq("state", searchCriteria.getState()));
 
-        if(searchCriteria.getTitle() != null)
+        if(StringUtils.hasText(searchCriteria.getTitle()))
             hibernateCriteria.add(Restrictions.like("title", searchCriteria.getTitle()));
     }
     

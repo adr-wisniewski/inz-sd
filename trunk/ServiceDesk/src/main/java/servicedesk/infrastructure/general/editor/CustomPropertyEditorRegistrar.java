@@ -1,4 +1,4 @@
-package servicedesk.editor;
+package servicedesk.infrastructure.general.editor;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,9 +8,11 @@ import org.springframework.beans.PropertyEditorRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Component;
+import servicedesk.change.dao.RfcCategoryDao;
 import servicedesk.change.dao.RfcImpactDao;
 import servicedesk.change.dao.RfcPriorityDao;
 import servicedesk.change.dao.RfcResolutionDao;
+import servicedesk.change.domain.RfcCategory;
 import servicedesk.change.domain.RfcImpact;
 import servicedesk.change.domain.RfcPriority;
 import servicedesk.change.domain.RfcResolution;
@@ -28,6 +30,8 @@ import servicedesk.cmdb.domain.UniversalItemClass;
 import servicedesk.dao.EmployeeDao;
 import servicedesk.dao.RoleDao;
 import servicedesk.domain.Employee;
+import servicedesk.editor.EmployeeEditor;
+import servicedesk.editor.RoleEditor;
 import servicedesk.infrastructure.security.domain.Role;
 import servicedesk.em.dao.EventCategoryDao;
 import servicedesk.em.dao.EventSignificanceDao;
@@ -56,7 +60,6 @@ import servicedesk.im.editor.IncidentSourceEditor;
 import servicedesk.im.editor.IncidentStatusEditor;
 import servicedesk.im.editor.IncidentUrgencyEditor;
 import servicedesk.im.editor.SupportGroupEditor;
-import servicedesk.infrastructure.general.editor.DomainObjectEditor;
 import servicedesk.pm.dao.ProblemCategoryDao;
 import servicedesk.pm.dao.ProblemImpactDao;
 import servicedesk.pm.dao.ProblemPriorityDao;
@@ -166,111 +169,11 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
         @Autowired
         private RfcImpactDao rfcImpactDao;
         @Autowired
+        private RfcCategoryDao rfcCategoryDao;
+        @Autowired
         private RfcResolutionDao rfcResolutionDao;
         @Autowired
         private RfcStateEditor rfcStateEditor;
-        
-	
-	public void setIncidentPriorityDao(IncidentPriorityDao incidentPriorityDao) {
-		this.incidentPriorityDao = incidentPriorityDao;
-	}
-	
-	public void setIncidentCategoryDao(IncidentCategoryDao incidentCategoryDao) {
-		this.incidentCategoryDao = incidentCategoryDao;
-	}
-	
-	public void setIncidentImpactDao(IncidentImpactDao incidentImpactDao) {
-		this.incidentImpactDao = incidentImpactDao;
-	}
-
-	public void setIncidentSourceDao(IncidentSourceDao incidentSourceDao) {
-		this.incidentSourceDao = incidentSourceDao;
-	}
-
-	public void setIncidentStatusDao(IncidentStatusDao incidentStatusDao) {
-		this.incidentStatusDao = incidentStatusDao;
-	}
-
-	public void setIncidentUrgencyDao(IncidentUrgencyDao incidentUrgencyDao) {
-		this.incidentUrgencyDao = incidentUrgencyDao;
-	}
-
-	public void setProblemPriorityDao(ProblemPriorityDao problemPriorityDao) {
-		this.problemPriorityDao = problemPriorityDao;
-	}
-
-	public void setProblemCategoryDao(ProblemCategoryDao problemCategoryDao) {
-		this.problemCategoryDao = problemCategoryDao;
-	}
-
-	public void setProblemStatusDao(ProblemStatusDao problemStatusDao) {
-		this.problemStatusDao = problemStatusDao;
-	}
-
-	public void setProblemUrgencyDao(ProblemUrgencyDao problemUrgencyDao) {
-		this.problemUrgencyDao = problemUrgencyDao;
-	}
-
-	public void setProblemImpactDao(ProblemImpactDao problemImpactDao) {
-		this.problemImpactDao = problemImpactDao;
-	}
-
-	public void setSolutionTypeDao(SolutionTypeDao solutionTypeDao) {
-		this.solutionTypeDao = solutionTypeDao;
-	}
-	
-	public void setEmployeeDao(EmployeeDao employeeDao) {
-		this.employeeDao = employeeDao;
-	}	
-
-	public void setRoleDao(RoleDao roleDao) {
-		this.roleDao = roleDao;
-	}
-
-	public void setEventTypeDao(EventSignificanceDao eventTypeDao) {
-		this.eventTypeDao = eventTypeDao;
-	}
-	
-	public void setEventCategoryDao(EventCategoryDao eventCategoryDao) {
-		this.eventCategoryDao = eventCategoryDao;
-	}
-	
-	public void setRequestCategoryDao(RequestCategoryDao requestCategoryDao) {
-		this.requestCategoryDao = requestCategoryDao;
-	}
-
-	public void setRequestPriorityDao(RequestPriorityDao requestPriorityDao) {
-		this.requestPriorityDao = requestPriorityDao;
-	}
-
-	public void setRequestStatusDao(RequestStatusDao requestStatusDao) {
-		this.requestStatusDao = requestStatusDao;
-	}
-	
-	public void setSupportGroupDao(SupportGroupDao supportGroupDao) {
-		this.supportGroupDao = supportGroupDao;
-	}
-	
-	public void setSignalTypeDao(SignalTypeDao signalTypeDao) {
-		this.signalTypeDao = signalTypeDao;
-	}
-	
-	public void setSignalObjectTypeDao(SignalObjectTypeDao signalObjectTypeDao) {
-		this.signalObjectTypeDao = signalObjectTypeDao;
-	}
-
-	public void setSignalSignificanceTypeDao(
-			SignalSignificanceTypeDao signalSignificanceTypeDao) {
-		this.signalSignificanceTypeDao = signalSignificanceTypeDao;
-	}
-	
-	public void setSignalReceiverTypeDao(SignalReceiverTypeDao signalReceiverTypeDao) {
-		this.signalReceiverTypeDao = signalReceiverTypeDao;
-	}
-
-	public void setServiceDao(ServiceDao serviceDao) {
-		this.serviceDao = serviceDao;
-	}
 
         @Override
 	public void registerCustomEditors(PropertyEditorRegistry registry) {
@@ -318,6 +221,7 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
         registry.registerCustomEditor(RfcPriority.class, new DomainObjectEditor<RfcPriority>( rfcPriorityDao ));
         registry.registerCustomEditor(RfcImpact.class, new DomainObjectEditor<RfcImpact>( rfcImpactDao ));
         registry.registerCustomEditor(RfcResolution.class, new DomainObjectEditor<RfcResolution>( rfcResolutionDao ));
+        registry.registerCustomEditor(RfcCategory.class, new DomainObjectEditor<RfcCategory>( rfcCategoryDao ));
         registry.registerCustomEditor(RfcState.class, rfcStateEditor);
     }
 }

@@ -27,10 +27,11 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/cmdb/item/class/{id}/edit")
 @PreAuthorize("hasRole('CMDB_ITEMCLASS_EDIT')")
-@SessionAttributes("universalItemClass")
+@SessionAttributes(ItemClassEditController.MODEL_OBJECT)
 public class ItemClassEditController extends AbstractItemClassController {
 
     protected final String VIEW_EDIT = "/cmdb/item/class/edit";
+    public static final String MODEL_OBJECT = "universalItemClass";
 
     @InitBinder
     public void setAllowedFields(WebDataBinder dataBinder) {
@@ -39,14 +40,16 @@ public class ItemClassEditController extends AbstractItemClassController {
 
     @RequestMapping(method=RequestMethod.GET)
     public String editGet(ModelMap map, @PathVariable("id") Integer classId) {
-        UniversalItemClass itemClass = service.load(classId);
-        map.addAttribute(itemClass);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            UniversalItemClass itemClass = service.load(classId);
+            map.addAttribute(MODEL_OBJECT, itemClass);
+        }
         return VIEW_EDIT;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String editPost(ModelMap map,
-            @ModelAttribute UniversalItemClass itemClass,
+            @ModelAttribute(MODEL_OBJECT) UniversalItemClass itemClass,
             BindingResult bindingResult,
             SessionStatus status) {
 

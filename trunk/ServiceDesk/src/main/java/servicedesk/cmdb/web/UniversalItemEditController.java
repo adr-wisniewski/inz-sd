@@ -32,7 +32,7 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/cmdb/item/{id}/edit")
 @PreAuthorize("hasRole('CMDB_ITEM_EDIT')")
-@SessionAttributes("universalItem")
+@SessionAttributes(AbstractUniversalItemController.MODEL_OBJECT)
 public class UniversalItemEditController extends AbstractUniversalItemController {
     protected final String VIEW_EDIT = "/cmdb/item/edit";
 
@@ -45,15 +45,17 @@ public class UniversalItemEditController extends AbstractUniversalItemController
 
     @RequestMapping(method=RequestMethod.GET)
     public String editGet(ModelMap map, @PathVariable("id") Integer id) {
-        UniversalItem item = service.load(id);
-        item.populateAttributeValues();
-        map.addAttribute(item);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            UniversalItem item = service.load(id);
+            item.populateAttributeValues();
+            map.addAttribute(MODEL_OBJECT, item);
+        }
         return VIEW_EDIT;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String editPost(ModelMap map,
-            @ModelAttribute UniversalItem item,
+            @ModelAttribute(MODEL_OBJECT) UniversalItem item,
             BindingResult bindingResult,
             SessionStatus status) {
 

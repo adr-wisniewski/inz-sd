@@ -9,16 +9,18 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.BeanFactoryUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Validator;
+import servicedesk.infrastructure.general.dao.AttachDao;
+import servicedesk.infrastructure.general.domain.DomainObject;
 
 /**
  *
@@ -31,6 +33,10 @@ public class ValidatedAspect implements Ordered, ApplicationContextAware {
     protected ApplicationContext applicationContext;
     protected static final int ORDER = Ordered.LOWEST_PRECEDENCE; // run last
 
+    @Autowired
+    protected AttachDao dao;
+    
+    
     @Override
     public int getOrder() {
         return ORDER;
@@ -48,9 +54,20 @@ public class ValidatedAspect implements Ordered, ApplicationContextAware {
     @Before("businessService() && @annotation(validated)")
     public void validate(JoinPoint jp, Validated validated) throws NoSuchMethodException {
         Object[] args = jp.getArgs();
+        
+        if(args.length == 0)
+            throw new IllegalArgumentException("At least 1 argument required for @validated method!");
+        
+        Object target = args[0];
+        if(!(target instanceof DomainObject<?>)) 
+            throw new IllegalArgumentException("1st argument of @validated method must be a domain object");
+        
         BindingResult bindingResult = getBindingResult(args, validated);
         Validator validator = getValidator(validated);
-        doValidate(args[0], bindingResult, validator);
+        
+        
+        
+        doValidate((DomainObject<?>)target, bindingResult, validator);
     }
 
     private BindingResult getBindingResult(Object[] args, Validated validated) {
@@ -73,11 +90,14 @@ public class ValidatedAspect implements Ordered, ApplicationContextAware {
         return (Validator)BeanFactoryUtils.beanOfTypeIncludingAncestors(applicationContext, validated.validator());
     }
 
-    private void doValidate(Object object, BindingResult bindingResult, Validator validator) {
+    @Transactional(readOnly=true)
+    private void doValidate(DomainObject<?> object, BindingResult bindingResult, Validator validator) {
         if(!validator.supports(object.getClass()))
             throw new IllegalArgumentException("@Validated validator must support method's first parameter type");
 
+        dao.attach(object);
         validator.validate(object, bindingResult);
+        dao.detach(object);
 
         if(bindingResult.hasErrors())
             throw new BusinessConstraintViolationException(bindingResult);

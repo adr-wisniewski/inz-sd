@@ -24,21 +24,23 @@ import servicedesk.infrastructure.general.validation.BusinessConstraintViolation
 @Controller
 @RequestMapping(value = "/change/rfc/resolution/{id}/delete")
 @PreAuthorize("hasRole('CHANGE_RFC_RESOLUTION_CRUD')")
-@SessionAttributes("rfcResolution")
+@SessionAttributes(AbstractRfcResolutionController.MODEL_OBJECT)
 public class RfcResolutionDeleteController extends AbstractRfcResolutionController {
     protected static final String VIEW_DELETE = "/change/rfc/resolution/delete";
 
     @RequestMapping(method=RequestMethod.GET)
     public String deleteGet(ModelMap map, @PathVariable("id") Integer id) {
-        RfcResolution rfcResolution = service.load(id);
-        map.addAttribute(rfcResolution);
+        if(!map.containsAttribute(MODEL_OBJECT)) {
+            RfcResolution rfcResolution = service.load(id);
+            map.addAttribute(MODEL_OBJECT, rfcResolution);
+        }
         return VIEW_DELETE;
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String deletePost(
             ModelMap map,
-            @ModelAttribute RfcResolution rfcResolution,
+            @ModelAttribute(MODEL_OBJECT) RfcResolution rfcResolution,
             @RequestParam("submit") String submit,
             SessionStatus status) {
 

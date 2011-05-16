@@ -23,6 +23,7 @@ public abstract class AbstractRfcImpactValidator extends AbstractValidator<RfcIm
 
     protected void checkProperties(RfcImpact target, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "validate.change.rfc.impact.name.empty");
+        ValidationUtils.rejectIfEmpty(errors, "order", "validate.change.rfc.impact.order.empty");
         ValidatorUtils.rejectNotUniqueName(target, errors, service, "validate.change.rfc.impact.name.notunique");
     }
 }

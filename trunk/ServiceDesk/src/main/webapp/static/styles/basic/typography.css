@@ -29,6 +29,11 @@
 
 }
 
+#greeting
+{
+    text-align: center;
+}
+
 body,
 form dl input,
 form dl textarea
@@ -89,6 +94,7 @@ div.panel h1.caption
         line-height: 16px;
     }
 
+    #greeting a:first-letter,
     #navigation li:first-letter
     {
         font-weight: bold;
@@ -125,6 +131,7 @@ div.panel .item .title {
     text-shadow: 1px 2px 4px black;
 }
 
+#greeting em,
 #navigation li em
 {
     font-style: normal;

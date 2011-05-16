@@ -12,14 +12,15 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 
 /**
  *
+ * @param <Type> 
  * @author Adrian
  */
-public class DomainObjectEditor<D extends DomainObject<Integer>> 
+public class DomainObjectEditor<Type extends DomainObject<Integer>> 
     extends PropertyEditorSupport {
     
-    protected Dao<D, Integer> dao;
+    protected Dao<Type, Integer> dao;
     
-    public DomainObjectEditor(Dao<D, Integer> dictionaryPropertyDao) {
+    public DomainObjectEditor(Dao<Type, Integer> dictionaryPropertyDao) {
         this.dao = dictionaryPropertyDao;
     }
     
@@ -28,7 +29,7 @@ public class DomainObjectEditor<D extends DomainObject<Integer>>
         if(StringUtils.hasText(text))
         {
             Integer id = Integer.parseInt(text);
-            D domainObject = dao.load(id);
+            Type domainObject = dao.load(id);
             setValue(domainObject);
             // TODO: get instead of load + error checking?
         }

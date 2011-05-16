@@ -30,8 +30,8 @@ public class RfcResolution implements NamedDomainObject<Integer>, Serializable {
      * @return the id
      */
     @Id
-    @SequenceGenerator(name = "RFC_CATEGORY_SEQ", sequenceName = "RFC_CATEGORY_SEQ")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RFC_CATEGORY_SEQ")
+    @SequenceGenerator(name = "RFC_RESOLUTIONS_SEQ", sequenceName = "RFC_RESOLUTIONS_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RFC_RESOLUTIONS_SEQ")
     @Column(name="RESOLUTION_ID")
     @Override
     public Integer getId() {

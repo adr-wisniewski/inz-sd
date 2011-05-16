@@ -15,6 +15,9 @@ import servicedesk.infrastructure.general.web.MessageContextHolder;
  * @author Adrian
  */
 public abstract class AbstractRfcResolutionController {
+    
+    public static final String MODEL_OBJECT = "rfcResolution";
+    
     @Autowired
     protected RfcResolutionService service;
 

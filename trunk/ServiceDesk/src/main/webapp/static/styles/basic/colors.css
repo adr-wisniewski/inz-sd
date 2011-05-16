@@ -7,7 +7,7 @@ div.dashboardpanel .header{
     color: #15428B;
 }
 
-#logo, #pagetitle,
+#logo, #pagetitle, #greeting,
 #navigation a, #navigation a:link, 
 #navigation a:visited, #navigation a:hover,
 #navigation a:active, #navigation a:hover,
@@ -27,6 +27,8 @@ div.panel.success {
     color: #007000;
 }
 
+#greeting em,
+#greeting a:first-letter,
 #navigation li:first-letter,
 #navigation li em
 {
@@ -66,6 +68,7 @@ div.panel h1.caption,
 }
 
 #logo h1,
+#greeting,
 #navigation .menuGroup > ul {
     background: #008DB8;
 }
@@ -91,6 +94,7 @@ div.panel.success > .content {
     border-color: black;
 }
 
+#greeting,
 #navigation h5,
 #navigation ul,
 #logo h1
@@ -132,6 +136,7 @@ div.dashboardpanel .header {
 
 #logo h1,
 .menuGroup,
+#greeting,
 #pagetitle,
 .element
 {

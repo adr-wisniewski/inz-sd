@@ -120,7 +120,7 @@
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>true</notNull>
+      <notNull>false</notNull>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
@@ -142,7 +142,7 @@
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>true</notNull>
+      <notNull>false</notNull>
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
@@ -164,7 +164,7 @@
           <typeName>NUMBER</typeName>
         </dataTypeID>
       </dataTypeUsage>
-      <notNull>true</notNull>
+      <notNull>false</notNull>
     </column>
   </columns>
   <constraints>
@@ -191,7 +191,7 @@
                   <name>ABSTRACT</name>
                   <identifier class="java.lang.String">174723f6-f770-4700-a488-ee0686998bf4</identifier>
                   <parent class="oracle.javatools.db.IdentifierBasedID">
-                    <name>RFC_CATEGORY</name>
+                    <name>RFC_CATEGORIES</name>
                     <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
                     <schemaName>CHANGE</schemaName>
                     <type>TABLE</type>
@@ -231,7 +231,7 @@
           <name>PARENT_CATEGORY_ID</name>
           <identifier class="java.lang.String">dc6bc527-8eaf-45c6-9ebf-d85e671d9ebd</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>RFC_CATEGORY</name>
+            <name>RFC_CATEGORIES</name>
             <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
             <schemaName>CHANGE</schemaName>
             <type>TABLE</type>
@@ -245,7 +245,7 @@
         <name>RFC_CATEGORY_PK</name>
         <identifier class="java.lang.String">51bdd223-0a84-4a52-b789-e596d1a694ab</identifier>
         <parent class="oracle.javatools.db.IdentifierBasedID">
-          <name>RFC_CATEGORY</name>
+          <name>RFC_CATEGORIES</name>
           <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
           <schemaName>CHANGE</schemaName>
           <type>TABLE</type>
@@ -263,7 +263,7 @@
           <name>CATEGORY_ID</name>
           <identifier class="java.lang.String">b74236f3-36c3-49d0-b820-231bba4df340</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>RFC_CATEGORY</name>
+            <name>RFC_CATEGORIES</name>
             <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
             <schemaName>CHANGE</schemaName>
             <type>TABLE</type>
@@ -283,7 +283,7 @@
           <name>NAME</name>
           <identifier class="java.lang.String">ccd35bc8-e474-48b3-bed3-5420b5fbbf72</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>RFC_CATEGORY</name>
+            <name>RFC_CATEGORIES</name>
             <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
             <schemaName>CHANGE</schemaName>
             <type>TABLE</type>

@@ -6,8 +6,10 @@ package servicedesk.change.domain.helper;
 
 import java.util.Date;
 import org.springframework.util.StringUtils;
+import servicedesk.change.domain.RfcCategory;
 import servicedesk.change.domain.RfcImpact;
 import servicedesk.change.domain.RfcPriority;
+import servicedesk.change.domain.RfcResolution;
 import servicedesk.change.domain.RfcState;
 import servicedesk.domain.Employee;
 
@@ -17,15 +19,17 @@ import servicedesk.domain.Employee;
  */
 public class RfcCriteria {
     private Integer id;
-    private RfcState state;
     private Employee creator;
     private Date timestampMin;
     private Date timestampMax;
     private String title;
     private String description;
+    private RfcState state;
     private Employee manager;
+    private RfcCategory category;
     private RfcPriority priority;
     private RfcImpact impact;
+    private RfcResolution resolution;
     private boolean allowEmptyQueries;
     
 
@@ -181,6 +185,8 @@ public class RfcCriteria {
             || StringUtils.hasText(title)
             || StringUtils.hasText(description)
             || priority != null
+            || category != null
+            || resolution != null    
             || impact != null;     
     }
 
@@ -196,5 +202,33 @@ public class RfcCriteria {
      */
     public void setAllowEmptyQueries(boolean queryWhenEmpty) {
         this.allowEmptyQueries = queryWhenEmpty;
+    }
+
+    /**
+     * @return the category
+     */
+    public RfcCategory getCategory() {
+        return category;
+    }
+
+    /**
+     * @param category the category to set
+     */
+    public void setCategory(RfcCategory category) {
+        this.category = category;
+    }
+
+    /**
+     * @return the resolution
+     */
+    public RfcResolution getResolution() {
+        return resolution;
+    }
+
+    /**
+     * @param resolution the resolution to set
+     */
+    public void setResolution(RfcResolution resolution) {
+        this.resolution = resolution;
     }
 }

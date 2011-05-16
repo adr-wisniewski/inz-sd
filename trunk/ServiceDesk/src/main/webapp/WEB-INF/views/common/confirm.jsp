@@ -4,13 +4,15 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@taglib prefix="ui" tagdir="/WEB-INF/tags/ui" %>
 
+<tiles:importAttribute name="fieldPrefix" ignore="true" />
+
 <form:form method="post" modelAttribute="target">
     <ui:panel cssClass="messagebox confirm">
         <jsp:attribute name="caption">
             <tiles:getAsString name="caption" />
         </jsp:attribute>
         <jsp:body>
-            <ui:errorList/>
+            <ui:errorList fieldPrefix="${fieldPrefix}"/>
             <p>
                 <spring:message>
                     <jsp:attribute name="code">
