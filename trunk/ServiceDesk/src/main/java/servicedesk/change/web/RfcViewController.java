@@ -58,7 +58,7 @@ public class RfcViewController extends AbstractRfcController {
     
     @RequestMapping(value = "")
     public String search(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
-        criteria.setAllowEmptyQueries(true);
+        criteria.setCriterialessAllowed(true);
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }
@@ -66,7 +66,7 @@ public class RfcViewController extends AbstractRfcController {
     @RequestMapping(value = "/created")
     public String searchCreated(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
         criteria.setCreator(userService.getCurrentUser().getEmployee());
-        criteria.setAllowEmptyQueries(true);
+        criteria.setCriterialessAllowed(true);
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }
@@ -74,7 +74,7 @@ public class RfcViewController extends AbstractRfcController {
     @RequestMapping(value = "/unassigned")
     public String searchUnassigned(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
         criteria.setManager(null);
-        criteria.setAllowEmptyQueries(true);
+        criteria.setCriterialessAllowed(true);
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }
@@ -82,7 +82,7 @@ public class RfcViewController extends AbstractRfcController {
     @RequestMapping(value = "/managed")
     public String searchManaged(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
         criteria.setManager(userService.getCurrentUser().getEmployee());
-        criteria.setAllowEmptyQueries(true);
+        criteria.setCriterialessAllowed(true);
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }

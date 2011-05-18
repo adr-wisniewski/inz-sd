@@ -52,13 +52,17 @@ public class EmployeeSearchCriteria implements SearchCriteria<Employee> {
 		return null;
 	}
 
+    @Override
 	public void initCriteria(Criteria criteria) {
 		if(id != null) criteria.add(Restrictions.eq("id", id));
 		if(firstname != null) criteria.add(Restrictions.like("firstname", "%" + firstname + "%"));
 		if(lastname != null) criteria.add(Restrictions.like("lastname", "%" + lastname + "%"));
-		if(login != null) criteria.add(Restrictions.like("login", "%" + login + "%"));
+		if(login != null) {
+                    //criteria.add(Restrictions.like("login", "%" + login + "%"));
+                }
 	}
 
+    @Override
 	public boolean match(Employee event) {
 		// TODO Auto-generated method stub
 		return false;

@@ -40,310 +40,305 @@ import servicedesk.scm.domain.Service;
  * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
  */
 @Entity
-@Table(name="EMPLOYEES")
+@Table(name = "EMPLOYEES")
 @NamedQueries({
     @NamedQuery(name = "Employee.get", query = "SELECT e FROM Employee e WHERE e.id = ?")
-    /*,@NamedQuery(name = "Employee.findByLogin", query = "SELECT e FROM Employee e WHERE e.login = ?")*/})
+/*,@NamedQuery(name = "Employee.findByLogin", query = "SELECT e FROM Employee e WHERE e.login = ?")*/
+})
 public class Employee implements DomainObject<Integer>, Serializable {
+
     private static final long serialVersionUID = 1L;
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	@Id
-	@SequenceGenerator(name = "employee_seq", sequenceName = "employee_id_seq")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_seq")
+    /** 
+     * <!-- begin-UML-doc -->
+     * <!-- end-UML-doc -->
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    @Id
+    @SequenceGenerator(name = "employee_seq", sequenceName = "employee_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_seq")
     @Column(name = "EMPLOYEE_ID")
-	private Integer id;
+    private Integer id;
 
-	/** 
-	 * /**
-	 *  * @return the id
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
+    /** 
+     * /**
+     *  * @return the id
+     * 
+     * @return 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
     @Override
-	public Integer getId() {
-		// begin-user-code
-		return id;
-		// end-user-code
-	}
+    public Integer getId() {
+        // begin-user-code
+        return id;
+        // end-user-code
+    }
 
-	/** 
-	 * /**
-	 *  * @param id the id to set
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setId(Integer id) {
-		// begin-user-code
-		this.id = id;
-		// end-user-code
-	}
-	
-	/*@Column(name = "LOGIN")
-	private String login;
-	
-	public String getLogin() {
-		return login;
-	}
+    /** 
+     * /**
+     *  * @param id the id to set
+     * 
+     * @param id 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public void setId(Integer id) {
+        // begin-user-code
+        this.id = id;
+        // end-user-code
+    }
+    /*@Column(name = "LOGIN")
+    private String login;
+    
+    public String getLogin() {
+    return login;
+    }
+    
+    public void setLogin(String login) {
+    this.login = login;
+    }*/
+    /** 
+     * <!-- begin-UML-doc -->
+     * <!-- end-UML-doc -->
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    @Column(name = "NAME")
+    private String firstname;
 
-	public void setLogin(String login) {
-		this.login = login;
-	}*/
+    /** 
+     * /**
+     *  * @return the firstname
+     * 
+     * @return 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public String getFirstname() {
+        // begin-user-code
+        return firstname;
+        // end-user-code
+    }
 
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	@Column(name = "NAME")
-	private String firstname;
+    /** 
+     * /**
+     *  * @param firstname the firstname to set
+     * 
+     * @param firstname 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public void setFirstname(String firstname) {
+        // begin-user-code
+        this.firstname = firstname;
+        // end-user-code
+    }
+    /** 
+     * <!-- begin-UML-doc -->
+     * <!-- end-UML-doc -->
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    @Column(name = "SURNAME")
+    private String lastname;
 
-	/** 
-	 * /**
-	 *  * @return the firstname
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public String getFirstname() {
-		// begin-user-code
-		return firstname;
-		// end-user-code
-	}
+    /** 
+     * /**
+     *  * @return the lastname
+     * 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public String getLastname() {
+        // begin-user-code
+        return lastname;
+        // end-user-code
+    }
 
-	/** 
-	 * /**
-	 *  * @param firstname the firstname to set
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setFirstname(String firstname) {
-		// begin-user-code
-		this.firstname = firstname;
-		// end-user-code
-	}
+    /** 
+     * /**
+     *  * @param lastname the lastname to set
+     * 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public void setLastname(String lastname) {
+        // begin-user-code
+        this.lastname = lastname;
+        // end-user-code
+    }
+    /** 
+     * <!-- begin-UML-doc -->
+     * <!-- end-UML-doc -->
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    @Column(name = "PHONE_NUMBER")
+    private String phoneNumber;
 
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	@Column(name = "SURNAME")
-	private String lastname;
+    /** 
+     * /**
+     *  * @return the phoneNumber
+     * 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public String getPhoneNumber() {
+        // begin-user-code
+        return phoneNumber;
+        // end-user-code
+    }
 
-	/** 
-	 * /**
-	 *  * @return the lastname
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public String getLastname() {
-		// begin-user-code
-		return lastname;
-		// end-user-code
-	}
+    /** 
+     * /**
+     *  * @param phoneNumber the phoneNumber to set
+     * 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public void setPhoneNumber(String phoneNumber) {
+        // begin-user-code
+        this.phoneNumber = phoneNumber;
+        // end-user-code
+    }
+    /** 
+     * <!-- begin-UML-doc -->
+     * <!-- end-UML-doc -->
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    @Column(name = "MOBILE_PHONE")
+    private String mobilePhone;
 
-	/** 
-	 * /**
-	 *  * @param lastname the lastname to set
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setLastname(String lastname) {
-		// begin-user-code
-		this.lastname = lastname;
-		// end-user-code
-	}
+    /** 
+     * /**
+     *  * @return the mobilePhone
+     * 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public String getMobilePhone() {
+        // begin-user-code
+        return mobilePhone;
+        // end-user-code
+    }
 
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	@Column(name = "PHONE_NUMBER")
-	private String phoneNumber;
+    /** 
+     * /**
+     *  * @param mobilePhone the mobilePhone to set
+     * 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public void setMobilePhone(String mobilePhone) {
+        // begin-user-code
+        this.mobilePhone = mobilePhone;
+        // end-user-code
+    }
+    /** 
+     * <!-- begin-UML-doc -->
+     * <!-- end-UML-doc -->
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    @Column(name = "EMAIL")
+    private String email;
 
-	/** 
-	 * /**
-	 *  * @return the phoneNumber
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public String getPhoneNumber() {
-		// begin-user-code
-		return phoneNumber;
-		// end-user-code
-	}
+    /** 
+     * /**
+     *  * @return the email
+     * 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public String getEmail() {
+        // begin-user-code
+        return email;
+        // end-user-code
+    }
 
-	/** 
-	 * /**
-	 *  * @param phoneNumber the phoneNumber to set
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setPhoneNumber(String phoneNumber) {
-		// begin-user-code
-		this.phoneNumber = phoneNumber;
-		// end-user-code
-	}
+    /** 
+     * /**
+     *  * @param email the email to set
+     * 
+     * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+     */
+    public void setEmail(String email) {
+        // begin-user-code
+        this.email = email;
+        // end-user-code
+    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "JOB_CODE")
+    private Job job;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DEPARTMENT_ID")
+    private Department department;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MANAGER_ID")
+    private Employee manager;
 
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	@Column(name = "MOBILE_PHONE")
-	private String mobilePhone;
+    public Job getJob() {
+        return job;
+    }
 
-	/** 
-	 * /**
-	 *  * @return the mobilePhone
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public String getMobilePhone() {
-		// begin-user-code
-		return mobilePhone;
-		// end-user-code
-	}
+    public void setJob(Job job) {
+        this.job = job;
+    }
 
-	/** 
-	 * /**
-	 *  * @param mobilePhone the mobilePhone to set
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setMobilePhone(String mobilePhone) {
-		// begin-user-code
-		this.mobilePhone = mobilePhone;
-		// end-user-code
-	}
+    public Department getDepartment() {
+        return department;
+    }
 
-	/** 
-	 * <!-- begin-UML-doc -->
-	 * <!-- end-UML-doc -->
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	@Column(name = "EMAIL")
-	private String email;
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
-	/** 
-	 * /**
-	 *  * @return the email
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public String getEmail() {
-		// begin-user-code
-		return email;
-		// end-user-code
-	}
+    public Employee getManager() {
+        return manager;
+    }
 
-	/** 
-	 * /**
-	 *  * @param email the email to set
-	 * 
-	 * @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
-	 */
-	public void setEmail(String email) {
-		// begin-user-code
-		this.email = email;
-		// end-user-code
-	}
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="JOB_CODE")
-	private Job job;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="DEPARTMENT_ID")
-	private Department department;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="MANAGER_ID")
-	private Employee manager;
-	
-	public Job getJob() {
-		return job;
-	}
+    public void setManager(Employee manager) {
+        this.manager = manager;
+    }
+    //@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    //@JoinTable(name="EMPLOYEE_ROLE", joinColumns = {
+    //@JoinColumn(name="EMPLOYEE_ID", nullable=false, updatable=false) }, inverseJoinColumns = {
+    //@JoinColumn(name="ROLE_CODE", nullable=false, updatable=false) })
+    @Transient
+    private List<Role> authorities = new LinkedList<Role>();
 
-	public void setJob(Job job) {
-		this.job = job;
-	}
+    public List<Role> getAuthorities() {
+        return authorities;
+    }
 
-	public Department getDepartment() {
-		return department;
-	}
+    public void setAuthorities(List<Role> authorities) {
+        this.authorities = authorities;
+    }
 
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
+    public void clearAuthorities() {
+        if (authorities != null) {
+            authorities.clear();
+        }
+    }
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(name = "EMPLOYEE_SERVICE", joinColumns = {
+        @JoinColumn(name = "EMPLOYEE_ID", nullable = false, updatable = false)}, inverseJoinColumns = {
+        @JoinColumn(name = "SERVICE_ID", nullable = false, updatable = false)})
+    private Set<Service> services = new HashSet<Service>();
 
-	public Employee getManager() {
-		return manager;
-	}
+    public Set<Service> getServices() {
+        return services;
+    }
 
-	public void setManager(Employee manager) {
-		this.manager = manager;
-	}
+    public void setServices(Set<Service> services) {
+        this.services = services;
+    }
 
-	//@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-        //@JoinTable(name="EMPLOYEE_ROLE", joinColumns = {
-        //@JoinColumn(name="EMPLOYEE_ID", nullable=false, updatable=false) }, inverseJoinColumns = {
-        //@JoinColumn(name="ROLE_CODE", nullable=false, updatable=false) })
-	@Transient
-        private List<Role> authorities = new LinkedList<Role>();
+    @Override
+    public String toString() {
+        return "Employee [email=" + email + ", firstname=" + firstname
+                + ", id=" + id + ", lastname=" + lastname //+ ", login=" + login
+                + ", mobilePhone=" + mobilePhone + ", phoneNumber="
+                + phoneNumber + "]";
+    }
 
-	public List<Role> getAuthorities() {
-		return authorities;
-	}
+    public String getName() {
+        return firstname + " " + lastname;
+    }
 
-	public void setAuthorities(List<Role> authorities) {
-		this.authorities = authorities;
-	}
+    public Employee() {
+        //do nothing
+    }
 
-	public void clearAuthorities() {
-		if(authorities != null) {
-			authorities.clear();
-		}
-	}
-	
-	@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinTable(name="EMPLOYEE_SERVICE", joinColumns = { 
-        @JoinColumn(name="EMPLOYEE_ID", nullable=false, updatable=false) }, inverseJoinColumns = { 
-        @JoinColumn(name="SERVICE_ID", nullable=false, updatable=false) })
-	private Set<Service> services = new HashSet<Service>();
-	
-	public Set<Service> getServices() {
-		return services;
-	}
-
-	public void setServices(Set<Service> services) {
-		this.services = services;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [email=" + email + ", firstname=" + firstname
-				+ ", id=" + id + ", lastname=" + lastname //+ ", login=" + login
-				+ ", mobilePhone=" + mobilePhone + ", phoneNumber="
-				+ phoneNumber + "]";
-	}
-	
-	public String getName() {
-		return firstname + " " + lastname;
-	}
-	
-	public Employee() {
-		//do nothing
-	}
-	
-	public Employee(Integer id, String firstname, String lastname) {
-		super();
-		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
-	}
+    public Employee(Integer id, String firstname, String lastname) {
+        super();
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
 }

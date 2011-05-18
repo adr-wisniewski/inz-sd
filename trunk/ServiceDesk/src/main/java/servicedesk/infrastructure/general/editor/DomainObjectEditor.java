@@ -7,7 +7,7 @@ package servicedesk.infrastructure.general.editor;
 import java.beans.PropertyEditorSupport;
 import java.io.Serializable;
 import org.springframework.util.StringUtils;
-import servicedesk.infrastructure.general.dao.Dao;
+import servicedesk.infrastructure.general.dao.GetDao;
 import servicedesk.infrastructure.general.domain.DomainObject;
 
 /**
@@ -18,9 +18,9 @@ import servicedesk.infrastructure.general.domain.DomainObject;
 public class DomainObjectEditor<Type extends DomainObject<Integer>> 
     extends PropertyEditorSupport {
     
-    protected Dao<Type, Integer> dao;
+    protected GetDao<Type, Integer> dao;
     
-    public DomainObjectEditor(Dao<Type, Integer> dictionaryPropertyDao) {
+    public DomainObjectEditor(GetDao<Type, Integer> dictionaryPropertyDao) {
         this.dao = dictionaryPropertyDao;
     }
     

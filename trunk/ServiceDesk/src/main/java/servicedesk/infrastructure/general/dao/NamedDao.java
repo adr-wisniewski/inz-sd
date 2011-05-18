@@ -9,9 +9,11 @@ import servicedesk.infrastructure.general.domain.NamedDomainObject;
 
 /**
  *
+ * @param <Type> 
+ * @param <Id> 
  * @author Adrian
  */
-public interface NamedDao<Type extends NamedDomainObject<Id>, Id extends Serializable> extends Dao<Type, Id> {
+public interface NamedDao<Type extends NamedDomainObject<Id>, Id extends Serializable> extends Dao {
     public Type getByName(String name);
     public Type loadByName(String name);
 }

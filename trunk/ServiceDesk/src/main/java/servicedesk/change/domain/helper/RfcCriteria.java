@@ -5,230 +5,110 @@
 package servicedesk.change.domain.helper;
 
 import java.util.Date;
-import org.springframework.util.StringUtils;
+import servicedesk.change.domain.Rfc;
 import servicedesk.change.domain.RfcCategory;
 import servicedesk.change.domain.RfcImpact;
 import servicedesk.change.domain.RfcPriority;
 import servicedesk.change.domain.RfcResolution;
 import servicedesk.change.domain.RfcState;
 import servicedesk.domain.Employee;
+import servicedesk.infrastructure.search.domain.AbstractQuery;
+import servicedesk.infrastructure.search.domain.ComparisonType;
+import servicedesk.infrastructure.search.domain.SimpleCriterion;
 
 /**
  *
  * @author Adrian
  */
-public class RfcCriteria {
-    private Integer id;
-    private Employee creator;
-    private Date timestampMin;
-    private Date timestampMax;
-    private String title;
-    private String description;
-    private RfcState state;
-    private Employee manager;
-    private RfcCategory category;
-    private RfcPriority priority;
-    private RfcImpact impact;
-    private RfcResolution resolution;
-    private boolean allowEmptyQueries;
+public class RfcCriteria extends AbstractQuery<Rfc> {
     
-
-    /**
-     * @return the id
-     */
-    public Integer getId() {
-        return id;
-    }
-
     /**
      * @param id the id to set
      */
     public void setId(Integer id) {
-        this.id = id;
+        set("id", new SimpleCriterion(id, ComparisonType.EQUAL));
     }
-
-    /**
-     * @return the state
-     */
-    public RfcState getState() {
-        return state;
+    
+    public Object getId() {
+        return get("id");
     }
 
     /**
      * @param state the state to set
      */
     public void setState(RfcState state) {
-        this.state = state;
-    }
-
-    /**
-     * @return the creator
-     */
-    public Employee getCreator() {
-        return creator;
+        set("state", new SimpleCriterion(state, ComparisonType.EQUAL));
     }
 
     /**
      * @param creator the creator to set
      */
     public void setCreator(Employee creator) {
-        this.creator = creator;
-    }
-
-    /**
-     * @return the timestampMin
-     */
-    public Date getTimestampMin() {
-        return timestampMin;
+        set("creator", new SimpleCriterion(creator, ComparisonType.EQUAL));
     }
 
     /**
      * @param timestampMin the timestampMin to set
      */
     public void setTimestampMin(Date timestampMin) {
-        this.timestampMin = timestampMin;
-    }
-
-    /**
-     * @return the timestampMax
-     */
-    public Date getTimestampMax() {
-        return timestampMax;
+        set("timestamp", new SimpleCriterion(timestampMin, ComparisonType.GREATER_EQUAL));
     }
 
     /**
      * @param timestampMax the timestampMax to set
      */
     public void setTimestampMax(Date timestampMax) {
-        this.timestampMax = timestampMax;
-    }
-
-    /**
-     * @return the title
-     */
-    public String getTitle() {
-        return title;
+        set("timestamp", new SimpleCriterion(timestampMax, ComparisonType.LESS_EQUAL));
     }
 
     /**
      * @param title the title to set
      */
     public void setTitle(String title) {
-        this.title = title;
-    }
-
-    /**
-     * @return the description
-     */
-    public String getDescription() {
-        return description;
+        set("timestamp", new SimpleCriterion(title, ComparisonType.LIKE));
     }
 
     /**
      * @param description the description to set
      */
     public void setDescription(String description) {
-        this.description = description;
+        set("description", new SimpleCriterion(description, ComparisonType.LIKE));
     }
 
-    /**
-     * @return the manager
-     */
-    public Employee getManager() {
-        return manager;
-    }
 
     /**
      * @param manager the manager to set
      */
     public void setManager(Employee manager) {
-        this.manager = manager;
-    }
-
-    /**
-     * @return the priority
-     */
-    public RfcPriority getPriority() {
-        return priority;
+        set("manager", new SimpleCriterion(manager, ComparisonType.EQUAL));
     }
 
     /**
      * @param priority the priority to set
      */
     public void setPriority(RfcPriority priority) {
-        this.priority = priority;
-    }
-
-    /**
-     * @return the impact
-     */
-    public RfcImpact getImpact() {
-        return impact;
+        set("priority", new SimpleCriterion(priority, ComparisonType.EQUAL));
     }
 
     /**
      * @param impact the impact to set
      */
     public void setImpact(RfcImpact impact) {
-        this.impact = impact;
-    }
-    
-    public boolean isInitialized()
-    {
-        return
-            allowEmptyQueries        
-            || id != null
-            || state != null
-            || creator != null
-            || timestampMin != null
-            || timestampMax != null
-            || StringUtils.hasText(title)
-            || StringUtils.hasText(description)
-            || priority != null
-            || category != null
-            || resolution != null    
-            || impact != null;     
+        set("impact", new SimpleCriterion(impact, ComparisonType.EQUAL));
     }
 
-    /**
-     * @return the queryWhenEmpty
-     */
-    public boolean isAllowEmptyQueries() {
-        return allowEmptyQueries;
-    }
-
-    /**
-     * @param queryWhenEmpty the queryWhenEmpty to set
-     */
-    public void setAllowEmptyQueries(boolean queryWhenEmpty) {
-        this.allowEmptyQueries = queryWhenEmpty;
-    }
-
-    /**
-     * @return the category
-     */
-    public RfcCategory getCategory() {
-        return category;
-    }
 
     /**
      * @param category the category to set
      */
     public void setCategory(RfcCategory category) {
-        this.category = category;
-    }
-
-    /**
-     * @return the resolution
-     */
-    public RfcResolution getResolution() {
-        return resolution;
+        set("category", new SimpleCriterion(category, ComparisonType.EQUAL));
     }
 
     /**
      * @param resolution the resolution to set
      */
     public void setResolution(RfcResolution resolution) {
-        this.resolution = resolution;
+        set("resolution", new SimpleCriterion(resolution, ComparisonType.EQUAL));
     }
 }

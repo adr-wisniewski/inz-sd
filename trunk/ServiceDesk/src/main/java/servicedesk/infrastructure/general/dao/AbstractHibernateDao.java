@@ -14,7 +14,9 @@ import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import servicedesk.extensions.hibernate.search.DetachedCriteriaBuilder;
 import servicedesk.infrastructure.general.domain.DomainObject;
+import servicedesk.infrastructure.search.domain.Query;
 
 /**
  *
@@ -31,6 +33,9 @@ public abstract class AbstractHibernateDao<Type extends DomainObject<Id>, Id ext
     @SuppressWarnings("unchecked")
     private Class<Id> idClass = (Class<Id>)GenericUtil.getTypeArgument(AbstractHibernateDao.class, getClass(),1);
 
+    @Autowired
+    private DetachedCriteriaBuilder criteriaBuilder;
+    
     @Autowired
     public void setHibernateSessionFactory(SessionFactory sessionFactory) {
         setSessionFactory(sessionFactory);
@@ -86,5 +91,13 @@ public abstract class AbstractHibernateDao<Type extends DomainObject<Id>, Id ext
     @Override
     public Type merge(Type object) {
         return getHibernateTemplate().merge(object);
+    }
+    
+    public List<Type> search(Query<Type> query) {
+        DetachedCriteria criteria = criteriaBuilder.build(query);
+        
+        @SuppressWarnings("unchecked")
+        List<Type> result = getHibernateTemplate().findByCriteria(criteria);
+        return result;
     }
 }

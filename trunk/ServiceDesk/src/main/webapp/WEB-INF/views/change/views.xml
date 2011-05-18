@@ -46,7 +46,6 @@
         <put-attribute name="body" value="/WEB-INF/views/change/rfc/edit.jsp" />
     </definition>
     
-    
     <definition name="/change/rfc/delete" extends="standard-layout">
         <put-attribute name="title" value="titles.change.rfc.delete" />
         <put-attribute name="title_args" value="${rfc.id},${rfc.title}" />

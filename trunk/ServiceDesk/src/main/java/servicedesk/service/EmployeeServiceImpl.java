@@ -32,23 +32,28 @@ public class EmployeeServiceImpl implements EmployeeService {
 		this.roleDao = roleDao;
 	}
 
+    @Override
 	public Employee getCurrentUser() {
 		String login = SecurityContextHolder.getContext().getAuthentication().getName();
 		return employeeDao.findByLogin(login);
 	}
 
+    @Override
 	public Employee get(Integer employeeId) {
 		return employeeDao.get(employeeId);
 	}
 
+    @Override
 	public List<Employee> search(EmployeeSearchCriteria employeeSearchCriteria) {
 		return employeeDao.search(employeeSearchCriteria);
 	}
 
+    @Override
 	public List<Role> findAllRoles() {
 		return roleDao.getAll();
 	}
 
+    @Override
 	public void setRoles(Employee employee, Set<String> roles) {
 		employee.clearAuthorities();
 		
@@ -60,6 +65,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		employeeDao.save(employee);
 	}
 	
+    @Override
 	public Employee getSystem() {
 		return employeeDao.findByLogin("SYSTEM");
 	}

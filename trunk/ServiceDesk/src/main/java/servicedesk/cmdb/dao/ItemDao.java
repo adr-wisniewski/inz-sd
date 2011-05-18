@@ -9,13 +9,13 @@ import servicedesk.cmdb.domain.Item;
 import servicedesk.cmdb.domain.ItemClass;
 import servicedesk.cmdb.domain.UniversalItem;
 import servicedesk.cmdb.domain.helper.ItemCriteria;
-import servicedesk.infrastructure.general.dao.Dao;
+import servicedesk.infrastructure.general.dao.GetDao;
 
 /**
  *
  * @author Adrian
  */
-public interface ItemDao extends Dao<Item, Integer>{
+public interface ItemDao extends GetDao<Item, Integer>{
 
     public void persist(UniversalItem object);
     public void merge(UniversalItem object);

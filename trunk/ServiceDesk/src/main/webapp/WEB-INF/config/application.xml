@@ -50,4 +50,5 @@
     <context:component-scan base-package="servicedesk.infrastructure.*.spring" />
     <context:component-scan base-package="servicedesk.infrastructure.*.util" />
     <context:component-scan base-package="servicedesk.infrastructure.*.validation" />
+    <context:component-scan base-package="servicedesk.extensions.*.*"  />
 </beans>
