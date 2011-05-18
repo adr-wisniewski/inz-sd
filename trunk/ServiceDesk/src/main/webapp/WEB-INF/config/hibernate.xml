@@ -11,8 +11,8 @@
 			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!-- Event listeners -->                    
-    <bean name="creatorMarkedPersistEventListener" class="servicedesk.infrastructure.general.dao.CreatorMarkedPersistEventListener" />
-    <bean name="creationTimeMarkedPersistEventListener" class="servicedesk.infrastructure.general.dao.CreationTimeMarkedPersistEventListener" />
+    <bean name="creatorMarkedPersistEventListener" class="servicedesk.infrastructure.dao.hibernate.CreatorMarkedPersistEventListener" />
+    <bean name="creationTimeMarkedPersistEventListener" class="servicedesk.infrastructure.dao.hibernate.CreationTimeMarkedPersistEventListener" />
     <bean name="defaultPersistEventListener" class="org.hibernate.event.def.DefaultPersistEventListener" />
     
     <bean name="callbackHandler" class="org.hibernate.ejb.event.EntityCallbackHandler" />
@@ -54,9 +54,8 @@
         </property>
         <property name="packagesToScan">
             <list>
-                <value>servicedesk.domain</value>
-                <value>servicedesk.*.domain</value>
-                <value>servicedesk.*.*.domain</value>
+                <value>servicedesk.infrastructure.**</value>
+                <value>servicedesk.core.**</value>
             </list>
         </property>
         <property name="eventListeners">

@@ -14,7 +14,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import servicedesk.dictionary.DictionaryProperty;
+import servicedesk.infrastructure.interfaces.domain.DictionaryProperty;
 
 @Entity
 @Table(name="ROLES")

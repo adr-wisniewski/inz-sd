@@ -7,7 +7,6 @@
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags/ui" %>
 <%@ taglib prefix="link" tagdir="/WEB-INF/tags/link" %>
 <%@ taglib prefix="print" tagdir="/WEB-INF/tags/print" %>
-<%@ taglib prefix="change" tagdir="/WEB-INF/tags/ui/change" %>
 
 <ui:panel caption="fieldgroup.change.rfc.basic">
     <ui:propertyList>

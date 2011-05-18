@@ -9,7 +9,7 @@
 
     <import resource="hibernate.xml"/>
 
-    <bean id="signalGeneratorJob" class="servicedesk.signal.jobs.SignalGeneratorJob">
+    <bean id="signalGeneratorJob" class="servicedesk.core.base.signal.jobs.SignalGeneratorJob">
             <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
@@ -34,7 +34,7 @@
       <property name="from" value="servicedesk@com.pl"/>
     </bean>
 
-    <bean id="signalEmailJob" class="servicedesk.signal.jobs.SignalEmailJob">
+    <bean id="signalEmailJob" class="servicedesk.core.base.signal.jobs.SignalEmailJob">
     </bean>
 
     <task:scheduled-tasks scheduler="scheduler">

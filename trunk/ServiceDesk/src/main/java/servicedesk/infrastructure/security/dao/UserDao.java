@@ -6,7 +6,7 @@
 package servicedesk.infrastructure.security.dao;
 
 import servicedesk.infrastructure.security.domain.User;
-import servicedesk.infrastructure.general.dao.CrudDao;
+import servicedesk.infrastructure.interfaces.dao.CrudDao;
 
 /**
  *

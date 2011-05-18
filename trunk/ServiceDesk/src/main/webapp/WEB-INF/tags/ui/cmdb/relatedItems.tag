@@ -1,5 +1,5 @@
 <%@tag description="put the tag description here" pageEncoding="UTF-8"%>
-<%@attribute name="relationshipClass" required="true" rtexprvalue="true" type="servicedesk.cmdb.domain.RelationshipClass"%>
+<%@attribute name="relationshipClass" required="true" rtexprvalue="true" type="servicedesk.core.itil.cmdb.domain.RelationshipClass"%>
 <%@attribute name="reverse" required="true" rtexprvalue="true" type="java.lang.Boolean"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>

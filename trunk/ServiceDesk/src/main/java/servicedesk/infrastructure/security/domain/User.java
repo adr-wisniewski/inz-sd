@@ -21,8 +21,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import servicedesk.domain.Employee;
-import servicedesk.infrastructure.general.domain.DomainObject;
+import servicedesk.core.hr.domain.Employee;
+import servicedesk.infrastructure.interfaces.domain.DomainObject;
 
 /**
  *

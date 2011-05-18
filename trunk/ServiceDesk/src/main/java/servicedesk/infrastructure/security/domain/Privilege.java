@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import servicedesk.infrastructure.general.domain.DomainObject;
+import servicedesk.infrastructure.interfaces.domain.DomainObject;
 
 /**
  *

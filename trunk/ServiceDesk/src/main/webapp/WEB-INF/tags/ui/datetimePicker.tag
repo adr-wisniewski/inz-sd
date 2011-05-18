@@ -1,4 +1,4 @@
-<%@ tag body-content="empty" description="Kontrolka do wyboru daty" %>
+<%@ tag body-content="empty"  %>
 <%@ attribute name="name" required="true" description="Nazwa kontrolki"%>
 <%@ attribute name="value" required="true" description="Wartosc kontrolki" type="java.util.Date"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

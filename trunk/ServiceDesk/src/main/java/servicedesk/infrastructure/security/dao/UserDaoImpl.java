@@ -9,7 +9,7 @@ import java.util.List;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.stereotype.Repository;
 import servicedesk.infrastructure.security.domain.User;
-import servicedesk.infrastructure.general.dao.AbstractHibernateDao;
+import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
 
 /**
  *

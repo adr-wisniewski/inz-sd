@@ -12,10 +12,10 @@
         detected by Spring-WS, similar to the way Controllers are picked up in Spring Web MVC.
     </description>
 
-   <!-- <context:component-scan base-package="servicedesk.em.ws" /> -->
+    <context:component-scan base-package="servicedesk.ws.**" />
 
-    <import resource="config/hibernate.xml"/>
-    <import resource="config/application.xml"/>
+    <!-- TODO: remove? import resource="config/hibernate.xml"/>
+    <import resource="config/application.xml"/-->
 
     <bean id="payloadMapping" class="org.springframework.ws.server.endpoint.mapping.PayloadRootQNameEndpointMapping">
         <description>
@@ -50,7 +50,7 @@
     </bean>
 
 
-    <bean id="eventEndpoint" class="servicedesk.em.ws.EndPoint">
+    <bean id="eventEndpoint" class="servicedesk.ws.base.em.EndPoint">
         <description>
             This endpoint handles event logging requests
         </description>
@@ -80,8 +80,8 @@
         <property name="xsd" value="/WEB-INF/logEvent.xsd"/>
     </bean>
 
-<!--
-    <bean id="eventService" class="servicedesk.em.service.EventServiceImpl">
+<!-- remove? 
+    <bean id="eventService" class="servicedesk.core.base.em.service.EventServiceImpl">
         <property name="eventDao" ref="eventDao"/>
         <property name="employeeService" ref="employeeService"/>
         <property name="incidentService" ref="incidentService"/>

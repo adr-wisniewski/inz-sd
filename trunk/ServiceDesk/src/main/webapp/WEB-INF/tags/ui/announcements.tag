@@ -9,7 +9,7 @@
 <%@ attribute name="buttons" required="false" fragment="true" %>
 <%@ attribute name="bottom" required="false" fragment="true" %>
 
-<%@ variable name-given="announcement" variable-class="servicedesk.common.announcement.domain.Announcement" %>
+<%@ variable name-given="announcement" variable-class="servicedesk.core.common.announcement.domain.Announcement" %>
 
 <ui:panel caption="news.label" cssClass="announcements">
     <c:forEach items="${announcements}" var="announcement">

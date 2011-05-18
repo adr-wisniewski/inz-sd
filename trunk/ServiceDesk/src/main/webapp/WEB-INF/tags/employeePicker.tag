@@ -1,6 +1,6 @@
 <%@ tag body-content="empty" description="Kontrolka do wyboru pracownika" %>
 <%@ attribute name="name" required="true" %>
-<%@ attribute name="value" required="true" type="servicedesk.domain.Employee" %>
+<%@ attribute name="value" required="true" type="servicedesk.core.hr.domain.Employee" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
