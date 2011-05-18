@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	
+	<!-- Pages -->
+	<definition name="im/list" extends="standard-layout">
+		<put-attribute name="title" value="All incidents" />
+		<put-attribute name="body" value="/WEB-INF/controllers/im/list.jsp" />
+	</definition>
+	
+	<definition name="im/add" extends="standard-layout">
+		<put-attribute name="title" value="Add incident" />
+		<put-attribute name="body" value="/WEB-INF/controllers/im/add.jsp" />
+	</definition>
+	
+	<definition name="im/search" extends="standard-layout">
+		<put-attribute name="title" value="Search incidents" />
+		<put-attribute name="body" value="/WEB-INF/controllers/im/search.jsp" />
+	</definition>
+	
+	<definition name="im/edit" extends="standard-layout">
+		<put-attribute name="title" value="Edit incident" />
+		<put-attribute name="body" value="/WEB-INF/controllers/im/edit.jsp" />
+	</definition>
+	
+	<definition name="im/comment" extends="empty-layout">
+		<put-attribute name="title" value="Add comment" />
+		<put-attribute name="body" value="/WEB-INF/controllers/im/comment.jsp" />
+	</definition>
+	
+	<definition name="im/commentsuccess" extends="empty-layout">
+		<put-attribute name="title" value="Success" />
+		<put-attribute name="body" value="/WEB-INF/controllers/im/commentsuccess.jsp" />
+	</definition>
+	
+	
+</tiles-definitions>

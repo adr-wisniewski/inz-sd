@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Generate Schema</actionName>
+            <displayName>Generate Schema</displayName>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>antrun:run</goal>
+            </goals>
+            <properties>
+                <project.build.ant.target>generateschema</project.build.ant.target>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-Generate Audit Schema</actionName>
+            <displayName>Generate Audit Schema</displayName>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>antrun:run</goal>
+            </goals>
+            <properties>
+                <project.build.ant.target>generateauditschema</project.build.ant.target>
+            </properties>
+        </action>
+    </actions>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+    <definition name="common">
+        <put-attribute name="title" value="" />
+        <put-attribute name="title_args" value="" />
+        <!-- put-attribute name="body" value="" /-->
+    </definition>
+
+    <!-- Layout -->
+    <definition name="empty-layout" extends="common" template="/WEB-INF/layouts/empty.jsp">
+        <put-attribute name="bodyCssClass" value="empty"/>
+    </definition>
+
+    <definition name="standard-layout" extends="common" template="/WEB-INF/layouts/standard.jsp">
+        <put-attribute name="bodyCssClass" value="full"/>
+        <put-attribute name="logo" value="/WEB-INF/layouts/standard/logo.jsp" />
+        <put-attribute name="navigation" value="/WEB-INF/layouts/standard/navigation.jsp" />
+        <put-attribute name="messagebox" value="/WEB-INF/layouts/standard/messagebox.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/layouts/standard/footer.jsp" />
+    </definition>
+
+    <definition name="standard-menuless-layout" extends="standard-layout">
+        <put-attribute name="navigation" value="" />
+        <put-attribute name="messagebox" value="" />
+    </definition>
+
+</tiles-definitions>

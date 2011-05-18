@@ -1,0 +1,37 @@
+\chapter{Instalacja}
+\label{instalacja} % Always give a unique label
+
+\section{Pliki konfiguracyjne}
+
+\subsection{jdbc.properties}
+
+Plik konfiguracyjny definiuj¹cy po³¹czenie z baz¹ danych. Zawiera nastêpuj¹ce parametry:
+
+\begin{description}
+
+\item[jdbc.driverClassName] -- nazwa klasy do po³¹czenia z baz¹ danych,
+\item[jdbc.url] -- adres url bazy danych,
+\item[jdbc.username] -- nazwa u¿ytkownika w bazie danych,
+\item[jdbc.password] -- has³o u¿ytkownika w bazie danych.
+
+\end{description}
+
+\subsection{messages.properties}
+
+Plik zawieraj¹cy treœci komunikatów wyœwietlanych w aplikacji. Daje to mo¿liwoœæ zmiany w dowolnym momencie treœci dowolnego komunikatu, bez ponownej kompilacji aplikacji. Ka¿dy komunikat jest postaci klucz, wartoœæ.
+
+\section{Skrypty SQL}
+
+\subsection{ddl.sql}
+
+Skrypt SQL tworz¹cy wszystkie obiekty w bazie danych: tabele, perspektywy, wyzwalacze, pakiety, procedury sk³adowane, indeksy.
+
+\subsection{inserts.sql}
+
+Skrypt SQL wype³niaj¹cy tabele przyk³adowymi danymi.
+
+\section{Zainstalowanie aplikacji}
+
+\subsection{Zainstalowanie aplikacji na serwerze Tomcat przy pomocy Tomcat Manager}
+
+Po uruchomieniu aplikacji Tomcat Manager, w zak³adce \texttt{Deploy} nale¿y wybraæ plik \texttt{ServiceDesk.jar}, nastêpnie dokonaæ potwierdzenia poprzez klikniêcie w~przycisk \texttt{Deploy}.

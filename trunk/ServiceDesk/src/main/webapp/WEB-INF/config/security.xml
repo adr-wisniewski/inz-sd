@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:s="http://www.springframework.org/schema/security"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    					http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    					http://www.springframework.org/schema/security 
+    					http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+    <s:http use-expressions="true" >
+        <s:intercept-url pattern="/services/**" filters="none" />
+        <s:intercept-url pattern="/static/**" filters="none" />
+        <s:intercept-url pattern="/favicon.ico" filters="none" />
+        <!-- netbeans' tomcat status probing -->
+        <s:intercept-url pattern="/netbeans**" filters="none" />
+        
+        <s:intercept-url pattern="/" access="permitAll"/>
+        <s:intercept-url pattern="/**" access="isAuthenticated()"  />
+
+        <s:form-login />
+        <s:logout />
+        <s:remember-me/>
+    </s:http>
+
+    <s:authentication-manager alias="auth-man">
+        <s:authentication-provider user-service-ref="springSecurityUserDetailsService" />
+    </s:authentication-manager>
+
+</beans>

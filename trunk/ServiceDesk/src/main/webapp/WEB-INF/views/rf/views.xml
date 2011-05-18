@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	
+	<!-- Pages -->	
+	<definition name="rf/search" extends="standard-layout">
+		<put-attribute name="title" value="rf.title.search" />
+		<put-attribute name="body" value="/WEB-INF/views/rf/search.jsp" />
+	</definition>
+	
+	<definition name="rf/edit" extends="standard-layout">
+		<put-attribute name="title" value="rf.title.edit" />
+		<put-attribute name="body" value="/WEB-INF/views/rf/edit.jsp" />
+	</definition>
+	
+	<definition name="rf/category" extends="standard-layout">
+		<put-attribute name="title" value="rf.title.category" />
+		<put-attribute name="body" value="/WEB-INF/views/rf/category.jsp" />
+	</definition>
+		
+</tiles-definitions>

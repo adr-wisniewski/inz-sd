@@ -1,0 +1,40 @@
+% *************** LEd - dokument oparty na szablonie pracy magisterskiej ***************
+
+\documentclass[11pt, a4paper, oneside, makeidx]{memoir}
+%\documentclass[a4paper, oneside, 12pt]{book}
+\input{style.tex}
+
+\begin{document}
+% *************** Front matter ***************
+\frontmatter
+\input{front.tex}
+
+% *************** Main matter ***************
+\mainmatter
+%\input{ack//ack.tex}
+
+\input{wstep//wstep.tex}
+\input{opis_itil//opis_itil.tex}
+\input{firma//firma.tex}
+\input{zalozenia//zalozenia.tex}
+\input{projekt//projekt.tex}
+\input{implementacja//implementacja.tex}
+\input{aplikacja//aplikacja.tex}
+\input{testy//testy.tex}
+
+\input{podsumowanie//podsumowanie.tex}
+
+% *************** Bibliography ***************
+\bibliographystyle{plain}
+{\small\bibliography{tresc}}
+
+% *************** Appendixes ***************
+\appendix
+%\appendixpage*
+\input{app1//app1.tex}
+\input{instalacja//instalacja.tex}
+% *************** Back matter ***************
+\backmatter
+\input{back.tex}
+
+\end{document}

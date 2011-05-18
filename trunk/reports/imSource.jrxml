@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="imSource" language="groovy" pageWidth="800" pageHeight="1024" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="816"/>
+	<style name="Crosstab Data Text" isDefault="false" hAlign="Center"/>
+	<queryString language="SQL">
+		<![CDATA[select * from incidents_v order by creation_year, creation_month, source]]>
+	</queryString>
+	<field name="INCIDENT_ID" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SUBJECT" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CREATION_DATE" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CREATION_YEAR" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CREATION_MONTH" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CREATION_MONTH_NAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="PRIORITY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="STATUS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SOURCE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CATEGORY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="SOURCE_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{SOURCE}]]></variableExpression>
+	</variable>
+	<group name="CREATION_YEAR" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{CREATION_YEAR}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<textField>
+					<reportElement mode="Opaque" x="-20" y="0" width="801" height="32" forecolor="#FFFFFF" backcolor="#005FB3"/>
+					<textElement textAlignment="Center">
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{CREATION_YEAR}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="861">
+				<crosstab>
+					<reportElement x="0" y="416" width="760" height="445"/>
+					<crosstabDataset>
+						<dataset resetType="Group" resetGroup="CREATION_YEAR"/>
+					</crosstabDataset>
+					<rowGroup name="SOURCE" width="44" totalPosition="End">
+						<bucket>
+							<bucketExpression class="java.lang.String"><![CDATA[$F{SOURCE}]]></bucketExpression>
+						</bucket>
+						<crosstabRowHeader>
+							<cellContents backcolor="#F0FFFF" mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement style="Crosstab Data Text" x="0" y="0" width="44" height="67"/>
+									<textElement verticalAlignment="Middle" rotation="Left"/>
+									<textFieldExpression class="java.lang.String"><![CDATA[$V{SOURCE}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabRowHeader>
+						<crosstabTotalRowHeader>
+							<cellContents backcolor="#BFFFFF" mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="44" height="35"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<text><![CDATA[Total SOURCE]]></text>
+								</staticText>
+							</cellContents>
+						</crosstabTotalRowHeader>
+					</rowGroup>
+					<columnGroup name="CREATION_MONTH" height="44" totalPosition="End">
+						<bucket>
+							<bucketExpression class="java.math.BigDecimal"><![CDATA[$F{CREATION_MONTH}]]></bucketExpression>
+						</bucket>
+						<crosstabColumnHeader>
+							<cellContents backcolor="#F0FFFF" mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="44"/>
+									<textElement/>
+									<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{CREATION_MONTH}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabColumnHeader>
+						<crosstabTotalColumnHeader>
+							<cellContents backcolor="#BFFFFF" mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="62" height="44"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<text><![CDATA[Total CREATION_MONTH]]></text>
+								</staticText>
+							</cellContents>
+						</crosstabTotalColumnHeader>
+					</columnGroup>
+					<measure name="INCIDENT_IDMeasure" class="java.lang.Integer" calculation="Count">
+						<measureExpression><![CDATA[$F{INCIDENT_ID}]]></measureExpression>
+					</measure>
+					<crosstabCell width="50" height="67">
+						<cellContents>
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="67"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{INCIDENT_IDMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell height="35" rowTotalGroup="SOURCE">
+						<cellContents backcolor="#BFFFFF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="35"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{INCIDENT_IDMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell width="63" height="67" columnTotalGroup="CREATION_MONTH">
+						<cellContents backcolor="#BFFFFF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="62" height="67"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{INCIDENT_IDMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell width="63" height="35" rowTotalGroup="SOURCE" columnTotalGroup="CREATION_MONTH">
+						<cellContents backcolor="#BFFFFF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="62" height="35"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{INCIDENT_IDMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+				</crosstab>
+				<textField>
+					<reportElement mode="Opaque" x="0" y="0" width="760" height="32" forecolor="#FFFFFF" backcolor="#005FB3"/>
+					<textElement textAlignment="Center">
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{CREATION_YEAR}]]></textFieldExpression>
+				</textField>
+				<timeSeriesChart>
+					<chart>
+						<reportElement x="0" y="32" width="760" height="359"/>
+						<chartTitle/>
+						<chartSubtitle/>
+						<chartLegend/>
+					</chart>
+					<timeSeriesDataset>
+						<dataset resetType="Group" resetGroup="CREATION_YEAR"/>
+						<timeSeries>
+							<seriesExpression><![CDATA[$F{SOURCE}]]></seriesExpression>
+							<timePeriodExpression><![CDATA[$F{CREATION_DATE}]]></timePeriodExpression>
+							<valueExpression><![CDATA[$V{SOURCE_COUNT}]]></valueExpression>
+						</timeSeries>
+					</timeSeriesDataset>
+					<timeSeriesPlot>
+						<plot/>
+						<timeAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</timeAxisFormat>
+						<valueAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</valueAxisFormat>
+					</timeSeriesPlot>
+				</timeSeriesChart>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="CREATION_MONTH">
+		<groupExpression><![CDATA[$F{CREATION_MONTH}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement mode="Opaque" x="-20" y="0" width="801" height="32" forecolor="#000000" backcolor="#BFE1FF"/>
+					<textElement textAlignment="Center">
+						<font size="22" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{CREATION_MONTH_NAME}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="334">
+				<pieChart>
+					<chart>
+						<reportElement x="0" y="0" width="760" height="334"/>
+						<chartTitle/>
+						<chartSubtitle/>
+						<chartLegend/>
+					</chart>
+					<pieDataset>
+						<dataset resetType="Group" resetGroup="CREATION_MONTH"/>
+						<keyExpression><![CDATA[$F{SOURCE}]]></keyExpression>
+						<valueExpression><![CDATA[$V{SOURCE_COUNT}]]></valueExpression>
+						<labelExpression><![CDATA[$F{SOURCE} + "\n" + $V{SOURCE_COUNT}]]></labelExpression>
+					</pieDataset>
+					<piePlot>
+						<plot/>
+						<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					</piePlot>
+				</pieChart>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="SOURCE">
+		<groupExpression><![CDATA[$F{SOURCE}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement mode="Opaque" x="-20" y="0" width="801" height="32" forecolor="#000000" backcolor="#F0F8FF"/>
+					<textElement textAlignment="Center">
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{SOURCE}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="801" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Incidents]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="1" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="59" y="1" width="267" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBJECT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="458" y="1" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRIORITY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="537" y="1" width="79" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STATUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="616" y="1" width="165" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CATEGORY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="326" y="1" width="132" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREATION_DATE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="-20" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{INCIDENT_ID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="59" y="0" width="267" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SUBJECT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="326" y="0" width="132" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{CREATION_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="458" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{PRIORITY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="537" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{STATUS}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="616" y="0" width="165" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CATEGORY}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="720" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="720" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="984">
+			<timeSeriesChart>
+				<chart>
+					<reportElement x="0" y="35" width="760" height="949"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<timeSeriesDataset>
+					<timeSeries>
+						<seriesExpression><![CDATA[$F{SOURCE}]]></seriesExpression>
+						<timePeriodExpression><![CDATA[$F{CREATION_DATE}]]></timePeriodExpression>
+						<valueExpression><![CDATA[$V{SOURCE_COUNT}]]></valueExpression>
+					</timeSeries>
+				</timeSeriesDataset>
+				<timeSeriesPlot>
+					<plot/>
+					<timeAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</timeAxisFormat>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</timeSeriesPlot>
+			</timeSeriesChart>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="760" height="35" forecolor="#FFFFFF" backcolor="#005FB3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUMMARY]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,214 @@
+\documentclass[a4paper, oneside, 11pt]{report}
+\usepackage[a4paper, vmargin=1.0cm, top=0.5cm, bottom=2.0cm, headsep=1.0cm, nofoot ]{geometry}
+\usepackage[utf8]{inputenc}      			% kodowanie literek
+\usepackage[polish]{babel}				% reguły dla języka polskiego
+\usepackage[OT4]{fontenc}				% ładne czcionki w PDFie
+\usepackage{polski}					% polski
+\usepackage{indentfirst} 				% wcięcia pierwszego akapitu
+\usepackage{anysize}
+\usepackage{colortbl}
+% \usepackage{wrapfig} 					% oblewanie rysunków tekstem
+\usepackage[pdftex]{graphicx} 				% dołączanie obrazków - tryb pdftex
+
+\definecolor{tableheadercolor}{rgb}{.7,.75,1}
+%\definecolor{tablerowcolor}{rgb}{.9,.95,1}
+\definecolor{tablerowcolor}{rgb}{1,1,1}
+
+\newenvironment{zenumerate}{\newcounter{zitem}\setcounter{zitem}{0}}
+{}
+\newcommand\zitem{\refstepcounter{zitem}\thezitem. }
+
+\makeindex
+
+\title{Service Desk}
+\author{Piotr Kalański}
+
+\selectlanguage{polish} 		% wybierz polski
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Testy funkcjonalne}
+
+% BEGIN template TEST CASE
+\section{ID : Nazwa}
+\subsection*{Cel}
+%tutaj podaj cel
+\subsection*{Warunki wstępne}
+%tutaj podaj warunki wstępne
+\subsection*{Kroki}
+%tutaj podaj kroki
+\begin{itemize}
+	\item Krok1
+	\item Krok2
+	\item Krok3
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+%tutaj podaj oczekiwany rezultat
+% END template TEST CASE
+
+\section{IM.ADD : Dodanie incydentu}
+\subsection*{Cel}
+Test sprawdza dodanie nowego incydentu w systemie.
+\subsection*{Warunki wstępne}
+Użytkownik jest zalogowany.
+\subsection*{Kroki}
+\begin{itemize}
+	\item Wybranie opcji: dodanie incydentu
+	\item Podanie tematu oraz opisu incydentu
+	\item Wybranie zapisz
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+Użytkownik zostanie przekierowany na kartę incydentu oraz system wyświetli komunikat o sukcesie.
+
+\section{IM.MYOPEN : Otwarte incydenty}
+\subsection*{Cel}
+Test sprawdza widok otwartych incydentów użytkownka.
+\subsection*{Warunki wstępne}
+Użytkownik jest zalogowany.
+\subsection*{Kroki}
+\begin{itemize}
+	\item Wybranie opcji: moje otwarte incydenty
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+System wyświetli listę incydentów o statusie OPEN, które mają zgłaszającego aktualnie zalogowanego użytkownika.
+
+\section{IM.MYCLOS : Zamknięte incydenty}
+\subsection*{Cel}
+Test sprawdza widok zamkniętych incydentów użytkownka.
+\subsection*{Warunki wstępne}
+Użytkownik jest zalogowany.
+\subsection*{Kroki}
+\begin{itemize}
+	\item Wybranie opcji: moje zamknięte incydenty
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+System wyświetli listę incydentów o statusie CLOS, które mają zgłaszającego aktualnie zalogowanego użytkownika.
+
+\section{IM.SEARCH : Wyszukiwanie incydentów}
+\subsection*{Cel}
+Test sprawdza wyszukiwanie incydentów wg zadanego kryterium.
+\subsection*{Warunki wstępne}
+Użytkownik jest zalogowany.
+\subsection*{Kroki}
+\begin{itemize}
+	\item Wybranie opcji: wyszukiwanie incydentów
+	\item Podanie kryterium wyszukiwania
+	\item Wybranie szukaj
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+System wyśwetli lsitę incydentów spełniajacych zadane kryterium.
+
+\section{IM.CARD : Widok karty incydentu}
+\subsection*{Cel}
+Test sprawdza wejście na kartę incydentu
+\subsection*{Warunki wstępne}
+Użytkownik jest zalogowany
+\subsection*{Kroki}
+\begin{itemize}
+	\item Wybranie opcji: wyszukiwanie incydentów
+	\item Wybranie szukaj
+	\item Kliknięcie w temat wybranego incydentu
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+System wyświetli widok ze szczegółami na temat wybranego incydentu.
+
+\section{IM.EDIT : Edycja danych incydentu}
+\subsection*{Cel}
+Test sprawdza możliwość edycji danych dotyczących incydentu
+\subsection*{Warunki wstępne}
+Użytkownik jest na karcie incydentu
+\subsection*{Kroki}
+\begin{itemize}
+	\item Zmienienie tematu
+	\item Zmienienie opisu
+	\item Ustawienie priorytetu
+	\item Ustawienie kategorii
+	\item Wybranie serwisanta
+	\item Ustawienie statusu
+	\item Ustawienei pilności
+	\item Ustawienie grupy wsparcia
+	\item Wybranie zapisz
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+System wyświetli komunikat o sukcesie
+
+\section{IM.RESOLVE.FAIL : Rozwiązanie incydentu - brak danych}
+\subsection*{Cel}
+Test sprawdza walidację przy zmianie statusu na rozwiązany
+\subsection*{Warunki wstępne}
+Użytkownik jest na karcie incydentu
+\subsection*{Kroki}
+\begin{itemize}
+	\item Zmiana statusu na: rozwiązany
+	\item Ustawienie rozwiązania na puste
+	\item Wybranie zapisz
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+System wyświetli komunikat o braku rozwiązania
+
+\section{IM.RESOLVE.SUCCESS : Rozwiązanie incydentu}
+\subsection*{Cel}
+Test sprawdza funkcjonalność rozwiązania incydentu
+\subsection*{Warunki wstępne}
+Użytkownik jest na karcie incydentu
+\subsection*{Kroki}
+\begin{itemize}
+	\item Zmiana statusu na: rozwiązany
+	\item Wpisanie rozwiązania
+	\item Wybranie zapisz
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+System wyświetli komunikat o sukcesie oraz ustawi datę rozwiązania na atkualną datę.
+
+\section{IM.CLOSE.FAIL : Zamknięcie incydentu - brak danych}
+\subsection*{Cel}
+Test sprawdza walidację przy zmianie statusu na zamknięty
+\subsection*{Warunki wstępne}
+Użytkownik jest na karcie incydentu
+\subsection*{Kroki}
+\begin{itemize}
+	\item Zmiana statusu na: zamknięty
+	\item Ustawienie atrybutów na wartości puste
+	\item Wybranie zapisz
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+System wyświetli komunikat o braku poszczególnych atrybutów
+
+\section{IM.CLOSE.SUCCESS : Zamknięcie incydentu}
+\subsection*{Cel}
+Test sprawdza pomyślne zamknięcie incydentu
+\subsection*{Warunki wstępne}
+Użytkownik jest na karcie incydentu
+\subsection*{Kroki}
+\begin{itemize}
+	\item Zmiana statusu na: zamknięty
+	\item Uzupełnienie wszystkich danych: priorytet, wpływ, kategoria, serwisant, pilność, grupa wsparcia, rozwiązanie.
+	\item Wybranie zapisz
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+System wyświetli komunikat o sukcesie oraz ustawi datę zamknięcia na atkualną datę.
+
+\section{IM.ADD.P : Dodanie problemu z karty}
+\subsection*{Cel}
+Test sprawdza funkcjonalność dodania problemu z karty incydentu
+\subsection*{Warunki wstępne}
+Uytkownik jest na karcie incydentu
+\subsection*{Kroki}
+\begin{itemize}
+	\item Wybranie: Dodaj problem
+	\item Podanie tematu oraz opisu problemu
+	\item Wybranie zapisz
+\end{itemize}
+\subsection*{Oczekiwany rezultat}
+System wyświetli kartę nowo dodanego problemu oraz wyświetli komunikat o sukcesie
+
+%\begin{thebibliography}{99}
+
+%\end{thebibliography}
+\end{document}
+
+

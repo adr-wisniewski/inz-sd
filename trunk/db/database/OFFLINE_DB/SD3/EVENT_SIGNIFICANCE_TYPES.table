@@ -1,0 +1,227 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">42d5df7b-ac1c-4796-b361-e2c887beabde</identifier>
+  </ID>
+  <name>EVENT_SIGNIFICANCE_TYPES</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">dff67fae-187e-46ad-b3a7-61b81d0fe16e</identifier>
+      </ID>
+      <name>SIGNIFICANCE_CODE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5cb409f2-92a2-49ec-97f0-2940a40d2a59</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SIGNIFICANCE_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>EVENT_SIGNIFICANCE_TYPES</name>
+                  <identifier class="java.math.BigDecimal">17114</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SIGNIFICANCE_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENT_SIGNIFICANCE_TYPES</name>
+              <identifier class="java.math.BigDecimal">17114</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ed683d45-2424-401d-8b01-5285d6e8f7c5</identifier>
+      </ID>
+      <name>NAME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ac819c18-4ccd-4e87-af23-e22eaf3f4b2a</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>EVENT_SIGNIFICANCE_TYPES</name>
+                  <identifier class="java.math.BigDecimal">17114</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENT_SIGNIFICANCE_TYPES</name>
+              <identifier class="java.math.BigDecimal">17114</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">0e14a03e-133f-475c-abe4-551a49272da0</identifier>
+      </ID>
+      <name>EVENT_TYPES_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SIGNIFICANCE_CODE</name>
+          <identifier class="java.lang.String">dff67fae-187e-46ad-b3a7-61b81d0fe16e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>EVENT_SIGNIFICANCE_TYPES</name>
+            <identifier class="java.lang.String">42d5df7b-ac1c-4796-b361-e2c887beabde</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EVENT_TYPES_PK</name>
+            <childObjectNames>
+              <childObjectName>SIGNIFICANCE_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENT_SIGNIFICANCE_TYPES</name>
+              <identifier class="java.math.BigDecimal">17114</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">Słownik rang dla zdarzeń. Przykładowe rangi to: informacje, ostrzeżenie, błąd.</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">sd3</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>EVENT_SIGNIFICANCE_TYPES</name>
+        <identifier class="java.math.BigDecimal">17114</identifier>
+        <schemaName>SD3</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a689ca78-d349-44c0-a324-57b04b145f5c</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>EVENT_SIGNIFICANCE_TYPES</name>
+                <identifier class="java.math.BigDecimal">17114</identifier>
+                <schemaName>SD3</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>USERS</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD3</name>
+  </schema>
+</table>

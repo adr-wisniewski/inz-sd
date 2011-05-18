@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <path id="maven.compileAndplugin.classpath">
+      <path refid="maven.compile.classpath"/>
+      <path refid="maven.plugin.classpath"/>
+    </path>
+
+    <!--
+          Generate DDL files for schema creation.
+    -->
+    <target name="generateschema">
+        <mkdir dir="target/generated-sources/schema"/>
+        <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="maven.compileAndplugin.classpath"/>
+        <hibernatetool destdir="target/generated-sources/schema">
+            <classpath refid="maven.compile.classpath" />
+            <annotationconfiguration configurationfile="src/main/resources/hibernate.cfg.xml" />
+
+            <!-- Write all CREATE statements to a file. -->
+            <hbm2ddl drop="false" 
+                     create="true"
+                     export="false"
+                     outputfilename="schema-create.ddl.sql"
+                     delimiter=";"
+                     format="true"
+                     haltonerror="true"/>
+
+            <!-- Write all DROP statements to a different file. -->
+            <hbm2ddl drop="true" 
+                     create="false"
+                     export="false"
+                     outputfilename="schema-drop.ddl.sql"
+                     delimiter=";"
+                     format="true"
+                     haltonerror="true"/>
+        </hibernatetool>
+    </target>
+    <target name="generateauditschema" description="Exports a generated schema to DB and file">
+        <mkdir dir="target/generated-sources/schema"/>
+        <taskdef name="hibernatetool" classname="org.hibernate.tool.ant.EnversHibernateToolTask" classpathref="maven.compileAndplugin.classpath"/>
+        <hibernatetool destdir="target/generated-sources/schema">
+            <classpath refid="maven.compile.classpath" />
+            <annotationconfiguration configurationfile="src/main/resources/hibernate.cfg.xml" />
+            <hbm2ddl 
+                drop="false"
+                create="true"
+                update="false"
+                export="false"
+                outputfilename="versioning.ddl.sql"
+                delimiter=";"
+                format="true"
+                haltonerror="true"/>
+        </hibernatetool>
+    </target>
+</project>

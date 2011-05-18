@@ -1,0 +1,159 @@
+.element {
+    margin: 6px 0;
+    border: 1px solid;
+}
+
+div.panel
+{
+    position: relative;
+}
+
+    div.panel > .content
+    {
+        padding: 6px;
+    }
+
+    div.panel > .content p
+    {
+        /*margin: 0 0 6px 0;*/
+    }
+    
+    div.panel > h1.caption
+    {
+        line-height: 24px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    div.panel ul.treeview
+    {
+        margin: 0.5em 0;
+        border: 1px inset;
+    }
+
+    div.panel ul.treeview.empty
+    {
+        padding: 0.25em;
+}
+
+    div.panel.hint
+    {
+
+    }
+
+
+    div.panel.success
+    {
+
+    }
+
+
+        div.panel.hint > .content,
+        div.panel.success > .content
+        {
+           min-height: 50px;
+           padding: 6px 6px 6px 62px;
+        }
+
+        div.panel.success .caption
+        {
+            display: none;
+        }
+
+        div.panel.success .caption ul
+        {
+            margin: 1em 0;
+        }
+
+    .propertyList
+    {
+        border-spacing: 0;
+        width: 100%;
+    }
+
+        .propertyList th
+        {
+            line-height: 24px;
+            padding: 0 1em 2px 24px;
+            width: 1%;
+            min-width: 8em;
+        }
+
+        .propertyList td
+        {
+            padding: 0 24px 2px 0;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+
+        .propertyList .error {
+            margin: 0 0 0 6px;
+            padding: 0 0 0 18px;
+        }
+
+    div.panel.success
+    {
+
+    }
+
+        div.panel.success .messages
+        {
+            list-style: none outside none;
+            margin: 0;
+        }
+
+        div.panel.success p.close
+        {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            margin: 0 6px 6px 0;
+        }
+
+    div.panel p.buttons
+    {
+        margin: 6px 0 0 0;
+    }
+
+    div.panel.overview
+    {
+
+    }
+
+        div.panel.overview p
+        {
+            margin-bottom: 0.5em;
+        }
+
+table.tablesorter {
+        margin: 0;
+}
+
+table.tablesorter thead tr .fit {
+    width: 0.0001%;
+}
+
+table.tablesorter tbody tr .actions {
+    white-space: nowrap;
+}
+
+div.dashboardpanel .header{
+    border: 1px solid;
+    padding: 5px 3px 4px 5px;
+}
+
+div.panel .item {
+}
+
+    div.panel .item .signature {
+        text-align: right;
+    }
+
+    div.panel hr:last-child {
+        display: none;
+    }
+
+
+
+

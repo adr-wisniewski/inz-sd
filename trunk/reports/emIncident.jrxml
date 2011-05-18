@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="emIncident" language="groovy" pageWidth="800" pageHeight="1024" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1003"/>
+	<style name="Crosstab Data Text" isDefault="false" hAlign="Center"/>
+	<queryString language="SQL">
+		<![CDATA[select * from events_v
+order by event_year, event_month, incident]]>
+	</queryString>
+	<field name="EVENT_ID" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SUBJECT" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EVENT_DATE" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EVENT_YEAR" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EVENT_MONTH" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CATEGORY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SIGNIFICANCE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="INCIDENT" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="EVENT_YEAR" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{EVENT_YEAR}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<textField>
+					<reportElement mode="Opaque" x="-20" y="0" width="799" height="32" forecolor="#FFFFFF" backcolor="#005FB3"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EVENT_YEAR}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="861">
+				<timeSeriesChart>
+					<chart>
+						<reportElement x="-20" y="32" width="799" height="446"/>
+						<chartTitle/>
+						<chartSubtitle/>
+						<chartLegend/>
+					</chart>
+					<timeSeriesDataset timePeriod="Month">
+						<dataset resetType="Group" resetGroup="EVENT_YEAR"/>
+						<timeSeries>
+							<seriesExpression><![CDATA[$F{INCIDENT}]]></seriesExpression>
+							<timePeriodExpression><![CDATA[$F{EVENT_DATE}]]></timePeriodExpression>
+							<valueExpression><![CDATA[$V{INCIDENT_COUNT}]]></valueExpression>
+						</timeSeries>
+					</timeSeriesDataset>
+					<timeSeriesPlot>
+						<plot/>
+						<timeAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</timeAxisFormat>
+						<valueAxisFormat>
+							<axisFormat>
+								<labelFont/>
+								<tickLabelFont/>
+							</axisFormat>
+						</valueAxisFormat>
+					</timeSeriesPlot>
+				</timeSeriesChart>
+				<crosstab>
+					<reportElement x="-20" y="503" width="799" height="358"/>
+					<crosstabDataset>
+						<dataset resetType="Group" resetGroup="EVENT_YEAR"/>
+					</crosstabDataset>
+					<rowGroup name="INCIDENT" width="70" totalPosition="End">
+						<bucket>
+							<bucketExpression class="java.lang.String"><![CDATA[$F{INCIDENT}]]></bucketExpression>
+						</bucket>
+						<crosstabRowHeader>
+							<cellContents backcolor="#F0F8FF" mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement style="Crosstab Data Text" x="0" y="0" width="70" height="25"/>
+									<textElement/>
+									<textFieldExpression class="java.lang.String"><![CDATA[$V{INCIDENT}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabRowHeader>
+						<crosstabTotalRowHeader>
+							<cellContents backcolor="#BFE1FF" mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="70" height="25"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<text><![CDATA[Total INCIDENT]]></text>
+								</staticText>
+							</cellContents>
+						</crosstabTotalRowHeader>
+					</rowGroup>
+					<columnGroup name="EVENT_MONTH" height="41" totalPosition="End">
+						<bucket>
+							<bucketExpression class="java.math.BigDecimal"><![CDATA[$F{EVENT_MONTH}]]></bucketExpression>
+						</bucket>
+						<crosstabColumnHeader>
+							<cellContents backcolor="#F0F8FF" mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField>
+									<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="41"/>
+									<textElement/>
+									<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{EVENT_MONTH}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabColumnHeader>
+						<crosstabTotalColumnHeader>
+							<cellContents backcolor="#BFE1FF" mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<staticText>
+									<reportElement x="0" y="0" width="50" height="41"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<text><![CDATA[Total EVENT_MONTH]]></text>
+								</staticText>
+							</cellContents>
+						</crosstabTotalColumnHeader>
+					</columnGroup>
+					<measure name="EVENT_IDMeasure" class="java.lang.Integer" calculation="Count">
+						<measureExpression><![CDATA[$F{EVENT_ID}]]></measureExpression>
+					</measure>
+					<crosstabCell width="50" height="25">
+						<cellContents>
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{EVENT_IDMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell height="25" rowTotalGroup="INCIDENT">
+						<cellContents backcolor="#BFE1FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{EVENT_IDMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell width="50" columnTotalGroup="EVENT_MONTH">
+						<cellContents backcolor="#BFE1FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{EVENT_IDMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell rowTotalGroup="INCIDENT" columnTotalGroup="EVENT_MONTH">
+						<cellContents backcolor="#BFE1FF" mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$V{EVENT_IDMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+				</crosstab>
+				<textField>
+					<reportElement mode="Opaque" x="0" y="0" width="760" height="32" forecolor="#FFFFFF" backcolor="#005FB3"/>
+					<textElement textAlignment="Center">
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EVENT_YEAR}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="EVENT_MONTH">
+		<groupExpression><![CDATA[$F{EVENT_MONTH}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement mode="Opaque" x="-20" y="0" width="799" height="32" forecolor="#006699" backcolor="#BFE1FF"/>
+					<textElement>
+						<font size="22" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EVENT_MONTH}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="399">
+				<pie3DChart>
+					<chart>
+						<reportElement x="0" y="0" width="760" height="399"/>
+						<chartTitle/>
+						<chartSubtitle/>
+						<chartLegend/>
+					</chart>
+					<pieDataset>
+						<dataset resetType="Group" resetGroup="EVENT_MONTH"/>
+						<keyExpression><![CDATA[$F{INCIDENT}]]></keyExpression>
+						<valueExpression><![CDATA[$V{INCIDENT_COUNT}]]></valueExpression>
+						<labelExpression><![CDATA[$F{INCIDENT} + "\n" + $V{INCIDENT_COUNT}]]></labelExpression>
+					</pieDataset>
+					<pie3DPlot>
+						<plot/>
+						<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					</pie3DPlot>
+				</pie3DChart>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="INCIDENT">
+		<groupExpression><![CDATA[$F{INCIDENT}]]></groupExpression>
+		<groupHeader>
+			<band height="32">
+				<textField>
+					<reportElement mode="Opaque" x="-20" y="0" width="799" height="32" forecolor="#006699" backcolor="#F0F8FF"/>
+					<textElement>
+						<font size="20" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{INCIDENT}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="799" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Events]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="0" width="63" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="43" y="0" width="361" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUBJECT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="404" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EVENT_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="515" y="0" width="153" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CATEGORY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="668" y="0" width="111" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SIGNIFICANCE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="-20" y="-1" width="63" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{EVENT_ID}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="43" y="0" width="361" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SUBJECT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="668" y="0" width="111" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SIGNIFICANCE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="557" y="0" width="111" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{CATEGORY}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="404" y="0" width="151" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{EVENT_DATE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="-20" y="4" width="759" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="739" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="984">
+			<timeSeriesChart>
+				<chart>
+					<reportElement x="-20" y="47" width="799" height="937"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<timeSeriesDataset timePeriod="Quarter">
+					<timeSeries>
+						<seriesExpression><![CDATA[$F{INCIDENT}]]></seriesExpression>
+						<timePeriodExpression><![CDATA[$F{EVENT_DATE}]]></timePeriodExpression>
+						<valueExpression><![CDATA[$V{INCIDENT_COUNT}]]></valueExpression>
+					</timeSeries>
+				</timeSeriesDataset>
+				<timeSeriesPlot>
+					<plot/>
+					<timeAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</timeAxisFormat>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</timeSeriesPlot>
+			</timeSeriesChart>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="760" height="33" forecolor="#FFFFFF" backcolor="#005FB3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SUMMARY]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,148 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">75aa6100-11fe-4525-8d45-ea7cbc3bfdb4</identifier>
+  </ID>
+  <name>C2_ITEMS_UNIVERSAL</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">47c4b790-1619-4c5e-bf2f-bb877c04999b</identifier>
+      </ID>
+      <name>ITEM_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5d416f04-0e70-4bfd-b073-7c893354d09f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9e06e4a9-6f33-4399-a45d-ced94ed9490e</identifier>
+      </ID>
+      <name>CLASS_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">13ba90e6-291d-4eb0-be02-511124850b01</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">cc817343-c26d-4009-a3e4-6580bca7e2d9</identifier>
+      </ID>
+      <name>C2_UNIVERSAL_ITEMS_C2_CLA_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CLASS_ID</name>
+          <identifier class="java.lang.String">9e06e4a9-6f33-4399-a45d-ced94ed9490e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_ITEMS_UNIVERSAL</name>
+            <identifier class="java.lang.String">75aa6100-11fe-4525-8d45-ea7cbc3bfdb4</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>C2_ITEM_DESCRIPTOR_PK</name>
+        <identifier class="java.lang.String">b0452b67-0241-4153-8733-54d64a576788</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>C2_ITEM_CLASSES</name>
+          <identifier class="java.lang.String">3cf794a5-c67e-416c-89fa-02b21e7807c2</identifier>
+          <schemaName>CMDB</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">20b36734-4142-4007-8e43-ab2c0a3b62bb</identifier>
+      </ID>
+      <name>C2_UNIVERSAL_ITEMS_C2_ITE_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ITEM_ID</name>
+          <identifier class="java.lang.String">47c4b790-1619-4c5e-bf2f-bb877c04999b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_ITEMS_UNIVERSAL</name>
+            <identifier class="java.lang.String">75aa6100-11fe-4525-8d45-ea7cbc3bfdb4</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>C2_ITEMS_PK</name>
+        <identifier class="java.lang.String">8cc62462-dc1b-4a85-b1ca-956a8a2dbd2d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>C2_ITEMS</name>
+          <identifier class="java.lang.String">6312780a-deaa-4364-ba2d-9ddd3b38d6f4</identifier>
+          <schemaName>CMDB</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7b052013-2db6-4e23-adee-5dd1d8280988</identifier>
+      </ID>
+      <name>C2_UNIVERSAL_ITEMS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ITEM_ID</name>
+          <identifier class="java.lang.String">47c4b790-1619-4c5e-bf2f-bb877c04999b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_ITEMS_UNIVERSAL</name>
+            <identifier class="java.lang.String">75aa6100-11fe-4525-8d45-ea7cbc3bfdb4</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>CMDB</name>
+  </schema>
+</table>

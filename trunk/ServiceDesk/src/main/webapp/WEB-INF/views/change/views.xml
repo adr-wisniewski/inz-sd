@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	
+    <!-- RFC -->
+    <definition name="/change/rfc/browse" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.browse" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/browse.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/manage" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.manage" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/manage.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/administer" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.administer" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/administer.jsp" />
+    </definition>
+        
+    <!-- RFC SEARCH -->
+    <definition name="/change/rfc" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/index.jsp" />
+    </definition>
+
+    <!-- RFC CRUD -->
+    <definition name="/change/rfc/view" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.view" />
+        <put-attribute name="title_args" value="${rfc.id},${rfc.title}" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/view.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/add" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.add" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/add.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/edit" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.edit" />
+        <put-attribute name="title_args" value="${rfc.id},${rfc.title}" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/edit.jsp" />
+    </definition>
+    
+    
+    <definition name="/change/rfc/delete" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.delete" />
+        <put-attribute name="title_args" value="${rfc.id},${rfc.title}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
+                <put-attribute name="caption" value="confirm.action" />
+                <put-attribute name="text" value="caption.change.rfc.delete" />
+                <put-attribute name="text_args" value="${rfc.id},${rfc.title}" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <!-- RFC IMPACT CRUD -->
+    <definition name="/change/rfc/impact" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.impact" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/impact/index.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/impact/view" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.impact.view" />
+        <put-attribute name="title_args" value="${rfcImpact.name}" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/impact/view.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/impact/add" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.impact.add" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/change/rfc/impact/edit.jsp">
+                <put-attribute name="submitLabel" value="add.label" />
+                <put-attribute name="submitCssClass" value="add" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <definition name="/change/rfc/impact/edit" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.impact.edit" />
+        <put-attribute name="title_args" value="${rfcImpact.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/change/rfc/impact/edit.jsp">
+                <put-attribute name="submitLabel" value="edit.label" />
+                <put-attribute name="submitCssClass" value="editsubmit" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <definition name="/change/rfc/impact/delete" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.impact.delete" />
+        <put-attribute name="title_args" value="${rfcImpact.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
+                <put-attribute name="caption" value="confirm.action" />
+                <put-attribute name="text" value="caption.change.rfc.impact.delete" />
+                <put-attribute name="text_args" value="${rfcImpact.name}" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <!-- RFC PRIORITY CRUD -->
+    <definition name="/change/rfc/priority" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.priority" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/priority/index.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/priority/view" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.priority.view" />
+        <put-attribute name="title_args" value="${rfcPriority.name}" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/priority/view.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/priority/add" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.priority.add" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/change/rfc/priority/edit.jsp">
+                <put-attribute name="submitLabel" value="add.label" />
+                <put-attribute name="submitCssClass" value="add" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <definition name="/change/rfc/priority/edit" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.priority.edit" />
+        <put-attribute name="title_args" value="${rfcPriority.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/change/rfc/priority/edit.jsp">
+                <put-attribute name="submitLabel" value="edit.label" />
+                <put-attribute name="submitCssClass" value="editsubmit" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <definition name="/change/rfc/priority/delete" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.priority.delete" />
+        <put-attribute name="title_args" value="${rfcPriority.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
+                <put-attribute name="caption" value="confirm.action" />
+                <put-attribute name="text" value="caption.change.rfc.priority.delete" />
+                <put-attribute name="text_args" value="${rfcPriority.name}" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <!-- RFC RESOLUTION CRUD -->
+    <definition name="/change/rfc/resolution" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.resolution" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/resolution/index.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/resolution/view" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.resolution.view" />
+        <put-attribute name="title_args" value="${rfcResolution.name}" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/resolution/view.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/resolution/add" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.resolution.add" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/change/rfc/resolution/edit.jsp">
+                <put-attribute name="submitLabel" value="add.label" />
+                <put-attribute name="submitCssClass" value="add" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <definition name="/change/rfc/resolution/edit" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.resolution.edit" />
+        <put-attribute name="title_args" value="${rfcResolution.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/change/rfc/resolution/edit.jsp">
+                <put-attribute name="submitLabel" value="edit.label" />
+                <put-attribute name="submitCssClass" value="editsubmit" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <definition name="/change/rfc/resolution/delete" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.resolution.delete" />
+        <put-attribute name="title_args" value="${rfcResolution.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
+                <put-attribute name="caption" value="confirm.action" />
+                <put-attribute name="text" value="caption.change.rfc.resolution.delete" />
+                <put-attribute name="text_args" value="${rfcResolution.name}" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <!-- RFC CATEGORY CRUD -->
+    <definition name="/change/rfc/category" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.category" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/category/index.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/category/view" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.category.view" />
+        <put-attribute name="title_args" value="${rfcCategory.name}" />
+        <put-attribute name="body" value="/WEB-INF/views/change/rfc/category/view.jsp" />
+    </definition>
+    
+    <definition name="/change/rfc/category/add" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.category.add" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/change/rfc/category/edit.jsp">
+                <put-attribute name="submitLabel" value="add.label" />
+                <put-attribute name="submitCssClass" value="add" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <definition name="/change/rfc/category/edit" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.category.edit" />
+        <put-attribute name="title_args" value="${rfcCategory.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/change/rfc/category/edit.jsp">
+                <put-attribute name="submitLabel" value="edit.label" />
+                <put-attribute name="submitCssClass" value="editsubmit" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+    <definition name="/change/rfc/category/delete" extends="standard-layout">
+        <put-attribute name="title" value="titles.change.rfc.category.delete" />
+        <put-attribute name="title_args" value="${rfcCategory.name}" />
+        <put-attribute name="body">
+            <definition template="/WEB-INF/views/common/confirm.jsp">
+                <put-attribute name="caption" value="confirm.action" />
+                <put-attribute name="text" value="caption.change.rfc.category.delete" />
+                <put-attribute name="text_args" value="${rfcCategory.name}" />
+            </definition>
+        </put-attribute>
+    </definition>
+    
+
+</tiles-definitions>

@@ -1,0 +1,279 @@
+\documentclass[xcolor=dvipsnames,10pt]{beamer}
+
+\usepackage{polski}
+\usepackage[cp1250]{inputenc}
+\usepackage{color}
+\usepackage{colortbl}
+
+\definecolor{tableheadercolor}{rgb}{.7,.75,1}
+\definecolor{tablerowcolor}{rgb}{.9,.95,1}
+
+% ********** Styl prezentacji **********
+\mode<presentation>
+{
+	\usetheme{Warsaw}
+}
+
+
+\author{Piotr Kalañski}
+\institute[EiTI]{Wydzia³ Elektroniki i Technik Informacyjnych}
+
+\subject{ITIL}
+\AtBeginSubsection[]
+{
+	\begin{frame}<beamer>
+		\frametitle{Plan prezentacji}
+		\tableofcontents[currentsection,currentsubsection]
+	\end{frame}
+}
+
+\title[System Service Desk zgodny z zaleceniami ITIL]{System Service Desk zgodny z zaleceniami ITIL}
+%\subtitle{}
+
+\date{2010-09-30}
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}
+	\frametitle{Agenda}
+	\tableofcontents
+\end{frame}
+
+\section{Wstêp}
+
+\subsection{Cel i zakres pracy}
+
+\begin{frame}
+	\frametitle{Cel pracy}
+
+	\begin{block}{Cel pracy}
+		Zaprojektowanie oraz zaimplementowanie prototypu systemu Service~Desk zgodnego z zaleceniami ITIL v3.
+	\end{block}
+
+\end{frame}
+
+\begin{frame}		
+	\frametitle{Zakres pracy}		
+		
+	\begin{figure}		
+	 \centering		
+	  \includegraphics[width=0.90\textwidth]{img/lifecycle4.jpg}		
+	\end{figure}		
+\end{frame}
+
+
+\subsection{ITIL}
+
+\begin{frame}
+	\frametitle{ITIL}
+
+	\begin{block}{ITIL}
+		\begin{itemize}
+			\item Najpowszechniej akceptowane na œwiecie podejœcie do zarz¹dzania us³ugami informatycznymi.
+			\item Zbiór dobrych praktyk - Ka¿da organizacja wdra¿a ITIL wg w³asnych potrzeb.
+			\item Wykorzystywane w 71\% przypadków reorganizacji procesów IT w~firmie.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\subsection{Service Desk}
+
+\begin{frame}
+	\frametitle{Service Desk}
+
+	\begin{block}{Funkcje}<1->
+		\begin{itemize}
+			\item Centralny punkt kontaktu.
+			\item Interfejs dla procesów ITIL.
+		\end{itemize}
+	\end{block}
+
+	\begin{block}{Service Desk a Help Desk}<2->
+	\begin{table}
+		\centering
+		\begin{tabular}{ | l | l | }
+			\hline 
+			\rowcolor{tableheadercolor} {\textbf{Help Desk}} & {\textbf{Service Desk}} 	\\ \hline
+			\rowcolor{tablerowcolor} {Zg³oszenia kierowane do pracowników} & {Zg³oszenia kierowane do grup} \\ \hline
+			\rowcolor{tablerowcolor} {Czas reakcji} & {Procent reakcji} \\ \hline
+			\rowcolor{tablerowcolor} {Czas realizacji} & {Procent realizacji} \\ \hline
+		\end{tabular} \\
+		\end{table}	
+	\end{block}
+
+\end{frame}
+
+\section{Co zosta³o zrealizowane w ramach pracy dyplomowej}
+
+\subsection{Zarz¹dzanie incydentami}
+
+\begin{frame}
+	\frametitle{Zg³oszenie incydentu}
+
+	\begin{figure}
+	 \centering
+	  \includegraphics[width=0.95\textwidth]{img/app/dodanieIncydentu_klient.png}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Karta incydentu - szczegó³y}
+	
+	\begin{figure}
+	 	\centering
+	  \includegraphics[width=0.95\textwidth]{img/app/kartaIncydentu_szczegoly.png}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Karta incydentu - historia}
+	
+	\begin{figure}
+	 	\centering
+	  \includegraphics[width=0.95\textwidth]{img/app/kartaIncydentu_historia.png}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Zg³oszenie problemu}
+	
+	\begin{figure}
+	 	\centering
+	  \includegraphics[width=0.95\textwidth]{img/app/kartaIncydentu_dodanieProblemu.png}
+	\end{figure}
+
+\end{frame}
+
+\subsection{Zarz¹dzanie problemami}
+
+\begin{frame}
+	\frametitle{Karta problemu - szczegó³y}
+	
+	\begin{figure}
+	 	\centering
+	  \includegraphics[width=0.95\textwidth]{img/app/kartaProblemu_szczegoly.png}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Karta problemu - analiza}
+	
+	\begin{figure}
+	 	\centering
+	  \includegraphics[width=0.95\textwidth]{img/app/kartaProblemu_analiza.png}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Karta problemu - rozwi¹zanie}
+	
+	\begin{figure}
+	 	\centering
+	  \includegraphics[width=0.95\textwidth]{img/app/kartaProblemu_rozwiazanie.png}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Baza znanych b³êdów (KEDB)}
+	
+	\begin{figure}
+	 	\centering
+	  \includegraphics[width=0.95\textwidth]{img/app/kedb.png}
+	\end{figure}
+
+\end{frame}
+
+
+\subsection{Eskalacja}
+
+\begin{frame}
+	\frametitle{Eskalacja}
+
+	\begin{block}{Problemy}
+		\begin{itemize}
+			\item Pracownik nie przypisze do siebie incydentu.
+			\item Jak poinformowaæ mened¿era grupy o nowych incydentach?
+			\item Incydent jest nie rozwi¹zany, a zbli¿a siê termin rozwi¹zania.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Sygna³y}
+
+	\begin{block}{Sygna³}<1->
+		Powiadomienie u¿ytkownika o zaistnieniu okreœlonego zdarzenia.
+	\end{block}
+	
+	\begin{block}{Mo¿liwoœci}<2->
+		\begin{itemize}
+			\item<2-> Powiadomienia dotycz¹ce ró¿nych rodzajów zdarzeñ: incydentów, problemów oraz zleceñ.
+			\item<3-> Obs³uga ró¿norodnych rodzajów sygna³ów.
+			\item<4-> Mo¿liwoœæ konfiguracji treœci wiadomoœci.
+			\item<5-> Mo¿liwoœæ konfiguracji kategorii odbiorcy.
+			\item<6-> Generowanie sygna³ów przy zmianie stanu.
+			\item<7-> Generowanie sygna³ów przy up³ywie czasu.
+		\end{itemize}
+	\end{block}
+
+\end{frame}
+
+\subsection{Zarz¹dzanie zdarzeniami}
+
+\begin{frame}
+	\frametitle{Zarz¹dzanie zdarzeniami}
+
+	\begin{block}{Us³uga sieciowa}
+		\begin{itemize}
+			\item Interfejs dla innych systemów umo¿liwiaj¹cy dodawanie zdarzeñ.
+			\item Mo¿liwoœæ automatycznego wygenerowania incydentu dla wybranych zdarzeñ.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\section{Perspektywy rozwoju}
+
+\subsection{Co dalej?}
+
+\begin{frame}
+	\frametitle{Perspektywy rozwoju}
+
+	\begin{block}{Perspektywy rozwoju}
+		\begin{itemize}
+			\item<1-> Integracja z procesami zarz¹dzania konfiguracj¹ oraz zarz¹dzania zmianami.
+			\item<2-> Kalendarz (termin rozwi¹zania): wstrzymanie liczenia, godziny oraz~dni dzia³ania us³ugi.
+			\item<3-> Automatyczne przypisywanie zg³oszeñ do serwisantów.
+			\item<4-> Warstwa analityczna.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\section{Podsumowanie}
+
+\begin{frame}
+	\frametitle{Podsumowanie}
+
+	\begin{block}{Podsumowanie}
+		\begin{itemize}
+			\item<1-> Zrealizowano fragment systemu Service Desk obejmuj¹cy procesy zarz¹dzania incydentami oraz zarz¹dzania problemami.
+			\item<2-> Zrealizowany fragment systemu mo¿na zintegrowaæ z procesami zarz¹dzania konfiguracj¹ oraz zarz¹dzania zmianami. 
+			\item<3-> System jest ³atwo konfigurowalny: elastyczne podejœcie do eskalacji.
+			\item<4-> Skorzystano z nowoczesnych narzêdzi: Rational Software Architect, JDeveloper, Jasper Reports oraz SpringSource Tool Suite.
+			\item<5-> Statystyki: 56 tabel w bazie danych, 10~KLOC kod Ÿród³owy, 1~KLOC XML, 2~KLOC strony JSP.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\end{document}

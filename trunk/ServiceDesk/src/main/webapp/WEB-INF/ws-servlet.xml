@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+    <description>
+        This web application context contains Spring-WS beans. The beans defined in this context are automatically
+        detected by Spring-WS, similar to the way Controllers are picked up in Spring Web MVC.
+    </description>
+
+    <context:component-scan base-package="servicedesk.ws.**" />
+
+    <!-- TODO: remove? import resource="config/hibernate.xml"/>
+    <import resource="config/application.xml"/-->
+
+    <bean id="payloadMapping" class="org.springframework.ws.server.endpoint.mapping.PayloadRootQNameEndpointMapping">
+        <description>
+            This endpoint mapping uses the qualified name of the payload (body contents) to determine the endpoint for
+            an incoming message. Every message is passed to the default endpoint. Additionally, messages are logged
+            using the logging interceptor.
+        </description>
+        <property name="defaultEndpoint" ref="eventEndpoint"/>
+        <property name="interceptors">
+            <list>
+                <ref local="validatingInterceptor"/>
+                <ref local="loggingInterceptor"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="validatingInterceptor"
+          class="org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor">
+        <description>
+            This interceptor validates both incoming and outgoing message contents according to the 'echo.xsd' XML
+            Schema file.
+        </description>
+        <property name="xsdSchema" ref="eventSchema"/>
+        <property name="validateRequest" value="true"/>
+        <property name="validateResponse" value="true"/>
+    </bean>
+
+    <bean id="loggingInterceptor" class="org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor">
+        <description>
+            This interceptor logs the message payload.
+        </description>
+    </bean>
+
+
+    <bean id="eventEndpoint" class="servicedesk.ws.base.em.EndPoint">
+        <description>
+            This endpoint handles event logging requests
+        </description>
+        <!--
+        <property name="eventService" ref="eventService"/>
+        <property name="eventSignificanceEditor" ref="eventSignificanceEditor"/>
+        <property name="eventCategoryEditor" ref="eventCategoryEditor" />
+        -->
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+
+
+    <bean id="event" class="org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition">
+        <description>
+            This bean definition represents a WSDL definition that is generated at runtime. It can be retrieved by
+            going to /event/event.wsdl (i.e. the bean name corresponds to the filename).
+        </description>
+        <property name="schema" ref="eventSchema"/>
+        <property name="portTypeName" value="events"/>
+         <property name="locationUri" value="/services/event"/>
+    </bean>
+
+    <bean id="eventSchema" class="org.springframework.xml.xsd.SimpleXsdSchema">
+        <description>
+            This bean definition contains the XSD schema.
+        </description>
+        <property name="xsd" value="/WEB-INF/logEvent.xsd"/>
+    </bean>
+
+<!-- remove? 
+    <bean id="eventService" class="servicedesk.core.base.em.service.EventServiceImpl">
+        <property name="eventDao" ref="eventDao"/>
+        <property name="employeeService" ref="employeeService"/>
+        <property name="incidentService" ref="incidentService"/>
+    </bean>
+
+    <bean id="eventDao" class="servicedesk.em.dao.EventDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+	<bean id="eventSignificanceDao" class="servicedesk.em.dao.EventSignificanceDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+	<bean id="eventSignificanceEditor" class="servicedesk.em.editor.EventSignificanceEditor">
+		<constructor-arg ref="eventSignificanceDao" />
+	</bean>
+
+	<bean id="eventCategoryDao" class="servicedesk.em.dao.EventCategoryDaoImpl">
+    	<property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+	<bean id="eventCategoryEditor" class="servicedesk.em.editor.EventCategoryEditor">
+		<constructor-arg ref="eventCategoryDao" />
+	</bean>
+
+	<bean id="employeeDao" class="servicedesk.dao.EmployeeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="employeeService" class="servicedesk.service.EmployeeServiceImpl">
+		<property name="employeeDao" ref="employeeDao"/>
+	</bean>
+
+	<bean id="incidentDao" class="servicedesk.im.dao.IncidentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="incidentService" class="servicedesk.im.service.IncidentServiceImpl">
+		<property name="incidentDao" ref="incidentDao"/>
+		<property name="employeeService" ref="employeeService"/>
+	</bean>
+-->
+</beans>

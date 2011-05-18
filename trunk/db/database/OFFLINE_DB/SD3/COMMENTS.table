@@ -1,0 +1,792 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">8c1652f8-3b29-4c95-a73d-61f8466664f8</identifier>
+  </ID>
+  <name>COMMENTS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">6906978f-c598-4c6b-9205-3310e2576848</identifier>
+      </ID>
+      <name>COMMENT_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c21ec9f3-d166-4e0c-aec0-a3a8463838c3</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>COMMENT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COMMENTS</name>
+                  <identifier class="java.math.BigDecimal">17128</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COMMENT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e2fafe30-44c5-49dd-8123-98980fe9f920</identifier>
+      </ID>
+      <name>TEXT</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d3d57324-f556-463d-b26e-8d040e01e2bb</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4000</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TEXT</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COMMENTS</name>
+                  <identifier class="java.math.BigDecimal">17128</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Treść komentarza</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TEXT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">06f8189b-e403-4fc4-b65c-7b3af912e946</identifier>
+      </ID>
+      <name>CREATION_DATE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">6406533f-5afb-42a4-8ff0-e2287fbe9d4a</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>DATE</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CREATION_DATE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COMMENTS</name>
+                  <identifier class="java.math.BigDecimal">17128</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <default class="java.lang.String">sysdate</default>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Data dodania komentarza</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATION_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e343528c-d1e7-4c74-a0da-1894821d38c0</identifier>
+      </ID>
+      <name>EVENT_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5a97bcca-d53c-4381-9963-85011505ffa9</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>EVENT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COMMENTS</name>
+                  <identifier class="java.math.BigDecimal">17128</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EVENT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">170aef45-394c-4f55-bc01-8372d588790b</identifier>
+      </ID>
+      <name>EMPLOYEE_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2c81da8e-4b48-4171-90cc-9dc12a63febd</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>EMPLOYEE_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COMMENTS</name>
+                  <identifier class="java.math.BigDecimal">17128</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Pracownik, który dodał komentarz</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EMPLOYEE_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5c879774-8baf-41b3-84d7-5abe7525f3d4</identifier>
+      </ID>
+      <name>PROBLEM_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2514d2e0-59f2-4798-b536-084573b29f2f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PROBLEM_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COMMENTS</name>
+                  <identifier class="java.math.BigDecimal">17128</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PROBLEM_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">63c5d4e6-321e-4499-8bb0-ffe48f182424</identifier>
+      </ID>
+      <name>INCIDENT_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">06069c26-c1df-4437-9ca4-560d0a212dc7</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>INCIDENT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COMMENTS</name>
+                  <identifier class="java.math.BigDecimal">17128</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>INCIDENT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">43be81a1-a38c-4615-b2e5-44c853d73b1e</identifier>
+      </ID>
+      <name>REQUEST_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ea2f0fed-d2be-4f3d-baba-9f8d4009f0b2</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>REQUEST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COMMENTS</name>
+                  <identifier class="java.math.BigDecimal">17128</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REQUEST_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9f53510d-347d-4968-b185-fbdea68f6d8b</identifier>
+      </ID>
+      <name>COMMENTS_EMPLOYEES_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>EMPLOYEE_ID</name>
+          <identifier class="java.lang.String">170aef45-394c-4f55-bc01-8372d588790b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COMMENTS</name>
+            <identifier class="java.lang.String">8c1652f8-3b29-4c95-a73d-61f8466664f8</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COMMENTS_EMPLOYEES_FK</name>
+            <childObjectNames>
+              <childObjectName>EMPLOYEE_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>EMPLOYEES_PK</name>
+        <identifier class="java.lang.String">b69d4833-56ab-4c04-a8a1-ce6a5b1e5786</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>EMPLOYEES</name>
+          <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
+          <schemaName>SD3</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7a13d86b-ce0d-4645-ab8f-7db1b2a863a6</identifier>
+      </ID>
+      <name>COMMENTS_INCIDENTS_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>INCIDENT_ID</name>
+          <identifier class="java.lang.String">63c5d4e6-321e-4499-8bb0-ffe48f182424</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COMMENTS</name>
+            <identifier class="java.lang.String">8c1652f8-3b29-4c95-a73d-61f8466664f8</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COMMENTS_INCIDENTS_FK</name>
+            <childObjectNames>
+              <childObjectName>INCIDENT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>INCIDENTS_PK</name>
+        <identifier class="java.lang.String">8d6cca27-921e-4836-a48c-5619d8a045a5</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>INCIDENTS</name>
+          <identifier class="java.lang.String">1a82df75-c4bd-4208-8265-d48fe7230208</identifier>
+          <schemaName>SD3</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">fea4d7f9-fa36-435a-9ad2-fdb528dd753f</identifier>
+      </ID>
+      <name>COMMENTS_PROBLEMS_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PROBLEM_ID</name>
+          <identifier class="java.lang.String">5c879774-8baf-41b3-84d7-5abe7525f3d4</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COMMENTS</name>
+            <identifier class="java.lang.String">8c1652f8-3b29-4c95-a73d-61f8466664f8</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COMMENTS_PROBLEMS_FK</name>
+            <childObjectNames>
+              <childObjectName>PROBLEM_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PROBLEMS_PK</name>
+        <identifier class="java.lang.String">6dabec86-30b1-49e2-823e-fb80cdb52a21</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PROBLEMS</name>
+          <identifier class="java.lang.String">59b82c03-731e-4389-be3b-0b41b97c0d9d</identifier>
+          <schemaName>SD3</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">bdfd4c6e-b848-41af-8f1b-c5e6c1b618f3</identifier>
+      </ID>
+      <name>COMMENTS_REQUESTS_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>REQUEST_ID</name>
+          <identifier class="java.lang.String">43be81a1-a38c-4615-b2e5-44c853d73b1e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COMMENTS</name>
+            <identifier class="java.lang.String">8c1652f8-3b29-4c95-a73d-61f8466664f8</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COMMENTS_REQUESTS_FK</name>
+            <childObjectNames>
+              <childObjectName>REQUEST_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>REQUESTS_PK</name>
+        <identifier class="java.lang.String">94aac5b4-f820-4cfd-bdb1-e69625a42fb9</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>REQUESTS</name>
+          <identifier class="java.lang.String">42004dce-3869-4e50-902b-eadff9f882c1</identifier>
+          <schemaName>SD3</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8a9e5ab2-5d11-4a88-af87-9a7e3db2d0d8</identifier>
+      </ID>
+      <name>PROBLEM_COMMENTS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>COMMENT_ID</name>
+          <identifier class="java.lang.String">6906978f-c598-4c6b-9205-3310e2576848</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COMMENTS</name>
+            <identifier class="java.lang.String">8c1652f8-3b29-4c95-a73d-61f8466664f8</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PROBLEM_COMMENTS_PK</name>
+            <childObjectNames>
+              <childObjectName>COMMENT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COMMENTS</name>
+              <identifier class="java.math.BigDecimal">17128</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">Tabela z komentarzami</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">sd3</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>COMMENTS</name>
+        <identifier class="java.math.BigDecimal">17128</identifier>
+        <schemaName>SD3</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b0e3ae35-feab-4628-8947-c4f0269f3591</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>COMMENTS</name>
+                <identifier class="java.math.BigDecimal">17128</identifier>
+                <schemaName>SD3</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>USERS</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD3</name>
+  </schema>
+</table>

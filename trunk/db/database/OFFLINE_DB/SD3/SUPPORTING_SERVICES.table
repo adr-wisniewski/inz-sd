@@ -1,0 +1,165 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">02ea370f-39c1-4e91-8944-641c7339626a</identifier>
+  </ID>
+  <name>SUPPORTING_SERVICES</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">43741cc5-7493-47e6-9c4d-017adc349b15</identifier>
+      </ID>
+      <name>SERVICE_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5bb93512-a4d8-4009-917e-81bfcaafbab9</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1206c69f-ac13-497e-8142-5fd80134fb7e</identifier>
+      </ID>
+      <name>SUPPORTING_SERVICE_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ba45f2a2-8e1e-4900-a89c-66ebae9a5f26</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d13ec698-6716-44c3-a134-d9a94b78326c</identifier>
+      </ID>
+      <name>SUPPORTING_SERVICES_SERVI_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SERVICE_ID</name>
+          <identifier class="java.lang.String">43741cc5-7493-47e6-9c4d-017adc349b15</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SUPPORTING_SERVICES</name>
+            <identifier class="java.lang.String">02ea370f-39c1-4e91-8944-641c7339626a</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD3</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SERVICES_PK</name>
+        <identifier class="java.lang.String">9954c54d-5e21-475e-a829-163039f83fe3</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SERVICES</name>
+          <identifier class="java.lang.String">deb275ca-5aa1-4449-b536-8dc2c887e928</identifier>
+          <schemaName>SD3</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3ecc00fa-5c76-4340-bd8b-cb850292ddc9</identifier>
+      </ID>
+      <name>SUPPORTING_SERVICES_SERVI_FK2</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SUPPORTING_SERVICE_ID</name>
+          <identifier class="java.lang.String">1206c69f-ac13-497e-8142-5fd80134fb7e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SUPPORTING_SERVICES</name>
+            <identifier class="java.lang.String">02ea370f-39c1-4e91-8944-641c7339626a</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD3</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SERVICES_PK</name>
+        <identifier class="java.lang.String">9954c54d-5e21-475e-a829-163039f83fe3</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SERVICES</name>
+          <identifier class="java.lang.String">deb275ca-5aa1-4449-b536-8dc2c887e928</identifier>
+          <schemaName>SD3</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">db3cc5b1-0f07-4ba6-8b87-ce06bc5989fb</identifier>
+      </ID>
+      <name>SUPPORTING_SERVICES_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SERVICE_ID</name>
+          <identifier class="java.lang.String">43741cc5-7493-47e6-9c4d-017adc349b15</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SUPPORTING_SERVICES</name>
+            <identifier class="java.lang.String">02ea370f-39c1-4e91-8944-641c7339626a</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD3</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SUPPORTING_SERVICE_ID</name>
+          <identifier class="java.lang.String">1206c69f-ac13-497e-8142-5fd80134fb7e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SUPPORTING_SERVICES</name>
+            <identifier class="java.lang.String">02ea370f-39c1-4e91-8944-641c7339626a</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD3</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD3</name>
+  </schema>
+</table>

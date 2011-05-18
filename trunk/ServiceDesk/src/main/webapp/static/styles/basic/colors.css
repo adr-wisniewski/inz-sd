@@ -1,0 +1,144 @@
+a, a:link, a:visited, a:hover, a:active, a:hover {
+    color: #3B5998;
+}
+
+#navigation h5,
+div.dashboardpanel .header{
+    color: #15428B;
+}
+
+#logo, #pagetitle, #greeting,
+#navigation a, #navigation a:link, 
+#navigation a:visited, #navigation a:hover,
+#navigation a:active, #navigation a:hover,
+div.panel h1.caption {
+    color: white;
+}
+
+#footer {
+    color: #555;
+}
+
+.error, .errorBox {
+    color:#D40000;
+}
+
+div.panel.success {
+    color: #007000;
+}
+
+#greeting em,
+#greeting a:first-letter,
+#navigation li:first-letter,
+#navigation li em
+{
+    color: #adcdf8;
+}
+
+#pagetitle em,
+div.panel h1.caption em {
+    color: #FFEE5C;
+}
+
+div.panel.hint > .content em
+{
+    color: #EF9B0F;
+}
+
+div.panel .item .title
+{
+    color: #003264;
+}
+
+div.panel ul.treeview, .element {
+    background: white;
+}
+
+body {
+    background-color: #F3F3F3;
+}
+
+table.currents, div.panel, div.dashboardpanel {
+    background-color: #FFFACD
+}
+
+div.panel h1.caption,
+#pagetitle {
+    background-image: -moz-linear-gradient(#FCC200, #EF9B0F);
+}
+
+#logo h1,
+#greeting,
+#navigation .menuGroup > ul {
+    background: #008DB8;
+}
+
+.errorBox {
+    background-color:#FFC0B0;
+}
+
+div.panel.success .caption {
+    background-color: #007000;
+}
+
+div.panel.success > .content {
+    background-color: #D0F0C0;
+}
+
+.treeview ul
+{
+    background-color: inherit;
+}
+
+#navigation, #footer {
+    border-color: black;
+}
+
+#greeting,
+#navigation h5,
+#navigation ul,
+#logo h1
+{
+    border-color: #0D3068;
+}
+
+div.panel.success
+{
+    border-color: #138808;
+}
+
+input[type="text"], select, textarea
+{
+    border-color: #BDC7D8;
+}
+
+.tablesorter thead input[type="text"], .tablesorter thead select, .tablesorter thead textarea
+{
+    border-color: #FCC200;
+}
+
+.errorBox {
+    border-color: #D40000;
+}
+
+.element,
+#pagetitle {
+    border-color: #E48400;
+}
+
+div.dashboardpanel .header {
+    border-color: #BEBEDC;
+}
+
+#navigation h5 {
+    cursor: pointer;
+}
+
+#logo h1,
+.menuGroup,
+#greeting,
+#pagetitle,
+.element
+{
+    -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}

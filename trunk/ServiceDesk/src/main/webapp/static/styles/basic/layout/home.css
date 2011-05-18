@@ -1,0 +1,204 @@
+.column {
+	VERTICAL-ALIGN: top; WIDTH: 50%;
+}
+.column TABLE {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.mainTable TD {
+	BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.mainTable {
+	WIDTH: 100%; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none
+}
+TABLE.box {
+	BORDER-RIGHT: rgb(190,190,220) 1px solid; BORDER-TOP: rgb(190,190,220) 1px solid; BORDER-LEFT: rgb(190,190,220) 1px solid; BORDER-BOTTOM: rgb(190,190,220) 1px solid; BORDER-COLLAPSE: collapse
+}
+TABLE.box TD {
+	BORDER-RIGHT: rgb(190,190,220) 1px solid; BORDER-TOP: rgb(190,190,220) 1px solid; BORDER-LEFT: rgb(190,190,220) 1px solid; BORDER-BOTTOM: rgb(190,190,220) 1px solid; BORDER-COLLAPSE: collapse
+}
+TABLE.box TH {
+	BORDER-RIGHT: rgb(190,190,220) 1px solid; BORDER-TOP: rgb(190,190,220) 1px solid; BORDER-LEFT: rgb(190,190,220) 1px solid; BORDER-BOTTOM: rgb(190,190,220) 1px solid; BORDER-COLLAPSE: collapse
+}
+TABLE.box {
+	BACKGROUND-COLOR: rgb(240,250,255)
+}
+TABLE.box {
+	WIDTH: 100%
+}
+TABLE.box TBODY {
+	WIDTH: 100%
+}
+TABLE.box TH {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 5px; BACKGROUND: url(../../../images/default/panel/white-top-bottom.gif) repeat-x 0px -1px; PADDING-BOTTOM: 4px; FONT: bold 13px/15px tahoma,arial,verdana,sans-serif; COLOR: #15428b; PADDING-TOP: 5px
+}
+.x-tool {
+	BACKGROUND: url(../../../images/default/panel/tool-sprites.gif) no-repeat 0px 0px; FLOAT: right; MARGIN-LEFT: 2px; OVERFLOW: hidden; WIDTH: 15px; CURSOR: pointer; HEIGHT: 15px
+}
+.x-edit {
+	FLOAT: right; MARGIN-LEFT: 2px; OVERFLOW: hidden; WIDTH: 15px; CURSOR: pointer; HEIGHT: 15px
+}
+.x-edit-delete {
+	BACKGROUND: url(../../../images/default/dd/drop-no.gif) no-repeat 0px 0px
+}
+.x-edit-add {
+	BACKGROUND: url(../../../images/default/dd/drop-add.gif) no-repeat 0px 0px
+}
+.x-tool-next {
+	BACKGROUND: url(../../../images/default/panel/tool-sprites.gif) no-repeat 0px -165px; FLOAT: right; MARGIN-LEFT: 2px; OVERFLOW: hidden; WIDTH: 15px; CURSOR: pointer; HEIGHT: 15px
+}
+.x-tool-prev {
+	BACKGROUND: url(../../../images/default/panel/tool-sprites.gif) no-repeat 0px -180px; FLOAT: right; MARGIN-LEFT: 2px; OVERFLOW: hidden; WIDTH: 15px; CURSOR: pointer; HEIGHT: 15px
+}
+.x-tool-detail {
+	PADDING-LEFT: 0px; BACKGROUND: url(../../../images/default/grid/group-by.gif) no-repeat 0px 0px; FLOAT: right; MARGIN-LEFT: 0px; OVERFLOW: hidden; WIDTH: 15px; CURSOR: pointer; HEIGHT: 15px
+}
+.x-tool-row-expander {
+	BACKGROUND: url(../../../images/default/grid/row-expand-sprite.gif) no-repeat 0px 0px; FLOAT: right; WIDTH: 15px; HEIGHT: 15px
+}
+.x-tool-row-collapser {
+	BACKGROUND: url(../../../images/default/grid/row-expand-sprite.gif) no-repeat -25px 0px; FLOAT: right; WIDTH: 15px; HEIGHT: 15px
+}
+.x-tool-toggle-over {
+	BACKGROUND-POSITION: 0px -105px
+}
+.x-tool-toggle {
+	BACKGROUND-POSITION: 0px -120px
+}
+.x-tool-show-few {
+	BACKGROUND-POSITION: 0px -60px
+}
+.x-tool-show-all {
+	BACKGROUND-POSITION: 0px -75px
+}
+.data-table-header {
+	BACKGROUND: url(../../../images/default/grid/grid3-hrow.gif) repeat-x 0px 50%; CURSOR: default; COLOR: rgb(100,100,100); TEXT-ALIGN: left
+}
+.data-table-header TD {
+	BACKGROUND: url(../../../images/default/grid/grid3-hrow.gif) repeat-x 0px 50%; CURSOR: default; COLOR: rgb(100,100,100); TEXT-ALIGN: left
+}
+.data-table-body {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; CURSOR: default; PADDING-TOP: 2px; FONT-FAMILY: arial,tahoma,helvetica,sans-serif
+}
+.data-table-body TD {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 11px; PADDING-BOTTOM: 2px; CURSOR: default; PADDING-TOP: 2px; FONT-FAMILY: arial,tahoma,helvetica,sans-serif
+}
+.data-table-header-records {
+	PADDING-RIGHT: 10px; FLOAT: right
+}
+.data-table-noalarm {
+	COLOR: black
+}
+.data-table-noalarm TD A {
+	COLOR: black
+}
+.data-table-alarm1 {
+	COLOR: rgb(187,187,0)
+}
+.data-table-alarm1 TD A {
+	COLOR: rgb(187,187,0)
+}
+.data-table-alarm2 {
+	COLOR: rgb(200,30,10)
+}
+.data-table-alarm2 TD A {
+	COLOR: rgb(200,30,10)
+}
+.calendar-hour-column {
+	PADDING-LEFT: 8px; FONT-SIZE: small; WIDTH: 9%; COLOR: black; FONT-FAMILY: arial,sans-serif; BACKGROUND-COLOR: #dfe8f6; TEXT-ALIGN: center
+}
+.calendar-note-column {
+	PADDING-LEFT: 8px; FONT-SIZE: small; VERTICAL-ALIGN: top; WIDTH: 90%; COLOR: black; FONT-FAMILY: arial,sans-serif; TEXT-ALIGN: left
+}
+calendar-Spotkanie {
+	PADDING-LEFT: 8px; FONT-SIZE: small; VERTICAL-ALIGN: top; WIDTH: 90%; COLOR: black; FONT-FAMILY: arial,sans-serif; TEXT-ALIGN: left
+}
+calendar-Telefon {
+	PADDING-LEFT: 8px; FONT-SIZE: small; VERTICAL-ALIGN: top; WIDTH: 90%; COLOR: black; FONT-FAMILY: arial,sans-serif; TEXT-ALIGN: left
+}
+.calendar-note-column {
+	BACKGROUND-COLOR: rgb(240,250,255)
+}
+.calendar-header-date {
+	PADDING-LEFT: 50px; FLOAT: left
+}
+.calendar-Spotkanie {
+	BACKGROUND-COLOR: rgb(220,220,250)
+}
+.calendar-Telefon {
+	BACKGROUND-COLOR: rgb(230,230,200)
+}
+.calendar-header-input {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FLOAT: left; FONT: bold 13px/15px tahoma,arial,verdana,sans-serif; WIDTH: 230px; COLOR: #15428b; BORDER-TOP-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BACKGROUND-COLOR: transparent; BORDER-BOTTOM-STYLE: none
+}
+.tasks-body {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; CURSOR: default; PADDING-TOP: 2px; FONT-FAMILY: 'Times New Roman',Times,serif; BACKGROUND-COLOR: rgb(255,255,230)
+}
+.tasks-body TR TD {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; CURSOR: default; PADDING-TOP: 2px; FONT-FAMILY: 'Times New Roman',Times,serif; BACKGROUND-COLOR: rgb(255,255,230)
+}
+.tasks-input {
+	FONT-SIZE: 12px; FLOAT: left; WIDTH: 90%; BORDER-TOP-STYLE: none; FONT-FAMILY: 'Times New Roman',Times,serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: rgb(255,255,230); TEXT-ALIGN: left; BORDER-BOTTOM-STYLE: none
+}
+TABLE.currents {
+	BORDER-RIGHT: rgb(190,190,220) 1px solid; BORDER-TOP: rgb(190,190,220) 1px solid; BORDER-LEFT: rgb(190,190,220) 1px solid; WIDTH: 100%; BORDER-BOTTOM: rgb(190,190,220) 1px solid; BORDER-COLLAPSE: collapse;
+}
+TABLE.currents TH {
+	BORDER-RIGHT: rgb(190,190,220) 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: rgb(190,190,220) 1px solid; PADDING-LEFT: 5px; BACKGROUND: url(../../../images/default/panel/white-top-bottom.gif) repeat-x 0px -1px; PADDING-BOTTOM: 4px; FONT: bold 13px/15px tahoma,arial,verdana,sans-serif; BORDER-LEFT: rgb(190,190,220) 1px solid; COLOR: #15428b; PADDING-TOP: 5px; BORDER-BOTTOM: rgb(190,190,220) 1px solid
+}
+.currents-body {
+	TEXT-ALIGN: left
+}
+.currents-header1 {
+	TEXT-ALIGN: left
+}
+.currents-info {
+	TEXT-ALIGN: left
+}
+.currents-body {
+	BORDER-TOP-STYLE: none; PADDING-TOP: 5px; FONT-FAMILY: arial,tahoma,helvetica,sans-serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.currents-body TR TD {
+	BORDER-TOP-STYLE: none; PADDING-TOP: 5px; FONT-FAMILY: arial,tahoma,helvetica,sans-serif; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.currents-header1 {
+	PADDING-LEFT: 4px; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: rgb(0,50,100); TEXT-ALIGN: left
+}
+.currents-body {
+	PADDING-LEFT: 4px; FONT-SIZE: 11px; PADDING-BOTTOM: 5px; COLOR: black
+}
+.currents-info {
+	PADDING-LEFT: 20px; FONT-SIZE: 11px; COLOR: rgb(170,170,220); FONT-STYLE: oblique
+}
+.horizontal-line {
+	height: 1px; border: none; background-COLOR: #EF9B0F;
+}
+.space-row {
+	HEIGHT: 0px
+}
+.literal-data {
+	TEXT-ALIGN: left
+}
+.number-data {
+	TEXT-ALIGN: right
+}
+.wykres {
+	BORDER-RIGHT: black 2px solid; BORDER-TOP: black 2px solid; FLOAT: left; MARGIN-LEFT: 10px; BORDER-LEFT: black 2px solid; WIDTH: 40px; BORDER-BOTTOM: black 2px solid; BACKGROUND-COLOR: rgb(240,240,220)
+}
+.highlight {
+	COLOR: rgb(140,150,155)
+}
+.highlight TD A {
+	COLOR: rgb(140,150,155)
+}
+.even {
+	BACKGROUND-COLOR: rgb(240,250,255)
+}
+.odd {
+	BACKGROUND-COLOR: rgb(220,230,235)
+}
+.data-table-body A:hover {
+	FONT-WEIGHT: bold; COLOR: orange; TEXT-DECORATION: underline
+}
+.float-left {
+	FLOAT: left
+}
