@@ -15,8 +15,8 @@ import servicedesk.core.itil.change.domain.RfcImpact;
 import servicedesk.core.itil.change.domain.RfcPriority;
 import servicedesk.core.itil.change.domain.RfcResolution;
 import servicedesk.core.itil.change.domain.RfcState;
-import servicedesk.core.itil.change.domain.helper.RfcCriteria;
-import servicedesk.infrastructure.security.spring.SpringSecurityUserDetailsService;
+import servicedesk.core.itil.change.domain.helper.RfcSearchObject;
+import servicedesk.infrastructure.security.service.AuthorizationService;
 
 /**
  *
@@ -31,7 +31,7 @@ public class RfcViewController extends AbstractRfcController {
     protected static final String MODEL_CRITERIA = "rfcCriteria";
     
     @Autowired
-    protected SpringSecurityUserDetailsService userService;
+    protected AuthorizationService authorizationService;
     
     @ModelAttribute("priorities")
     List<RfcPriority> populatePriorities() {
@@ -57,32 +57,28 @@ public class RfcViewController extends AbstractRfcController {
     }
     
     @RequestMapping(value = "")
-    public String search(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
-        criteria.setAllowEmptyQueries(true);
+    public String search(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcSearchObject criteria) {
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }
     
     @RequestMapping(value = "/created")
-    public String searchCreated(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
-        criteria.setCreator(userService.getCurrentUser().getEmployee());
-        criteria.setAllowEmptyQueries(true);
+    public String searchCreated(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcSearchObject criteria) {
+        criteria.setCreator(authorizationService.getCurrentUser().getEmployee());
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }
     
     @RequestMapping(value = "/unassigned")
-    public String searchUnassigned(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
+    public String searchUnassigned(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcSearchObject criteria) {
         criteria.setManager(null);
-        criteria.setAllowEmptyQueries(true);
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }
     
     @RequestMapping(value = "/managed")
-    public String searchManaged(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcCriteria criteria) {
-        criteria.setManager(userService.getCurrentUser().getEmployee());
-        criteria.setAllowEmptyQueries(true);
+    public String searchManaged(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcSearchObject criteria) {
+        criteria.setManager(authorizationService.getCurrentUser().getEmployee());
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }

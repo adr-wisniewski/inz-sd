@@ -7,6 +7,7 @@ package servicedesk.core.itil.cmdb.service;
 
 import servicedesk.core.itil.cmdb.domain.ItemClass;
 import servicedesk.infrastructure.interfaces.service.GetService;
+import servicedesk.infrastructure.interfaces.service.HierarchyService;
 import servicedesk.infrastructure.interfaces.service.NamedService;
 
 /**
@@ -15,6 +16,7 @@ import servicedesk.infrastructure.interfaces.service.NamedService;
  */
 public interface ItemClassService 
     extends GetService<ItemClass, Integer>, 
-        NamedService<ItemClass, Integer> {
+        NamedService<ItemClass, Integer>,
+        HierarchyService<ItemClass, Integer> {
 
 }

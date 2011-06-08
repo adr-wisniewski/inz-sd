@@ -5,13 +5,15 @@
 package servicedesk.web.itil.change;
 
 import java.util.List;
+import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import servicedesk.core.itil.change.domain.RfcCategory;
-import servicedesk.web.base.tree.service.TreeBuilderService;
+import servicedesk.web.base.tree.TreeBuilder;
 
 /**
  *
@@ -25,16 +27,13 @@ public class RfcCategoryViewController extends AbstractRfcCategoryController {
     protected static final String VIEW_VIEW = "/change/rfc/category/view";
     protected static final String MODEL_IMPACTS = "categories";
     
+    @Resource(name="rfcCategoriesTree")
+    protected TreeBuilder<?> rfcCategoriesTree;
+    
     @RequestMapping
     public String all(ModelMap map) {
-        List<RfcCategory> categories = service.getAll();
-        map.addAttribute(MODEL_IMPACTS, TreeBuilderService.buildTree(categories));
+        map.addAttribute(MODEL_IMPACTS, rfcCategoriesTree.buildTree());
         return VIEW_LIST;
-    }
-    
-    @RequestMapping(params={"id"})
-    public String allId(@RequestParam("id") Integer id) {
-        return String.format( "redirect:/change/rfc/category/%d", id);
     }
     
     @RequestMapping(value = "/{id}")

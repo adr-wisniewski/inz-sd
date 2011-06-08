@@ -5,23 +5,26 @@
 package servicedesk.core.itil.change.domain.helper;
 
 import java.util.Date;
-import org.springframework.util.StringUtils;
 import servicedesk.core.itil.change.domain.RfcCategory;
 import servicedesk.core.itil.change.domain.RfcImpact;
 import servicedesk.core.itil.change.domain.RfcPriority;
 import servicedesk.core.itil.change.domain.RfcResolution;
 import servicedesk.core.itil.change.domain.RfcState;
 import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.itil.change.domain.Rfc;
+import servicedesk.infrastructure.search.SearchObject;
+import servicedesk.infrastructure.search.Range;
+import servicedesk.infrastructure.search.annotations.AllowEmptySearch;
 
 /**
  *
  * @author Adrian
  */
-public class RfcCriteria {
+@AllowEmptySearch
+public class RfcSearchObject implements SearchObject<Rfc> {
     private Integer id;
     private Employee creator;
-    private Date timestampMin;
-    private Date timestampMax;
+    private Range<Date> timestamp = new Range<Date>();;
     private String title;
     private String description;
     private RfcState state;
@@ -30,7 +33,6 @@ public class RfcCriteria {
     private RfcPriority priority;
     private RfcImpact impact;
     private RfcResolution resolution;
-    private boolean allowEmptyQueries;
     
 
     /**
@@ -73,34 +75,6 @@ public class RfcCriteria {
      */
     public void setCreator(Employee creator) {
         this.creator = creator;
-    }
-
-    /**
-     * @return the timestampMin
-     */
-    public Date getTimestampMin() {
-        return timestampMin;
-    }
-
-    /**
-     * @param timestampMin the timestampMin to set
-     */
-    public void setTimestampMin(Date timestampMin) {
-        this.timestampMin = timestampMin;
-    }
-
-    /**
-     * @return the timestampMax
-     */
-    public Date getTimestampMax() {
-        return timestampMax;
-    }
-
-    /**
-     * @param timestampMax the timestampMax to set
-     */
-    public void setTimestampMax(Date timestampMax) {
-        this.timestampMax = timestampMax;
     }
 
     /**
@@ -172,37 +146,6 @@ public class RfcCriteria {
     public void setImpact(RfcImpact impact) {
         this.impact = impact;
     }
-    
-    public boolean isInitialized()
-    {
-        return
-            allowEmptyQueries        
-            || id != null
-            || state != null
-            || creator != null
-            || timestampMin != null
-            || timestampMax != null
-            || StringUtils.hasText(title)
-            || StringUtils.hasText(description)
-            || priority != null
-            || category != null
-            || resolution != null    
-            || impact != null;     
-    }
-
-    /**
-     * @return the queryWhenEmpty
-     */
-    public boolean isAllowEmptyQueries() {
-        return allowEmptyQueries;
-    }
-
-    /**
-     * @param queryWhenEmpty the queryWhenEmpty to set
-     */
-    public void setAllowEmptyQueries(boolean queryWhenEmpty) {
-        this.allowEmptyQueries = queryWhenEmpty;
-    }
 
     /**
      * @return the category
@@ -230,5 +173,19 @@ public class RfcCriteria {
      */
     public void setResolution(RfcResolution resolution) {
         this.resolution = resolution;
+    }
+
+    /**
+     * @return the timestamp
+     */
+    public Range<Date> getTimestamp() {
+        return timestamp;
+    }
+
+    /**
+     * @param timestamp the timestamp to set
+     */
+    public void setTimestamp(Range<Date> timestamp) {
+        this.timestamp = timestamp;
     }
 }

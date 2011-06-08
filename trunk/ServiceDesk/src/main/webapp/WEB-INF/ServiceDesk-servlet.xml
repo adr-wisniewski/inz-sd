@@ -25,8 +25,6 @@
 
     <security:global-method-security pre-post-annotations="enabled" />
 
-    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean" />
-
     <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
         <property name="order" value="1" />
         <property name="interceptors">
@@ -52,6 +50,7 @@
                         <ref bean="customPropertyEditorRegistrar" />
                     </list>
                 </property>
+                <property name="conversionService" ref="conversionService" />
             </bean>
         </property>
     </bean>

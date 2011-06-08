@@ -5,14 +5,13 @@
 
 package servicedesk.web.itil.cmdb;
 
-import java.util.List;
+import javax.annotation.Resource;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import servicedesk.core.itil.cmdb.domain.EmployeeItemClass;
 import servicedesk.core.itil.cmdb.domain.IncidentItemClass;
 import servicedesk.core.itil.cmdb.domain.Item;
@@ -23,7 +22,7 @@ import servicedesk.core.itil.cmdb.domain.ServiceItemClass;
 import servicedesk.core.itil.cmdb.domain.UniversalItemClass;
 import servicedesk.core.itil.cmdb.domain.helper.ItemClassVisitor;
 import servicedesk.core.itil.cmdb.domain.helper.ItemCriteria;
-import servicedesk.web.base.tree.service.TreeBuilderService;
+import servicedesk.web.base.tree.TreeBuilder;
 
 /**
  *
@@ -43,6 +42,9 @@ public class ItemSearchController extends AbstractItemController {
     protected static final String VIEW_BROWSE_TREE = "/cmdb/item/browse/tree";
     protected static final String VIEW_BROWSE_CATEGORY = "/cmdb/item/browse/category";
 
+    @Resource(name = "cmdbItemClassTree")
+    protected TreeBuilder<?> cmdbItemClassTree;
+    
     @RequestMapping(value = "/cmdb/item/search")
     public String search(ModelMap map, @ModelAttribute(MODEL_CRITERIA) ItemCriteria criteria) {
         map.addAttribute(MODEL_ITEMS, service.search(criteria));
@@ -51,15 +53,8 @@ public class ItemSearchController extends AbstractItemController {
 
     @RequestMapping(value = "/cmdb/item/browse")
     public String browse(ModelMap map) {
-        List<ItemClass> items = itemClassService.getAll();
-        map.addAttribute(MODEL_ITEMCLASSES, TreeBuilderService.buildTree(items));
+        map.addAttribute(MODEL_ITEMCLASSES, cmdbItemClassTree.buildTree());
         return VIEW_BROWSE_TREE;
-    }
-
-    @RequestMapping(value = "/cmdb/item/browse", params={"id"})
-    public String browseId(@RequestParam("id") Integer id) {
-        ItemClass itemClass = itemClassService.load(id);
-        return String.format( "redirect:/cmdb/item/browse/%d", itemClass.getId());
     }
 
     @RequestMapping(value = "/cmdb/item/browse/{classid}")

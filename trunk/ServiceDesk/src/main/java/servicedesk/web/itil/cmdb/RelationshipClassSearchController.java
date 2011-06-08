@@ -5,7 +5,7 @@
 
 package servicedesk.web.itil.cmdb;
 
-import java.util.List;
+import javax.annotation.Resource;
 import org.springframework.beans.propertyeditors.CustomBooleanEditor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -14,10 +14,8 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import servicedesk.core.itil.cmdb.domain.RelationshipClass;
 import servicedesk.core.itil.cmdb.domain.helper.RelationshipClassCriteria;
-import servicedesk.web.base.tree.service.TreeBuilderService;
+import servicedesk.web.base.tree.TreeBuilder;
 
 /**
  *
@@ -32,6 +30,9 @@ public class RelationshipClassSearchController extends AbstractRelationshipClass
     protected static final String MODEL_CRITERIA = "relationshipClassCriteria";
     protected static final String MODEL_ITEMCLASSES = "relationshipClasses";
 
+    @Resource(name = "cmdbRelationshipClassTree")
+    protected TreeBuilder<?> cmdbRelationshipClassTree;
+    
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(Boolean.class, new CustomBooleanEditor("true", "false", true));
@@ -45,13 +46,7 @@ public class RelationshipClassSearchController extends AbstractRelationshipClass
 
     @RequestMapping(value = "/browse")
     public String browse(ModelMap map) {
-        List<RelationshipClass> items = service.getAll();
-        map.addAttribute(MODEL_ITEMCLASSES, TreeBuilderService.buildTree(items));
+        map.addAttribute(MODEL_ITEMCLASSES, cmdbRelationshipClassTree.buildTree());
         return VIEW_BROWSE;
-    }
-
-    @RequestMapping(value = "/browse", params={"id"})
-    public String browseid(@RequestParam("id") Integer id) {
-       return String.format( "redirect:/cmdb/relationship/class/%d", id);
     }
 }

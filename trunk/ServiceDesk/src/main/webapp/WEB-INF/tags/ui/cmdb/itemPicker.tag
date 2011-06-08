@@ -1,7 +1,7 @@
 <%@ tag body-content="empty" description="Kontrolka do wyboru elementu konfiguracji" %>
-<%@ attribute name="name" required="true" %>
-<%@ attribute name="value" required="true" type="servicedesk.core.itil.cmdb.domain.Item" %>
-<%@ attribute name="clazz" required="true" type="servicedesk.core.itil.cmdb.domain.ItemClass" %>
+<%@ attribute name="name" required="true" rtexprvalue="true" %>
+<%@ attribute name="value" required="true" type="servicedesk.core.itil.cmdb.domain.Item" rtexprvalue="true" %>
+<%@ attribute name="clazz" required="true" type="servicedesk.core.itil.cmdb.domain.ItemClass" rtexprvalue="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 

@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.springframework.beans.PropertyEditorRegistrar;
 import org.springframework.beans.PropertyEditorRegistry;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Component;
@@ -17,7 +18,6 @@ import servicedesk.core.itil.change.domain.RfcImpact;
 import servicedesk.core.itil.change.domain.RfcPriority;
 import servicedesk.core.itil.change.domain.RfcResolution;
 import servicedesk.core.itil.change.domain.RfcState;
-import servicedesk.core.itil.change.editor.RfcStateEditor;
 import servicedesk.core.itil.cmdb.dao.ItemClassDao;
 import servicedesk.core.itil.cmdb.dao.ItemDao;
 import servicedesk.core.itil.cmdb.dao.RelationshipClassDao;
@@ -102,7 +102,10 @@ import servicedesk.core.base.signal.editor.SignalReceiverTypeEditor;
 import servicedesk.core.base.signal.editor.SignalSignificanceTypeEditor;
 import servicedesk.core.base.signal.editor.SignalObjectTypeEditor;
 import servicedesk.core.base.signal.editor.SignalTypeEditor;
+import servicedesk.infrastructure.editor.BeanPropertyEditor;
 import servicedesk.infrastructure.editor.DomainObjectEditor;
+import servicedesk.infrastructure.editor.EnumOrdinalEditor;
+import servicedesk.web.base.tree.TreeBuilder;
 
 @Component
 public final class CustomPropertyEditorRegistrar implements PropertyEditorRegistrar {
@@ -173,15 +176,13 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
         private RfcCategoryDao rfcCategoryDao;
         @Autowired
         private RfcResolutionDao rfcResolutionDao;
-        @Autowired
-        private RfcStateEditor rfcStateEditor;
 
         @Override
 	public void registerCustomEditors(PropertyEditorRegistry registry) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		dateFormat.setLenient(false);
 		registry.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
-		
+		      
     	registry.registerCustomEditor(IncidentPriority.class, new IncidentPriorityEditor( incidentPriorityDao ));
     	registry.registerCustomEditor(IncidentCategory.class, new IncidentCategoryEditor( incidentCategoryDao ));
     	registry.registerCustomEditor(IncidentImpact.class, new IncidentImpactEditor( incidentImpactDao ));
@@ -223,6 +224,6 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
         registry.registerCustomEditor(RfcImpact.class, new DomainObjectEditor<RfcImpact>( rfcImpactDao ));
         registry.registerCustomEditor(RfcResolution.class, new DomainObjectEditor<RfcResolution>( rfcResolutionDao ));
         registry.registerCustomEditor(RfcCategory.class, new DomainObjectEditor<RfcCategory>( rfcCategoryDao ));
-        registry.registerCustomEditor(RfcState.class, rfcStateEditor);
+        registry.registerCustomEditor(RfcState.class, new EnumOrdinalEditor<RfcState>(RfcState.class));
     }
 }

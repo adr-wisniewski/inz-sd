@@ -31,7 +31,7 @@
 					<sd:employeePicker name="author" value="${requestSearchCriteria.author}" />
 				</td>
 				<td>
-					<sd:treePicker name="category" value="${requestSearchCriteria.category}" source="categories_rf"/>
+					<sd:treePicker name="category" value="${requestSearchCriteria.category}" source="rfCategoriesTree"/>
 				</td>
 				<td>
 					<form:select path="status">

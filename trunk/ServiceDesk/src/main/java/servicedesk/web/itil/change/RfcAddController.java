@@ -4,6 +4,7 @@
  */
 package servicedesk.web.itil.change;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.itil.change.domain.Rfc;
 import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.security.service.AuthorizationService;
 
 /**
  *
@@ -27,9 +29,12 @@ import servicedesk.core.base.validation.BusinessConstraintViolationException;
 public class RfcAddController extends AbstractRfcController {
     public static final String VIEW_ADD = "/change/rfc/add";
 
+    @Autowired
+    protected AuthorizationService authorizationService;
+    
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String creteNewInstance(ModelMap map) {
-        Rfc rfc = new Rfc();
+        Rfc rfc = new Rfc(authorizationService.getCurrentUser().getEmployee());
         map.addAttribute(rfc);
         return String.format("redirect:/change/rfc/new");
     }

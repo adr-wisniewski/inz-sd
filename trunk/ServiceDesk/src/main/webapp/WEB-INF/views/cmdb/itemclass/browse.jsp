@@ -6,5 +6,5 @@
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags/ui" %>
 
 <ui:panel caption="treepicker.caption">
-    <sd:treeView roots="${itemClasses}" url="/cmdb/item/class/browse"/>
+    <sd:treeView roots="${itemClasses}" urlFormat="cmdb/item/class/browse/%s"/>
 </ui:panel>

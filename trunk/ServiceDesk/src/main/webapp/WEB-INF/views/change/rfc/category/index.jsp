@@ -6,7 +6,7 @@
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags/ui" %>
 
 <ui:panel caption="caption.change.rfc.category.tree">
-    <sd:treeView roots="${categories}" url="/change/rfc/category"/>
+    <sd:treeView roots="${categories}" urlFormat="/change/rfc/category/%s"/>
     <p class="buttons">
         <ui:actionButton label="add.label" cssClass="add" action="/change/rfc/category/add" />
     </p>

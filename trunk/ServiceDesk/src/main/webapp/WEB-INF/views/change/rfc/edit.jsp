@@ -46,7 +46,7 @@
             </ui:propertyItem>
             
             <ui:propertyItem code="field.change.rfc.category" label="category">
-                <sd:treePicker name="category" value="${rfc.category}" source="rfccategory_change"/>
+                <sd:treePicker name="category" value="${rfc.category}" source="rfcCategoriesTree"/>
                 <form:errors path="category" cssClass="error" />
             </ui:propertyItem>
 

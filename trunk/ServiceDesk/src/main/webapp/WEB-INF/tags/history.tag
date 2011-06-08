@@ -1,5 +1,5 @@
 <%@ tag body-content="empty" description="Historia" %>
-<%@ attribute name="actionsList" required="true" type="java.util.List" description="lista akcji"%>
+<%@ attribute name="actionsList" rtexprvalue="true" required="true" type="java.util.List" description="lista akcji"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>

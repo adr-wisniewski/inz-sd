@@ -26,7 +26,7 @@
 					<form:input path="subject" />
 				</td>
 				<td>
-					<sd:treePicker name="category" value="${searchCriteria.category}" source="categories_pm"/>
+					<sd:treePicker name="category" value="${searchCriteria.category}" source="pmCategoriesTree"/>
 				</td>
 				<td></td>
 				<td></td>

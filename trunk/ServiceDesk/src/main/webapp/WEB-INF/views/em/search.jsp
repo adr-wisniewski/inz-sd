@@ -38,7 +38,7 @@
 					</form:select>
 				</td>
 				<td>
-					<sd:treePicker name="category" value="${eventSearchCriteria.category}" source="categories_em"/>
+					<sd:treePicker name="category" value="${eventSearchCriteria.category}" source="emCategoriesTree"/>
 					<br />
 					<input type="submit" value="<spring:message code="search.label" />" class="button" />
 				</td>

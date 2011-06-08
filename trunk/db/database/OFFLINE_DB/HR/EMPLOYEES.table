@@ -66,12 +66,12 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">39dbbc8e-4277-419b-8820-eff2ec6b4418</identifier>
+        <identifier class="java.lang.String">da2ae625-76fe-4982-adfd-a9e41c08332c</identifier>
       </ID>
       <name>NAME</name>
       <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">9ab3edd7-11b3-4bc0-934a-2d5d1add7fb2</identifier>
+          <identifier class="java.lang.String">02363159-472e-4471-bb14-0058523efc56</identifier>
         </ID>
         <attributeValues>
           <entry>
@@ -125,12 +125,12 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">7042f5e9-2a30-40d5-b641-edb11b9df2ab</identifier>
+        <identifier class="java.lang.String">12a8d906-e625-4fe8-adbd-e7bead946c54</identifier>
       </ID>
       <name>SURNAME</name>
       <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">b69e71a3-0418-4f25-8f37-d14998be5e98</identifier>
+          <identifier class="java.lang.String">091b683a-92ef-4704-a2a3-f7626ae599a2</identifier>
         </ID>
         <attributeValues>
           <entry>
@@ -184,130 +184,12 @@
     </column>
     <column>
       <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">d827e96d-6a3a-490a-9fa6-a645b279493a</identifier>
-      </ID>
-      <name>PHONE_NUMBER</name>
-      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
-        <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">74d780e3-6b98-43cd-8c71-c96976974990</identifier>
-        </ID>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">20</value>
-          </entry>
-          <entry>
-            <key>unit</key>
-            <value class="java.lang.String">BYTE</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-        <properties>
-          <entry>
-            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-            <value class="oracle.javatools.db.ReferenceID">
-              <parent class="oracle.javatools.db.ReferenceID">
-                <name>PHONE_NUMBER</name>
-                <parent class="oracle.javatools.db.ReferenceID">
-                  <name>EMPLOYEES</name>
-                  <identifier class="java.math.BigDecimal">17124</identifier>
-                  <schemaName>SD3</schemaName>
-                  <type>TABLE</type>
-                </parent>
-                <type>COLUMN</type>
-              </parent>
-              <type>DataTypeUsage</type>
-            </value>
-          </entry>
-        </properties>
-      </dataTypeUsage>
-      <notNull>true</notNull>
-      <properties>
-        <entry>
-          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-          <value class="oracle.javatools.db.ReferenceID">
-            <name>PHONE_NUMBER</name>
-            <parent class="oracle.javatools.db.ReferenceID">
-              <name>EMPLOYEES</name>
-              <identifier class="java.math.BigDecimal">17124</identifier>
-              <schemaName>SD3</schemaName>
-              <type>TABLE</type>
-            </parent>
-            <type>COLUMN</type>
-          </value>
-        </entry>
-      </properties>
-    </column>
-    <column>
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">3a5ae894-5e5d-4611-ad7d-a067651865bc</identifier>
-      </ID>
-      <name>MOBILE_PHONE</name>
-      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
-        <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">331ab624-9827-4fba-8d3f-4e42db982bcc</identifier>
-        </ID>
-        <attributeValues>
-          <entry>
-            <key>size</key>
-            <value class="java.lang.Long">20</value>
-          </entry>
-          <entry>
-            <key>unit</key>
-            <value class="java.lang.String">BYTE</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
-          <typeName>VARCHAR2</typeName>
-        </dataTypeID>
-        <properties>
-          <entry>
-            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-            <value class="oracle.javatools.db.ReferenceID">
-              <parent class="oracle.javatools.db.ReferenceID">
-                <name>MOBILE_PHONE</name>
-                <parent class="oracle.javatools.db.ReferenceID">
-                  <name>EMPLOYEES</name>
-                  <identifier class="java.math.BigDecimal">17124</identifier>
-                  <schemaName>SD3</schemaName>
-                  <type>TABLE</type>
-                </parent>
-                <type>COLUMN</type>
-              </parent>
-              <type>DataTypeUsage</type>
-            </value>
-          </entry>
-        </properties>
-      </dataTypeUsage>
-      <notNull>false</notNull>
-      <properties>
-        <entry>
-          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
-          <value class="oracle.javatools.db.ReferenceID">
-            <name>MOBILE_PHONE</name>
-            <parent class="oracle.javatools.db.ReferenceID">
-              <name>EMPLOYEES</name>
-              <identifier class="java.math.BigDecimal">17124</identifier>
-              <schemaName>SD3</schemaName>
-              <type>TABLE</type>
-            </parent>
-            <type>COLUMN</type>
-          </value>
-        </entry>
-      </properties>
-    </column>
-    <column>
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">04e83f81-1737-4ffc-90a9-550038029955</identifier>
+        <identifier class="java.lang.String">61b440a7-90a1-4ef7-9039-4d8329852dea</identifier>
       </ID>
       <name>EMAIL</name>
       <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
         <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">b0c28f87-e333-4354-8036-8747ed02c8cd</identifier>
+          <identifier class="java.lang.String">4a445378-2232-45bd-ac68-202c701b9f0e</identifier>
         </ID>
         <attributeValues>
           <entry>
@@ -348,6 +230,124 @@
           <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
           <value class="oracle.javatools.db.ReferenceID">
             <name>EMAIL</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EMPLOYEES</name>
+              <identifier class="java.math.BigDecimal">17124</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">6d134174-ff32-45f5-8bb8-0407f68cc73d</identifier>
+      </ID>
+      <name>PHONE_NUMBER</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8c16d231-6075-46de-8d5d-2d85f03a3a2c</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PHONE_NUMBER</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>EMPLOYEES</name>
+                  <identifier class="java.math.BigDecimal">17124</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PHONE_NUMBER</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EMPLOYEES</name>
+              <identifier class="java.math.BigDecimal">17124</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d4a2fe08-e841-4a7d-8b78-cee12e93da70</identifier>
+      </ID>
+      <name>MOBILE_PHONE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5edd1cab-1771-4306-abeb-7392a612947c</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>MOBILE_PHONE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>EMPLOYEES</name>
+                  <identifier class="java.math.BigDecimal">17124</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>MOBILE_PHONE</name>
             <parent class="oracle.javatools.db.ReferenceID">
               <name>EMPLOYEES</name>
               <identifier class="java.math.BigDecimal">17124</identifier>
@@ -550,7 +550,7 @@
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>EMPLOYEES</name>
             <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
-            <schemaName>SD3</schemaName>
+            <schemaName>HR</schemaName>
             <type>TABLE</type>
           </parent>
           <type>COLUMN</type>
@@ -602,7 +602,7 @@
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>EMPLOYEES</name>
             <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
-            <schemaName>SD3</schemaName>
+            <schemaName>HR</schemaName>
             <type>TABLE</type>
           </parent>
           <type>COLUMN</type>
@@ -635,7 +635,7 @@
         <parent class="oracle.javatools.db.IdentifierBasedID">
           <name>EMPLOYEES</name>
           <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
-          <schemaName>SD3</schemaName>
+          <schemaName>HR</schemaName>
           <type>TABLE</type>
         </parent>
         <type>CONSTRAINT</type>
@@ -653,7 +653,7 @@
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>EMPLOYEES</name>
             <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
-            <schemaName>SD3</schemaName>
+            <schemaName>HR</schemaName>
             <type>TABLE</type>
           </parent>
           <type>COLUMN</type>
@@ -705,7 +705,7 @@
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>EMPLOYEES</name>
             <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
-            <schemaName>SD3</schemaName>
+            <schemaName>HR</schemaName>
             <type>TABLE</type>
           </parent>
           <type>COLUMN</type>

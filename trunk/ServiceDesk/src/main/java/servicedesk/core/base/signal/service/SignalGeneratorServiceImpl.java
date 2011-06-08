@@ -58,6 +58,7 @@ public class SignalGeneratorServiceImpl implements SignalGeneratorService {
 		this.signalReceiverTypeDao = signalReceiverTypeDao;
 	}
 
+    @Override
 	public void generateSignals() {
 		for(SignalGenerator g : this.getReadyGenerators()) {	
 			this.generateSignals(g);
@@ -81,32 +82,39 @@ public class SignalGeneratorServiceImpl implements SignalGeneratorService {
 		}
 	}
 
+    @Override
 	public List<SignalGenerator> getAll() {
 		return signalGeneratorDao.getAll();
 	}
 
+    @Override
 	public SignalGenerator getById(Integer generatorId) {
 		return signalGeneratorDao.get(generatorId);
 	}
 
+    @Override
 	public void add(SignalGenerator generator) {
 		generator.setLastRunDate(new Date());
 		generator.setSelectStatement("o.*, e.employee_id");
 		signalGeneratorDao.save(generator);
 	}
 
+    @Override
 	public void edit(SignalGenerator generator) {
 		signalGeneratorDao.save(generator);
 	}
 
+    @Override
 	public List<SignalReceiverType> getAllSignalReceiverTypes() {
 		return signalReceiverTypeDao.getAll();
 	}
 
+    @Override
 	public List<SignalType> getAllSignalTypes() {
 		return signalTypeDao.getAll();
 	}
 
+    @Override
 	public List<Signal> getSignals(SignalGenerator g) {
 		return signalDao.generateSignals(g);
 	}

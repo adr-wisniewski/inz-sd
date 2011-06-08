@@ -7,84 +7,73 @@ import java.util.List;
 import servicedesk.infrastructure.interfaces.domain.HierarchicalDomainObject;
 
 public class TreeItem {
-	private HierarchicalDomainObject<?> value;
-	
-	private List<TreeItem> childs = new LinkedList<TreeItem>();
-	
-	private TreeItem parent;
-	
-	private boolean open = false;
-	
-	private boolean current = false;
-	
-	private boolean leaf = true;
-	
-	public TreeItem(HierarchicalDomainObject<?> item) {
-		this.value = item;
-	}
 
-	public String getName() {
-		return value.getName();
-	}
-	
-	public String getId() {
-		return String.valueOf(value.getId());
-	}
-	
-	public HierarchicalDomainObject<?> getValue() {
-		return value;
-	}
+    private HierarchicalDomainObject<?> value;
+    private List<TreeItem> children = new LinkedList<TreeItem>();
+    private TreeItem parent;
+    private boolean open = false;
+    private boolean selected = false;
+    private boolean disabled = false;
 
-	public void setValue(HierarchicalDomainObject<?> value) {
-		this.value = value;
-	}
+    public TreeItem(HierarchicalDomainObject<?> item) {
+        this.value = item;
+    }
+    
+    public TreeItem(HierarchicalDomainObject<?> item, TreeItem parent) {
+        this.value = item;
+        setParent(parent);
+    }
 
-	public void addChild(TreeItem child) {
-		this.childs.add(child);
-		child.setParent(this);
-	}
-	
-	public List<TreeItem> getChilds() {
-		return Collections.unmodifiableList(childs);
-	}
-	
-	public boolean isParent(TreeItem other) {
-            
-            if(other.getValue().getParent() == null)
-                return false;
-            
-            return this.getValue().getId().equals(other.getValue().getParent().getId());
-	}
+    //public String getName() {
+    //	return value.getName();
+    //}
+    
+    public HierarchicalDomainObject<?> getValue() {
+        return value;
+    }
 
-	public TreeItem getParent() {
-		return parent;
-	}
+    public void addChild(TreeItem child) {
+        this.children.add(child);
+        child.setParent(parent);
+    }
 
-	public void setParent(TreeItem parent) {
-		this.parent = parent;
-	}
+    public List<TreeItem> getChildren() {
+        return Collections.unmodifiableList(children);
+    }
 
-	public boolean isOpen() {
-		return open;
-	}
+    public boolean isLeaf() {
+        return children.isEmpty();
+    }
 
-	public void setOpen(boolean open) {
-		this.open = open;
-	}
+    public TreeItem getParent() {
+        return parent;
+    }
 
-	public boolean isCurrent() {
-		return current;
-	}
+    public final void setParent(TreeItem parent) {
+        this.parent = parent;
+    }
 
-	public void setCurrent(boolean current) {
-		this.current = current;
-	}
+    public boolean isOpen() {
+        return open;
+    }
 
-	public boolean isLeaf() {
-		return leaf;
-	}
+    public void setOpen(boolean open) {
+        this.open = open;
+    }
 
-	public void setLeaf(boolean leaf) {
-		this.leaf = leaf;
-	}
+    public boolean isSelected() {
+        return selected;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
+    }
+
+    public boolean isDisabled() {
+        return disabled;
+    }
+
+    public void setDisabled(boolean disabled) {
+        this.disabled = disabled;
+    }
 }

@@ -55,7 +55,7 @@
 					</form:select>
 				</td>
 				<td>
-					<sd:treePicker name="category" value="${incidentSearchCriteria.category}" source="categories_im"/>
+					<sd:treePicker name="category" value="${incidentSearchCriteria.category}" source="imCategoriesTree"/>
 				</td>
 				<td>
 					<sd:employeePicker name="supportGroupMember" value="${incidentSearchCriteria.supportGroupMember}"/>

@@ -18,7 +18,26 @@
             java.lang.String stripTags(java.lang.String)
         </function-signature>
         <example>
-        ${util:stripTags(text)}
+            ${util:stripTags(text)}
         </example>
     </function>
+    
+    <function>
+        <description>
+            Formats string with a Formatter
+        </description>
+        <name>
+            format
+        </name>
+        <function-class>
+            servicedesk.web.base.util.JspUtil
+        </function-class>
+        <function-signature>
+            java.lang.String format ( java.lang.String, java.lang.Object )
+        </function-signature>
+        <example>
+            ${util:format('%4$2s','a')}
+        </example>
+    </function>
+    
 </taglib>

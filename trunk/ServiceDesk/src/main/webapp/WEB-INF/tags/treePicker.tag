@@ -12,5 +12,11 @@
 	}
 </script>
 
+<c:url value="/servicedesk/treePicker" var="url">
+    <c:param name="name" value="${name}" />
+    <c:param name="source" value="${source}" />
+    <c:param name="value" value="" />
+</c:url>
+
 <input type="hidden" id="${name}" name="${name}" value="${value.id}" />
-<input class="picker" type="text" value="${value.name}" id="treePicker-${name}" onclick="pickItem('<c:url value="/servicedesk/treePicker?name=${name}&amp;source=${source}&amp;value=" />', '${name}');" readonly="readonly" />
+<input class="picker" type="text" value="${value.name}" id="treePicker-${name}" onclick="pickItem('${url}', '${name}');" readonly="readonly" />

@@ -6,7 +6,8 @@
 <%@ taglib prefix="ui" tagdir="/WEB-INF/tags/ui" %>
 
 <ui:panel caption="treepicker.caption">
-    <sd:treeView roots="${roots}" url="/servicedesk/treePickerChoose" />
-    <a href="/servicedesk/treePickerChoose?id=null" class="standard_link"><spring:message code="nonepick.label" /></a>
-    | <a href="#" class="standard_link" onclick="window.close(); return false;"><spring:message code="cancel.label" /></a>
+    <sd:treeView roots="${roots}" urlFormat="/servicedesk/treePicker/${builder}/pick/%s?target=${target}" />
+    <a href="/servicedesk/treePicker/${builder}/" class="standard_link"><spring:message code="nonepick.label" /></a>
+    | 
+    <a href="#" class="standard_link" onclick="window.close(); return false;"><spring:message code="cancel.label" /></a>
 </ui:panel>

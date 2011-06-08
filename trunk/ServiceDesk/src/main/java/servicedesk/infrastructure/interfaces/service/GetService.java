@@ -10,12 +10,14 @@ import servicedesk.infrastructure.interfaces.domain.DomainObject;
 
 /**
  *
+ * @param <Type> 
+ * @param <Id> 
  * @author Adrian
  */
 public interface GetService<Type extends DomainObject<Id>, Id extends Serializable> 
     extends Service {
     public List<Type> getAll();
-    public Type load(Integer id);
-    public Type get(Integer id);
+    public Type load(Id id);
+    public Type get(Id id);
     
 }

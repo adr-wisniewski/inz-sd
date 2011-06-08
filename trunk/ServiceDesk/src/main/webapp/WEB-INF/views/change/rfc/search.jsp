@@ -108,7 +108,7 @@
                         <form:errors path="id" cssClass="error" />
                     </td>
                     <td>
-                        <sd:treePicker name="category" value="${rfcCriteria.category}" source="rfccategory_change"/>
+                        <sd:treePicker name="category" value="${rfcCriteria.category}" source="rfcCategoriesTree"/>
                         <form:errors path="category" cssClass="error" />
                     </td>
                     <td>
@@ -195,7 +195,7 @@
                     </tr>
                 </c:forEach>
                 <c:choose>
-                    <c:when test="${not rfcCriteria.initialized}">
+                    <c:when test="${empty rfcCriteria and not rfcCriteria.allowEmptyQueries}">
                         <tr>
                             <td colspan="9">
                                 <spring:message code="caption.query_empty" />

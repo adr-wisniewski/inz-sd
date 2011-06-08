@@ -69,11 +69,6 @@ public class RelationshipClassDaoImpl extends HibernateDaoSupport implements Rel
     }
 
     @Override
-    public Class<Integer> getIdClass() {
-        return Integer.class;
-    }
-
-    @Override
     public RelationshipClass get(Integer id) {
         return postprocess(getHibernateTemplate().get(RelationshipClass.class, id));
     }

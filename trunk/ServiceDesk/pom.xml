@@ -196,6 +196,16 @@
             <artifactId>spring-security-config</artifactId>
             <version>3.0.5.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-core</artifactId>
+            <version>2.0.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-jdbc</artifactId>
+            <version>2.0.4.RELEASE</version>
+        </dependency>
 
         <!-- Hibernate -->
         <dependency>
@@ -207,6 +217,16 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-envers</artifactId>
             <version>3.6.4.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.14.0-GA</version>
+        </dependency>
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
         </dependency>
 
         <!-- Apache Tiles -->
@@ -285,11 +305,6 @@
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
             <version>3.2.1</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>1.2.2</version>
         </dependency>
         <dependency>
             <groupId>commons-digester</groupId>
@@ -396,9 +411,7 @@
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
-                    <compilerArguments>
-                        <Xlint:all></Xlint:all>
-                    </compilerArguments>
+                    
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>

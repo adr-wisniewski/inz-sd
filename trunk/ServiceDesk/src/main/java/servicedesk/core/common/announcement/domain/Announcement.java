@@ -29,7 +29,6 @@ import org.hibernate.annotations.Immutable;
 import servicedesk.core.common.attachment.domain.Attachment;
 import servicedesk.core.common.attachment.domain.HasAttachments;
 import servicedesk.core.hr.domain.Employee;
-import servicedesk.infrastructure.interfaces.domain.CreatorAutomaticallyMarked;
 import servicedesk.infrastructure.interfaces.domain.DomainObject;
 
 /**
@@ -41,15 +40,24 @@ import servicedesk.infrastructure.interfaces.domain.DomainObject;
 @NamedQueries(
     @NamedQuery(name="Announcement.upToDate", query="from Announcement as a where a.publicationTime <= :date order by a.publicationTime desc")
 )
-public class Announcement implements DomainObject<Integer>, CreatorAutomaticallyMarked, HasAttachments, Serializable {
+public class Announcement implements DomainObject<Integer>, HasAttachments, Serializable {
     private static final long serialVersionUID = 1L;
     private Integer id;
     private String title;
     private String content;
-    private Employee creator;
+    private Employee author;
     private Date publicationTime;
     private Set<Attachment> attachments;
 
+    protected Announcement() {
+        // hibernate required noarg ctor
+    }
+    
+    public Announcement(Employee author) {
+        this.author = author;
+    }
+    
+    
     /**
      * @return the id
      */
@@ -104,19 +112,17 @@ public class Announcement implements DomainObject<Integer>, CreatorAutomatically
      * @return the author
      */
     @ManyToOne(fetch=FetchType.EAGER, optional=false)
-    @JoinColumn(name="AUTHOR")
+    @JoinColumn(name="AUTHOR", updatable=false)
     @Immutable
-    @Override
-    public Employee getCreator() {
-        return creator;
+    public Employee getAuthor() {
+        return author;
     }
 
     /**
      * @param author the author to set
      */
-    @Override
-    public void setCreator(Employee creator) {
-        this.creator = creator;
+    public void setAuthor(Employee author) {
+        this.author = author;
     }
 
     /**
@@ -129,7 +135,7 @@ public class Announcement implements DomainObject<Integer>, CreatorAutomatically
     }
 
     /**
-     * @param publishDate the publishDate to set
+     * @param publicationTime the publishDate to set
      */
     public void setPublicationTime(Date publicationTime) {
         this.publicationTime = publicationTime;
