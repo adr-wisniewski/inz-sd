@@ -1,0 +1,191 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">50b5ef33-3e2a-48a6-94a3-cf248d1640d8</identifier>
+  </ID>
+  <name>CLIENT_USERS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e49d8622-8c53-483b-8234-ccd977ac1e02</identifier>
+      </ID>
+      <name>USER_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e0868e95-4d56-408e-9169-55909c89231e</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d24641f5-e484-4756-908e-a469f40ba714</identifier>
+      </ID>
+      <name>CLIENT_ID</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">76a6108f-cda4-4893-8cb3-9c168b8f8c14</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7f30440d-2ebc-4889-952e-c5047d6fda56</identifier>
+      </ID>
+      <name>CLIENT_USERS_CLIENTS_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CLIENT_ID</name>
+          <identifier class="java.lang.String">d24641f5-e484-4756-908e-a469f40ba714</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CLIENT_USERS</name>
+            <identifier class="java.lang.String">50b5ef33-3e2a-48a6-94a3-cf248d1640d8</identifier>
+            <schemaName>SECURITY</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SECURITY</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.OFFLINE_ONLY</key>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PEOPLE_PK</name>
+        <identifier class="java.lang.String">d5ed32f2-0a36-4df5-9786-b2b592b964d2</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>CLIENTS</name>
+          <identifier class="java.lang.String">5092bbd5-80ea-4536-a363-0089962a8de8</identifier>
+          <schemaName>SALES</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>HR</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a4be2770-cde0-4dc2-9dc2-7ef022f86c56</identifier>
+      </ID>
+      <name>CLIENT_USERS_USERS_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>USER_ID</name>
+          <identifier class="java.lang.String">e49d8622-8c53-483b-8234-ccd977ac1e02</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CLIENT_USERS</name>
+            <identifier class="java.lang.String">50b5ef33-3e2a-48a6-94a3-cf248d1640d8</identifier>
+            <schemaName>SECURITY</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SECURITY</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.OFFLINE_ONLY</key>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>USERS_PK</name>
+        <identifier class="java.lang.String">f32c9b07-9ce7-4ccb-adea-4c0c6c390f3e</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>USERS</name>
+          <identifier class="java.lang.String">0a5d8860-ee3c-42c5-957a-c6c40c8ec499</identifier>
+          <schemaName>SECURITY</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">072ada3b-cf57-43f5-9924-379e37cad7ea</identifier>
+      </ID>
+      <name>CLIENT_USERS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>USER_ID</name>
+          <identifier class="java.lang.String">e49d8622-8c53-483b-8234-ccd977ac1e02</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CLIENT_USERS</name>
+            <identifier class="java.lang.String">50b5ef33-3e2a-48a6-94a3-cf248d1640d8</identifier>
+            <schemaName>SECURITY</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SECURITY</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+    </constraint>
+    <constraint class="oracle.javatools.db.UniqueConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5bba7c35-2d6c-4dd2-a5b1-d1d28462d02f</identifier>
+      </ID>
+      <name>CLIENT_USERS_UK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CLIENT_ID</name>
+          <identifier class="java.lang.String">d24641f5-e484-4756-908e-a469f40ba714</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CLIENT_USERS</name>
+            <identifier class="java.lang.String">50b5ef33-3e2a-48a6-94a3-cf248d1640d8</identifier>
+            <schemaName>SECURITY</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SECURITY</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+    </constraint>
+  </constraints>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SECURITY</name>
+  </schema>
+</table>
