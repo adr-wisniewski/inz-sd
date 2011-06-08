@@ -7,8 +7,6 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <import resource="hibernate.xml"/>
-
     <bean id="signalGeneratorJob" class="servicedesk.core.base.signal.jobs.SignalGeneratorJob">
             <property name="sessionFactory" ref="sessionFactory" />
     </bean>

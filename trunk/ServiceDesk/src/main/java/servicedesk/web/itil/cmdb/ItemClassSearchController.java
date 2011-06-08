@@ -6,6 +6,7 @@
 package servicedesk.web.itil.cmdb;
 
 import java.util.List;
+import javax.annotation.Resource;
 import org.springframework.beans.propertyeditors.CustomBooleanEditor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -14,10 +15,9 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import servicedesk.core.itil.cmdb.domain.UniversalItemClass;
 import servicedesk.core.itil.cmdb.domain.helper.ItemClassCriteria;
-import servicedesk.web.base.tree.service.TreeBuilderService;
+import servicedesk.web.base.tree.TreeBuilder;
 
 /**
  *
@@ -32,6 +32,9 @@ public class ItemClassSearchController extends AbstractItemClassController {
     protected static final String MODEL_CRITERIA = "itemClassCriteria";
     protected static final String MODEL_ITEMCLASSES = "itemClasses";
 
+    @Resource(name = "cmdbUniversalItemClassTree")
+    protected TreeBuilder<?> cmdbUniversalItemClassTree;
+    
     @InitBinder
     protected void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(Boolean.class, new CustomBooleanEditor("true", "false", true));
@@ -45,13 +48,7 @@ public class ItemClassSearchController extends AbstractItemClassController {
 
     @RequestMapping(value = "/browse")
     public String browse(ModelMap map) {
-        List<UniversalItemClass> items = service.getAll();
-        map.addAttribute(MODEL_ITEMCLASSES, TreeBuilderService.buildTree(items));
+        map.addAttribute(MODEL_ITEMCLASSES, cmdbUniversalItemClassTree.buildTree());
         return VIEW_BROWSE;
-    }
-
-    @RequestMapping(value = "/browse", params={"id"})
-    public String browseid(@RequestParam("id") Integer id) {
-       return String.format( "redirect:/cmdb/item/class/%d", id);
     }
 }

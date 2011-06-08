@@ -20,7 +20,7 @@
             </ui:propertyItem>
             
             <ui:propertyItem code="field.change.rfc.category.parent" label="parent">
-                <sd:treePicker name="parent" value="${rfcCategory.parent}" source="rfccategory_change"/>
+                <sd:treePicker name="parent" value="${rfcCategory.parent}" source="rfcCategoriesTree"/>
                 <form:errors path="parent" cssClass="error" />
             </ui:propertyItem>
             

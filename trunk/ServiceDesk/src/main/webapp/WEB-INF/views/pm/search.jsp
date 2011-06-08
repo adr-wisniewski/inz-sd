@@ -51,7 +51,7 @@
 				</td>
 				<td>
 
-					<sd:treePicker name="category" value="${problemSearchCriteria.category}" source="categories_pm"/>
+					<sd:treePicker name="category" value="${problemSearchCriteria.category}" source="pmCategoriesTree"/>
 				</td>
 				<td>
 					<sd:employeePicker name="supportGroupMember" value="${problemSearchCriteria.supportGroupMember}"/>

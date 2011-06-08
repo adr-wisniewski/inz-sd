@@ -6,4 +6,4 @@
 
 <div class="main_label"><spring:message code="choose_category.label" />:</div>
 
-<sd:treeView roots="${categories}" url="/rf/add"/>
+<sd:treeView roots="${categories}" urlFormat="/rf/add?id=%s"/>

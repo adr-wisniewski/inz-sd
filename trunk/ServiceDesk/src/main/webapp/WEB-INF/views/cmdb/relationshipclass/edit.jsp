@@ -24,17 +24,17 @@
             </ui:propertyItem>
 
             <ui:propertyItem code="field.cmdb.entity.class.parent" label="description">
-                <sd:treePicker name="parent" value="${relationshipClass.parent}" source="relationshipclass_cmdb"/>
+                <sd:treePicker name="parent" value="${relationshipClass.parent}" source="cmdbRelationshipClassTree"/>
                 <form:errors path="parent" cssClass="error" />
             </ui:propertyItem>
 
             <ui:propertyItem code="field.cmdb.relationship.class.sourceItemClass" label="sourceItemClass">
-                <sd:treePicker name="sourceItemClass" value="${relationshipClass.sourceItemClass}" source="itemclass_cmdb"/>
+                <sd:treePicker name="sourceItemClass" value="${relationshipClass.sourceItemClass}" source="cmdbItemClassTree"/>
                 <form:errors path="sourceItemClass" cssClass="error" />
             </ui:propertyItem>
 
             <ui:propertyItem code="field.cmdb.relationship.class.targetItemClass" label="targetItemClass">
-                <sd:treePicker name="targetItemClass" value="${relationshipClass.targetItemClass}" source="itemclass_cmdb"/>
+                <sd:treePicker name="targetItemClass" value="${relationshipClass.targetItemClass}" source="cmdbItemClassTree"/>
                 <form:errors path="targetItemClass" cssClass="error" />
             </ui:propertyItem>
 

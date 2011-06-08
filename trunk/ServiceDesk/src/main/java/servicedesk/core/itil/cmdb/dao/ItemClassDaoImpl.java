@@ -71,9 +71,4 @@ public class ItemClassDaoImpl implements ItemClassDao  {
 
         return itemClass;
     }
-
-    @Override
-    public Class<Integer> getIdClass() {
-        return Integer.class;
-    }
 }

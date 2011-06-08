@@ -28,13 +28,4 @@ public enum RfcState {
     public int getId() {
         return ordinal();
     }
-    
-    public static RfcState get(int id) throws IllegalArgumentException {
-        for(RfcState state: RfcState.values()) {
-            if(state.ordinal() == id)
-                return state;
-        }
-        
-        throw new IllegalArgumentException("Invalid ordinal");
-    }
 }

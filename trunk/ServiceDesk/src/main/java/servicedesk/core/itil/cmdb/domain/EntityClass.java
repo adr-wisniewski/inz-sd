@@ -20,6 +20,7 @@ public interface EntityClass extends HierarchicalDomainObject<Integer> {
 
     @Override
     public EntityClass getParent();
+    
     @Override
     public Set<? extends EntityClass> getChildren();
 

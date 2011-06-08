@@ -7,7 +7,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <%@attribute name="caption" required="true" %>
-<%@attribute name="captionArgs" required="false" %>
+<%@attribute name="captionArgs" required="false" rtexprvalue="true" %>
 <%@attribute name="cssClass" required="false" %>
 
 <div class="element panel ${cssClass}">

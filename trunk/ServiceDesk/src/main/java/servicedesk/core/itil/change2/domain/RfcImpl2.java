@@ -1,4 +1,5 @@
-package servicedesk.core.itil.change.domain;
+package servicedesk.core.itil.change2.domain;
+import servicedesk.core.itil.change.domain.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,20 +17,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
-import org.hibernate.annotations.Immutable;
 import org.hibernate.envers.Audited;
 import org.hibernate.envers.RelationTargetAuditMode;
 import servicedesk.core.hr.domain.Employee;
-import servicedesk.infrastructure.interfaces.domain.DomainObject;
 import servicedesk.infrastructure.interfaces.domain.PersistanceAwareDomainObject;
 
-@Entity
-@Table(name = "RFC")
-public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<Integer>, Serializable {
+//@Entity
+//@Table(name = "RFC")
+public class RfcImpl2 implements Rfc, PersistanceAwareDomainObject<Integer>, Serializable {
     private static final long serialVersionUID = 1L;
     protected Integer id;
     
-    protected Employee author;
+    protected Employee creator;
     protected Date timestamp;
     
     protected String title;
@@ -41,16 +40,8 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
     protected RfcCategory category;
     protected RfcPriority priority;
     protected RfcImpact impact;
-    protected RfcResolution resolution;
+    private RfcResolution resolution;
    
-    protected Rfc() {
-        // no arg ctor for hibernate
-    }
-    
-    public Rfc(Employee author) {
-        this.author = author;
-    }
-    
     
     @Id
     @SequenceGenerator(name = "RFC_SEQ", sequenceName = "RFC_SEQ")
@@ -69,6 +60,7 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
      * @return the title
      */
     @Column(name="TITLE", length=2000, nullable=false)
+    @Override
     public String getTitle() {
         return title;
     }
@@ -85,6 +77,7 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
      * @return the description
      */
     @Column(name="DESCRIPTION", length=4000, nullable=false)
+    @Override
     public String getDescription() {
         return description;
     }
@@ -103,6 +96,7 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="PRIORITY_ID")
     @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
+    @Override
     public RfcPriority getPriority() {
         return priority;
     }
@@ -120,6 +114,7 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="IMPACT_ID")
     @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
+    @Override
     public RfcImpact getImpact() {
         return impact;
     }
@@ -137,6 +132,7 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="CATEGORY_ID")
     @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
+    @Override
     public RfcCategory getCategory() {
         return category;
     }
@@ -153,16 +149,16 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
      */
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="CREATOR_ID", nullable=false, updatable=false)
-    @Immutable
-    public Employee getAuthor() {
-        return author;
+    @Override
+    public Employee getCreator() {
+        return creator;
     }
 
     /**
-     * @param author 
+     * @param creator 
      */
-    public void setAuthor(Employee author) {
-        this.author = author;
+    public void setCreator(Employee creator) {
+        this.creator = creator;
     }
 
     /**
@@ -170,6 +166,7 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
      */
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     @Column(name="CREATIONTIME", nullable=false, updatable=false)
+    @Override
     public Date getTimestamp() {
         return timestamp;
     }
@@ -187,6 +184,7 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "`STATE`")
     @Audited
+    @Override
     public RfcState getState() {
         return state;
     }
@@ -204,6 +202,7 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="MANAGER_ID")
     @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
+    @Override
     public Employee getManager() {
         return manager;
     }
@@ -224,6 +223,8 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
     public String getComment() {
         return comment;
     }
+    
+    
 
     /**
      * @param comment the comment to set
@@ -238,6 +239,7 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="RESOLUTION_ID")
     @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
+    @Override
     public RfcResolution getResolution() {
         return resolution;
     }
@@ -247,6 +249,11 @@ public class Rfc implements DomainObject<Integer>, PersistanceAwareDomainObject<
      */
     public void setResolution(RfcResolution resolution) {
         this.resolution = resolution;
+    }
+
+    @Override
+    public void assignTo(ChangeManager manager) {
+        setManager(manager.getEmployee());
     }
 
     @Override

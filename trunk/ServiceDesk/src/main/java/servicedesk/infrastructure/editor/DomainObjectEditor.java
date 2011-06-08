@@ -5,7 +5,6 @@
 package servicedesk.infrastructure.editor;
 
 import java.beans.PropertyEditorSupport;
-import java.io.Serializable;
 import org.springframework.util.StringUtils;
 import servicedesk.infrastructure.interfaces.dao.Dao;
 import servicedesk.infrastructure.interfaces.domain.DomainObject;

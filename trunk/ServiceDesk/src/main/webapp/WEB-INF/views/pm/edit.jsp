@@ -99,7 +99,7 @@
 				<tr class="odd">
 					<th><spring:message code="category.label" /></th>
 					<td>
-						<sd:treePicker name="category" value="${problem.category}" source="categories_pm"/>
+						<sd:treePicker name="category" value="${problem.category}" source="pmCategoriesTree"/>
 						<form:errors path="category" cssClass="error" />
 					</td>
 					<th><spring:message code="knownError.label" /></th>

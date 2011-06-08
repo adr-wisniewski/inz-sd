@@ -24,7 +24,7 @@
             </ui:propertyItem>
 
             <ui:propertyItem code="field.cmdb.entity.class.parent" label="description">
-                <sd:treePicker name="parent" value="${universalItemClass.parent}" source="universalitemclass_cmdb"/>
+                <sd:treePicker name="parent" value="${universalItemClass.parent}" source="universalcmdbItemClassTree"/>
                 <form:errors path="parent" cssClass="error" />
             </ui:propertyItem>
 

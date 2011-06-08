@@ -8,15 +8,17 @@ import java.util.List;
 import org.springframework.validation.BindingResult;
 import servicedesk.core.itil.change.domain.Rfc;
 import servicedesk.core.itil.change.domain.RfcChange;
-import servicedesk.core.itil.change.domain.helper.RfcCriteria;
+import servicedesk.core.itil.change.domain.helper.RfcSearchObject;
 import servicedesk.infrastructure.interfaces.service.CrudService;
+import servicedesk.infrastructure.search.SearchObject;
 
 /**
  *
  * @author Adrian
  */
 public interface RfcService extends CrudService<Rfc, Integer> {
-    public List<Rfc> search(RfcCriteria criteria);
+    public List<Rfc> search(SearchObject<Rfc> criteria);
+    public List<Rfc> search(RfcSearchObject criteria);
     public List<RfcChange> getChanges(Rfc rfc);
 
     public void addComment(Rfc rfc, BindingResult bindingResult);

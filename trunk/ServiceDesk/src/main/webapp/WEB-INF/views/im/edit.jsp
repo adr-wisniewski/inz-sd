@@ -113,7 +113,7 @@
 				<tr class="odd">
 					<th><spring:message code="category.label" /></th>
 					<td>
-						<sd:treePicker name="category" value="${incident.category}" source="categories_im"/>
+						<sd:treePicker name="category" value="${incident.category}" source="imCategoriesTree"/>
 						<form:errors path="category" cssClass="error" />
 					</td>
 					<th><spring:message code="incident_source.label" />:</th>

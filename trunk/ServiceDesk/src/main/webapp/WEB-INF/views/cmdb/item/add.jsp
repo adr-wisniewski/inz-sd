@@ -11,7 +11,7 @@
         <ui:errorList fieldPrefix="field.cmdb.item"/>
         <ui:propertyList>
             <ui:propertyItem code="field.cmdb.item.class" label="class">
-                <sd:treePicker name="itemClass" value="${universalItem.itemClass}" source="itemclass_cmdb"/>
+                <sd:treePicker name="itemClass" value="${universalItem.itemClass}" source="cmdbItemClassTree"/>
                 <form:errors path="itemClass" cssClass="error" />
             </ui:propertyItem>
 

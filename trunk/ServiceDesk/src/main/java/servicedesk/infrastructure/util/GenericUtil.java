@@ -16,36 +16,59 @@ import org.apache.commons.logging.LogFactory;
 public abstract class GenericUtil {
 
     protected final static Log logger = LogFactory.getLog(GenericUtil.class);
-
-    public static <T> Type getTypeArgument(Class<T> baseClass, Class<? extends T> childClass, int ordinal) {
-        Type type = getType(baseClass, childClass);
-        Type[] arguments = ((ParameterizedType)type).getActualTypeArguments();
-
-        if(logger.isDebugEnabled()) {
-            logger.debug("type resolved to " + arguments[ordinal] );
-        }
-
-        return arguments[ordinal];
+    
+    public static <T> Class<?> getTypeArgument(Class<T> baseClass, Class<? extends T> childClass, int ordinal) {
+        ParameterizedType type = getParameterizedType(baseClass, childClass);
+        return resolveArgument(type, ordinal);
     }
 
-    protected static <T> Type getType(Class<T> baseClass, Class<? extends T> childClass) {
+    protected static <T> ParameterizedType getParameterizedType(Class<T> baseClass, Class<? extends T> childClass) {
 
         if(logger.isDebugEnabled()) {
-            logger.debug("finding subclass " + baseClass + " of " + childClass );
+            logger.debug("finding ancestor " + baseClass + " of " + childClass );
         }
 
-        // navigate to specified base
-        Type type = childClass;
-        Type raw = getRaw(childClass);
-        while(!raw.equals(baseClass)) {
-            type = ((Class)raw).getGenericSuperclass();
-            raw = getRaw(type);
+        return getParameterizedTypeRecurisive(baseClass, childClass);
+    }
+    
+    protected static ParameterizedType getParameterizedTypeRecurisive(Class<?> target, Type type) {
+        Type raw;
+        
+        if(type == null)
+            return null;
+        
+        // check current type
+        if(type instanceof ParameterizedType) {
+            ParameterizedType parametrized = (ParameterizedType)type;
+            
+            raw = parametrized.getRawType();
+            
+            if(raw.equals(target))
+                return parametrized;
+            
+        } else if(type instanceof Class) {
+            raw = type;
+        } else {
+            return null;
         }
-
-        return type;
+        
+        // go deeper for classes
+        if(raw instanceof Class) {
+            Class<?> clazz = (Class<?>)raw;
+            
+            for(Type t: clazz.getGenericInterfaces()) {
+                ParameterizedType parametrized = getParameterizedTypeRecurisive(target, t);
+                if(parametrized != null)
+                    return parametrized;
+            }
+            
+            return getParameterizedTypeRecurisive(target, clazz.getGenericSuperclass());         
+        } 
+        
+        return null;
     }
 
-    public static Type getRaw(Type type) {
+    /*public static Type getRaw(Type type) {
 
         if(logger.isDebugEnabled()) {
             logger.debug("getting raw type from " + type );
@@ -58,6 +81,35 @@ public abstract class GenericUtil {
         } else {
             throw new IllegalArgumentException("Type " + type + " is not Class or ParametrizedType");
         }
+    }*/
+    
+    public static Class<?> resolveArgument(ParameterizedType type, int ordinal) {
+        Type[] arguments = type.getActualTypeArguments();
+        Type resultType = arguments[ordinal];
+        
+        if(logger.isDebugEnabled()) {
+            logger.debug("Resolving type " + resultType );
+        }
+        
+        if(resultType instanceof ParameterizedType) {
+            ParameterizedType pt = (ParameterizedType)resultType;
+            resultType = pt.getRawType();
+        } 
+        
+        if(resultType instanceof Class) {
+            Class<?> result = (Class<?>)resultType;
+        
+            if(logger.isDebugEnabled()) {
+                logger.debug("Resolved to " + result );
+            }
+
+            return result;
+        } 
+        
+        throw new IllegalArgumentException("Resolve argument error: Type " + resultType + " is not Class or ParametrizedType");
+    }
+
+    private GenericUtil() {
     }
 
 }

@@ -105,28 +105,6 @@
       </dataTypeUsage>
       <notNull>true</notNull>
     </column>
-    <column>
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">469dd04b-bd95-4ab1-aa44-436dd477ab42</identifier>
-      </ID>
-      <name>EMPLOYEE</name>
-      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
-        <ID class="oracle.javatools.db.IdentifierBasedID">
-          <identifier class="java.lang.String">adf72da2-ee73-4ba1-aec5-778c29fbb104</identifier>
-        </ID>
-        <attributeValues>
-          <entry>
-            <key>precision</key>
-            <value class="java.lang.String">10</value>
-          </entry>
-        </attributeValues>
-        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
-          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
-          <typeName>NUMBER</typeName>
-        </dataTypeID>
-      </dataTypeUsage>
-      <notNull>true</notNull>
-    </column>
   </columns>
   <constraints>
     <constraint class="oracle.javatools.db.CheckConstraint">
@@ -182,38 +160,6 @@
       </checkConditionFragment>
       <enabled>true</enabled>
     </constraint>
-    <constraint class="oracle.javatools.db.FKConstraint">
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">a3d52989-ff93-45de-b017-53bb6ef4ebb5</identifier>
-      </ID>
-      <name>USERS_EMPLOYEES_FK1</name>
-      <columnIDs>
-        <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>EMPLOYEE</name>
-          <identifier class="java.lang.String">469dd04b-bd95-4ab1-aa44-436dd477ab42</identifier>
-          <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>USERS</name>
-            <identifier class="java.lang.String">0a5d8860-ee3c-42c5-957a-c6c40c8ec499</identifier>
-            <schemaName>SECURITY</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <type>COLUMN</type>
-        </columnID>
-      </columnIDs>
-      <deleteMode>0</deleteMode>
-      <enabled>true</enabled>
-      <referenceID class="oracle.javatools.db.IdentifierBasedID">
-        <name>EMPLOYEES_PK</name>
-        <identifier class="java.lang.String">b69d4833-56ab-4c04-a8a1-ce6a5b1e5786</identifier>
-        <parent class="oracle.javatools.db.IdentifierBasedID">
-          <name>EMPLOYEES</name>
-          <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
-          <schemaName>SD3</schemaName>
-          <type>TABLE</type>
-        </parent>
-        <type>CONSTRAINT</type>
-      </referenceID>
-    </constraint>
     <constraint class="oracle.javatools.db.PKConstraint">
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">f32c9b07-9ce7-4ccb-adea-4c0c6c390f3e</identifier>
@@ -223,26 +169,6 @@
         <columnID class="oracle.javatools.db.IdentifierBasedID">
           <name>USER_ID</name>
           <identifier class="java.lang.String">6684d165-982b-430b-bdf5-2e86baebc60a</identifier>
-          <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>USERS</name>
-            <identifier class="java.lang.String">0a5d8860-ee3c-42c5-957a-c6c40c8ec499</identifier>
-            <schemaName>SECURITY</schemaName>
-            <type>TABLE</type>
-          </parent>
-          <type>COLUMN</type>
-        </columnID>
-      </columnIDs>
-      <enabled>true</enabled>
-    </constraint>
-    <constraint class="oracle.javatools.db.UniqueConstraint">
-      <ID class="oracle.javatools.db.IdentifierBasedID">
-        <identifier class="java.lang.String">eeeb59fb-2d00-40eb-8905-0ffa1ab93161</identifier>
-      </ID>
-      <name>USERS_UK1</name>
-      <columnIDs>
-        <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>EMPLOYEE</name>
-          <identifier class="java.lang.String">469dd04b-bd95-4ab1-aa44-436dd477ab42</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>USERS</name>
             <identifier class="java.lang.String">0a5d8860-ee3c-42c5-957a-c6c40c8ec499</identifier>

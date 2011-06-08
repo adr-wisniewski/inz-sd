@@ -10,86 +10,18 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-    <!-- Event listeners -->                    
-    <bean name="creatorMarkedPersistEventListener" class="servicedesk.infrastructure.dao.hibernate.CreatorMarkedPersistEventListener" />
-    <bean name="creationTimeMarkedPersistEventListener" class="servicedesk.infrastructure.dao.hibernate.CreationTimeMarkedPersistEventListener" />
-    <bean name="defaultPersistEventListener" class="org.hibernate.event.def.DefaultPersistEventListener" />
-    
-    <bean name="callbackHandler" class="org.hibernate.ejb.event.EntityCallbackHandler" />
-    <bean name="auditEventListener" class="org.hibernate.envers.event.AuditEventListener" />
-    <bean name="ejb3PostInsertEventListener" class="org.hibernate.ejb.event.EJB3PostInsertEventListener">
-        <property name="callbackHandler" ref="callbackHandler" />
-    </bean>
-    <bean name="ejb3PostUpdateEventListener" class="org.hibernate.ejb.event.EJB3PostUpdateEventListener">
-        <property name="callbackHandler" ref="callbackHandler" />
-    </bean>
-    <bean name="ejb3PostDeleteEventListener" class="org.hibernate.ejb.event.EJB3PostDeleteEventListener">
-        <property name="callbackHandler" ref="callbackHandler" />
-    </bean>
-    
     <!-- Session Factory -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-        <!--property name="configLocation">
+        <property name="configLocation">
             <value>classpath:hibernate.cfg.xml</value>
-        </property-->
-        <property name="dataSource" ref="dataSource" />
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
-                
-                <!-- generation -->
-                <!--prop key="hibernate.hbm2ddl.auto">update</prop-->
-                
-                <!-- log sql -->
-                <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.format_sql">true</prop>
-                <prop key="hibernate.use_sql_comments">true</prop>
-
-                <!-- cache -->
-                <!-- TODO: enable cache and test it -->
-                <prop key="hibernate.cache.use_second_level_cache">false</prop>
-                <prop key="hibernate.cache.use_query_cache">false</prop>
-                <!--prop key="hibernate.cache.region.factory_class">net.sf.ehcache.hibernate.EhCacheRegionFactory</prop-->
-            </props>
         </property>
+        <property name="dataSource" ref="dataSource" />
         <property name="packagesToScan">
             <list>
                 <value>servicedesk.infrastructure.**</value>
                 <value>servicedesk.core.**</value>
             </list>
         </property>
-        <property name="eventListeners">
-            <map>
-                <entry key="create">
-                    <list>
-                        <ref bean="creatorMarkedPersistEventListener" />
-                        <ref bean="creationTimeMarkedPersistEventListener" />
-                        <ref bean="defaultPersistEventListener" />
-                    </list>
-                </entry>
-                <entry key="post-insert">
-                    <list>
-                        <ref bean="ejb3PostInsertEventListener" />
-                        <ref bean="auditEventListener" />
-                    </list>
-                </entry>
-                <entry key="post-update">
-                    <list>
-                        <ref bean="ejb3PostUpdateEventListener" />
-                        <ref bean="auditEventListener" />
-                    </list>
-                </entry>
-                <entry key="post-delete">
-                    <list>
-                        <ref bean="ejb3PostDeleteEventListener" />
-                        <ref bean="auditEventListener" />
-                    </list>
-                </entry>
-                <entry key="pre-collection-update" value-ref="auditEventListener" />
-                <entry key="pre-collection-remove" value-ref="auditEventListener" />
-                <entry key="post-collection-recreate" value-ref="auditEventListener" />
-            </map>
-        </property>  
     </bean>
 
     <!--  Transaction Manager -->

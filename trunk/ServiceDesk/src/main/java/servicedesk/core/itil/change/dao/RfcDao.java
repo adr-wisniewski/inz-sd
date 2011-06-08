@@ -4,17 +4,14 @@
  */
 package servicedesk.core.itil.change.dao;
 
-import java.util.List;
 import servicedesk.core.itil.change.domain.Rfc;
-import servicedesk.core.itil.change.domain.helper.RfcCriteria;
 import servicedesk.infrastructure.interfaces.dao.CrudDao;
+import servicedesk.infrastructure.interfaces.dao.SearchDao;
 
 /**
  *
  * @author Adrian
  */
-public interface RfcDao extends CrudDao<Rfc, Integer> {
-
-    public List<Rfc> search(RfcCriteria criteria);
+public interface RfcDao extends CrudDao<Rfc, Integer>, SearchDao<Rfc, Integer> {
     
 }

@@ -23,7 +23,7 @@ public class NullRfc extends Rfc {
     private NullRfc() {
         category = null;
         comment = null;
-        creator = null;
+        author = null;
         description = null;
         id = null;
         impact = null;
@@ -45,7 +45,7 @@ public class NullRfc extends Rfc {
     }
 
     @Override
-    public void setCreator(Employee creator) {
+    public void setAuthor(Employee creator) {
         throw new UnsupportedOperationException();
     }
 
