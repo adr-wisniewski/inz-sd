@@ -1,0 +1,156 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">195ba8bc-bb46-45f8-ba45-bce1e56fd65b</identifier>
+  </ID>
+  <name>ATTACHMENTS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">eaef9f32-f18a-4991-a84e-ce92a60a3bf5</identifier>
+      </ID>
+      <name>ATTACHMENT_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">42072bae-0804-44ca-bce7-7e7def33b1b8</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d61496d8-3dfa-4dc1-a28a-858e367c8697</identifier>
+      </ID>
+      <name>NAME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">60a4fbd9-a5f9-4a5e-acf2-1b97b2db3a12</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">500</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9c7287a5-afa6-480d-a1f4-22cebd207937</identifier>
+      </ID>
+      <name>DATA</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4d3b95bf-7292-4818-823b-b704877b0a99</identifier>
+        </ID>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle8</providerClass>
+          <typeName>BLOB</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">d43df9ad-53fb-41a9-bdec-9dba62c8498b</identifier>
+      </ID>
+      <name>ATTACHMENTS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ATTACHMENT_ID</name>
+          <identifier class="java.lang.String">eaef9f32-f18a-4991-a84e-ce92a60a3bf5</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ATTACHMENTS</name>
+            <identifier class="java.lang.String">195ba8bc-bb46-45f8-ba45-bce1e56fd65b</identifier>
+            <schemaName>COMMON</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ATTACHMENTS_PK</name>
+        <identifier class="java.lang.String">816b1869-324b-453f-bae7-a90159b88e06</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>ATTACHMENTS</name>
+          <identifier class="java.lang.String">195ba8bc-bb46-45f8-ba45-bce1e56fd65b</identifier>
+          <schemaName>COMMON</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>COMMON</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">816b1869-324b-453f-bae7-a90159b88e06</identifier>
+      </ID>
+      <name>ATTACHMENTS_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">d0639a91-2727-4b23-8ffc-4860b1f93995</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">94145525-ca04-45bc-bf0e-0b3c01d6271b</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ATTACHMENT_ID</name>
+              <identifier class="java.lang.String">eaef9f32-f18a-4991-a84e-ce92a60a3bf5</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>ATTACHMENTS</name>
+                <identifier class="java.lang.String">195ba8bc-bb46-45f8-ba45-bce1e56fd65b</identifier>
+                <schemaName>COMMON</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <schema>
+        <name>COMMON</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>COMMON</name>
+  </schema>
+</table>

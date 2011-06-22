@@ -1,0 +1,308 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">d73d12a6-803a-4d23-ac1a-bb26272634b8</identifier>
+  </ID>
+  <name>C2_RELATIONS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f31bd0df-0317-4167-8974-3b5fa1c6f778</identifier>
+      </ID>
+      <name>RELATION_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">62a7557a-4fe4-4d75-9673-8760a71b8dfa</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b5d628e4-65ef-41d2-ae44-56604340bacc</identifier>
+      </ID>
+      <name>RELATION_CLASS_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d8095c89-25eb-4e9c-8481-67d3ba5140bb</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7f67dd7e-c4eb-4068-8b59-cee24574749b</identifier>
+      </ID>
+      <name>SOURCE_ITEM_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f73edef9-30b1-4e94-8840-e2e226f8dc61</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8f5cbc01-7b25-4ee2-b39d-1723e051e376</identifier>
+      </ID>
+      <name>TARGET_ITEM_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fd053d5e-376b-454a-a886-d4becd3a6cbe</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b5615ef1-a2aa-45ac-8c21-3466ef149907</identifier>
+      </ID>
+      <name>C2_RELATIONS_C2_ENTITIES_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>RELATION_ID</name>
+          <identifier class="java.lang.String">f31bd0df-0317-4167-8974-3b5fa1c6f778</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_RELATIONS</name>
+            <identifier class="java.lang.String">d73d12a6-803a-4d23-ac1a-bb26272634b8</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>C2_ITEM_BASE_PK</name>
+        <identifier class="java.lang.String">dbda21c8-1097-4a98-8996-07c7593e89f6</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>C2_ENTITIES</name>
+          <identifier class="java.lang.String">17ae70eb-2478-4657-bc46-09bd8396b63e</identifier>
+          <schemaName>CMDB</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7ffa6818-f9ce-405d-b80b-66a1cbe2b1c3</identifier>
+      </ID>
+      <name>C2_RELATIONS_C2_ITEMS_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SOURCE_ITEM_ID</name>
+          <identifier class="java.lang.String">7f67dd7e-c4eb-4068-8b59-cee24574749b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_RELATIONS</name>
+            <identifier class="java.lang.String">d73d12a6-803a-4d23-ac1a-bb26272634b8</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>C2_ITEMS_PK</name>
+        <identifier class="java.lang.String">8cc62462-dc1b-4a85-b1ca-956a8a2dbd2d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>C2_ITEMS</name>
+          <identifier class="java.lang.String">6312780a-deaa-4364-ba2d-9ddd3b38d6f4</identifier>
+          <schemaName>CMDB</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ba7f46e1-e3cb-41a2-8a32-cd41fa261874</identifier>
+      </ID>
+      <name>C2_RELATIONS_C2_ITEMS_FK2</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>TARGET_ITEM_ID</name>
+          <identifier class="java.lang.String">8f5cbc01-7b25-4ee2-b39d-1723e051e376</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_RELATIONS</name>
+            <identifier class="java.lang.String">d73d12a6-803a-4d23-ac1a-bb26272634b8</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>C2_ITEMS_PK</name>
+        <identifier class="java.lang.String">8cc62462-dc1b-4a85-b1ca-956a8a2dbd2d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>C2_ITEMS</name>
+          <identifier class="java.lang.String">6312780a-deaa-4364-ba2d-9ddd3b38d6f4</identifier>
+          <schemaName>CMDB</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5beccb8e-ce8c-406e-9418-a068d503a9ea</identifier>
+      </ID>
+      <name>C2_RELATIONS_C2_RELATION__FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>RELATION_CLASS_ID</name>
+          <identifier class="java.lang.String">b5d628e4-65ef-41d2-ae44-56604340bacc</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_RELATIONS</name>
+            <identifier class="java.lang.String">d73d12a6-803a-4d23-ac1a-bb26272634b8</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>C2_RELATION_DESCRIPTOR_PK</name>
+        <identifier class="java.lang.String">730065e3-6979-41c9-b353-28469a5639e4</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>C2_RELATION_CLASS</name>
+          <identifier class="java.lang.String">81176eb9-4135-4400-ade8-ec73a92a73fd</identifier>
+          <schemaName>CMDB</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5c4dc5c6-18cd-4018-99f5-294bdd16aa71</identifier>
+      </ID>
+      <name>C2_RELATIONS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>RELATION_ID</name>
+          <identifier class="java.lang.String">f31bd0df-0317-4167-8974-3b5fa1c6f778</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_RELATIONS</name>
+            <identifier class="java.lang.String">d73d12a6-803a-4d23-ac1a-bb26272634b8</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>C2_RELATIONS_PK</name>
+        <identifier class="java.lang.String">aad3c216-dc94-4dca-ad83-cd4b2743d402</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>C2_RELATIONS</name>
+          <identifier class="java.lang.String">d73d12a6-803a-4d23-ac1a-bb26272634b8</identifier>
+          <schemaName>CMDB</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>CMDB</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">aad3c216-dc94-4dca-ad83-cd4b2743d402</identifier>
+      </ID>
+      <name>C2_RELATIONS_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">48d8ae18-053b-4bc9-a3aa-2eb42786d65e</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">fa6e79a2-b73d-4425-8a3b-e49e262a1470</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>RELATION_ID</name>
+              <identifier class="java.lang.String">f31bd0df-0317-4167-8974-3b5fa1c6f778</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>C2_RELATIONS</name>
+                <identifier class="java.lang.String">d73d12a6-803a-4d23-ac1a-bb26272634b8</identifier>
+                <schemaName>CMDB</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <schema>
+        <name>CMDB</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>CMDB</name>
+  </schema>
+</table>

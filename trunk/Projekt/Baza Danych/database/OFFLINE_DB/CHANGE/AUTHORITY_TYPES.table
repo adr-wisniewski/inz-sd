@@ -1,0 +1,161 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">f417243a-cb02-4064-96b1-a2ad7a9a4adb</identifier>
+  </ID>
+  <name>AUTHORITY_TYPES</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9c33461e-c19b-4eb2-838c-491c71e0e305</identifier>
+      </ID>
+      <name>TYPE_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">178cbf20-6a65-4e64-8db5-cd3a45595bc4</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>size</key>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1dff3576-cb9c-4483-b4c8-3a1ac445f34d</identifier>
+      </ID>
+      <name>NAME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d2e82e02-9aac-4b7c-9a5c-04a7adb20cba</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">200</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">69bbc9eb-6037-4a44-ba89-efcf5a2edd6c</identifier>
+      </ID>
+      <name>IMPORTANCE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">81719d38-18db-4ce9-aba7-b097358466ad</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">dbc9847b-4f7e-4356-b656-5f2b296268e9</identifier>
+      </ID>
+      <name>AUTHORITY_TYPE_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>TYPE_ID</name>
+          <identifier class="java.lang.String">9c33461e-c19b-4eb2-838c-491c71e0e305</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>AUTHORITY_TYPE</name>
+            <identifier class="java.lang.String">f417243a-cb02-4064-96b1-a2ad7a9a4adb</identifier>
+            <schemaName>CHANGE</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>AUTHORITY_TYPE_PK</name>
+        <identifier class="java.lang.String">87fbf2a1-b3e3-4d63-a070-21006736af97</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>AUTHORITY_TYPES</name>
+          <identifier class="java.lang.String">f417243a-cb02-4064-96b1-a2ad7a9a4adb</identifier>
+          <schemaName>CHANGE</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>CHANGE</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">87fbf2a1-b3e3-4d63-a070-21006736af97</identifier>
+      </ID>
+      <name>AUTHORITY_TYPE_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">98205f52-6d85-41c1-ba45-69909668f41e</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">71f964e9-4f8c-4d04-8f5d-1913cc9d8602</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>TYPE_ID</name>
+              <identifier class="java.lang.String">9c33461e-c19b-4eb2-838c-491c71e0e305</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>AUTHORITY_TYPE</name>
+                <identifier class="java.lang.String">f417243a-cb02-4064-96b1-a2ad7a9a4adb</identifier>
+                <schemaName>CHANGE</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <schema>
+        <name>CHANGE</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>CHANGE</name>
+  </schema>
+</table>

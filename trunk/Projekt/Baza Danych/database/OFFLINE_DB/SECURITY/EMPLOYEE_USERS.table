@@ -1,0 +1,284 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">88d6afd3-163e-4606-8803-427c1743dd22</identifier>
+  </ID>
+  <name>EMPLOYEE_USERS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ec1d12c3-bc95-4c0f-93a2-d36edbf4cd14</identifier>
+      </ID>
+      <name>USER_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">20c275b8-14a6-4360-aa48-055caef58ff8</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1f6194a2-2578-42d8-907d-6c6ab5645a7e</identifier>
+      </ID>
+      <name>EMPLOYEE_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">921fdd29-cac3-420d-bd0f-5c6eb8aaf056</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">48ffae77-283e-4ad1-a61b-76dab9903c64</identifier>
+      </ID>
+      <name>EMPLOYEE_USERS_EMPLOYEES_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>EMPLOYEE_ID</name>
+          <identifier class="java.lang.String">1f6194a2-2578-42d8-907d-6c6ab5645a7e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>EMPLOYEE_USERS</name>
+            <identifier class="java.lang.String">88d6afd3-163e-4606-8803-427c1743dd22</identifier>
+            <schemaName>SECURITY</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SECURITY</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>EMPLOYEES_PK</name>
+        <identifier class="java.lang.String">b69d4833-56ab-4c04-a8a1-ce6a5b1e5786</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>EMPLOYEES</name>
+          <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
+          <schemaName>HR</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">dc95bd04-5064-4592-8865-a5b82cbf813a</identifier>
+      </ID>
+      <name>EMPLOYEE_USERS_USERS_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>USER_ID</name>
+          <identifier class="java.lang.String">ec1d12c3-bc95-4c0f-93a2-d36edbf4cd14</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>EMPLOYEE_USERS</name>
+            <identifier class="java.lang.String">88d6afd3-163e-4606-8803-427c1743dd22</identifier>
+            <schemaName>SECURITY</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SECURITY</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>USERS_PK</name>
+        <identifier class="java.lang.String">f32c9b07-9ce7-4ccb-adea-4c0c6c390f3e</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>USERS</name>
+          <identifier class="java.lang.String">0a5d8860-ee3c-42c5-957a-c6c40c8ec499</identifier>
+          <schemaName>SECURITY</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9972bd78-d640-471a-a6bf-cc4a30d75b4a</identifier>
+      </ID>
+      <name>EMPLOYEE_USERS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>USER_ID</name>
+          <identifier class="java.lang.String">ec1d12c3-bc95-4c0f-93a2-d36edbf4cd14</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>EMPLOYEE_USERS</name>
+            <identifier class="java.lang.String">88d6afd3-163e-4606-8803-427c1743dd22</identifier>
+            <schemaName>SECURITY</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SECURITY</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>EMPLOYEE_USERS_PK</name>
+        <identifier class="java.lang.String">f5b8c85f-08e1-4414-a8ea-4a51c00a8a78</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>EMPLOYEE_USERS</name>
+          <identifier class="java.lang.String">88d6afd3-163e-4606-8803-427c1743dd22</identifier>
+          <schemaName>SECURITY</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SECURITY</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
+    <constraint class="oracle.javatools.db.UniqueConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">21f0cbc4-0340-4a63-9f86-1afb9353a625</identifier>
+      </ID>
+      <name>EMPLOYEE_USERS_UK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>EMPLOYEE_ID</name>
+          <identifier class="java.lang.String">1f6194a2-2578-42d8-907d-6c6ab5645a7e</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>EMPLOYEE_USERS</name>
+            <identifier class="java.lang.String">88d6afd3-163e-4606-8803-427c1743dd22</identifier>
+            <schemaName>SECURITY</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SECURITY</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>EMPLOYEE_USERS_UK1</name>
+        <identifier class="java.lang.String">4c395e4a-df98-4524-bce7-b3393c890804</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>EMPLOYEE_USERS</name>
+          <identifier class="java.lang.String">88d6afd3-163e-4606-8803-427c1743dd22</identifier>
+          <schemaName>SECURITY</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SECURITY</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f5b8c85f-08e1-4414-a8ea-4a51c00a8a78</identifier>
+      </ID>
+      <name>EMPLOYEE_USERS_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">986e9623-2045-4f85-a13d-88c515e478c0</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">a39b4ff6-90f3-4071-8b24-404c80eaae90</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>USER_ID</name>
+              <identifier class="java.lang.String">ec1d12c3-bc95-4c0f-93a2-d36edbf4cd14</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>EMPLOYEE_USERS</name>
+                <identifier class="java.lang.String">88d6afd3-163e-4606-8803-427c1743dd22</identifier>
+                <schemaName>SECURITY</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SECURITY</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <schema>
+        <name>SECURITY</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4c395e4a-df98-4524-bce7-b3393c890804</identifier>
+      </ID>
+      <name>EMPLOYEE_USERS_UK1</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">69ffe47d-2eb6-4f78-b290-20b100fa3f0e</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">ec7dacc9-bb9a-4d1d-8061-a6be23260c21</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>EMPLOYEE_ID</name>
+              <identifier class="java.lang.String">1f6194a2-2578-42d8-907d-6c6ab5645a7e</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>EMPLOYEE_USERS</name>
+                <identifier class="java.lang.String">88d6afd3-163e-4606-8803-427c1743dd22</identifier>
+                <schemaName>SECURITY</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SECURITY</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <schema>
+        <name>SECURITY</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SECURITY</name>
+  </schema>
+</table>
