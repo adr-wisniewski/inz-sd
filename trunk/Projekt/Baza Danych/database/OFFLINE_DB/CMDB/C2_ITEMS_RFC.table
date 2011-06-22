@@ -1,0 +1,171 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">be52a468-9538-4d22-8e46-6a2e85bc5577</identifier>
+  </ID>
+  <name>C2_ITEMS_RFC</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">659cdeea-9cee-4584-8b48-ee081ee9469a</identifier>
+      </ID>
+      <name>ITEM_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ed3c96ef-68d7-49db-80f9-bb78dc9eae90</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">092b20fb-92b5-44c7-ac2e-e3c57b5ef7a3</identifier>
+      </ID>
+      <name>RFC_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">089c24cb-699b-4e05-933a-03b61d5d6a6a</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">575b4925-9c80-44cc-8ea3-34b024f2ddad</identifier>
+      </ID>
+      <name>C2_RFC_ITEMS_C2_ITEMS_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ITEM_ID</name>
+          <identifier class="java.lang.String">659cdeea-9cee-4584-8b48-ee081ee9469a</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_RFC_ITEMS</name>
+            <identifier class="java.lang.String">be52a468-9538-4d22-8e46-6a2e85bc5577</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>CMDB</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>C2_ITEMS_PK</name>
+        <identifier class="java.lang.String">8cc62462-dc1b-4a85-b1ca-956a8a2dbd2d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>C2_ITEMS</name>
+          <identifier class="java.lang.String">6312780a-deaa-4364-ba2d-9ddd3b38d6f4</identifier>
+          <schemaName>CMDB</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9cd4cc89-79a8-44f2-b8e9-981bcb30edae</identifier>
+      </ID>
+      <name>C2_RFC_ITEMS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ITEM_ID</name>
+          <identifier class="java.lang.String">659cdeea-9cee-4584-8b48-ee081ee9469a</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>C2_RFC_ITEMS</name>
+            <identifier class="java.lang.String">be52a468-9538-4d22-8e46-6a2e85bc5577</identifier>
+            <schemaName>CMDB</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>CMDB</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>C2_RFC_ITEMS_PK</name>
+        <identifier class="java.lang.String">da081846-d45a-442b-b582-3cfff200fcf7</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>C2_ITEMS_RFC</name>
+          <identifier class="java.lang.String">be52a468-9538-4d22-8e46-6a2e85bc5577</identifier>
+          <schemaName>CMDB</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>CMDB</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">da081846-d45a-442b-b582-3cfff200fcf7</identifier>
+      </ID>
+      <name>C2_RFC_ITEMS_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">7873b58a-820a-4375-9931-ebdf3d5ec8fa</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">979cfd6f-9ac7-44e8-aded-d55153d767de</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ITEM_ID</name>
+              <identifier class="java.lang.String">659cdeea-9cee-4584-8b48-ee081ee9469a</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>C2_RFC_ITEMS</name>
+                <identifier class="java.lang.String">be52a468-9538-4d22-8e46-6a2e85bc5577</identifier>
+                <schemaName>CMDB</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>CMDB</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <schema>
+        <name>CMDB</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>CMDB</name>
+  </schema>
+</table>
