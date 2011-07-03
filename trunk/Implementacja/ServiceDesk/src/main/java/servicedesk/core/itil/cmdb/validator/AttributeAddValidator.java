@@ -14,7 +14,7 @@ import org.springframework.validation.ValidationUtils;
 import servicedesk.core.itil.cmdb.domain.Attribute;
 import servicedesk.core.itil.cmdb.domain.EntityClass;
 import servicedesk.core.itil.cmdb.service.UniversalItemClassService;
-import servicedesk.core.base.validation.AbstractValidator;
+import servicedesk.infrastructure.validation.AbstractValidator;
 
 /**
  *
@@ -28,6 +28,7 @@ public class AttributeAddValidator extends AbstractValidator<Attribute> {
 
     @Override
     protected void doValidate(Attribute target, Errors errors) {
+        attachDao.attach(target.getEntityClass());
         checkSimple(target, errors);
         checkUniqueName(target, errors);
     }
@@ -40,7 +41,7 @@ public class AttributeAddValidator extends AbstractValidator<Attribute> {
 
     private void checkUniqueName(final Attribute target, Errors errors) {
         EntityClass entityClass = target.getEntityClass();
-
+        
         // create predicate
         Predicate<Attribute> predicate = new Predicate<Attribute>() {
             @Override

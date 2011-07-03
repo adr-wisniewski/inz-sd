@@ -13,6 +13,6 @@ import servicedesk.infrastructure.interfaces.domain.HierarchicalDomainObject;
  * @param <Id> 
  * @author Adrian
  */
-public interface HierarchyService<Type extends HierarchicalDomainObject<Id>, Id extends Serializable> extends GetService<Type, Id> {
+public interface HierarchyService<Type extends HierarchicalDomainObject<Id>, Id extends Serializable> extends LoadService<Type, Id> {
     
 }

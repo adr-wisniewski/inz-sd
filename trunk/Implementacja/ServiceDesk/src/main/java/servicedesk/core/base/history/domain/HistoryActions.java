@@ -1,6 +1,6 @@
 package servicedesk.core.base.history.domain;
 
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;

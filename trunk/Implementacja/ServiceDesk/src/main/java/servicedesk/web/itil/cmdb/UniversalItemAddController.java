@@ -5,6 +5,7 @@
 
 package servicedesk.web.itil.cmdb;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,10 +18,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import servicedesk.core.itil.cmdb.domain.ItemClass;
+import servicedesk.core.itil.cmdb.domain.EntityClassIsAbstractException;
 import servicedesk.core.itil.cmdb.domain.UniversalItem;
 import servicedesk.core.itil.cmdb.domain.UniversalItemClass;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.web.itil.cmdb.helper.UniversalItemClassPickForm;
+import servicedesk.web.itil.cmdb.service.UniversalItemClassPickFormService;
 
 /**
  *
@@ -29,12 +32,15 @@ import servicedesk.core.base.validation.BusinessConstraintViolationException;
 @Controller
 @RequestMapping(value = "/cmdb/item/*")
 @PreAuthorize("hasRole('CMDB_ITEM_ADD')")
-@SessionAttributes(AbstractUniversalItemController.MODEL_OBJECT)
+@SessionAttributes(value={AbstractUniversalItemController.MODEL_OBJECT, UniversalItemAddController.MODEL_FORM})
 public class UniversalItemAddController extends AbstractUniversalItemController {
 
-    public static final String VIEW_ADD_CLASS = "/cmdb/item/add/class";
+    public static final String VIEW_PICK_CLASS = "/cmdb/item/add/pickclass";
     public static final String VIEW_ADD_EDIT = "/cmdb/item/add/attributes";
-
+    public static final String MODEL_FORM = "form";
+    
+    @Autowired
+    protected UniversalItemClassPickFormService pickFormService;
 
     @InitBinder()
     public void initBinder(WebDataBinder dataBinder) {
@@ -44,49 +50,45 @@ public class UniversalItemAddController extends AbstractUniversalItemController 
     
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String creteNewInstance(ModelMap map) {
-            map.addAttribute(new UniversalItem());
-            return "redirect:/cmdb/item/new";
+        map.addAttribute(MODEL_FORM, new UniversalItemClassPickForm());
+        return "redirect:/cmdb/item/new/pickclass";
     }
 
     @RequestMapping(value="/add/{classId}", method = RequestMethod.GET)
     public String creteNewInstanceWithClass(ModelMap map, @PathVariable("classId") Integer classId) {
-            UniversalItem item = new UniversalItem();
+            
             UniversalItemClass itemClass = universalItemClassService.load(classId);
-            item.setItemClass(itemClass);
-            itemClass.getId();
-            itemClass.getName();
+            UniversalItem item = itemClass.createItem();
             
             map.addAttribute(item);
             return "redirect:/cmdb/item/new";
     }
 
-    @RequestMapping(value="/new", method = RequestMethod.GET)
-    public String showNewInstance(@ModelAttribute UniversalItem item) {
-        return VIEW_ADD_CLASS;
+    @RequestMapping(value="/new/pickclass", method = RequestMethod.GET)
+    public String showNewInstance(@ModelAttribute(MODEL_FORM) UniversalItemClassPickForm form) {
+        return VIEW_PICK_CLASS;
     }
 
-    @RequestMapping(value="/new", method = RequestMethod.POST)
+    @RequestMapping(value="/new/pickclass", method = RequestMethod.POST)
     public String saveNewInstance(ModelMap map,
-            @ModelAttribute UniversalItem item,
-            BindingResult bindingResult,
-            SessionStatus status) {
-
+            @ModelAttribute(MODEL_FORM) UniversalItemClassPickForm form,
+            BindingResult bindingResult) {
+        
         try {
-            service.preAdd(item, bindingResult);
-            return String.format("redirect:/cmdb/item/new/edit");
-        }
-        catch(BusinessConstraintViolationException ex) {
+            pickFormService.pick(form, bindingResult);
+            return String.format("redirect:/cmdb/item/new");
+        } catch(BusinessConstraintViolationException ex) {
             map.addAllAttributes(ex.getErrors().getModel());
-            return "prg:/cmdb/item/new";
+            return "prg:/cmdb/item/new/pickclass";
         }
     }
 
-    @RequestMapping(value="/new/edit", method = RequestMethod.GET)
+    @RequestMapping(value="/new", method = RequestMethod.GET)
     public String editGet(@ModelAttribute UniversalItem item) {
         return VIEW_ADD_EDIT;
     }
 
-    @RequestMapping(value="/new/edit", method = RequestMethod.POST)
+    @RequestMapping(value="/new", method = RequestMethod.POST)
     public String editPost(ModelMap map,
             @ModelAttribute UniversalItem item,
             BindingResult bindingResult,
@@ -100,7 +102,7 @@ public class UniversalItemAddController extends AbstractUniversalItemController 
         }
         catch(BusinessConstraintViolationException ex) {
             map.addAllAttributes(ex.getErrors().getModel());
-            return "prg:/cmdb/item/new/edit";
+            return "prg:/cmdb/item/new";
         }
     }
 }

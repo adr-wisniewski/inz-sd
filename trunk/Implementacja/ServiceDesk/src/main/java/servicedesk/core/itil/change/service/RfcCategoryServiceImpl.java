@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import servicedesk.core.itil.change.dao.RfcCategoryDao;
-import servicedesk.core.itil.change.domain.RfcCategory;
+import servicedesk.core.itil.change.domain.entity.RfcCategory;
 import servicedesk.core.itil.change.validator.RfcCategoryAddValidator;
 import servicedesk.core.itil.change.validator.RfcCategoryDeleteValidator;
 import servicedesk.core.itil.change.validator.RfcCategoryEditValidator;
-import servicedesk.core.base.validation.Validated;
+import servicedesk.infrastructure.validation.Validated;
 
 /**
  *
@@ -73,6 +73,11 @@ public class RfcCategoryServiceImpl implements RfcCategoryService {
     @Override
     public RfcCategory loadByName(String name) {
         return dao.loadByName(name);
+    }
+
+    @Override
+    public RfcCategory create() {
+        return new RfcCategory();
     }
     
 }

@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import servicedesk.core.itil.change.domain.RfcPriority;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.core.itil.change.domain.entity.RfcPriority;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -29,7 +29,7 @@ public class RfcPriorityAddController extends AbstractRfcPriorityController {
 
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String creteNewInstance(ModelMap map) {
-        RfcPriority rfcPriority = new RfcPriority();
+        RfcPriority rfcPriority = service.create();
         map.addAttribute(rfcPriority);
         return String.format("redirect:/change/rfc/priority/new");
     }

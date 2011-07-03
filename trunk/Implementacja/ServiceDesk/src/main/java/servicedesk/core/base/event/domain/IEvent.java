@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import servicedesk.core.base.comment.domain.Comment;
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 
 public interface IEvent {
 

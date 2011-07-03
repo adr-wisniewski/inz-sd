@@ -26,13 +26,13 @@ public class AttachDaoImpl extends HibernateDaoSupport implements AttachDao {
    
     @Override
     public void attach(DomainObject<?> object) {
-        if(object.getId() != null)
+        if(object.getId() != null && !getHibernateTemplate().contains(object))
             getHibernateTemplate().lock(object, LockMode.NONE);
     }
     
     @Override
     public void detach(DomainObject<?> object) {
-        if(object.getId() != null)
+        if(object.getId() != null && getHibernateTemplate().contains(object))
             getHibernateTemplate().evict(object);
     }
 }

@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import servicedesk.core.itil.change.domain.Rfc;
+import servicedesk.core.itil.change.domain.entity.RfcImpl;
 import servicedesk.core.itil.cmdb.domain.helper.ItemVisitor;
 
 /**
@@ -21,16 +21,16 @@ import servicedesk.core.itil.cmdb.domain.helper.ItemVisitor;
 @Table(name="C2_ITEMS_RFC")
 public class RfcItem extends Item {
     private static final long serialVersionUID = 1L;
-    private Rfc rfc;
+    private RfcImpl rfc;
     private RfcItemClass rfcItemClass;
 
     @OneToOne(fetch=FetchType.EAGER, optional = false)
     @JoinColumn(name = "RFC_ID")
-    public Rfc getRfc() {
+    public RfcImpl getRfc() {
         return rfc;
     }
 
-    public void setRfc(Rfc rfc) {
+    public void setRfc(RfcImpl rfc) {
         this.rfc = rfc;
     }
 

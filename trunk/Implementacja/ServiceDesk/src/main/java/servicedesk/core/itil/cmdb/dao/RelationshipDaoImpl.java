@@ -16,7 +16,7 @@ import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
  * @author Adrian
  */
 @Repository
-public class RelationshipDaoImpl extends AbstractHibernateDao<Relationship, Integer> implements RelationshipDao {
+public class RelationshipDaoImpl extends AbstractHibernateDao<Relationship, Relationship, Integer> implements RelationshipDao {
 
     @Override
     public Relationship getSame(Relationship target) {

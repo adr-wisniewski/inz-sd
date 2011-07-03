@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import servicedesk.core.itil.change.domain.RfcCategory;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.core.itil.change.domain.entity.RfcCategory;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -29,7 +29,7 @@ public class RfcCategoryAddController extends AbstractRfcCategoryController {
 
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String creteNewInstance(ModelMap map) {
-        RfcCategory rfcCategory = new RfcCategory();
+        RfcCategory rfcCategory = service.create();
         map.addAttribute(rfcCategory);
         return String.format("redirect:/change/rfc/category/new");
     }

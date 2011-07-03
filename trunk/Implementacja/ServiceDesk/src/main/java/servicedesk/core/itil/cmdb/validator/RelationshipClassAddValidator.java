@@ -12,8 +12,8 @@ import org.springframework.validation.ValidationUtils;
 import servicedesk.core.itil.cmdb.domain.ItemClass;
 import servicedesk.core.itil.cmdb.domain.RelationshipClass;
 import servicedesk.core.itil.cmdb.service.RelationshipClassService;
-import servicedesk.core.base.validation.AbstractValidator;
-import servicedesk.core.base.validation.ValidatorUtils;
+import servicedesk.infrastructure.validation.AbstractValidator;
+import servicedesk.infrastructure.validation.ValidatorUtils;
 
 /**
  *
@@ -30,6 +30,8 @@ public class RelationshipClassAddValidator extends AbstractValidator<Relationshi
 
     @Override
     protected void doValidate(RelationshipClass target, Errors errors) {
+        attachDao.attach(target.getParent());
+        
         entityClassAddValidator.doValidate(target, errors);
         checkSimple(target, errors);
         ValidatorUtils.rejectNotUniqueName(target, errors, relationshipClassService, "validate.cmdb.relationship.class.name.notunique");

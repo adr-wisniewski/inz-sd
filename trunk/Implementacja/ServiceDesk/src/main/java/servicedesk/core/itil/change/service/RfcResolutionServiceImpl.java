@@ -10,15 +10,11 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
-import servicedesk.core.itil.change.dao.RfcImpactDao;
 import servicedesk.core.itil.change.dao.RfcResolutionDao;
-import servicedesk.core.itil.change.domain.RfcImpact;
-import servicedesk.core.itil.change.domain.RfcResolution;
-import servicedesk.core.itil.change.validator.RfcImpactAddValidator;
-import servicedesk.core.itil.change.validator.RfcImpactDeleteValidator;
+import servicedesk.core.itil.change.domain.entity.RfcResolution;
 import servicedesk.core.itil.change.validator.RfcResolutionAddValidator;
 import servicedesk.core.itil.change.validator.RfcResolutionDeleteValidator;
-import servicedesk.core.base.validation.Validated;
+import servicedesk.infrastructure.validation.Validated;
 
 /**
  *
@@ -76,6 +72,11 @@ public class RfcResolutionServiceImpl  implements RfcResolutionService {
     @Override
     public RfcResolution loadByName(String name) {
         return dao.loadByName(name);
+    }
+
+    @Override
+    public RfcResolution create() {
+        return new RfcResolution();
     }
     
 }

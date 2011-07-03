@@ -338,12 +338,12 @@
       <deleteMode>0</deleteMode>
       <enabled>true</enabled>
       <referenceID class="oracle.javatools.db.IdentifierBasedID">
-        <name>EMPLOYEES_PK</name>
-        <identifier class="java.lang.String">b69d4833-56ab-4c04-a8a1-ce6a5b1e5786</identifier>
+        <name>USERS_PK</name>
+        <identifier class="java.lang.String">f32c9b07-9ce7-4ccb-adea-4c0c6c390f3e</identifier>
         <parent class="oracle.javatools.db.IdentifierBasedID">
-          <name>EMPLOYEES</name>
-          <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
-          <schemaName>HR</schemaName>
+          <name>USERS</name>
+          <identifier class="java.lang.String">0a5d8860-ee3c-42c5-957a-c6c40c8ec499</identifier>
+          <schemaName>SECURITY</schemaName>
           <type>TABLE</type>
         </parent>
         <type>CONSTRAINT</type>
@@ -495,7 +495,6 @@
             <schemaName>CHANGE</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>CHANGE</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>

@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import servicedesk.core.hr.domain.EmployeeSearchCriteria;
-import servicedesk.core.hr.domain.Employee;
-import servicedesk.infrastructure.security.domain.Role;
-import servicedesk.core.hr.service.EmployeeService;
+import servicedesk.core.base.employee.domain.EmployeeSearchCriteria;
+import servicedesk.core.base.employee.domain.Employee;
+import servicedesk.core.base.security.domain.Role;
+import servicedesk.core.base.employee.service.EmployeeService;
 import servicedesk.web.base.util.CheckboxSelection;
 import servicedesk.web.base.util.FormUtils;
 

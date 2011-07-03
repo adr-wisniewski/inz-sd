@@ -43,6 +43,18 @@ public class Attribute implements VersionedDomainObject<Integer>, Comparable<Att
     private Integer displayNo;
     private boolean overview;
 
+    /**
+     * default constructor for hibernate
+     */
+    protected Attribute() {
+        
+    }
+    
+    public Attribute(EntityClass entityClass) {
+        this.entityClass = entityClass;
+    }
+    
+    
     @Id
     @SequenceGenerator(name = "C2_CLASS_ATTRIBUTES_SEQ", sequenceName = "C2_CLASS_ATTRIBUTES_SEQ")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "C2_CLASS_ATTRIBUTES_SEQ")
@@ -63,8 +75,7 @@ public class Attribute implements VersionedDomainObject<Integer>, Comparable<Att
         return version;
     }
 
-    @Override
-    public void setVersion(Integer version) {
+    protected void setVersion(Integer version) {
         this.version = version;
     }
 
@@ -74,7 +85,7 @@ public class Attribute implements VersionedDomainObject<Integer>, Comparable<Att
         return entityClass;
     }
 
-    public void setEntityClass(EntityClass entityClass) {
+    protected void setEntityClass(EntityClass entityClass) {
         this.entityClass = entityClass;
     }
 

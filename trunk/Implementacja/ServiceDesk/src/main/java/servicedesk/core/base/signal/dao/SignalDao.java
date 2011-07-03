@@ -2,7 +2,7 @@ package servicedesk.core.base.signal.dao;
 
 import java.util.List;
 
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.core.base.signal.domain.Signal;
 import servicedesk.core.base.signal.domain.SignalGenerator;
 

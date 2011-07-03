@@ -5,13 +5,13 @@
 
 package servicedesk.core.itil.cmdb.dao;
 
-import servicedesk.core.itil.cmdb.domain.AbstractEntityClass;
+import servicedesk.core.itil.cmdb.domain.EntityClass;
 import servicedesk.infrastructure.interfaces.dao.CrudDao;
 
 /**
  *
  * @author Adrian
  */
-public interface EntityClassDao extends CrudDao<AbstractEntityClass, Integer> {
+public interface EntityClassDao extends CrudDao<EntityClass, Integer> {
 
 }

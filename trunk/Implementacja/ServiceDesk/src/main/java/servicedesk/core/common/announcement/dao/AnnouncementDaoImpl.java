@@ -19,7 +19,7 @@ import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
  * @author Adrian
  */
 @Repository
-public class AnnouncementDaoImpl extends AbstractHibernateDao<Announcement, Integer> implements AnnouncementDao {
+public class AnnouncementDaoImpl extends AbstractHibernateDao<Announcement, Announcement, Integer> implements AnnouncementDao {
     @Override
     @SuppressWarnings("unchecked")
     public Collection<Announcement> getUpToDate(Date date) {

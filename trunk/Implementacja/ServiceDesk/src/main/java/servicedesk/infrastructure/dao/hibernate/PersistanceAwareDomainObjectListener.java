@@ -8,7 +8,6 @@ import java.util.Map;
 import org.hibernate.HibernateException;
 import org.hibernate.event.PersistEvent;
 import org.hibernate.event.PersistEventListener;
-import org.springframework.stereotype.Component;
 import servicedesk.infrastructure.interfaces.domain.PersistanceAwareDomainObject;
 
 /**

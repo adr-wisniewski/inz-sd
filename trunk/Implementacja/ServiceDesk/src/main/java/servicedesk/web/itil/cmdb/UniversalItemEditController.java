@@ -23,7 +23,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.itil.cmdb.domain.Attribute;
 import servicedesk.core.itil.cmdb.domain.AttributeValue;
 import servicedesk.core.itil.cmdb.domain.UniversalItem;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *

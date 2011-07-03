@@ -6,7 +6,8 @@ package servicedesk.core.itil.change.validator;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import servicedesk.core.itil.change.domain.RfcCategory;
+import servicedesk.core.itil.change.domain.entity.RfcCategory;
+import servicedesk.infrastructure.validation.ValidatorUtils;
 
 /**
  *
@@ -16,6 +17,8 @@ import servicedesk.core.itil.change.domain.RfcCategory;
 public class RfcCategoryAddValidator extends AbstractRfcCategoryValidator {
     @Override
     protected void doValidate(RfcCategory target, Errors errors) {
+        attachDao.attach(target.getParent());
         checkProperties(target, errors);
+        ValidatorUtils.rejectParentRecursive(target, errors, null);
     }
 }

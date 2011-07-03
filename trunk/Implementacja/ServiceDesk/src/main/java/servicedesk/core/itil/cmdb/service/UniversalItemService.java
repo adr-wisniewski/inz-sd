@@ -5,16 +5,13 @@
 
 package servicedesk.core.itil.cmdb.service;
 
-import org.springframework.validation.BindingResult;
 import servicedesk.core.itil.cmdb.domain.UniversalItem;
-import servicedesk.infrastructure.interfaces.service.CrudService;
+import servicedesk.infrastructure.interfaces.service.EditService;
 
 /**
  *
  * @author Adrian
  */
-public interface UniversalItemService extends CrudService<UniversalItem, Integer> {
-
-    public void preAdd(UniversalItem item, BindingResult bindingResult);
+public interface UniversalItemService extends EditService<UniversalItem, Integer> {
 
 }

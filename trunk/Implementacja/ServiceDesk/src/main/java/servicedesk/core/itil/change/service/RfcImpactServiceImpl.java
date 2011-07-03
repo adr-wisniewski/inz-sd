@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import servicedesk.core.itil.change.dao.RfcImpactDao;
-import servicedesk.core.itil.change.domain.RfcImpact;
+import servicedesk.core.itil.change.domain.entity.RfcImpact;
 import servicedesk.core.itil.change.validator.RfcImpactAddValidator;
 import servicedesk.core.itil.change.validator.RfcImpactDeleteValidator;
-import servicedesk.core.base.validation.Validated;
+import servicedesk.infrastructure.validation.Validated;
 
 /**
  *
@@ -73,6 +73,11 @@ public class RfcImpactServiceImpl  implements RfcImpactService {
     @Override
     public RfcImpact loadByName(String name) {
         return dao.loadByName(name);
+    }
+
+    @Override
+    public RfcImpact create() {
+        return new RfcImpact();
     }
     
 }

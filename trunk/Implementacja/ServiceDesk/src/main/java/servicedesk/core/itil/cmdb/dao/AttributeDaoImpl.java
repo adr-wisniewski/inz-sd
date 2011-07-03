@@ -14,7 +14,7 @@ import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
  * @author Adrian
  */
 @Repository
-public class AttributeDaoImpl extends AbstractHibernateDao<Attribute, Integer> implements AttributeDao {
+public class AttributeDaoImpl extends AbstractHibernateDao<Attribute, Attribute, Integer> implements AttributeDao {
 
 }
 

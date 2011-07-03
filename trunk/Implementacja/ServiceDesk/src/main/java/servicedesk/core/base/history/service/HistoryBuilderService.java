@@ -1,6 +1,6 @@
 package servicedesk.core.base.history.service;
 
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import java.io.Serializable;
 import java.util.Date;
 import servicedesk.core.base.history.domain.HistoryAction;

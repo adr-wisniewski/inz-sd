@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.itil.cmdb.domain.Attribute;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -58,7 +58,7 @@ public class AttributeDeleteController extends AbstractAttributeController {
             }
 
             status.setComplete();
-            viewName = EntityClassRedirectorVisitor.process(attribute.getEntityClass());
+            viewName = redirectorVisitor.process(attribute.getEntityClass());
         }
         catch(BusinessConstraintViolationException ex) {
             map.addAllAttributes(ex.getErrors().getModel());

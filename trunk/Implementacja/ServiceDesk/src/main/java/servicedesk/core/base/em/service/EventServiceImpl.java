@@ -16,7 +16,7 @@ import servicedesk.core.base.em.domain.EventSignificance;
 import servicedesk.core.itil.im.domain.Incident;
 import servicedesk.core.itil.im.domain.IncidentSource;
 import servicedesk.core.itil.im.service.IncidentService;
-import servicedesk.core.hr.service.EmployeeService;
+import servicedesk.core.base.employee.service.EmployeeService;
 
 @Service
 @Transactional
@@ -65,7 +65,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public void addAll(List<Event> event) {
-        // TODO Auto-generated method stub
+        // TODO2 Auto-generated method stub
     }
 
     @Override

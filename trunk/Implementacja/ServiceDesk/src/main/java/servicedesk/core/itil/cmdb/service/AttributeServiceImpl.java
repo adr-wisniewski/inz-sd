@@ -15,7 +15,7 @@ import servicedesk.core.itil.cmdb.dao.AttributeDao;
 import servicedesk.core.itil.cmdb.domain.Attribute;
 import servicedesk.core.itil.cmdb.validator.AttributeDeleteValidator;
 import servicedesk.core.itil.cmdb.validator.AttributeAddValidator;
-import servicedesk.core.base.validation.Validated;
+import servicedesk.infrastructure.validation.Validated;
 
 /**
  *

@@ -12,9 +12,8 @@
 	}
 </script>
 
-<c:url value="/servicedesk/treePicker" var="url">
-    <c:param name="name" value="${name}" />
-    <c:param name="source" value="${source}" />
+<c:url value="/servicedesk/treePicker/${source}" var="url">
+    <c:param name="target" value="${name}" />
     <c:param name="value" value="" />
 </c:url>
 

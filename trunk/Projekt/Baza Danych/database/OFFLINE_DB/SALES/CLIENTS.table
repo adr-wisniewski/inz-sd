@@ -335,15 +335,14 @@
       <name>PEOPLE_PK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>PERSON_ID</name>
+          <name>CLIENT_ID</name>
           <identifier class="java.lang.String">f11182af-5273-4f1b-a252-18b776f1bf6b</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
-            <name>PEOPLE</name>
+            <name>CLIENTS</name>
             <identifier class="java.lang.String">5092bbd5-80ea-4536-a363-0089962a8de8</identifier>
-            <schemaName>HR</schemaName>
+            <schemaName>SALES</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>HR</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
@@ -378,15 +377,14 @@
               <identifier class="java.lang.String">263f988f-c36a-4ef3-bae2-bd557d3f5d22</identifier>
             </ID>
             <objectID class="oracle.javatools.db.IdentifierBasedID">
-              <name>PERSON_ID</name>
+              <name>CLIENT_ID</name>
               <identifier class="java.lang.String">f11182af-5273-4f1b-a252-18b776f1bf6b</identifier>
               <parent class="oracle.javatools.db.IdentifierBasedID">
-                <name>PEOPLE</name>
+                <name>CLIENTS</name>
                 <identifier class="java.lang.String">5092bbd5-80ea-4536-a363-0089962a8de8</identifier>
-                <schemaName>HR</schemaName>
+                <schemaName>SALES</schemaName>
                 <type>TABLE</type>
               </parent>
-              <schemaName>HR</schemaName>
               <type>COLUMN</type>
             </objectID>
             <outerJoin>false</outerJoin>

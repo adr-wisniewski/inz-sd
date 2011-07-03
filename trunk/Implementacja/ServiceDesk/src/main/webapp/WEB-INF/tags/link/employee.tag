@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="print" tagdir="/WEB-INF/tags/print" %>
-<%@attribute name="object" required="true" rtexprvalue="true" type="servicedesk.core.hr.domain.Employee" %>
+<%@attribute name="object" required="true" rtexprvalue="true" type="servicedesk.core.base.employee.domain.Employee" %>
 
 <print:nullable object="${object}">
     <a class="employee" href="http://localhost:8084/servicedesk/employeeDetails?id=${object.id}">

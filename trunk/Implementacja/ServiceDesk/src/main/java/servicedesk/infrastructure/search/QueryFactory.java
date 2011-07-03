@@ -20,7 +20,6 @@ import servicedesk.infrastructure.search.criterion.Criterion;
 import servicedesk.infrastructure.search.criterion.CriterionOperation;
 import servicedesk.infrastructure.search.criterion.Query;
 import servicedesk.infrastructure.search.criterion.SimpleCriterion;
-import servicedesk.infrastructure.util.GenericUtil;
 
 /**
  *
@@ -34,7 +33,7 @@ public class QueryFactory {
     @Autowired
     protected Collection<CriterionBuilder> builders;
     
-    public Query getCriteria(SearchObject<?> searchObject) {
+    public <AbstractType> Query getCriteria(Class<? extends AbstractType> clazz, SearchObject<AbstractType> searchObject) {
         List<Criterion> criteria = new ArrayList<Criterion>();
         PropertyDescriptor[] pds = BeanUtils.getPropertyDescriptors(searchObject.getClass());
 
@@ -68,10 +67,8 @@ public class QueryFactory {
             }
         }
 
-        // get class of queried entity and check for allowing empty queries
-        Class<?> clazz = GenericUtil.getTypeArgument(SearchObject.class, searchObject.getClass(), 0);
+        // check for allowing empty queries
         boolean allowEmpty = resolveAllowEmpty(searchObject);
-        
         return new Query(clazz, allowEmpty, criteria);
     }
 

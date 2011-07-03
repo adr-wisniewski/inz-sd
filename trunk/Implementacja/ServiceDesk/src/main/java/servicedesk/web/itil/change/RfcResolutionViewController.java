@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import servicedesk.core.itil.change.domain.RfcResolution;
+import servicedesk.core.itil.change.domain.entity.RfcResolution;
 
 /**
  *

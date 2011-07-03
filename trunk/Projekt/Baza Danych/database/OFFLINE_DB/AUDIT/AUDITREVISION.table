@@ -51,7 +51,7 @@
       <ID class="oracle.javatools.db.IdentifierBasedID">
         <identifier class="java.lang.String">47364f14-59f7-4458-8dc2-dae1822be5c1</identifier>
       </ID>
-      <name>INSTIGATOR</name>
+      <name>USER_ID</name>
       <dataTypeUsage>
         <ID class="oracle.javatools.db.IdentifierBasedID">
           <identifier class="java.lang.String">44aa4873-a5ff-457b-bab2-ae0f99b05af2</identifier>
@@ -78,27 +78,26 @@
       <name>AUDITREVISION_EMPLOYEES_FK1</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>EMPLOYEE</name>
+          <name>USER_ID</name>
           <identifier class="java.lang.String">47364f14-59f7-4458-8dc2-dae1822be5c1</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>AUDITREVISION</name>
             <identifier class="java.lang.String">a15980b3-4d26-42d3-8a6d-944247d3df0a</identifier>
-            <schemaName>COMMON</schemaName>
+            <schemaName>AUDIT</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>COMMON</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
       <deleteMode>0</deleteMode>
       <enabled>true</enabled>
       <referenceID class="oracle.javatools.db.IdentifierBasedID">
-        <name>EMPLOYEES_PK</name>
-        <identifier class="java.lang.String">b69d4833-56ab-4c04-a8a1-ce6a5b1e5786</identifier>
+        <name>USERS_PK</name>
+        <identifier class="java.lang.String">f32c9b07-9ce7-4ccb-adea-4c0c6c390f3e</identifier>
         <parent class="oracle.javatools.db.IdentifierBasedID">
-          <name>EMPLOYEES</name>
-          <identifier class="java.lang.String">516735e3-d9f6-4580-a7e9-cb560ee64edf</identifier>
-          <schemaName>HR</schemaName>
+          <name>USERS</name>
+          <identifier class="java.lang.String">0a5d8860-ee3c-42c5-957a-c6c40c8ec499</identifier>
+          <schemaName>SECURITY</schemaName>
           <type>TABLE</type>
         </parent>
         <type>CONSTRAINT</type>
@@ -111,15 +110,14 @@
       <name>AUDITREVISION_PK</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.IdentifierBasedID">
-          <name>REV_ID</name>
+          <name>ID</name>
           <identifier class="java.lang.String">b602dd98-4f3c-4090-86f8-67bd0809aa88</identifier>
           <parent class="oracle.javatools.db.IdentifierBasedID">
             <name>AUDITREVISION</name>
             <identifier class="java.lang.String">a15980b3-4d26-42d3-8a6d-944247d3df0a</identifier>
-            <schemaName>COMMON</schemaName>
+            <schemaName>AUDIT</schemaName>
             <type>TABLE</type>
           </parent>
-          <schemaName>COMMON</schemaName>
           <type>COLUMN</type>
         </columnID>
       </columnIDs>
@@ -154,15 +152,14 @@
               <identifier class="java.lang.String">bfd467fb-2529-46b3-b666-820ea84a183d</identifier>
             </ID>
             <objectID class="oracle.javatools.db.IdentifierBasedID">
-              <name>REV_ID</name>
+              <name>ID</name>
               <identifier class="java.lang.String">b602dd98-4f3c-4090-86f8-67bd0809aa88</identifier>
               <parent class="oracle.javatools.db.IdentifierBasedID">
                 <name>AUDITREVISION</name>
                 <identifier class="java.lang.String">a15980b3-4d26-42d3-8a6d-944247d3df0a</identifier>
-                <schemaName>COMMON</schemaName>
+                <schemaName>AUDIT</schemaName>
                 <type>TABLE</type>
               </parent>
-              <schemaName>COMMON</schemaName>
               <type>COLUMN</type>
             </objectID>
             <outerJoin>false</outerJoin>

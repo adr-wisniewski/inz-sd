@@ -5,6 +5,7 @@
 
 package servicedesk.web.itil.cmdb;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.itil.cmdb.domain.Attribute;
 import servicedesk.core.itil.cmdb.domain.EntityClass;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -32,11 +33,8 @@ public class AttributeAddController extends AbstractAttributeController {
 
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String creteNewInstance(ModelMap map, @PathVariable(PATH_CLASS) Integer classid) {
-
         EntityClass entityClass = entityClassService.load(classid);
-
-        Attribute attribute = new Attribute();
-        attribute.setEntityClass(entityClass);
+        Attribute attribute = entityClass.createAttribute();
         map.addAttribute(attribute);
         return String.format("redirect:/cmdb/class/%d/attribute/new", attribute.getEntityClass().getId());
     }
@@ -46,8 +44,6 @@ public class AttributeAddController extends AbstractAttributeController {
             @ModelAttribute Attribute attribute,
             @PathVariable(PATH_CLASS) Integer classid) {
 
-        EntityClass entityClass = entityClassService.load(classid);
-        attribute.setEntityClass(entityClass);
         return VIEW_ADD;
     }
 
@@ -58,9 +54,6 @@ public class AttributeAddController extends AbstractAttributeController {
             BindingResult bindingResult,
             SessionStatus status) {
 
-        EntityClass entityClass = entityClassService.load(classid);
-        attribute.setEntityClass(entityClass);
-
         try {
             service.add(attribute, bindingResult);
             messages.addMessage("message.cmdb.class.attribute.added",
@@ -68,7 +61,7 @@ public class AttributeAddController extends AbstractAttributeController {
                 attribute.getEntityClass().getName());
             status.setComplete();
 
-            return EntityClassRedirectorVisitor.process(entityClass);
+            return redirectorVisitor.process(attribute.getEntityClass());
         }
         catch(BusinessConstraintViolationException ex) {
             map.addAllAttributes(ex.getErrors().getModel());

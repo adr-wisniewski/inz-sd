@@ -17,7 +17,7 @@ import servicedesk.core.itil.cmdb.domain.helper.ItemClassCriteria;
 import servicedesk.core.itil.cmdb.validator.UniversalItemClassAddValidator;
 import servicedesk.core.itil.cmdb.validator.UniversalItemClassDeleteValidator;
 import servicedesk.core.itil.cmdb.validator.UniversalItemClassUpdateValidator;
-import servicedesk.core.base.validation.Validated;
+import servicedesk.infrastructure.validation.Validated;
 
 /**
  *
@@ -80,5 +80,10 @@ public class UniversalItemClassServiceImpl implements UniversalItemClassService 
     @Override
     public UniversalItemClass loadByName(String name) {
         return dao.loadByName(name);
+    }
+
+    @Override
+    public UniversalItemClass create() {
+        return new UniversalItemClass();
     }
 }

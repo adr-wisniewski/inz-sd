@@ -28,7 +28,7 @@ import javax.persistence.Temporal;
 import org.hibernate.annotations.Immutable;
 import servicedesk.core.common.attachment.domain.Attachment;
 import servicedesk.core.common.attachment.domain.HasAttachments;
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.infrastructure.interfaces.domain.DomainObject;
 
 /**

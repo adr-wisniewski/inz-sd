@@ -18,7 +18,7 @@ import servicedesk.core.itil.cmdb.domain.helper.RelationshipClassCriteria;
 import servicedesk.core.itil.cmdb.validator.RelationshipClassAddValidator;
 import servicedesk.core.itil.cmdb.validator.RelationshipClassDeleteValidator;
 import servicedesk.core.itil.cmdb.validator.RelationshipClassUpdateValidator;
-import servicedesk.core.base.validation.Validated;
+import servicedesk.infrastructure.validation.Validated;
 
 /**
  *
@@ -91,5 +91,10 @@ public class RelationshipClassServiceImpl implements RelationshipClassService {
     @Override
     public List<RelationshipClass> getAllForTargetClass(ItemClass itemClass) {
         return dao.getAllForTargetClass(itemClass);
+    }
+
+    @Override
+    public RelationshipClass create() {
+        return new RelationshipClass();
     }
 }

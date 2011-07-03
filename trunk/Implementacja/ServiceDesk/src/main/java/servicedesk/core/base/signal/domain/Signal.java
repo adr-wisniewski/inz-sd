@@ -23,7 +23,7 @@ import javax.persistence.Temporal;
 
 import org.hibernate.annotations.Type;
 
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.infrastructure.interfaces.domain.DomainObject;
 
 

@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import servicedesk.core.itil.change.dao.RfcPriorityDao;
-import servicedesk.core.itil.change.domain.RfcPriority;
+import servicedesk.core.itil.change.domain.entity.RfcPriority;
 import servicedesk.core.itil.change.validator.RfcPriorityAddValidator;
 import servicedesk.core.itil.change.validator.RfcPriorityDeleteValidator;
-import servicedesk.core.base.validation.Validated;
+import servicedesk.infrastructure.validation.Validated;
 
 /**
  *
@@ -72,6 +72,11 @@ public class RfcPriorityServiceImpl implements RfcPriorityService {
     @Override
     public RfcPriority loadByName(String name) {
         return dao.loadByName(name);
+    }
+
+    @Override
+    public RfcPriority create() {
+        return new RfcPriority();
     }
     
 }

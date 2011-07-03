@@ -13,7 +13,6 @@ import servicedesk.core.base.history.domain.HistoryRecord;
  *
  * @author Adrian
  */
-public interface HistoryDao {
-    public <Type extends DomainObject<Id>, Id extends Serializable> 
-            List<HistoryRecord<Type>> getChanges(Class<Type> type, Id id);
+public interface HistoryDao<Type extends DomainObject<Id>, Id extends Serializable> {
+    public List<HistoryRecord<Type>> getChanges(Id id);
 }

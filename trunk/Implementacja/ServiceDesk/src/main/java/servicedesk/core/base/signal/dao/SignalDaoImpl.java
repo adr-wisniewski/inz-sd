@@ -9,9 +9,9 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import servicedesk.core.hr.dao.EmployeeDao;
+import servicedesk.core.base.employee.dao.EmployeeDao;
 import servicedesk.infrastructure.dao.hibernate.GenericHibernateDao;
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.core.base.signal.domain.Signal;
 import servicedesk.core.base.signal.domain.SignalGenerator;
 import servicedesk.core.base.signal.mapper.SignalMapper;

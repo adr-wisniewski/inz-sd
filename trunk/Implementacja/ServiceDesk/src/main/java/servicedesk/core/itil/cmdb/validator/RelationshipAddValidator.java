@@ -13,7 +13,7 @@ import servicedesk.core.itil.cmdb.domain.ItemClass;
 import servicedesk.core.itil.cmdb.domain.Relationship;
 import servicedesk.core.itil.cmdb.domain.helper.EntityClassUtils;
 import servicedesk.core.itil.cmdb.service.RelationshipService;
-import servicedesk.core.base.validation.AbstractValidator;
+import servicedesk.infrastructure.validation.AbstractValidator;
 
 /**
  *
@@ -27,6 +27,7 @@ public class RelationshipAddValidator extends AbstractValidator<Relationship> {
 
     @Override
     protected void doValidate(Relationship target, Errors errors) {
+        attachDao.attach(target.getRelationshipClass());
         checkSimple(target, errors);
         checkUnique(target, errors);
         checkClassConstraints(target, errors);
@@ -45,7 +46,7 @@ public class RelationshipAddValidator extends AbstractValidator<Relationship> {
     }
 
     private void checkClassConstraints(Relationship target, Errors errors) {
-
+        
 
         if(target.getSourceItem() != null && !EntityClassUtils.isSameOrSubclass(target.getRelationshipClass().getSourceItemClass(), target.getSourceItem().getItemClass()))
             ValidationUtils.rejectIfEmpty(errors, "sourceItem", "validate.cmdb.relationship.sourceItem.badclass");

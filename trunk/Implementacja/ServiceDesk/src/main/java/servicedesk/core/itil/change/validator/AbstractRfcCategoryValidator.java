@@ -7,10 +7,10 @@ package servicedesk.core.itil.change.validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
-import servicedesk.core.itil.change.domain.RfcCategory;
+import servicedesk.core.itil.change.domain.entity.RfcCategory;
 import servicedesk.core.itil.change.service.RfcCategoryService;
-import servicedesk.core.base.validation.AbstractValidator;
-import servicedesk.core.base.validation.ValidatorUtils;
+import servicedesk.infrastructure.validation.AbstractValidator;
+import servicedesk.infrastructure.validation.ValidatorUtils;
 
 /**
  *

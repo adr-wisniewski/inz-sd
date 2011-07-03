@@ -23,14 +23,14 @@ import servicedesk.infrastructure.search.criterion.Query;
  * @param <Id> 
  * @author Adrian
  */
-public abstract class AbstractHibernateDao<Type extends DomainObject<Id>, Id extends Serializable> 
+public abstract class AbstractHibernateDao<AbstractType extends DomainObject<Id>, ConcreteType extends AbstractType, Id extends Serializable> 
     extends HibernateDaoSupport 
-    implements CrudDao<Type, Id>, SearchDao<Type, Id> {
+    implements CrudDao<AbstractType, Id>, SearchDao<AbstractType, Id> {
 
     @SuppressWarnings("unchecked")
-    private Class<Type> typeClass = (Class<Type>)GenericUtil.getTypeArgument(AbstractHibernateDao.class, getClass(),0);
+    private Class<ConcreteType> typeClass = (Class<ConcreteType>)GenericUtil.getTypeArgument(AbstractHibernateDao.class, getClass(),1);
     @SuppressWarnings("unchecked")
-    private Class<Id> idClass = (Class<Id>)GenericUtil.getTypeArgument(AbstractHibernateDao.class, getClass(),1);
+    private Class<Id> idClass = (Class<Id>)GenericUtil.getTypeArgument(AbstractHibernateDao.class, getClass(),2);
     @Autowired
     private HibernateQueryMapper queryMapper;
     @Autowired
@@ -41,7 +41,7 @@ public abstract class AbstractHibernateDao<Type extends DomainObject<Id>, Id ext
         setSessionFactory(sessionFactory);
     }
 
-    public Class<Type> getTypeClass() {
+    public Class<ConcreteType> getTypeClass() {
         return typeClass;
     }
 
@@ -50,58 +50,58 @@ public abstract class AbstractHibernateDao<Type extends DomainObject<Id>, Id ext
     }
 
     @Override
-    public Type load(Id id) {
+    public ConcreteType load(Id id) {
         return getHibernateTemplate().load(typeClass, id);
     }
 
     @Override
-    public Type get(Id id) {
+    public ConcreteType get(Id id) {
         return getHibernateTemplate().get(typeClass, id);
     }
 
     @Override
-    public List<Type> getAll() {
-        return getHibernateTemplate().loadAll(typeClass);
+    public List<AbstractType> getAll() {
+        return (List<AbstractType>)getHibernateTemplate().loadAll(typeClass);
     }
     
-    public Type getByName(String name) {
+    public ConcreteType getByName(String name) {
         return DataAccessUtils.singleResult(getByNameList(name));
     }
     
-    public Type loadByName(String name) {
+    public ConcreteType loadByName(String name) {
         return DataAccessUtils.requiredSingleResult(getByNameList(name));
     }
     
-    protected List<Type> getByNameList(String name) {
+    protected List<ConcreteType> getByNameList(String name) {
         @SuppressWarnings("unchecked")
-        List<Type> result = getHibernateTemplate().findByCriteria(DetachedCriteria.forClass(typeClass).add(Restrictions.eq("name", name)));
+        List<ConcreteType> result = getHibernateTemplate().findByCriteria(DetachedCriteria.forClass(typeClass).add(Restrictions.eq("name", name)));
         return result;
     }
 
     @Override
-    public void persist(Type object) {
+    public void persist(AbstractType object) {
         getHibernateTemplate().persist(object);
     }
 
     @Override
-    public void remove(Type object) {
+    public void remove(AbstractType object) {
         getHibernateTemplate().delete(object);
     }
     
     @Override
-    public Type merge(Type object) {
+    public AbstractType merge(AbstractType object) {
         return getHibernateTemplate().merge(object);
     }
 
     @Override
-    public List<Type> search(SearchObject<Type> searchObject) {
-        Query query = criteriaFactory.getCriteria(searchObject);
+    public List<AbstractType> search(SearchObject<AbstractType> searchObject) {
+        Query query = criteriaFactory.getCriteria(typeClass, searchObject);
         if(query.isEmpty() && !query.isAllowEmptyQueries())
-            return new ArrayList<Type>(0);
+            return new ArrayList<AbstractType>(0);
         
         DetachedCriteria criteria = queryMapper.map(query);
         @SuppressWarnings("unchecked")
-        List<Type> result = getHibernateTemplate().findByCriteria(criteria);
+        List<AbstractType> result = getHibernateTemplate().findByCriteria(criteria);
         return result;
     }
 }

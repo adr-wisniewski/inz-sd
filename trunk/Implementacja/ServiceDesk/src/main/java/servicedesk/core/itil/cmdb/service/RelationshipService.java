@@ -6,12 +6,12 @@
 package servicedesk.core.itil.cmdb.service;
 
 import servicedesk.core.itil.cmdb.domain.Relationship;
-import servicedesk.infrastructure.interfaces.service.CrudService;
+import servicedesk.infrastructure.interfaces.service.EditService;
 
 /**
  *
  * @author Adrian
  */
-public interface RelationshipService extends CrudService<Relationship, Integer> {
+public interface RelationshipService extends EditService<Relationship, Integer> {
     public Relationship getSame(Relationship target);
 }

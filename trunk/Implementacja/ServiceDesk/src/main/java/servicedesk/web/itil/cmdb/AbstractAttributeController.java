@@ -29,6 +29,9 @@ public abstract class AbstractAttributeController {
 
     @Autowired
     protected MessageContextHolder messages;
+    
+    @Autowired
+    protected EntityClassRedirectorVisitor redirectorVisitor;
 
     @InitBinder("attribute")
     public void initBinder(WebDataBinder dataBinder) {

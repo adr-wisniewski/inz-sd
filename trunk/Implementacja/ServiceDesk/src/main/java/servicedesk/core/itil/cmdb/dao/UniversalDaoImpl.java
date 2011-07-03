@@ -14,6 +14,6 @@ import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
  * @author Adrian
  */
 @Repository
-public class UniversalDaoImpl extends AbstractHibernateDao<UniversalItem, Integer> implements UniversalItemDao {
+public class UniversalDaoImpl extends AbstractHibernateDao<UniversalItem, UniversalItem, Integer> implements UniversalItemDao {
 
 }

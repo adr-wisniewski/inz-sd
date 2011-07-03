@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.itil.cmdb.domain.RelationshipClass;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *

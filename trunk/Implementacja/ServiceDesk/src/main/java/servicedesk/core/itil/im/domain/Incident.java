@@ -27,7 +27,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 import servicedesk.core.base.comment.domain.Comment;
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.core.base.em.domain.Event;
 import servicedesk.core.base.event.domain.IEvent;
 import servicedesk.infrastructure.interfaces.domain.DomainObject;

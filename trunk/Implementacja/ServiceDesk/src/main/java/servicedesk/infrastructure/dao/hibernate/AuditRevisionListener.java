@@ -8,8 +8,8 @@ package servicedesk.infrastructure.dao.hibernate;
 import org.hibernate.envers.RevisionListener;
 import org.springframework.security.core.context.SecurityContextHolder;
 import servicedesk.core.base.history.domain.AuditRevisionEntity;
-import servicedesk.infrastructure.security.spring.SpringSecurityUserAdapter;
-import servicedesk.infrastructure.security.domain.User;
+import servicedesk.core.base.security.spring.SpringSecurityUserAdapter;
+import servicedesk.core.base.security.domain.User;
 
 /**
  *
@@ -24,7 +24,7 @@ public class AuditRevisionListener implements RevisionListener {
         SpringSecurityUserAdapter principal = (SpringSecurityUserAdapter)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = principal.getUser();
                 
-        revision.setInstigator(user.getEmployee());
+        revision.setInstigator(user);
     }
 
 }

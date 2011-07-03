@@ -3,7 +3,7 @@
  */
 package servicedesk.core.base.comment.domain;
 
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;

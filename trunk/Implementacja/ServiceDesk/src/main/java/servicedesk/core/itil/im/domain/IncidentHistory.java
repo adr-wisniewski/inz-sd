@@ -14,7 +14,7 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.infrastructure.interfaces.domain.DomainObject;
 import servicedesk.core.itil.scm.domain.Service;
 

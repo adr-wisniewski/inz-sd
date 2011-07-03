@@ -29,6 +29,19 @@ public class UniversalItem extends Item {
 
     private UniversalItemClass itemClass;
 
+    /**
+     * package level constructor for hibernate
+     */
+    protected UniversalItem() {
+        
+    }
+    
+    public UniversalItem(UniversalItemClass itemClass) {
+        this.itemClass = itemClass;
+        populateAttributeValues();
+    }
+    
+    
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "CLASS_ID")
     @Override
@@ -36,7 +49,7 @@ public class UniversalItem extends Item {
         return itemClass;
     }
 
-    public void setItemClass(UniversalItemClass itemClass) {
+    protected void setItemClass(UniversalItemClass itemClass) {
         this.itemClass = itemClass;
     }
 

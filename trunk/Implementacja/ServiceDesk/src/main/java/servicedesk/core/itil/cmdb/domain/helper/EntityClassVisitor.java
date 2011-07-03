@@ -12,7 +12,7 @@ import servicedesk.core.itil.cmdb.domain.RelationshipClass;
  *
  * @author Adrian
  */
-public interface EntityClassVisitor {
-    public void visit(ItemClass itemClass);
-    public void visit(RelationshipClass relationshipClass);
+public interface EntityClassVisitor<ReturnType> {
+    public ReturnType visit(ItemClass itemClass);
+    public ReturnType visit(RelationshipClass relationshipClass);
 }
