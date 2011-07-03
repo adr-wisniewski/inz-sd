@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" id="46075E3B-B9D1-9513-19ED-CE4F75741C6D" directorySegmentName="seg_0" name="KNOWN_ERRORS_V">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <userDefined>true</userDefined>
+   <userDefinedSQL>CREATE OR REPLACE VIEW KNOWN_ERRORS_V AS select p.problem_id, p.subject as subject, p.symptoms, p.root_cause, s.description as workaround, p.category_code&amp;lt;br&amp;gt;from solutions s join problems p on p.problem_id = s.problem_id&amp;lt;br&amp;gt;where s.solution_code = &amp;apos;WORK&amp;apos; and p.is_known_error = &amp;apos;T&amp;apos;</userDefinedSQL>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Column</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+   </fonts>
+   <usedContainers>
+      <container alias="s" containerID="2DB12329-058E-2070-9B6F-4F4379A1D417"/>
+   </usedContainers>
+   <viewElements>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="problem_id" id="42BE109F-CA15-0EDE-BEBE-25986193D16C">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>problem_id</alias>
+         <expression>problem_id</expression>
+         <reference>false</reference>
+         <tableAlias>p</tableAlias>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="subject" id="B45F28C4-D7E1-F820-3254-26B9DFF2214E">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>subject</alias>
+         <expression>subject</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="symptoms" id="6936FFDC-AA38-C020-9CE1-95ABD2E3A4B1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>symptoms</alias>
+         <expression>symptoms</expression>
+         <reference>false</reference>
+         <tableAlias>p</tableAlias>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="root_cause" id="568C1146-81E5-B79A-4D87-37F7577DBCDC">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>root_cause</alias>
+         <expression>root_cause</expression>
+         <reference>false</reference>
+         <tableAlias>p</tableAlias>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="workaround" id="F8CD6CCF-BD39-0369-66B6-5C377FA01790">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>workaround</alias>
+         <dataType>VARCHAR2 (4000 BYTE)</dataType>
+         <expression>description</expression>
+         <reference>false</reference>
+         <referencedColumn>AD5934C2-DB59-8484-30A7-0FF45D21F83B</referencedColumn>
+         <table>2DB12329-058E-2070-9B6F-4F4379A1D417</table>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="category_code" id="1E1D9100-F807-34A9-B5BF-273AD27F52FA">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>category_code</alias>
+         <expression>category_code</expression>
+         <reference>false</reference>
+         <tableAlias>p</tableAlias>
+      </viewElement>
+   </viewElements>
+</TableView>
