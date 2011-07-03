@@ -109,8 +109,8 @@ public class UniversalItemClass extends AbstractEntityClass implements ItemClass
     }
 
     @Override
-    public void accept(EntityClassVisitor visitor) {
-        visitor.visit(this);
+    public <ReturnType> ReturnType accept(EntityClassVisitor<ReturnType> visitor) {
+        return visitor.visit(this);
     }
 
     @Override
@@ -127,5 +127,13 @@ public class UniversalItemClass extends AbstractEntityClass implements ItemClass
         }
 
         return chain;
+    }
+    
+    public UniversalItem createItem() {
+        if(isAbstraction())
+            throw new EntityClassIsAbstractException(this);
+         
+        UniversalItem ui = new UniversalItem(this);
+        return ui;
     }
 }

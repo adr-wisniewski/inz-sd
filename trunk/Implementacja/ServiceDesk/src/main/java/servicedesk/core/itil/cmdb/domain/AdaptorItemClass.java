@@ -76,7 +76,12 @@ public abstract class AdaptorItemClass implements ItemClass {
     }
 
     @Override
-    public void accept(EntityClassVisitor visitor) {
-        visitor.visit(this);
+    public <ReturnType> ReturnType accept(EntityClassVisitor<ReturnType> visitor) {
+        return visitor.visit(this);
+    }
+   
+    @Override
+    public Attribute createAttribute() {
+        return new Attribute(this);
     }
 }

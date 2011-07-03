@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import servicedesk.core.itil.change.domain.Rfc;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.core.itil.change.domain.entity.Rfc;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *

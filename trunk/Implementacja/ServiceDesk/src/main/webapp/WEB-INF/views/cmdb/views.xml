@@ -183,9 +183,9 @@
     </definition>
 
     <!-- ITEMS CRUD -->
-    <definition name="/cmdb/item/add/class" extends="standard-layout">
+    <definition name="/cmdb/item/add/pickclass" extends="standard-layout">
         <put-attribute name="title" value="titles.cmdb.item.add" />
-        <put-attribute name="body" value="/WEB-INF/views/cmdb/item/add.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/cmdb/item/add-pickclass.jsp" />
     </definition>
     
     <definition name="/cmdb/item/add/attributes" extends="standard-layout">

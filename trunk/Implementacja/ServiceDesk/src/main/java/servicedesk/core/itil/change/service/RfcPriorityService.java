@@ -4,7 +4,7 @@
  */
 package servicedesk.core.itil.change.service;
 
-import servicedesk.core.itil.change.domain.RfcPriority;
+import servicedesk.core.itil.change.domain.entity.RfcPriority;
 import servicedesk.infrastructure.interfaces.service.CrudService;
 import servicedesk.infrastructure.interfaces.service.NamedService;
 

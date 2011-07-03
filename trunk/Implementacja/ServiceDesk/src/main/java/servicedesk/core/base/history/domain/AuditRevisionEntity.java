@@ -21,8 +21,8 @@ import javax.persistence.Temporal;
 import org.hibernate.envers.RevisionEntity;
 import org.hibernate.envers.RevisionNumber;
 import org.hibernate.envers.RevisionTimestamp;
-import servicedesk.core.hr.domain.Employee;
 import servicedesk.infrastructure.dao.hibernate.AuditRevisionListener;
+import servicedesk.core.base.security.domain.User;
 
 /**
  *
@@ -35,7 +35,7 @@ public class AuditRevisionEntity implements Serializable {
     private static final long serialVersionUID = 1L;
     private int id;
     private Date timestamp;
-    private Employee instigator;
+    private User instigator;
 
     /**
      * @return the id
@@ -77,15 +77,15 @@ public class AuditRevisionEntity implements Serializable {
      * @return the employee
      */
     @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name="INSTIGATOR")
-    public Employee getInstigator() {
+    @JoinColumn(name="USER_ID")
+    public User getInstigator() {
         return instigator;
     }
 
     /**
      * @param employee the employee to set
      */
-    public void setInstigator(Employee instigator) {
+    public void setInstigator(User instigator) {
         this.instigator = instigator;
     }
 

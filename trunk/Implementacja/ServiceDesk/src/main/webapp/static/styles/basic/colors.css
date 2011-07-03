@@ -111,12 +111,12 @@ div.panel.success
     border-color: #138808;
 }
 
-input[type="text"], select, textarea
+input[type="text"], input[type="password"], select, textarea
 {
     border-color: #BDC7D8;
 }
 
-.tablesorter thead input[type="text"], .tablesorter thead select, .tablesorter thead textarea
+.tablesorter thead input[type="text"], .tablesorter thead input[type="password"], .tablesorter thead select, .tablesorter thead textarea
 {
     border-color: #FCC200;
 }

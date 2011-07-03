@@ -31,6 +31,15 @@ public class Relationship extends Entity {
     private Item sourceItem;
     private Item targetItem;
 
+    protected Relationship() {
+        
+    }
+    
+    public Relationship(RelationshipClass relationshipClass) {
+        this.relationshipClass = relationshipClass;
+        populateAttributeValues();
+    }
+    
     /**
      * @return the relationshipClass
      */

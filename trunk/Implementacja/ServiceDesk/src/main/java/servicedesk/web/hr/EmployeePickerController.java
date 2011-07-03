@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import servicedesk.core.hr.domain.EmployeeSearchCriteria;
-import servicedesk.core.hr.service.EmployeeService;
+import servicedesk.core.base.employee.domain.EmployeeSearchCriteria;
+import servicedesk.core.base.employee.service.EmployeeService;
 
 /**
  * 

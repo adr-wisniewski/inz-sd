@@ -4,7 +4,7 @@
  */
 package servicedesk.core.itil.change.dao;
 
-import servicedesk.core.itil.change.domain.RfcImpact;
+import servicedesk.core.itil.change.domain.entity.RfcImpact;
 import servicedesk.infrastructure.interfaces.dao.CrudDao;
 import servicedesk.infrastructure.interfaces.dao.NamedDao;
 

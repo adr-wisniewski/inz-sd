@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.itil.cmdb.domain.UniversalItem;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -33,7 +33,7 @@ public class UniversalItemDeleteController extends AbstractUniversalItemControll
     public String deleteGet(ModelMap map, @PathVariable("id") Integer classId) {
         // TODO: deleting of non universal items??
         if(!map.containsAttribute(MODEL_OBJECT)) {
-            UniversalItem item = service.load(classId);
+            UniversalItem item = service.load(classId);     
             map.addAttribute(MODEL_OBJECT, item);
         }
         return VIEW_DELETE;

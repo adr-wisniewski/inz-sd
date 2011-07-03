@@ -14,7 +14,7 @@
     <em>${username}</em><br/>
     
     <a href="/"><spring:message code="home.label" /></a> |
-    <a href="/j_spring_security_logout"><spring:message code="logout.label" /></a>
+    <a href="/logout"><spring:message code="logout.label" /></a>
 </div>
 
 <menu:menuGroup name="menu.cmdb.caption" id="menu-cmdb">

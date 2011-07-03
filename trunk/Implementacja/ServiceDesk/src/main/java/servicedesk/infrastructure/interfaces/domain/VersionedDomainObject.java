@@ -13,5 +13,4 @@ import java.io.Serializable;
  */
 public interface VersionedDomainObject<Id extends Serializable> extends DomainObject<Id> {
     public Integer getVersion();
-    public void setVersion(Integer version);
 }

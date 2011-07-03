@@ -10,7 +10,7 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
 import servicedesk.infrastructure.interfaces.domain.SearchCriteria;
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.core.itil.im.domain.Incident;
 import servicedesk.core.itil.im.domain.IncidentCategory;
 import servicedesk.core.itil.im.domain.IncidentImpact;
@@ -528,7 +528,7 @@ public class IncidentSearchCriteria implements SearchCriteria<Incident> {
 	 */
 	public String buildCondition() {
 		// begin-user-code
-		// TODO Auto-generated method stub
+		// TODO2 Auto-generated method stub
 		return null;
 		// end-user-code
 	}

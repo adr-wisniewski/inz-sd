@@ -14,6 +14,6 @@ import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
  * @author Adrian
  */
 @Repository
-public class AttachmentDaoImpl extends AbstractHibernateDao<Attachment, Integer> implements AttachmentDao {
+public class AttachmentDaoImpl extends AbstractHibernateDao<Attachment, Attachment, Integer> implements AttachmentDao {
 
 }

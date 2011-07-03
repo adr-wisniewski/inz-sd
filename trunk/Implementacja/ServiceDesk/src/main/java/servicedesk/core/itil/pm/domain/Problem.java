@@ -32,7 +32,7 @@ import javax.persistence.Temporal;
 import org.hibernate.annotations.Type;
 
 import servicedesk.core.base.comment.domain.Comment;
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.core.base.event.domain.IEvent;
 import servicedesk.core.itil.im.domain.Incident;
 import servicedesk.core.itil.im.domain.SupportGroup;

@@ -16,7 +16,7 @@ import servicedesk.core.itil.cmdb.dao.RelationshipDao;
 import servicedesk.core.itil.cmdb.domain.Relationship;
 import servicedesk.core.itil.cmdb.validator.RelationshipAddValidator;
 import servicedesk.core.itil.cmdb.validator.RelationshipDeleteValidator;
-import servicedesk.core.base.validation.Validated;
+import servicedesk.infrastructure.validation.Validated;
 
 /**
  *
@@ -70,5 +70,4 @@ public class RelationshipServiceImpl implements RelationshipService {
     public List<Relationship> getAll() {
         return dao.getAll();
     }
-
 }

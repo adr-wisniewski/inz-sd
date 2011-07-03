@@ -68,8 +68,7 @@ public abstract class Entity implements VersionedDomainObject<Integer>, Serializ
     /**
      * @param version the version to set
      */
-    @Override
-    public void setVersion(Integer version) {
+    protected void setVersion(Integer version) {
         this.version = version;
     }
 
@@ -103,6 +102,7 @@ public abstract class Entity implements VersionedDomainObject<Integer>, Serializ
     @Transient
     public abstract String getOverview();
 
+    // TODO2: at least make protected, best remove
     public void populateAttributeValues() {
         for(Attribute attribute: getEntityClass().getAllAttributes()) {
             getAttributeValue(attribute);

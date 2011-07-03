@@ -8,7 +8,7 @@ import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Order;
 import org.springframework.stereotype.Repository;
-import servicedesk.core.itil.change.domain.RfcResolution;
+import servicedesk.core.itil.change.domain.entity.RfcResolution;
 import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
 
 /**
@@ -17,7 +17,7 @@ import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
  */
 @Repository
 public class RfcResolutionDaoImpl 
-    extends AbstractHibernateDao<RfcResolution, Integer> 
+    extends AbstractHibernateDao<RfcResolution, RfcResolution, Integer> 
     implements RfcResolutionDao {
     
     @Override

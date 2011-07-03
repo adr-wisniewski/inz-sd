@@ -7,18 +7,21 @@
     					http://www.springframework.org/schema/security 
     					http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 
-    <s:http use-expressions="true" >
+    <s:http use-expressions="true"  >
         <s:intercept-url pattern="/services/**" filters="none" />
         <s:intercept-url pattern="/static/**" filters="none" />
         <s:intercept-url pattern="/favicon.ico" filters="none" />
         <!-- netbeans' tomcat status probing -->
         <s:intercept-url pattern="/netbeans**" filters="none" />
         
-        <s:intercept-url pattern="/" access="permitAll"/>
+        <s:intercept-url pattern="/login" access="isAnonymous()"/>
         <s:intercept-url pattern="/**" access="isAuthenticated()"  />
 
-        <s:form-login />
-        <s:logout />
+        <s:form-login login-page="/login" 
+            login-processing-url="/doLogin" 
+            authentication-failure-url="/login?login_error=1" />
+        <s:logout logout-url="/logout" 
+            logout-success-url="/" />
         <s:remember-me/>
     </s:http>
 

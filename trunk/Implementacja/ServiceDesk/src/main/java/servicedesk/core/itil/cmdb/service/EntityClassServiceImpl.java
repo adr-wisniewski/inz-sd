@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import servicedesk.core.itil.cmdb.dao.EntityClassDao;
-import servicedesk.core.itil.cmdb.domain.AbstractEntityClass;
+import servicedesk.core.itil.cmdb.domain.EntityClass;
 
 /**
  *
@@ -25,33 +25,17 @@ public class EntityClassServiceImpl implements EntityClassService {
     protected EntityClassDao dao;
 
     @Override
-    public AbstractEntityClass load(Integer id) {
+    public EntityClass load(Integer id) {
        return dao.load(id);
     }
 
     @Override
-    public AbstractEntityClass get(Integer id) {
+    public EntityClass get(Integer id) {
         return dao.get(id);
     }
 
     @Override
-    public void add(AbstractEntityClass object, BindingResult bindingResult) {
-        dao.persist(object);
-    }
-
-    @Override
-    public void update(AbstractEntityClass object, BindingResult bindingResult) {
-        dao.merge(object);
-    }
-
-    @Override
-    public void delete(AbstractEntityClass object) {
-        dao.remove(object);
-    }
-
-    @Override
-    public List<AbstractEntityClass> getAll() {
+    public List<EntityClass> getAll() {
         return dao.getAll();
     }
-
 }

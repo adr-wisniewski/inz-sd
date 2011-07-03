@@ -13,10 +13,12 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
+import servicedesk.core.base.employee.domain.EmployeeUser;
+import servicedesk.core.base.security.service.AuthorizationService;
 import servicedesk.core.common.announcement.dao.AnnouncementDao;
 import servicedesk.core.common.announcement.domain.Announcement;
 import servicedesk.core.common.announcement.validator.AnnouncementSimpleValidator;
-import servicedesk.core.base.validation.Validated;
+import servicedesk.infrastructure.validation.Validated;
 
 /**
  *
@@ -29,6 +31,9 @@ public class AnnouncementServiceImpl implements AnnouncementService {
 
     @Autowired
     protected AnnouncementDao dao;
+    
+    @Autowired
+    protected AuthorizationService authorizationService;
 
     @Override
     public Collection<Announcement> getUpToDate(Date date) {
@@ -69,6 +74,14 @@ public class AnnouncementServiceImpl implements AnnouncementService {
     @Override
     public List<Announcement> getAll() {
         return dao.getAll();
+    }
+
+    @Override
+    public Announcement create() {
+        EmployeeUser user = authorizationService.getCurrentEmployeeUser();
+        Announcement announcement = new Announcement(user.getEmployee());
+        announcement.setPublicationTime(new Date());
+        return announcement;
     }
 
 }

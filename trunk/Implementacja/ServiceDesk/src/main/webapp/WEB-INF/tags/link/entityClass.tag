@@ -5,7 +5,7 @@
 <%@attribute name="object" required="true" rtexprvalue="true" type="servicedesk.core.itil.cmdb.domain.EntityClass" %>
 
 <print:nullable object="${object}">
-    <spring:eval var="link" expression="T(servicedesk.cmdb.web.EntityClassLinkVisitor).process(object)" />
+    <spring:eval var="link" expression="@entityClassLinkVisitor.process(object)" />
     <a class="entityclass" href="${link}">
             ${object.name}
     </a>

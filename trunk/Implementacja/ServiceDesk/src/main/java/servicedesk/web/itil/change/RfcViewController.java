@@ -11,12 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import servicedesk.core.itil.change.domain.RfcImpact;
-import servicedesk.core.itil.change.domain.RfcPriority;
-import servicedesk.core.itil.change.domain.RfcResolution;
-import servicedesk.core.itil.change.domain.RfcState;
+import servicedesk.core.itil.change.domain.entity.RfcImpact;
+import servicedesk.core.itil.change.domain.entity.RfcPriority;
+import servicedesk.core.itil.change.domain.entity.RfcResolution;
+import servicedesk.core.itil.change.domain.entity.RfcState;
 import servicedesk.core.itil.change.domain.helper.RfcSearchObject;
-import servicedesk.infrastructure.security.service.AuthorizationService;
+import servicedesk.core.base.security.service.AuthorizationService;
 
 /**
  *
@@ -64,7 +64,7 @@ public class RfcViewController extends AbstractRfcController {
     
     @RequestMapping(value = "/created")
     public String searchCreated(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcSearchObject criteria) {
-        criteria.setCreator(authorizationService.getCurrentUser().getEmployee());
+        criteria.setCreator(authorizationService.getCurrentUser());
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }
@@ -78,7 +78,7 @@ public class RfcViewController extends AbstractRfcController {
     
     @RequestMapping(value = "/managed")
     public String searchManaged(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcSearchObject criteria) {
-        criteria.setManager(authorizationService.getCurrentUser().getEmployee());
+        criteria.setManager(authorizationService.getCurrentEmployeeUser().getEmployee());
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }

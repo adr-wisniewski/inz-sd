@@ -68,8 +68,7 @@ abstract public class AbstractEntityClass implements EntityClass, VersionedDomai
         return version;
     }
 
-    @Override
-    public void setVersion(Integer version) {
+    protected void setVersion(Integer version) {
         this.version = version;
     }
 
@@ -150,6 +149,11 @@ abstract public class AbstractEntityClass implements EntityClass, VersionedDomai
         return hash;
     }
 
+    @Override
+    public Attribute createAttribute() {
+        return new Attribute(this);
+    }
+    
     @Override
     public String toString() {
         return new ToStringCreator(this)

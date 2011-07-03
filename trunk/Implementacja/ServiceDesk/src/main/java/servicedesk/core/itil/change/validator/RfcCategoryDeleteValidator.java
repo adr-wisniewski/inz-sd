@@ -6,8 +6,8 @@ package servicedesk.core.itil.change.validator;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import servicedesk.core.itil.change.domain.RfcCategory;
-import servicedesk.core.base.validation.ValidatorUtils;
+import servicedesk.core.itil.change.domain.entity.RfcCategory;
+import servicedesk.infrastructure.validation.ValidatorUtils;
 
 /**
  *

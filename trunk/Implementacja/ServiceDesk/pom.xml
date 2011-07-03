@@ -23,22 +23,12 @@
     </reporting>
     <repositories>
         <repository>
-            <id>Maven2</id>
-            <name>Maven2 repository</name>
-            <url>https://repo2.maven.org/maven2</url>
-        </repository>
-        <repository>
             <id>JBoss</id>
             <name>JBoss repository</name>
             <url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
         </repository>
     </repositories>
     <pluginRepositories>
-        <pluginRepository>
-            <id>Maven2</id>
-            <name>Maven2 repository</name>
-            <url>https://repo2.maven.org/maven2</url>
-        </pluginRepository>
         <pluginRepository>
             <id>JBoss</id>
             <name>JBoss repository</name>
@@ -224,10 +214,10 @@
             <version>3.14.0-GA</version>
         </dependency>
         <dependency>
-            <groupId>c3p0</groupId>
-            <artifactId>c3p0</artifactId>
-            <version>0.9.1.2</version>
-        </dependency>
+             <groupId>commons-dbcp</groupId>
+             <artifactId>commons-dbcp</artifactId>
+             <version>1.4</version>
+         </dependency>
 
         <!-- Apache Tiles -->
         <dependency>
@@ -272,13 +262,11 @@
             <artifactId>jcl-over-slf4j</artifactId>
             <version>1.6.1</version>
         </dependency>
-
-        <!-- javax -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>jta</artifactId>
@@ -374,7 +362,6 @@
      </dependency>
     </dependencies>
     <build>
-
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -411,7 +398,6 @@
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
-                    
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>

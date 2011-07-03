@@ -5,7 +5,7 @@
 package servicedesk.core.itil.change.dao;
 
 import org.springframework.stereotype.Repository;
-import servicedesk.core.itil.change.domain.RfcCategory;
+import servicedesk.core.itil.change.domain.entity.RfcCategory;
 import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
 
 /**
@@ -14,7 +14,7 @@ import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
  */
 @Repository
 public class RfcCategoryDaoImpl 
-    extends AbstractHibernateDao<RfcCategory, Integer>
+    extends AbstractHibernateDao<RfcCategory, RfcCategory, Integer>
     implements RfcCategoryDao {
 
 }

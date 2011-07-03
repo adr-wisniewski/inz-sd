@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import servicedesk.core.itil.cmdb.domain.UniversalItemClass;
-import servicedesk.core.base.validation.AbstractValidator;
+import servicedesk.infrastructure.validation.AbstractValidator;
 
 /**
  *

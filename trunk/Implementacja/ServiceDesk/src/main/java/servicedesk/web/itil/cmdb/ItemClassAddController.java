@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.itil.cmdb.domain.UniversalItemClass;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -37,8 +37,9 @@ public class ItemClassAddController extends AbstractItemClassController {
 
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String creteNewInstance(ModelMap map) {
-            map.addAttribute(new UniversalItemClass());
-            return "redirect:/cmdb/item/class/new";
+        UniversalItemClass uic = service.create();
+        map.addAttribute(uic);
+        return "redirect:/cmdb/item/class/new";
     }
 
     @RequestMapping(value="/new", method = RequestMethod.GET)

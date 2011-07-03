@@ -14,7 +14,7 @@ import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
 import servicedesk.infrastructure.interfaces.domain.SearchCriteria;
-import servicedesk.core.hr.domain.Employee;
+import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.core.itil.im.domain.SupportGroup;
 import servicedesk.core.itil.pm.domain.Problem;
 
@@ -497,7 +497,7 @@ public class ProblemSearchCriteria implements SearchCriteria<Problem>{
 	 */
 	public String buildCondition() {
 		// begin-user-code
-		// TODO Auto-generated method stub
+		// TODO2 Auto-generated method stub
 		return null;
 		// end-user-code
 	}

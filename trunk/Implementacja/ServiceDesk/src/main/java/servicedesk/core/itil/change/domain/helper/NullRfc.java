@@ -5,87 +5,120 @@
 package servicedesk.core.itil.change.domain.helper;
 
 import java.util.Date;
-import servicedesk.core.itil.change.domain.Rfc;
-import servicedesk.core.itil.change.domain.RfcCategory;
-import servicedesk.core.itil.change.domain.RfcImpact;
-import servicedesk.core.itil.change.domain.RfcPriority;
-import servicedesk.core.itil.change.domain.RfcState;
-import servicedesk.core.hr.domain.Employee;
+import org.springframework.stereotype.Component;
+import servicedesk.core.itil.change.domain.entity.RfcCategory;
+import servicedesk.core.itil.change.domain.entity.RfcImpact;
+import servicedesk.core.itil.change.domain.entity.RfcPriority;
+import servicedesk.core.itil.change.domain.entity.RfcResolution;
+import servicedesk.core.itil.change.domain.entity.RfcState;
+import servicedesk.core.base.employee.domain.Employee;
+import servicedesk.core.base.security.domain.User;
+import servicedesk.core.itil.change.domain.entity.Rfc;
 
 /**
  *
  * @author Adrian
  */
-public class NullRfc extends Rfc {
-    public final static NullRfc INSTANCE = new NullRfc();
-    private static final long serialVersionUID = 1L;
-    
-    private NullRfc() {
-        category = null;
-        comment = null;
-        author = null;
-        description = null;
-        id = null;
-        impact = null;
-        manager = null;
-        priority = null;
-        state = null;
-        timestamp = null;
-        title = null;
+@Component
+public class NullRfc implements Rfc {
+
+    @Override
+    public String getTitle() {
+        return null;
     }
 
     @Override
-    public void setCategory(RfcCategory category) {
-        throw new UnsupportedOperationException();
+    public String getDescription() {
+        return null;
     }
 
     @Override
-    public void setComment(String comment) {
-        throw new UnsupportedOperationException();
+    public String getComment() {
+        return null;
     }
 
     @Override
-    public void setAuthor(Employee creator) {
-        throw new UnsupportedOperationException();
+    public User getAuthor() {
+        return null;
     }
 
     @Override
-    public void setDescription(String description) {
-        throw new UnsupportedOperationException();
+    public Date getTimestamp() {
+        return null;
     }
 
     @Override
-    public void setId(Integer id) {
-        throw new UnsupportedOperationException();
+    public RfcState getState() {
+        return null;
     }
 
     @Override
-    public void setImpact(RfcImpact impact) {
-        throw new UnsupportedOperationException();
+    public Employee getManager() {
+        return null;
     }
 
     @Override
-    public void setManager(Employee manager) {
-        throw new UnsupportedOperationException();
+    public RfcPriority getPriority() {
+        return null;
     }
 
     @Override
-    public void setPriority(RfcPriority priority) {
-        throw new UnsupportedOperationException();
+    public RfcImpact getImpact() {
+        return null;
     }
 
     @Override
-    public void setState(RfcState state) {
-        throw new UnsupportedOperationException();
+    public RfcCategory getCategory() {
+        return null;
     }
 
     @Override
-    public void setTimestamp(Date timestamp) {
-        throw new UnsupportedOperationException();
+    public RfcResolution getResolution() {
+        return null;
+    }
+
+    @Override
+    public Integer getId() {
+        return null;
     }
 
     @Override
     public void setTitle(String title) {
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public void setDescription(String description) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public void setComment(String comment) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public void setPriority(RfcPriority priority) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public void setImpact(RfcImpact impact) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public void setCategory(RfcCategory category) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public void setResolution(RfcResolution resolution) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public void setManager(Employee employee) {
+        throw new UnsupportedOperationException("Not supported.");
     }
 }

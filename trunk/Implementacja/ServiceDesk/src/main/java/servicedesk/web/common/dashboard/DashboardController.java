@@ -7,7 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import servicedesk.core.common.announcement.service.AnnouncementService;
 
-import servicedesk.core.hr.service.EmployeeService;
+import servicedesk.core.base.employee.service.EmployeeService;
 import servicedesk.core.base.signal.service.SignalService;
 
 @Controller

@@ -4,7 +4,7 @@
  */
 package servicedesk.core.itil.change.service;
 
-import servicedesk.core.itil.change.domain.RfcImpact;
+import servicedesk.core.itil.change.domain.entity.RfcImpact;
 import servicedesk.infrastructure.interfaces.service.CrudService;
 import servicedesk.infrastructure.interfaces.service.NamedService;
 

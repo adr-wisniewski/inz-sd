@@ -4,7 +4,7 @@
  */
 package servicedesk.core.itil.change.dao;
 
-import servicedesk.core.itil.change.domain.RfcCategory;
+import servicedesk.core.itil.change.domain.entity.RfcCategory;
 import servicedesk.infrastructure.interfaces.dao.CrudDao;
 import servicedesk.infrastructure.interfaces.dao.HierarchyDao;
 import servicedesk.infrastructure.interfaces.dao.NamedDao;

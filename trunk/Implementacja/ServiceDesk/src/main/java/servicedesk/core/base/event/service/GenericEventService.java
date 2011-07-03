@@ -11,7 +11,7 @@ import servicedesk.infrastructure.interfaces.domain.SearchCriteria;
 import servicedesk.core.base.comment.domain.Comment;
 import servicedesk.core.base.event.dao.IEventDao;
 import servicedesk.core.base.event.domain.IEvent;
-import servicedesk.core.hr.service.EmployeeService;
+import servicedesk.core.base.employee.service.EmployeeService;
 
 @Transactional
 public class GenericEventService<E extends IEvent, EDAO extends IEventDao<E>, ESC extends SearchCriteria<E>> {

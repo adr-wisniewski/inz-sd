@@ -6,7 +6,7 @@ package servicedesk.core.itil.change.validator;
 
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import servicedesk.core.itil.change.domain.Rfc;
+import servicedesk.core.itil.change.domain.entity.Rfc;
 
 /**
  *

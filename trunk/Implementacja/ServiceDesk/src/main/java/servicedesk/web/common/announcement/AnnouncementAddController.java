@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.common.announcement.domain.Announcement;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
-import servicedesk.infrastructure.security.service.AuthorizationService;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
+import servicedesk.core.base.security.service.AuthorizationService;
 
 /**
  *
@@ -30,14 +30,10 @@ import servicedesk.infrastructure.security.service.AuthorizationService;
 @SessionAttributes("announcement")
 public class AnnouncementAddController extends AbstractAnnouncementController {
     public static final String VIEW_ADD = "/common/announcement/add";
-
-    @Autowired
-    protected AuthorizationService authorizationService;
     
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String creteNewInstance(ModelMap map) {
-        Announcement announcement = new Announcement(authorizationService.getCurrentUser().getEmployee());
-        announcement.setPublicationTime(new Date());
+        Announcement announcement = service.create();
         map.addAttribute(announcement);
         return String.format("redirect:/common/announcement/new");
     }

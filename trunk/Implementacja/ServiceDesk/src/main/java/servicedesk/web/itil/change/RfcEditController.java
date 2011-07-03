@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import servicedesk.core.itil.change.domain.Rfc;
-import servicedesk.core.itil.change.domain.RfcChange;
-import servicedesk.core.itil.change.domain.RfcImpact;
-import servicedesk.core.itil.change.domain.RfcPriority;
-import servicedesk.core.itil.change.domain.RfcResolution;
-import servicedesk.core.itil.change.domain.RfcState;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.core.itil.change.domain.entity.Rfc;
+import servicedesk.core.itil.change.domain.entity.RfcChange;
+import servicedesk.core.itil.change.domain.entity.RfcImpact;
+import servicedesk.core.itil.change.domain.entity.RfcPriority;
+import servicedesk.core.itil.change.domain.entity.RfcResolution;
+import servicedesk.core.itil.change.domain.entity.RfcState;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *

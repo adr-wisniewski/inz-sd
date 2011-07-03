@@ -6,7 +6,7 @@ import java.util.Date;
 
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 
-import servicedesk.core.hr.dao.EmployeeDao;
+import servicedesk.core.base.employee.dao.EmployeeDao;
 import servicedesk.core.base.signal.domain.Signal;
 import servicedesk.core.base.signal.domain.SignalAttribute;
 import servicedesk.core.base.signal.domain.SignalObjectAttributeType;

@@ -24,7 +24,7 @@ import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
  * @author Adrian
  */
 @Repository
-public class UniversalItemClassDaoImpl extends AbstractHibernateDao<UniversalItemClass, Integer> implements UniversalItemClassDao {
+public class UniversalItemClassDaoImpl extends AbstractHibernateDao<UniversalItemClass, UniversalItemClass, Integer> implements UniversalItemClassDao {
 
     @Override
     public List<UniversalItemClass> searchByCriteria(final ItemClassCriteria searchcriteria) {

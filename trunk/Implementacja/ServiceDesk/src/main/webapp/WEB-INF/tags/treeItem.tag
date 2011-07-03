@@ -7,10 +7,10 @@
 <%@ taglib prefix="util" uri="/WEB-INF/util.tld" %>
 
 <c:set var="itemContent">
-    ${item.name}
+    ${item.value.name}
 </c:set>
 
-<c:if test="${item.current}">
+<c:if test="${item.selected}">
     <c:set var="itemContent">
         <span class="current_item">${itemContent}</span>
     </c:set>
@@ -24,7 +24,7 @@
             </span>
         </c:when>
         <c:otherwise>
-            <a href="${util:format(urlFormat, item.id)}" class="standard_link">
+            <a href="${util:format(urlFormat, item.value.id)}" class="standard_link">
                 ${itemContent}
             </a>
         </c:otherwise>

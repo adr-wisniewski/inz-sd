@@ -260,8 +260,16 @@ public class RelationshipClass extends AbstractEntityClass {
     }
 
     @Override
-    public void accept(EntityClassVisitor visitor) {
-        visitor.visit(this);
+    public <ReturnType> ReturnType accept(EntityClassVisitor<ReturnType> visitor) {
+        return visitor.visit(this);
+    }
+
+    public Relationship createRelationship() {
+        if(isAbstraction())
+            throw new EntityClassIsAbstractException(this);
+        
+        Relationship relationship = new Relationship(this);
+        return relationship;
     }
 
     protected static class ItemTypeResolver implements ItemClassVisitor {

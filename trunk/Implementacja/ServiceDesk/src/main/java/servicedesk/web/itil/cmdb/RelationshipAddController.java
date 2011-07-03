@@ -20,7 +20,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.itil.cmdb.domain.Item;
 import servicedesk.core.itil.cmdb.domain.Relationship;
 import servicedesk.core.itil.cmdb.domain.RelationshipClass;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -47,13 +47,11 @@ public class RelationshipAddController extends AbstractRelationshipController {
             @PathVariable("itemid") Integer itemId) {
 
         RelationshipClass relationshipClass = relationshipClassService.load(classId);
+        Relationship relationship = relationshipClass.createRelationship();
+        
         Item item = itemService.load(itemId);
-
-        Relationship relationship = new Relationship();
-        relationship.setRelationshipClass(relationshipClass);
         relationship.setSourceItem(item);
-        relationship.populateAttributeValues();
-
+        
         map.addAttribute(relationship);
         map.addAttribute("origin", item);
         return "redirect:/cmdb/relationship/new";
@@ -65,12 +63,10 @@ public class RelationshipAddController extends AbstractRelationshipController {
             @PathVariable("itemid") Integer itemId) {
 
         RelationshipClass relationshipClass = relationshipClassService.load(classId);
+        Relationship relationship = relationshipClass.createRelationship();
+        
         Item item = itemService.load(itemId);
-
-        Relationship relationship = new Relationship();
-        relationship.setRelationshipClass(relationshipClass);
-        relationship.setTargetItem(item);
-        relationship.populateAttributeValues();
+        relationship.setTargetItem(item); 
 
         map.addAttribute(relationship);
         map.addAttribute("origin", item);

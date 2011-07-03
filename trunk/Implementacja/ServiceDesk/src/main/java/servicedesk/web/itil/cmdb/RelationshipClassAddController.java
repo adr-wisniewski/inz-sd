@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.itil.cmdb.domain.RelationshipClass;
-import servicedesk.core.base.validation.BusinessConstraintViolationException;
+import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 
 /**
  *
@@ -45,8 +45,9 @@ public class RelationshipClassAddController extends AbstractRelationshipClassCon
 
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String creteNewInstance(ModelMap map) {
-            map.addAttribute(new RelationshipClass());
-            return "redirect:/cmdb/relationship/class/new";
+        RelationshipClass rc = service.create();
+        map.addAttribute(rc);
+        return "redirect:/cmdb/relationship/class/new";
     }
 
     @RequestMapping(value="/new", method = RequestMethod.GET)

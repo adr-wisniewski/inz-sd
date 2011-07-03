@@ -5,6 +5,8 @@
 
 package servicedesk.web.itil.cmdb;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import servicedesk.core.itil.cmdb.domain.EntityClass;
 import servicedesk.core.itil.cmdb.domain.ItemClass;
 import servicedesk.core.itil.cmdb.domain.RelationshipClass;
@@ -14,27 +16,27 @@ import servicedesk.core.itil.cmdb.domain.helper.EntityClassVisitor;
  *
  * @author Adrian
  */
-public class EntityClassRedirectorVisitor implements EntityClassVisitor {
+@Component
+public class EntityClassRedirectorVisitor implements EntityClassVisitor<String> {
 
-    EntityClassLinkVisitor decoratedVisitor = new EntityClassLinkVisitor();
+    @Autowired
+    protected EntityClassLinkVisitor linkVisitor;
 
-    public static String process(EntityClass target) {
-        EntityClassRedirectorVisitor visitor = new EntityClassRedirectorVisitor();
-        target.accept(visitor);
-        return visitor.getRedirectUrl();
+    public String process(EntityClass target) {
+        return target.accept(this);
     }
 
-    public String getRedirectUrl() {
-        return "redirect:" + decoratedVisitor.getLinkUrl();
-    }
-
-    @Override
-    public void visit(ItemClass itemClass) {
-        decoratedVisitor.visit(itemClass);
+    protected String decorateUrl(String url) {
+        return "redirect:" + url;
     }
 
     @Override
-    public void visit(RelationshipClass relationshipClass) {
-        decoratedVisitor.visit(relationshipClass);
+    public String visit(ItemClass itemClass) {
+        return decorateUrl(linkVisitor.visit(itemClass));
+    }
+
+    @Override
+    public String visit(RelationshipClass relationshipClass) {
+        return decorateUrl(linkVisitor.visit(relationshipClass));
     }
 }

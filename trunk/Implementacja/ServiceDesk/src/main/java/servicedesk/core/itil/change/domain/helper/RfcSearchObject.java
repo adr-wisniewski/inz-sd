@@ -5,13 +5,14 @@
 package servicedesk.core.itil.change.domain.helper;
 
 import java.util.Date;
-import servicedesk.core.itil.change.domain.RfcCategory;
-import servicedesk.core.itil.change.domain.RfcImpact;
-import servicedesk.core.itil.change.domain.RfcPriority;
-import servicedesk.core.itil.change.domain.RfcResolution;
-import servicedesk.core.itil.change.domain.RfcState;
-import servicedesk.core.hr.domain.Employee;
-import servicedesk.core.itil.change.domain.Rfc;
+import servicedesk.core.itil.change.domain.entity.RfcCategory;
+import servicedesk.core.itil.change.domain.entity.RfcImpact;
+import servicedesk.core.itil.change.domain.entity.RfcPriority;
+import servicedesk.core.itil.change.domain.entity.RfcResolution;
+import servicedesk.core.itil.change.domain.entity.RfcState;
+import servicedesk.core.base.employee.domain.Employee;
+import servicedesk.core.base.security.domain.User;
+import servicedesk.core.itil.change.domain.entity.Rfc;
 import servicedesk.infrastructure.search.SearchObject;
 import servicedesk.infrastructure.search.Range;
 import servicedesk.infrastructure.search.annotations.AllowEmptySearch;
@@ -23,8 +24,8 @@ import servicedesk.infrastructure.search.annotations.AllowEmptySearch;
 @AllowEmptySearch
 public class RfcSearchObject implements SearchObject<Rfc> {
     private Integer id;
-    private Employee creator;
-    private Range<Date> timestamp = new Range<Date>();;
+    private User creator;
+    private Range<Date> timestamp = new Range<Date>();
     private String title;
     private String description;
     private RfcState state;
@@ -66,14 +67,14 @@ public class RfcSearchObject implements SearchObject<Rfc> {
     /**
      * @return the creator
      */
-    public Employee getCreator() {
+    public User getCreator() {
         return creator;
     }
 
     /**
      * @param creator the creator to set
      */
-    public void setCreator(Employee creator) {
+    public void setCreator(User creator) {
         this.creator = creator;
     }
 
