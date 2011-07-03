@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="8DE9685A-E220-A92B-56A1-C59EBE7B00AE" directorySegmentName="seg_0" name="PRIORITY_TYPES_IM">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+   <commentInRDBMS>Słownik z możliwymi priorytetami dla incydentów.</commentInRDBMS>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>PRIORITY_TYPES_PK</pkName>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Column</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <columns>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="PRIORITY_CODE" id="EE196E45-04CD-D7EA-4BC3-98E78FFD58D8">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>918F5625-4CF5-EF4B-896A-E764AA5E87AF</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="NAME" id="F0A73078-9138-C56D-5718-C946007070D1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>B6F38982-4ADC-506A-9C98-30EE5A347B71</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="TARGET_RESOLUTION_TIME" id="B5CDBC8C-95C9-3212-37DF-FB0B34BF145C">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <commentInRDBMS>Czas rozwiązania incydentu w godzinach.</commentInRDBMS>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>DDD21AAA-A750-2ACC-5962-72296403A7F7</domain>
+      </Column>
+   </columns>
+   <indexes>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="34E2D008-32D7-107E-3394-55005E70AF00" name="PRIORITY_TYPES_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <indexState>Primary Constraint</indexState>
+         <indexColumnUsage>
+            <colUsage columnID="EE196E45-04CD-D7EA-4BC3-98E78FFD58D8"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+   </indexes>
+</Table>

@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="789685AD-1391-313F-13B9-ACA2F3F17626" directorySegmentName="seg_1" name="SIGNAL_OBJECT_TYPES">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+   <commentInRDBMS>Tabele zawierające dane o typach obiektów. Przykładowe typy to: incydent, problem, zgłoszenie.</commentInRDBMS>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>SIGNAL_OBJECT_TYPES_PK</pkName>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Column</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <columns>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="OBJECT_CODE" id="5AFA17A9-62FB-4174-B3B0-F5079F7FD215">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>DEC2F521-04C5-9782-805B-38D1885597DD</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="VIEW_NAME" id="C83C3C5E-2694-632E-A373-03C4C64EA62C">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>FD847F30-56BA-A357-F15D-0A85AE1BCF23</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="ID_COLUMN_NAME" id="50E4BDFB-7555-BB79-BDEF-F15D1A8EC19D">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>FD847F30-56BA-A357-F15D-0A85AE1BCF23</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="NAME" id="12F82BCA-5D6B-4D87-DEE0-4F61EF453881">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>B6F38982-4ADC-506A-9C98-30EE5A347B71</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="DETAILS_URL" id="E4BC85FA-7FC4-6DED-4EA0-6E5F551923AE">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>DD4139DC-BA1B-69C3-31D1-EB30511397BF</domain>
+      </Column>
+   </columns>
+   <indexes>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="F15BF79E-DBA6-74D3-9A4B-76424D11D227" name="SIGNAL_OBJECT_TYPES_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <indexState>Primary Constraint</indexState>
+         <indexColumnUsage>
+            <colUsage columnID="5AFA17A9-62FB-4174-B3B0-F5079F7FD215"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+   </indexes>
+</Table>

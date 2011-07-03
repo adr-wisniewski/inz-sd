@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="2EDACB99-D4E9-99A4-824B-0EEE93DE12C9" directorySegmentName="seg_0" name="INCIDENT_PROBLEM">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+   <commentInRDBMS>Tabela asocjacyjna pomiędzy problemami oraz incydentami.</commentInRDBMS>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>INCIDENT_PROBLEM_PK</pkName>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Column</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <columns>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="INCIDENT_ID" id="08F5C017-5F4C-7F78-26DC-711AD8EB8683">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>7D3B4839-F19D-90B1-591D-CBD818B6F115</delegate>
+         <associations>
+            <colAssociation fkAssociation="D41A4EA2-C800-84F5-0694-17F500853870" referredColumn="7D3B4839-F19D-90B1-591D-CBD818B6F115"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="PROBLEM_ID" id="6EDE7AF2-22D0-EB6A-2706-BB1CE972AA79">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>6CE1F9DD-5213-570E-03A7-A049F10142DB</delegate>
+         <associations>
+            <colAssociation fkAssociation="93A57920-CA1C-9378-9231-C417C0D95AE2" referredColumn="6CE1F9DD-5213-570E-03A7-A049F10142DB"/>
+         </associations>
+      </Column>
+   </columns>
+   <indexes>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="B043054E-E57E-F9C8-1DBE-15591CCA1C04" name="INCIDENT_PROBLEM_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <indexState>Primary Constraint</indexState>
+         <indexColumnUsage>
+            <colUsage columnID="08F5C017-5F4C-7F78-26DC-711AD8EB8683"/>
+            <colUsage columnID="6EDE7AF2-22D0-EB6A-2706-BB1CE972AA79"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="4B4C4A56-E2C2-CB18-BE14-3F9F7FD9E92C" name="INCIDENT_PROBLEM_INCIDENT_FK1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="08F5C017-5F4C-7F78-26DC-711AD8EB8683"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="16E14A70-A8E1-0FB2-6CFC-D2C9AA11D895" name="INCIDENT_PROBLEM_PROBLEMS_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="6EDE7AF2-22D0-EB6A-2706-BB1CE972AA79"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+   </indexes>
+</Table>

@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="75F2ECA8-789F-3241-FC0A-32FC10191B90" directorySegmentName="seg_0" name="IMPACT_TYPES_PM">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+   <commentInRDBMS>Słownik z typami wpływów dla problemów.</commentInRDBMS>
+   <generatorID>A9295ACD-A1FA-2139-1A5C-0B34BD4404F9</generatorID>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>IMPACT_TYPES_PM_PK</pkName>
+   <adequatelyNormalized>NO</adequatelyNormalized>
+   <expectedVolumes>0</expectedVolumes>
+   <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+   <growthPercent>0</growthPercent>
+   <growthType>Year</growthType>
+   <maxVolumes>9999999</maxVolumes>
+   <minVolumes>0</minVolumes>
+   <normalForm>Third</normalForm>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Attribute</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <attributes>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="IMPACT_CODE" id="61676B31-71DF-2C12-C3B5-00072BA7ED4E">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+         <generatorID>354CADFC-5DBF-EE94-4098-ABD4058B0374</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>918F5625-4CF5-EF4B-896A-E764AA5E87AF</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="NAME" id="D584E2EB-76D2-23B8-83DD-EAC648FAE9E7">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+         <generatorID>2876050B-352D-5F4D-0971-E28837ED89AA</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>B6F38982-4ADC-506A-9C98-30EE5A347B71</domain>
+      </Attribute>
+   </attributes>
+   <identifiers>
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="0E7F20B3-622E-0FB7-D380-0A3F65AD6BF5" name="IMPACT_TYPES_PM_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+         <generatorID>294F9CEC-A916-CEB4-BEFC-52927DF68A12</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <usedAttributes>
+            <attributeRef>61676B31-71DF-2C12-C3B5-00072BA7ED4E</attributeRef>
+         </usedAttributes>
+      </identifier>
+   </identifiers>
+</Entity>

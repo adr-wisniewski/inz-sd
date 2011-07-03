@@ -1,0 +1,132 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="798B5D6E-D04F-7C9C-D74A-8FFD76203392" directorySegmentName="seg_0" name="REQUEST_ATTRIBUTE_TYPES">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+   <commentInRDBMS>Tabela z typami atrybutów dla danej kateogrii zgłoszenia. Przykładowo jeżeli kategoria zgłoszenia jest to instalacja oprogramowania to typami atrybutów mogą być nazwa aplikacji oraz wersja aplikacji.</commentInRDBMS>
+   <generatorID>C84ABAD0-6D6B-E909-902B-43931F22CC66</generatorID>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>REQUEST_ATTRIBUTE_TYPES_PK</pkName>
+   <adequatelyNormalized>NO</adequatelyNormalized>
+   <expectedVolumes>0</expectedVolumes>
+   <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+   <growthPercent>0</growthPercent>
+   <growthType>Year</growthType>
+   <maxVolumes>9999999</maxVolumes>
+   <minVolumes>0</minVolumes>
+   <normalForm>Third</normalForm>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Attribute</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <attributes>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="TYPE_CODE" id="EC30B0F0-35AD-3D2C-AC0E-069267A9483D">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>A8FCC55E-5EF5-925B-0DBD-8B0278E95E3F</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>33CC011F-5BF6-3284-04D0-47C993B5CC89</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="REQUIRED" id="F2A6B7CC-BCDD-2270-8DBA-7E3DB0073F0B">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>DE6BF3B2-03F2-D7EA-A5AE-2E64E0C33E8B</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <constraintName>REQ_ATTR_REQUIRED_CHK</constraintName>
+         <useDomainConstraints>false</useDomainConstraints>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>DEC2F521-04C5-9782-805B-38D1885597DD</domain>
+         <checkConstraint>
+            <implementationDef dbType="Oracle Database 10g" definition="REQUIRED IN ('t', 'f')"/>
+         </checkConstraint>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="CATEGORY_CODE" id="644EA18C-5F6C-609E-4D01-5DC9A45BDED1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>918F5625-4CF5-EF4B-896A-E764AA5E87AF</domain>
+         <propertyMap>
+            <property name="refers.attribute" value="787E9A2A-BF06-625C-4296-2A27F702B6DA"/>
+         </propertyMap>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="NAME" id="F6F3EDDE-6F11-BB6A-7AE5-E89BE8C26C94">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>83FE1BC1-61FB-47C3-1918-2FA89FD4DF11</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>B6F38982-4ADC-506A-9C98-30EE5A347B71</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="INPUT_TYPE" id="51A4D285-CA3B-4296-04A1-20E489D53646">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>9C283B87-3E67-9E4F-63AB-2D7C81393720</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>B6F38982-4ADC-506A-9C98-30EE5A347B71</domain>
+      </Attribute>
+   </attributes>
+   <identifiers>
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="E35FA7A0-A1BA-CA57-740B-90061BD6B5C7" name="REQUEST_ATTRIBUTE_TYPES_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>5BB9213B-9552-72D4-72E6-A170281FFE0C</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <usedAttributes>
+            <attributeRef>EC30B0F0-35AD-3D2C-AC0E-069267A9483D</attributeRef>
+         </usedAttributes>
+      </identifier>
+   </identifiers>
+</Entity>

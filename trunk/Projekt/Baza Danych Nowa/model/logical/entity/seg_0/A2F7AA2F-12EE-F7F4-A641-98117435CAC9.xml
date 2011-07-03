@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="A2F7AA2F-12EE-F7F4-A641-98117435CAC9" directorySegmentName="seg_0" name="AGREEMENTS">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+   <generatorID>E6A4F207-D6B1-3FB7-48F6-C1E8DF785448</generatorID>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>SLA_PK</pkName>
+   <adequatelyNormalized>NO</adequatelyNormalized>
+   <expectedVolumes>0</expectedVolumes>
+   <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+   <growthPercent>0</growthPercent>
+   <growthType>Year</growthType>
+   <maxVolumes>9999999</maxVolumes>
+   <minVolumes>0</minVolumes>
+   <normalForm>Third</normalForm>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Attribute</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <attributes>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="AGREEMENT_ID" id="F800F848-38B7-5F86-E7B1-8C4381D2E955">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+         <generatorID>EF37E129-E627-7D9C-8F2F-361F14F435B8</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="START_HOUR" id="4EBB4BB9-EAD1-7DD7-2CCC-378480960561">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+         <generatorID>85EDFC80-B780-263A-F585-7CE7451BEF4D</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>DDD21AAA-A750-2ACC-5962-72296403A7F7</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="END_HOUR" id="B473D4A3-0108-D95C-C50C-3C8E19B90440">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+         <generatorID>99D0EBDB-02F7-C787-77B9-432F062D3C91</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>DDD21AAA-A750-2ACC-5962-72296403A7F7</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="RESOLUTION_TIME" id="E187AB6A-AC3A-0AEF-E19C-767FDA0AA867">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+         <generatorID>C0E98651-1E3D-4A42-B0C5-994A0A7B5957</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>DDD21AAA-A750-2ACC-5962-72296403A7F7</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="AVAILABILITY" id="4697EE93-83B2-8778-B478-3E9067135B5B">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+         <generatorID>AC5AB9DB-527C-2888-F0F1-6F1450201125</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>32033EB9-F4A3-55CF-40C0-300F5AF4C3F2</domain>
+      </Attribute>
+   </attributes>
+   <identifiers>
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="4A00B026-8725-ABF0-B02C-B759D2E93989" name="SLA_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:46 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:46 UTC</changedTime>
+         <generatorID>69DEC86A-7920-59AB-E772-B05AC79A6884</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <usedAttributes>
+            <attributeRef>F800F848-38B7-5F86-E7B1-8C4381D2E955</attributeRef>
+         </usedAttributes>
+      </identifier>
+   </identifiers>
+</Entity>

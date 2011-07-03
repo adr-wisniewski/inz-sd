@@ -1,0 +1,430 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="A771E677-EC27-3720-3F0E-C600ABF45391" directorySegmentName="seg_0" name="INCIDENTS">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+   <commentInRDBMS>Incydenty</commentInRDBMS>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>INCIDENTS_PK</pkName>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Column</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <columns>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="INCIDENT_ID" id="7D3B4839-F19D-90B1-591D-CBD818B6F115">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="LAST_EDIT_BY" id="FA7E6B52-B842-D750-3E63-A62D43699709">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>4C7E5F4B-E5D4-5455-9D93-1C5B3C9C50F7</delegate>
+         <associations>
+            <colAssociation fkAssociation="53E81C6E-FFDC-8735-C1AA-36957373A4F1" referredColumn="4C7E5F4B-E5D4-5455-9D93-1C5B3C9C50F7"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="IMPACT_CODE" id="A89EDCC8-DB25-5CEB-923E-06CDC8A4343B">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>918F5625-4CF5-EF4B-896A-E764AA5E87AF</domain>
+         <delegate>88EC59C9-C559-43CD-AA40-611A84581AD5</delegate>
+         <associations>
+            <colAssociation fkAssociation="954206BB-2850-19A3-900A-D7DB370D56FC" referredColumn="88EC59C9-C559-43CD-AA40-611A84581AD5"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="URGENCY_CODE" id="C29C230E-9F87-46C0-E1C5-521AB792C96D">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>918F5625-4CF5-EF4B-896A-E764AA5E87AF</domain>
+         <delegate>2CF425A0-D9F9-288B-95FA-2D9D67219D8D</delegate>
+         <associations>
+            <colAssociation fkAssociation="FC9B29D2-526E-A9DA-2B1A-003FA902E78B" referredColumn="2CF425A0-D9F9-288B-95FA-2D9D67219D8D"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="STATUS_CODE" id="13AEC2CF-21A2-C0E8-F92A-C7FF20D46B2B">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <defaultValue>&amp;apos;OPEN&amp;apos;</defaultValue>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>918F5625-4CF5-EF4B-896A-E764AA5E87AF</domain>
+         <delegate>11231213-7635-45B5-7067-C178191DA967</delegate>
+         <associations>
+            <colAssociation fkAssociation="D01A9D4B-C33D-49DA-05CF-550528FD7C19" referredColumn="11231213-7635-45B5-7067-C178191DA967"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="REVIEW" id="E5D720F4-99F1-7156-D81E-9B8E661FA246">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>7B72AFC6-07E9-BB60-8190-AA22330A7E0C</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="PRIORITY_CODE" id="4B603E2F-FA3D-0729-D865-91EF12474615">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>918F5625-4CF5-EF4B-896A-E764AA5E87AF</domain>
+         <delegate>EE196E45-04CD-D7EA-4BC3-98E78FFD58D8</delegate>
+         <associations>
+            <colAssociation fkAssociation="7366507C-EC1E-E474-70C4-687F0C779CFC" referredColumn="EE196E45-04CD-D7EA-4BC3-98E78FFD58D8"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="AUTHOR" id="47CEDF68-FEE6-EF8D-26EE-2BA44A3BF58F">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>4C7E5F4B-E5D4-5455-9D93-1C5B3C9C50F7</delegate>
+         <associations>
+            <colAssociation fkAssociation="18A8E8CF-FCD2-B52C-2BDB-B5A25D0281BA" referredColumn="4C7E5F4B-E5D4-5455-9D93-1C5B3C9C50F7"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="CATEGORY_CODE" id="4B254C84-040E-2A26-84F4-38751E270194">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>918F5625-4CF5-EF4B-896A-E764AA5E87AF</domain>
+         <delegate>9C941DFF-AE87-2DA0-9270-3A652A30FD0C</delegate>
+         <associations>
+            <colAssociation fkAssociation="DB28EC5C-2831-3A71-68B3-42FE6165B413" referredColumn="9C941DFF-AE87-2DA0-9270-3A652A30FD0C"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="CREATION_DATE" id="A28E10A3-B4B3-94B0-218C-8955D81E1A9F">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT007</logicalDatatype>
+         <domain>61DB3F09-32C4-A3AA-B07A-1F197F669D9F</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="CLOSURE_DATE" id="7A3DF80D-886A-4C66-6F62-87481B7CF8BA">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT007</logicalDatatype>
+         <domain>61DB3F09-32C4-A3AA-B07A-1F197F669D9F</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="SUBJECT" id="075ABDE4-2DBC-EAC6-A3C6-93FDE9E9A8C9">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>DD4139DC-BA1B-69C3-31D1-EB30511397BF</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="DESCRIPTION" id="E3971186-16B0-50C7-1462-F039EBAFA464">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>5D0F6BAD-C4E1-D760-40ED-AD1B8C3704B6</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="STAFF_MEMBER" id="31238E94-9E8B-7D3D-C8F6-B4A81BE1158B">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>4C7E5F4B-E5D4-5455-9D93-1C5B3C9C50F7</delegate>
+         <associations>
+            <colAssociation fkAssociation="064353EF-DA21-71A1-BB51-456B47C2349B" referredColumn="4C7E5F4B-E5D4-5455-9D93-1C5B3C9C50F7"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="RESOLUTION" id="88D360E3-50D6-AC18-DE6F-780BB0F31D92">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>5D0F6BAD-C4E1-D760-40ED-AD1B8C3704B6</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="SOURCE_CODE" id="0BC12DCD-A4DE-FC31-BEA0-3E76F014D52D">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>918F5625-4CF5-EF4B-896A-E764AA5E87AF</domain>
+         <delegate>262C71EB-523C-47EB-650C-F08010CCB5A3</delegate>
+         <associations>
+            <colAssociation fkAssociation="DB47499F-82D6-943F-EBA4-2F00DBFDB9F5" referredColumn="262C71EB-523C-47EB-650C-F08010CCB5A3"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="RESOLUTION_DATE" id="11A73531-2DA3-A378-0E40-2E7A04D96B20">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT007</logicalDatatype>
+         <domain>61DB3F09-32C4-A3AA-B07A-1F197F669D9F</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="GROUP_ID" id="396AA492-616B-66BF-C79B-9461B60782CE">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>1620A1DA-1583-BF2C-0768-B975C5828358</delegate>
+         <associations>
+            <colAssociation fkAssociation="73F418F5-F776-BF6B-1ECC-F474BD57C176" referredColumn="1620A1DA-1583-BF2C-0768-B975C5828358"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="TARGET_RESOLUTION_DATE" id="020D8242-5595-C3A3-5492-2CFC7E2F6527">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT007</logicalDatatype>
+         <domain>61DB3F09-32C4-A3AA-B07A-1F197F669D9F</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="SERVICE_ID" id="EE2D6F73-2D06-43CC-AFB5-722BAD2B9E2A">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>2C3D9D04-5F54-8CAE-1620-13D3F91C7294</delegate>
+         <associations>
+            <colAssociation fkAssociation="F9FA3DBB-FA13-8428-B596-352BF5404547" referredColumn="2C3D9D04-5F54-8CAE-1620-13D3F91C7294"/>
+         </associations>
+      </Column>
+   </columns>
+   <indexes>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="CAA5AA17-C69F-254C-54CC-908287091E81" name="INCIDENTS_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <indexState>Primary Constraint</indexState>
+         <indexColumnUsage>
+            <colUsage columnID="7D3B4839-F19D-90B1-591D-CBD818B6F115"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="E43CEBE3-B871-E861-3189-7FA612AB5FC6" name="INCIDENTS_EMPLOYEES_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="47CEDF68-FEE6-EF8D-26EE-2BA44A3BF58F"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="FCA44301-2E7D-2A37-ECB4-1BCD1C9D640D" name="INCIDENTS_EMPLOYEES_FK1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="31238E94-9E8B-7D3D-C8F6-B4A81BE1158B"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="0A15BAE7-4561-4F94-4C5B-610009D7FF43" name="INCIDENTS_EMPLOYEES_FK2">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="FA7E6B52-B842-D750-3E63-A62D43699709"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="42B85668-7859-7E7D-7A9A-981405CBED3E" name="INCIDENTS_IMPACT_TYPES_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="A89EDCC8-DB25-5CEB-923E-06CDC8A4343B"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="D89667A1-7AA1-7737-BBB4-57BF95D8F47F" name="INCIDENTS_INCIDENT_CATEGO_FK1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="4B254C84-040E-2A26-84F4-38751E270194"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="3997617C-F7FC-E0FC-3740-8DBE065D4391" name="INCIDENTS_PRIORITY_TYPES_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="4B603E2F-FA3D-0729-D865-91EF12474615"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="C0D0BE15-7A01-F7B3-0DEE-BAE1A73FEE19" name="INCIDENTS_SERVICES_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="EE2D6F73-2D06-43CC-AFB5-722BAD2B9E2A"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="111D34A8-48C0-32CE-4EB5-9A7E755D1813" name="INCIDENTS_SOURCE_TYPES_IM_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="0BC12DCD-A4DE-FC31-BEA0-3E76F014D52D"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="0EE61E8C-12B9-D5FD-C9E2-A722E9814621" name="INCIDENTS_STATUSES_IM_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="13AEC2CF-21A2-C0E8-F92A-C7FF20D46B2B"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="5D08CE3F-F09D-E344-E695-CFB0FD42D7CE" name="INCIDENTS_SUPPORT_GROUPS_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="396AA492-616B-66BF-C79B-9461B60782CE"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="716A2177-CF2F-9240-7A08-6F3B4334EA55" name="INCIDENTS_URGENCY_TYPES_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="C29C230E-9F87-46C0-E1C5-521AB792C96D"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+   </indexes>
+</Table>

@@ -1,0 +1,147 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" id="13B4B0E1-E018-68E0-762B-5E0A4618E92F" directorySegmentName="seg_0" name="SERVICES">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+   <generatorID>EE5F1332-EF6F-E437-43BC-9FC4FC3D8D2D</generatorID>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>SERVICES_PK</pkName>
+   <adequatelyNormalized>NO</adequatelyNormalized>
+   <expectedVolumes>0</expectedVolumes>
+   <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+   <growthPercent>0</growthPercent>
+   <growthType>Year</growthType>
+   <maxVolumes>9999999</maxVolumes>
+   <minVolumes>0</minVolumes>
+   <normalForm>Third</normalForm>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Attribute</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <attributes>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="SERVICE_ID" id="4EB0B55F-4F21-22BB-0A22-389CA58B091E">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>2C3D9D04-5F54-8CAE-1620-13D3F91C7294</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="NAME" id="4039698E-8DCB-9666-3228-F980811C9BFE">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>AC49556B-B491-8CFF-0FDE-C64BDB02A21F</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>82964169-9D13-1032-2627-B1ECCE65FEFF</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="DESCRIPTION" id="F229295C-61E1-1F5E-FF6B-65A3C683AA4A">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>B7B7E269-D8B3-FB0F-D1BE-E1906429C44D</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>E0D3EEE1-3FAE-4F18-F36A-8B3DB4ED92F0</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="SERVICE_TYPE_CODE" id="7E08A01E-824D-0164-6485-A9EB8EE037F1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>EA9918D8-48CC-19BE-31E6-96742077C572</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="BUSINESS_IMPACT_CODE" id="245C1063-982D-9AD8-A127-7B8E4BBE77FC">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>1EF0C8C8-B5A5-5490-E572-A2D7CA1137D2</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>EA9918D8-48CC-19BE-31E6-96742077C572</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="BUSINESS_PRIORITY_CODE" id="F98A407A-EB7E-F4F1-6286-67E0D74EDA1F">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>92C68EAB-A523-346F-5B8D-2EFAE24FB2E5</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>EA9918D8-48CC-19BE-31E6-96742077C572</domain>
+      </Attribute>
+      <Attribute class="oracle.dbtools.crest.model.design.logical.Attribute" name="AGREEMENT_ID" id="60616081-44E0-281E-5B4A-CB5815B341A8">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <propertyMap>
+            <property name="refers.attribute" value="F800F848-38B7-5F86-E7B1-8C4381D2E955"/>
+         </propertyMap>
+      </Attribute>
+   </attributes>
+   <identifiers>
+      <identifier class="oracle.dbtools.crest.model.design.logical.CandidateKey" id="4FA2CDF0-EFC8-38E0-37F0-CED8CB6BC200" name="SERVICES_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:17:47 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:17:47 UTC</changedTime>
+         <generatorID>1D5BC073-49DC-FDBC-8796-0A41D6D90E7C</generatorID>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <usedAttributes>
+            <attributeRef>4EB0B55F-4F21-22BB-0A22-389CA58B091E</attributeRef>
+         </usedAttributes>
+      </identifier>
+   </identifiers>
+</Entity>

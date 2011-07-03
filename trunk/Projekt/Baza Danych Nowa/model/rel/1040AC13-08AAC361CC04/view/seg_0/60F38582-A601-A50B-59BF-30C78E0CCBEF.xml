@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" id="60F38582-A601-A50B-59BF-30C78E0CCBEF" directorySegmentName="seg_0" name="CATEGORIES_PM_V">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <userDefined>true</userDefined>
+   <userDefinedSQL>CREATE OR REPLACE VIEW CATEGORIES_PM_V AS select&amp;lt;br&amp;gt;  c1.name as main_category, null as sub_category, null as sub_sub_category, category_code, name&amp;lt;br&amp;gt;from&amp;lt;br&amp;gt;  categories_pm c1&amp;lt;br&amp;gt;where&amp;lt;br&amp;gt;  c1.parent_category is null&amp;lt;br&amp;gt;union all&amp;lt;br&amp;gt;select&amp;lt;br&amp;gt;  c2.name as main_category, c1.name as sub_category, null as sub_sub_category, c1.category_code, c1.name&amp;lt;br&amp;gt;from&amp;lt;br&amp;gt;  categories_pm c1&amp;lt;br&amp;gt;  join categories_pm c2 on c1.parent_category = c2.category_code&amp;lt;br&amp;gt;where&amp;lt;br&amp;gt;  c2.parent_category is null&amp;lt;br&amp;gt;union all&amp;lt;br&amp;gt;select&amp;lt;br&amp;gt;  c3.name as main_category, c2.name as sub_category, c1.name as sub_sub_category, c1.category_code, c1.name&amp;lt;br&amp;gt;from&amp;lt;br&amp;gt;  categories_pm c1&amp;lt;br&amp;gt;  join categories_pm c2 on c1.parent_category = c2.category_code&amp;lt;br&amp;gt;  join categories_pm c3 on c2.parent_category = c3.category_code&amp;lt;br&amp;gt;where&amp;lt;br&amp;gt;  c3.parent_category is null&amp;lt;br&amp;gt;union all&amp;lt;br&amp;gt;select&amp;lt;br&amp;gt;  c4.name as main_category, c3.name as sub_category, c2.name as sub_sub_category, c1.category_code, c1.name&amp;lt;br&amp;gt;from&amp;lt;br&amp;gt;  categories_pm c1&amp;lt;br&amp;gt;  join categories_pm c2 on c1.parent_category = c2.category_code&amp;lt;br&amp;gt;  join categories_pm c3 on c2.parent_category = c3.category_code&amp;lt;br&amp;gt;  join categories_pm c4 on c3.parent_category = c4.category_code&amp;lt;br&amp;gt;where&amp;lt;br&amp;gt;  c4.parent_category is null &amp;lt;br&amp;gt;union all&amp;lt;br&amp;gt;select&amp;lt;br&amp;gt;  c5.name as main_category, c4.name as sub_category, c3.name as sub_sub_category, c1.category_code, c1.name&amp;lt;br&amp;gt;from&amp;lt;br&amp;gt;  categories_pm c1&amp;lt;br&amp;gt;  join categories_pm c2 on c1.parent_category = c2.category_code&amp;lt;br&amp;gt;  join categories_pm c3 on c2.parent_category = c3.category_code&amp;lt;br&amp;gt;  join categories_pm c4 on c3.parent_category = c4.category_code&amp;lt;br&amp;gt;  join categories_pm c5 on c4.parent_category = c3.category_code&amp;lt;br&amp;gt;where&amp;lt;br&amp;gt;  c5.parent_category is null</userDefinedSQL>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Column</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+   </fonts>
+   <usedContainers>
+      <container alias="c1" containerID="E543EEA1-7642-4A8E-C1F9-A986F79DFB73"/>
+   </usedContainers>
+   <viewElements>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="main_category" id="F37BEB41-702B-E85E-FE16-0EE92B6D04E1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>main_category</alias>
+         <dataType>VARCHAR2 (20 BYTE)</dataType>
+         <expression>name</expression>
+         <reference>false</reference>
+         <referencedColumn>478738AE-41BC-6AE6-030D-A058D88473E5</referencedColumn>
+         <table>E543EEA1-7642-4A8E-C1F9-A986F79DFB73</table>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="sub_category" id="04A7E8AE-ED82-C345-D9B7-905CDA1A69F3">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>sub_category</alias>
+         <expression>null</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="sub_sub_category" id="97D16A64-8C97-CAB7-AF80-CB154B46A1C0">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>sub_sub_category</alias>
+         <expression>null</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="category_code" id="0496E8C8-09E2-1574-BE11-112F99E6BC66">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>category_code</alias>
+         <dataType>CHAR (4 BYTE)</dataType>
+         <expression>category_code</expression>
+         <reference>false</reference>
+         <referencedColumn>CADC39C9-17B8-E3D3-587B-92F4E16C7591</referencedColumn>
+         <table>E543EEA1-7642-4A8E-C1F9-A986F79DFB73</table>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="name" id="AF7AA06E-143A-E5AC-A8BC-C759CCC7CFF5">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>name</alias>
+         <dataType>VARCHAR2 (20 BYTE)</dataType>
+         <expression>name</expression>
+         <reference>false</reference>
+         <referencedColumn>478738AE-41BC-6AE6-030D-A058D88473E5</referencedColumn>
+         <table>E543EEA1-7642-4A8E-C1F9-A986F79DFB73</table>
+      </viewElement>
+   </viewElements>
+</TableView>

@@ -1,0 +1,4 @@
+CREATE USER sd identified by sd;
+
+GRANT CONNECT, RESOURCE TO sd;
+GRANT CREATE VIEW TO sd;
