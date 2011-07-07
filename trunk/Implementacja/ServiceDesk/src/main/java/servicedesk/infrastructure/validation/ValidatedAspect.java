@@ -95,9 +95,9 @@ public class ValidatedAspect implements Ordered, ApplicationContextAware {
         if(!validator.supports(object.getClass()))
             throw new IllegalArgumentException("@Validated validator must support method's first parameter type");
 
-        dao.attach(object);
+        dao.attach(object); // FUTURE: remove after session per conversation 
         validator.validate(object, bindingResult);
-        dao.detach(object);
+        //TODO2 seems to work fine //dao.detach(object);
 
         if(bindingResult.hasErrors())
             throw new BusinessConstraintViolationException(bindingResult);

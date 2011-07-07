@@ -21,7 +21,7 @@
             <th><spring:message code="field.cmdb.class.attribute.description" /></th>
             <th><spring:message code="field.cmdb.class.attribute.class" /></th>
             <c:if test="${not empty editUrl or not empty deleteUrl}">
-            <th class="actions">
+            <th class="actions fit">
                      <spring:message code="actions" />
             </th>
             </c:if>
