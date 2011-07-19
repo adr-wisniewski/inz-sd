@@ -10,16 +10,16 @@ import servicedesk.web.base.tree.domain.NullHierarchyItem;
 import servicedesk.web.base.tree.domain.TreeCustomizer;
 import servicedesk.web.base.tree.domain.TreeItem;
 
-public class TreeBuilder<Id extends Serializable> {
+public class TreeBuilder<Type extends HierarchicalDomainObject<Id>, Id extends Serializable> {
 
-    private final HierarchyService<?, Id> dataSource;
+    private final HierarchyService<Type, Id> dataSource;
     private final TreeCustomizer customizer;
     private Class<Id> idClass;
 
     public TreeBuilder(
             Class<Id> idClass,
-            HierarchyService<?, Id> dataSource,
-            TreeCustomizer customizer) {
+            HierarchyService<Type, Id> dataSource,
+            TreeCustomizer<Type> customizer) {
         this.idClass = idClass;
         this.dataSource = dataSource;
         this.customizer = customizer;
@@ -30,11 +30,7 @@ public class TreeBuilder<Id extends Serializable> {
     }
 
     public List<TreeItem> buildTree() {
-        return buildTree(customizer, null); // start recursion
-    }
-
-    public List<TreeItem> buildTree(Id selected) {
-        return buildTree(customizer, selected); // start recursion
+        return buildTree(null); // start recursion
     }
 
     /**
@@ -45,47 +41,43 @@ public class TreeBuilder<Id extends Serializable> {
      * @param selected obecna wartosc
      * @return lista korzeni
      */
-    private List<TreeItem> buildTree(
-            TreeCustomizer customizer,
-            Id selected) {
+    public List<TreeItem> buildTree(Id selected) {
         
-        List<? extends HierarchicalDomainObject<?>> items = dataSource.getAll();
+        List<Type> items = dataSource.getAll();
         List<TreeItem> roots = new LinkedList<TreeItem>();
 
-        for (HierarchicalDomainObject<?> item : items) {
+        for (Type item : items) {
             // start from roots only
             if(item.getParent() != null)
                 continue;
             
             TreeItem root = new TreeItem(item);
-            buildTreeRecursive(root, customizer, selected);
+            buildTreeRecursive(item, root, selected);
             roots.add(root);
         }
 
         return roots;
     }
 
-    private void buildTreeRecursive(TreeItem item, TreeCustomizer customizer, Id selected) {
-        HierarchicalDomainObject<?> value = item.getValue();
-
+    private void buildTreeRecursive(Type value, TreeItem node, Id selected) {
         if (value.getId().equals(selected)) {
-            item.setSelected(true);
+            node.setSelected(true);
 
             //ustaw otwarta sciezke do obecnie zaznaczonego elementu:
-            for (TreeItem i = item.getParent(); i != null; i = i.getParent()) {
+            for (TreeItem i = node.getParent(); i != null; i = i.getParent()) {
                 i.setOpen(true);
             }
         }
 
         for (HierarchicalDomainObject<?> child : value.getChildren()) {
             TreeItem branch = new TreeItem(child);
-            item.addChild(branch);
+            node.addChild(branch);
 
-            buildTreeRecursive(branch, customizer, selected);
+            buildTreeRecursive((Type)child, branch, selected);
         }
 
         if (customizer != null) {
-            customizer.customize(item);
+            customizer.customize(node, value);
         }
     }
 

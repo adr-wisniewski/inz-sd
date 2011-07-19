@@ -5,6 +5,7 @@ import servicedesk.infrastructure.search.SearchObject;
 import servicedesk.infrastructure.util.GenericUtil;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.DetachedCriteria;
@@ -97,7 +98,7 @@ public abstract class AbstractHibernateDao<AbstractType extends DomainObject<Id>
     public List<AbstractType> search(SearchObject<AbstractType> searchObject) {
         Query query = criteriaFactory.getCriteria(typeClass, searchObject);
         if(query.isEmpty() && !query.isAllowEmptyQueries())
-            return new ArrayList<AbstractType>(0);
+            return Collections.emptyList();
         
         DetachedCriteria criteria = queryMapper.map(query);
         @SuppressWarnings("unchecked")

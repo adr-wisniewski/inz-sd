@@ -21,7 +21,7 @@ public class ChangeTreeBuilderConfiguration {
     protected RfcCategoryService categoryService;
            
     @Bean
-    public TreeBuilder<?> rfcCategoriesTree() {
-        return new TreeBuilder<Integer>(Integer.class, categoryService, null);
+    public TreeBuilder<?,?> rfcCategoriesTree() {
+        return new TreeBuilder(Integer.class, categoryService, null);
     }
 }

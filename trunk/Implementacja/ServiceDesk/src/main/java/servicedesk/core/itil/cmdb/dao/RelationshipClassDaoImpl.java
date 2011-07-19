@@ -7,6 +7,7 @@ package servicedesk.core.itil.cmdb.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
@@ -110,7 +111,7 @@ public class RelationshipClassDaoImpl extends HibernateDaoSupport implements Rel
     @Override
     public List<RelationshipClass> searchByCriteria(final RelationshipClassCriteria searchcriteria) {
         if(!searchcriteria.isInitialized())
-            return new ArrayList<RelationshipClass>();
+            return Collections.emptyList();
 
         HibernateCallback<List<RelationshipClass>> callback = new HibernateCallback<List<RelationshipClass>>() {
             @Override

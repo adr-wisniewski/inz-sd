@@ -9,6 +9,7 @@ import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -124,7 +125,7 @@ public class ItemDaoImpl extends HibernateDaoSupport implements ItemDao {
     @Override
     public Iterable<Item> search(final ItemCriteria itemCriteria) {
         if(!itemCriteria.isInitialized())
-            return new ArrayList<Item>();
+            return Collections.emptyList();
 
         HibernateCallback<Iterable<Item>> callback = new HibernateCallback<Iterable<Item>>() {
             @Override

@@ -6,6 +6,7 @@
 package servicedesk.web.base.tree.domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import servicedesk.infrastructure.interfaces.domain.HierarchicalDomainObject;
 
@@ -38,6 +39,6 @@ public class NullHierarchyItem implements HierarchicalDomainObject<String> {
 
     @Override
     public List<NullHierarchyItem> getChildren() {
-        return new ArrayList<NullHierarchyItem>(0);
+        return Collections.emptyList();
     }
 }

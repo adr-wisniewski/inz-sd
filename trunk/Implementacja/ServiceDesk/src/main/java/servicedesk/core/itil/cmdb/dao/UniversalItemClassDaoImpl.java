@@ -7,6 +7,7 @@ package servicedesk.core.itil.cmdb.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
@@ -29,7 +30,7 @@ public class UniversalItemClassDaoImpl extends AbstractHibernateDao<UniversalIte
     @Override
     public List<UniversalItemClass> searchByCriteria(final ItemClassCriteria searchcriteria) {
         if(!searchcriteria.isInitialized())
-            return new ArrayList<UniversalItemClass>();
+            return Collections.emptyList();
 
         return getHibernateTemplate().execute(new HibernateCallback<List<UniversalItemClass>>() {
 

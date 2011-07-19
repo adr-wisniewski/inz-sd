@@ -42,8 +42,8 @@ public class ItemSearchController extends AbstractItemController {
     protected static final String VIEW_BROWSE_TREE = "/cmdb/item/browse/tree";
     protected static final String VIEW_BROWSE_CATEGORY = "/cmdb/item/browse/category";
 
-    @Resource(name = "cmdbItemClassTree")
-    protected TreeBuilder<?> cmdbItemClassTree;
+    @Resource(name = "browseCmdbItemsTree")
+    protected TreeBuilder<?,?> browseCmdbItemsTree;
     
     @RequestMapping(value = "/cmdb/item/search")
     public String search(ModelMap map, @ModelAttribute(MODEL_CRITERIA) ItemCriteria criteria) {
@@ -53,7 +53,7 @@ public class ItemSearchController extends AbstractItemController {
 
     @RequestMapping(value = "/cmdb/item/browse")
     public String browse(ModelMap map) {
-        map.addAttribute(MODEL_ITEMCLASSES, cmdbItemClassTree.buildTree());
+        map.addAttribute(MODEL_ITEMCLASSES, browseCmdbItemsTree.buildTree());
         return VIEW_BROWSE_TREE;
     }
 
