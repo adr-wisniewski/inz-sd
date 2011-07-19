@@ -5,7 +5,6 @@
 
 package servicedesk.web.itil.cmdb;
 
-import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.beans.propertyeditors.CustomBooleanEditor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import servicedesk.core.itil.cmdb.domain.UniversalItemClass;
 import servicedesk.core.itil.cmdb.domain.helper.ItemClassCriteria;
 import servicedesk.web.base.tree.TreeBuilder;
 
@@ -33,7 +31,7 @@ public class ItemClassSearchController extends AbstractItemClassController {
     protected static final String MODEL_ITEMCLASSES = "itemClasses";
 
     @Resource(name = "cmdbUniversalItemClassTree")
-    protected TreeBuilder<?> cmdbUniversalItemClassTree;
+    protected TreeBuilder<?,?> cmdbUniversalItemClassTree;
     
     @InitBinder
     protected void initBinder(WebDataBinder binder) {

@@ -5,7 +5,7 @@
 
 package servicedesk.core.itil.cmdb.domain;
 
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import servicedesk.core.itil.cmdb.domain.helper.EntityClassVisitor;
@@ -52,22 +52,22 @@ public abstract class AdaptorItemClass implements ItemClass {
 
     @Override
     public Set<? extends EntityClass> getChildren() {
-        return null;
+        return Collections.emptySet();
     }
 
     @Override
     public List<Attribute> getAttributes() {
-        return new LinkedList<Attribute>();
+        return Collections.emptyList();
     }
 
     @Override
     public List<Attribute> getInheritedAttributes() {
-        return new LinkedList<Attribute>();
+        return Collections.emptyList();
     }
 
     @Override
     public List<Attribute> getAllAttributes() {
-        return new LinkedList<Attribute>();
+        return Collections.emptyList();
     }
 
     @Override

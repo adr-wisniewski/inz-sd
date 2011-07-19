@@ -32,7 +32,7 @@ public class TreePickerController {
             @RequestParam("target") String target,
             @RequestParam("value") String value) {
 
-        TreeBuilder<?> builder = getBuilder(builderName);
+        TreeBuilder<?,?> builder = getBuilder(builderName);
         List<TreeItem> roots = getRoots(builder.getIdClass(), builder, value);
          
         model.addAttribute("builder", builderName);
@@ -47,7 +47,7 @@ public class TreePickerController {
         @PathVariable("id") String itemId,
         @RequestParam("target") String target) {
 
-        TreeBuilder<?> builder = getBuilder(builderName);
+        TreeBuilder<?,?> builder = getBuilder(builderName);
         HierarchicalDomainObject<?> item = getItem(
                 builder.getIdClass(), 
                 builder, 
@@ -58,20 +58,20 @@ public class TreePickerController {
         return "servicedesk/treePickerChoose";
     }
     
-    private <Id extends Serializable> List<TreeItem> getRoots(Class<Id> idClass, TreeBuilder<?> builder, String selected) {
+    private <Id extends Serializable> List<TreeItem> getRoots(Class<Id> idClass, TreeBuilder<?,?> builder, String selected) {
         @SuppressWarnings("unchecked")
-        TreeBuilder<Id> typedBuilder = (TreeBuilder<Id>)builder;
+        TreeBuilder<?, Id> typedBuilder = (TreeBuilder<?, Id>)builder;
         return typedBuilder.buildTree(conversionService.convert(selected, idClass));
     }
     
-    private <Id extends Serializable> HierarchicalDomainObject<?> getItem(Class<Id> idClass, TreeBuilder<?> builder, String id) {
+    private <Id extends Serializable> HierarchicalDomainObject<?> getItem(Class<Id> idClass, TreeBuilder<?,?> builder, String id) {
         @SuppressWarnings("unchecked")
-        TreeBuilder<Id> typedBuilder = (TreeBuilder<Id>)builder;
+        TreeBuilder<?, Id> typedBuilder = (TreeBuilder<?, Id>)builder;
         return typedBuilder.getItem(conversionService.convert(id, idClass));
     
     }
 
-    private TreeBuilder<?> getBuilder(String builderName) {
+    private TreeBuilder<?,?> getBuilder(String builderName) {
         return beanFactory.getBean(builderName, TreeBuilder.class);
     }
 }

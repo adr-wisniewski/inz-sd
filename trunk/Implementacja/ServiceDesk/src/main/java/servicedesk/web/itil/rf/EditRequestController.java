@@ -36,7 +36,7 @@ import servicedesk.core.base.comment.validator.CommentValidator;
 public class EditRequestController {
 
     @Resource(name = "rfCategoriesTree")
-    protected TreeBuilder<?> rfCategoriesTree;
+    protected TreeBuilder<?,?> rfCategoriesTree;
     /** 
      * <!-- begin-UML-doc -->
      * Nazwa&nbsp;widoku&nbsp;formularza

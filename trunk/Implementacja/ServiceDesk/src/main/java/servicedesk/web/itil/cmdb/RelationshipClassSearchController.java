@@ -31,7 +31,7 @@ public class RelationshipClassSearchController extends AbstractRelationshipClass
     protected static final String MODEL_ITEMCLASSES = "relationshipClasses";
 
     @Resource(name = "cmdbRelationshipClassTree")
-    protected TreeBuilder<?> cmdbRelationshipClassTree;
+    protected TreeBuilder<?,?> cmdbRelationshipClassTree;
     
     @InitBinder
     protected void initBinder(WebDataBinder binder) {

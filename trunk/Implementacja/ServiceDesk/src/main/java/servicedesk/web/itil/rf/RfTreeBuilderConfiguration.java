@@ -23,7 +23,7 @@ public class RfTreeBuilderConfiguration {
     protected RequestCategoryService categoryService;
            
     @Bean
-    public TreeBuilder<?> rfCategoriesTree() {
-        return new TreeBuilder<String>(String.class, categoryService, null);
+    public TreeBuilder<?,?> rfCategoriesTree() {
+        return new TreeBuilder(String.class, categoryService, null);
     }
 }

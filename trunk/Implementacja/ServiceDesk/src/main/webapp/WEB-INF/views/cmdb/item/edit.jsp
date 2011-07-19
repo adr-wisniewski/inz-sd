@@ -15,7 +15,7 @@
         <ui:propertyList>
 
             <ui:propertyItem code="field.cmdb.item.label" label="label">
-                <form:checkbox path="label" />
+                <form:input path="label" />
                 <form:errors path="label" cssClass="error" />
             </ui:propertyItem>
 

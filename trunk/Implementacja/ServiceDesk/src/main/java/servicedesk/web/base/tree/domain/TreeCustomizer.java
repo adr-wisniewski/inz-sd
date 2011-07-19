@@ -4,10 +4,12 @@
  */
 package servicedesk.web.base.tree.domain;
 
+import servicedesk.infrastructure.interfaces.domain.HierarchicalDomainObject;
+
 /**
  *
  * @author Adrian
  */
-public interface TreeCustomizer {
-    public void customize(TreeItem item);
+public interface TreeCustomizer<Type extends HierarchicalDomainObject<?>> {
+    public void customize(TreeItem item, Type value);
 }

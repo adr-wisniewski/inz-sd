@@ -23,7 +23,7 @@ public class ImTreeBuilderConfiguration {
     protected IncidentCategoryService categoryService;
            
     @Bean
-    public TreeBuilder<?> imCategoriesTree() {
-        return new TreeBuilder<String>(String.class, categoryService, null);
+    public TreeBuilder<?,?> imCategoriesTree() {
+        return new TreeBuilder(String.class, categoryService, null);
     }
 }

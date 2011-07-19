@@ -28,7 +28,7 @@ public class RfcCategoryViewController extends AbstractRfcCategoryController {
     protected static final String MODEL_IMPACTS = "categories";
     
     @Resource(name="rfcCategoriesTree")
-    protected TreeBuilder<?> rfcCategoriesTree;
+    protected TreeBuilder<?,?> rfcCategoriesTree;
     
     @RequestMapping
     public String all(ModelMap map) {
