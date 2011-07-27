@@ -1,0 +1,17 @@
+CREATE OR REPLACE
+PACKAGE BODY APP AS
+
+
+
+  PROCEDURE set_user(user_id NUMBER) AS
+  BEGIN
+    CURRENT_USER_ID := user_id;
+  END set_user;
+
+  FUNCTION get_user RETURN NUMBER AS
+  BEGIN
+    RETURN CURRENT_USER_ID;
+  END get_user;
+
+END APP;
+/

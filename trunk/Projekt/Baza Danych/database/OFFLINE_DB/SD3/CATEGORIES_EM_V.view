@@ -1,0 +1,557 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1111/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">2140bc33-eb69-4043-9269-4d1032b47c52</identifier>
+  </ID>
+  <name>CATEGORIES_EM_V</name>
+  <SQLQuery class="oracle.javatools.db.sql.NonDeclarativeSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">fae02ed9-5eb4-46a6-b2d5-65d7ca20ddea</identifier>
+    </ID>
+    <SQLText>SELECT c1.name AS main_category,
+    NULL         AS sub_category,
+    NULL         AS sub_sub_category,
+    category_code,
+    name
+  FROM categories_em c1
+  WHERE c1.parent_category IS NULL
+  UNION ALL
+  SELECT c2.name AS main_category,
+    c1.name      AS sub_category,
+    NULL         AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category     = c2.category_code
+  WHERE c2.parent_category IS NULL
+  UNION ALL
+  SELECT c3.name AS main_category,
+    c2.name      AS sub_category,
+    c1.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category     = c3.category_code
+  WHERE c3.parent_category IS NULL
+  UNION ALL
+  SELECT c4.name AS main_category,
+    c3.name      AS sub_category,
+    c2.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category = c3.category_code
+  JOIN categories_em c4
+  ON c3.parent_category     = c4.category_code
+  WHERE c4.parent_category IS NULL
+  UNION ALL
+  SELECT c5.name AS main_category,
+    c4.name      AS sub_category,
+    c3.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category = c3.category_code
+  JOIN categories_em c4
+  ON c3.parent_category = c4.category_code
+  JOIN categories_em c5
+  ON c4.parent_category     = c3.category_code
+  WHERE c5.parent_category IS NULL</SQLText>
+    <distinct>false</distinct>
+    <fromObjects>
+      <fromObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3cce33ee-8f06-4768-9868-24e6dfbdd882</identifier>
+        </ID>
+        <alias>c1</alias>
+        <expression class="oracle.javatools.db.sql.RelationUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">fe93975a-f30b-46ed-ae1e-98678d60bce1</identifier>
+          </ID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORIES_EM</name>
+            <identifier class="java.lang.String">ac45cfcd-2ae0-4b58-a706-6e1b15979a42</identifier>
+            <schemaName>SD3</schemaName>
+            <type>TABLE</type>
+          </objectID>
+        </expression>
+      </fromObject>
+    </fromObjects>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">abe2b258-2032-422d-bf0d-5f93dbe4a408</identifier>
+        </ID>
+        <alias>main_category</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">fb2cfcb0-3313-4fcb-934d-6afa44b4fe24</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>c1</name>
+            <identifier class="java.lang.String">3cce33ee-8f06-4768-9868-24e6dfbdd882</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">fae02ed9-5eb4-46a6-b2d5-65d7ca20ddea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>CATEGORIES_EM_V</name>
+                <identifier class="java.lang.String">2140bc33-eb69-4043-9269-4d1032b47c52</identifier>
+                <schemaName>SD3</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>SD3</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>SD3</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>NAME</name>
+            <identifier class="java.lang.String">57566b9e-8ea4-4b2e-8ae8-52e31bcfd1e6</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CATEGORIES_EM</name>
+              <identifier class="java.lang.String">ac45cfcd-2ae0-4b58-a706-6e1b15979a42</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD3</schemaName>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5f7a18c7-5c65-493b-a05e-cbb32a724544</identifier>
+        </ID>
+        <alias>sub_category</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">6761dcdf-1043-4395-9826-45e2524e465d</identifier>
+          </ID>
+          <SQLText>NULL</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4190af41-a118-4bd5-8e99-ef57ca55e26c</identifier>
+        </ID>
+        <alias>sub_sub_category</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">9d1a0e54-9a21-4260-8fab-a61be7608c04</identifier>
+          </ID>
+          <SQLText>NULL</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5dc64fe3-81dc-43e2-839e-5c3a07798ada</identifier>
+        </ID>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">57489352-4a6b-4bc6-a2d7-c7e3f6cb7686</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>c1</name>
+            <identifier class="java.lang.String">3cce33ee-8f06-4768-9868-24e6dfbdd882</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">fae02ed9-5eb4-46a6-b2d5-65d7ca20ddea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>CATEGORIES_EM_V</name>
+                <identifier class="java.lang.String">2140bc33-eb69-4043-9269-4d1032b47c52</identifier>
+                <schemaName>SD3</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>SD3</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>SD3</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_CODE</name>
+            <identifier class="java.lang.String">ad0e4901-2b11-4def-b12a-c066aef25294</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CATEGORIES_EM</name>
+              <identifier class="java.lang.String">ac45cfcd-2ae0-4b58-a706-6e1b15979a42</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD3</schemaName>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>false</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f9831136-5dcb-4f4e-81f0-fe20e4b5ca56</identifier>
+        </ID>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">202d3cce-b215-4da1-be77-84c6f3d865be</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>c1</name>
+            <identifier class="java.lang.String">3cce33ee-8f06-4768-9868-24e6dfbdd882</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">fae02ed9-5eb4-46a6-b2d5-65d7ca20ddea</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>CATEGORIES_EM_V</name>
+                <identifier class="java.lang.String">2140bc33-eb69-4043-9269-4d1032b47c52</identifier>
+                <schemaName>SD3</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>SD3</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>SD3</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>NAME</name>
+            <identifier class="java.lang.String">57566b9e-8ea4-4b2e-8ae8-52e31bcfd1e6</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>CATEGORIES_EM</name>
+              <identifier class="java.lang.String">ac45cfcd-2ae0-4b58-a706-6e1b15979a42</identifier>
+              <schemaName>SD3</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD3</schemaName>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>false</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <queryString>SELECT c1.name AS main_category,
+    NULL         AS sub_category,
+    NULL         AS sub_sub_category,
+    category_code,
+    name
+  FROM categories_em c1
+  WHERE c1.parent_category IS NULL
+  UNION ALL
+  SELECT c2.name AS main_category,
+    c1.name      AS sub_category,
+    NULL         AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category     = c2.category_code
+  WHERE c2.parent_category IS NULL
+  UNION ALL
+  SELECT c3.name AS main_category,
+    c2.name      AS sub_category,
+    c1.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category     = c3.category_code
+  WHERE c3.parent_category IS NULL
+  UNION ALL
+  SELECT c4.name AS main_category,
+    c3.name      AS sub_category,
+    c2.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category = c3.category_code
+  JOIN categories_em c4
+  ON c3.parent_category     = c4.category_code
+  WHERE c4.parent_category IS NULL
+  UNION ALL
+  SELECT c5.name AS main_category,
+    c4.name      AS sub_category,
+    c3.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category = c3.category_code
+  JOIN categories_em c4
+  ON c3.parent_category = c4.category_code
+  JOIN categories_em c5
+  ON c4.parent_category     = c3.category_code
+  WHERE c5.parent_category IS NULL</queryString>
+  </SQLQuery>
+  <columns>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">20628caf-f98c-4fad-a469-5d9314cf8dc4</identifier>
+      </ID>
+      <name>MAIN_CATEGORY</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ebc888b2-2e31-4811-9ae1-58a6b5443bc9</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CATEGORIES_EM</name>
+                  <identifier class="java.math.BigDecimal">17136</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>main_category</name>
+        <identifier class="java.lang.String">abe2b258-2032-422d-bf0d-5f93dbe4a408</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fae02ed9-5eb4-46a6-b2d5-65d7ca20ddea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORIES_EM_V</name>
+            <identifier class="java.lang.String">2140bc33-eb69-4043-9269-4d1032b47c52</identifier>
+            <schemaName>SD3</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>SD3</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">de25e2f0-54da-4d6e-a874-d054dcfb22f4</identifier>
+      </ID>
+      <name>SUB_CATEGORY</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>sub_category</name>
+        <identifier class="java.lang.String">5f7a18c7-5c65-493b-a05e-cbb32a724544</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fae02ed9-5eb4-46a6-b2d5-65d7ca20ddea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORIES_EM_V</name>
+            <identifier class="java.lang.String">2140bc33-eb69-4043-9269-4d1032b47c52</identifier>
+            <schemaName>SD3</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>SD3</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">141bd7a0-029e-4f55-b7b5-8f7c00ed9ee7</identifier>
+      </ID>
+      <name>SUB_SUB_CATEGORY</name>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>sub_sub_category</name>
+        <identifier class="java.lang.String">4190af41-a118-4bd5-8e99-ef57ca55e26c</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fae02ed9-5eb4-46a6-b2d5-65d7ca20ddea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORIES_EM_V</name>
+            <identifier class="java.lang.String">2140bc33-eb69-4043-9269-4d1032b47c52</identifier>
+            <schemaName>SD3</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>SD3</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e017d3d7-cd60-4cf5-b861-5f87167554b7</identifier>
+      </ID>
+      <name>CATEGORY_CODE</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8e38f7d6-ac17-4a1c-8050-b46539337b0c</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CATEGORY_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CATEGORIES_EM</name>
+                  <identifier class="java.math.BigDecimal">17136</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>CATEGORY_CODE</name>
+        <identifier class="java.lang.String">5dc64fe3-81dc-43e2-839e-5c3a07798ada</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fae02ed9-5eb4-46a6-b2d5-65d7ca20ddea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORIES_EM_V</name>
+            <identifier class="java.lang.String">2140bc33-eb69-4043-9269-4d1032b47c52</identifier>
+            <schemaName>SD3</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>SD3</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+    <column class="oracle.javatools.db.ViewColumn">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">cc40e85d-66ff-4a4c-b459-3e03cce634ae</identifier>
+      </ID>
+      <name>NAME</name>
+      <dataTypeUsage class="oracle.javatools.db.datatypes.PredefinedDataTypeUsage">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2795afbd-08d7-4786-b6c9-0bb0822385c6</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>CATEGORIES_EM</name>
+                  <identifier class="java.math.BigDecimal">17136</identifier>
+                  <schemaName>SD3</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <selectObjectID class="oracle.javatools.db.IdentifierBasedID">
+        <name>NAME</name>
+        <identifier class="java.lang.String">f9831136-5dcb-4f4e-81f0-fe20e4b5ca56</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">fae02ed9-5eb4-46a6-b2d5-65d7ca20ddea</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORIES_EM_V</name>
+            <identifier class="java.lang.String">2140bc33-eb69-4043-9269-4d1032b47c52</identifier>
+            <schemaName>SD3</schemaName>
+            <type>VIEW</type>
+          </parent>
+          <schemaName>SD3</schemaName>
+          <type>SQLQuery</type>
+        </parent>
+        <schemaName>SD3</schemaName>
+        <type>SELECT</type>
+      </selectObjectID>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">sd3</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>CATEGORIES_EM_V</name>
+        <identifier class="java.math.BigDecimal">17146</identifier>
+        <schemaName>SD3</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD3</name>
+  </schema>
+</view>

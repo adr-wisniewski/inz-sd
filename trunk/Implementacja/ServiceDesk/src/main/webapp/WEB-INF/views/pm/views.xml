@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	<definition name="pm/add" extends="standard-layout">
+		<put-attribute name="title" value="pm.title.add" />
+		<put-attribute name="body" value="/WEB-INF/views/pm/add.jsp" />
+	</definition>
+	
+	<definition name="pm/edit" extends="standard-layout">
+		<put-attribute name="title" value="pm.title.edit" />
+		<put-attribute name="body" value="/WEB-INF/views/pm/edit.jsp" />
+	</definition>
+	
+	<definition name="pm/search" extends="standard-layout">
+		<put-attribute name="title" value="pm.title.search" />
+		<put-attribute name="body" value="/WEB-INF/views/pm/search.jsp" />
+	</definition>
+	
+	<definition name="pm/solution" extends="standard-layout">
+		<put-attribute name="title" value="pm.title.solution" />
+		<put-attribute name="body" value="/WEB-INF/views/pm/solution.jsp" />
+	</definition>
+	
+	<definition name="pm/associate" extends="standard-layout">
+		<put-attribute name="title" value="pm.title.associate" />
+		<put-attribute name="body" value="/WEB-INF/views/pm/associate.jsp" />
+	</definition>
+	
+	<definition name="pm/kedb" extends="standard-layout">
+		<put-attribute name="title" value="pm.title.kedb" />
+		<put-attribute name="body" value="/WEB-INF/views/pm/kedb.jsp" />
+	</definition>	
+	
+</tiles-definitions>

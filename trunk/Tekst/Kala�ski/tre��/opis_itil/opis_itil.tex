@@ -1,0 +1,537 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{ITIL}
+\label{itil} % Always give a unique label
+
+W wielu organizacjach istnieje problem relacji miêdzy Biznesem a IT. Z jednej strony Biznes zarzuca IT, ¿e dzia³ania podejmowane przez nich s¹ zbyt kosztowne oraz~wymagaj¹ d³ugiego czasu realizacji. Z drugiej strony informatycy twierdz¹, ¿e Biznes nie potrafi jasno okreœlaæ swoich potrzeb, a w sytuacji, gdy uda siê dojœæ do~porozumienia, koncepcja nagle ulega zmianie. Biznes oczekuje rezultatów w~czasie nie mo¿liwym do realizacji. S¹ to problemy powszechnie wystêpuj¹ce, dlatego potrzebne jest podejœcie umo¿liwiaj¹ce poprawienie sytuacji. W~tym celu powsta³y standardy ITSM\footnote{ITSM - Information Technology Service Management} \cite{zarzadzanie_itsm}.
+
+W podejœciu klasycznym dzia³ IT postrzegany jest jako centrum kosztów. IT skupia siê na dostarczaniu systemów, komponentów oraz technologii. Dominuje podejœcie personalne. W celu wykonania okreœlonego dzia³ania nale¿y zwróciæ siê do konkretnej osoby. Czêsto zdarza siê, ¿e bez ¿adnego uzasadnienia biznesowego wdra¿a siê nowe technologie tylko dlatego, ¿e s¹ nowoœci¹ na rynku. Stare systemy utrzymywane s¹ tylko dlatego, ¿e dzia³aj¹.
+
+Natomiast w podejœciu ITSM nie dostarcza siê systemów tylko us³ugi, w~taki sam sposób jak robi¹ to jednostki biznesowe. IT nie jest centrum kosztów, tylko wsparciem dla generowania przychodów. Nie mo¿na zwracaæ siê personalnie do~konkretnej osoby, nale¿y ¿¹dania kierowaæ do grup. Dziêki temu unika siê przeci¹¿enia najlepszych pracowników oraz umo¿liwia rozwój nowym pracownikom. Technologie zmieniane s¹ tylko wtedy, gdy ma to uzasadnienie biznesowe i~jest poprzedzone rzeteln¹ analiz¹, w celu okreœlenia kosztów oraz zysków \cite{itil_introductory}.
+
+\section{Oszczêdnoœci w IT}
+
+\subsection{Podzia³ kosztów}
+
+\paragraph{\underline{Koszty bezpoœrednie:}}
+
+\begin{description}
+\item[CAPEX] -- koszty zwi¹zane z inwestycj¹. S¹ to koszty projektu, wdro¿enia, zakupu nowego sprzêtu oraz~koszty integracji.
+\item[OPEX] -- koszty zwi¹zane z eksploatacj¹. Koszty HR\footnote{HR - Human Resources}, naprawy sprzêtu, szkoleñ i~licencji.
+\end{description}
+
+\paragraph{\underline{Koszty poœrednie:}}
+
+\begin{itemize}
+\item koszty komunikacji;
+\item koszty przestojów - straty;
+\item kary;
+\end{itemize}
+
+\subsection{ITSM a oszczêdnoœci}
+
+ITSM umo¿liwia oszczêdzanie w wielu obszarach.
+
+\paragraph{Ograniczanie czasu niedostêpnoœci} us³ug IT poprzez szybk¹ naprawê oraz zapobieganie.
+
+\paragraph{Kontrola zmian w infrastukturze.} Ka¿da zmiana jest szczegó³owo analizowana przez komitet specjalistów, który sprawdza zasadnoœæ zmiany oraz dokonuje oszacowania kosztów.
+
+\paragraph{W ramach procesu zarz¹dzania pojemnoœci¹} d¹¿y siê do osi¹gniêcia równowagi pomiêdzy zapotrzebowaniem a tym co mo¿na zaoferowaæ. Z jednej strony zapobiega siê sytuacji, w której klienci nie s¹ w stanie korzystaæ z us³ugi, a~z~drugiej nie mo¿na dopuœciæ do sytuacji, w której nie wykorzystuje siê dostêpnych zasobów.
+
+\paragraph{Projektowanie us³ug} pod k¹tem u¿ytecznoœci biznesowej.
+
+\section{Modele ITSM i ich zastosowania}
+
+Powsta³o wiele modeli ITSM. Ka¿dy z nich mo¿e byæ stosowany w ró¿nych obszarach.
+
+\paragraph{COBIT -- Control Objectives for Information and related Technology}
+
+\begin{itemize}
+%\item Zarz¹dzanie operacyjne
+%\item Projekty
+\item zarz¹dzanie taktyczne;
+\item zarz¹dzanie strategiczne;
+%\item Wsparcie
+%\item Utrzymanie
+%\item Rozwój
+\end{itemize}
+
+\paragraph{CMMI -- Capability Maturity Model Integration}
+
+\begin{itemize}
+%\item Zarz¹dzanie operacyjne
+\item projekty;
+\item zarz¹dzanie taktyczne;
+%\item Zarz¹dzanie strategiczne
+\item wsparcie;
+\item utrzymanie;
+\item rozwój;
+\end{itemize}
+
+\paragraph{ITIL v2 -- Information Technology Infrastructure Library v2}
+
+\begin{itemize}
+\item zarz¹dzanie operacyjne;
+%\item Projekty
+\item zarz¹dzanie taktyczne;
+\item zarz¹dzanie strategiczne;
+\item wsparcie;
+\item utrzymanie;
+%\item Rozwój
+\end{itemize}
+
+\paragraph{ITIL v3 -- Information Technology Infrastructure Library v3} 
+
+\begin{itemize}
+\item zarz¹dzanie operacyjne;
+\item projekty;
+\item zarz¹dzanie taktyczne;
+\item zarz¹dzanie strategiczne;
+\item wsparcie;
+\item utrzymanie;
+\item rozwój;
+\end{itemize}
+
+ITIL jest modelem obejmuj¹cym obecnie najszerszy zakres. Jest to równie¿ najbardziej popularny zbiór dobrych praktyk. U¿ywany jest w 71\% przypadków reorganizacji procesów IT w firmach \cite{zarzadzanie_itsm}.
+
+\section{Korzenie ITIL \cite{itlife}}
+
+W latach osiemdziesi¹tych wiele osób pracuj¹cych dla brytyjskiego rz¹du \linebreak
+oraz w s³u¿bach cywilnych poszukiwa³o bardziej efektywnych a~zarazem ma³o kosztownych rozwi¹zañ dla wymogów zarz¹dzania technologiami informacyjnymi. Wiêkszoœæ potrzeb wynikaj¹cych z rozwoju technologii powsta³a za czasów rz¹dów Margaret Thather i zosta³a zidentyfikowana przede wszystkim przez osoby pracuj¹ce na wy¿szych stanowiskach w ówczesnym rz¹dzie, m.in: przez osoby pracuj¹ce w Central Computer and Telecommunications Agency (CCTA) - póŸniejszym Office of Government Commerce (OGC).
+
+Tradycyjnie przyjmuje siê, ¿e idee, bêd¹ce baz¹ póŸniejszego ITIL, pochodz¹ od Petera Skinnera oraz Johna Stewarta z CCAT. W ich mniemaniu, agencje rz¹dowe wydawa³y zbyt du¿e sumy pieniêdzy na IT. Podzielaj¹cy to zdanie rz¹d Margaret Thather postanowi³ znaleŸæ sposób na bardziej efektywne oraz tañsze dzia³ania.
+
+Wtedy te¿ powsta³ nowy projekt, o nazwie Government Information Technology Infrastructure Management Method (GITIMM). G³ówn¹ koncepcj¹ \mbox{GITIMM} by³o, by ludzie stali siê bardziej mobilni: ró¿ne departamenty oraz organizacje mog³yby kierowaæ swoj¹ struktur¹ IT w podobny sposób, co pozwoli³oby specjalistom IT na~wdro¿enie tych samych standardów i dzia³añ w ró¿nych projektach. Dziêki takiej metodzie, miano nadziejê na podwy¿szenie wydajnoœci oraz obni¿enie kosztów.
+
+W roku 1986 John Stewart otrzyma³ zadanie opracowania planu stworzenia metody zwanej Government Information Technology Infrastructure Management Method. Zacz¹³ on od tworzenia dobrego zespo³u. Johnson do³¹czy³ w roku 1988 i~podj¹³ pracê nad modu³ami wsparcia cyklu ¿ycia oprogramowania, kosztami, pojemnoœci¹, dostêpnoœci¹ oraz jakoœci¹. Zespó³ konsultowa³ siê z wieloma przedsiêbiorstwami z sektora prywatnego, co pomog³o mu przedstawiæ pomys³y dotycz¹ce wsparcia i~dostarczania us³ug. Miêdzy innymi siêgn¹³ do koncepcji zarz¹dzania us³ugami opisanych przez IBM. Stewart oraz jego zespó³ prowadzili wspomniane konsultacje w stosunkowo kreatywny oraz sprawny sposób. Poprosili kilka konkurencyjnych korporacji o dostarczenie swoich ekspertyz z ró¿nych dziedzin. Po czym wspomniane korporacje dokona³y wzajemnej edycji swoich dokumentacji. Proces, w~którym przedsiêbiorstwa nawzajem edytowa³y swoj¹ dokumentacjê efektywnie przyczyni³ siê do ograniczenia promowania w³asnego przedsiêbiorstwa, systemów oraz technologii.
+
+\section{Help Desk a Service Desk \cite{itilso}}
+
+Podstawowym celem Help Desk jest zarz¹dzanie incydentami oraz d¹¿enie do jak najszybszego ich rozwi¹zania. Zg³oszenia kierowane s¹ do poszczególnych konsultantów. Wa¿ny jest czas reakcji oraz czas realizacji. Natomiast Service Desk jest dodatkowo interfejsem do zarz¹dzania zmian¹, licencjami, finansami, dostêpnoœci¹ i konfiguracj¹. W tym rozwi¹zaniu zg³oszenia s¹ kierowane do grup, a nie do konkretnych osób. Liczy siê procent reakcji oraz procent realizacji. Procent realizacji oznacza jaki odsetek zg³oszeñ jest rozwi¹zywany w czasie krótszym ni¿ czas okreœlony poprzez umowê SLA\footnote{SLA - Service Level Agreement}, analogicznie jest z procentem reakcji. Nie jest wa¿ny dok³adny czas realizacji, natomiast wa¿ne jest, czy nie zosta³y przekroczone warunki umowy.
+
+\section{ITIL 2 - procesy}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.80\textwidth]{img/itil2.jpg}
+\caption{Procesy ITIL2\newline{www.actis-ingenierie.com/ITIL.jpg}}
+\end{figure}
+
+Biblioteka ITIL v2 prezentuje podejœcie procesowe do zarz¹dzania us³ugami informatycznymi. Zarz¹dzanie us³ugami informatycznymi zosta³o podzielone na~dwa kluczowe obszary: Service Support i Service Delivery \cite{itlife}.
+
+\subsection{Service Support}
+
+\subsubsection{Zarz¹dzanie incydentami -- Service Desk and Incident Management}
+Podstawowym celem procesu zarz¹dzania incydentami jest przywrócenie normalnego poziomu us³ugi w jak najkrótszym czasie oraz ograniczenie wp³ywu na biznes. Normalny poziom us³ugi jest definiowany w dokumentach SLA\footnote{SLA - Service Level Agreement}.
+
+\subsubsection{Zarz¹dzanie problemami -- Problem Management}
+Podstawowy cel zarz¹dzania problemami to zapobie¿enie ewentualnym incydentom oraz problemom. Proces ten udostêpnia rozwi¹zania tymczasowe lub docelowe, które mog¹ zostaæ wykorzystane przy rozwi¹zywaniu incydentów. Dodatkowo minimalizuje wp³yw incydentów, które nie mog¹ byæ powstrzymane.
+
+\subsubsection{Zarz¹dzanie zmian¹ -- Change Management}
+Wszystkie zmiany musz¹ byæ upowa¿nione oraz udokumentowane, aby zmniejszyæ ryzyko wyst¹pienia niezaplanowanych zdarzeñ. Nale¿y zaplanowaæ kroki implementacji. Za wszystko odpowiedzialny jest mened¿er zmian\footnote{Change Manager} oraz CAB\footnote{CAB -- Change Advisory Board}.
+
+\subsubsection{Zarz¹dzanie wydaniami -- Release Management}
+Proces ten odpowiada za implementacjê zmian, w sposób efektywny, bezpieczny oraz mo¿liwy do weryfikacji.
+
+\subsubsection{Zarz¹dzanie konfiguracj¹ -- Configuration Management}
+Udostêpnia informacje o infrastrukturze IT. Wszystkie zmiany s¹ dokumentowane, wiêc dostêpne s¹ aktualne oraz historyczne dane o elementach konfiguracji\footnote{element konfiguracji (ang. Configuration Item)} w CMDB\footnote{Configuration Managment Database}.
+
+\subsection{Service Delivery}
+
+\subsubsection{Zarz¹dzanie poziomem us³ug -- Service Level Management}
+Proces ten ma za zadanie utrzymywanie katalogu us³ug oraz osi¹ganie porozumienia w sprawie ich wydajnoœci. Poziom us³ug jest ustalany w dokumentach SLA\footnote{SLA - Service Level Agreement}. Zarz¹dzanie poziomem us³ug jest odpowiedzialne za kontrolowanie ustalonej jakoœci us³ug. Dokumenty OLA\footnote{OLA - Operational Level Agreement} okreœlaj¹ poziom wewnêtrznych us³ug, od~których zale¿ne s¹ us³ugi biznesowe (us³ugi postrzegane przez klienta).
+
+
+\subsubsection{Zarz¹dzanie dostêpnoœci¹ -- Availability Management}
+Jest to proces sprawdzaj¹cy, czy dostêpnoœæ us³ug IT jest zgodna z ustalonym poziomem us³ug w dokumencie SLA.
+
+\subsubsection{Zarz¹dzanie pojemnoœci¹ -- Capacity Management}
+Proces zarz¹dzania pojemnoœci¹ jest odpowiedzialny za œwiadczenie us³ug IT w~sposób optymalny i efektywny kosztowo. W ramach tego procesu szacowane s¹ przysz³e potrzeby, co umo¿liwia planowanie zapotrzebowania na poszczególne us³ugi IT.
+
+\subsubsection{Zarz¹dzanie ci¹g³oœci¹ us³ug IT -- IT Service Continuity Management}
+Proces ten odpowiada za zdefiniowanie i zaplanowanie œrodków zaradczych w~przypadku wyst¹pienia zdarzeñ katastrofalnych w skutkach.
+
+\subsubsection{Zarz¹dzanie finansami us³ug IT -- Financial Management for IT Services}
+Jest to proces odpowiedzialny za pobieranie op³at od klientów za korzystanie z us³ug. Okreœla równie¿ kompromis pomiêdzy jakoœci¹ us³ug, a ich kosztem, uwzglêdniaj¹c potrzeby klientów.
+
+\section{ITIL 3 - obszary}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=1.0\textwidth]{img/lifecycle4.jpg}
+\caption{Obszary ITIL3\newline{http://itsm.itlife.pl/images/itsm/lifecycle4.jpg}}
+\end{figure}
+
+Biblioteka ITIL v3 wprowadzi³a model cyklu ¿ycia us³ugi, podzielony na piêæ kluczowych obszarów: Strategia us³ug, Projektowanie us³ug, Wdra¿anie us³ug, Eksploatacja us³ug oraz Ci¹g³e doskonalenie us³ug \cite{itlife}.
+
+\subsection{Strategia us³ug -- Service Strategy \cite{itilss}}
+
+\subsubsection{Zarz¹dzanie portfelem us³ug -- Service Portfolio Management}
+Okreœlenie strategii udostêpniania us³ug dla klientów oraz rozwijania ofert dostawców us³ug.
+
+\subsubsection{Zarz¹dzanie finansami -- Financial Management}
+Zarz¹dzanie bud¿etem oraz op³atami dla dostawców us³ug IT.
+
+\subsection{Projektowanie us³ug -- Service Design \cite{itilsd}}
+
+\subsubsection{Zarz¹dzanie katalogiem us³ug -- Service Catalogue Management}
+Proces ten jest odpowiedzialny za zapewnienie aktualnych informacji w katalogu us³ug. Dostarcza dane o us³ugach pozosta³ym procesom.
+
+\subsubsection{Zarz¹dzanie poziomem us³ug -- Service Level Management}
+Proces ten ustala poziom us³ug dla klientów oraz projektuje us³ugi z uwzglêdnieniem wczeœniej ustalonego poziomu. Odpowiada równie¿ za dopilnowanie warunków zawartych w umowach OLA\footnote{OLA - Operational Level Agreement} oraz UC\footnote{UC - Underpining Contract}.
+
+\subsubsection{Zarz¹dzanie ryzykiem -- Risk Management}
+Okreœlenie, wycena oraz kontrola ryzyka. W ramach tego procesu nale¿y okreœliæ wartoœæ zasobów\footnote{zasób (ang. asset) - komputery, serwery, drukarki, macierze dyskowe, elementy aktywne oraz pasywne sieci komputerowych.}, zidentyfikowaæ zagro¿enia oraz okreœliæ wp³yw zagro¿eñ na~zasoby.
+
+\subsubsection{Zarz¹dzanie pojemnoœci¹ -- Capacity Management}
+Zapewnienie, ¿e pojemnoœæ us³ug IT oraz infrastruktura IT jest zdolna do dostarczenia us³ug IT na ustalonym poziomie, w sposób efektywny kosztowo z uwzglêdnieniem czasu.
+
+\subsubsection{Zarz¹dzanie dostêpnoœci¹ -- Availability Management}
+Definiowanie, analizowanie, planowanie, mierzenie oraz udoskonalanie wszystkich aspektów dostêpnoœci us³ug IT. Jest to proces odpowiedzialny za zapewnienie tego, aby infrastruktura, procesy, narzêdzia, role by³y odpowiednie dla ustalonych poziomów dostêpnoœci.
+
+\subsubsection{Zarz¹dzanie ci¹g³oœci¹ us³ug IT -- IT Service Continuity Management}
+Zarz¹dzanie ryzykiem, które mo¿e mieæ powa¿ny wp³yw na us³ugi IT. Zapewnia, ¿e dostawcy us³ug zawsze mog¹ dostarczaæ minimalny poziom us³ug, poprzez redukowanie ryzyka zdarzeñ o katastrofalnych skutkach do akceptowalnego poziomu oraz planowanie przywracania us³ug IT.
+
+
+\subsubsection{Zarz¹dzanie bezpieczeñstwem -- IT Security Management}
+Zapewnienie poufnoœci, integralnoœci, dostêpnoœci informacji w organizacji, danych oraz us³ug IT.
+
+\subsubsection{Zarz¹dzanie zgodnoœci¹ -- Compliance Management}
+Dopilnowanie zgodnoœci us³ug IT, procesów oraz systemów z polityk¹ firmy oraz~wymaganiami prawnymi.
+
+\subsubsection{Zarz¹dzanie architektur¹ -- IT Architecture Management}
+Utworzenie planów dla przysz³ego rozwoju, przy uwzglêdnieniu strategii us³ug oraz nowych technologii.
+
+\subsubsection{Zarz¹dzanie dostawcami -- Supplier Management}
+Dopilnowanie wsparcia dla biznesu przez dostawców oraz przestrzegania kontraktów.
+
+\subsection{Przekazanie us³ug -- Service Transition \cite{itilst}}
+
+\subsubsection{Zarz¹dzanie zmianami -- Change Management}
+Kontrolowanie cyklu ¿ycia wszystkich zmian. Podstawowym celem jest umo¿liwienie przeprowadzenia korzystnych zmian z minimalnym zak³óceniem us³ug IT.
+
+\subsubsection{Zarz¹dzanie projektami -- Project Management (Transition Planning and Support)}
+Planowanie zasobów przy wdro¿eniu najwa¿aniejszych wydañ w zakresie zaplanowanych kosztów, czasu oraz jakoœci.
+
+\subsubsection{Zarz¹dzanie wydaniami i wdro¿eniami -- Release and Deployment Management}
+Planowanie, harmonogramowanie	 oraz kontrolowanie przeniesienia wydañ na œrodowiska testowe oraz produkcyjne. Podstawowy cel to zapewnienie stabilnoœci œrodowisk produkcyjnych.
+
+\subsubsection{Weryfikacja i testowanie us³ug  -- Service Validation and Testing}
+Zapewnienie spe³nienia oczekiwañ klientów wobec wydañ oraz us³ug. Dopilnowanie mo¿liwoœci wsparcia dla nowych us³ug przez operacyjn¹ czêœæ IT.
+
+\subsubsection{Rozwój oraz modyfikacja aplikacji  -- Application Development and Customization}
+Zapewnienie dostêpnoœci aplikacji oraz systemów dostarczaj¹cych funkcjonalnoœæ dla us³ug IT. W zakres tego procesu wchodzi rozwijanie oraz utrzymywanie aplikacji oraz konfiguracja nabytych produktów.
+
+\subsubsection{Zarz¹dzanie komponentami us³ug i konfiguracj¹ -- Service Asset and Configuration Management}
+Utrzymywanie informacji o elementach IT\footnote{Element IT (ang. Configuration Item) -- komputer, serwer, drukarka itp.} wymaganych do dostarczania us³ug IT. Równie¿ zarz¹dzanie relacjami pomiêdzy tymi elementami.
+
+\subsubsection{Zarz¹dzanie wiedz¹ -- Knowledge Management}
+Gromadzenie, analizowanie, przechowywanie oraz dzielenie siê wiedz¹ i informacj¹ w ramach ca³ej organizacji. Podstawowym celem jest zwiêkszenie efektywnoœci poprzez ograniczenie sytuacji ponownego odkrywania wiedzy.
+
+\subsection{Eksploatacja us³ug -- Service Operation \cite{itilso}}
+
+\subsubsection{Zarz¹dzanie zdarzeniami -- Event Management}
+Proces odpowiedzialny za filtracjê oraz kategoryzacjê zdarzeñ zachodz¹cych w~infrastrukturze IT oraz podjêcie odpowiedniej akcji.
+
+\subsubsection{Zarz¹dzanie incydentami -- Incident Management}
+Zarz¹dzanie cyklem ¿ycia incydentów. Podstawowym celem jest dokonanie naprawy us³ugi IT w jak najkrótszym czasie.
+
+\subsubsection{Realizacja wniosków  -- Request Fulfilment}
+Obs³ugiwanie standardowych zmian typu: zmiana has³a oraz instalacja oprogramowania.
+
+\subsubsection{Zarz¹dzanie uprawnieniami dostêpu -- Access Management}
+Nadawanie uprawnieñ uprzywilejowanym u¿ytkownikom do korzystania z us³ugi oraz uniemo¿liwienie korzystania z us³ugi klientom, którzy tych uprawnieñ nie posiadaj¹.
+
+\subsubsection{Zarz¹dzanie problemami -- Problem Management}
+Zarz¹dzanie problemami jest odpowiedzialne za ograniczenie pojawiania siê nowych incydentów oraz minimalizacjê wp³ywu ju¿ istniej¹cych.
+
+\subsubsection{Zarz¹dzanie operacjami -- IT Operations Management}
+Monitorowanie oraz kontrola us³ug IT oraz infrastruktury IT. Planowanie zadañ, zarz¹dzanie kopiami zapasowymi.
+
+\subsubsection{Zarz¹dzanie instalacjami IT  -- IT Facilities Management}
+Zarz¹dzanie fizycznymi œrodowiskami, w których zlokalizowana jest infrastruktura IT. Zarz¹dzanie energi¹, ogrzewaniem oraz monitorowaniem œrodowiska. 
+
+\subsection{Ustawiczne doskonalenie us³ug -- Continual Service Improvement \cite{itilci}}
+
+\subsubsection{Ocena us³ug  -- Service Evaluation}
+Ocena jakoœci us³ug. Identyfikacja obszarów, w których nie s¹ osi¹gane za³o¿one poziomy us³ug, przeprowadzanie rozmów z biznesem, w celu upewnienia siê, czy uzgodnione poziomy us³ug s¹ zgodne z potrzebami biznesu.
+
+\subsubsection{Ocena procesów -- Process Evaluation}
+Ocena procesów pod wzglêdem fundamentalnym. Identyfikacja obszarów, w których nie s¹ osi¹gane metryki procesów, przeprowadzanie audytów, ocena dojrza³oœci oraz recenzje procesów.
+
+\subsubsection{Definicja inicjatyw udoskonalania -- Definition of Improvement Initiatives}
+Na podstawie oceny procesów oraz us³ug, zdefiniowanie inicjatyw, maj¹cych na~celu udoskonalenie us³ug oraz procesów.
+
+\section{Szczegó³owe omówienie wybranych procesów}
+\label{wybrane_procesy}
+
+W tej sekcji zostan¹ omówione wybrane procesy ITIL: zarz¹dzania incydentami, zarz¹dzania problemami, zarz¹dzania zdarzeniami oraz zarz¹dzania zleceniami. Autor niniejszej pracy zdecydowa³ siê na wybranie procesu zarz¹dzania incydentami, poniewa¿ jest to proces, od którego rozpoczyna siê wdra¿anie systemu Service Desk. Pozosta³e procesy w du¿ym stopniu bazuj¹ na danych dotycz¹cych incydentów. Nastêpnie, zgodnie z przyjêt¹ praktyk¹, wdra¿a siê proces zarz¹dzania problemami. Umo¿liwia to zmniejszenie liczby incydentów oraz szybsze ich rozwi¹zywanie. Nastêpne procesy to zarz¹dzanie zmian¹ oraz zarz¹dzanie konfiguracj¹. W tej pracy zosta³y one pominiête, poniewa¿ s¹ one tematem pracy dyplomowej in¿ynierskiej Adriana Wiœniewskiego, realizowanej równolegle. Autor zdecydowa³ siê na wybranie dwóch kolejnych procesów z obszaru Eksploatacji us³ug: zarz¹dzania zdarzeniami oraz zarz¹dzania zleceniami, które s¹ silnie zwi¹zane z funkcj¹ Service Desk. Zarz¹dzanie zdarzeniami umo¿liwia wygenerowanie nowego incydentu w odpowiedzi na zaistnienie zdarzenia w infrastrukturze IT, natomiast zarz¹dzanie zleceniami jest odpowiedzialne za realizowanie standardowych zmian. Jest to proces, który wyodrêbnia zarz¹dzanie standardowymi zmianami z procesu zarz¹dzania zmianami ze wzglêdu na zmniejszenie kosztów.
+
+\subsection{Zarz¹dzanie incydentami \cite{itilso}}
+
+Incydent jest to niezaplanowane przerwanie dzia³ania us³ugi IT lub ograniczenie jakoœci us³ugi IT.
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{img/ServiceDesk_IMProcessFlow.png}
+\caption{Zarz¹dzanie incydentami - proces}
+\end{figure}
+
+\subsubsection{Cel}
+
+Podstawowym celem procesu zarz¹dzania incydentami jest przywrócenie normalnego poziomu us³ugi w jak najkrótszym czasie oraz ograniczenie wp³ywu na biznes. Normalny poziom us³ugi jest definiowany w dokumentach SLA\footnote{SLA - Service Level Agreement}.
+
+\subsubsection{Identyfikacja}
+
+Identyfikacja jest to ustalenie wskazuj¹ce na wyst¹pienie incydentu. Z biznesowego punktu widzenia nie mo¿na czekaæ, a¿ u¿ytkownik zg³osi incydent. Wszystkie kluczowe elementy powinny byæ monitorowane, aby jak najszybciej wykryæ wyst¹pienie incydentu. W idealnym przypadku wszystkie incydenty powinny zostaæ rozwi¹zane zanim u¿ytkownicy zostan¹ ograniczeni w korzystaniu z us³ugi.
+
+\subsubsection{Logowanie}
+
+Wszystkie incydenty musz¹ zostaæ zapisane oraz oznakowane stemplem czasu.
+
+
+\paragraph{Ka¿dy incydent musi posiadaæ nastêpuj¹ce dane:}
+
+\begin{itemize}
+	\item unikalny identyfikator;
+	\item kategoriê;
+	\item wp³yw;
+	\item pilnoœæ;
+	\item priorytet;
+	\item datê zg³oszenia;
+	\item serwisanta oraz grupê wsparcia;
+	\item Ÿród³o: formularz WWW, e-mail, telefon, automatycznie poprzez zarz¹dzanie zdarzeniami;
+	\item status;
+	\item rozwi¹zanie;
+	\item datê rozwi¹zania;
+	\item datê zamkniêcia;
+\end{itemize}
+
+\subsubsection{Kategoryzacja}
+
+Ka¿dy incydent powinien mieæ przypisan¹ kategoriê. W dalszych etapach bêdzie to wa¿ne w ustaleniu, jakie zdarzenia wystêpuj¹ najczêœciej.
+Kategorie powinny tworzyæ wielopoziomow¹ hierarchiê (zwykle wystarczaj¹ cztery poziomy).
+
+\paragraph{Przyk³adowa hierarchia:}
+
+\begin{itemize}
+	\item Sprzêt
+	\begin{itemize}
+		\item Serwer
+		\begin{itemize}
+			\item Karta pamiêci
+			\item Pamiêæ trwa³a
+		\end{itemize}
+	\end{itemize}
+	\item Oprogramowanie
+	\begin{itemize}
+		\item Aplikacja
+		\begin{itemize}
+			\item Aplikacja finansowa
+			\item CRM
+		\end{itemize}
+		\item Przegl¹darka internetowa
+		\begin{itemize}
+			\item Firefox
+			\item IE
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+
+Ka¿da organizacja powinna ustaliæ hierarchiê odpowiedni¹ do jej potrzeb.
+
+\subsubsection{Priorytet}
+
+Ka¿dy incydent powinien mieæ okreœlony priorytet. Priorytet powinien zostaæ ustalony na podstawie pilnoœci, która uwzglêdnia potrzeby biznesu oraz na podstawie wp³ywu na biznes.
+Wp³yw jest zwykle okreœlany na podstawie liczby u¿ytkowników, którzy s¹ po³¹czeni z danym incydentem.
+
+Efektywnym sposobem ustalenia priorytetu jest stworzenie macierzy odwzorowuj¹cej wp³yw oraz pilnoœæ na priorytet \ref{tab:im_piorytet}.
+
+\begin{table}[!ht]
+	\caption{Kodowanie priorytetu}
+	\label{tab:im_piorytet}
+	\centering
+	\begin{tabular}{ | l | l | r | r | r |}
+		\hline 
+		\rowcolor{tableheadercolor} {} & {} & {} & {\textbf{Wp³yw}} & {} \\ \hline
+		\rowcolor{tablerowcolor} {} & {} & {Wysoki} & {Œredni} & {Niski} \\ \hline
+		\rowcolor{tablerowcolor} {} & {Wysoka} & {1} & {2} & {3} \\ \hline
+		\rowcolor{tablerowcolor} {\textbf{Pilnoœæ}} & {Œrednia} & {2} & {3} & {4} \\ \hline
+		\rowcolor{tablerowcolor} {} & {Niska} & {3} & {4} & {5} \\ \hline
+	\end{tabular} \\
+\end{table}
+
+Ka¿dy priorytet powinien okreœlaæ czas rozwi¹zania incydentu \ref{tab:im_piorytet_czas}.
+
+\begin{table}[!ht]
+	\caption{Czas rozwi¹zania}
+	\label{tab:im_piorytet_czas}
+	\centering
+	\begin{tabular}{ | r | r |}
+		\hline
+		\rowcolor{tableheadercolor} {\textbf{Priorytet}} & {\textbf{Czas rozwi¹zania [h]}} \\ \hline
+		\rowcolor{tablerowcolor} {1} & {1}  \\ \hline
+		\rowcolor{tablerowcolor} {2} & {8}  \\ \hline
+		\rowcolor{tablerowcolor} {3} & {24}  \\ \hline
+		\rowcolor{tablerowcolor} {4} & {48}  \\ \hline
+		\rowcolor{tablerowcolor} {5} & {96}  \\ \hline
+	\end{tabular} \\
+\end{table}
+
+\subsubsection{Eskalacja}
+
+W sytuacji, gdy incydent nie mo¿e zostaæ rozwi¹zany przez pracowników Service Desk, powinien zostaæ jak najszybciej eskalowany do specjalistycznych grup wsparcia. Analogicznie, je¿eli druga linia nie jest w stanie w ustalonym czasie rozwi¹zaæ incydentu, to powinien on zostaæ eskalowany do trzeciej linii. Teoretycznie eskalacja mo¿e mieæ dowoln¹ liczbê poziomów, ale zwykle powinna siê ograniczaæ do trzech. Nale¿y dodaæ, ¿e grupy wsparcia mog¹ sk³adaæ siê z pracowników firmy lub przedstawicieli firm zewnêtrznych, przyk³adowo dostawców oprogramowania lub sprzêtu.
+
+\subsubsection{Rozwi¹zanie}
+
+W momencie, gdy zostanie znalezione potencjalne rozwi¹zanie, powinno ono zostaæ zastosowane i przetestowane. To jakie akcje zostan¹ wykonane oraz kto bêdzie zaanga¿owany w ich wykonanie zale¿y od incydentu. W jednym przypadku mo¿e zdarzyæ siê, ¿e u¿ytkownik zostanie poproszony o wprowadzenie zmiany w odrêbnie swojego œrodowiska, w innym serwisant mo¿e dokonaæ rozwi¹zania w sposób centralny, przyk³adowo poprzez zrestartowanie serwera. W niektórych przypadkach zewnêtrzni dostawcy bêd¹ poproszeni o rozwi¹zanie pozwalaj¹ce na~usuniêcie przyczyny, a przynajmniej skutku b³êdu.
+
+\subsubsection{Zamkniêcie}
+
+Przy zamkniêciu incydentu pracownicy Service Desk powinni sprawdziæ, czy u¿ytkownik jest zadowolony z rozwi¹zania. Dodatkowo nale¿y sprawdziæ, czy dane na~temat incydentu zosta³y wype³nione poprawnie oraz czy s¹ kompletne.
+
+\subsubsection{Powi¹zane procesy}
+
+\paragraph{Zarz¹dzanie zdarzeniami --}
+
+Zdarzenia w infrastukturze IT mog¹ spowodowaæ wygenerowanie incydentu.
+
+\paragraph{Zarz¹dzanie problemami --}
+
+Incydenty s¹ skutkiem istnienia problemów.
+
+\paragraph{Zarz¹dzanie konfiguracj¹ --}
+
+Udostêpnia dane potrzebne do zidentyfikowania incydentów.
+
+\paragraph{Zarz¹dzanie poziomem us³ug --}
+
+Rozwi¹zywanie incydentów w okreœlonym czasie jest wa¿nym elementem udostêpniania us³ug na ustalonym poziomie.
+
+\paragraph{Zarz¹dzanie katalogiem us³ug --}
+
+Dostarcza informacje o us³ugach przypisanych do klienta.
+
+\subsection{Zarz¹dzanie problemami \cite{itilso}}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{img/ServiceDesk_PMProcessFlow.png}
+\caption{Zarz¹dzanie problemami - proces}
+\label{rys:pm_process}
+\end{figure}
+
+Problem jest definiowany jako przyczyna wyst¹pienia jednego lub wielu incydentów\cite{itilso}.
+
+%Rysunek \ref{rys:pm_process} przedstawia przyk³adowy cykl ¿ycia problemu.
+
+\subsubsection{Cel}
+
+Podstawowym celem zarz¹dzania problemami jest zapobie¿enie ewentualnym incydentom oraz problemom. Dodatkowo, zminimalizowanie wp³ywu incydentów, które nie mog¹ byæ powstrzymane. Zarz¹dzanie problemami ma wp³yw na zwiêkszenie jakoœci us³ug IT. Przy rozwi¹zywaniu nowych incydentów mo¿na wykorzystaæ doœwiadczenie nabyte w przesz³oœci, co wp³ynie na przyspieszenie momentu ich rozwi¹zania. Dziêki temu zwiêksza siê dostêpnoœæ krytycznych systemów dla~biznesu.
+
+\subsubsection{Logowanie}
+
+Wszystkie problemy powinny zawieraæ nastêpuj¹ce dane:
+
+\begin{itemize}
+	\item temat;
+	\item opis;
+	\item u¿ytkownik, który zg³osi³ problem;
+	\item data i godzina dodania;
+	\item priorytet oraz kategoria;
+	\item powi¹zane incydenty;
+\end{itemize}
+
+\subsubsection{Analiza i diagnoza}
+
+W trakcie analizy problemu nale¿y okreœliæ g³ówn¹ przyczynê jego wyst¹pienia. Pomocnym narzêdziem jest CMS\footnote{CMS - Configuration Managment System}, system pomagaj¹cy oszacowaæ wielkoœæ wp³ywu. Nale¿y równie¿ skorzystaæ z KEDB\footnote{KEDB - Known Error Database} w celu przeszukania podobnych problemów.
+
+\subsubsection{Rozwi¹zanie tymczasowe}
+
+W niektórych przypadkach jesteœmy w stanie znaleŸæ tymczasowe rozwi¹zanie dla~problemu. Takie rozwi¹zanie mo¿e zostaæ wykorzystane przy zarz¹dzaniu incydentami.
+
+\subsubsection{Baza znanych b³êdów}
+
+Po ukoñczeniu diagnozy, gdy znana jest przyczyna problemu oraz uda³o siê znaleŸæ rozwi¹zanie tymczasowe, nale¿y dodaæ nowy znany b³¹d\footnote{znany b³¹d -- (ang. known error)}. W celu unikniêcia duplikatów, jedyn¹ osob¹, która mo¿e to zrobiæ powinien byæ mened¿er problemów. Znane b³êdy tworz¹ KEDB\footnote{KEDB -- Known Error Database}. G³ównym jej celem jest przechowywanie wiedzy na temat poprzednio rozwi¹zanych incydentów oraz problemów. Umo¿liwia to szybsze dzia³anie w przysz³oœci oraz wdro¿enie rozwi¹zania dla przypadków, które siê powtarzaj¹.
+Ka¿dy znany b³¹d powinien zawieraæ informacje o awarii oraz o symptomach jakie siê ujawni³y, rozwi¹zanie sta³e oraz tymczasowe.
+
+\subsubsection{Powi¹zane procesy}
+
+\paragraph{Zarz¹dzanie incydentami --} problem jest przyczyn¹ powstania wielu incydentów.
+
+\paragraph{Zarz¹dzanie zmianami --} rozwi¹zanie problemów jest zwi¹zane z wprowadzeniem zmiany.
+
+\subsection{Zarz¹dzanie zdarzeniami \cite{itilso}}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=1.00\textwidth]{img/ServiceDesk_EMProcessFlow.png}
+\caption{Zarz¹dzanie zdarzeniami - proces}
+\end{figure}
+
+Zdarzenie jest to dowolne wyst¹pienie zwi¹zane z zarz¹dzaniem infrastuktur¹ IT lub z funkcjonowaniem us³ugi IT.
+
+\subsubsection{Cel}
+
+Zarz¹dzanie  zdarzeniami ma na celu wykrywanie zdarzeñ oraz podejmowanie odpowiedniej akcji. Jest to równie¿ punkt startowy dla innych procesów: zarz¹dzania incydentami, problemami.
+
+\subsubsection{Wyst¹pienie zdarzenia}
+
+Zdarzenia wystêpuj¹ ci¹gle, ale nie wszystkie z nich s¹ wykrywane oraz rejestrowane. Ka¿da organizacja musi podj¹æ decyzjê co i w jakim stopniu ma byæ monitorowane.
+
+\subsubsection{Filtrowanie zdarzeñ}
+
+Na tym etapie nale¿y zdecydowaæ, czy zdarzenie powinno zostaæ przekazane dalej czy zignorowane. Zignorowanie zdarzenia oznacza, ¿e pozostanie w logach, ale nie zostanie podjêta ¿adna akcja.
+
+\subsubsection{Ranga}
+
+Zdarzenia s¹ dzielone ze wzglêdu na rangê. ITIL zaleca uwzglêdnienie nastêpuj¹cych rang:
+
+\begin{description}
+	\item[Informacyjne] -- s¹ to zdarzenia, które nie wymagaj¹ podjêcia ¿adnej akcji. Mog¹ zostaæ wykorzystane do wygenerowania statystyk, np. o liczbie logowañ do systemu.
+	\item[Ostrze¿enie] -- s¹ to zdarzenia, które oznaczaj¹ prawdopodobieñstwo naruszenia ustalonych warunków. Wykorzystywane s¹ do poinformowania odpowiedniej jednostki w celu sprawdzenia sytuacji oraz podjêcia dzia³ania, aby unikn¹æ awarii. Przyk³adem takiego zdarzenia jest zbli¿enie siê do limitu wykorzystania pamiêci.
+	\item[Alarm] -- jest to zdarzenie oznaczaj¹ce nieprawid³ow¹ pracê urz¹dzenia, us³ugi.
+\end{description}
+
+\subsubsection{Wspó³zale¿noœæ zdarzeñ}
+
+Dla wa¿nych zdarzeñ nale¿y sprawdziæ jak bardzo s¹ one istotne oraz jak¹ akcjê nale¿y podj¹æ. Dokonuje siê tego poprzez sprawdzenie, czy dane zdarzenie spe³nia szereg regu³. Badana jest wielkoœæ wp³ywu zdarzenia. Przyk³adowe sprawdzane czynniki:
+
+\begin{itemize}
+\item liczba podobnych zdarzeñ;
+\item liczba elementów generuj¹cych podobne zdarzenia;
+\item czy zosta³ przekroczony limit?
+\item czy zdarzenie jest ostrze¿eniem?
+\item czy potrzebne s¹ dodatkowe dane do podjêcia decyzji?
+\end{itemize}
+
+\subsubsection{Wyzwalacz}
+
+Jeœli w poprzednim etapie zostanie wykryte zdarzenie, nale¿y podj¹æ odpowiedni¹ akcjê. Przyk³adowe akcje:
+
+\begin{itemize}
+\item wygenerowanie incydentu;
+\item wygenerowanie RFC\footnote{RFC - Request For Change};
+\item wykonanie skryptu;
+\item powiadomienie odpowiedniej jednostki;
+\end{itemize} 
+
+\subsubsection{Powi¹zane procesy}
+
+\paragraph{Zarz¹dzanie incydentami --} zdarzenie, mo¿e wygenerowaæ incydent.
+
+\subsection{Zarz¹dzanie zleceniami \cite{itilso}}
+
+Zlecenie\footnote{Zlecenie - ang. Service Request} jest to pewien rodzaj zmiany, która niesie ze sob¹ ma³e ryzyko, czêsto siê pojawia i jest ma³o kosztowna. S¹ to standardowe zmiany w organizacji. Przyk³adem jest zmiana has³a lub instalacja oprogramowania.
+
+Proces ten powsta³, aby w sposób efektywny zarz¹dzaæ takim rodzajem zmian. Obs³ugiwanie ich poprzez proces zarz¹dzania zmianami by³oby skrajnie nieefektywne. Czasami zlecenia obs³ugiwane s¹ w procesie zarz¹dzania incydentami, ale ITIL v3 nie zaleca takiej praktyki, poniewa¿ istnieje zasadnicza ró¿nica miêdzy incydentem a zleceniem. Incydent jest czymœ z definicji niezaplanowanym, a zlecenia powinny byæ planowane.
+
+\subsubsection{Cel}
+
+Celem zarz¹dzania zleceniami jest udostêpnienie klientom sposobu zg³aszania i~otrzymywania us³ug, dla których istnieje dobrze zdefiniowany proces. 

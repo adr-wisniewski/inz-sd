@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	
+	<!-- Pages -->
+	<definition name="servicedesk/dashboard" extends="standard-layout">
+		<put-attribute name="title" value="sd.title.dashboard" />
+		<put-attribute name="body" value="/WEB-INF/views/servicedesk/dashboard.jsp" />
+	</definition>
+
+	<definition name="servicedesk/employeeDetails" extends="standard-layout">
+		<put-attribute name="title" value="sd.title.employeeDetails" />
+		<put-attribute name="body" value="/WEB-INF/views/servicedesk/employeeDetails.jsp" />
+	</definition>
+	
+	<definition name="servicedesk/employeePicker" extends="empty-layout">
+		<put-attribute name="title" value="sd.title.employeePicker" />
+		<put-attribute name="body" value="/WEB-INF/views/servicedesk/employeePicker.jsp" />
+	</definition>
+	
+	<definition name="servicedesk/employeePickerChoose" extends="empty-layout">
+		<put-attribute name="title" value="sd.title.employeePickerChoose" />
+		<put-attribute name="body" value="/WEB-INF/views/servicedesk/employeePickerChoose.jsp" />
+	</definition>
+	
+	<definition name="servicedesk/searchEmployee" extends="standard-layout">
+		<put-attribute name="title" value="sd.title.searchEmployee" />
+		<put-attribute name="body" value="/WEB-INF/views/servicedesk/searchEmployee.jsp" />
+	</definition>
+
+	<definition name="servicedesk/treePicker" extends="empty-layout">
+		<put-attribute name="title" value="sd.title.treePicker" />
+		<put-attribute name="body" value="/WEB-INF/views/servicedesk/treePicker.jsp" />
+	</definition>
+	
+	<definition name="servicedesk/treePickerChoose" extends="empty-layout">
+		<put-attribute name="title" value="sd.title.treePickerChoose" />
+		<put-attribute name="body" value="/WEB-INF/views/servicedesk/treePickerChoose.jsp" />
+	</definition>
+	
+	<definition name="servicedesk/groupDetails" extends="standard-layout">
+		<put-attribute name="title" value="sd.title.groupDetails" />
+		<put-attribute name="body" value="/WEB-INF/views/servicedesk/groupDetails.jsp" />
+	</definition>
+
+        <definition name="/servicedesk/formExpired" extends="standard-layout">
+		<put-attribute name="title" value="sd.title.formExpired" />
+		<put-attribute name="body" value="/WEB-INF/views/servicedesk/formExpired.jsp" />
+	</definition>
+
+        <definition name="error" extends="standard-layout">
+		<put-attribute name="title" value="sd.title.error" />
+		<put-attribute name="body" value="/WEB-INF/views/servicedesk/error.jsp" />
+	</definition>
+
+</tiles-definitions>

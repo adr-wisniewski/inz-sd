@@ -1,0 +1,545 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Projekt}
+\label{projekt} % Always give a unique label
+
+W tym rozdziale przedstawiono projekt bazy danych utworzony na podstawie wymagañ zebranych w rozdziale \ref{wymagania}. Zosta³ równie¿ zaprezentowany projekt aplikacji obejmuj¹cy omówienie warstw aplikacji. Na podstawie przyk³adowego diagramu sekwencji zaprezentowano wspó³pracê pomiêdzy poszczególnymi warstwami aplikacji. Ostatecznie omówiono zaproponowane rozwi¹zanie dla eskalacji: sygna³y.
+
+\section{Baza danych}
+
+Opis bazy danych zosta³ podzielony ze wzglêdu na wybrane procesy. Dla ka¿dego procesu zosta³y przedstawione wykorzystywane tabele w tym procesie.
+
+\subsection{Zarz¹dzanie incydentami}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/im.png}
+	\caption{Diagram tabel dla zarz¹dzania incydentami}
+\end{figure}
+
+\subsubsection{INCIDENTS}
+
+Tabela przechowuj¹ca informacje o incydentach.
+
+\subsubsection{CATEGORIES\_IM}
+
+S³ownik z kategoriami incydentów.
+
+\subsubsection{URGENCY\_TYPES\_IM}
+
+S³ownik z typami pilnoœci incydentów.
+
+\subsubsection{STATUSES\_IM}
+
+S³ownik z mo¿liwymi statusami incydentów.
+
+\subsubsection{PRIORITY\_TYPES\_IM}
+
+S³ownik z typami priorytetów incydentów.
+
+\subsubsection{IMPACT\_TYPES\_IM}
+
+S³ownik z typami wp³ywów incydentów.
+
+\subsubsection{COMMENTS}
+
+Tabela z komentarzami dotycz¹cymi danego incydentu. Ka¿dy komentarz zawiera datê dodania oraz autora.
+
+\subsubsection{EMPLOYEES}
+
+Tabela z pracownikami. Ka¿dy incydent powi¹zany jest z pracownikami na dwa sposoby:
+
+\begin{itemize}
+\item pracownik, który zg³osi³ incydent,
+\item serwisant przypisany do incydentu.
+\end{itemize}
+
+\subsubsection{SUPPORT\_GROUPS}
+
+Tabela z grupami wsparcia. Ka¿dy incydent jest przypisany do jednej grupy wsparcia.
+
+\subsubsection{SERVICES}
+
+Tabela zawieraj¹ca dane o us³ugach. Ka¿dy incydent jest przypisany do jednej us³ugi.
+
+\subsubsection{INCIDENT\_HISTORY}
+
+Tabela zawieraj¹ca pe³n¹ historiê zmian dla ka¿dego incydentu. Zawiera datê dokonania zmiany, u¿ytkownika, który dokona³ zmiany oraz stan incydentu z tej chwili w czasie.
+
+%\pagebreak
+\subsection{Zarz¹dzanie problemami}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/pm.png}
+	\caption{Diagram tabel dla zarz¹dzania problemami}
+\end{figure}
+
+\subsubsection{PROBLEMS}
+
+Tabela przechowuj¹ca informacje o problemach.
+
+\subsubsection{CATEGORIES\_PM}
+
+S³ownik z kategoriami problemów.
+
+\subsubsection{URGENCY\_TYPES\_PM}
+
+S³ownik z typami pilnoœci problemów.
+
+\subsubsection{STATUSES\_PM}
+
+S³ownik z mo¿liwymi statusami problemów.
+
+\subsubsection{PRIORITY\_TYPES\_PM}
+
+S³ownik z typami priorytetów problemów.
+
+\subsubsection{IMPACT\_TYPES\_PM}
+
+S³ownik z typami wp³ywów problemów.
+
+\subsubsection{COMMENTS}
+
+Tabela z komentarzami dotycz¹cymi danego problemu. Ka¿dy komentarz zawiera datê dodania oraz autora.
+
+\subsubsection{EMPLOYEES}
+
+Tabela z pracownikami. Ka¿dy problem powi¹zany jest z pracownikami na dwa sposoby:
+
+\begin{itemize}
+\item pracownik, który zg³osi³ problem,
+\item serwisant przypisany do problemu.
+\end{itemize}
+
+\subsubsection{SUPPORT\_GROUPS}
+
+Tabela z grupami wsparcia. Ka¿dy problem jest przypisany do jednej grupy wsparcia.
+
+\subsubsection{INCIDENT\_PROBLEM}
+
+Tabela asocjacyjna reprezentuj¹ca powi¹zania pomiêdzy problemami oraz incydentami. Ka¿dy problem jest powi¹zany z list¹ incydentów.
+
+\subsubsection{SOLUTIONS}
+
+Tabela zawieraj¹ca rozwi¹zania problemów. S¹ to zarówno rozwi¹zania tymczasowe \footnote{Rozwi¹zanie tymczasowe - ang. Workaround} oraz rozwi¹zania sta³e.
+
+\subsubsection{SOLUTION\_TYPES}
+
+S³ownik z typami rozwi¹zañ problemów. Standardowo powinny to byæ dwa rodzaje rozwi¹zañ: tymczasowe, sta³e. Aczkolwiek system umo¿liwia dodanie nowych typów rozwi¹zañ.
+
+%\pagebreak
+\subsection{Zarz¹dzanie zdarzeniami}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/em.png}
+	\caption{Diagram tabel dla zarz¹dzania zdarzeniami}
+\end{figure}
+
+\subsubsection{EVENTS}
+
+Tabela przechowuj¹ca informacje o zdarzeniach.
+
+\subsubsection{CATEGORIES\_EM}
+
+S³ownik z kategoriami zdarzeñ.
+
+\subsubsection{EVENT\_SIGNIFICANCE\_TYPES}
+
+S³ownik z mo¿liwymi rangami zdarzeñ. Przyk³adowe rangi: informacyjna, ostrze¿enie, b³¹d.
+
+\subsubsection{EVENT\_PARAMETERS}
+
+Tabela z list¹ parametrów danego zdarzenia. Ka¿dy parametr jest postaci klucz, wartoœæ.
+
+\subsubsection{EVENT\_INCIDENT}
+Tabela asocjacyjna zawieraj¹ca powi¹zania pomiêdzy zdarzeniami oraz incydentami.
+
+%\pagebreak
+\subsection{Zarz¹dzanie zleceniami}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/rf.png}
+	\caption{Diagram tabel dla zarz¹dzania zleceniami}
+\end{figure}
+
+\subsubsection{REQUESTS}
+
+Tabela przechowuj¹ca informacje o zleceniach.
+
+\subsubsection{CATEGORIES\_RF}
+
+S³ownik z kategoriami zleceñ. Ka¿da kategoria zawiera listê atrybutów w tabeli REQUEST\_ATTRIBUTE\_TYPES.
+
+\subsubsection{STATUSES\_RF}
+
+S³ownik ze statusami zleceñ.
+
+\subsubsection{PRIORITY\_TYPES\_RF}
+
+S³ownik z priorytetami zleceñ.
+
+\subsubsection{COMMENTS}
+
+Tabela z komentarzami dotycz¹cymi danego zlecenia. Ka¿dy komentarz zawiera datê dodania oraz autora.
+
+\subsubsection{EMPLOYEES}
+
+Tabela z pracownikami. Ka¿de zlecenie powi¹zany jest z pracownikami na dwa sposoby:
+
+\begin{itemize}
+\item pracownik, który zg³osi³ zlecenie,
+\item serwisant przypisany do zlecenia.
+\end{itemize}
+
+\subsubsection{SUPPORT\_GROUPS}
+
+Tabela z grupami wsparcia. Ka¿de zlecenie jest przypisane do jednej grupy wsparcia.
+
+\subsubsection{REQUEST\_ATTRIBUTE\_TYPES}
+
+Tabela z typami atrybutów poszczególnych kategorii zleceñ.
+
+\subsubsection{REQUEST\_ATTRIBUTES}
+
+Tabela z wartoœciami atrybutów dla zleceñ. Ka¿dy atrybut jest okreœlonego typu, zawartego w tabeli REQUEST\_ATTRIBUTE\_TYPES.
+
+%\pagebreak
+\subsection{Zarz¹dzanie sygna³ami}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/signals.png}
+	\caption{Diagram tabel dla sygna³ów}
+\end{figure}
+
+\subsubsection{SIGNALS}
+
+Tabela przechowuj¹ca informacje o sygna³ach.
+
+\subsubsection{SIGNAL\_TYPES}
+
+Tabela z typami sygna³ów. Ka¿dy typ sygna³u jest przypisany do typu obiektu.
+
+\subsubsection{SIGNAL\_ATTRIBUTES}
+
+Tabela z list¹ wartoœci atrybutów dla konkretnego sygna³u. Ka¿dy atrybut jest typu zawartego w tabeli: SIGNAL\_OBJECT\_ATTRIBUTE\_TYPES.
+
+\subsubsection{SIGNAL\_GENERATORS}
+
+Tabela z generatorami sygna³ów. Ka¿dy generator tworzy sygna³y okreœlonego typu. Tabela zawiera kryterium, które musz¹ spe³niaæ obiekty oraz powi¹zania z~kategori¹ odbiorcy z tabeli SIGNAL\_RECEIVER\_TYPE.
+
+\subsubsection{SIGNAL\_RECEIVER\_TYPES}
+
+Tabela z kategoriami odbiorców sygna³ów. Odbiorca jest okreœlany dynamicznie na podstawie powi¹zania z danym obiektem: incydentem, problemem, zleceniem. Przyk³adowe typy odbiorców:
+
+\begin{itemize}
+\item pracownik, który zg³osi³ incydent,
+\item serwisant przypisany do incydentu,
+\item mened¿er serwisanta,
+\item mened¿er grupy wsparcia przypisanej do incydentu.
+\end{itemize}
+
+\subsubsection{SIGNAL\_OBJECT\_TYPES}
+
+Tabela z typami obiektów, dla których mo¿e zostaæ wygenerowany sygna³. Przyk³adowe typy: incydent, problem, zlecenie. Ka¿dy typ zawiera listê atrybutów w~postaci klucz, wartoœæ. Atrybutu wykorzystywane s¹ przy szablonie treœci wiadomoœci oraz szablonie tematu wiadomoœci. Ka¿dy typ zwi¹zany jest z~perspektyw¹, zawieraj¹c¹ szczegó³owe dane o atrybutach obiektu.
+
+\subsubsection{SIGNALS\_TMP}
+
+Tabela tymczasowa zawieraj¹ca sygna³y, które nale¿y dodaæ.
+
+\subsubsection{SIGNAL\_OBJECT\_ATTRIBUTE\_TYPES}
+
+Tabela z list¹ atrybutów dla typu obiektu. Przyk³adowe atrybuty: data zg³oszenia incydentu, serwisant przypisany do incydentu lub kategoria.
+
+\subsubsection{SIGNAL\_SIGNIFICANCE\_TYPES}
+
+S³ownik z rangami sygna³ów. Przyk³adowe rangi to: informacyjna, ostrze¿enie, b³¹d.
+
+%\pagebreak
+\subsection{Zarz¹dzanie pracownikami}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/hr.png}
+	\caption{Diagram tabel dla zarz¹dzania pracownikami}
+\end{figure}
+
+\subsubsection{EMPLOYEES}
+
+Tabela przechowuj¹ca informacje o pracownikach.
+
+\subsubsection{JOBS}
+
+S³ownik z mo¿liwymi stanowiskami pracowników.
+
+\subsubsection{DEPARTMENTS}
+
+Tabela z dzia³ami, do których przypisani s¹ pracownicy.
+
+\subsubsection{ROLES}
+
+S³ownik z mo¿liwymi rolami aplikacyjnymi. Przyk³adowe role: pracownik pierwszej linii, mened¿er incydentów, mened¿er problemów oraz administrator.
+
+\subsubsection{EMPLOYEE\_ROLE}
+
+Tabela zawieraj¹ca role przypisane dla danego pracownika.
+
+\subsubsection{PRIVILEGE\_TYPES}
+
+Tabela zawieraj¹ca uprawnienia aplikacyjne. Przyk³adowe uprawnienia: dodanie incydentu, dodanie problemu.
+
+\subsubsection{ROLE\_PRIVILEGES}
+
+Tabela zawieraj¹ca uprawnienia przypisane do danej roli aplikacyjnej.
+
+\subsection{Zarz¹dzanie katalogiem us³ug}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/scm.png}
+	\caption{Diagram tabel dla zarz¹dzania katalogiem us³ug}
+\end{figure}
+
+\subsubsection{SERVICES}
+
+Tabela zawieraj¹ca dane o us³ugach.
+
+\subsubsection{SUPPORTING\_SERVICES}
+
+Tabela zawieraj¹ca dane o zale¿noœciach pomiêdzy us³ugami. Ka¿da us³uga biznesowa jest oparta na grupie us³ug technicznych.
+
+\subsubsection{SERVICE\_MANAGERS}
+
+Tabela zawieraj¹ca listê mened¿erów danej us³ugi.
+
+\subsubsection{SERVICE\_TYPES}
+
+S³ownik z typami us³ug. Przyk³adowe typy: us³uga biznesowa, us³uga techniczna.
+
+\subsubsection{EMPLOYEE\_SERVICE}
+
+Tabela zawieraj¹ca us³ugi przypisane do danego pracownika.
+
+\subsection{Zarz¹dzanie poziomem us³ug}
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{img/slm.png}
+	\caption{Diagram tabel dla zarz¹dzania poziomem us³ug}
+\end{figure}
+
+\subsubsection{AGREEMENTS}
+
+Tabela zawieraj¹ca umowy: SLA, OLA, UC.
+
+\subsubsection{EMPLOYEE\_SERVICE}
+
+Tabela zawieraj¹ca ka¿d¹ indywidualn¹ umowê SLA dla danego klienta.
+
+\section{Aplikacja}
+
+\subsection{Warstwy aplikacji}
+\label{warstwy_aplikacji}
+
+Aplikacja ma budowê warstwow¹. Ka¿da z warstw jest zale¿na od s¹siednich oraz~niezale¿na od pozosta³ych. Umo¿liwia to ³atwiejsz¹ wymianê dowolnej z~warstw, bez dokonywania ingerencji w resztê.
+
+\subsubsection{Warstwa prezentacji}
+
+Prezentacja zosta³a wykonana w technologiach HTML, CSS oraz JavaScript. Raporty s¹ prezentowane w formacie PDF za pomoc¹ biblioteki JasperReports.
+
+\subsubsection{Kontrolery stron}
+
+Ka¿de ¿¹danie jest obs³ugiwane przez przypisany kontroler strony. Kontroler przy pomocy klas z warstwy us³ugowej wykonuje ¿¹danie oraz przy pomocy klas z~warstwy walidacji sprawdza poprawnoœæ parametrów.
+
+\subsubsection{Warstwa us³ugowa}
+
+W tej warstwie znajduj¹ siê klasy us³ugowe, wykonuj¹ce ¿¹dania na polecenie kontrolerów. Wykorzystywane s¹ klasy z warstwy dostêpu do danych w celu pobierania oraz zapisywania obiektów.
+
+\subsubsection{Warstwa dostêpu do danych}
+
+Jest to warstwa odpowiedzialna za pobierania oraz zapisywanie obiektów w bazie danych.
+
+\subsubsection{Warstwa domenowa}
+
+W tej warstwie s¹ klasy reprezentuj¹ce model danych.
+
+\subsubsection{Warstwa walidacji}
+
+Jest to warstwa zajmuj¹ca siê sprawdzaniem poprawnoœci parametrów ¿¹dania.
+
+\subsection{Przyk³adowy diagram sekwencji}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=22cm,angle=90]{img/seq/ServiceDesk_EditIncident.png}
+	\caption{Diagram sekwencji dotycz¹cy edycji incydentu}
+	\label{rys:seq_EditIncident}
+\end{figure}
+
+Rysunek \ref{rys:seq_EditIncident} przedstawia przyk³adowy diagram sekwencji dotycz¹cy edycji incydentu. Na rysunku widoczne s¹ relacje pomiêdzy klasami z ró¿nych warstw aplikacji. Klasa \texttt{EditIncidentController} jest to kontroler stron. Obs³ugujê ¿¹dania od u¿ytkownika aplikacji. Korzysta z klasy \texttt{IncidentService}, która zawiera podstawowe us³ugi wyszukiwania, zapisywania. \texttt{EditIncidentController} korzysta równie¿ z klasy \texttt{AddIncidentValidator} do przeprowadzenia walidacji. \texttt{IncidentService} jest klas¹ z warstwy us³ugowej, dostarcza us³ugi dla klasy \texttt{EditIncidentController} oraz korzysta z klas dostêpu do danych: \texttt{IncidentDao} oraz~\texttt{IncidentCategoryDao}, które s¹ odpowiedzialne za zapisywanie i pobieranie klas domenowych z bazy danych.
+
+W pierwszym kroku u¿ytkownik wyœwietla kartê incydentu. W aplikacji jest to realizowane jako wywo³anie metody \texttt{showForm()} klasy \texttt{EditIncidentController}. Klasa \texttt{EditIncidentController} musi pobraæ dane potrzebne do wyœwietlenia karty incydentu, korzystaj¹c z us³ug udostêpnionych przez klasê \linebreak \texttt{IncidentService}. Pierwsza metoda \texttt{getById()} pobiera incydent po identyfikatorze. Klasa \texttt{IncidentService} nie przeprowadza operacji w bazie danych, natomiast korzysta z klas z warstwy dostêpu do danych. W tym przypadku wywo³a metodê \texttt{getById()} klasy \texttt{IncidentDao}. Nale¿y równie¿ pobraæ wartoœci wszystkich s³owników, w tym przypadku klasa \texttt{IncidentService} równie¿ udostêpnia szereg metod odpowiedzialnych za wykonanie tej czynnoœci. Diagram przedstawia pobranie wszystkich mo¿liwych kategorii incydentów. \texttt{IncidentService} zawiera metodê \texttt{getAllCategories()}, która wykona tê czynnoœæ. Tutaj podobnie wykorzystywana jest klasa dostêpu do danych \texttt{IncidentCategoryDao}, zawieraj¹ca metodê \texttt{fetchAll()}.
+
+W drugim kroku u¿ytkownik dokonuje zapisania formularza, co powodujê wywo³anie metody \texttt{onEdit()} klasy \texttt{EditIncidentController}.
+Metoda ta na wstêpie dokonuje walidacji, przy pomocy klasy \texttt{AddIncidentValidator}, a nastêpnie zapisania incydentu przy pomocy metody \texttt{edit()} klasy \texttt{IncidentService}, co spowoduje wywo³anie metody \texttt{save()} klasy \texttt{IncidentDao}.
+
+W trzecim kroku zostaje wyœwietlony ten sam formularz z komunikatem o~sukcesie.
+
+Przyk³ad ten jest reprezentatywny dla ca³ej aplikacji. Wszystkie ¿¹dania w~aplikacji dzia³aj¹ wg przedstawionego schematu.
+
+\subsection{Aspekty aplikacji}
+Przy implementacji aplikacji skorzystano z programowania aspektowego\footnote{AOP - Aspect Oriented Programming}. Zosta³y utworzone aspekty odpowiedzialne za obszary: bezpieczeñstwa oraz spójnoœci transakcyjnej.
+
+Programowanie aspektowe, wykorzystuj¹c proces wplatania (ang. weaving), pozwala na zaaplikowanie nowego kodu do kodu ju¿ istniej¹cego. W typowym podejœciu nale¿a³oby w³asnorêcznie dodaæ nowy kod do istniej¹cego kodu, natomiast programowanie aspektowe (w procesie wplatania) wykonuje tê czynnoœæ automatycznie \cite{aop}.
+
+\subsubsection{Aspekt bezpieczeñstwa}
+Aspekt bezpieczeñstwa umo¿liwia zarz¹dzanie poziomem uprawnieñ w aplikacji bez ingerencji w logikê biznesow¹. Przy pomocy adnotacji \textit{@Secured} mo¿na oznaczyæ wybran¹ metodê w celu wskazania, które role aplikacyjne maj¹ prawo do~jej wykonania. Istnieje równie¿ mo¿liwoœæ oznaczenia wybranych metod w pliku konfiguracyjnym XML \cite{spring_recipes}.
+
+\subsubsection{Aspekt spójnoœci transakcyjnej}
+Aspekt spójnoœci transakcyjnej zapewnia spójnoœæ transakcyjn¹ poprzez oznaczenie wybranej metody adnotacj¹  \textit{@Transactional}. Gwarantuje to wykonanie treœci tej metody w ramach jednej transakcji bazodanowej. Twórca aplikacji oznaczy³ t¹ adnotacj¹ wszystkie metody z warstwy us³ugowej \cite{spring_recipes}.
+
+\section{Sygna³y}
+\label{sygnaly} % Always give a unique label
+Wymagania narzucaj¹ powiadamianie odpowiednich osób o zmianie stanu zdarzenia: incydentu, problemu oraz zlecenia. Przyk³adem jest informacja dla klienta o~rozwi¹zaniu incydentu lub informacja dla serwisanta o nowo przypisanym incydencie. Pokrewnym wymaganiem jest eskalacja. Po okreœlonym up³ywie czasu nale¿y poinformowaæ odpowiedni¹ osobê.
+
+Oba typy powiadomieñ maj¹ wiele cech wspólnych, aczkolwiek ró¿ni¹ siê rodzajem wyzwalacza. Pierwsze z nich s¹ wyzwalane przez zmianê stanu, a drugie poprzez czas. Autor niniejszej pracy nazwa³ oba rodzaje powiadomieñ sygna³ami.
+
+
+Sygna³ jest to powiadomienie u¿ytkownika o zaistnieniu okreœlonego zdarzenia. Powiadomienie mo¿e byæ wys³ane drog¹ mailow¹ lub poprzez dedykowany widok w aplikacji.
+Wyzwalaczem sygna³u mo¿e byæ zmiana stanu obiektu lub czas.
+
+W realizowanej aplikacji powsta³ modu³ odpowiedzialny za zarz¹dzanie sygna³ami. W trakcie jego realizacji nale¿a³o rozwi¹zaæ szereg problemów projektowych: powiadomienia dotycz¹ce ró¿nych rodzajów zdarzeñ (incydentu, problemu, zlecenia), obs³u¿enie ró¿norodnych rodzajów sygna³ów, mo¿liwoœæ konfiguracji treœci wiadomoœci oraz treœci tematu na podstawie rodzaju sygna³u, generowanie sygna³ów przy zmianie stanu, generowanie sygna³ów przy up³ywie czasu, wysy³anie wiadomoœci e-mail dla ka¿dego sygna³u oraz ustalenie kategorii odbiorcy sygna³u.
+
+\subsection{Typy sygna³ów}
+
+Wymagania narzucaj¹ elastyczne podejœcie obs³uguj¹ce obiekty ró¿nego typu oraz sygna³y ró¿nego typu. Ka¿dy typ sygna³u dotyczy konkretnego typu obiektu: incydentu, problemu, zlecenia. Typ obiektu zawiera listê atrybutów, w oparciu o które mo¿na tworzyæ treœæ wiadomoœci oraz treœæ tematu wiadomoœci. Jest to bardzo elastyczne rozwi¹zanie poniewa¿ w dowolnym momencie mo¿na dodaæ nowy typ obiektu co nie bêdzie mia³o wp³ywu na resztê modu³u, podobnie jest z~nowym typem sygna³u. Szablon wiadomoœci mo¿e ulec zmianie w dowolnym momencie, co korzystnie wp³ywa na elastycznoœæ. Treœæ wiadomoœci jest budowana dynamicznie na podstawie atrybutów obiektu oraz szablonu wiadomoœci.
+
+\paragraph{Przyk³ad:}
+
+Niech obiekt zawiera atrybut: \textbf{STATUS} o wartoœci: \textbf{rozwi¹zany} \ref{tab:sygnal_szab_wiad}.
+
+\begin{table}[!ht]
+	\caption{Treœæ wiadomoœci na podstawie szablonu}
+	\label{tab:sygnal_szab_wiad}
+	\centering
+	\begin{tabular}{ | l | l | }
+		\hline \rowcolor{tableheadercolor}  \textbf{Szablon} & \textbf{Treœæ wiadomoœci} \\ \hline
+		\rowcolor{tablerowcolor} {Incydent zmieni³ status na: \$\{STATUS\}.} & {Incydent zmieni³ status na: rozwi¹zany.} \\ \hline
+	\end{tabular} \\
+\end{table}
+
+Ka¿dy typ sygna³u ma przypisan¹ rangê okreœlaj¹c¹ wagê sygna³u:
+
+\begin{itemize}
+	\item informacja;
+	\item ostrze¿enie;
+	\item b³¹d;
+\end{itemize}
+
+\subsection{Rodzaj odbiorcy}
+\label{rodzajOdbiorcy}
+
+Pracownik, dla którego generowany jest sygna³, okreœlany jest na podstawie powi¹zania z danym zdarzeniem. Zosta³a utworzona lista kategorii odbiorców jednoznacznie wyznaczaj¹ca pracownika dla danego zdarzenia. W dowolnej chwili istnieje mo¿liwoœæ dodania nowej kategorii co œwiadczy o elastycznoœci podejœcia.
+
+\paragraph{Przyk³adowe rodzaje odbiorców:}
+
+\begin{itemize}
+\item serwisant incydentu;
+\item mened¿er grupy wsparcia;
+\item mened¿er serwisanta incydentu;
+\item zg³aszaj¹cy incydent;
+\item mened¿er zg³aszaj¹cego incydent;
+\end{itemize}
+
+\subsection{Generacja sygna³ów przy zmianie stanu}
+
+Do tego celu zosta³y wykorzystane wyzwalacze w bazie danych. Stworzono wyzwalacz na poziomie wiersza, który po operacjach \texttt{insert} oraz \texttt{update} dodaje nowe sygna³y. W tym miejscu powsta³ problem pobierania danych z aktualnie modyfikowanej tabeli. Rozwi¹zanie tej sytuacji polega na wstawieniu przez wyzwalacz identyfikatorów zmienionych wierszy do tymczasowej tabeli. Nastêpnie wyzwalacz na poziomie tabeli, dla ka¿dego wiersza dodaje nowy sygna³.
+
+\subsection{Generacja sygna³ów po up³ywie czasu}
+\label{generatorySygnalow}
+
+
+Do realizacji tego celu zosta³y stworzone generatory sygna³ów. Jest to byt dodaj¹cy sygna³y okreœlonego typu dla obiektów spe³niaj¹cych zadane kryterium. Kryterium jest budowane na podstawie czasu.
+
+\paragraph{Przyk³ad}
+
+Zbli¿aj¹cy siê termin rozwi¹zania incydentu. W takim wypadku kryterium wygl¹da nastêpuj¹co:
+
+\begin{lstlisting}[language=SQL,caption=Przyk³adowe kryterium generatora sygna³ów]
+SYSDATE < TARGET_RESOLUTION_DATE
+AND TARGET_RESOLUTION_DATE < SYSDATE + 4/24
+\end{lstlisting}
+
+W aplikacji jest jedno zadanie pe³ni¹ce rolê planisty. Co pewien kwant czasu sprawdza ono, czy istniej¹ generatory gotowe do uruchomienia. Wybór jednego planisty zamiast oddzielnego zadania dla ka¿dego generatora umo¿liwia dynamiczne zarz¹dzanie generatorami poprzez aplikacjê.
+
+\subsection{Konstrukcja zapytania dla generatora}
+
+Ka¿dy generator konstruuje zapytanie odnajduj¹ce obiekty, dla których zostanie wygenerowany sygna³. Postaæ zapytania zosta³a pokazana na wydruku \ref{lst:generatorZapytanie}.
+
+
+\begin{lstlisting}[language=SQL,caption=Szablon zapytania dla generatora,label=lst:generatorZapytanie,numbers=left]
+SELECT o.*, e.employee_id
+FROM objectType.viewName o receiverType.fromStatement
+WHERE criterion AND checkDuplicateCondition
+\end{lstlisting}
+
+
+\subsubsection{objectType.viewName}
+
+\texttt{objectType} jest to typ obiektu, którym mo¿e byæ: incydent, problem lub zlecenie. Ka¿dy typ obiektu jest zwi¹zany z perspektyw¹ w bazie danych, która zawiera atrybuty tego obiektu. Czyli \texttt{objectType.viewName} oznacza nazwê perspektywy zawieraj¹cej dane o obiektach konkretnego typu.
+
+\subsubsection{receiverType.fromStatement}
+
+Ka¿dy generator ma przypisanego adresata, co zosta³o opisane w sekcji \ref{rodzajOdbiorcy}. Zmienna \texttt{receiverType} okreœla w³aœnie rodzaj odbiorcy. Ka¿dy rodzaj odbiorcy posiada atrybut \texttt{fromStatement}, który wskazuje wiersz z tabeli \texttt{EMPLOYEES}, dla~którego zostanie wygenerowany sygna³.
+
+%\paragraph{Przyk³ady:}
+
+
+
+\begin{lstlisting}[language=SQL,caption=Wartoœæ atrybutu fromStatement dla serwisanta]
+JOIN employees e ON e.employee_id = o.staff_member_id
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Wartoœæ atrybutu fromStatement dla mened¿era grupy wsparcia]
+JOIN support_groups sg ON sg.group_id = o.group_id
+JOIN employees e ON e.employee_id = sg.manager_id
+\end{lstlisting}
+
+\subsubsection{criterion}
+
+Jest to kryterium, które musz¹ spe³niaæ obiekty, przyk³adowe kryterium zosta³o pokazane w sekcji \ref{generatorySygnalow}.
+
+\subsubsection{checkDuplicateCondition}
+
+Jest to dodatkowy warunek, który nie dopuszcza do powstawania duplikatów.
+
+\begin{lstlisting}[language=SQL,caption=Przyk³adowe zapytanie dla generatora]
+SELECT o.*, e.employee_id
+FROM
+	incidents_v o
+	JOIN employees e
+		ON e.employee_id = o.staff_member_id
+WHERE
+	sysdate < target_resolution_date
+	AND target_resolution_date < sysdate + 4/24
+	AND not exists (
+		SELECT *
+		FROM signals
+		WHERE
+			type_code = '1'
+			AND object_id = o.incident_id
+	)
+\end{lstlisting}
+
+\subsection{Wysy³anie wiadomoœci e-mail}
+
+Rozwi¹zanie tego problemu to utworzenie zadania pobieraj¹cego co pewien okres czasu sygna³y dla których jeszcze nie wys³ano wiadomoœci e-mail. Po wys³aniu wiadomoœci nale¿y oznakowaæ taki sygna³, aby unikn¹æ ponownego dzia³ania.

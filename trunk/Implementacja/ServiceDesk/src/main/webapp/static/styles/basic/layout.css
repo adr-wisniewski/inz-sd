@@ -1,0 +1,45 @@
+#logo, #navigation {
+    float: left;
+    clear: left;
+    width: 220px;
+}
+
+#logo h1 {
+    border: 1px solid;
+    margin: 0 6px 6px;
+}
+
+#page {
+    margin: 6px;
+}
+
+#page, #footer {
+    margin-left: 220px;
+}
+
+#pagetitle {
+    border: 1px solid;
+    padding: 1em;
+}
+
+#footer {
+   overflow: hidden;
+   padding: 1em;
+}
+
+    #footer img {
+        vertical-align: text-bottom;
+    }
+
+    #footer .authors {
+        float: left;
+    }
+
+    #footer .badges {
+        float: right;
+    }
+
+body.empty
+{
+    padding: 6px;
+}

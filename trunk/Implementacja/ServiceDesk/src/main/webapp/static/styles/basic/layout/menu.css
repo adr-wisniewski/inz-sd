@@ -1,0 +1,34 @@
+#greeting {
+    border: 1px solid;
+    padding: 2px;
+}
+
+#greeting a {
+    display: inline-block;
+}
+
+#greeting,
+#navigation .menuGroup
+{
+    margin: 0 6px 6px;
+}
+
+    #navigation .menuGroup h5 {
+        border: 1px solid;
+        padding: 5px 2px;
+        padding-left: 15px;
+        text-align: center;
+    }
+
+    #navigation .menuGroup ul {
+        margin: 0;
+        padding-left: 16px;
+        list-style: none;
+    }
+
+    #navigation .menuGroup > ul {
+        border-style: none solid solid;
+        border-width: 0 1px 1px;
+        padding: 2px 0 2px 6px;
+
+    }

@@ -1,0 +1,138 @@
+@font-face {
+    font-family: "BleedingCowboys";
+    src: url("../../fonts/Bleeding_Cowboys.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "darkgard";
+    src: url("../../fonts/darkgard.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "gotyk";
+    src: url("../../fonts/Gotyk.ttf") format("truetype");
+}
+
+
+@font-face {
+    font-family: "secesja";
+    src: url("../../fonts/Secesja.ttf") format("truetype");
+}
+
+#logo
+{
+    font-family: "BleedingCowboys";
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 34px;
+    text-align: center;
+
+}
+
+#greeting
+{
+    text-align: center;
+}
+
+body,
+form dl input,
+form dl textarea
+{
+   font: 12px "lucida grande",arial,tahoma,helvetica,sans-serif;
+}
+
+div.dashboardpanel .header {
+    font: bold 13px/15px tahoma,arial,verdana,sans-serif;
+}
+
+input[type="text"], input[type="password"], select, textarea
+{
+    font: -moz-field;
+}
+
+a.action, span.action, button {
+    font-family: inherit;
+}
+
+#pagetitle em {
+    font-style: normal;
+}
+
+#pagetitle h1
+{
+    font-size: 2em;
+}
+
+#pagetitle h1 em:before,
+#pagetitle h1 em:after {
+    content: "'";
+}
+
+div.panel.success .messages {
+    font-size: 1.5em;
+}
+
+div.panel h1.caption
+{
+    font-size: 1.2em;
+}
+
+#footer
+{
+     font-size: 0.9em;
+}
+
+#navigation h5
+{
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+    #navigation li
+    {
+        line-height: 16px;
+    }
+
+    #greeting a:first-letter,
+    #navigation li:first-letter
+    {
+        font-weight: bold;
+    }
+
+a, a:link, a:visited, a:hover, a:active
+{
+    text-decoration: none;
+}
+
+    a:hover
+    {
+        text-decoration: underline;
+    }
+
+.propertyList th
+{
+    text-align: right;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.error {
+    font-weight: bold;
+}
+
+div.panel .item .title {
+    font-weight: bold;
+}
+
+#logo,
+#pagetitle h1
+{
+    text-shadow: 1px 2px 4px black;
+}
+
+#greeting em,
+#navigation li em
+{
+    font-style: normal;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+    "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+	
+	<!-- Pages -->
+	<definition name="im/add" extends="standard-layout">
+		<put-attribute name="title" value="im.title.add" />
+		<put-attribute name="body" value="/WEB-INF/views/im/add.jsp" />
+	</definition>
+	
+	<definition name="im/search" extends="standard-layout">
+		<put-attribute name="title" value="im.title.search" />
+		<put-attribute name="body" value="/WEB-INF/views/im/search.jsp" />
+	</definition>
+	
+	<definition name="im/edit" extends="standard-layout">
+		<put-attribute name="title" value="im.title.edit" />
+		<put-attribute name="body" value="/WEB-INF/views/im/edit.jsp" />
+	</definition>
+	
+	<definition name="im/comment" extends="empty-layout">
+		<put-attribute name="title" value="im.title.comment" />
+		<put-attribute name="body" value="/WEB-INF/views/im/comment.jsp" />
+	</definition>
+	
+	<definition name="im/commentsuccess" extends="empty-layout">
+		<put-attribute name="title" value="im.title.commentsuccess" />
+		<put-attribute name="body" value="/WEB-INF/views/im/commentsuccess.jsp" />
+	</definition>
+	
+</tiles-definitions>

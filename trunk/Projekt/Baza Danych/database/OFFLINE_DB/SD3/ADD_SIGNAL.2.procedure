@@ -1,0 +1,94 @@
+create or replace
+PROCEDURE ADD_SIGNAL 
+(
+  type_code_v IN VARCHAR2  
+, employee_id_v IN NUMBER  
+, object_id_v IN NUMBER  
+) AS
+    object_code_v char;
+    view_name_v varchar2(30);
+    signal_id_v number;
+    ir incidents_v%rowtype;
+    pr problems_v%rowtype;
+BEGIN
+    select st.object_code, ot.view_name into object_code_v, view_name_v
+    from signal_types st join signal_object_types ot on ot.object_code = st.object_code
+    where st.type_code = type_code_v;
+    
+    insert into signals(SIGNAL_ID, CREATION_DATE,IS_SENT,EMPLOYEE_ID,TYPE_CODE,OBJECT_ID)
+    values(signal_id_seq.nextval + 10000000 , sysdate, 'F', employee_id_v, type_code_v, object_id_v)
+    returning signal_id
+    INTO signal_id_v;
+    
+
+    IF object_code_v = 'I' THEN
+        select * into ir from incidents_v where incident_id = object_id_v;
+        
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ISTA', ir.STATUS);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IPRI', ir.PRIORITY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IRSm', ir.RESOLUTION_MONTH_NAME);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IRSd', ir.RESOLUTION_DAY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IRSM', ir.RESOLUTION_MONTH);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IRSY', ir.RESOLUTION_YEAR);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IRSD', ir.RESOLUTION_DATE);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ICLm', ir.CLOSURE_MONTH_NAME);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ICLd', ir.CLOSURE_DAY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ICLM', ir.CLOSURE_MONTH);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ICLY', ir.CLOSURE_YEAR);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ICLD', ir.CLOSURE_DATE);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ICTE', ir.CATEGORY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ICT3', ir.SUB_SUB_CATEGORY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ICT2', ir.SUB_CATEGORY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ICT1', ir.MAIN_CATEGORY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IC8m', ir.CREATION_MONTH_NAME);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IC8Q', ir.CREATION_QUARTER);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IC8M', ir.CREATION_MONTH);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IC8Y', ir.CREATION_YEAR);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IC8d', ir.CREATION_DAY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IC8D', ir.CREATION_DATE);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ISUB', ir.SUBJECT);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'IID ', ir.INCIDENT_ID);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ISG ', ir.SUPPORT_GROUP);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ISM ', ir.STAFF_MEMBER);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'ISRC', ir.SOURCE);
+    
+    ELSIF object_code_v = 'P' THEN
+        select * into pr from problems_v where problem_id = object_id_v;
+        
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PSG ', pr.SUPPORT_GROUP);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PSM ', pr.STAFF_MEMBER);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PSTA', pr.STATUS);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PPRI', pr.PRIORITY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PCLm', pr.CLOSURE_MONTH_NAME);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PCLd', pr.CLOSURE_DAY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PCLM', pr.CLOSURE_MONTH);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PCLY', pr.CLOSURE_YEAR);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PCLD', pr.CLOSURE_DATE);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PCT0', pr.CATEGORY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PCT3', pr.SUB_SUB_CATEGORY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PCT2', pr.SUB_CATEGORY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PCT1', pr.MAIN_CATEGORY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PC8m', pr.CREATION_MONTH_NAME);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PC8d', pr.CREATION_DAY);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PC8M', pr.CREATION_MONTH);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PC8Q', pr.CREATION_QUARTER);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PC8Y', pr.CREATION_YEAR);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PC8D', pr.CREATION_DATE);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PSUB', pr.SUBJECT);
+        insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval + 10000000,signal_id_v,'PID ', pr.PROBLEM_ID);
+    END IF;
+/*
+
+select
+--ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE
+    'insert into signal_attributes(ATTRIBUTE_ID,SIGNAL_ID,ATTRIBUTE_CODE,ATTRIBUTE_VALUE) values( SIGNAL_PARAM_ID_SEQ.nextval,signal_id_v,''' || soat.attribute_code || ''', r.' || soat.attribute_name || ');'
+from
+    user_tab_cols utc
+    join signal_object_types sot on upper(utc.table_name) = upper(sot.view_name)
+    join signal_object_attribute_types soat on soat.object_code = sot.object_code and upper(soat.attribute_name) = upper(utc.column_name)
+where table_name = 'INCIDENTS_V'
+
+*/
+
+END ADD_SIGNAL;
+/

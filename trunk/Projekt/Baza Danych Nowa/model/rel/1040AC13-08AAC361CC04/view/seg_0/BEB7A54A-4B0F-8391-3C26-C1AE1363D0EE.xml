@@ -1,0 +1,224 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" id="BEB7A54A-4B0F-8391-3C26-C1AE1363D0EE" directorySegmentName="seg_0" name="EVENTS_V">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <userDefined>true</userDefined>
+   <userDefinedSQL>CREATE OR REPLACE VIEW EVENTS_V AS SELECT e.event_id,&amp;lt;br&amp;gt;    e.subject ,&amp;lt;br&amp;gt;    e.creation_date ,&amp;lt;br&amp;gt;    extract(YEAR FROM e.creation_date)  AS creation_year ,&amp;lt;br&amp;gt;    extract(MONTH FROM e.creation_date) AS creation_month ,&amp;lt;br&amp;gt;    TO_CHAR(e.creation_date, &amp;apos;month&amp;apos;)   AS creation_month_name ,&amp;lt;br&amp;gt;    e.event_date ,&amp;lt;br&amp;gt;    extract(YEAR FROM e.event_date)  AS event_year ,&amp;lt;br&amp;gt;    extract(MONTH FROM e.event_date) AS event_month ,&amp;lt;br&amp;gt;    TO_CHAR(e.event_date, &amp;apos;month&amp;apos;)   AS event_month_name ,&amp;lt;br&amp;gt;    c.main_category ,&amp;lt;br&amp;gt;    coalesce(c.sub_category, &amp;apos;BRAK&amp;apos;) as sub_category ,&amp;lt;br&amp;gt;    c.sub_sub_category ,&amp;lt;br&amp;gt;    c.name AS category ,&amp;lt;br&amp;gt;    es.name as significance,&amp;lt;br&amp;gt;    case when e.incident_id is NULL then &amp;apos;NIE&amp;apos; else &amp;apos;TAK&amp;apos; end as incident&amp;lt;br&amp;gt;FROM events e&amp;lt;br&amp;gt;LEFT JOIN categories_em_v c&amp;lt;br&amp;gt;ON e.category_code = c.category_code&amp;lt;br&amp;gt;LEFT JOIN event_significance_types es on es.significance_code = e.significance_code</userDefinedSQL>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Column</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+   </fonts>
+   <usedContainers>
+      <container alias="e" containerID="2BFF6C49-1057-DBAA-1D8B-7FC5C5E1D154"/>
+   </usedContainers>
+   <viewElements>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="event_id" id="AD1D6453-0979-BB11-7D9C-45B5238C0883">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>event_id</alias>
+         <dataType>NUMBER (10)</dataType>
+         <expression>event_id</expression>
+         <reference>false</reference>
+         <referencedColumn>133D4F0C-E791-C0F0-4869-798E72E7D99D</referencedColumn>
+         <table>2BFF6C49-1057-DBAA-1D8B-7FC5C5E1D154</table>
+         <tableAlias>e</tableAlias>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="subject" id="B4F54C03-DD84-61CC-7ED4-2CCC4B43F702">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>subject</alias>
+         <dataType>VARCHAR2 (1000 BYTE)</dataType>
+         <expression>subject</expression>
+         <reference>false</reference>
+         <referencedColumn>4686B1EF-4A5A-01DA-77AD-F5DA5A911409</referencedColumn>
+         <table>2BFF6C49-1057-DBAA-1D8B-7FC5C5E1D154</table>
+         <tableAlias>e</tableAlias>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="creation_date" id="EB38083E-F0CF-5CC1-F9DC-834F403E19DA">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>creation_date</alias>
+         <dataType>DATE</dataType>
+         <expression>creation_date</expression>
+         <reference>false</reference>
+         <referencedColumn>98563AC6-C1BC-1A23-CD99-4F931C20A2C8</referencedColumn>
+         <table>2BFF6C49-1057-DBAA-1D8B-7FC5C5E1D154</table>
+         <tableAlias>e</tableAlias>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="creation_year" id="115C0CB3-20BE-F53E-B609-73044B7593FB">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>creation_year</alias>
+         <expression>extract(YEAR FROM e.creation_date)</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="creation_month" id="C357766C-C486-DE8F-76F3-46C12041F8B2">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>creation_month</alias>
+         <expression>extract(MONTH FROM e.creation_date)</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="creation_month_name" id="8B576FB5-7A4F-8373-C27A-3775CCA0B365">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>creation_month_name</alias>
+         <expression>TO_CHAR(e.creation_date,&amp;apos;month&amp;apos;)</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="event_date" id="6EB283CA-4AD3-0FA2-0944-734F37ACBC18">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>event_date</alias>
+         <dataType>DATE</dataType>
+         <expression>event_date</expression>
+         <reference>false</reference>
+         <referencedColumn>4A6E4EE3-BB61-1AF8-97F8-DD14A982C6BA</referencedColumn>
+         <table>2BFF6C49-1057-DBAA-1D8B-7FC5C5E1D154</table>
+         <tableAlias>e</tableAlias>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="event_year" id="D7E3EDC2-21BE-CA9B-226F-DA9BB3D2EBF6">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>event_year</alias>
+         <expression>extract(YEAR FROM e.event_date)</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="event_month" id="FEC607D2-8311-D1B8-3D4C-7A6049C43006">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>event_month</alias>
+         <expression>extract(MONTH FROM e.event_date)</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="event_month_name" id="29D0CB4A-1190-44C9-ADA0-AC7D8722D0EE">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>event_month_name</alias>
+         <expression>TO_CHAR(e.event_date,&amp;apos;month&amp;apos;)</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="main_category" id="FA5650B6-CA7F-F57D-445A-43F4C7E75712">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>main_category</alias>
+         <expression>main_category</expression>
+         <reference>false</reference>
+         <tableAlias>c</tableAlias>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="sub_category" id="2387D531-9C5F-904A-BC4B-5C8627AFF20F">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>sub_category</alias>
+         <expression>coalesce(c.sub_category,&amp;apos;BRAK&amp;apos;)</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="sub_sub_category" id="4F0AB7E7-6905-8A14-030C-438FD17A38D7">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>sub_sub_category</alias>
+         <expression>sub_sub_category</expression>
+         <reference>false</reference>
+         <tableAlias>c</tableAlias>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="category" id="36C78B88-B5E4-4EC3-AB28-59FD301E8629">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>category</alias>
+         <expression>name</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="significance" id="2EF068F1-D590-18C0-B38D-0A579214CB06">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>significance</alias>
+         <expression>name</expression>
+         <reference>false</reference>
+      </viewElement>
+      <viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="incident" id="A55D0995-DC63-6530-3E96-3570A690DFC2">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <alias>incident</alias>
+         <expression>incident_id is NULL then &amp;apos;NIE&amp;apos; else &amp;apos;TAK&amp;apos; end</expression>
+         <reference>false</reference>
+      </viewElement>
+   </viewElements>
+</TableView>

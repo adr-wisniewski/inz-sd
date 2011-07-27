@@ -1,0 +1,408 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
+  </ID>
+  <name>RFC_CATEGORIES</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b74236f3-36c3-49d0-b820-231bba4df340</identifier>
+      </ID>
+      <name>CATEGORY_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">840ce1da-a7dd-4035-8c16-c435e8550ad7</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>size</key>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ccd35bc8-e474-48b3-bed3-5420b5fbbf72</identifier>
+      </ID>
+      <name>NAME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d860e2a9-2dd1-4636-a996-6d0e2a96a880</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">200</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">174723f6-f770-4700-a488-ee0686998bf4</identifier>
+      </ID>
+      <name>ABSTRACT</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">57ebb404-1972-4681-a715-3108fba056dc</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">dc6bc527-8eaf-45c6-9ebf-d85e671d9ebd</identifier>
+      </ID>
+      <name>PARENT_CATEGORY_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">cc91a828-4297-45c0-9a0a-e3219d011e8f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a626d573-45a9-4d21-bccc-4b4c10bf04db</identifier>
+      </ID>
+      <name>CAB_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9c500e55-570c-41e7-95c6-d28ac4a200f1</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2aef5222-a698-4862-a212-735ed4fe64f2</identifier>
+      </ID>
+      <name>ECAB_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5bd11f63-9751-412f-aa2d-1480e143a6c6</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ceb8a6d5-985d-4f9c-81c8-fe1fb955ba20</identifier>
+      </ID>
+      <name>EXECUTIVE_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c0797ed1-bc92-4314-8b8b-cae11295ea75</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.CheckConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">dca6a171-e8f8-4df8-8acd-ea0d91d8fc7c</identifier>
+      </ID>
+      <name>RFC_CATEGORY_CHK1</name>
+      <checkConditionFragment class="oracle.javatools.db.sql.WhereObject">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f1777a67-d37a-4514-9a79-686352383555</identifier>
+        </ID>
+        <arguments>
+          <argument class="oracle.javatools.db.sql.SetOperation">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">aaf51db1-ee69-440a-bb12-c1fc2f24a7d2</identifier>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">b84f7d06-7b30-470d-bdee-8e5bb7662858</identifier>
+                </ID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>ABSTRACT</name>
+                  <identifier class="java.lang.String">174723f6-f770-4700-a488-ee0686998bf4</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>RFC_CATEGORIES</name>
+                    <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
+                    <schemaName>CHANGE</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>false</qualified>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">3ba1b498-eb43-4dbe-99c9-d00cf1391477</identifier>
+                </ID>
+                <SQLText>&apos;Y&apos;</SQLText>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">2401a2bf-36b9-4c3d-8181-043d57e236c1</identifier>
+                </ID>
+                <SQLText>&apos;N&apos;</SQLText>
+              </argument>
+            </arguments>
+            <operator>705</operator>
+          </argument>
+        </arguments>
+        <operator>372</operator>
+      </checkConditionFragment>
+      <enabled>true</enabled>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">03c15673-e239-4667-8671-d8936b1fc647</identifier>
+      </ID>
+      <name>RFC_CATEGORY_RFC_CATEGORY_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PARENT_CATEGORY_ID</name>
+          <identifier class="java.lang.String">dc6bc527-8eaf-45c6-9ebf-d85e671d9ebd</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>RFC_CATEGORIES</name>
+            <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
+            <schemaName>CHANGE</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>RFC_CATEGORY_PK</name>
+        <identifier class="java.lang.String">51bdd223-0a84-4a52-b789-e596d1a694ab</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>RFC_CATEGORIES</name>
+          <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
+          <schemaName>CHANGE</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">51bdd223-0a84-4a52-b789-e596d1a694ab</identifier>
+      </ID>
+      <name>RFC_CATEGORY_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY_ID</name>
+          <identifier class="java.lang.String">b74236f3-36c3-49d0-b820-231bba4df340</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>RFC_CATEGORIES</name>
+            <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
+            <schemaName>CHANGE</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>RFC_CATEGORY_PK</name>
+        <identifier class="java.lang.String">f26ab45a-f833-4fc7-b299-833f2a22224c</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>RFC_CATEGORIES</name>
+          <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
+          <schemaName>CHANGE</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>CHANGE</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
+    <constraint class="oracle.javatools.db.UniqueConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">828ddd01-f04e-426d-97cb-0f686d8553bc</identifier>
+      </ID>
+      <name>RFC_CATEGORY_UK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>NAME</name>
+          <identifier class="java.lang.String">ccd35bc8-e474-48b3-bed3-5420b5fbbf72</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>RFC_CATEGORIES</name>
+            <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
+            <schemaName>CHANGE</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>RFC_CATEGORY_UK1</name>
+        <identifier class="java.lang.String">a8aca2d3-854d-44c1-a0e8-949cc9d0930a</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>RFC_CATEGORIES</name>
+          <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
+          <schemaName>CHANGE</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>CHANGE</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f26ab45a-f833-4fc7-b299-833f2a22224c</identifier>
+      </ID>
+      <name>RFC_CATEGORY_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">fb3ac063-a593-49bc-a1c0-d36408067def</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">9724f67a-9d99-4f0c-9e43-9e39390891a9</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>CATEGORY_ID</name>
+              <identifier class="java.lang.String">b74236f3-36c3-49d0-b820-231bba4df340</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>RFC_CATEGORIES</name>
+                <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
+                <schemaName>CHANGE</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <schema>
+        <name>CHANGE</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a8aca2d3-854d-44c1-a0e8-949cc9d0930a</identifier>
+      </ID>
+      <name>RFC_CATEGORY_UK1</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">79c53232-6324-4933-b1bd-8e130317cd21</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">f6cd2773-dee9-48d6-9af3-f2e78f99c5de</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>NAME</name>
+              <identifier class="java.lang.String">ccd35bc8-e474-48b3-bed3-5420b5fbbf72</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>RFC_CATEGORIES</name>
+                <identifier class="java.lang.String">2ff49368-3063-4ebf-bc06-1feea1356514</identifier>
+                <schemaName>CHANGE</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <schema>
+        <name>CHANGE</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>CHANGE</name>
+  </schema>
+</table>

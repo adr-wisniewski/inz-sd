@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema elementFormDefault="qualified" attributeFormDefault="qualified"
+        targetNamespace="servicedesk.em.logging" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sd="servicedesk.em.logging">
+
+
+
+    <element name="eventsRequest" type="sd:EventsType"></element>
+    
+    <complexType name="EventType">
+    	<sequence>
+    		<element name="subject" type="string"></element>
+    		<element name="date" type="date"></element>
+    		<element name="significance">
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="4"></length>
+    					<enumeration value="INFO"></enumeration>
+    					<enumeration value="WARN"></enumeration>
+    					<enumeration value="EXCE"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="category">
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="4"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+            <element name="incident" type="boolean"></element>
+            <element name="parameters" type="sd:ParameterTypes"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="eventsResponse" type="string"></element>
+
+    <complexType name="ParameterType">
+    	<sequence>
+    		<element name="name" type="string"></element>
+    		<element name="value" type="string"></element>
+    	</sequence>
+    </complexType>
+
+
+    <complexType name="ParameterTypes">
+    	<sequence>
+    		<element name="parameter" type="sd:ParameterType" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+    
+
+    <complexType name="EventsType">
+    	<sequence>
+    		<element name="event" type="sd:EventType" maxOccurs="unbounded"></element>
+    	</sequence>
+    </complexType>
+</schema>

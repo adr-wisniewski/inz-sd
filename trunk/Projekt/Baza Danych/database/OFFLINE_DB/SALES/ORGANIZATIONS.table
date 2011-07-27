@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">81fd588b-f351-4272-80cb-56572c644af5</identifier>
+  </ID>
+  <name>ORGANIZATIONS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2e7db8ed-42dd-4dec-ae52-4dcc2d60d967</identifier>
+      </ID>
+      <name>ORGANIZATION_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5a971414-d7ab-433e-96eb-471a6f974fde</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">87056739-3ac0-4f71-be87-33a73facc763</identifier>
+      </ID>
+      <name>NAME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">eb34940b-b975-49f7-9e79-9f823e5cd143</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b32e3ed9-d89b-4268-a603-87e8097aea17</identifier>
+      </ID>
+      <name>ORGANIZATIONS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ORGANIZATION_ID</name>
+          <identifier class="java.lang.String">2e7db8ed-42dd-4dec-ae52-4dcc2d60d967</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ORGANIZATIONS</name>
+            <identifier class="java.lang.String">81fd588b-f351-4272-80cb-56572c644af5</identifier>
+            <schemaName>SALES</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ORGANIZATIONS_PK</name>
+        <identifier class="java.lang.String">82fddff3-0933-4055-a1de-2af96507ef0e</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>ORGANIZATIONS</name>
+          <identifier class="java.lang.String">81fd588b-f351-4272-80cb-56572c644af5</identifier>
+          <schemaName>SALES</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SALES</schemaName>
+        <type>INDEX</type>
+      </indexID>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">82fddff3-0933-4055-a1de-2af96507ef0e</identifier>
+      </ID>
+      <name>ORGANIZATIONS_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">7fffd72a-f6b4-4364-8a62-a42f0ba8cb5b</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">10ead118-a110-4dd6-9766-85772af45176</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ORGANIZATION_ID</name>
+              <identifier class="java.lang.String">2e7db8ed-42dd-4dec-ae52-4dcc2d60d967</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>ORGANIZATIONS</name>
+                <identifier class="java.lang.String">81fd588b-f351-4272-80cb-56572c644af5</identifier>
+                <schemaName>SALES</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <schema>
+        <name>SALES</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SALES</name>
+  </schema>
+</table>

@@ -1,0 +1,714 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TransferDescriptor xmlns="http://xmlns.oracle.com/jdeveloper/110000transfer-descriptor">
+   <value n="cascadeDelete" v="true"/>
+   <value n="dependencyDepth" v="0"/>
+   <value n="downgradeOK" v="true"/>
+   <value n="includeAllDependencies" v="false"/>
+   <value n="includeDependencies" v="false"/>
+   <value n="manualReconcile" v="false"/>
+   <value n="policy" v="oracle.jdevimpl.offlinedb.transfer.OffToOnPolicy"/>
+   <value n="reconcile" v="false"/>
+   <value n="replace" v="true"/>
+   <value n="schemaNames" v="false"/>
+   <list n="schemaObjectDescriptors">
+      <hash>
+         <value n="name" v="AUDITREVISION"/>
+         <value n="schemaName" v="AUDIT"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUDITREVISION_SEQ"/>
+         <value n="schemaName" v="AUDIT"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_AUD"/>
+         <value n="schemaName" v="AUDIT"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITIES"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITIES_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITY_MEMBERS"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITY_TYPES"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITY_TYPES_MATRIX"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AUTHORITY_TYPES_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_CATEGORIES"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_CATEGORIES_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_IMPACTS"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_IMPACTS_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_PRIORITIES"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_PRIORITIES_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_RESOLUTIONS"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_RESOLUTIONS_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="RFC_SEQ"/>
+         <value n="schemaName" v="CHANGE"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_AUTOINSERT_EMPLOYEES"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TRIGGER"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_AUTOINSERT_INCIDENTS"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TRIGGER"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_AUTOINSERT_PROBLEMS"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TRIGGER"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_AUTOINSERT_SERVICES"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TRIGGER"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_CLASSES"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_CLASS_ATTRIBUTES"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_CLASS_ATTRIBUTES_SEQ"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_CLASS_ATTRIBUTE_VALUES"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_CLASS_SEQ"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_ENTITIES"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_ENTITIES_SEQ"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_ITEMS"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_ITEMS_EMPLOYEE"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_ITEMS_INCIDENT"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_ITEMS_PROBLEM"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_ITEMS_RFC"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_ITEMS_SERVICE"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_ITEMS_UNIVERSAL"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_ITEM_CLASSES"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_RELATIONS"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="C2_RELATION_CLASSES"/>
+         <value n="schemaName" v="CMDB"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ANNOUNCEMENTS"/>
+         <value n="schemaName" v="COMMON"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ANNOUNCEMENTS_SEQ"/>
+         <value n="schemaName" v="COMMON"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ANNOUNCEMENT_ATTACHMENTS"/>
+         <value n="schemaName" v="COMMON"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ATTACHMENTS"/>
+         <value n="schemaName" v="COMMON"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ATTACHMENTS_SEQ"/>
+         <value n="schemaName" v="COMMON"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="DEPARTMENTS"/>
+         <value n="schemaName" v="HR"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="EMPLOYEES"/>
+         <value n="schemaName" v="HR"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="JOBS"/>
+         <value n="schemaName" v="HR"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="CLIENTS"/>
+         <value n="schemaName" v="SALES"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="CLIENTS_SEQ"/>
+         <value n="schemaName" v="SALES"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="COOPERANTS"/>
+         <value n="schemaName" v="SALES"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="COOPERANTS_SEQ"/>
+         <value n="schemaName" v="SALES"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ORGANIZATIONS"/>
+         <value n="schemaName" v="SALES"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ORGANIZATIONS_SEQ"/>
+         <value n="schemaName" v="SALES"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ADD_SIGNAL"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="PROCEDURE"/>
+      </hash>
+      <hash>
+         <value n="name" v="AGREEMENTS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="APP"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="PACKAGE"/>
+      </hash>
+      <hash>
+         <value n="name" v="APP"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="PACKAGE BODY"/>
+      </hash>
+      <hash>
+         <value n="name" v="CATEGORIES_EM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="CATEGORIES_EM_V"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="VIEW"/>
+      </hash>
+      <hash>
+         <value n="name" v="CATEGORIES_IM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="CATEGORIES_IM_V"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="VIEW"/>
+      </hash>
+      <hash>
+         <value n="name" v="CATEGORIES_PM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="CATEGORIES_PM_V"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="VIEW"/>
+      </hash>
+      <hash>
+         <value n="name" v="CATEGORIES_RF"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="COMMENTS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="COMMENT_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="EMPLOYEE_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="EMPLOYEE_SERVICE"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="EVENTS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="EVENTS_V"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="VIEW"/>
+      </hash>
+      <hash>
+         <value n="name" v="EVENT_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="EVENT_INCIDENT"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="EVENT_PARAMETERS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="EVENT_SIGNIFICANCE_TYPES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="GROUP_MEMBER"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="HIBERNATE_SEQUENCE"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="HISTORY_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="IMPACT_TYPES_IM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="IMPACT_TYPES_PM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="IMPACT_URGENCY_IM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="INCIDENTS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="INCIDENTS_HISTORY"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="INCIDENTS_V"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="VIEW"/>
+      </hash>
+      <hash>
+         <value n="name" v="INCIDENT_HISTORY_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="INCIDENT_HISTORY_TRG"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TRIGGER"/>
+      </hash>
+      <hash>
+         <value n="name" v="INCIDENT_PROBLEM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="INCIDENT_SIGNALS_TRG"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TRIGGER"/>
+      </hash>
+      <hash>
+         <value n="name" v="INCIDENT_SIGNALS_TRG2"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TRIGGER"/>
+      </hash>
+      <hash>
+         <value n="name" v="KNOWN_ERRORS_V"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="VIEW"/>
+      </hash>
+      <hash>
+         <value n="name" v="PARAMETER_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="PRIORITY_TYPES_IM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="PRIORITY_TYPES_PM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="PRIORITY_TYPES_RF"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="PROBLEMS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="PROBLEMS_V"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="VIEW"/>
+      </hash>
+      <hash>
+         <value n="name" v="REQUESTS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="REQUEST_ATTRIBUTES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="REQUEST_ATTRIBUTE_TYPES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="REQ_ATTR_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SERVICES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SERVICE_MANAGERS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SERVICE_TYPES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNALS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNALS_TMP"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_ATTRIBUTES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_GENERATORS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_GENERATOR_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_OBJECT_ATTRIBUTE_TYPES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_OBJECT_TYPES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_PARAM_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_RECEIVER_TYPES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_SIGNIFICANCE_TYPES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_TYPES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SIGNAL_TYPE_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SOLUTIONS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SOLUTION_CATEGORIES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SOLUTION_ID_SEQ"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SOLUTION_TYPES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SOURCE_TYPES_IM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="STATUSES_IM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="STATUSES_PM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="STATUSES_RF"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SUPPORTING_SERVICES"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SUPPORT_GROUPS"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="SUPPORT_GROUP_ID"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="URGENCY_TYPES_IM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="URGENCY_TYPES_PM"/>
+         <value n="schemaName" v="SD3"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="CLIENT_USERS"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="COOPERANT_USERS"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="EMPLOYEE_USERS"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="PRIVILEGE_TYPES"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ROLES"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="ROLE_PRIVILEGE"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="USERS"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+      <hash>
+         <value n="name" v="USERS_SEQ"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="SEQUENCE"/>
+      </hash>
+      <hash>
+         <value n="name" v="USER_ROLE"/>
+         <value n="schemaName" v="SECURITY"/>
+         <value n="type" v="TABLE"/>
+      </hash>
+   </list>
+   <url n="sourceIdentifier" path="OFFLINE_DB.offlinedb"/>
+   <value n="sourceProviderType" v="offlinedb"/>
+   <value n="spoolCommands" v="false"/>
+   <url n="sqlFile" path="../../src/sql/creates.sql"/>
+   <value n="sqlPlus" v="false"/>
+   <url n="targetIdentifier" path="OFFLINE_DB.offlinedb"/>
+   <hash n="targets">
+      <hash n="oracle.ideimpl.db.transfer.DDLTransferTarget"/>
+   </hash>
+</TransferDescriptor>
