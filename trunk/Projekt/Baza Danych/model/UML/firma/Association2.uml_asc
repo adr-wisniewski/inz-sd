@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmi:version='2.1' xmlns:xmi='http://schema.omg.org/spec/XMI/2.1' xmlns:uml='http://schema.omg.org/spec/UML/2.1.1/uml.xml'>
+ <documentation exporter='Oracle JDeveloper' exporterVersion='11.1.2.0.0'/>
+ <uml:Association xmi:uuid='urn:uuid:45da879a-2d3d-4b9f-bd81-cb3ae5c32420'
+   isAbstract='false'
+   isDerived='false'
+   isLeaf='false'
+   name='Association2'
+   visibility='public'>
+  <memberEnd href='urn:uuid:eed4b00a-d47f-4b8b-aa1d-3e16d3584c08'/>
+  <memberEnd href='urn:uuid:f58b52ff-e8ec-4d1d-acf5-6e8387d91773'/>
+  <ownedEnd xmi:uuid='urn:uuid:eed4b00a-d47f-4b8b-aa1d-3e16d3584c08'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='znajduje się w'
+    aggregation='none'>
+   <association href='urn:uuid:45da879a-2d3d-4b9f-bd81-cb3ae5c32420'/>
+   <type href='urn:uuid:fda864a1-6518-49e2-9a42-cf2795f21c66'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:2e0f75b6-b513-474b-afd8-73e95d64c97c'
+     value='0'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:64d4d9cd-7463-4b24-b593-7d14f09d82f5'
+     value='*'
+     visibility='public'/>
+  </ownedEnd>
+  <ownedEnd xmi:uuid='urn:uuid:f58b52ff-e8ec-4d1d-acf5-6e8387d91773'
+    isDerived='false'
+    isDerivedUnion='false'
+    isLeaf='false'
+    isOrdered='false'
+    isReadOnly='false'
+    isStatic='false'
+    isUnique='true'
+    name='zawiera'
+    aggregation='none'>
+   <association href='urn:uuid:45da879a-2d3d-4b9f-bd81-cb3ae5c32420'/>
+   <type href='urn:uuid:0c6ed1a2-473d-4332-a512-8015d44e6eaa'/>
+   <lowerValue xmi:type='uml:LiteralInteger' xmi:uuid='urn:uuid:6e5a227b-280e-47c1-8b7d-c74c65ac091f'
+     value='0'
+     visibility='public'/>
+   <upperValue xmi:type='uml:LiteralUnlimitedNatural' xmi:uuid='urn:uuid:fad65bd4-8ea3-423c-851f-beb35f40e862'
+     value='*'
+     visibility='public'/>
+  </ownedEnd>
+ </uml:Association>
+</xmi:XMI>
