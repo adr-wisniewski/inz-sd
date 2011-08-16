@@ -102,9 +102,10 @@ public class ProblemImpact implements DictionaryProperty<String>, Serializable {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ProblemImpact other = (ProblemImpact) obj;
+		if (!(obj instanceof ProblemImpact)) {
+                    return false;
+                }
+                final ProblemImpact other = (ProblemImpact) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

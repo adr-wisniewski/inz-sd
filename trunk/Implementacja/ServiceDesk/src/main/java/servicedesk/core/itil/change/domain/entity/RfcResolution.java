@@ -74,4 +74,26 @@ public class RfcResolution implements NamedDomainObject<Integer>, Serializable {
     public void setOrder(Integer order) {
         this.order = order;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof RfcResolution)) {
+            return false;
+        }
+        final RfcResolution other = (RfcResolution) obj;
+        if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 13 * hash + (this.name != null ? this.name.hashCode() : 0);
+        return hash;
+    }
 }

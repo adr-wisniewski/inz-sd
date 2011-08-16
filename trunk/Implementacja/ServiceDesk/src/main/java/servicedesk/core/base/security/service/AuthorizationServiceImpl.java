@@ -6,8 +6,7 @@ package servicedesk.core.base.security.service;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import servicedesk.core.base.employee.domain.Employee;
-import servicedesk.core.base.employee.domain.EmployeeUser;
+import servicedesk.core.base.security.domain.EmployeeUser;
 import servicedesk.core.base.security.domain.User;
 import servicedesk.core.base.security.spring.SpringSecurityUserAdapter;
 

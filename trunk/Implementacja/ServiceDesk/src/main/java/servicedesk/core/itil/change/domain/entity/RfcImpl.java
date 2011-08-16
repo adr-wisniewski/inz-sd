@@ -2,6 +2,7 @@ package servicedesk.core.itil.change.domain.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -13,35 +14,49 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+import javax.persistence.Version;
+import org.hibernate.CallbackException;
+import org.hibernate.Session;
 import org.hibernate.annotations.Immutable;
+import org.hibernate.classic.Lifecycle;
 import org.hibernate.envers.Audited;
 import org.hibernate.envers.RelationTargetAuditMode;
 import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.core.base.security.domain.User;
-import servicedesk.infrastructure.interfaces.domain.PersistanceAwareDomainObject;
+import servicedesk.core.itil.cmdb.domain.RfcItem;
+import servicedesk.infrastructure.interfaces.domain.VersionedDomainObject;
 
 @Entity
 @Table(name = "RFC")
-public class RfcImpl implements Rfc, PersistanceAwareDomainObject<Integer>, Serializable {
+public class RfcImpl implements Rfc, VersionedDomainObject<Integer>, Lifecycle, Serializable {
     private static final long serialVersionUID = 1L;
     protected Integer id;
+    private Integer version;
     
     protected User author;
     protected Date timestamp;
     
     protected String title;
     protected String description;
+    protected String pir;
     protected String comment;
     
     protected RfcState state = RfcState.NEW;
     protected Employee manager;
+    protected Employee builder;
+    protected RfcAuthority authority;
+    protected RfcAuthority cab;
     protected RfcCategory category;
     protected RfcPriority priority;
     protected RfcImpact impact;
     protected RfcResolution resolution;
+    
+    private RfcItem rfcItem = new RfcItem(this);
+    
    
     protected RfcImpl() {
         // no arg ctor for hibernate
@@ -50,7 +65,6 @@ public class RfcImpl implements Rfc, PersistanceAwareDomainObject<Integer>, Seri
     public RfcImpl(User author) {
         this.author = author;
     }
-    
     
     @Id
     @SequenceGenerator(name = "RFC_SEQ", sequenceName = "RFC_SEQ")
@@ -66,9 +80,26 @@ public class RfcImpl implements Rfc, PersistanceAwareDomainObject<Integer>, Seri
     }
 
     /**
+     * @return the version
+     */
+    @Version
+    @Override
+    public Integer getVersion() {
+        return version;
+    }
+
+    /**
+     * @param version the version to set
+     */
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    /**
      * @return the title
      */
     @Column(name="TITLE", length=2000, nullable=false)
+    @Audited
     @Override
     public String getTitle() {
         return title;
@@ -77,7 +108,7 @@ public class RfcImpl implements Rfc, PersistanceAwareDomainObject<Integer>, Seri
     /**
      * @param title the title to set
      */
-    @Audited
+    
     @Override
     public void setTitle(String title) {
         this.title = title;
@@ -87,6 +118,7 @@ public class RfcImpl implements Rfc, PersistanceAwareDomainObject<Integer>, Seri
      * @return the description
      */
     @Column(name="DESCRIPTION", length=4000, nullable=false)
+    @Audited
     @Override
     public String getDescription() {
         return description;
@@ -95,7 +127,7 @@ public class RfcImpl implements Rfc, PersistanceAwareDomainObject<Integer>, Seri
     /**
      * @param description the description to set
      */
-    @Audited
+    
     @Override
     public void setDescription(String description) {
         this.description = description;
@@ -225,6 +257,7 @@ public class RfcImpl implements Rfc, PersistanceAwareDomainObject<Integer>, Seri
     /**
      * @param manager the manager to set
      */
+    @Override
     public void setManager(Employee manager) {
         this.manager = manager;
     }
@@ -267,8 +300,93 @@ public class RfcImpl implements Rfc, PersistanceAwareDomainObject<Integer>, Seri
         this.resolution = resolution;
     }
 
+    /**
+     * @return the rfcItem
+     */
+    @OneToOne(mappedBy = "rfc", cascade={CascadeType.PERSIST, CascadeType.REMOVE})
     @Override
-    public void onPersist() {
+    public RfcItem getRfcItem() {
+        return rfcItem;
+    }
+
+    /**
+     * @param rfcItem the rfcItem to set
+     */
+    protected void setRfcItem(RfcItem rfcItem) {
+        this.rfcItem = rfcItem;
+    }
+
+    @Override
+    public boolean onSave(Session s) throws CallbackException {
         setTimestamp(new Date());
+        rfcItem.setLabel("RFC#" + this.getId());
+        return false;
+    }
+
+    @Override
+    public boolean onUpdate(Session s) throws CallbackException {
+        return false;
+    }
+
+    @Override
+    public boolean onDelete(Session s) throws CallbackException {
+        return false;
+    }
+
+    @Override
+    public void onLoad(Session s, Serializable id) {
+        // empty
+    }
+
+    @Override
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="BUILDER_ID")
+    @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
+    public Employee getBuilder() {
+        return builder;
+    }
+
+    @Override
+    public void setBuilder(Employee employee) {
+        this.builder = employee;
+    }
+
+    @Override
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="AUTHORITY_ID")
+    @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
+    public RfcAuthority getAuthority() {
+        return authority;
+    }
+
+    @Override
+    public void setAuthority(RfcAuthority authority) {
+        this.authority = authority;
+    }
+
+    @Override
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="CAB_ID")
+    @Audited(targetAuditMode=RelationTargetAuditMode.NOT_AUDITED)
+    public RfcAuthority getCab() {
+        return cab;
+    }
+
+    @Override
+    public void setCab(RfcAuthority cab) {
+        this.cab = cab;
+    }
+
+    @Column(name="PIR")
+    @Lob
+    @Audited
+    @Override
+    public String getPir() {
+        return pir;
+    }
+
+    @Override
+    public void setPir(String pir) {
+        this.pir = pir;
     }
 }

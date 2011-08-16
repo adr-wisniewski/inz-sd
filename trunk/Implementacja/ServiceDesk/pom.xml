@@ -27,6 +27,11 @@
             <name>JBoss repository</name>
             <url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
         </repository>
+        <repository>
+            <id>Local</id>
+            <name>local repository</name>
+            <url>file://C:\Users\Adrian\.m2\repository</url>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
@@ -34,16 +39,11 @@
             <name>JBoss repository</name>
             <url>https://repository.jboss.org/nexus/content/groups/public-jboss</url>
         </pluginRepository>
-        <pluginRepository>
-            <id>Local</id>
-            <name>local repository</name>
-            <url>file://C:\Users\Adrian\.m2\repository</url>
-        </pluginRepository>
     </pluginRepositories>
     <properties>
         <spring.version>3.0.5.RELEASE</spring.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <netbeans.hint.deploy.server>Tomcat70</netbeans.hint.deploy.server>
+        <netbeans.hint.deploy.server>Tomcat</netbeans.hint.deploy.server>
     </properties>
     <dependencies>
         <!-- uncategorized -->
@@ -209,11 +209,6 @@
             <version>3.6.4.Final</version>
         </dependency>
         <dependency>
-            <groupId>org.javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>3.14.0-GA</version>
-        </dependency>
-        <dependency>
              <groupId>commons-dbcp</groupId>
              <artifactId>commons-dbcp</artifactId>
              <version>1.4</version>
@@ -319,11 +314,16 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- CGLIB -->
-        <dependency>
+        <!-- Bytecode Provider -->
+        <!-- dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
             <version>2.2.2</version>
+        </dependency -->
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.15.0-GA</version>
         </dependency>
 
         <!-- JDBC -->

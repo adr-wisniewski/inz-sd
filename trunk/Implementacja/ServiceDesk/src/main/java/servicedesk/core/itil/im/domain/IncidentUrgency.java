@@ -104,9 +104,10 @@ public class IncidentUrgency implements DictionaryProperty<String>, Serializable
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		IncidentUrgency other = (IncidentUrgency) obj;
+		if (!(obj instanceof IncidentUrgency)) {
+                    return false;
+                }
+                final IncidentUrgency other = (IncidentUrgency) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

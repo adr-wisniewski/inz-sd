@@ -1,6 +1,6 @@
 <%@tag description="put the tag description here" pageEncoding="UTF-8"%>
-<%@attribute name="relationshipClass" required="true" rtexprvalue="true" type="servicedesk.core.itil.cmdb.domain.RelationshipClass"%>
-<%@attribute name="reverse" required="true" rtexprvalue="true" type="java.lang.Boolean"%>
+<%@attribute name="relationships" required="true" rtexprvalue="true" type="java.util.List<servicedesk.core.itil.cmdb.domain.Relationship>"%>
+<%@attribute name="item" required="true" rtexprvalue="true" type="servicedesk.core.itil.cmdb.domain.Item"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -11,75 +11,69 @@
 <%@ taglib prefix="link" tagdir="/WEB-INF/tags/link" %>
 <%@ taglib prefix="print" tagdir="/WEB-INF/tags/print" %>
 
-<ui:panel caption="caption.cmdb.item.relationships" captionArgs="${relationshipClass.name}">
-    <table class="tablesorter">
-        <thead>
+ <table class="tablesorter">
+    <thead>
+        <tr>
+            <th><spring:message code="caption.cmdb.relationship.related.label" /></th>
+            <th><spring:message code="caption.cmdb.relationship.related.overview" /></th>
+            <th><spring:message code="caption.cmdb.relationship.related.item" /></th>
+            <th><spring:message code="caption.cmdb.relationship.related.item.overview" /></th>
+            <th class="fit noSort"><spring:message code="caption.actions" /></th>
+        </tr>
+    </thead>
+    <tbody>
+        <c:forEach var="relationship" items="${relationships}">
+            <c:choose>
+                <c:when test="${item.id eq relationship.sourceItem.id}">
+                    <c:set var="label" value="${relationship.relationshipClass.label}" />
+                    <c:set var="second" value="${relationship.targetItem}" />
+                </c:when>
+                <c:otherwise>
+                    <c:set var="label" value="${relationship.relationshipClass.reverseLabelSafe}" />
+                    <c:set var="second" value="${relationship.sourceItem}" />
+                </c:otherwise>
+            </c:choose>
             <tr>
-                <th><spring:message code="field.cmdb.item.class" /></th>
-                <th><spring:message code="field.cmdb.item.label" /></th>
-                <th><spring:message code="field.cmdb.item.overview" /></th>
+                <td>
+                    ${label}
+                </td>
+                <td>
+                    ${relationship.overview}
+                </td>
+                <td>
+                    ${second.label}
+                </td>
+                <td>
+                    ${second.overview}
+                </td>
+                <td class="actions">
+                    <ui:actionButton label="details.label"
+                        action="/cmdb/relationship/${relationship.id}"
+                        cssClass="details"/>
+                    
+                    <ui:actionButton label="edit.label"
+                        action="/cmdb/relationship/${relationship.id}/edit"
+                        cssClass="edit"/>
 
-                <c:forEach items="${relationshipClass.allAttributesSorted}" var="attribute">
-                    <th><c:out value="${attribute.name}"/></th>
-                </c:forEach>
-
-                <th class="fit"><spring:message code="caption.actions" /></th>
+                    <ui:actionButton label="delete.label"
+                        action="/cmdb/relationship/${relationship.id}/delete"
+                        cssClass="delete"
+                        role="CHANGE_RFC_EDIT" />
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            <c:forEach items="${relationshipClass.instances}" var="relationship">
-                <c:set var="relatedItem" value="${reverse ? relationship.sourceItem : relationship.targetItem}" />
-                <tr>
-                    <td>
-                        <c:out value="${relatedItem.itemClass.name}" />
-                    </td>
-
-                    <td>
-                        <c:out value="${relatedItem.label}" />
-                    </td>
-
-                    <td>
-                        <c:out value="${relatedItem.overview}" />
-                    </td>
-
-                    <c:forEach items="${relationshipClass.allAttributesSorted}" var="attribute">
-                        <td><cmdb:attributeValue attribute="${attribute}" entity="${relationship}" /></td>
-                    </c:forEach>
-
-                    <td class="actions">
-                        <ui:actionButton label="edit.label"
-                             action="/cmdb/relationship/${relationship.id}/edit"
-                             cssClass="edit"/>
-
-                        <ui:actionButton label="delete.label"
-                             action="/cmdb/relationship/${relationship.id}/delete"
-                             cssClass="delete"/>
-
-                    </td>
-                </tr>
-            </c:forEach>
-            <c:if test="${empty relationshipClass.instances}">
-                <tr>
-                    <td colspan="1000">
-                        <spring:message code="no_result.label" />
-                    </td>
-                </tr>
-            </c:if>
-        </tbody>
-    </table>
-
-    <p class="buttons">
-        <c:choose>
-            <c:when test="${reverse}">
-                <ui:actionButton action="/cmdb/relationship/add/${relationshipClass.id}/target/${item.id}"
-                    label="add.label"
-                    cssClass="add"/>
-            </c:when>
-            <c:otherwise>
-                <ui:actionButton action="/cmdb/relationship/add/${relationshipClass.id}/source/${item.id}"
-                    label="add.label"
-                    cssClass="add"/>
-            </c:otherwise>
-        </c:choose>
-    </p>
-</ui:panel>
+        </c:forEach>   
+        <c:if test="${empty relationships}">
+            <tr>
+                <td colspan="20">
+                    <spring:message code="caption.change.rfc.related.empty" />
+                </td>
+            </tr>
+        </c:if>
+    </tbody>
+</table>
+<p class="buttons">
+    <ui:actionButton label="add.label"
+                     action="/cmdb/relationship/addForItem/${item.id}"
+                     cssClass="add"
+                     role="CHANGE_RFC_EDIT" />
+</p>            

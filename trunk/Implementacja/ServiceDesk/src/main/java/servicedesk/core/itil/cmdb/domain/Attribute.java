@@ -139,9 +139,11 @@ public class Attribute implements VersionedDomainObject<Integer>, Comparable<Att
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+
+        if (!(obj instanceof Attribute)) {
             return false;
         }
+
         final Attribute other = (Attribute) obj;
         if (this.entityClass != other.entityClass && (this.entityClass == null || !this.entityClass.equals(other.entityClass))) {
             return false;

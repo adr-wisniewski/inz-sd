@@ -3,7 +3,7 @@
    <createdBy>Adrian</createdBy>
    <createdTime>2011-06-28 15:16:23 UTC</createdTime>
    <changedBy>Adrian</changedBy>
-   <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+   <changedTime>2011-08-06 18:39:19 UTC</changedTime>
    <ownerDesignName>model</ownerDesignName>
    <pkName>C2_RELATION_DESCRIPTOR_PK</pkName>
    <fonts>
@@ -204,7 +204,7 @@
          <changedBy>Adrian</changedBy>
          <changedTime>2011-06-28 15:16:24 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
-         <rule>(SOURCE_TYPE = &amp;apos;UNI&amp;apos; AND SOURCE_CLASS_ID IS NOT NULL) OR (SOURCE_TYPE != &amp;apos;UNI&amp;apos; AND SOURCE_CLASS_ID IS NULL) OR SOURCE_TYPE = &amp;apos;ANY&amp;apos;</rule>
+         <rule>(SOURCE_TYPE = &amp;apos;UNI&amp;apos; AND SOURCE_CLASS_ID IS NOT NULL) OR (SOURCE_TYPE != &amp;apos;UNI&amp;apos; AND SOURCE_CLASS_ID IS NULL)</rule>
       </tableCheckConstraint>
       <tableCheckConstraint class="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint" name="C2_RELATION_CLASS_CHK2" id="541D2308-557B-C442-2F12-FE622C69FE4E" directorySegmentName="seg_0">
          <createdBy>Adrian</createdBy>
@@ -212,7 +212,23 @@
          <changedBy>Adrian</changedBy>
          <changedTime>2011-06-28 15:16:24 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
-         <rule>(TARGET_TYPE = &amp;apos;UNI&amp;apos; AND TARGET_CLASS_ID IS NOT NULL) OR (TARGET_TYPE != &amp;apos;UNI&amp;apos; AND TARGET_CLASS_ID IS NULL) OR TARGET_TYPE = &amp;apos;ANY&amp;apos;</rule>
+         <rule>(TARGET_TYPE = &amp;apos;UNI&amp;apos; AND TARGET_CLASS_ID IS NOT NULL) OR (TARGET_TYPE != &amp;apos;UNI&amp;apos; AND TARGET_CLASS_ID IS NULL) </rule>
+      </tableCheckConstraint>
+      <tableCheckConstraint class="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint" name="C2_RELATION_CLASSES_C1" id="6CD7DD1A-62A1-A418-DF01-052DA9F155C1" directorySegmentName="seg_1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 18:38:33 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 18:39:19 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <rule> SOURCE_TYPE IN ( &amp;apos;UNI&amp;apos;, &amp;apos;EMP&amp;apos;, &amp;apos;INC&amp;apos;, &amp;apos;PRB&amp;apos;, &amp;apos;RFC&amp;apos;, &amp;apos;SVC&amp;apos;, &amp;apos;ANY&amp;apos;)</rule>
+      </tableCheckConstraint>
+      <tableCheckConstraint class="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint" name="C2_RELATION_CLASSES_C2" id="55FB3A45-7FA8-FFDC-4BC2-4907E45B945B" directorySegmentName="seg_1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 18:38:33 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 18:39:19 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <rule> TARGET_TYPE IN ( &amp;apos;UNI&amp;apos;, &amp;apos;EMP&amp;apos;, &amp;apos;INC&amp;apos;, &amp;apos;PRB&amp;apos;, &amp;apos;RFC&amp;apos;, &amp;apos;SVC&amp;apos;, &amp;apos;ANY&amp;apos;)</rule>
       </tableCheckConstraint>
    </tableCheckConstraints>
 </Table>

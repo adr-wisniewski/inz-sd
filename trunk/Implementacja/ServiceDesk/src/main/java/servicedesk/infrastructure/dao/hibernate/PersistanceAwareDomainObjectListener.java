@@ -18,7 +18,6 @@ public class PersistanceAwareDomainObjectListener implements PersistEventListene
     private static final long serialVersionUID = 1L;
     @Override
     public void onPersist(PersistEvent event) throws HibernateException {
-
         if(event.getObject() instanceof PersistanceAwareDomainObject<?>) {
             PersistanceAwareDomainObject<?> entity = (PersistanceAwareDomainObject<?>)event.getObject();
             entity.onPersist();

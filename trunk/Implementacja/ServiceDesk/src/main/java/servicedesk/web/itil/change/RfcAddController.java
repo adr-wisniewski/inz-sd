@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import servicedesk.core.itil.change.domain.entity.RfcImpl;
 import servicedesk.infrastructure.validation.BusinessConstraintViolationException;
 import servicedesk.core.base.security.service.AuthorizationService;
 import servicedesk.core.itil.change.domain.entity.Rfc;
@@ -36,18 +35,18 @@ public class RfcAddController extends AbstractRfcController {
     @RequestMapping(value="/add", method = RequestMethod.GET)
     public String creteNewInstance(ModelMap map) {
         Rfc rfc = service.create();
-        map.addAttribute(rfc);
+        map.addAttribute("rfc", rfc);
         return String.format("redirect:/change/rfc/new");
     }
     
     @RequestMapping(value="/new", method = RequestMethod.GET)
-    public String showNewInstance(ModelMap map, @ModelAttribute RfcImpl rfc) {
+    public String showNewInstance(ModelMap map, @ModelAttribute("rfc") Rfc rfc) {
         return VIEW_ADD;
     }
 
     @RequestMapping(value="/new", method = RequestMethod.POST)
     public String saveNewInstance(ModelMap map,
-            @ModelAttribute RfcImpl rfc,
+            @ModelAttribute("rfc") Rfc rfc,
             BindingResult bindingResult,
             SessionStatus status) {
 

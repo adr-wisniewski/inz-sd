@@ -22,11 +22,25 @@
         </ui:propertyItem>
 
         <ui:propertyItem code="field.cmdb.relationship.class.sourceItemClass">
-            <link:itemClass object="${relationshipClass.sourceItemClass}" />
+            <c:choose>
+                <c:when test="${relationshipClass.sourceItemClass == null}">
+                    <spring:message code="caption.cmdb.relationship.class.any" />
+                </c:when>
+                <c:otherwise>
+                    <link:itemClass object="${relationshipClass.sourceItemClass}" />
+                </c:otherwise>
+            </c:choose>
         </ui:propertyItem>
 
         <ui:propertyItem code="field.cmdb.relationship.class.targetItemClass">
-            <link:itemClass object="${relationshipClass.targetItemClass}" />
+            <c:choose>
+                <c:when test="${relationshipClass.targetItemClass == null}">
+                    <spring:message code="caption.cmdb.relationship.class.any" />
+                </c:when>
+                <c:otherwise>
+                    <link:itemClass object="${relationshipClass.targetItemClass}" />
+                </c:otherwise>
+            </c:choose>
         </ui:propertyItem>
 
         <ui:propertyItem code="field.cmdb.relationship.class.label">

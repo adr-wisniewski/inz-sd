@@ -2,6 +2,7 @@
 <%@ attribute name="name" required="true" description="Nazwa kontrolki"%>
 <%@ attribute name="source" required="true" description="Nazwa zrodla danych"%>
 <%@ attribute name="value" required="true" type="servicedesk.infrastructure.interfaces.domain.HierarchicalDomainObject<? extends java.io.Serializable>" description="wartosc kontrolki" %>
+<%@ attribute name="cssClass" required="false" description="Nazwa kontrolki"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sd" tagdir="/WEB-INF/tags" %>
 
@@ -18,4 +19,4 @@
 </c:url>
 
 <input type="hidden" id="${name}" name="${name}" value="${value.id}" />
-<input class="picker" type="text" value="${value.name}" id="treePicker-${name}" onclick="pickItem('${url}', '${name}');" readonly="readonly" />
+<input class="picker ${cssClass}" type="text" value="${value.name}" id="treePicker-${name}" onclick="pickItem('${url}', '${name}');" readonly="readonly" />

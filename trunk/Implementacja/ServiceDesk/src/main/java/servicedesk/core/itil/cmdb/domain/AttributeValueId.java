@@ -58,7 +58,7 @@ public class AttributeValueId implements Serializable {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!(obj instanceof AttributeValueId)) {
             return false;
         }
         final AttributeValueId other = (AttributeValueId) obj;

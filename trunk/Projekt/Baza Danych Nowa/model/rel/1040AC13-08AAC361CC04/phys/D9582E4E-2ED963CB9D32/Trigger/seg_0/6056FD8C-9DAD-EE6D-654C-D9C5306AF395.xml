@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="c2_autoinsert_problems" id="6056FD8C-9DAD-EE6D-654C-D9C5306AF395" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 09:00:04 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-06 09:00:28 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <actions>INSERT</actions>
+   <body>BEGIN&amp;lt;br/&amp;gt;    INSERT INTO C2_ENTITIES (ENTITY_ID, VERSION)&amp;lt;br/&amp;gt;        VALUES (C2_ENTITIES_SEQ.nextval, 0);&amp;lt;br/&amp;gt;		&amp;lt;br/&amp;gt;	INSERT INTO C2_ITEMS (ITEM_ID, LABEL)&amp;lt;br/&amp;gt;        VALUES (C2_ENTITIES_SEQ.currval, &amp;apos;PROBLEM#&amp;apos; || to_char(:problem.PROBLEM_ID));&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;    INSERT INTO C2_ITEMS_PROBLEM (ITEM_ID, PROBLEM_ID)&amp;lt;br/&amp;gt;        VALUES (C2_ENTITIES_SEQ.currval, :problem.PROBLEM_ID);&amp;lt;br/&amp;gt;END;</body>
+   <triggerTime>AFTER</triggerTime>
+   <ref_NEW_AS>problem</ref_NEW_AS>
+   <table>B7B1DA35-8399-18FA-2B68-900B5FD948DC</table>
+</TriggerOraclev10g>

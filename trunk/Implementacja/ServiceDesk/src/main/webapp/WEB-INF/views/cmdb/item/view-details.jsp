@@ -53,10 +53,6 @@
     </p>
 </ui:panel>
 
-<c:forEach items="${sourceRelationships}" var="relationshipClass">
-    <cmdb:relatedItems relationshipClass="${relationshipClass}" reverse="${false}" />
-</c:forEach>
-
-<c:forEach items="${targetRelationships}" var="relationshipClass">
-    <cmdb:relatedItems relationshipClass="${relationshipClass}" reverse="${true}" />
-</c:forEach>
+<ui:panel caption="caption.cmdb.item.relationships">
+    <cmdb:relatedItems item="${item}" relationships="${relationships}" />
+</ui:panel>

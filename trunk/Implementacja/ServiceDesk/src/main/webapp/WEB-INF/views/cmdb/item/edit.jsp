@@ -11,16 +11,15 @@
 
 <ui:panel caption="caption.cmdb.item.attributes">
     <form:form modelAttribute="universalItem" method="post">
-        <ui:errorList fieldPrefix="field.cmdb.item"/>
+        <form:errors path="*" cssClass="errors" />
         <ui:propertyList>
-
             <ui:propertyItem code="field.cmdb.item.label" label="label">
                 <form:input path="label" />
                 <form:errors path="label" cssClass="error" />
             </ui:propertyItem>
 
             <c:forEach items="${universalItem.attributeValues}" var="attributeValue" varStatus="status">
-                <ui:propertyItem label="attributeValues${status.index}.value" caption="${attributeValue.attribute.name}">
+                <ui:propertyItem label="attributeValues[${status.index}].value" caption="${attributeValue.attribute.name}">
                     <form:input path="attributeValues[${status.index}].value" />
                     <form:errors path="attributeValues[${status.index}].value" cssClass="error" />
                 </ui:propertyItem>

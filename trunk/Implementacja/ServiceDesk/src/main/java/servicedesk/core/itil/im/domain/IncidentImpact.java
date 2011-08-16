@@ -114,9 +114,10 @@ public class IncidentImpact implements DictionaryProperty<String>, Serializable 
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		IncidentImpact other = (IncidentImpact) obj;
+		if (!(obj instanceof IncidentImpact)) {
+                    return false;
+                }
+                final IncidentImpact other = (IncidentImpact) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

@@ -92,6 +92,11 @@ public class RelationshipClassServiceImpl implements RelationshipClassService {
     public List<RelationshipClass> getAllForTargetClass(ItemClass itemClass) {
         return dao.getAllForTargetClass(itemClass);
     }
+    
+    @Override
+    public List<RelationshipClass> getAllForClass(ItemClass itemClass) {
+        return dao.getAllForClass(itemClass);
+    }
 
     @Override
     public RelationshipClass create() {

@@ -68,9 +68,10 @@ public class EventSignificance implements DictionaryProperty<String>, Serializab
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		EventSignificance other = (EventSignificance) obj;
+		if (!(obj instanceof EventSignificance)) {
+                    return false;
+                }
+		final EventSignificance other = (EventSignificance) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

@@ -119,10 +119,10 @@ public class IncidentCategory implements DictionaryProperty<String>, Hierarchica
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!(obj instanceof IncidentCategory)) {
             return false;
         }
-        IncidentCategory other = (IncidentCategory) obj;
+        final IncidentCategory other = (IncidentCategory) obj;
         if (code == null) {
             if (other.code != null) {
                 return false;

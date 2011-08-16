@@ -180,7 +180,10 @@ public class RelationshipClassDaoImpl extends HibernateDaoSupport implements Rel
 
     @Override
     @SuppressWarnings("unchecked")
-    public List<RelationshipClass> getAllForSourceClass(ItemClass itemClass) {
+    public List<RelationshipClass> getAllForSourceClass(ItemClass itemClass) {   
+        if(itemClass == null)
+            return getAll();
+        
         List<RelationshipClass> result;
         GetForClassVisitor visitor = new GetForClassVisitor();
         itemClass.accept(visitor);
@@ -198,6 +201,9 @@ public class RelationshipClassDaoImpl extends HibernateDaoSupport implements Rel
     @Override
     @SuppressWarnings("unchecked")
     public List<RelationshipClass> getAllForTargetClass(ItemClass itemClass) {
+        if(itemClass == null)
+            return getAll();
+                
         List<RelationshipClass> result;
         GetForClassVisitor visitor = new GetForClassVisitor();
         itemClass.accept(visitor);
@@ -207,6 +213,25 @@ public class RelationshipClassDaoImpl extends HibernateDaoSupport implements Rel
             result = getHibernateTemplate().findByNamedQueryAndNamedParam("RelationshipClass.findForUniversalClass_target", "parentChain", parentChain);
         } else {
             result = getHibernateTemplate().findByNamedQueryAndNamedParam("RelationshipClass.findForType_target", "type", visitor.getType());
+        }
+
+        return postprocess(result);
+    }
+
+    @Override
+    public List<RelationshipClass> getAllForClass(ItemClass itemClass) {
+        if(itemClass == null)
+            return getAll();
+        
+        List<RelationshipClass> result;
+        GetForClassVisitor visitor = new GetForClassVisitor();
+        itemClass.accept(visitor);
+
+        if(visitor.getUniversalItemClass() != null) {
+            List<UniversalItemClass> parentChain = visitor.getUniversalItemClass().getParentChain();
+            result = getHibernateTemplate().findByNamedQueryAndNamedParam("RelationshipClass.findForUniversalClass", "parentChain", parentChain);
+        } else {
+            result = getHibernateTemplate().findByNamedQueryAndNamedParam("RelationshipClass.findForType", "type", visitor.getType());
         }
 
         return postprocess(result);

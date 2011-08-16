@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="c2_autoinsert_employees" id="FB19A8A9-50B5-6834-1188-0A85CD431A63" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 09:01:56 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-06 09:02:21 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <actions>INSERT</actions>
+   <body>BEGIN&amp;lt;br/&amp;gt;    INSERT INTO C2_ENTITIES (ENTITY_ID, VERSION)&amp;lt;br/&amp;gt;        VALUES (C2_ENTITIES_SEQ.nextval, 0);&amp;lt;br/&amp;gt;		&amp;lt;br/&amp;gt;	INSERT INTO C2_ITEMS (ITEM_ID, LABEL)&amp;lt;br/&amp;gt;        VALUES (C2_ENTITIES_SEQ.currval, &amp;apos;PRACOWNIK #&amp;apos; || to_char(:employee.EMPLOYEE_ID));&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;    INSERT INTO C2_ITEMS_EMPLOYEE (ITEM_ID, EMPLOYEE_ID)&amp;lt;br/&amp;gt;        VALUES (C2_ENTITIES_SEQ.currval, :employee.EMPLOYEE_ID);&amp;lt;br/&amp;gt;END;</body>
+   <triggerTime>AFTER</triggerTime>
+   <ref_NEW_AS>employee</ref_NEW_AS>
+   <table>5A330E4A-304A-3DEB-705D-2C7372B5BA90</table>
+</TriggerOraclev10g>

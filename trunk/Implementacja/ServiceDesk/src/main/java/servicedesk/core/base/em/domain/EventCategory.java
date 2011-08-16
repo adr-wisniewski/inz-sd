@@ -115,9 +115,10 @@ public class EventCategory implements DictionaryProperty<String>, HierarchicalDo
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		EventCategory other = (EventCategory) obj;
+		if (!(obj instanceof EventCategory)) {
+                    return false;
+                }
+		final EventCategory other = (EventCategory) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

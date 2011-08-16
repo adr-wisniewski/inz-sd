@@ -17,8 +17,8 @@
             ${announcement.content}
         </ui:propertyItem>
 
-        <ui:propertyItem code="field.common.announcement.creator">
-            <link:employee object="${announcement.creator}" />
+        <ui:propertyItem code="field.common.announcement.author">
+            <link:user object="${announcement.author}" />
         </ui:propertyItem>
 
         <ui:propertyItem code="field.common.announcement.publicationTime">

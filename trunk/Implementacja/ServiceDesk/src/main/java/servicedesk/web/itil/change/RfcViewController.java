@@ -64,7 +64,7 @@ public class RfcViewController extends AbstractRfcController {
     
     @RequestMapping(value = "/created")
     public String searchCreated(ModelMap map, @ModelAttribute(MODEL_CRITERIA) RfcSearchObject criteria) {
-        criteria.setCreator(authorizationService.getCurrentUser());
+        criteria.setAuthor(authorizationService.getCurrentUser());
         map.addAttribute(MODEL_RFCS, service.search(criteria));
         return VIEW_SEARCH;
     }

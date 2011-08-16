@@ -22,9 +22,10 @@ import javax.persistence.Transient;
 @javax.persistence.Entity
 @Table(name="C2_RELATIONS")
 @PrimaryKeyJoinColumn(name = "RELATION_ID")
-@NamedQueries(
-    @NamedQuery(name="Relationship.findSame", query="from Relationship as rel where rel.relationshipClass = :clazz and rel.sourceItem = :source and rel.targetItem = :target")
-)
+@NamedQueries({
+    @NamedQuery(name="Relationship.findSame", query="from Relationship as rel where rel.relationshipClass = :clazz and rel.sourceItem = :source and rel.targetItem = :target"),
+    @NamedQuery(name="Relationship.findForItem", query="from Relationship as rel where rel.sourceItem = :item or rel.targetItem = :item order by rel.relationshipClass.name")
+})
 public class Relationship extends Entity {
     private static final long serialVersionUID = 1L;
     private RelationshipClass relationshipClass;
@@ -65,8 +66,9 @@ public class Relationship extends Entity {
     /**
      * @return the sourceItem
      */
-    @ManyToOne(fetch=FetchType.EAGER, optional = false)
+    
     @JoinColumn(name="SOURCE_ITEM_ID")
+    @ManyToOne(fetch=FetchType.EAGER, optional = false)
     public Item getSourceItem() {
         return sourceItem;
     }

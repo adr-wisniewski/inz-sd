@@ -95,4 +95,26 @@ public class RfcPriority implements NamedDomainObject<Integer>, Serializable {
     public void setOrder(Integer order) {
         this.order = order;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof RfcPriority)) {
+            return false;
+        }
+        final RfcPriority other = (RfcPriority) obj;
+        if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 31 * hash + (this.name != null ? this.name.hashCode() : 0);
+        return hash;
+    }
 }

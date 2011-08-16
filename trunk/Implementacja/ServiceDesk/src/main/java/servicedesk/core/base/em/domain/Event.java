@@ -137,9 +137,10 @@ public class Event implements DomainObject<Integer>, Serializable{
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Event other = (Event) obj;
+		if (!(obj instanceof Event)) {
+                    return false;
+                }
+		final Event other = (Event) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

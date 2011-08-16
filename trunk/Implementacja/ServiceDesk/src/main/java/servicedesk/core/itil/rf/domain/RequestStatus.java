@@ -109,9 +109,10 @@ public class RequestStatus implements DictionaryProperty<String>, Serializable {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		RequestStatus other = (RequestStatus) obj;
+		if (!(obj instanceof RequestStatus)) {
+                    return false;
+                }
+                final RequestStatus other = (RequestStatus) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

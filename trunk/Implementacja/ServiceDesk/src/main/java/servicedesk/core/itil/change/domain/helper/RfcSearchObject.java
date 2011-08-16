@@ -24,7 +24,7 @@ import servicedesk.infrastructure.search.annotations.AllowEmptySearch;
 @AllowEmptySearch
 public class RfcSearchObject implements SearchObject<Rfc> {
     private Integer id;
-    private User creator;
+    private User author;
     private Range<Date> timestamp = new Range<Date>();
     private String title;
     private String description;
@@ -65,17 +65,17 @@ public class RfcSearchObject implements SearchObject<Rfc> {
     }
 
     /**
-     * @return the creator
+     * @return the author
      */
-    public User getCreator() {
-        return creator;
+    public User getAuthor() {
+        return author;
     }
 
     /**
-     * @param creator the creator to set
+     * @param author the author to set
      */
-    public void setCreator(User creator) {
-        this.creator = creator;
+    public void setAuthor(User author) {
+        this.author = author;
     }
 
     /**

@@ -109,10 +109,10 @@ public class ProblemCategory implements DictionaryProperty<String>, Hierarchical
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!(obj instanceof ProblemCategory)) {
             return false;
         }
-        ProblemCategory other = (ProblemCategory) obj;
+        final ProblemCategory other = (ProblemCategory) obj;
         if (code == null) {
             if (other.code != null) {
                 return false;

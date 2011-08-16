@@ -5,6 +5,7 @@
 package servicedesk.web.base.util;
 
 import java.util.Formatter;
+import servicedesk.core.itil.cmdb.domain.Item;
 
 /**
  *

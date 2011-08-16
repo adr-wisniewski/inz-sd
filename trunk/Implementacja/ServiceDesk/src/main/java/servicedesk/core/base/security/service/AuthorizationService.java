@@ -4,7 +4,7 @@
  */
 package servicedesk.core.base.security.service;
 
-import servicedesk.core.base.employee.domain.EmployeeUser;
+import servicedesk.core.base.security.domain.EmployeeUser;
 import servicedesk.core.base.security.domain.User;
 
 /**

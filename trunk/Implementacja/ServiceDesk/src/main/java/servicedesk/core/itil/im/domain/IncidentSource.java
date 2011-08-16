@@ -111,9 +111,10 @@ public class IncidentSource implements DictionaryProperty<String>, Serializable 
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		IncidentSource other = (IncidentSource) obj;
+		if (!(obj instanceof IncidentSource)) {
+                    return false;
+                }
+                final IncidentSource other = (IncidentSource) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

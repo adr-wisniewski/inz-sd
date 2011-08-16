@@ -4,7 +4,6 @@ import servicedesk.infrastructure.interfaces.dao.CrudDao;
 import servicedesk.infrastructure.search.SearchObject;
 import servicedesk.infrastructure.util.GenericUtil;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.hibernate.SessionFactory;

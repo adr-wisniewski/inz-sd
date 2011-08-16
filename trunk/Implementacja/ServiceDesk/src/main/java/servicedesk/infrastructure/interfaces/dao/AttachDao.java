@@ -12,5 +12,4 @@ import servicedesk.infrastructure.interfaces.domain.DomainObject;
  */
 public interface AttachDao {
     public void attach(DomainObject<?> object);
-    public void detach(DomainObject<?> object);
 }

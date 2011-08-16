@@ -20,7 +20,7 @@ public interface EmployeeService {
 	 * @return pracownik
 	 */
 	public Employee get(Integer employeeId);
-	
+	public List<Employee> getAll();
 	/**
 	 * Wyszukuje pracownikow po kryterium
 	 * 

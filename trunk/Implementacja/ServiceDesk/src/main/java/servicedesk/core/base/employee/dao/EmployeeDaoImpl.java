@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import servicedesk.core.base.employee.domain.Employee;
-import servicedesk.core.base.employee.domain.EmployeeUser;
-import servicedesk.core.base.security.domain.User;
+import servicedesk.core.base.security.domain.EmployeeUser;
 
 @Repository
 @Transactional
@@ -26,5 +25,11 @@ public class EmployeeDaoImpl extends GenericHibernateDao<Employee, Integer> impl
         @SuppressWarnings("unchecked")
             List<EmployeeUser> result = getSession().getNamedQuery("EmployeeUser.findByLogin").setParameter("login", login).list();
             return DataAccessUtils.singleResult(result).getEmployee();
+    }
+
+    @Override
+    public List<Employee> getAll() {
+        List<Employee> list = getSession().createCriteria(Employee.class).list();
+        return list;
     }
 }

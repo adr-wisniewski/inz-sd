@@ -42,6 +42,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee get(Integer employeeId) {
         return employeeDao.get(employeeId);
     }
+    
+    @Override
+    public List<Employee> getAll() {
+        return employeeDao.getAll();
+    }
 
     @Override
     public List<Employee> search(EmployeeSearchCriteria employeeSearchCriteria) {

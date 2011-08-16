@@ -104,9 +104,10 @@ public class RequestPriority implements DictionaryProperty<String>, Serializable
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		RequestPriority other = (RequestPriority) obj;
+		if (!(obj instanceof RequestPriority)) {
+                    return false;
+                }
+                final RequestPriority other = (RequestPriority) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

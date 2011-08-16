@@ -5,6 +5,7 @@
 
 package servicedesk.web.itil.cmdb;
 
+import java.util.List;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import servicedesk.core.itil.cmdb.domain.Item;
@@ -70,6 +72,28 @@ public class RelationshipAddController extends AbstractRelationshipController {
 
         map.addAttribute(relationship);
         map.addAttribute("origin", item);
+        return "redirect:/cmdb/relationship/new";
+    }
+    
+    @RequestMapping(value="/addForItem/{itemid}", method = RequestMethod.GET)
+    public String addForItem(ModelMap map, @PathVariable("itemid") Integer itemId) {
+        Item item = itemService.load(itemId);    
+        List<RelationshipClass> classes = relationshipClassService.getAllForSourceClass(item.getEntityClass());
+        
+        map.addAttribute("classes", classes);
+        map.addAttribute("origin", item);
+        return "/cmdb/relationship/addForItem/pickclass";
+    }
+ 
+    @RequestMapping(value="/addForItem/{itemid}/{classid}", method = RequestMethod.GET)
+    public String addForItemPost(ModelMap map, 
+            @ModelAttribute("origin") Item origin,
+            @PathVariable("classid") Integer classId) {
+        RelationshipClass relationshipClass = relationshipClassService.load(classId);
+        Relationship relationship = relationshipClass.createRelationship();
+        relationship.setSourceItem(origin); 
+
+        map.addAttribute(relationship);
         return "redirect:/cmdb/relationship/new";
     }
 

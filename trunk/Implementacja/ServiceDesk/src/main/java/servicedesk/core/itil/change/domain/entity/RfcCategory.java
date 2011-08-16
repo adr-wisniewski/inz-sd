@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
@@ -32,6 +33,7 @@ public class RfcCategory implements HierarchicalDomainObject<Integer>, Serializa
     private boolean abstraction;
     private String name;
     private List<RfcCategory> children = new ArrayList<RfcCategory>(0);
+    private List<RfcAuthority> authorities = new ArrayList<RfcAuthority>(0);
 
     /**
      * @return the id
@@ -110,4 +112,39 @@ public class RfcCategory implements HierarchicalDomainObject<Integer>, Serializa
     public void setChildren(List<RfcCategory> children) {
         this.children = children;
     }
+
+    @ManyToMany(mappedBy = "categories")
+    public List<RfcAuthority> getAuthorities() {
+        return authorities;
+    }
+
+    public void setAuthorities(List<RfcAuthority> authorities) {
+        this.authorities = authorities;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof RfcCategory)) {
+            return false;
+        }
+        final RfcCategory other = (RfcCategory) obj;
+        if ((this.getId() == null) ? (other.getId() != null) : !this.getId().equals(other.getId())) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 53 * hash + (this.name != null ? this.name.hashCode() : 0);
+        return hash;
+    }
+
+    
+    
+    
 }

@@ -741,10 +741,10 @@ public class Problem implements DomainObject<Integer>, IEvent, Serializable {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!(obj instanceof Problem)) {
             return false;
         }
-        Problem other = (Problem) obj;
+        final Problem other = (Problem) obj;
         if (id == null) {
             if (other.id != null) {
                 return false;

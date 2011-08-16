@@ -98,9 +98,10 @@ public class KnownError implements DomainObject<Integer>, Serializable {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		KnownError other = (KnownError) obj;
+		if (!(obj instanceof KnownError)) {
+                    return false;
+                }
+                final KnownError other = (KnownError) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

@@ -3,7 +3,7 @@
    <createdBy>Adrian</createdBy>
    <createdTime>2011-06-28 15:16:23 UTC</createdTime>
    <changedBy>Adrian</changedBy>
-   <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+   <changedTime>2011-08-07 16:50:11 UTC</changedTime>
    <ownerDesignName>model</ownerDesignName>
    <pkName>RFC_AUD_PK</pkName>
    <fonts>
@@ -73,6 +73,17 @@
          <logicalDatatype>LOGDT019</logicalDatatype>
          <domain>73C0316D-7B8D-FD2A-A192-40AFC99615C8</domain>
       </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="STATE" id="7B566556-0F3F-FFD3-F461-DFD1E0B90E24">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>DDD21AAA-A750-2ACC-5962-72296403A7F7</domain>
+      </Column>
       <Column class="oracle.dbtools.crest.model.design.relational.Column" name="TITLE" id="B7041721-8743-976E-4A00-F9410A7DD69E">
          <createdBy>Adrian</createdBy>
          <createdTime>2011-06-28 15:16:23 UTC</createdTime>
@@ -106,17 +117,6 @@
          <logicalDatatype>LOGDT028</logicalDatatype>
          <domain>60523D98-1E5A-F416-263D-9617A5FCB43C</domain>
       </Column>
-      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="STATE" id="7B566556-0F3F-FFD3-F461-DFD1E0B90E24">
-         <createdBy>Adrian</createdBy>
-         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
-         <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
-         <ownerDesignName>model</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <use>0</use>
-         <logicalDatatype>LOGDT019</logicalDatatype>
-         <domain>DDD21AAA-A750-2ACC-5962-72296403A7F7</domain>
-      </Column>
       <Column class="oracle.dbtools.crest.model.design.relational.Column" name="MANAGER_ID" id="FAB4B878-86A5-CD11-0CDB-FDCA8E6F0325">
          <createdBy>Adrian</createdBy>
          <createdTime>2011-06-28 15:16:23 UTC</createdTime>
@@ -128,7 +128,40 @@
          <logicalDatatype>LOGDT019</logicalDatatype>
          <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
       </Column>
-      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="PRIORITY_ID" id="8A5C1349-2CDE-C1CE-42FC-5F8E5DB55648">
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="AUTHORITY_ID" id="1E6D0AD5-28B2-CECF-34A0-842936E3F4D9">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:50:11 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:50:11 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="CAB_ID" id="74A8FF6C-ADB3-713D-83FB-BFD30FE7E83D">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:50:11 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:50:11 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="BUILDER_ID" id="51656C93-CDF7-86A9-2B52-221AE1C71D64">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:50:11 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:50:11 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="CATEGORY_ID" id="F5E88269-E8D8-0E73-EC73-D855E193E1C2">
          <createdBy>Adrian</createdBy>
          <createdTime>2011-06-28 15:16:23 UTC</createdTime>
          <changedBy>Adrian</changedBy>
@@ -150,7 +183,7 @@
          <logicalDatatype>LOGDT019</logicalDatatype>
          <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
       </Column>
-      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="CATEGORY_ID" id="F5E88269-E8D8-0E73-EC73-D855E193E1C2">
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="PRIORITY_ID" id="8A5C1349-2CDE-C1CE-42FC-5F8E5DB55648">
          <createdBy>Adrian</createdBy>
          <createdTime>2011-06-28 15:16:23 UTC</createdTime>
          <changedBy>Adrian</changedBy>
@@ -171,6 +204,17 @@
          <use>0</use>
          <logicalDatatype>LOGDT019</logicalDatatype>
          <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="PIR" id="660EA1DE-A516-5F48-E35F-6280C3AC1EBD">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:50:11 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:50:11 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT028</logicalDatatype>
+         <domain>60523D98-1E5A-F416-263D-9617A5FCB43C</domain>
       </Column>
    </columns>
    <indexes>

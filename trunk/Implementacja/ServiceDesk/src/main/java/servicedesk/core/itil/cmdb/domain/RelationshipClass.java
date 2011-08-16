@@ -32,10 +32,12 @@ import servicedesk.core.itil.cmdb.domain.helper.ItemClassVisitor;
 @PrimaryKeyJoinColumn(name = "CLASS_ID")
 @NamedQueries({
     @NamedQuery(name = "RelationshipClass.findByName", query = "from RelationshipClass as clazz where clazz.name = :name"),
-    @NamedQuery(name = "RelationshipClass.findForUniversalClass_source", query = "from RelationshipClass as clazz where clazz.abstraction = false and clazz.sourceUniversalItemClass in (:parentChain)"),
-    @NamedQuery(name = "RelationshipClass.findForUniversalClass_target", query = "from RelationshipClass as clazz where clazz.abstraction = false and clazz.targetUniversalItemClass in (:parentChain)"),
-    @NamedQuery(name = "RelationshipClass.findForType_source", query = "from RelationshipClass as clazz where clazz.abstraction = false and clazz.sourceType = :type"),
-    @NamedQuery(name = "RelationshipClass.findForType_target", query = "from RelationshipClass as clazz where clazz.abstraction = false and clazz.targetType = :type")
+    @NamedQuery(name = "RelationshipClass.findForUniversalClass_source", query = "from RelationshipClass as clazz where clazz.abstraction = false and (clazz.sourceUniversalItemClass in (:parentChain) or clazz.sourceType = 'ANY')"),
+    @NamedQuery(name = "RelationshipClass.findForUniversalClass_target", query = "from RelationshipClass as clazz where clazz.abstraction = false and (clazz.targetUniversalItemClass in (:parentChain) or clazz.targetType = 'ANY')"),
+    @NamedQuery(name = "RelationshipClass.findForUniversalClass", query = "from RelationshipClass as clazz where clazz.abstraction = false and (clazz.targetUniversalItemClass in (:parentChain) or clazz.sourceUniversalItemClass in (:parentChain) or clazz.sourceType = 'ANY' or clazz.targetType = 'ANY')"),
+    @NamedQuery(name = "RelationshipClass.findForType_source", query = "from RelationshipClass as clazz where clazz.abstraction = false and clazz.sourceType in ('ANY', :type)"),
+    @NamedQuery(name = "RelationshipClass.findForType_target", query = "from RelationshipClass as clazz where clazz.abstraction = false and clazz.targetType in ('ANY', :type)"),
+    @NamedQuery(name = "RelationshipClass.findForType", query = "from RelationshipClass as clazz where clazz.abstraction = false and (clazz.targetType in ('ANY', :type) or clazz.sourceType in ('ANY', :type))")
 })
 public class RelationshipClass extends AbstractEntityClass {
 
@@ -45,8 +47,8 @@ public class RelationshipClass extends AbstractEntityClass {
     protected List<Relationship> instances;
     protected String label;
     protected String reverseLabel;
-    protected ItemType sourceType;
-    protected ItemType targetType;
+    protected ItemType sourceType = ItemType.ANY;
+    protected ItemType targetType = ItemType.ANY;
     protected UniversalItemClass sourceUniversalItemClass;
     protected UniversalItemClass targetUniversalItemClass;
     protected ItemClass sourceItemClass;
@@ -122,6 +124,11 @@ public class RelationshipClass extends AbstractEntityClass {
      */
     public void setReverseLabel(String reverseLabel) {
         this.reverseLabel = reverseLabel;
+    }
+    
+    @Transient
+    public String getReverseLabelSafe() {
+        return reverseLabel != null ? reverseLabel : label;
     }
 
     /**
@@ -200,10 +207,16 @@ public class RelationshipClass extends AbstractEntityClass {
      * @param sourceItemClass the sourceItemClass to set
      */
     public void setSourceItemClass(ItemClass sourceItemClass) {
-        ItemTypeResolver resolver = new ItemTypeResolver();
-        sourceItemClass.accept(resolver);
-        setSourceType(resolver.getItemType());
-        setSourceUniversalItemClass(resolver.getUniversalItemClass());
+        
+        if(sourceItemClass != null) {
+            ItemTypeResolver resolver = new ItemTypeResolver();
+            sourceItemClass.accept(resolver);
+            setSourceType(resolver.getItemType());
+            setSourceUniversalItemClass(resolver.getUniversalItemClass());
+        } else {
+            setSourceType(ItemType.ANY);
+            setSourceUniversalItemClass(null);
+        }
 
         this.sourceItemClass = sourceItemClass;
     }
@@ -224,10 +237,16 @@ public class RelationshipClass extends AbstractEntityClass {
      * @param targetItemClass the targetItemClass to set
      */
     public void setTargetItemClass(ItemClass targetItemClass) {
-        ItemTypeResolver resolver = new ItemTypeResolver();
-        targetItemClass.accept(resolver);
-        setTargetType(resolver.getItemType());
-        setTargetUniversalItemClass(resolver.getUniversalItemClass());
+        
+        if(targetItemClass != null) {
+            ItemTypeResolver resolver = new ItemTypeResolver();
+            targetItemClass.accept(resolver);
+            setTargetType(resolver.getItemType());
+            setTargetUniversalItemClass(resolver.getUniversalItemClass());
+        } else {
+            setTargetType(ItemType.ANY);
+            setTargetUniversalItemClass(null);
+        }
 
         this.targetItemClass = targetItemClass;
     }

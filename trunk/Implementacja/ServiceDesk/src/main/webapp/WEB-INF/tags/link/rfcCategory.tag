@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="print" tagdir="/WEB-INF/tags/print" %>
-<%@attribute name="object" required="true" rtexprvalue="true" type="servicedesk.core.itil.change.domain.RfcCategory" %>
+<%@attribute name="object" required="true" rtexprvalue="true" type="servicedesk.core.itil.change.domain.entity.RfcCategory" %>
 
 <print:nullable object="${object}">
     <a class="item" href="/change/rfc/category/${object.id}">

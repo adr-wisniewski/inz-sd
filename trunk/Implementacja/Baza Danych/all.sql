@@ -4,3 +4,4 @@ PROMPT === CREATING DATABASE ===
 PROMPT === INSERTING DATA ===
 @inserts.sql
 PROMPT === ALL DONE ===
+EXIT;

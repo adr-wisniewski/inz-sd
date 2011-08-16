@@ -140,13 +140,15 @@ public abstract class User implements DomainObject<Integer>, Serializable {
     public void setRoles(Collection<Role> roles) {
         this.roles = roles;
     }
+    
+    public abstract <R,C> R accept(UserVisitor<R,C> visitor, C context);
 
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!(obj instanceof User)) {
             return false;
         }
         final User other = (User) obj;

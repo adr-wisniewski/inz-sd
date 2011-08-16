@@ -8,6 +8,7 @@ package servicedesk.core.itil.cmdb.dao;
 import java.util.List;
 import org.springframework.dao.support.DataAccessUtils;
 import org.springframework.stereotype.Repository;
+import servicedesk.core.itil.cmdb.domain.Item;
 import servicedesk.core.itil.cmdb.domain.Relationship;
 import servicedesk.infrastructure.dao.hibernate.AbstractHibernateDao;
 
@@ -28,4 +29,10 @@ public class RelationshipDaoImpl extends AbstractHibernateDao<Relationship, Rela
         return DataAccessUtils.singleResult(list);
     }
 
+    @Override
+    public List<Relationship> forItem(Item item) {
+        @SuppressWarnings("unchecked")
+        List<Relationship> list = getHibernateTemplate().findByNamedQueryAndNamedParam("Relationship.findForItem", "item", item);
+        return list;
+    }
 }

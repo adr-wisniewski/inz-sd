@@ -6,6 +6,7 @@
 package servicedesk.web.itil.cmdb;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,11 +16,12 @@ import servicedesk.core.itil.cmdb.domain.EmployeeItem;
 import servicedesk.core.itil.cmdb.domain.IncidentItem;
 import servicedesk.core.itil.cmdb.domain.Item;
 import servicedesk.core.itil.cmdb.domain.ProblemItem;
-import servicedesk.core.itil.cmdb.domain.RelationshipClass;
+import servicedesk.core.itil.cmdb.domain.Relationship;
 import servicedesk.core.itil.cmdb.domain.RfcItem;
 import servicedesk.core.itil.cmdb.domain.ServiceItem;
 import servicedesk.core.itil.cmdb.domain.UniversalItem;
 import servicedesk.core.itil.cmdb.domain.helper.ItemVisitor;
+import servicedesk.core.itil.cmdb.service.RelationshipService;
 
 /**
  *
@@ -29,8 +31,10 @@ import servicedesk.core.itil.cmdb.domain.helper.ItemVisitor;
 @PreAuthorize("hasRole('CMDB_ITEM_VIEW')")
 public class ItemViewController extends AbstractItemController {
 
-    protected static final String MODEL_SOURCE_RELATIONSHIPCLASSES = "sourceRelationships";
-    protected static final String MODEL_TARGET_RELATIONSHIPCLASSES = "targetRelationships";
+    @Autowired
+    protected RelationshipService relationshipService;
+    
+    protected static final String MODEL_RELATIONSHIPS = "relationships";
     protected static final String MODEL_DETAILVIEW = "detailView";
     protected static final String VIEW_GENERAL = "/cmdb/item/view/general";
     protected static final String VIEW_DETAILS = "/cmdb/item/view/details";
@@ -48,13 +52,12 @@ public class ItemViewController extends AbstractItemController {
         if(detailView != null) {
             map.addAttribute(MODEL_DETAILVIEW, detailView);
         }
+        
+        List<Relationship> relationships = relationshipService.forItem(item);
 
-        List<RelationshipClass> sourceRelationshipClasses = relationshipClassService.getAllForSourceClass(item.getItemClass());
-        List<RelationshipClass> targetRelationshipClasses = relationshipClassService.getAllForTargetClass(item.getItemClass());
-
+      
         map.addAttribute(item);
-        map.addAttribute(MODEL_SOURCE_RELATIONSHIPCLASSES, sourceRelationshipClasses);
-        map.addAttribute(MODEL_TARGET_RELATIONSHIPCLASSES, targetRelationshipClasses);
+        map.addAttribute(MODEL_RELATIONSHIPS, relationships);
         return VIEW_DETAILS;
     }
 

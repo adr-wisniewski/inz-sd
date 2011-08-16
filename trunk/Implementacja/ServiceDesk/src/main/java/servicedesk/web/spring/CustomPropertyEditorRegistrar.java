@@ -5,7 +5,6 @@ import java.util.Date;
 
 import org.springframework.beans.PropertyEditorRegistrar;
 import org.springframework.beans.PropertyEditorRegistry;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Component;
@@ -102,10 +101,10 @@ import servicedesk.core.base.signal.editor.SignalReceiverTypeEditor;
 import servicedesk.core.base.signal.editor.SignalSignificanceTypeEditor;
 import servicedesk.core.base.signal.editor.SignalObjectTypeEditor;
 import servicedesk.core.base.signal.editor.SignalTypeEditor;
-import servicedesk.infrastructure.editor.BeanPropertyEditor;
+import servicedesk.core.itil.change.dao.RfcAuthorityDao;
+import servicedesk.core.itil.change.domain.entity.RfcAuthority;
 import servicedesk.infrastructure.editor.DomainObjectEditor;
 import servicedesk.infrastructure.editor.EnumOrdinalEditor;
-import servicedesk.web.base.tree.TreeBuilder;
 
 @Component
 public final class CustomPropertyEditorRegistrar implements PropertyEditorRegistrar {
@@ -175,6 +174,8 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
         @Autowired
         private RfcCategoryDao rfcCategoryDao;
         @Autowired
+        private RfcAuthorityDao rfcAuthorityDao;
+        @Autowired
         private RfcResolutionDao rfcResolutionDao;
 
         @Override
@@ -223,7 +224,10 @@ public final class CustomPropertyEditorRegistrar implements PropertyEditorRegist
         registry.registerCustomEditor(RfcPriority.class, new DomainObjectEditor<RfcPriority>( rfcPriorityDao ));
         registry.registerCustomEditor(RfcImpact.class, new DomainObjectEditor<RfcImpact>( rfcImpactDao ));
         registry.registerCustomEditor(RfcResolution.class, new DomainObjectEditor<RfcResolution>( rfcResolutionDao ));
+        registry.registerCustomEditor(RfcAuthority.class, new DomainObjectEditor<RfcAuthority>( rfcAuthorityDao ));
         registry.registerCustomEditor(RfcCategory.class, new DomainObjectEditor<RfcCategory>( rfcCategoryDao ));
         registry.registerCustomEditor(RfcState.class, new EnumOrdinalEditor<RfcState>(RfcState.class));
+        
+        
     }
 }

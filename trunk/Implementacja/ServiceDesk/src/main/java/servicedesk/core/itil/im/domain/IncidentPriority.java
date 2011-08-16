@@ -115,9 +115,10 @@ public class IncidentPriority implements DictionaryProperty<String>, Serializabl
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		IncidentPriority other = (IncidentPriority) obj;
+		if (!(obj instanceof IncidentPriority)) {
+                    return false;
+                }
+                final IncidentPriority other = (IncidentPriority) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

@@ -24,6 +24,13 @@ public class RfcItem extends Item {
     private RfcImpl rfc;
     private RfcItemClass rfcItemClass;
 
+    public RfcItem() {
+    }
+
+    public RfcItem(RfcImpl rfc) {
+        this.rfc = rfc;
+    }
+
     @OneToOne(fetch=FetchType.EAGER, optional = false)
     @JoinColumn(name = "RFC_ID")
     public RfcImpl getRfc() {

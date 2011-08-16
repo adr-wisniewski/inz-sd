@@ -6,11 +6,12 @@
 package servicedesk.core.base.security.service;
 
 import servicedesk.core.base.security.domain.User;
+import servicedesk.infrastructure.interfaces.service.LoadService;
 
 /**
  *
  * @author Adrian
  */
-public interface UserService {
+public interface UserService extends LoadService<User, Integer> {
     public User getByLogin(String login);
 }

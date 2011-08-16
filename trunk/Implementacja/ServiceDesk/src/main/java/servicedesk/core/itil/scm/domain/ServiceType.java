@@ -52,9 +52,10 @@ public class ServiceType implements DictionaryProperty<String>, Serializable {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ServiceType other = (ServiceType) obj;
+		if (!(obj instanceof ServiceType)) {
+                    return false;
+                }
+                final ServiceType other = (ServiceType) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

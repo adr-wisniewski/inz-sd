@@ -86,10 +86,10 @@ public class RequestCategory implements DictionaryProperty<String>, Hierarchical
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!(obj instanceof RequestCategory)) {
             return false;
         }
-        RequestCategory other = (RequestCategory) obj;
+        final RequestCategory other = (RequestCategory) obj;
         if (code == null) {
             if (other.code != null) {
                 return false;

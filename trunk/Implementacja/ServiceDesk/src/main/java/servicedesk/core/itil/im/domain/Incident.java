@@ -659,10 +659,10 @@ public class Incident implements DomainObject<Integer>, IEvent, Serializable {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!(obj instanceof Incident)) {
             return false;
         }
-        Incident other = (Incident) obj;
+        final Incident other = (Incident) obj;
         if (id == null) {
             if (other.id != null) {
                 return false;
