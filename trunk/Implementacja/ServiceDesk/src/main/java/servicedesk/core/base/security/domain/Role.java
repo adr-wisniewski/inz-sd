@@ -85,7 +85,7 @@ public class Role implements DictionaryProperty<String>, Serializable {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!(obj instanceof Role)) {
             return false;
         }
         final Role other = (Role) obj;

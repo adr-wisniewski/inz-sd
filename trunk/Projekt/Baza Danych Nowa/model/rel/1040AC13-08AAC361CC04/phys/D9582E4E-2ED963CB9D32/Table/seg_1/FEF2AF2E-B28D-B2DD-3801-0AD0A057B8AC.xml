@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="C2_ITEMS_EMPLOYEE" id="FEF2AF2E-B28D-B2DD-3801-0AD0A057B8AC" directorySegmentName="seg_1">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <logging>YES</logging>
+   <columnProxies>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="EMPLOYEE_ID" id="722B79A2-E834-DB82-1BCF-F69C09553A95">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="ITEM_ID" id="820CB6C5-F706-73C6-C2CA-27B4E18C7AB7">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+   </columnProxies>
+   <foreignKeys>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="C2_EMPLOYEE_ITEMS_EMPLOYE_FK1" id="6F097A73-F69F-0B95-1182-6D9B9D028A8C">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="C2_EMPLOYEE_ITEMS_C2_ITEM_FK1" id="996F34D3-00ED-CF02-6E0C-6A220B24D90C">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+   </foreignKeys>
+   <primaryKeys>
+      <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="C2_EMPLOYEE_ITEMS_PK" id="781C3CFB-1577-BF1B-B406-3CD69A8308FF">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexSort>NO</indexSort>
+      </PrimaryKey>
+   </primaryKeys>
+</TableProxyOraclev10g>

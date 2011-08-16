@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <p class="authors">
-    ©2010 Piotr Kalański, Adrian Wiśniewski
+    ©2011 Piotr Kalański, Adrian Wiśniewski
 </p>
 
 <p class="badges">

@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="RFC_AUTHORITY_MEMBERS" id="BA1B5EA1-7783-1F83-FB70-2AC83C6EAF72" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-07 16:23:35 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-07 16:23:35 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <logging>YES</logging>
+   <columnProxies>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="EMPLOYEE_ID" id="02940EDC-2837-6A76-7F3A-9B33337CA069">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="AUTHORITY_ID" id="13EF52A4-8F0C-FE48-AC80-77E0B109B617">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+   </columnProxies>
+   <foreignKeys>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="CAB_MEMBERS_EMPLOYEES_FK1" id="0BF8E0AC-0846-DDC4-2A20-8E0FC3FC9F5E">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="CAB_MEMBERS_CAB_FK1" id="C7937B20-ADA6-90B7-7F90-B87074B9514D">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+   </foreignKeys>
+   <primaryKeys>
+      <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="CAB_MEMBERS_PK" id="135375AB-DAF5-A33B-61E8-620522957AF3">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexSort>NO</indexSort>
+      </PrimaryKey>
+   </primaryKeys>
+</TableProxyOraclev10g>

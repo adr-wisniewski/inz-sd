@@ -102,9 +102,10 @@ public class ProblemPriority implements DictionaryProperty<String>, Serializable
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ProblemPriority other = (ProblemPriority) obj;
+		if (!(obj instanceof ProblemPriority)) {
+                    return false;
+                }
+                final ProblemPriority other = (ProblemPriority) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

@@ -6,6 +6,6 @@
 
 <print:nullable object="${object}">
     <a class="item" href="/cmdb/item/${object.id}">
-            ${object.id}
+            ${object.label} (${object.overview})
     </a>
 </print:nullable>

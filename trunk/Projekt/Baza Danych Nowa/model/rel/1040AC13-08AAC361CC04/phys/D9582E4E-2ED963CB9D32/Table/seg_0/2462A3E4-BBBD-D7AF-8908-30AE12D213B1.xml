@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="C2_CLASS_ATTRIBUTES" id="2462A3E4-BBBD-D7AF-8908-30AE12D213B1" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <logging>YES</logging>
+   <columnProxies>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="DISPLAY_NO" id="04A24472-D69C-3680-8AE4-4B7C0F518612">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="IS_OVERVIEW" id="2C1A81B9-446F-A3E3-D02D-07D5982B7009">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="ATTRIBUTE_ID" id="BBE2F87C-5E5D-4DA7-310A-25FE7BFCDE07">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="DESCRIPTION" id="C76BC4CB-9CED-8B4E-B220-372CD68C8086">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="CLASS_ID" id="EAC949C4-CFC6-2F15-B3FA-196FF5B1C06E">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="VERSION" id="EE36C606-D50D-FFF9-6A23-1B1B53FB85C1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <defaultValue>0</defaultValue>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="NAME" id="FA8117E3-9BD3-7961-8B81-80096E2F3863">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+   </columnProxies>
+   <foreignKeys>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="C2_CLASS_ATTRIBUTES_C2_CL_FK1" id="744CB510-1668-443B-AB8C-81E8F01326FF">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+   </foreignKeys>
+   <primaryKeys>
+      <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="C2_CLASS_ATTRIBUTES_PK" id="D21BB8DB-6603-82C7-4CAD-9C4DF0D0F543">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexSort>NO</indexSort>
+      </PrimaryKey>
+   </primaryKeys>
+</TableProxyOraclev10g>

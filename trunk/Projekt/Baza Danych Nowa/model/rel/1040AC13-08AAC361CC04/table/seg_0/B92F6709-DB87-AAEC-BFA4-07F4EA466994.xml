@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="B92F6709-DB87-AAEC-BFA4-07F4EA466994" directorySegmentName="seg_0" name="RFC_NOTIFICATIONS">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-14 11:35:01 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-15 09:56:54 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>RFC_NOTIFICATIONS_PK</pkName>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Column</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <columns>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="NOTIFICATION_ID" id="9CF0F525-FE02-E4BB-EF2E-F4B3D495BCED">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:41:58 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-14 11:41:58 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>50A397B3-BC99-93F6-71F9-BBD0FF3C2BE3</delegate>
+         <associations>
+            <colAssociation fkAssociation="27ABD00F-EFB3-12AD-C8D6-44C16067F2D4" referredColumn="50A397B3-BC99-93F6-71F9-BBD0FF3C2BE3"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="TYPE" id="984C7E8B-B827-A794-B7D8-9E3CA0DB4E9C">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:41:58 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-14 11:41:58 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>DDD21AAA-A750-2ACC-5962-72296403A7F7</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="RFC_ID" id="BE6B5C48-4450-1174-5189-05A16A1B692B">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:41:58 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-14 11:46:54 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>F4E704E5-0072-745F-BEF1-D3D44B83480C</delegate>
+         <associations>
+            <colAssociation fkAssociation="4E198105-1620-CEC8-9955-F1C2D3FB7F06" referredColumn="F4E704E5-0072-745F-BEF1-D3D44B83480C"/>
+         </associations>
+      </Column>
+   </columns>
+   <indexes>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="4CC69D97-7514-2F93-A944-B42880B5D532" name="RFC_NOTIFICATIONS_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:41:58 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-14 11:41:58 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <indexState>Primary Constraint</indexState>
+         <indexColumnUsage>
+            <colUsage columnID="9CF0F525-FE02-E4BB-EF2E-F4B3D495BCED"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="6064A764-796A-A8EE-50A2-4024BEB90EFC" name="RFC_NOTIFICATIONS_NOT_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:41:58 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-15 09:56:54 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="9CF0F525-FE02-E4BB-EF2E-F4B3D495BCED"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="112E743F-F9FD-BE31-1405-3FAB627204FA" name="RFC_NOTIFICATIONS_RFC_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:46:24 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-14 11:46:24 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="BE6B5C48-4450-1174-5189-05A16A1B692B"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+   </indexes>
+</Table>

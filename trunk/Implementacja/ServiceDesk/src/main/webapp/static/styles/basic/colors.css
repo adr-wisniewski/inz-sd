@@ -30,13 +30,15 @@ div.panel.success {
 #greeting em,
 #greeting a:first-letter,
 #navigation li:first-letter,
-#navigation li em
+#navigation li em,
+.notifications td em 
 {
     color: #adcdf8;
 }
 
 #pagetitle em,
-div.panel h1.caption em {
+div.panel h1.caption em
+{
     color: #FFEE5C;
 }
 
@@ -50,7 +52,7 @@ div.panel .item .title
     color: #003264;
 }
 
-div.panel ul.treeview, .element {
+div.panel ul.treeview, .listview, .element {
     background: white;
 }
 
@@ -94,7 +96,7 @@ div.panel.success > .content {
     background-color: inherit;
 }
 
-#navigation, #footer {
+#navigation, #footer, .listview {
     border-color: black;
 }
 

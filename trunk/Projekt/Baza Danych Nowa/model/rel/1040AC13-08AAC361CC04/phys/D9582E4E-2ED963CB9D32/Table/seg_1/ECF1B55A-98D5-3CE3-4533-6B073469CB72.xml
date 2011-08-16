@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="COOPERANT_USERS" id="ECF1B55A-98D5-3CE3-4533-6B073469CB72" directorySegmentName="seg_1">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-14 11:53:58 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <cluster>C7F5C4E5-4993-5D76-E1D6-4DD447FEF689</cluster>
+   <clusterColumns>108A96BA-D6CD-05D6-103B-7A928E5AE1F1</clusterColumns>
+   <logging>YES</logging>
+   <columnProxies>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="USER_ID" id="108A96BA-D6CD-05D6-103B-7A928E5AE1F1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="COOPERANT_ID" id="E15EAFFB-2DCC-FA26-49E0-3EF1CC116C71">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+   </columnProxies>
+   <foreignKeys>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="COOPERANT_USERS_COOPERANT_FK1" id="09A4F7CA-2DCB-AB27-EA7E-4168F5E7B35C">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="COOPERANT_USERS_USERS_FK1" id="BCF3FD87-6B84-177E-C451-58250927F9AB">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+   </foreignKeys>
+   <primaryKeys>
+      <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="COOPERANT_USERS_PK" id="1BED558A-A591-93A6-B7EE-9B23A3742AF1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexSort>NO</indexSort>
+      </PrimaryKey>
+   </primaryKeys>
+   <uniqueKeys>
+      <UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="COOPERANT_USERS_UK1" id="D96391F3-5D0F-B08C-72B0-A0CBE6456B42">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </UniqueKey>
+   </uniqueKeys>
+</TableProxyOraclev10g>

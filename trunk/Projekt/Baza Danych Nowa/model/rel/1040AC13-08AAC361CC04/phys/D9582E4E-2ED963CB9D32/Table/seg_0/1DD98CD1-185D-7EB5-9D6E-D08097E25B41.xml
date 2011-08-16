@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="C2_RELATION_CLASSES" id="1DD98CD1-185D-7EB5-9D6E-D08097E25B41" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-06 18:38:33 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <logging>YES</logging>
+   <columnProxies>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="PARENT_CLASS_ID" id="0570A827-C804-3169-508B-388D015697D4">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="CLASS_ID" id="1DB54F02-BC69-6A37-97C5-C506EADD48FB">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="SOURCE_TYPE" id="21A5AD29-3B2A-2AB4-3686-5A22DDD4037C">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="SOURCE_CLASS_ID" id="2F3F7137-3B81-51F7-FD43-5DBB2162243D">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="LABEL_REVERSE" id="3A9BB3C5-4A19-F055-1691-C7E4CE404BE1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="TARGET_CLASS_ID" id="5DC6FD09-BE80-D140-EF99-4AFA74BBD5C3">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="TARGET_TYPE" id="876D4ECA-275F-1497-0A07-F75DC2482D01">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="LABEL" id="F9B06AD4-503C-C792-1707-52C4C312BABA">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+   </columnProxies>
+   <foreignKeys>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="C2_RELATION_CLASS_C2_ITEM_FK2" id="25549E68-FD16-A80E-516B-4A85309BB91A">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="C2_RELATION_CLASS_C2_ITEM_FK1" id="5758DE9B-8AF9-F154-3568-1C60CE35E0D0">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="C2_RELATION_CLASSES_C2_RE_FK1" id="CC01AB03-B3A1-74CC-F504-15B2C90E0207">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="C2_RELATION_CLASS_C2_CLAS_FK1" id="F2284FE6-6EF5-A330-4B97-1176207602AA">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+   </foreignKeys>
+   <primaryKeys>
+      <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="C2_RELATION_DESCRIPTOR_PK" id="B47E2B95-623E-1C12-B78C-4C3C7C05DB43">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexSort>NO</indexSort>
+      </PrimaryKey>
+   </primaryKeys>
+   <tableCheckConstraints>
+      <TableCheckConstraint class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableCheckConstraintOraclev10g" name="C2_RELATION_CLASS_CHK1" id="2332FDA8-E576-ACD7-555A-94D1157BA62D">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </TableCheckConstraint>
+      <TableCheckConstraint class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableCheckConstraintOraclev10g" name="C2_RELATION_CLASS_CHK2" id="541D2308-557B-C442-2F12-FE622C69FE4E">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </TableCheckConstraint>
+      <TableCheckConstraint class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableCheckConstraintOraclev10g" name="C2_RELATION_CLASSES_C2" id="55FB3A45-7FA8-FFDC-4BC2-4907E45B945B">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 18:38:33 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 18:38:33 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </TableCheckConstraint>
+      <TableCheckConstraint class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableCheckConstraintOraclev10g" name="C2_RELATION_CLASSES_C1" id="6CD7DD1A-62A1-A418-DF01-052DA9F155C1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 18:38:33 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 18:38:33 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </TableCheckConstraint>
+   </tableCheckConstraints>
+</TableProxyOraclev10g>

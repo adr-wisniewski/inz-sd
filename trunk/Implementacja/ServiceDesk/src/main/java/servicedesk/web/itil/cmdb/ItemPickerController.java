@@ -25,7 +25,19 @@ public class ItemPickerController extends AbstractItemController {
 
     public static final String VIEW_NAME = "/cmdb/item/picker";
     public static final String CHOOSE_VIEW_NAME = "/cmdb/item/picker/choose";
-
+    
+    @RequestMapping(value = "/cmdb/item/picker/class/any/{name}")
+    public String showFormNotFiltered(ModelMap map,
+                @ModelAttribute("criteria") ItemCriteria criteria,
+                @PathVariable("name") String name) {
+        
+        Iterable<Item> items = service.search(criteria);
+        map.addAttribute("itemClass", null);
+        map.addAttribute("items", items.iterator());
+        map.addAttribute("name", name);
+        return VIEW_NAME;
+    }
+    
     @RequestMapping(value = "/cmdb/item/picker/class/{classId}/{name}")
     public String showForm(ModelMap map, 
                 @ModelAttribute("criteria") ItemCriteria criteria,
@@ -41,6 +53,18 @@ public class ItemPickerController extends AbstractItemController {
             map.addAttribute("items", items.iterator());
             map.addAttribute("name", name);
             return VIEW_NAME;
+    }
+    
+    @RequestMapping(value = "/cmdb/item/picker/class/any/{name}/choose/{id}")
+    public String chooseEmployee(ModelMap map,
+                @PathVariable("name") String name,
+                @PathVariable("id") Integer itemId) {
+
+            Item item = service.get(itemId);
+
+            map.addAttribute("item", item);
+            map.addAttribute("name", name);
+            return CHOOSE_VIEW_NAME;
     }
 
     @RequestMapping(value = "/cmdb/item/picker/class/{classId}/{name}/choose/{id}")

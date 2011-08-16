@@ -24,4 +24,5 @@ public interface RelationshipClassDao
     public List<RelationshipClass> searchByCriteria(RelationshipClassCriteria criteria);
     public List<RelationshipClass> getAllForSourceClass(ItemClass itemClass);
     public List<RelationshipClass> getAllForTargetClass(ItemClass itemClass);
+    public List<RelationshipClass> getAllForClass(ItemClass itemClass);
 }

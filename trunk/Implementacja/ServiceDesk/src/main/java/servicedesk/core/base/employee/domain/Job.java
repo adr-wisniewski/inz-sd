@@ -45,9 +45,10 @@ public class Job {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Job other = (Job) obj;
+		if (!(obj instanceof Job)) {
+                    return false;
+                }
+                final Job other = (Job) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

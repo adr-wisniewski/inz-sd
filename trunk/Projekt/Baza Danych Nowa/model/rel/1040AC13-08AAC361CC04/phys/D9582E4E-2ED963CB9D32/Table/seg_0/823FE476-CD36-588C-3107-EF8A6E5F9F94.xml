@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="RFC_PRIORITIES" id="823FE476-CD36-588C-3107-EF8A6E5F9F94" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <logging>YES</logging>
+   <columnProxies>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="PRIORITY_ID" id="62FC328B-5E8F-A968-7507-8342CFD464CF">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="NAME" id="ABC39CB1-BA0D-0963-2935-D3C56A8D2C15">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="URGENT" id="D287D103-3926-E7F9-B24D-9983196F526B">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="ORDER" id="D2AA1471-8B96-9198-F50B-A9A2EE9F1A2E">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+   </columnProxies>
+   <primaryKeys>
+      <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="RFC_PRIORITY_PK" id="7E57AF75-D4C8-204C-8002-83D4B6A1F519">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexSort>NO</indexSort>
+      </PrimaryKey>
+   </primaryKeys>
+   <uniqueKeys>
+      <UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="RFC_PRIORITY_UK1" id="2B4457D8-4182-21DA-6B4A-B53AF541E694">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-06 08:50:10 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-06 08:50:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </UniqueKey>
+   </uniqueKeys>
+</TableProxyOraclev10g>

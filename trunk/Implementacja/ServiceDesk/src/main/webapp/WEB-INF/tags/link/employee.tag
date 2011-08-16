@@ -5,7 +5,7 @@
 <%@attribute name="object" required="true" rtexprvalue="true" type="servicedesk.core.base.employee.domain.Employee" %>
 
 <print:nullable object="${object}">
-    <a class="employee" href="http://localhost:8084/servicedesk/employeeDetails?id=${object.id}">
+    <a class="employee" href="/servicedesk/employeeDetails?id=${object.id}">
         ${object.firstname} ${object.lastname}
     </a>
 </print:nullable>

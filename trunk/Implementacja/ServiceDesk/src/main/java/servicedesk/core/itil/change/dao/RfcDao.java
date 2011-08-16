@@ -13,5 +13,4 @@ import servicedesk.infrastructure.interfaces.dao.SearchDao;
  * @author Adrian
  */
 public interface RfcDao extends CrudDao<Rfc, Integer>, SearchDao<Rfc, Integer> {
-    
 }

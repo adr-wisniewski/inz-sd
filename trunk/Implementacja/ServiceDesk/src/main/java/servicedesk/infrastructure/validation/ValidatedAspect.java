@@ -65,8 +65,6 @@ public class ValidatedAspect implements Ordered, ApplicationContextAware {
         BindingResult bindingResult = getBindingResult(args, validated);
         Validator validator = getValidator(validated);
         
-        
-        
         doValidate((DomainObject<?>)target, bindingResult, validator);
     }
 
@@ -97,7 +95,6 @@ public class ValidatedAspect implements Ordered, ApplicationContextAware {
 
         dao.attach(object); // FUTURE: remove after session per conversation 
         validator.validate(object, bindingResult);
-        //TODO2 seems to work fine //dao.detach(object);
 
         if(bindingResult.hasErrors())
             throw new BusinessConstraintViolationException(bindingResult);

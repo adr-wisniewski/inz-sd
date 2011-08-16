@@ -13,7 +13,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
-import servicedesk.core.base.employee.domain.EmployeeUser;
+import servicedesk.core.base.security.domain.EmployeeUser;
 import servicedesk.core.base.security.service.AuthorizationService;
 import servicedesk.core.common.announcement.dao.AnnouncementDao;
 import servicedesk.core.common.announcement.domain.Announcement;

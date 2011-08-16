@@ -5,6 +5,7 @@
 
 package servicedesk.core.base.security.service;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,5 +26,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getByLogin(String login) {
         return dao.getByLogin(login);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return dao.getAll();
+    }
+
+    @Override
+    public User load(Integer id) {
+        return dao.load(id);   
+    }
+
+    @Override
+    public User get(Integer id) {
+        return dao.get(id);
     }
 }

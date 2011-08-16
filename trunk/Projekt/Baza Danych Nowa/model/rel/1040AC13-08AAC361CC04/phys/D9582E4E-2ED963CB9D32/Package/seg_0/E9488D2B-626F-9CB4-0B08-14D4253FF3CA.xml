@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="APP" id="E9488D2B-626F-9CB4-0B08-14D4253FF3CA" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 09:07:56 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-06 09:11:26 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <source>CREATE OR REPLACE PACKAGE APP AS &amp;lt;br/&amp;gt;  CURRENT_USER_ID NUMBER := 0;&amp;lt;br/&amp;gt;  &amp;lt;br/&amp;gt;  PROCEDURE set_user(user_id NUMBER);&amp;lt;br/&amp;gt;  FUNCTION get_user RETURN NUMBER;&amp;lt;br/&amp;gt;END;</source>
+   <body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="APP Body" id="E9488D2B-626F-9CB4-0B08-14D4253FF3CA">
+      <createdBy>Adrian</createdBy>
+      <createdTime>2011-08-06 09:09:43 UTC</createdTime>
+      <changedBy>Adrian</changedBy>
+      <changedTime>2011-08-06 09:09:43 UTC</changedTime>
+      <ownerDesignName>model</ownerDesignName>
+      <source>CREATE OR REPLACE PACKAGE BODY APP AS &amp;lt;br/&amp;gt;  PROCEDURE set_user(user_id NUMBER) AS&amp;lt;br/&amp;gt;  BEGIN&amp;lt;br/&amp;gt;    CURRENT_USER_ID := user_id;&amp;lt;br/&amp;gt;  END set_user;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;  FUNCTION get_user RETURN NUMBER AS&amp;lt;br/&amp;gt;  BEGIN&amp;lt;br/&amp;gt;    RETURN CURRENT_USER_ID;&amp;lt;br/&amp;gt;  END get_user;&amp;lt;br/&amp;gt;END;</source>
+   </body>
+</PackageOracle>

@@ -5,6 +5,8 @@
 
 package servicedesk.core.itil.cmdb.service;
 
+import java.util.List;
+import servicedesk.core.itil.cmdb.domain.Item;
 import servicedesk.core.itil.cmdb.domain.Relationship;
 import servicedesk.infrastructure.interfaces.service.EditService;
 
@@ -14,4 +16,5 @@ import servicedesk.infrastructure.interfaces.service.EditService;
  */
 public interface RelationshipService extends EditService<Relationship, Integer> {
     public Relationship getSame(Relationship target);
+    public List<Relationship> forItem(Item item);
 }

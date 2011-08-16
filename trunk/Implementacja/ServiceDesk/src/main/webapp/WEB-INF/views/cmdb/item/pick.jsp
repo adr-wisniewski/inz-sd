@@ -48,7 +48,7 @@
                         </td>
                         <td class="actions">
                             <ui:actionButton label="pick.label"
-                                action="/cmdb/item/picker/class/${itemClass.id}/${name}/choose/${item.id}"
+                                action="/cmdb/item/picker/class/${itemClass == null ? 'any' : itemClass.id}/${name}/choose/${item.id}"
                                 cssClass="pick"/>
                         </td>
                     </tr>

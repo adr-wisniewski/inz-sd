@@ -242,6 +242,12 @@
             </definition>
         </put-attribute>
     </definition>
+    
+    <definition name="/cmdb/relationship/addForItem/pickclass" extends="standard-layout">
+        <put-attribute name="title" value="titles.cmdb.relationship.addForItem" />
+        <put-attribute name="title_args" value="${origin.label}" />
+        <put-attribute name="body" value="/WEB-INF/views/cmdb/relationship/addforitem-pickclass.jsp" />
+    </definition>
 
     <definition name="/cmdb/relationship/edit" extends="standard-layout">
         <put-attribute name="title" value="titles.cmdb.relationship.edit" />
@@ -263,5 +269,11 @@
             </definition>
         </put-attribute>
     </definition>
-
+    
+    <definition name="/cmdb/relationship/view" extends="standard-layout">
+        <put-attribute name="title" value="titles.cmdb.relationship.view" />
+        <put-attribute name="title_args" value="${relationship.id}" />
+        <put-attribute name="body" value="/WEB-INF/views/cmdb/relationship/view.jsp" />
+    </definition>
+    
 </tiles-definitions>

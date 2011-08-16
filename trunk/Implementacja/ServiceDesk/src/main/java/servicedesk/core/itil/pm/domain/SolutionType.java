@@ -128,9 +128,10 @@ public class SolutionType implements DictionaryProperty<String>, Serializable {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		SolutionType other = (SolutionType) obj;
+		if (!(obj instanceof SolutionType)) {
+                    return false;
+                }
+                final SolutionType other = (SolutionType) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

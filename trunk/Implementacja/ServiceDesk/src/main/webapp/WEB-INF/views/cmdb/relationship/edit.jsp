@@ -12,7 +12,7 @@
 
 <ui:panel caption="caption.cmdb.relationship.properties">
     <form:form modelAttribute="relationship" method="post">
-        <ui:errorList fieldPrefix="field.cmdb.relationship"/>
+        <form:errors path="*" cssClass="errors" />
         <ui:propertyList>
 
             <ui:propertyItem code="field.cmdb.relationship.sourceItem" label="sourceItem">
@@ -33,7 +33,7 @@
             </c:forEach>
 
             <c:if test="${empty relationship.attributeValues}">
-                <ui:propertyItem>
+                <ui:propertyItem caption="field.cmdb.relationship.attributes">
                     <spring:message code="caption.cmdb.relationship.noattributes"/>
                 </ui:propertyItem>
             </c:if>

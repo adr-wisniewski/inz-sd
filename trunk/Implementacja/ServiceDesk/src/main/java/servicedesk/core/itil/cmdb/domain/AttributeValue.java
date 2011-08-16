@@ -69,7 +69,7 @@ public class AttributeValue implements Comparable<AttributeValue>, Serializable 
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!(obj instanceof AttributeValue)) {
             return false;
         }
         final AttributeValue other = (AttributeValue) obj;

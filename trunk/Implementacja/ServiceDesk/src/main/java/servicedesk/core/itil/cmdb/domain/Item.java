@@ -5,7 +5,9 @@
 
 package servicedesk.core.itil.cmdb.domain;
 
+import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -19,7 +21,8 @@ import servicedesk.core.itil.cmdb.domain.helper.ItemVisitor;
 @Table(name="C2_ITEMS")
 @PrimaryKeyJoinColumn(name = "ITEM_ID")
 public abstract class Item extends Entity {
-
+    private List<Relationship> sourceRelationships;
+    private List<Relationship> targetRelationships;
     private String label;
 
     @Column(name = "LABEL", length = 50)
@@ -40,5 +43,23 @@ public abstract class Item extends Entity {
     @Transient
     public ItemClass getEntityClass() {
         return getItemClass();
+    }
+
+    @OneToMany(mappedBy = "sourceItem")
+    public List<Relationship> getSourceRelationships() {
+        return sourceRelationships;
+    }
+    
+    public void setSourceRelationships(List<Relationship> sourceRelationships) {
+        this.sourceRelationships = sourceRelationships;
+    }
+    
+    @OneToMany(mappedBy = "targetItem")
+    public List<Relationship> getTargetRelationships() {
+        return targetRelationships;
+    }
+    
+    public void setTargetRelationships(List<Relationship> targetRelationships) {
+        this.targetRelationships = targetRelationships;
     }
 }

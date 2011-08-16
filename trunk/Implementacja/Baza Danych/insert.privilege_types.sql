@@ -62,13 +62,16 @@ insert into privilege_types(privilege_code, description) values('CMDB_ATTRIBUTE_
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_VIEW', 'Przegl¹danie wniosków zmian');
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_ADD', 'Dodawanie wniosków zmian');
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_EDIT', 'Edycja wniosków zmian');
+
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_DELETE', 'Usuwanie wniosków zmian');
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_MANAGE', 'Zarz¹dzanie wnioskami zmian');
+insert into privilege_types(privilege_code, description) values('CHANGE_RFC_ASSIGN', 'Przypisywanie wniosków zmian');
 
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_PRIORITY_CRUD', 'Dodawanie/Edycja/Usuwanie priorytetów wniosków zmian');
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_IMPACT_CRUD', 'Dodawanie/Edycja/Usuwanie poziomów wpywów wniosków zmian');
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_CATEGORY_CRUD', 'Dodawanie/Edycja/Usuwanie kategorii wniosków zmian');
 insert into privilege_types(privilege_code, description) values('CHANGE_RFC_RESOLUTION_CRUD', 'Dodawanie/Edycja/Usuwanie typów rozwi¹zañ wniosków zmian');
+insert into privilege_types(privilege_code, description) values('CHANGE_RFC_AUTHORITY_CRUD', 'Dodawanie/Edycja/Usuwanie organów autoryzuj¹cych wnioski zmian');
 
 insert into privilege_types(privilege_code, description) values('ADMIN', 'Administracja');
 insert into privilege_types(privilege_code, description) values('COMMON_ANNOUNCEMENT_CRUD', 'Dodawanie/Edycja/Usuwanie og³oszeñ');

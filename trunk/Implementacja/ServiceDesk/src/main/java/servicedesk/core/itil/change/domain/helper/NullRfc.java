@@ -6,6 +6,7 @@ package servicedesk.core.itil.change.domain.helper;
 
 import java.util.Date;
 import org.springframework.stereotype.Component;
+import servicedesk.core.itil.change.domain.entity.RfcAuthority;
 import servicedesk.core.itil.change.domain.entity.RfcCategory;
 import servicedesk.core.itil.change.domain.entity.RfcImpact;
 import servicedesk.core.itil.change.domain.entity.RfcPriority;
@@ -14,6 +15,7 @@ import servicedesk.core.itil.change.domain.entity.RfcState;
 import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.core.base.security.domain.User;
 import servicedesk.core.itil.change.domain.entity.Rfc;
+import servicedesk.core.itil.cmdb.domain.RfcItem;
 
 /**
  *
@@ -81,6 +83,31 @@ public class NullRfc implements Rfc {
     public Integer getId() {
         return null;
     }
+    
+    @Override
+    public RfcItem getRfcItem() {
+        return null;
+    }
+    
+    @Override
+    public Employee getBuilder() {
+        return null;
+    }
+
+    @Override
+    public RfcAuthority getAuthority() {
+        return null;
+    }
+    
+    @Override
+    public RfcAuthority getCab() {
+        return null;
+    }
+    
+    @Override
+    public String getPir() {
+        return null;
+    }
 
     @Override
     public void setTitle(String title) {
@@ -119,6 +146,31 @@ public class NullRfc implements Rfc {
 
     @Override
     public void setManager(Employee employee) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+    
+    @Override
+    public void setBuilder(Employee employee) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+    
+    @Override
+    public void setAuthority(RfcAuthority authority) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public void setCab(RfcAuthority cab) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public void setPir(String pir) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public void setState(RfcState state) {
         throw new UnsupportedOperationException("Not supported.");
     }
 }

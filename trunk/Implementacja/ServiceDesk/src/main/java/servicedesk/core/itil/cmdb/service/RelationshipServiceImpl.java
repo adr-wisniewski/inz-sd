@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import servicedesk.core.itil.cmdb.dao.RelationshipDao;
+import servicedesk.core.itil.cmdb.domain.Item;
 import servicedesk.core.itil.cmdb.domain.Relationship;
 import servicedesk.core.itil.cmdb.validator.RelationshipAddValidator;
 import servicedesk.core.itil.cmdb.validator.RelationshipDeleteValidator;
@@ -69,5 +70,10 @@ public class RelationshipServiceImpl implements RelationshipService {
     @Override
     public List<Relationship> getAll() {
         return dao.getAll();
+    }
+
+    @Override
+    public List<Relationship> forItem(Item item) {
+        return dao.forItem(item);
     }
 }

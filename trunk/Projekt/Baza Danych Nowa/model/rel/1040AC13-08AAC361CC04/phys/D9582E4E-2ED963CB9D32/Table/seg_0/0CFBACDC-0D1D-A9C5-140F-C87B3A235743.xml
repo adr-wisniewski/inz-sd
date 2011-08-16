@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableProxyOraclev10g" name="NOTIFICATIONS" id="0CFBACDC-0D1D-A9C5-140F-C87B3A235743" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-13 11:11:23 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-14 11:50:17 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <cluster>0601C0FA-0EA6-3963-49BB-A9692FDA3DE4</cluster>
+   <clusterColumns>50A397B3-BC99-93F6-71F9-BBD0FF3C2BE3</clusterColumns>
+   <logging>YES</logging>
+   <columnProxies>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="USER_ID" id="0311B7AD-3039-5BBA-37FF-E0E5D9839D28">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:13:38 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 11:13:38 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="VISITED" id="0827FBB8-9782-1335-5D58-9AA77CD0C481">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:13:38 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 12:51:07 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <defaultValue>&amp;apos;N&amp;apos;</defaultValue>
+         <elementType>CHAR (1 CHAR)</elementType>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="NOTIFICATION_ID" id="50A397B3-BC99-93F6-71F9-BBD0FF3C2BE3">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:13:38 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 11:13:38 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="INSTIGATOR_ID" id="A6755DCD-65DF-2F50-7718-8ECC5D69D8F8">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:42:45 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-14 11:42:45 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+      <ColumnProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ColumnProxyOraclev10g" name="TIMESTAMP" id="AB9E0760-E43C-4DB1-0EC6-F8E64A8616CA">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 13:27:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 13:27:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ColumnProxy>
+   </columnProxies>
+   <foreignKeys>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="MESSAGES_USERS_FK" id="2D9BCFE8-655F-B7B5-9479-0551074D21F0">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:13:38 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 11:13:38 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+      <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="NOTIFICATIONS_USERS_FK" id="FEE8C7BC-8EAA-2FBD-BCFE-1217B9B15E9E">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:42:45 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-14 11:42:45 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </ForeignKey>
+   </foreignKeys>
+   <primaryKeys>
+      <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="MESSAGES_PK" id="0987683F-178E-0D46-AEEF-1C5DC25CF478">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:13:38 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 11:13:38 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexSort>NO</indexSort>
+      </PrimaryKey>
+   </primaryKeys>
+   <tableCheckConstraints>
+      <TableCheckConstraint class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableCheckConstraintOraclev10g" name="NOTIFICATIONS_CK" id="A88B8EAC-49B8-C756-280A-8BAD45BDB0E3">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:14:01 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 11:14:01 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </TableCheckConstraint>
+   </tableCheckConstraints>
+</TableProxyOraclev10g>

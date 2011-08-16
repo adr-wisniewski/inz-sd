@@ -132,7 +132,14 @@ div.panel .item .title {
 }
 
 #greeting em,
-#navigation li em
+#navigation li em,
+.notifications td em
 {
     font-style: normal;
 }
+
+.notifications .unvisited td {
+    font-weight: bold;
+    font-size: 14px;
+}
+

@@ -2,6 +2,7 @@
 <%@attribute name="code" required="false" rtexprvalue="true" description="Kod wiadomosci"%>
 <%@attribute name="caption" required="false" rtexprvalue="true" description="Kod wiadomosci"%>
 <%@attribute name="label" required="false" rtexprvalue="true" description="Kod wiadomosci"%>
+<%@attribute name="cssClass" required="false" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -23,7 +24,7 @@
     </c:set>
 </c:if>
 
-<tr>
+<tr class="${cssClass}">
     <th>
         ${label_text}
     </th>

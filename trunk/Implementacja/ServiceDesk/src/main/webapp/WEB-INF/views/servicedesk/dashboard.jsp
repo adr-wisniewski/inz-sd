@@ -5,5 +5,6 @@
 
 
 <ui:announcements announcements="${announcements}" />
+<ui:notifications notifications="${notifications}" />
 
 

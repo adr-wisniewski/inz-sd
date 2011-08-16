@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="c2_autoinsert_services" id="7D528F91-FE6C-D883-5FC3-C2BD2176112F" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 08:57:44 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-06 08:59:41 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <actions>INSERT</actions>
+   <body>BEGIN&amp;lt;br/&amp;gt;    INSERT INTO C2_ENTITIES (ENTITY_ID, VERSION) VALUES (C2_ENTITIES_SEQ.nextval, 0);&amp;lt;br/&amp;gt;		&amp;lt;br/&amp;gt;    INSERT INTO C2_ITEMS (ITEM_ID, LABEL) VALUES (C2_ENTITIES_SEQ.currval, &amp;apos;USŁUGA#&amp;apos; || to_char(:service.SERVICE_ID));&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;    INSERT INTO C2_ITEMS_SERVICE (ITEM_ID, SERVICE_ID) VALUES (C2_ENTITIES_SEQ.currval, :service.SERVICE_ID);&amp;lt;br/&amp;gt;END;</body>
+   <triggerTime>AFTER</triggerTime>
+   <ref_NEW_AS>service</ref_NEW_AS>
+   <table>EE5F1332-EF6F-E437-43BC-9FC4FC3D8D2D</table>
+</TriggerOraclev10g>

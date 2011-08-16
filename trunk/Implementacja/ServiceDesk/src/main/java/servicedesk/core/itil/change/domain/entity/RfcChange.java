@@ -22,11 +22,19 @@ public class RfcChange {
     
     private Changeable<String> title;
     private Changeable<String> description;
+    
+    private Changeable<RfcCategory> category;
     private Changeable<RfcPriority> priority;
     private Changeable<RfcImpact> impact;
-    private Changeable<RfcCategory> category;
+    private Changeable<RfcResolution> resolution;
     private Changeable<RfcState> state;
+    
     private Changeable<Employee> manager;
+    private Changeable<Employee> builder;
+    private Changeable<RfcAuthority> authority;
+    private Changeable<RfcAuthority> cab;
+    
+    private Changeable<String> pir;
     private Changeable<String> comment;
     
     
@@ -41,11 +49,19 @@ public class RfcChange {
     public final void initialize(Rfc previous, Rfc next) {
         title = new Changeable<String>(previous.getTitle(), next.getTitle());
         description = new Changeable<String>(previous.getDescription(), next.getDescription());
+        
         priority = new Changeable<RfcPriority>(previous.getPriority(), next.getPriority());
-        impact = new Changeable<RfcImpact>(previous.getImpact(), next.getImpact());
         category = new Changeable<RfcCategory>(previous.getCategory(), next.getCategory());
+        impact = new Changeable<RfcImpact>(previous.getImpact(), next.getImpact());
+        resolution = new Changeable<RfcResolution>(previous.getResolution(), next.getResolution());
         state = new Changeable<RfcState>(previous.getState(), next.getState());
+        
         manager = new Changeable<Employee>(previous.getManager(), next.getManager());
+        builder = new Changeable<Employee>(previous.getBuilder(), next.getBuilder());
+        authority = new Changeable<RfcAuthority>(previous.getAuthority(), next.getAuthority());
+        cab = new Changeable<RfcAuthority>(previous.getCab(), next.getCab());
+        
+        pir = new Changeable<String>(previous.getPir(), next.getPir());
         comment = new Changeable<String>(previous.getComment(), next.getComment());
     }
     
@@ -60,10 +76,24 @@ public class RfcChange {
     public boolean isProperitiesChanged() {
         return title.isChanged() 
                 || description.isChanged()
+                
+                || category.isChanged()
                 || priority.isChanged()
                 || impact.isChanged()
+                || getResolution().isChanged()
                 || state.isChanged()
-                || manager.isChanged();
+                
+                || manager.isChanged()
+                || getBuilder().isChanged()
+                || getAuthority().isChanged()
+                || getCab().isChanged()
+                
+                || getPir().isChanged()
+                ;
+    }
+    
+    public boolean isCommentChanged() {
+        return comment.isChanged() && comment.getNextValue() != null && !comment.getNextValue().isEmpty();
     }
     
     /**
@@ -218,5 +248,40 @@ public class RfcChange {
      */
     public void setComment(Changeable<String> comment) {
         this.comment = comment;
+    }
+
+    /**
+     * @return the resolution
+     */
+    public Changeable<RfcResolution> getResolution() {
+        return resolution;
+    }
+
+    /**
+     * @return the builder
+     */
+    public Changeable<Employee> getBuilder() {
+        return builder;
+    }
+
+    /**
+     * @return the authority
+     */
+    public Changeable<RfcAuthority> getAuthority() {
+        return authority;
+    }
+
+    /**
+     * @return the cab
+     */
+    public Changeable<RfcAuthority> getCab() {
+        return cab;
+    }
+
+    /**
+     * @return the pir
+     */
+    public Changeable<String> getPir() {
+        return pir;
     }
 }

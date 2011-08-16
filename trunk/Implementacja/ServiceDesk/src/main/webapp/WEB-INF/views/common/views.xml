@@ -6,7 +6,7 @@
 
 <tiles-definitions>
 	   
-    <!-- ITEM CLASS SEARCH -->
+    <!-- ANNOUNCEMENT -->
     <definition name="/common/announcement/" extends="standard-layout">
         <put-attribute name="title" value="titles.common.announcements" />
         <put-attribute name="body" value="/WEB-INF/views/common/announcement/index.jsp" />
@@ -49,6 +49,13 @@
                 <put-attribute name="text_args" value="${announcement.title}" />
             </definition>
         </put-attribute>
+    </definition>
+    
+    <!-- PERSON -->
+    <definition name="/common/user/view" extends="standard-layout">
+        <put-attribute name="title" value="titles.common.user.view" />
+        <put-attribute name="title_args" value="${user.firstname}, ${user.lastname}" />
+        <put-attribute name="body" value="/WEB-INF/views/common/user/view.jsp" />
     </definition>
 
 </tiles-definitions>

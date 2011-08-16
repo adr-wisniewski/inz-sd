@@ -15,6 +15,9 @@ public abstract class EntityClassUtils {
 
     public static boolean isSameOrSubclass(EntityClass parent, EntityClass subclass) {
 
+        if(parent == null)
+            return true;
+        
         for(EntityClass current = subclass; current != null; current = current.getParent()) {
             if(current.equals(parent))
                 return true;

@@ -5,8 +5,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
+<c:choose>
+    <c:when test="${clazz == null}">
+        <c:set var="script_url" value="/cmdb/item/picker/class/any/${name}" />
+    </c:when>
+    <c:otherwise>
+        <c:set var="script_url" value="/cmdb/item/picker/class/${clazz.id}/${name}" />
+    </c:otherwise>
+</c:choose>
+
 <c:set var="pick_script">
-    window.open('<c:url value="/cmdb/item/picker/class/${clazz.id}/${name}" />', '_blank', 'menubar=no,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes,fullscreen=yes,channelmode=no').focus();
+    window.open('<c:url value="${script_url}" />', '_blank', 'menubar=no,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes,fullscreen=yes,channelmode=no').focus();
 </c:set>
 
 <input type="hidden" id="${name}" name="${name}" value="${value.id}" />

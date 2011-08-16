@@ -14,6 +14,8 @@ public interface EmployeeDao {
 	 */
 	public Employee get(Integer employeeId);
 	
+        public List<Employee> getAll();
+        
 	/**
 	 * Wyszukuje pracownika po loginie
 	 * 

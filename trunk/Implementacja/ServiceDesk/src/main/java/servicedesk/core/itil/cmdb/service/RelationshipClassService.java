@@ -23,5 +23,6 @@ public interface RelationshipClassService
         HierarchyService<RelationshipClass, Integer> {
     public List<RelationshipClass> getAllForSourceClass(ItemClass itemClass);
     public List<RelationshipClass> getAllForTargetClass(ItemClass itemClass);
+    public List<RelationshipClass> getAllForClass(ItemClass itemClass);
     public List<RelationshipClass> search(RelationshipClassCriteria criteria);
 }

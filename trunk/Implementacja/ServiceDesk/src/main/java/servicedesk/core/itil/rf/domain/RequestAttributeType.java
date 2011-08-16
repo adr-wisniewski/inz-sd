@@ -85,9 +85,10 @@ public class RequestAttributeType {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		RequestAttributeType other = (RequestAttributeType) obj;
+		if (!(obj instanceof RequestAttributeType)) {
+                    return false;
+                }
+                final RequestAttributeType other = (RequestAttributeType) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

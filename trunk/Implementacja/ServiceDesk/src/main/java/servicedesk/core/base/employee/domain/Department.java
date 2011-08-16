@@ -1,5 +1,6 @@
 package servicedesk.core.base.employee.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="DEPARTMENTS")
-public class Department {
+public class Department implements Serializable {
 	@Id
 	@Column(name="DEPARTMENT_ID")
 	private Integer id;
@@ -60,9 +61,10 @@ public class Department {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Department other = (Department) obj;
+		if (!(obj instanceof Department)) {
+                    return false;
+                }
+		final Department other = (Department) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

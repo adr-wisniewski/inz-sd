@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="C69355E4-C84D-1A81-3A70-A8F31E435E69" directorySegmentName="seg_1" name="RFC_AUTHORITIES">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-07 16:38:21 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-07 16:39:35 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>RFC_AUTHORITIES_PK</pkName>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Column</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <columns>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="AUTHORITY_ID" id="0E062BB6-5A00-B1D0-3E2D-299C31B98F1C">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:39:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:39:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="NAME" id="D792AA4B-1214-4044-376D-2B754829DC03">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:39:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:39:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+         <domain>D9857B2D-60BE-E172-CE1F-FCCD255E6249</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="IS_CAB" id="562D6CE1-B204-84C0-7DA3-9E176B376ECD">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:39:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:39:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>D4862335-006A-2389-9195-EF85A082601D</domain>
+      </Column>
+   </columns>
+   <indexes>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="B8ADDCF1-1E81-0F04-4F56-B02D41AE0BCA" name="RFC_AUTHORITIES_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:39:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:39:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <indexState>Primary Constraint</indexState>
+         <indexColumnUsage>
+            <colUsage columnID="0E062BB6-5A00-B1D0-3E2D-299C31B98F1C"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="9EBFD62F-F7EE-C415-FC75-F2BC043CF987" name="RFC_AUTHORITIES__UN">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:39:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:39:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexState>Unique Constraint</indexState>
+         <indexColumnUsage>
+            <colUsage columnID="D792AA4B-1214-4044-376D-2B754829DC03"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+   </indexes>
+   <tableCheckConstraints>
+      <tableCheckConstraint class="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint" name="RFC_AUTHORITIES_CK" id="FF61D506-0B68-4C99-B363-D690EB32F14C" directorySegmentName="seg_1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-07 16:39:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-07 16:39:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <rule>IS_CAB IN (&amp;apos;Y&amp;apos;, &amp;apos;N&amp;apos;)</rule>
+      </tableCheckConstraint>
+   </tableCheckConstraints>
+</Table>

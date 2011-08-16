@@ -54,8 +54,9 @@
     <menu:compositeMenuItem url="/change/rfc/administer" name="menu.change.rfc.administer">
         <menu:menuItem url="/change/rfc/priority" name="menu.change.rfc.priority" role="CHANGE_RFC_PRIORITY_CRUD" icon="search"/>
         <menu:menuItem url="/change/rfc/impact" name="menu.change.rfc.impact" role="CHANGE_RFC_IMPACT_CRUD" icon="search"/>
-        <menu:menuItem url="/change/rfc/category" name="menu.change.rfc.category" role="CHANGE_RFC_CATEGORY_CRUD" icon="search"/>
         <menu:menuItem url="/change/rfc/resolution" name="menu.change.rfc.resolution" role="CHANGE_RFC_RESOLUTION_CRUD" icon="search"/>
+        <menu:menuItem url="/change/rfc/category" name="menu.change.rfc.category" role="CHANGE_RFC_CATEGORY_CRUD" icon="search"/>
+        <menu:menuItem url="/change/rfc/authority" name="menu.change.rfc.authority" role="CHANGE_RFC_AUTHORITY_CRUD" icon="search"/>
     </menu:compositeMenuItem>
     
 </menu:menuGroup>

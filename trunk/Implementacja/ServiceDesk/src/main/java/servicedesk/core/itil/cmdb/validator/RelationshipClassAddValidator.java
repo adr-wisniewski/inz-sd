@@ -40,8 +40,6 @@ public class RelationshipClassAddValidator extends AbstractValidator<Relationshi
 
     private void checkSimple(RelationshipClass target, Errors errors) {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "label", "validate.cmdb.relationship.class.label.empty");
-        ValidationUtils.rejectIfEmpty(errors, "sourceItemClass", "validate.cmdb.relationship.class.sourceItemClass.empty");
-        ValidationUtils.rejectIfEmpty(errors, "targetItemClass", "validate.cmdb.relationship.class.targetItemClass.empty");
     }
 
     private void checkLiskovSubstitution(RelationshipClass target, Errors errors) {

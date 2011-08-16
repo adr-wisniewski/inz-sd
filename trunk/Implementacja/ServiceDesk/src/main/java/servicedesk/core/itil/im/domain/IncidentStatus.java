@@ -119,9 +119,10 @@ public class IncidentStatus implements DictionaryProperty<String>, Serializable 
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		IncidentStatus other = (IncidentStatus) obj;
+		if (!(obj instanceof IncidentStatus)) {
+                    return false;
+                }
+                final IncidentStatus other = (IncidentStatus) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="INCIDENT_HISTORY_TRG" id="BCB8EAE7-3017-C065-6536-1517368445F6" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 08:56:16 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-07 17:05:58 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <actions>INSERT, UPDATE</actions>
+   <body>DECLARE&amp;lt;br/&amp;gt;    history_id_v number;&amp;lt;br/&amp;gt;    employee_id_v number;&amp;lt;br/&amp;gt;BEGIN&amp;lt;br/&amp;gt;   &amp;lt;br/&amp;gt;  select HISTORY_ID_SEQ.nextval, app.get_user into history_id_v, employee_id_v from dual;&amp;lt;br/&amp;gt;  &amp;lt;br/&amp;gt;  insert into incidents_history(&amp;lt;br/&amp;gt;    HISTORY_ID&amp;lt;br/&amp;gt;    ,CHANGE_DATE&amp;lt;br/&amp;gt;    ,EMPLOYEE_ID&amp;lt;br/&amp;gt;    ,INCIDENT_ID&amp;lt;br/&amp;gt;    ,IMPACT_CODE&amp;lt;br/&amp;gt;    ,URGENCY_CODE&amp;lt;br/&amp;gt;    ,STATUS_CODE&amp;lt;br/&amp;gt;    ,REVIEW&amp;lt;br/&amp;gt;    ,PRIORITY_CODE&amp;lt;br/&amp;gt;    ,CATEGORY_CODE&amp;lt;br/&amp;gt;    ,SUBJECT&amp;lt;br/&amp;gt;    ,DESCRIPTION&amp;lt;br/&amp;gt;    ,STAFF_MEMBER&amp;lt;br/&amp;gt;    ,RESOLUTION&amp;lt;br/&amp;gt;    ,SOURCE_CODE&amp;lt;br/&amp;gt;    ,RESOLUTION_DATE&amp;lt;br/&amp;gt;    ,GROUP_ID&amp;lt;br/&amp;gt;    ,TARGET_RESOLUTION_DATE&amp;lt;br/&amp;gt;  )&amp;lt;br/&amp;gt;  values(&amp;lt;br/&amp;gt;    history_id_v&amp;lt;br/&amp;gt;    , sysdate&amp;lt;br/&amp;gt;    , employee_id_v&amp;lt;br/&amp;gt;    , :new.INCIDENT_ID&amp;lt;br/&amp;gt;    , :new.IMPACT_CODE&amp;lt;br/&amp;gt;    , :new.URGENCY_CODE&amp;lt;br/&amp;gt;    , :new.STATUS_CODE&amp;lt;br/&amp;gt;    , :new.REVIEW&amp;lt;br/&amp;gt;    , :new.PRIORITY_CODE&amp;lt;br/&amp;gt;    , :new.CATEGORY_CODE&amp;lt;br/&amp;gt;    , :new.SUBJECT&amp;lt;br/&amp;gt;    , :new.DESCRIPTION&amp;lt;br/&amp;gt;    , :new.STAFF_MEMBER&amp;lt;br/&amp;gt;    , :new.RESOLUTION&amp;lt;br/&amp;gt;    , :new.SOURCE_CODE&amp;lt;br/&amp;gt;    , :new.RESOLUTION_DATE&amp;lt;br/&amp;gt;    , :new.GROUP_ID&amp;lt;br/&amp;gt;    , :new.TARGET_RESOLUTION_DATE&amp;lt;br/&amp;gt;  );&amp;lt;br/&amp;gt;  &amp;lt;br/&amp;gt;END;</body>
+   <triggerTime>AFTER</triggerTime>
+   <table>A771E677-EC27-3720-3F0E-C600ABF45391</table>
+</TriggerOraclev10g>

@@ -7,7 +7,8 @@
     					http://www.springframework.org/schema/security 
     					http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 
-    <s:http use-expressions="true"  >
+    <s:http use-expressions="true">
+       
         <s:intercept-url pattern="/services/**" filters="none" />
         <s:intercept-url pattern="/static/**" filters="none" />
         <s:intercept-url pattern="/favicon.ico" filters="none" />
@@ -28,5 +29,12 @@
     <s:authentication-manager alias="auth-man">
         <s:authentication-provider user-service-ref="springSecurityUserDetailsService" />
     </s:authentication-manager>
+    
+    <bean name="extendedMethodSecurityExpressionHandler" 
+        class="org.springframework.security.access.expression.method.ExtendedMethodSecurityExpressionHandler" />
+    
+    <s:global-method-security pre-post-annotations="enabled">
+        <s:expression-handler ref="extendedMethodSecurityExpressionHandler" />
+    </s:global-method-security>
 
 </beans>

@@ -3,7 +3,7 @@
    <createdBy>Adrian</createdBy>
    <createdTime>2011-06-28 15:16:23 UTC</createdTime>
    <changedBy>Adrian</changedBy>
-   <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+   <changedTime>2011-08-07 16:23:35 UTC</changedTime>
    <ownerDesignName>model</ownerDesignName>
    <pkName>RFC_CATEGORY_PK</pkName>
    <fonts>
@@ -44,9 +44,9 @@
    <columns>
       <Column class="oracle.dbtools.crest.model.design.relational.Column" name="CATEGORY_ID" id="C472FAC8-E27E-1E7D-E059-2695EFF9E994">
          <createdBy>Adrian</createdBy>
-         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
          <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
          <use>0</use>
          <logicalDatatype>LOGDT019</logicalDatatype>
@@ -54,9 +54,9 @@
       </Column>
       <Column class="oracle.dbtools.crest.model.design.relational.Column" name="NAME" id="20A9B509-29AC-83FC-F09B-0DDCE0B2B7FC">
          <createdBy>Adrian</createdBy>
-         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
          <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
          <use>0</use>
          <logicalDatatype>LOGDT024</logicalDatatype>
@@ -64,9 +64,9 @@
       </Column>
       <Column class="oracle.dbtools.crest.model.design.relational.Column" name="ABSTRACT" id="D32CCFF2-0705-9465-C6FF-A8EE1FD33854">
          <createdBy>Adrian</createdBy>
-         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
          <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
          <constraintName>RFC_CATEGORY_CHK1</constraintName>
          <useDomainConstraints>false</useDomainConstraints>
@@ -79,9 +79,9 @@
       </Column>
       <Column class="oracle.dbtools.crest.model.design.relational.Column" name="PARENT_CATEGORY_ID" id="647A7997-429E-060D-1B32-CE0FAFC0FC02">
          <createdBy>Adrian</createdBy>
-         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
          <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
@@ -92,46 +92,13 @@
             <colAssociation fkAssociation="11A5C16F-FA69-F3BC-CF9B-533ADC91038B" referredColumn="C472FAC8-E27E-1E7D-E059-2695EFF9E994"/>
          </associations>
       </Column>
-      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="CAB_ID" id="52220A37-359D-8A5E-F4EF-8F1F24C02C04">
-         <createdBy>Adrian</createdBy>
-         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
-         <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
-         <ownerDesignName>model</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <use>0</use>
-         <logicalDatatype>LOGDT019</logicalDatatype>
-         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
-      </Column>
-      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="ECAB_ID" id="D0532307-5A1B-EA9D-BAF7-33B0A5DB5107">
-         <createdBy>Adrian</createdBy>
-         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
-         <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
-         <ownerDesignName>model</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <use>0</use>
-         <logicalDatatype>LOGDT019</logicalDatatype>
-         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
-      </Column>
-      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="EXECUTIVE_ID" id="554176A5-3229-979E-3B20-CBD636FD535B">
-         <createdBy>Adrian</createdBy>
-         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
-         <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
-         <ownerDesignName>model</ownerDesignName>
-         <nullsAllowed>true</nullsAllowed>
-         <use>0</use>
-         <logicalDatatype>LOGDT019</logicalDatatype>
-         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
-      </Column>
    </columns>
    <indexes>
       <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="870EB3CF-A32F-87EA-D431-5AE17C834341" name="RFC_CATEGORY_PK">
          <createdBy>Adrian</createdBy>
-         <createdTime>2011-06-28 15:16:23 UTC</createdTime>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
          <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:23 UTC</changedTime>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
          <pk>true</pk>
          <indexState>Primary Constraint</indexState>
@@ -141,9 +108,9 @@
       </ind_PK_UK>
       <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="9C41C634-606C-8D74-C8F7-CDB2E5122C91" name="RFC_CATEGORY_UK1">
          <createdBy>Adrian</createdBy>
-         <createdTime>2011-06-28 15:16:24 UTC</createdTime>
+         <createdTime>2011-08-07 16:23:35 UTC</createdTime>
          <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
          <indexState>Unique Constraint</indexState>
          <indexColumnUsage>
@@ -154,7 +121,7 @@
          <createdBy>Adrian</createdBy>
          <createdTime>2011-06-28 15:16:24 UTC</createdTime>
          <changedBy>Adrian</changedBy>
-         <changedTime>2011-06-28 15:16:24 UTC</changedTime>
+         <changedTime>2011-08-07 16:23:27 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
          <indexColumnUsage>
             <colUsage columnID="647A7997-429E-060D-1B32-CE0FAFC0FC02"/>

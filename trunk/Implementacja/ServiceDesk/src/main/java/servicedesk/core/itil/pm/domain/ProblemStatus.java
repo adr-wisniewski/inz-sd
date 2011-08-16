@@ -112,9 +112,10 @@ public class ProblemStatus implements DictionaryProperty<String>, Serializable {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ProblemStatus other = (ProblemStatus) obj;
+		if (!(obj instanceof ProblemStatus)) {
+                    return false;
+                }
+                final ProblemStatus other = (ProblemStatus) obj;
 		if (code == null) {
 			if (other.code != null)
 				return false;

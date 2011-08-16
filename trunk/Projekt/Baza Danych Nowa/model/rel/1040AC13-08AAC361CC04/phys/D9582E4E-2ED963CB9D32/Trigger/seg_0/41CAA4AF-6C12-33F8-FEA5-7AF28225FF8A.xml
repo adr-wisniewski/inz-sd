@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="INCIDENT_SIGNALS_TRG2" id="41CAA4AF-6C12-33F8-FEA5-7AF28225FF8A" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 08:53:32 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-07 17:05:32 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <actions>INSERT, UPDATE</actions>
+   <body>BEGIN&amp;lt;br/&amp;gt;  FOR s IN (SELECT * FROM SIGNALS_TMP) LOOP&amp;lt;br/&amp;gt;    ADD_SIGNAL(s.type_code, s.employee_id, s.object_id);&amp;lt;br/&amp;gt;  END LOOP;&amp;lt;br/&amp;gt;END;</body>
+   <triggerTime>AFTER</triggerTime>
+   <table>A771E677-EC27-3720-3F0E-C600ABF45391</table>
+</TriggerOraclev10g>

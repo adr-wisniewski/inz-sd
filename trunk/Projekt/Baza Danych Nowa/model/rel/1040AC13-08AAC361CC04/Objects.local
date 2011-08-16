@@ -5,10 +5,6 @@
    <object objectType="Table" objectID="8770467D-262A-E273-E13D-9A96D9BC4204" name="ANNOUNCEMENT_ATTACHMENTS" seqName="seg_0"/>
    <object objectType="Table" objectID="1CD8C0E7-EFB6-D13C-EBBF-293491C653CE" name="ATTACHMENTS" seqName="seg_0"/>
    <object objectType="Table" objectID="2431F6E6-ACA6-DEF3-D1A6-978F8CD08F1F" name="AUDITREVISION" seqName="seg_0"/>
-   <object objectType="Table" objectID="840FB8A2-EB69-786C-DCEF-F84AE20B3385" name="AUTHORITIES" seqName="seg_0"/>
-   <object objectType="Table" objectID="BA1B5EA1-7783-1F83-FB70-2AC83C6EAF72" name="AUTHORITY_MEMBERS" seqName="seg_0"/>
-   <object objectType="Table" objectID="471AAE3E-7770-5EAF-C9D6-FF8AD91D5AF4" name="AUTHORITY_TYPES" seqName="seg_0"/>
-   <object objectType="Table" objectID="E4ECBEB1-4DA3-84A8-CC1A-1BBBB9B26A5C" name="AUTHORITY_TYPES_MATRIX" seqName="seg_0"/>
    <object objectType="Table" objectID="153D64A2-79FE-825E-B843-C07DA9EE1285" name="C2_CLASSES" seqName="seg_0"/>
    <object objectType="Table" objectID="2462A3E4-BBBD-D7AF-8908-30AE12D213B1" name="C2_CLASS_ATTRIBUTES" seqName="seg_0"/>
    <object objectType="Table" objectID="03E13C65-24C9-5DF8-4718-12D29BF68459" name="C2_CLASS_ATTRIBUTE_VALUES" seqName="seg_0"/>
@@ -48,6 +44,7 @@
    <object objectType="Table" objectID="EB3D726B-DDB4-785E-5E56-3A496DFD5811" name="INCIDENTS_HISTORY" seqName="seg_0"/>
    <object objectType="Table" objectID="2EDACB99-D4E9-99A4-824B-0EEE93DE12C9" name="INCIDENT_PROBLEM" seqName="seg_0"/>
    <object objectType="Table" objectID="BE1D834C-77CF-39AD-1D30-0EFD3A0E1EFF" name="JOBS" seqName="seg_0"/>
+   <object objectType="Table" objectID="0CFBACDC-0D1D-A9C5-140F-C87B3A235743" name="NOTIFICATIONS" seqName="seg_0"/>
    <object objectType="Table" objectID="3F56DD35-EF55-89C2-FB98-BC5D8834935C" name="ORGANIZATIONS" seqName="seg_0"/>
    <object objectType="Table" objectID="8DE9685A-E220-A92B-56A1-C59EBE7B00AE" name="PRIORITY_TYPES_IM" seqName="seg_0"/>
    <object objectType="Table" objectID="740AD75E-EF2F-2ACD-0E5E-FDD02277F11D" name="PRIORITY_TYPES_PM" seqName="seg_0"/>
@@ -59,8 +56,12 @@
    <object objectType="Table" objectID="C84ABAD0-6D6B-E909-902B-43931F22CC66" name="REQUEST_ATTRIBUTE_TYPES" seqName="seg_0"/>
    <object objectType="Table" objectID="D3261D64-E133-0C1F-03EA-73960D24C083" name="RFC" seqName="seg_0"/>
    <object objectType="Table" objectID="BC96A3A3-6B12-DAD8-902D-AF60E34FE964" name="RFC_AUD" seqName="seg_0"/>
+   <object objectType="Table" objectID="C69355E4-C84D-1A81-3A70-A8F31E435E69" name="RFC_AUTHORITIES" seqName="seg_1"/>
+   <object objectType="Table" objectID="5078B1C2-F4B5-FEAA-4641-94DE7D399DF6" name="RFC_AUTHORITY_CATEGORIES" seqName="seg_1"/>
+   <object objectType="Table" objectID="BA1B5EA1-7783-1F83-FB70-2AC83C6EAF72" name="RFC_AUTHORITY_MEMBERS" seqName="seg_0"/>
    <object objectType="Table" objectID="8CFC017D-0927-226C-1B90-6DEBDF9E6FF8" name="RFC_CATEGORIES" seqName="seg_0"/>
    <object objectType="Table" objectID="13710427-A894-F3A3-0B4A-EF471FF26FB7" name="RFC_IMPACTS" seqName="seg_0"/>
+   <object objectType="Table" objectID="B92F6709-DB87-AAEC-BFA4-07F4EA466994" name="RFC_NOTIFICATIONS" seqName="seg_0"/>
    <object objectType="Table" objectID="823FE476-CD36-588C-3107-EF8A6E5F9F94" name="RFC_PRIORITIES" seqName="seg_0"/>
    <object objectType="Table" objectID="8C1E4D5E-0412-232A-B002-5070FB953D85" name="RFC_RESOLUTIONS" seqName="seg_0"/>
    <object objectType="Table" objectID="6A84C1D1-8839-CDC0-5C51-764FC26F1D28" name="ROLES" seqName="seg_0"/>
@@ -101,8 +102,7 @@
    <object objectType="FKIndexAssociation" objectID="F9A7DE22-1EF7-A39A-E8F7-558BD3BCC983" name="ANNOUNCEMENT_ATTACHMENTS__FK1" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="471E3E51-6E65-28ED-D9FE-452CCEFCE104" name="ANNOUNCEMENT_ATTACHMENTS__FK2" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="4888669D-CD76-0696-0DE5-706BA408E3E8" name="AUDITREVISION_EMPLOYEES_FK1" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="ECB2B70D-DACD-2701-D43B-EE885D26C4B5" name="AUTHORITY_AUTHORITY_TYPE_FK1" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="33FF92DD-EFCE-7804-C374-7A41DAF99690" name="AUTHORITY_RFC_CATEGORY_FK1" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="59694FC7-E575-1509-B444-58350684AAE7" name="AUTHORITY_CATEGORIES2_FK" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="DF918112-587F-0C07-A4F0-164AF5678CD0" name="C2_CLASS_ATTRIBUTES_C2_CL_FK1" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="CEF45C27-3AAA-D495-D2AF-7E71DF313345" name="C2_CLASS_ATTRIBUTE_VALUES_FK1" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="1EC083F5-7B96-DBC0-13F7-4F163B3FD242" name="C2_CLASS_ATTRIBUTE_VALUES_FK2" seqName="seg_0"/>
@@ -128,7 +128,6 @@
    <object objectType="FKIndexAssociation" objectID="6C199D13-2A08-6EA1-EA2E-95006A036655" name="C2_SERVICE_ITEMS_SERVICES_FK1" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="26DCE26B-B7BB-04FF-F489-74A8AEF1B1BE" name="C2_UNIVERSAL_ITEMS_C2_CLA_FK1" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="90CCB997-0A6B-94B6-3490-44216C594AB7" name="C2_UNIVERSAL_ITEMS_C2_ITE_FK1" seqName="seg_0"/>
-   <object objectType="FKIndexAssociation" objectID="DFA97D98-C55B-BBC8-36F1-48AE2B24F161" name="CAB_MEMBERS_CAB_FK1" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="DC88104D-8EC9-10FD-B190-640B48DDA7FF" name="CAB_MEMBERS_EMPLOYEES_FK1" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="6CE547CC-0EA4-A947-5D8C-E8CCE2712889" name="CATEGORIES_PM_CATEGORIES__FK1" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="6B23E898-C60D-AC42-0145-33D4C8CC09C6" name="CATEGORIES_RF_CATEGORIES__FK1" seqName="seg_0"/>
@@ -179,6 +178,8 @@
    <object objectType="FKIndexAssociation" objectID="43737A1D-060B-DE50-F737-16C748D15DF1" name="INCIDENT_CATEGORY_INCIDEN_FK1" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="D41A4EA2-C800-84F5-0694-17F500853870" name="INCIDENT_PROBLEM_INCIDENT_FK1" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="93A57920-CA1C-9378-9231-C417C0D95AE2" name="INCIDENT_PROBLEM_PROBLEMS_FK" seqName="seg_1"/>
+   <object objectType="FKIndexAssociation" objectID="4D787AA1-956C-7E2F-3489-82440C31FBE5" name="MESSAGES_USERS_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="883A4383-62C9-EBBD-D724-92CB5D063FBD" name="NOTIFICATIONS_USERS_FK" seqName="seg_0"/>
    <object objectType="FKIndexAssociation" objectID="7DD29E61-C3F2-4DB3-FB19-5AA7CB0B2566" name="PROBLEMS_CATEGORIES_PM_FK" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="B8B25F61-CC61-498D-3065-CE3871FFF891" name="PROBLEMS_EMPLOYEES_FK" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="86FFC31C-F765-C0E3-6853-FE8EA64D00DF" name="PROBLEMS_EMPLOYEES_FK1" seqName="seg_1"/>
@@ -198,10 +199,14 @@
    <object objectType="FKIndexAssociation" objectID="7B58DB6D-2C02-CB34-9A07-EF519B3E91AF" name="REQUEST_ATTRIBUTES_REQUES_FK1" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="7A473595-C4D2-A97A-7CDB-96C0C7D41B9C" name="REQUEST_ATTRIBUTE_TYPES_C_FK1" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="3FF2F1D5-2333-8635-4556-42AFD10C7B80" name="REQ_ATT_REQ_FK" seqName="seg_1"/>
-   <object objectType="FKIndexAssociation" objectID="3E40CC82-E2FB-F4C8-375F-9693C3F0C07A" name="RFC_AUTHORITY_FK1" seqName="seg_1"/>
+   <object objectType="FKIndexAssociation" objectID="254516D3-56F3-9C71-64A5-70528648C85B" name="RFC_AUTHORITY_CATEGO_FK" seqName="seg_1"/>
+   <object objectType="FKIndexAssociation" objectID="DFA97D98-C55B-BBC8-36F1-48AE2B24F161" name="RFC_AUTHORITY_MEMBE_FK" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="65D7004B-7311-889D-17EB-D84F37C25D59" name="RFC_BUILDER_FK" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="11A5C16F-FA69-F3BC-CF9B-533ADC91038B" name="RFC_CATEGORY_RFC_CATEGORY_FK1" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="692AF33D-A942-4EEF-3B38-910F3DF60CC8" name="RFC_EMPLOYEES_FK1" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="35638482-A58C-851A-B364-995CDDF7CD9E" name="RFC_EMPLOYEES_FK2" seqName="seg_1"/>
+   <object objectType="FKIndexAssociation" objectID="27ABD00F-EFB3-12AD-C8D6-44C16067F2D4" name="RFC_NOTIFICATIONS_NOT_FK" seqName="seg_1"/>
+   <object objectType="FKIndexAssociation" objectID="4E198105-1620-CEC8-9955-F1C2D3FB7F06" name="RFC_NOTIFICATIONS_RFC_FK" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="BB70CAEF-CF90-DB21-11E1-D63A11453E32" name="RFC_RFC_CATEGORY_FK1" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="C372FDAB-B191-D534-8A86-567ADC1AF562" name="RFC_RFC_IMPACT_FK1" seqName="seg_1"/>
    <object objectType="FKIndexAssociation" objectID="8D920276-86B8-BEAF-B4C3-92A52A06BA03" name="RFC_RFC_PRIORITY_FK1" seqName="seg_1"/>

@@ -37,4 +37,19 @@ public class DomainObjectEditor<Type extends DomainObject<Integer>>
             setValue(null);
         }
     }
+
+    @Override
+    public String getAsText() {
+        if(getValue() != null) {
+            try {
+                Type obj = (Type)getValue();
+                return "" + obj.getId();
+            } catch (ClassCastException e) {
+                return super.getAsText();
+            }  
+        }
+        
+        return "";
+    }
+    
 }

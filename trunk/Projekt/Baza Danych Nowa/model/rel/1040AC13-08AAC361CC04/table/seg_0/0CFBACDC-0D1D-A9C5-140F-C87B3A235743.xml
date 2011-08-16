@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" id="0CFBACDC-0D1D-A9C5-140F-C87B3A235743" directorySegmentName="seg_0" name="NOTIFICATIONS">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-13 11:11:23 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-14 11:45:10 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <pkName>MESSAGES_PK</pkName>
+   <fonts>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Title</foType>
+         <fontStyle>1</fontStyle>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Column</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Datatype</foType>
+         <colorRGB>-16744448</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>PK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>FK Element</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>UK Element</foType>
+         <colorRGB>-16776961</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Not Null</foType>
+         <colorRGB>-65536</colorRGB>
+      </FontObject>
+      <FontObject class="oracle.dbtools.crest.model.design.FontObjectWr">
+         <foType>Key</foType>
+         <colorRGB>-16777216</colorRGB>
+      </FontObject>
+   </fonts>
+   <columns>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="NOTIFICATION_ID" id="50A397B3-BC99-93F6-71F9-BBD0FF3C2BE3">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:13:38 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 15:21:06 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="USER_ID" id="0311B7AD-3039-5BBA-37FF-E0E5D9839D28">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:13:38 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 11:13:38 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>A0E6B2A0-ED43-1DA8-81AA-DA2AA162BAED</delegate>
+         <associations>
+            <colAssociation fkAssociation="4D787AA1-956C-7E2F-3489-82440C31FBE5" referredColumn="A0E6B2A0-ED43-1DA8-81AA-DA2AA162BAED"/>
+         </associations>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="VISITED" id="0827FBB8-9782-1335-5D58-9AA77CD0C481">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:13:38 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 11:13:38 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+         <domain>D4862335-006A-2389-9195-EF85A082601D</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="TIMESTAMP" id="AB9E0760-E43C-4DB1-0EC6-F8E64A8616CA">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 13:27:35 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 13:27:35 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <use>0</use>
+         <logicalDatatype>LOGDT015</logicalDatatype>
+         <domain>12FC721B-E1BC-F44B-F654-48E2D0FA848C</domain>
+      </Column>
+      <Column class="oracle.dbtools.crest.model.design.relational.Column" name="INSTIGATOR_ID" id="A6755DCD-65DF-2F50-7718-8ECC5D69D8F8">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:42:45 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-14 11:45:10 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <nullsAllowed>true</nullsAllowed>
+         <use>0</use>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+         <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>A0E6B2A0-ED43-1DA8-81AA-DA2AA162BAED</delegate>
+         <associations>
+            <colAssociation fkAssociation="883A4383-62C9-EBBD-D724-92CB5D063FBD" referredColumn="A0E6B2A0-ED43-1DA8-81AA-DA2AA162BAED"/>
+         </associations>
+      </Column>
+   </columns>
+   <indexes>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="0987683F-178E-0D46-AEEF-1C5DC25CF478" name="MESSAGES_PK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:13:38 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 11:13:38 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <pk>true</pk>
+         <indexState>Primary Constraint</indexState>
+         <indexColumnUsage>
+            <colUsage columnID="50A397B3-BC99-93F6-71F9-BBD0FF3C2BE3"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="2D9BCFE8-655F-B7B5-9479-0551074D21F0" name="MESSAGES_USERS_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:13:38 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 11:13:38 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="0311B7AD-3039-5BBA-37FF-E0E5D9839D28"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="FEE8C7BC-8EAA-2FBD-BCFE-1217B9B15E9E" name="NOTIFICATIONS_USERS_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:42:45 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-14 11:42:45 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="A6755DCD-65DF-2F50-7718-8ECC5D69D8F8"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+   </indexes>
+   <tableCheckConstraints>
+      <tableCheckConstraint class="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint" name="NOTIFICATIONS_CK" id="A88B8EAC-49B8-C756-280A-8BAD45BDB0E3" directorySegmentName="seg_1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-13 11:14:01 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-13 15:21:06 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <rule>VISITED IN (&amp;apos;Y&amp;apos;, &amp;apos;N&amp;apos;)</rule>
+      </tableCheckConstraint>
+   </tableCheckConstraints>
+</Table>

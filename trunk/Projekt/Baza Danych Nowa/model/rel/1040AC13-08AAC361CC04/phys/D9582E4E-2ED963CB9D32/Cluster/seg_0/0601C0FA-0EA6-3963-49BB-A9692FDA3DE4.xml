@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ClusterOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ClusterOraclev10g" name="NOTIFICATIONS_CLUSTER" id="0601C0FA-0EA6-3963-49BB-A9692FDA3DE4" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-14 11:48:41 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-15 10:32:50 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <columnsCollection>
+      <Column class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ClusterColumnOraclev10g" name="NOTIFICATION_ID" id="C2BA3D3A-2582-0032-90E0-CC68586F230C">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-14 11:49:36 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-14 11:49:55 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <dataType>NUMERIC</dataType>
+         <lengthPrecision>10</lengthPrecision>
+      </Column>
+   </columnsCollection>
+   <indexesCollection>
+      <Index class="oracle.dbtools.crest.model.design.storage.oracle.v10g.ClusterIndexOraclev10g" name="CI2" id="E0175B1D-A1ED-1924-6D80-4915C121D659">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-15 10:32:44 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-15 10:32:50 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+      </Index>
+   </indexesCollection>
+</ClusterOraclev10g>

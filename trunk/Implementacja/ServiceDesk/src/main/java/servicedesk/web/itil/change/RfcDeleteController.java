@@ -31,7 +31,7 @@ public class RfcDeleteController extends AbstractRfcController {
     @RequestMapping(method=RequestMethod.GET)
     public String deleteGet(ModelMap map, @PathVariable("id") Integer id) {
         Rfc rfc = service.load(id);
-        map.addAttribute(rfc);
+        map.addAttribute("rfc", rfc);
         return VIEW_DELETE;
     }
 

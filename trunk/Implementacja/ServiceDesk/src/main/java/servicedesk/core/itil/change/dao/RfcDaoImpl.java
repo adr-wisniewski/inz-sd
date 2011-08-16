@@ -4,8 +4,10 @@
  */
 package servicedesk.core.itil.change.dao;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import servicedesk.core.base.employee.domain.Employee;
 import servicedesk.core.base.security.domain.User;
 import servicedesk.core.base.security.service.AuthorizationService;
 import servicedesk.core.itil.change.domain.RfcFactory;
@@ -25,8 +27,7 @@ public class RfcDaoImpl extends AbstractHibernateDao<Rfc, RfcImpl, Integer> impl
     
     @Override
     public RfcImpl create() {
-        User creator = authorizationService.getCurrentUser();
-        return new RfcImpl(creator);
+        User author = authorizationService.getCurrentUser();
+        return new RfcImpl(author);
     }
-
 }

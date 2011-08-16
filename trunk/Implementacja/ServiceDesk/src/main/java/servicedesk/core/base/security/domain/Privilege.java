@@ -66,7 +66,7 @@ public class Privilege implements DomainObject<String>, Serializable {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (!(obj instanceof Privilege)) {
             return false;
         }
         final Privilege other = (Privilege) obj;

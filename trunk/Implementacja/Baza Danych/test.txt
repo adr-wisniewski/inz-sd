@@ -1,0 +1,165 @@
+CREATE OR REPLACE TRIGGER INCIDENT_HISTORY_TRG 
+    AFTER INSERT OR UPDATE ON INCIDENTS 
+    FOR EACH ROW 
+DECLARE
+    history_id_v number;
+    employee_id_v number;
+BEGIN
+   
+  select HISTORY_ID_SEQ.nextval, app.get_user into history_id_v, employee_id_v from dual;
+  
+  insert into incidents_history(
+    HISTORY_ID
+    ,CHANGE_DATE
+    ,EMPLOYEE_ID
+    ,INCIDENT_ID
+    ,IMPACT_CODE
+    ,URGENCY_CODE
+    ,STATUS_CODE
+    ,REVIEW
+    ,PRIORITY_CODE
+    ,CATEGORY_CODE
+    ,SUBJECT
+    ,DESCRIPTION
+    ,STAFF_MEMBER
+    ,RESOLUTION
+    ,SOURCE_CODE
+    ,RESOLUTION_DATE
+    ,GROUP_ID
+    ,TARGET_RESOLUTION_DATE
+  )
+  values(
+    history_id_v
+    , sysdate
+    , employee_id_v
+    , :new.INCIDENT_ID
+    , :new.IMPACT_CODE
+    , :new.URGENCY_CODE
+    , :new.STATUS_CODE
+    , :new.REVIEW
+    , :new.PRIORITY_CODE
+    , :new.CATEGORY_CODE
+    , :new.SUBJECT
+    , :new.DESCRIPTION
+    , :new.STAFF_MEMBER
+    , :new.RESOLUTION
+    , :new.SOURCE_CODE
+    , :new.RESOLUTION_DATE
+    , :new.GROUP_ID
+    , :new.TARGET_RESOLUTION_DATE
+  );
+  
+END; 
+/
+
+
+CREATE OR REPLACE TRIGGER INCIDENT_SIGNALS_TRG 
+    BEFORE INSERT OR UPDATE ON INCIDENTS 
+    FOR EACH ROW 
+BEGIN
+  IF :old.STATUS_CODE <> :new.STATUS_CODE THEN
+    --powiadomienie autora o zmianie statusu
+    insert into signals_tmp(type_code, employee_id, object_id) values(1, :new.AUTHOR, :new.INCIDENT_ID);
+  END IF;
+  
+  IF coalesce(:old.STAFF_MEMBER,-1) <> coalesce(:new.STAFF_MEMBER,-1) THEN
+    IF :old.STAFF_MEMBER is not NULL THEN
+       --powiadomienie serwisanta o odpisaniu incydentu
+       insert into signals_tmp(type_code, employee_id, object_id) values(11, :old.STAFF_MEMBER, :new.INCIDENT_ID);
+    END IF;
+    IF :new.STAFF_MEMBER is not NULL THEN
+        --powiadomienie serwisanta o przypisaniu incydentu
+       insert into signals_tmp(type_code, employee_id, object_id) values(10, :new.STAFF_MEMBER, :new.INCIDENT_ID);
+    END IF;
+  END IF;
+  
+  IF coalesce(:old.GROUP_ID,-1) <> coalesce(:new.GROUP_ID,-1) THEN
+    IF :old.GROUP_ID is not NULL THEN    
+       --powiadomienie menedzera grupy o odpisaniu incydentu
+       insert into signals_tmp(type_code, employee_id, object_id) values(13, (select manager_id from support_groups where group_id = :old.GROUP_ID), :new.INCIDENT_ID);
+    END IF;
+    IF :new.GROUP_ID is not NULL THEN
+        --powiadomienie menedzera grupy o przypisaniu incydentu
+       insert into signals_tmp(type_code, employee_id, object_id) values(12, (select manager_id from support_groups where group_id = :new.GROUP_ID), :new.INCIDENT_ID);
+    END IF;
+  END IF;
+  
+END; 
+/
+
+
+CREATE OR REPLACE TRIGGER INCIDENT_SIGNALS_TRG2 
+    AFTER INSERT OR UPDATE ON INCIDENTS 
+    FOR EACH ROW 
+BEGIN
+  FOR s IN (SELECT * FROM SIGNALS_TMP) LOOP
+    ADD_SIGNAL(s.type_code, s.employee_id, s.object_id);
+  END LOOP;
+END; 
+/
+
+
+CREATE OR REPLACE TRIGGER c2_autoinsert_employees 
+    AFTER INSERT ON EMPLOYEES REFERENCING 
+    NEW AS employee 
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO C2_ENTITIES (ENTITY_ID, VERSION)
+        VALUES (C2_ENTITIES_SEQ.nextval, 0);
+		
+	INSERT INTO C2_ITEMS (ITEM_ID, LABEL)
+        VALUES (C2_ENTITIES_SEQ.currval, 'PRACOWNIK #' || to_char(:employee.EMPLOYEE_ID));
+
+    INSERT INTO C2_ITEMS_EMPLOYEE (ITEM_ID, EMPLOYEE_ID)
+        VALUES (C2_ENTITIES_SEQ.currval, :employee.EMPLOYEE_ID);
+END; 
+/
+
+
+CREATE OR REPLACE TRIGGER c2_autoinsert_incidents 
+    AFTER INSERT ON INCIDENTS REFERENCING 
+    NEW AS incident 
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO C2_ENTITIES (ENTITY_ID, VERSION)
+        VALUES (C2_ENTITIES_SEQ.nextval, 0);
+		
+	INSERT INTO C2_ITEMS (ITEM_ID, LABEL)
+        VALUES (C2_ENTITIES_SEQ.currval, 'INCYDENT #' || to_char(:incident.INCIDENT_ID));
+
+    INSERT INTO C2_ITEMS_INCIDENT (ITEM_ID, INCIDENT_ID)
+        VALUES (C2_ENTITIES_SEQ.currval, :incident.INCIDENT_ID);
+END; 
+/
+
+
+CREATE OR REPLACE TRIGGER c2_autoinsert_problems 
+    AFTER INSERT ON PROBLEMS REFERENCING 
+    NEW AS problem 
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO C2_ENTITIES (ENTITY_ID, VERSION)
+        VALUES (C2_ENTITIES_SEQ.nextval, 0);
+		
+	INSERT INTO C2_ITEMS (ITEM_ID, LABEL)
+        VALUES (C2_ENTITIES_SEQ.currval, 'PROBLEM#' || to_char(:problem.PROBLEM_ID));
+
+    INSERT INTO C2_ITEMS_PROBLEM (ITEM_ID, PROBLEM_ID)
+        VALUES (C2_ENTITIES_SEQ.currval, :problem.PROBLEM_ID);
+END; 
+/
+
+
+CREATE OR REPLACE TRIGGER c2_autoinsert_services 
+    AFTER INSERT ON SERVICES REFERENCING 
+    NEW AS service 
+    FOR EACH ROW 
+BEGIN
+    INSERT INTO C2_ENTITIES (ENTITY_ID, VERSION) VALUES (C2_ENTITIES_SEQ.nextval, 0);
+		
+    INSERT INTO C2_ITEMS (ITEM_ID, LABEL) VALUES (C2_ENTITIES_SEQ.currval, 'US£UGA#' || to_char(:service.SERVICE_ID));
+
+    INSERT INTO C2_ITEMS_SERVICE (ITEM_ID, SERVICE_ID) VALUES (C2_ENTITIES_SEQ.currval, :service.SERVICE_ID);
+END; 
+/
+

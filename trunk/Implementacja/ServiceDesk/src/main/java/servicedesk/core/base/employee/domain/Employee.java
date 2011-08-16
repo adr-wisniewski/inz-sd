@@ -3,6 +3,8 @@
  */
 package servicedesk.core.base.employee.domain;
 
+import javax.persistence.OneToOne;
+import servicedesk.core.base.security.domain.EmployeeUser;
 import servicedesk.core.base.security.domain.Role;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -59,6 +61,8 @@ public class Employee implements DomainObject<Integer>, Person, Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employee_seq")
     @Column(name = "EMPLOYEE_ID")
     private Integer id;
+    @OneToOne(mappedBy = "employee")
+    private EmployeeUser user;
 
     /** 
      * /**
@@ -340,4 +344,42 @@ public class Employee implements DomainObject<Integer>, Person, Serializable {
         this.firstname = firstname;
         this.lastname = lastname;
     }
+
+    /**
+     * @return the user
+     */
+    public EmployeeUser getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    protected void setUser(EmployeeUser user) {
+        this.user = user;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Employee)) {
+            return false;
+        }
+        final Employee other = (Employee) obj;
+        if ((this.getId() == null) ? (other.getId() != null) : !this.getId().equals(other.getId())) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 13 * hash + (this.getId() != null ? this.getId().hashCode() : 0);
+        return hash;
+    }
+    
+    
 }

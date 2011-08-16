@@ -10,10 +10,16 @@ package servicedesk.core.itil.change.domain.entity;
  */
 public enum RfcState {
     NEW("Nowy"),
-    REOPENED("Apelacja"),
     ASSIGNED("Przypisany"),
-    ALLOCATED("Zaalokowany"),
-    AUTHORIZED("Autoryzowany");
+    REVIEWED("Po przeglądzie"),
+    ASSESSED("Oceniony"),
+    AUTHORIZED("Autoryzowany"),
+    SCHEDULED("Zaplanowany"),
+    BUILT("Wdrożony"),
+    CLOSED("Zamknięty"),
+    REJECTED("Odrzucony"),
+    APPEALED("Apelacja"),
+    REOPENED("Otwarty ponownie");
     
     private String name;
     

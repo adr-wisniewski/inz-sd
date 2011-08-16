@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="c2_autoinsert_incidents" id="4B2E971C-4262-F156-D0DB-336EF73F4608" directorySegmentName="seg_0">
+   <createdBy>Adrian</createdBy>
+   <createdTime>2011-08-06 09:00:47 UTC</createdTime>
+   <changedBy>Adrian</changedBy>
+   <changedTime>2011-08-06 09:01:08 UTC</changedTime>
+   <ownerDesignName>model</ownerDesignName>
+   <actions>INSERT</actions>
+   <body>BEGIN&amp;lt;br/&amp;gt;    INSERT INTO C2_ENTITIES (ENTITY_ID, VERSION)&amp;lt;br/&amp;gt;        VALUES (C2_ENTITIES_SEQ.nextval, 0);&amp;lt;br/&amp;gt;		&amp;lt;br/&amp;gt;	INSERT INTO C2_ITEMS (ITEM_ID, LABEL)&amp;lt;br/&amp;gt;        VALUES (C2_ENTITIES_SEQ.currval, &amp;apos;INCYDENT #&amp;apos; || to_char(:incident.INCIDENT_ID));&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;    INSERT INTO C2_ITEMS_INCIDENT (ITEM_ID, INCIDENT_ID)&amp;lt;br/&amp;gt;        VALUES (C2_ENTITIES_SEQ.currval, :incident.INCIDENT_ID);&amp;lt;br/&amp;gt;END;</body>
+   <triggerTime>AFTER</triggerTime>
+   <ref_NEW_AS>incident</ref_NEW_AS>
+   <table>A771E677-EC27-3720-3F0E-C600ABF45391</table>
+</TriggerOraclev10g>
