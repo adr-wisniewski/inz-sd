@@ -18,7 +18,7 @@
         </ui:propertyItem>
 
         <ui:propertyItem code="field.common.announcement.author">
-            <link:user object="${announcement.author}" />
+            <link:employee object="${announcement.author}" />
         </ui:propertyItem>
 
         <ui:propertyItem code="field.common.announcement.publicationTime">
