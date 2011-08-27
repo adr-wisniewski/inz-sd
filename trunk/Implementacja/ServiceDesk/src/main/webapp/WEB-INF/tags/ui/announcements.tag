@@ -23,7 +23,7 @@
             <div class="signature">
                 <print:datetime datetime="${announcement.publicationTime}" /> 
                 -
-                <link:user object="${announcement.author}" />
+                <link:employee object="${announcement.author}" />
             </div>
             <c:if test="${not empty pageScope.buttons}">
                 <div>

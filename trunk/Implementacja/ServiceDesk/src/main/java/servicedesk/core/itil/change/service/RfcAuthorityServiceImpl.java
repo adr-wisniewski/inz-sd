@@ -31,15 +31,15 @@ public class RfcAuthorityServiceImpl implements RfcAuthorityService {
     protected RfcAuthorityDao dao;
     
     @Override
-    public RfcAuthority create() {
-        return new RfcAuthority();
-    }
-
-    @Override
     @Validated(validator=RfcAuthorityAddValidator.class)
     @PreAuthorize("hasRole('CHANGE_RFC_AUTHORITY_CRUD')")
     public void add(RfcAuthority object, BindingResult bindingResult) {
         dao.persist(object);
+    }
+    
+    @Override
+    public RfcAuthority create() {
+        return new RfcAuthority();
     }
 
     @Override

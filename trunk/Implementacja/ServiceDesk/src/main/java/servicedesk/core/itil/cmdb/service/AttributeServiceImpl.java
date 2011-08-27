@@ -41,7 +41,7 @@ public class AttributeServiceImpl implements AttributeService {
 
     @Override
     @PreAuthorize("hasRole('CMDB_ATTRIBUTE_ADD')")
-    @Validated(validator=AttributeAddValidator.class)
+    @Validated(validator = AttributeAddValidator.class)
     public void add(Attribute object, BindingResult bindingResult) {
         attributeDao.persist(object);
     }
