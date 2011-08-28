@@ -3,7 +3,7 @@
    <createdBy>Adrian</createdBy>
    <createdTime>2011-06-28 15:16:23 UTC</createdTime>
    <changedBy>Adrian</changedBy>
-   <changedTime>2011-08-07 16:40:36 UTC</changedTime>
+   <changedTime>2011-08-28 15:25:15 UTC</changedTime>
    <ownerDesignName>model</ownerDesignName>
    <pkName>RFC_PK</pkName>
    <fonts>
@@ -147,23 +147,31 @@
          <createdBy>Adrian</createdBy>
          <createdTime>2011-08-07 16:23:35 UTC</createdTime>
          <changedBy>Adrian</changedBy>
-         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
+         <changedTime>2011-08-28 15:25:15 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
          <logicalDatatype>LOGDT019</logicalDatatype>
          <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>0E062BB6-5A00-B1D0-3E2D-299C31B98F1C</delegate>
+         <associations>
+            <colAssociation fkAssociation="7C4619E8-4327-7D3F-9383-602699B94018" referredColumn="0E062BB6-5A00-B1D0-3E2D-299C31B98F1C"/>
+         </associations>
       </Column>
       <Column class="oracle.dbtools.crest.model.design.relational.Column" name="CAB_ID" id="2E53B832-140A-C1D0-0B20-19FA113C9184">
          <createdBy>Adrian</createdBy>
          <createdTime>2011-08-07 16:23:35 UTC</createdTime>
          <changedBy>Adrian</changedBy>
-         <changedTime>2011-08-07 16:23:35 UTC</changedTime>
+         <changedTime>2011-08-28 15:25:15 UTC</changedTime>
          <ownerDesignName>model</ownerDesignName>
          <nullsAllowed>true</nullsAllowed>
          <use>0</use>
          <logicalDatatype>LOGDT019</logicalDatatype>
          <domain>61018E0D-CBB3-8D00-7F35-C7C81D6F7B49</domain>
+         <delegate>0E062BB6-5A00-B1D0-3E2D-299C31B98F1C</delegate>
+         <associations>
+            <colAssociation fkAssociation="DED80E5C-739E-2CBA-A947-0656F8DF8A58" referredColumn="0E062BB6-5A00-B1D0-3E2D-299C31B98F1C"/>
+         </associations>
       </Column>
       <Column class="oracle.dbtools.crest.model.design.relational.Column" name="BUILDER_ID" id="9134CF3E-0B5A-0896-1AF4-55D5B9A92A20">
          <createdBy>Adrian</createdBy>
@@ -333,6 +341,26 @@
          <ownerDesignName>model</ownerDesignName>
          <indexColumnUsage>
             <colUsage columnID="92785884-A686-63A9-F5D2-587DEA1304FC"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="EB560FC2-1466-C65D-FAA0-51D033DF666B" name="RFC_RFC_AUTHORITIES_FK">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-27 17:24:33 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-27 17:24:33 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="66B5C33B-87AD-D9E6-F4FE-4486E89E10AA"/>
+         </indexColumnUsage>
+      </ind_PK_UK>
+      <ind_PK_UK class="oracle.dbtools.crest.model.design.relational.Index" id="96792D80-4A57-5D95-2A73-9E63AB302428" name="RFC_RFC_AUTHORITIES_FKv1">
+         <createdBy>Adrian</createdBy>
+         <createdTime>2011-08-27 17:24:33 UTC</createdTime>
+         <changedBy>Adrian</changedBy>
+         <changedTime>2011-08-27 17:24:33 UTC</changedTime>
+         <ownerDesignName>model</ownerDesignName>
+         <indexColumnUsage>
+            <colUsage columnID="2E53B832-140A-C1D0-0B20-19FA113C9184"/>
          </indexColumnUsage>
       </ind_PK_UK>
    </indexes>

@@ -1,0 +1,450 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">9aadfc2e-b3f9-4dec-a57f-ae6b6c28ac3b</identifier>
+  </ID>
+  <name>PRIORITY_TYPES_IM</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b638abd1-844c-4a11-b237-483939121fb0</identifier>
+      </ID>
+      <name>PRIORITY_CODE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0f02eea6-273a-405d-a692-fcd8e4c819d0</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PRIORITY_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRIORITY_TYPES_IM</name>
+                  <identifier class="java.math.BigDecimal">24932</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PRIORITY_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRIORITY_TYPES_IM</name>
+              <identifier class="java.math.BigDecimal">24932</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ff1ae3c0-9792-42b9-8fbc-ba154a8a37f9</identifier>
+      </ID>
+      <name>NAME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c0382137-3cab-4304-97c0-829e0ed54988</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">20</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRIORITY_TYPES_IM</name>
+                  <identifier class="java.math.BigDecimal">24932</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRIORITY_TYPES_IM</name>
+              <identifier class="java.math.BigDecimal">24932</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">49ec902f-266b-4246-a3cf-aa39cd5fc46e</identifier>
+      </ID>
+      <name>TARGET_RESOLUTION_TIME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">ee11b5f8-6ac5-426f-9145-bb60a441f5d9</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">2</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TARGET_RESOLUTION_TIME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRIORITY_TYPES_IM</name>
+                  <identifier class="java.math.BigDecimal">24932</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>Comment</key>
+          <value class="java.lang.String">Czas rozwiązania incydentu w godzinach.</value>
+        </entry>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TARGET_RESOLUTION_TIME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRIORITY_TYPES_IM</name>
+              <identifier class="java.math.BigDecimal">24932</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8d3bbda2-701c-45d5-9fe5-2172a2bb1fb6</identifier>
+      </ID>
+      <name>PRIORITY_TYPES_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRIORITY_CODE</name>
+          <identifier class="java.lang.String">b638abd1-844c-4a11-b237-483939121fb0</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>PRIORITY_TYPES_IM</name>
+            <identifier class="java.lang.String">9aadfc2e-b3f9-4dec-a57f-ae6b6c28ac3b</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PRIORITY_TYPES_PK</name>
+        <identifier class="java.lang.String">960f7e71-cc94-44dc-9a60-5d05a6779617</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRIORITY_TYPES_IM</name>
+          <identifier class="java.lang.String">9aadfc2e-b3f9-4dec-a57f-ae6b6c28ac3b</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PRIORITY_TYPES_PK</name>
+            <childObjectNames>
+              <childObjectName>PRIORITY_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRIORITY_TYPES_IM</name>
+              <identifier class="java.math.BigDecimal">24932</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">960f7e71-cc94-44dc-9a60-5d05a6779617</identifier>
+      </ID>
+      <name>PRIORITY_TYPES_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">94bcd059-7650-410d-8349-f6c9067f17e1</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">3fcfeca4-0772-4e85-91b6-26bdd09c71cf</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRIORITY_CODE</name>
+              <identifier class="java.lang.String">b638abd1-844c-4a11-b237-483939121fb0</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>PRIORITY_TYPES_IM</name>
+                <identifier class="java.lang.String">9aadfc2e-b3f9-4dec-a57f-ae6b6c28ac3b</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PRIORITY_TYPES_PK</name>
+                      <identifier class="java.math.BigDecimal">24933</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>PRIORITY_TYPES_IM</name>
+                        <identifier class="java.math.BigDecimal">24932</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PRIORITY_TYPES_PK</name>
+                  <identifier class="java.math.BigDecimal">24933</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PRIORITY_TYPES_IM</name>
+                    <identifier class="java.math.BigDecimal">24932</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PRIORITY_TYPES_PK</name>
+            <identifier class="java.math.BigDecimal">24933</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PRIORITY_TYPES_IM</name>
+              <identifier class="java.math.BigDecimal">24932</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">5e065e06-d4f1-4a16-a97a-62b4ce04a257</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PRIORITY_TYPES_PK</name>
+                    <identifier class="java.math.BigDecimal">24933</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>PRIORITY_TYPES_IM</name>
+                      <identifier class="java.math.BigDecimal">24932</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SYSTEM</name>
+              <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SD</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">Słownik z możliwymi priorytetami dla incydentów.</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>PRIORITY_TYPES_IM</name>
+        <identifier class="java.math.BigDecimal">24932</identifier>
+        <schemaName>SD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8aec8ad3-73eb-4eb5-8ed2-3bc911a78e39</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PRIORITY_TYPES_IM</name>
+                <identifier class="java.math.BigDecimal">24932</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SYSTEM</name>
+          <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</table>

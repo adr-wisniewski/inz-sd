@@ -25,8 +25,8 @@ public class RfcAuthorityDaoImpl extends AbstractHibernateDao<RfcAuthority, RfcA
         String[] params = {"rfcAuthorityId", "employeeId"};
         Object[] values = {authority.getId(), employee.getId()};
         
-        List<Integer> result = getHibernateTemplate().findByNamedQueryAndNamedParam("RfcAuthority.isMember", params, values);
-        Integer count = DataAccessUtils.requiredSingleResult(result);
+        List<Long> result = getHibernateTemplate().findByNamedQueryAndNamedParam("RfcAuthority.isMember", params, values);
+        Long count = DataAccessUtils.requiredSingleResult(result);
         
         return count > 0;
     }

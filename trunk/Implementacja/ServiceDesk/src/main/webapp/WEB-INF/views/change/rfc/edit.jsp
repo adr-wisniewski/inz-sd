@@ -69,12 +69,12 @@
             
             <ui:propertyItem code="field.change.rfc.authority" label="authority">
                 <form:select multiple="true" path="authority" itemLabel="name" itemValue="id" items="${authorities}" />
-                <form:errors path="builder" cssClass="error"/>
+                <form:errors path="authority" cssClass="error"/>
             </ui:propertyItem>
             
             <ui:propertyItem code="field.change.rfc.cab" label="cab">
                 <form:select multiple="true" path="cab" itemLabel="name" itemValue="id" items="${cabs}" />
-                <form:errors path="builder" cssClass="error"/>
+                <form:errors path="cab" cssClass="error"/>
             </ui:propertyItem>
             
             <ui:propertyItem code="field.change.rfc.pir" label="pir">

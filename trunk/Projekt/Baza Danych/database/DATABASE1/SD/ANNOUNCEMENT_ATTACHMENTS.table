@@ -1,0 +1,570 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">3d2ffc34-acce-4375-bfb5-06b3239c34a7</identifier>
+  </ID>
+  <name>ANNOUNCEMENT_ATTACHMENTS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7782f292-fdbb-4553-a56b-afb0cb1cec07</identifier>
+      </ID>
+      <name>ANNOUNCEMENT_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a1bcf9ab-5255-498b-89e4-95fe8b1f0f4c</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ANNOUNCEMENT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>ANNOUNCEMENT_ATTACHMENTS</name>
+                  <identifier class="java.math.BigDecimal">24838</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ANNOUNCEMENT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ANNOUNCEMENT_ATTACHMENTS</name>
+              <identifier class="java.math.BigDecimal">24838</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">92857f59-9f2d-4679-9aae-ec3393770393</identifier>
+      </ID>
+      <name>ATTACHMENT_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5f0402bb-b08b-4add-b25a-4242b562fb69</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ATTACHMENT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>ANNOUNCEMENT_ATTACHMENTS</name>
+                  <identifier class="java.math.BigDecimal">24838</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ATTACHMENT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ANNOUNCEMENT_ATTACHMENTS</name>
+              <identifier class="java.math.BigDecimal">24838</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">7516521d-3505-4a86-94ed-375c095f639c</identifier>
+      </ID>
+      <name>ANNOUNCEMENT_ATTACHMENTS__FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ANNOUNCEMENT_ID</name>
+          <identifier class="java.lang.String">7782f292-fdbb-4553-a56b-afb0cb1cec07</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ANNOUNCEMENT_ATTACHMENTS</name>
+            <identifier class="java.lang.String">3d2ffc34-acce-4375-bfb5-06b3239c34a7</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ANNOUNCEMENT_ATTACHMENTS__FK1</name>
+            <childObjectNames>
+              <childObjectName>ANNOUNCEMENT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ANNOUNCEMENT_ATTACHMENTS</name>
+              <identifier class="java.math.BigDecimal">24838</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ANNOUNCEMENTS_PK</name>
+        <identifier class="java.lang.String">86a4266d-77d2-4a31-8b91-d0cf16861a50</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>ANNOUNCEMENTS</name>
+          <identifier class="java.lang.String">28e10c0a-2aa6-453d-b2de-4e49226d3480</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">29798fdf-8ef0-4dbd-98a5-1ae78d7bc137</identifier>
+      </ID>
+      <name>ANNOUNCEMENT_ATTACHMENTS__FK2</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ATTACHMENT_ID</name>
+          <identifier class="java.lang.String">92857f59-9f2d-4679-9aae-ec3393770393</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ANNOUNCEMENT_ATTACHMENTS</name>
+            <identifier class="java.lang.String">3d2ffc34-acce-4375-bfb5-06b3239c34a7</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ANNOUNCEMENT_ATTACHMENTS__FK2</name>
+            <childObjectNames>
+              <childObjectName>ATTACHMENT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ANNOUNCEMENT_ATTACHMENTS</name>
+              <identifier class="java.math.BigDecimal">24838</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ATTACHMENTS_PK</name>
+        <identifier class="java.lang.String">b7546470-da0c-48c4-96c9-9b142eeacce7</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>ATTACHMENTS</name>
+          <identifier class="java.lang.String">dac993c3-65fc-4ef5-a593-83158ffa9eed</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f8823e55-2e30-4961-9edc-f49d4b179efe</identifier>
+      </ID>
+      <name>ANNOUNCEMENT_ATTACHMENTS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ATTACHMENT_ID</name>
+          <identifier class="java.lang.String">92857f59-9f2d-4679-9aae-ec3393770393</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ANNOUNCEMENT_ATTACHMENTS</name>
+            <identifier class="java.lang.String">3d2ffc34-acce-4375-bfb5-06b3239c34a7</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ANNOUNCEMENT_ID</name>
+          <identifier class="java.lang.String">7782f292-fdbb-4553-a56b-afb0cb1cec07</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ANNOUNCEMENT_ATTACHMENTS</name>
+            <identifier class="java.lang.String">3d2ffc34-acce-4375-bfb5-06b3239c34a7</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ANNOUNCEMENT_ATTACHMENTS_PK</name>
+        <identifier class="java.lang.String">5f29e209-bd72-4c8a-9111-81b4dbffa68d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>ANNOUNCEMENT_ATTACHMENTS</name>
+          <identifier class="java.lang.String">3d2ffc34-acce-4375-bfb5-06b3239c34a7</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ANNOUNCEMENT_ATTACHMENTS_PK</name>
+            <childObjectNames>
+              <childObjectName>ATTACHMENT_ID</childObjectName>
+              <childObjectName>ANNOUNCEMENT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ANNOUNCEMENT_ATTACHMENTS</name>
+              <identifier class="java.math.BigDecimal">24838</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5f29e209-bd72-4c8a-9111-81b4dbffa68d</identifier>
+      </ID>
+      <name>ANNOUNCEMENT_ATTACHMENTS_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">4a8bd0b8-2504-4bf1-a4da-c2335c885582</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">7d88208f-ee6f-436e-bf7a-62546ad5256d</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ATTACHMENT_ID</name>
+              <identifier class="java.lang.String">92857f59-9f2d-4679-9aae-ec3393770393</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>ANNOUNCEMENT_ATTACHMENTS</name>
+                <identifier class="java.lang.String">3d2ffc34-acce-4375-bfb5-06b3239c34a7</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>ANNOUNCEMENT_ATTACHMENTS_PK</name>
+                      <identifier class="java.math.BigDecimal">24839</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>ANNOUNCEMENT_ATTACHMENTS</name>
+                        <identifier class="java.math.BigDecimal">24838</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>ANNOUNCEMENT_ATTACHMENTS_PK</name>
+                  <identifier class="java.math.BigDecimal">24839</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>ANNOUNCEMENT_ATTACHMENTS</name>
+                    <identifier class="java.math.BigDecimal">24838</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">7715d879-d5cb-4354-8cd2-a4522871750b</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">34ed3f4e-f682-441b-bbf3-c7473e5107ec</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ANNOUNCEMENT_ID</name>
+              <identifier class="java.lang.String">7782f292-fdbb-4553-a56b-afb0cb1cec07</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>ANNOUNCEMENT_ATTACHMENTS</name>
+                <identifier class="java.lang.String">3d2ffc34-acce-4375-bfb5-06b3239c34a7</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>ANNOUNCEMENT_ATTACHMENTS_PK</name>
+                      <identifier class="java.math.BigDecimal">24839</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>ANNOUNCEMENT_ATTACHMENTS</name>
+                        <identifier class="java.math.BigDecimal">24838</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>ANNOUNCEMENT_ATTACHMENTS_PK</name>
+                  <identifier class="java.math.BigDecimal">24839</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>ANNOUNCEMENT_ATTACHMENTS</name>
+                    <identifier class="java.math.BigDecimal">24838</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ANNOUNCEMENT_ATTACHMENTS_PK</name>
+            <identifier class="java.math.BigDecimal">24839</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ANNOUNCEMENT_ATTACHMENTS</name>
+              <identifier class="java.math.BigDecimal">24838</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">919cc523-be22-49aa-9fd6-2253542e6bd9</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>ANNOUNCEMENT_ATTACHMENTS_PK</name>
+                    <identifier class="java.math.BigDecimal">24839</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>ANNOUNCEMENT_ATTACHMENTS</name>
+                      <identifier class="java.math.BigDecimal">24838</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SYSTEM</name>
+              <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SD</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>ANNOUNCEMENT_ATTACHMENTS</name>
+        <identifier class="java.math.BigDecimal">24838</identifier>
+        <schemaName>SD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">44c8349e-6799-4c9e-926a-43f6aecb2494</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ANNOUNCEMENT_ATTACHMENTS</name>
+                <identifier class="java.math.BigDecimal">24838</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SYSTEM</name>
+          <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</table>

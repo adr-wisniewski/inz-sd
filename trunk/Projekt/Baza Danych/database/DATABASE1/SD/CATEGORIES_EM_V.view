@@ -1,0 +1,151 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">a631e36c-680c-4b66-a456-3c8a3b9a32bb</identifier>
+  </ID>
+  <name>CATEGORIES_EM_V</name>
+  <SQLQuery class="oracle.javatools.db.sql.NonDeclarativeSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">622c1b11-ec12-4dc3-b293-6f858a707eef</identifier>
+    </ID>
+    <SQLText>SELECT c1.name AS main_category,
+    NULL         AS sub_category,
+    NULL         AS sub_sub_category,
+    category_code,
+    name
+  FROM categories_em c1
+  WHERE c1.parent_category IS NULL
+  UNION ALL
+  SELECT c2.name AS main_category,
+    c1.name      AS sub_category,
+    NULL         AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category     = c2.category_code
+  WHERE c2.parent_category IS NULL
+  UNION ALL
+  SELECT c3.name AS main_category,
+    c2.name      AS sub_category,
+    c1.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category     = c3.category_code
+  WHERE c3.parent_category IS NULL
+  UNION ALL
+  SELECT c4.name AS main_category,
+    c3.name      AS sub_category,
+    c2.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category = c3.category_code
+  JOIN categories_em c4
+  ON c3.parent_category     = c4.category_code
+  WHERE c4.parent_category IS NULL
+  UNION ALL
+  SELECT c5.name AS main_category,
+    c4.name      AS sub_category,
+    c3.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category = c3.category_code
+  JOIN categories_em c4
+  ON c3.parent_category = c4.category_code
+  JOIN categories_em c5
+  ON c4.parent_category     = c3.category_code
+  WHERE c5.parent_category IS NULL</SQLText>
+    <distinct>false</distinct>
+    <orderSiblings>false</orderSiblings>
+    <queryString>SELECT c1.name AS main_category,
+    NULL         AS sub_category,
+    NULL         AS sub_sub_category,
+    category_code,
+    name
+  FROM categories_em c1
+  WHERE c1.parent_category IS NULL
+  UNION ALL
+  SELECT c2.name AS main_category,
+    c1.name      AS sub_category,
+    NULL         AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category     = c2.category_code
+  WHERE c2.parent_category IS NULL
+  UNION ALL
+  SELECT c3.name AS main_category,
+    c2.name      AS sub_category,
+    c1.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category     = c3.category_code
+  WHERE c3.parent_category IS NULL
+  UNION ALL
+  SELECT c4.name AS main_category,
+    c3.name      AS sub_category,
+    c2.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category = c3.category_code
+  JOIN categories_em c4
+  ON c3.parent_category     = c4.category_code
+  WHERE c4.parent_category IS NULL
+  UNION ALL
+  SELECT c5.name AS main_category,
+    c4.name      AS sub_category,
+    c3.name      AS sub_sub_category,
+    c1.category_code,
+    c1.name
+  FROM categories_em c1
+  JOIN categories_em c2
+  ON c1.parent_category = c2.category_code
+  JOIN categories_em c3
+  ON c2.parent_category = c3.category_code
+  JOIN categories_em c4
+  ON c3.parent_category = c4.category_code
+  JOIN categories_em c5
+  ON c4.parent_category     = c3.category_code
+  WHERE c5.parent_category IS NULL</queryString>
+  </SQLQuery>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>CATEGORIES_EM_V</name>
+        <identifier class="java.math.BigDecimal">25034</identifier>
+        <schemaName>SD</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</view>

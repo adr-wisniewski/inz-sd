@@ -1,0 +1,686 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+  </ID>
+  <name>KNOWN_ERRORS_V</name>
+  <SQLQuery class="oracle.javatools.db.ora.OracleSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+    </ID>
+    <distinct>false</distinct>
+    <fromObjects>
+      <fromObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">bf9a20af-e302-466f-bc69-7ab4a6bf0a5a</identifier>
+        </ID>
+        <expression class="oracle.javatools.db.sql.JoinObject">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">301ce12a-7b6b-4192-a37f-432b7e7fb5eb</identifier>
+          </ID>
+          <condition class="oracle.javatools.db.sql.OnJoinCondition">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">5094771b-796d-4d9f-ad35-d576c7b24b8c</identifier>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.Comparison">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">7845e505-f2b3-41aa-b850-252c83765fc6</identifier>
+                </ID>
+                <comparator>5</comparator>
+                <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+                  <ID class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">3352ed7a-cc3e-4744-88a7-f0fd18ae550e</identifier>
+                  </ID>
+                  <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                    <name>p</name>
+                    <identifier class="java.lang.String">6f73b193-de53-4b62-bcae-662862a8cbf8</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+                      <parent class="oracle.javatools.db.IdentifierBasedID">
+                        <name>KNOWN_ERRORS_V</name>
+                        <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>VIEW</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>SQLQuery</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>FROM</type>
+                  </fromObjectID>
+                  <objectID class="oracle.javatools.db.IdentifierBasedID">
+                    <name>PROBLEM_ID</name>
+                    <identifier class="java.lang.String">67c17c0b-1455-4a8c-b047-d981c6aaf284</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>PROBLEMS</name>
+                      <identifier class="java.lang.String">d77c4fe8-31bf-4e2b-a253-c48f874bfa20</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>COLUMN</type>
+                  </objectID>
+                  <outerJoin>false</outerJoin>
+                  <qualified>true</qualified>
+                </leftExpression>
+                <priorOnLeft>false</priorOnLeft>
+                <priorOnRight>false</priorOnRight>
+                <rightExpression class="oracle.javatools.db.sql.ColumnUsage">
+                  <ID class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">d73bedce-5df1-4ea9-abce-b28b3de356e6</identifier>
+                  </ID>
+                  <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                    <name>s</name>
+                    <identifier class="java.lang.String">31351505-b0db-4f81-9dd1-444fe73cca59</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+                      <parent class="oracle.javatools.db.IdentifierBasedID">
+                        <name>KNOWN_ERRORS_V</name>
+                        <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>VIEW</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>SQLQuery</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>FROM</type>
+                  </fromObjectID>
+                  <objectID class="oracle.javatools.db.IdentifierBasedID">
+                    <name>PROBLEM_ID</name>
+                    <identifier class="java.lang.String">7e7ed252-2c46-49b9-88a5-e51de72fec22</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>SOLUTIONS</name>
+                      <identifier class="java.lang.String">9d4d0d73-74bb-4e2d-b4bf-e14b014ba718</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>COLUMN</type>
+                  </objectID>
+                  <outerJoin>false</outerJoin>
+                  <qualified>true</qualified>
+                </rightExpression>
+              </argument>
+            </arguments>
+            <operator>372</operator>
+          </condition>
+          <includeJoinKeyword>false</includeJoinKeyword>
+          <joinType>INNER</joinType>
+          <leftExpression>
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">31351505-b0db-4f81-9dd1-444fe73cca59</identifier>
+            </ID>
+            <alias>s</alias>
+            <expression class="oracle.javatools.db.sql.RelationUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">1a7d298a-5566-47ec-880c-fa38737d2412</identifier>
+              </ID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>SOLUTIONS</name>
+                <identifier class="java.lang.String">9d4d0d73-74bb-4e2d-b4bf-e14b014ba718</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </objectID>
+            </expression>
+            <with>false</with>
+          </leftExpression>
+          <natural>false</natural>
+          <rightExpression>
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">6f73b193-de53-4b62-bcae-662862a8cbf8</identifier>
+            </ID>
+            <alias>p</alias>
+            <expression class="oracle.javatools.db.sql.RelationUsage">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">d9b9a3a1-059b-4289-9c81-3a1ce4b72b2d</identifier>
+              </ID>
+              <objectID class="oracle.javatools.db.IdentifierBasedID">
+                <name>PROBLEMS</name>
+                <identifier class="java.lang.String">d77c4fe8-31bf-4e2b-a253-c48f874bfa20</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </objectID>
+            </expression>
+            <with>false</with>
+          </rightExpression>
+        </expression>
+        <with>false</with>
+      </fromObject>
+    </fromObjects>
+    <orderSiblings>false</orderSiblings>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">1a3b5baa-4912-4152-8577-5901b84b7ac4</identifier>
+        </ID>
+        <alias>PROBLEM_ID</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">2440d6f8-a021-4202-8275-3ba99c281684</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>p</name>
+            <identifier class="java.lang.String">6f73b193-de53-4b62-bcae-662862a8cbf8</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>KNOWN_ERRORS_V</name>
+                <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+                <schemaName>SD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>PROBLEM_ID</name>
+            <identifier class="java.lang.String">67c17c0b-1455-4a8c-b047-d981c6aaf284</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PROBLEMS</name>
+              <identifier class="java.lang.String">d77c4fe8-31bf-4e2b-a253-c48f874bfa20</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4cc9a112-26b8-432e-90c4-a64b086cffcd</identifier>
+        </ID>
+        <alias>subject</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">cf557b85-35dc-4a24-afe0-f5947dcf222a</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>p</name>
+            <identifier class="java.lang.String">6f73b193-de53-4b62-bcae-662862a8cbf8</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>KNOWN_ERRORS_V</name>
+                <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+                <schemaName>SD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SUBJECT</name>
+            <identifier class="java.lang.String">d77df16f-88c1-45d7-9709-8b42818e4fc8</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PROBLEMS</name>
+              <identifier class="java.lang.String">d77c4fe8-31bf-4e2b-a253-c48f874bfa20</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">6cc72d82-f2a7-4761-b524-9c4d75fa80ff</identifier>
+        </ID>
+        <alias>SYMPTOMS</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">e41c8ee9-d007-4937-862f-557341d89ba9</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>p</name>
+            <identifier class="java.lang.String">6f73b193-de53-4b62-bcae-662862a8cbf8</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>KNOWN_ERRORS_V</name>
+                <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+                <schemaName>SD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>SYMPTOMS</name>
+            <identifier class="java.lang.String">e7ccc92d-117f-4f08-808c-fb0e47c2544d</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PROBLEMS</name>
+              <identifier class="java.lang.String">d77c4fe8-31bf-4e2b-a253-c48f874bfa20</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0fee538f-bdd5-46cf-bb2e-4e3b62f5b77e</identifier>
+        </ID>
+        <alias>ROOT_CAUSE</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">8952c063-d54f-479e-8b75-986eb9c594f1</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>p</name>
+            <identifier class="java.lang.String">6f73b193-de53-4b62-bcae-662862a8cbf8</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>KNOWN_ERRORS_V</name>
+                <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+                <schemaName>SD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>ROOT_CAUSE</name>
+            <identifier class="java.lang.String">63b51bdb-d806-4a89-92d5-da11311e8b22</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PROBLEMS</name>
+              <identifier class="java.lang.String">d77c4fe8-31bf-4e2b-a253-c48f874bfa20</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5d6028bc-eecf-48a7-88e3-7bf39129c07e</identifier>
+        </ID>
+        <alias>workaround</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">630a7081-4059-4f6a-b6de-6836004e049f</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>s</name>
+            <identifier class="java.lang.String">31351505-b0db-4f81-9dd1-444fe73cca59</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>KNOWN_ERRORS_V</name>
+                <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+                <schemaName>SD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>DESCRIPTION</name>
+            <identifier class="java.lang.String">4e7326fd-dbab-4dd7-80a5-4aedcf8798bd</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>SOLUTIONS</name>
+              <identifier class="java.lang.String">9d4d0d73-74bb-4e2d-b4bf-e14b014ba718</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">18d5d4c4-525b-43dd-9283-074ce377a57c</identifier>
+        </ID>
+        <alias>CATEGORY_CODE</alias>
+        <expression class="oracle.javatools.db.sql.ColumnUsage">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">ec3c0171-af05-4814-a90a-9f30f2d8a4b8</identifier>
+          </ID>
+          <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>p</name>
+            <identifier class="java.lang.String">6f73b193-de53-4b62-bcae-662862a8cbf8</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>KNOWN_ERRORS_V</name>
+                <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+                <schemaName>SD</schemaName>
+                <type>VIEW</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>SQLQuery</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>FROM</type>
+          </fromObjectID>
+          <objectID class="oracle.javatools.db.IdentifierBasedID">
+            <name>CATEGORY_CODE</name>
+            <identifier class="java.lang.String">c987fc38-1106-4ec4-88e4-6f6bff2247a8</identifier>
+            <parent class="oracle.javatools.db.IdentifierBasedID">
+              <name>PROBLEMS</name>
+              <identifier class="java.lang.String">d77c4fe8-31bf-4e2b-a253-c48f874bfa20</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>COLUMN</type>
+          </objectID>
+          <outerJoin>false</outerJoin>
+          <qualified>true</qualified>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+    </selectObjects>
+    <whereObject>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">bf2fb390-1109-4eee-be69-aed1cf260d80</identifier>
+      </ID>
+      <arguments>
+        <argument class="oracle.javatools.db.sql.WhereObject">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">c2d36731-ff0c-41d8-b8ea-9821a5194149</identifier>
+          </ID>
+          <arguments>
+            <argument class="oracle.javatools.db.sql.Comparison">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">7adb9790-166b-45b7-a51d-02295c35df9e</identifier>
+              </ID>
+              <comparator>5</comparator>
+              <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">fbb44907-81de-4039-bce3-260803b3904e</identifier>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>s</name>
+                  <identifier class="java.lang.String">31351505-b0db-4f81-9dd1-444fe73cca59</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>KNOWN_ERRORS_V</name>
+                      <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>SOLUTION_CODE</name>
+                  <identifier class="java.lang.String">c411c18f-e82e-4228-9d20-40498cb2294a</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>SOLUTIONS</name>
+                    <identifier class="java.lang.String">9d4d0d73-74bb-4e2d-b4bf-e14b014ba718</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>true</qualified>
+              </leftExpression>
+              <priorOnLeft>false</priorOnLeft>
+              <priorOnRight>false</priorOnRight>
+              <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">a4c1b020-f604-402e-ba71-fdbb4d98598b</identifier>
+                </ID>
+                <SQLText>&apos;WORK&apos;</SQLText>
+              </rightExpression>
+            </argument>
+            <argument class="oracle.javatools.db.sql.Comparison">
+              <ID class="oracle.javatools.db.IdentifierBasedID">
+                <identifier class="java.lang.String">f6e14d38-73a3-4675-b3cf-33af77e88a10</identifier>
+              </ID>
+              <comparator>5</comparator>
+              <leftExpression class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">861b11f1-363a-4366-a273-e4ba7daa13b1</identifier>
+                </ID>
+                <fromObjectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>p</name>
+                  <identifier class="java.lang.String">6f73b193-de53-4b62-bcae-662862a8cbf8</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <identifier class="java.lang.String">52c0a8a5-6d60-4c03-b132-507f0c66e22c</identifier>
+                    <parent class="oracle.javatools.db.IdentifierBasedID">
+                      <name>KNOWN_ERRORS_V</name>
+                      <identifier class="java.lang.String">4b9effab-1d88-4284-854a-f662c710a37b</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>VIEW</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>SQLQuery</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>FROM</type>
+                </fromObjectID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>IS_KNOWN_ERROR</name>
+                  <identifier class="java.lang.String">806a9170-e3a0-40bb-9d15-1b96b9762a39</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>PROBLEMS</name>
+                    <identifier class="java.lang.String">d77c4fe8-31bf-4e2b-a253-c48f874bfa20</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <qualified>true</qualified>
+              </leftExpression>
+              <priorOnLeft>false</priorOnLeft>
+              <priorOnRight>false</priorOnRight>
+              <rightExpression class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">9578e4d3-c685-446c-99e3-aa349a63f260</identifier>
+                </ID>
+                <SQLText>&apos;T&apos;</SQLText>
+              </rightExpression>
+            </argument>
+          </arguments>
+          <operator>372</operator>
+        </argument>
+      </arguments>
+      <operator>372</operator>
+    </whereObject>
+    <queryString>select p.problem_id PROBLEM_ID , p.subject as subject, p.symptoms SYMPTOMS , p.root_cause ROOT_CAUSE , s.description as workaround, p.category_code
+ CATEGORY_CODE from solutions s join problems p on p.problem_id = s.problem_id
+where s.solution_code = &apos;WORK&apos; and p.is_known_error = &apos;T&apos;</queryString>
+  </SQLQuery>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1188c174-4e94-43f2-95db-d0fcc5c4f1e9</identifier>
+      </ID>
+      <name>PROBLEM_ID</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PROBLEM_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>KNOWN_ERRORS_V</name>
+              <identifier class="java.math.BigDecimal">25039</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e7ec52da-5819-4a31-929c-f456022c55af</identifier>
+      </ID>
+      <name>SUBJECT</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SUBJECT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>KNOWN_ERRORS_V</name>
+              <identifier class="java.math.BigDecimal">25039</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">991b4421-9b76-4a36-bfa1-162929c4dfee</identifier>
+      </ID>
+      <name>SYMPTOMS</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SYMPTOMS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>KNOWN_ERRORS_V</name>
+              <identifier class="java.math.BigDecimal">25039</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">70762137-88c8-43ed-aef3-3982dbb231d5</identifier>
+      </ID>
+      <name>ROOT_CAUSE</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ROOT_CAUSE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>KNOWN_ERRORS_V</name>
+              <identifier class="java.math.BigDecimal">25039</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">18599084-4829-4cde-b418-ad9465a480c7</identifier>
+      </ID>
+      <name>WORKAROUND</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>WORKAROUND</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>KNOWN_ERRORS_V</name>
+              <identifier class="java.math.BigDecimal">25039</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1f524c0b-1bed-4211-8492-2ef2cc5244c1</identifier>
+      </ID>
+      <name>CATEGORY_CODE</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CATEGORY_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>KNOWN_ERRORS_V</name>
+              <identifier class="java.math.BigDecimal">25039</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>KNOWN_ERRORS_V</name>
+        <identifier class="java.math.BigDecimal">25039</identifier>
+        <schemaName>SD</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</view>

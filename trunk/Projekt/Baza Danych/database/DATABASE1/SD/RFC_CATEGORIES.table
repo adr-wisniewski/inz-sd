@@ -1,0 +1,933 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">da8f3083-7e27-4db6-bdc9-f5b5d6d7ffc1</identifier>
+  </ID>
+  <name>RFC_CATEGORIES</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">aa2ba6b0-7bfd-430a-b974-f7dd87096dac</identifier>
+      </ID>
+      <name>CATEGORY_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b45f38d9-deda-45b2-97f6-69251912af82</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>CATEGORY_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>RFC_CATEGORIES</name>
+                  <identifier class="java.math.BigDecimal">24967</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CATEGORY_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>RFC_CATEGORIES</name>
+              <identifier class="java.math.BigDecimal">24967</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">21cc9197-3f0e-4e6e-953c-76c41c599368</identifier>
+      </ID>
+      <name>NAME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">80ab8ed3-6b2f-4ceb-b6e9-bf96baabcba5</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">200</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>RFC_CATEGORIES</name>
+                  <identifier class="java.math.BigDecimal">24967</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>RFC_CATEGORIES</name>
+              <identifier class="java.math.BigDecimal">24967</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">202645a9-8a61-4e00-a6e3-67c71ac6ab7b</identifier>
+      </ID>
+      <name>ABSTRACT</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">427635ed-2c4b-430a-a225-1a962b1b741f</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ABSTRACT</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>RFC_CATEGORIES</name>
+                  <identifier class="java.math.BigDecimal">24967</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ABSTRACT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>RFC_CATEGORIES</name>
+              <identifier class="java.math.BigDecimal">24967</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">dafc355b-9b6f-4921-a9b1-b39ddd37a822</identifier>
+      </ID>
+      <name>PARENT_CATEGORY_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5eb4c15b-f3f0-493e-a113-0d1876914bf6</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PARENT_CATEGORY_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>RFC_CATEGORIES</name>
+                  <identifier class="java.math.BigDecimal">24967</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PARENT_CATEGORY_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>RFC_CATEGORIES</name>
+              <identifier class="java.math.BigDecimal">24967</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.CheckConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5bd363c2-a8e0-432a-b32b-5a77f1c1af2c</identifier>
+      </ID>
+      <name>RFC_CATEGORY_CHK1</name>
+      <checkConditionFragment class="oracle.javatools.db.sql.WhereObject">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9bbf8247-955a-4168-935c-d3cb4054ec65</identifier>
+        </ID>
+        <arguments>
+          <argument class="oracle.javatools.db.sql.SetOperation">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">73b7a040-c3ae-4417-bb23-fe51b7e70259</identifier>
+            </ID>
+            <arguments>
+              <argument class="oracle.javatools.db.sql.ColumnUsage">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">bcf33ce5-4595-4d5c-abf1-9a119e2dc150</identifier>
+                </ID>
+                <objectID class="oracle.javatools.db.IdentifierBasedID">
+                  <name>ABSTRACT</name>
+                  <identifier class="java.lang.String">202645a9-8a61-4e00-a6e3-67c71ac6ab7b</identifier>
+                  <parent class="oracle.javatools.db.IdentifierBasedID">
+                    <name>RFC_CATEGORIES</name>
+                    <identifier class="java.lang.String">da8f3083-7e27-4db6-bdc9-f5b5d6d7ffc1</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>COLUMN</type>
+                </objectID>
+                <outerJoin>false</outerJoin>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>RFC_CATEGORY_CHK1</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>RFC_CATEGORIES</name>
+                              <identifier class="java.math.BigDecimal">24967</identifier>
+                              <schemaName>SD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+                <qualified>false</qualified>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">06a07603-e0c5-4cc0-b10f-fffea364347b</identifier>
+                </ID>
+                <SQLText>&apos;Y&apos;</SQLText>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>RFC_CATEGORY_CHK1</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>RFC_CATEGORIES</name>
+                              <identifier class="java.math.BigDecimal">24967</identifier>
+                              <schemaName>SD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+              </argument>
+              <argument class="oracle.javatools.db.sql.SimpleSQLFragment">
+                <ID class="oracle.javatools.db.IdentifierBasedID">
+                  <identifier class="java.lang.String">473df8c7-ff7f-4dc4-be22-6c227da051d5</identifier>
+                </ID>
+                <SQLText>&apos;N&apos;</SQLText>
+                <properties>
+                  <entry>
+                    <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                    <value class="oracle.javatools.db.ReferenceID">
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <parent class="oracle.javatools.db.ReferenceID">
+                          <parent class="oracle.javatools.db.ReferenceID">
+                            <name>RFC_CATEGORY_CHK1</name>
+                            <parent class="oracle.javatools.db.ReferenceID">
+                              <name>RFC_CATEGORIES</name>
+                              <identifier class="java.math.BigDecimal">24967</identifier>
+                              <schemaName>SD</schemaName>
+                              <type>TABLE</type>
+                            </parent>
+                            <subType>CheckConstraint</subType>
+                            <type>CONSTRAINT</type>
+                          </parent>
+                          <type>WHERE</type>
+                        </parent>
+                        <type>SQLFragment</type>
+                      </parent>
+                      <type>SQLFragment</type>
+                    </value>
+                  </entry>
+                </properties>
+              </argument>
+            </arguments>
+            <operator>705</operator>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>RFC_CATEGORY_CHK1</name>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>RFC_CATEGORIES</name>
+                        <identifier class="java.math.BigDecimal">24967</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <subType>CheckConstraint</subType>
+                      <type>CONSTRAINT</type>
+                    </parent>
+                    <type>WHERE</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+          </argument>
+        </arguments>
+        <operator>372</operator>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>RFC_CATEGORY_CHK1</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>RFC_CATEGORIES</name>
+                  <identifier class="java.math.BigDecimal">24967</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <subType>CheckConstraint</subType>
+                <type>CONSTRAINT</type>
+              </parent>
+              <type>WHERE</type>
+            </value>
+          </entry>
+        </properties>
+      </checkConditionFragment>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>RFC_CATEGORY_CHK1</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>RFC_CATEGORIES</name>
+              <identifier class="java.math.BigDecimal">24967</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>CheckConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f5f1d9f5-87d2-43a0-8bdc-5c4cea3eec3e</identifier>
+      </ID>
+      <name>RFC_CATEGORY_RFC_CATEGORY_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PARENT_CATEGORY_ID</name>
+          <identifier class="java.lang.String">dafc355b-9b6f-4921-a9b1-b39ddd37a822</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>RFC_CATEGORIES</name>
+            <identifier class="java.lang.String">da8f3083-7e27-4db6-bdc9-f5b5d6d7ffc1</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>RFC_CATEGORY_RFC_CATEGORY_FK1</name>
+            <childObjectNames>
+              <childObjectName>PARENT_CATEGORY_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>RFC_CATEGORIES</name>
+              <identifier class="java.math.BigDecimal">24967</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>RFC_CATEGORY_PK</name>
+        <identifier class="java.lang.String">0e0455c6-f720-4944-81a1-b0078572292d</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>RFC_CATEGORIES</name>
+          <identifier class="java.lang.String">da8f3083-7e27-4db6-bdc9-f5b5d6d7ffc1</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">0e0455c6-f720-4944-81a1-b0078572292d</identifier>
+      </ID>
+      <name>RFC_CATEGORY_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>CATEGORY_ID</name>
+          <identifier class="java.lang.String">aa2ba6b0-7bfd-430a-b974-f7dd87096dac</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>RFC_CATEGORIES</name>
+            <identifier class="java.lang.String">da8f3083-7e27-4db6-bdc9-f5b5d6d7ffc1</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>RFC_CATEGORY_PK</name>
+        <identifier class="java.lang.String">9703ef35-7731-4933-9ac3-f7039410984e</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>RFC_CATEGORIES</name>
+          <identifier class="java.lang.String">da8f3083-7e27-4db6-bdc9-f5b5d6d7ffc1</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>RFC_CATEGORY_PK</name>
+            <childObjectNames>
+              <childObjectName>CATEGORY_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>RFC_CATEGORIES</name>
+              <identifier class="java.math.BigDecimal">24967</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+    <constraint class="oracle.javatools.db.UniqueConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ea85897f-10ec-44bf-9bdd-3afee6f0981c</identifier>
+      </ID>
+      <name>RFC_CATEGORY_UK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>NAME</name>
+          <identifier class="java.lang.String">21cc9197-3f0e-4e6e-953c-76c41c599368</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>RFC_CATEGORIES</name>
+            <identifier class="java.lang.String">da8f3083-7e27-4db6-bdc9-f5b5d6d7ffc1</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>RFC_CATEGORY_UK1</name>
+        <identifier class="java.lang.String">a6ff4a00-d98e-4b29-91c7-f2e59f5940eb</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>RFC_CATEGORIES</name>
+          <identifier class="java.lang.String">da8f3083-7e27-4db6-bdc9-f5b5d6d7ffc1</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>RFC_CATEGORY_UK1</name>
+            <childObjectNames>
+              <childObjectName>NAME</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>RFC_CATEGORIES</name>
+              <identifier class="java.math.BigDecimal">24967</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>UniqueConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9703ef35-7731-4933-9ac3-f7039410984e</identifier>
+      </ID>
+      <name>RFC_CATEGORY_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">f7441058-83ed-4c12-aa51-b1d832e60e52</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">38940881-dac6-49dd-961d-16e2ad26e996</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>CATEGORY_ID</name>
+              <identifier class="java.lang.String">aa2ba6b0-7bfd-430a-b974-f7dd87096dac</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>RFC_CATEGORIES</name>
+                <identifier class="java.lang.String">da8f3083-7e27-4db6-bdc9-f5b5d6d7ffc1</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>RFC_CATEGORY_PK</name>
+                      <identifier class="java.math.BigDecimal">24968</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>RFC_CATEGORIES</name>
+                        <identifier class="java.math.BigDecimal">24967</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>RFC_CATEGORY_PK</name>
+                  <identifier class="java.math.BigDecimal">24968</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>RFC_CATEGORIES</name>
+                    <identifier class="java.math.BigDecimal">24967</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>RFC_CATEGORY_PK</name>
+            <identifier class="java.math.BigDecimal">24968</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>RFC_CATEGORIES</name>
+              <identifier class="java.math.BigDecimal">24967</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">b0188d5c-1283-40f7-a02f-60fd80195bed</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>RFC_CATEGORY_PK</name>
+                    <identifier class="java.math.BigDecimal">24968</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>RFC_CATEGORIES</name>
+                      <identifier class="java.math.BigDecimal">24967</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SYSTEM</name>
+              <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SD</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a6ff4a00-d98e-4b29-91c7-f2e59f5940eb</identifier>
+      </ID>
+      <name>RFC_CATEGORY_UK1</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">414ab01a-b1bb-4464-9356-4b3d44c05a19</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">f829cfad-fc0b-404e-83cf-711be2026b7a</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>NAME</name>
+              <identifier class="java.lang.String">21cc9197-3f0e-4e6e-953c-76c41c599368</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>RFC_CATEGORIES</name>
+                <identifier class="java.lang.String">da8f3083-7e27-4db6-bdc9-f5b5d6d7ffc1</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>RFC_CATEGORY_UK1</name>
+                      <identifier class="java.math.BigDecimal">24969</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>RFC_CATEGORIES</name>
+                        <identifier class="java.math.BigDecimal">24967</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>RFC_CATEGORY_UK1</name>
+                  <identifier class="java.math.BigDecimal">24969</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>RFC_CATEGORIES</name>
+                    <identifier class="java.math.BigDecimal">24967</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>RFC_CATEGORY_UK1</name>
+            <identifier class="java.math.BigDecimal">24969</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>RFC_CATEGORIES</name>
+              <identifier class="java.math.BigDecimal">24967</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">4feeddab-0688-4655-acd2-5ca24f14486a</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>RFC_CATEGORY_UK1</name>
+                    <identifier class="java.math.BigDecimal">24969</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>RFC_CATEGORIES</name>
+                      <identifier class="java.math.BigDecimal">24967</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SYSTEM</name>
+              <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SD</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>RFC_CATEGORIES</name>
+        <identifier class="java.math.BigDecimal">24967</identifier>
+        <schemaName>SD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">7b240b19-499c-41c6-bf45-2dc129197c64</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>RFC_CATEGORIES</name>
+                <identifier class="java.math.BigDecimal">24967</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SYSTEM</name>
+          <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</table>

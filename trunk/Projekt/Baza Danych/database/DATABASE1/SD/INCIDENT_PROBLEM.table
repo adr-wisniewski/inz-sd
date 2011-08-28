@@ -1,0 +1,574 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">93198269-cb15-4255-a062-60e8b89ba60a</identifier>
+  </ID>
+  <name>INCIDENT_PROBLEM</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1af8b188-9cdb-493c-b15a-745c170ee040</identifier>
+      </ID>
+      <name>INCIDENT_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9385c8a7-9c0d-4671-bf38-3490f5d40efb</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>INCIDENT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>INCIDENT_PROBLEM</name>
+                  <identifier class="java.math.BigDecimal">24924</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>INCIDENT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>INCIDENT_PROBLEM</name>
+              <identifier class="java.math.BigDecimal">24924</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">34f12f02-08ab-4292-b86f-d81dc94f3b33</identifier>
+      </ID>
+      <name>PROBLEM_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">bba57f32-7615-4273-8284-a9e73383d910</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PROBLEM_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>INCIDENT_PROBLEM</name>
+                  <identifier class="java.math.BigDecimal">24924</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PROBLEM_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>INCIDENT_PROBLEM</name>
+              <identifier class="java.math.BigDecimal">24924</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">484c3b9a-a6d3-4031-ac8a-e445123cfdc6</identifier>
+      </ID>
+      <name>INCIDENT_PROBLEM_INCIDENT_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>INCIDENT_ID</name>
+          <identifier class="java.lang.String">1af8b188-9cdb-493c-b15a-745c170ee040</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>INCIDENT_PROBLEM</name>
+            <identifier class="java.lang.String">93198269-cb15-4255-a062-60e8b89ba60a</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>INCIDENT_PROBLEM_INCIDENT_FK1</name>
+            <childObjectNames>
+              <childObjectName>INCIDENT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>INCIDENT_PROBLEM</name>
+              <identifier class="java.math.BigDecimal">24924</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>INCIDENTS_PK</name>
+        <identifier class="java.lang.String">6148e10d-6439-4394-9d18-ab312089c9dc</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>INCIDENTS</name>
+          <identifier class="java.lang.String">7f3e11fc-b5f5-41a0-b873-53336f91bd1a</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5b750b4c-360a-407a-9914-3672ef4a4894</identifier>
+      </ID>
+      <name>INCIDENT_PROBLEM_PROBLEMS_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PROBLEM_ID</name>
+          <identifier class="java.lang.String">34f12f02-08ab-4292-b86f-d81dc94f3b33</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>INCIDENT_PROBLEM</name>
+            <identifier class="java.lang.String">93198269-cb15-4255-a062-60e8b89ba60a</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>INCIDENT_PROBLEM_PROBLEMS_FK</name>
+            <childObjectNames>
+              <childObjectName>PROBLEM_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>INCIDENT_PROBLEM</name>
+              <identifier class="java.math.BigDecimal">24924</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PROBLEMS_PK</name>
+        <identifier class="java.lang.String">e53146fd-af0b-4585-abd1-ad8c92886ab7</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PROBLEMS</name>
+          <identifier class="java.lang.String">d77c4fe8-31bf-4e2b-a253-c48f874bfa20</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1619a02b-3638-4839-bfbd-0fa0df044561</identifier>
+      </ID>
+      <name>INCIDENT_PROBLEM_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>INCIDENT_ID</name>
+          <identifier class="java.lang.String">1af8b188-9cdb-493c-b15a-745c170ee040</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>INCIDENT_PROBLEM</name>
+            <identifier class="java.lang.String">93198269-cb15-4255-a062-60e8b89ba60a</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PROBLEM_ID</name>
+          <identifier class="java.lang.String">34f12f02-08ab-4292-b86f-d81dc94f3b33</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>INCIDENT_PROBLEM</name>
+            <identifier class="java.lang.String">93198269-cb15-4255-a062-60e8b89ba60a</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>INCIDENT_PROBLEM_PK</name>
+        <identifier class="java.lang.String">aae1debe-bbeb-4494-bf8e-ec735bde1c88</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>INCIDENT_PROBLEM</name>
+          <identifier class="java.lang.String">93198269-cb15-4255-a062-60e8b89ba60a</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>INCIDENT_PROBLEM_PK</name>
+            <childObjectNames>
+              <childObjectName>INCIDENT_ID</childObjectName>
+              <childObjectName>PROBLEM_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>INCIDENT_PROBLEM</name>
+              <identifier class="java.math.BigDecimal">24924</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">aae1debe-bbeb-4494-bf8e-ec735bde1c88</identifier>
+      </ID>
+      <name>INCIDENT_PROBLEM_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">763821bf-f789-441e-a3dc-ba83a367d02b</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">77181180-354a-413a-80ff-0a317dbb09ce</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>INCIDENT_ID</name>
+              <identifier class="java.lang.String">1af8b188-9cdb-493c-b15a-745c170ee040</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>INCIDENT_PROBLEM</name>
+                <identifier class="java.lang.String">93198269-cb15-4255-a062-60e8b89ba60a</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>INCIDENT_PROBLEM_PK</name>
+                      <identifier class="java.math.BigDecimal">24925</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>INCIDENT_PROBLEM</name>
+                        <identifier class="java.math.BigDecimal">24924</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>INCIDENT_PROBLEM_PK</name>
+                  <identifier class="java.math.BigDecimal">24925</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>INCIDENT_PROBLEM</name>
+                    <identifier class="java.math.BigDecimal">24924</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">681925bc-ef58-4723-a647-c441b86680ea</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">acebc112-9b0d-4616-a905-a0ff3dc74467</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>PROBLEM_ID</name>
+              <identifier class="java.lang.String">34f12f02-08ab-4292-b86f-d81dc94f3b33</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>INCIDENT_PROBLEM</name>
+                <identifier class="java.lang.String">93198269-cb15-4255-a062-60e8b89ba60a</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>INCIDENT_PROBLEM_PK</name>
+                      <identifier class="java.math.BigDecimal">24925</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>INCIDENT_PROBLEM</name>
+                        <identifier class="java.math.BigDecimal">24924</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>INCIDENT_PROBLEM_PK</name>
+                  <identifier class="java.math.BigDecimal">24925</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>INCIDENT_PROBLEM</name>
+                    <identifier class="java.math.BigDecimal">24924</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>INCIDENT_PROBLEM_PK</name>
+            <identifier class="java.math.BigDecimal">24925</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>INCIDENT_PROBLEM</name>
+              <identifier class="java.math.BigDecimal">24924</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">6ceb8423-9d1e-4ff6-900a-84f00aac468a</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>INCIDENT_PROBLEM_PK</name>
+                    <identifier class="java.math.BigDecimal">24925</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>INCIDENT_PROBLEM</name>
+                      <identifier class="java.math.BigDecimal">24924</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SYSTEM</name>
+              <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SD</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>Comment</key>
+      <value class="java.lang.String">Tabela asocjacyjna pomiędzy problemami oraz incydentami.</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>INCIDENT_PROBLEM</name>
+        <identifier class="java.math.BigDecimal">24924</identifier>
+        <schemaName>SD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a3d3df78-4e7c-4b13-b9b9-3629b42eb0d7</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>INCIDENT_PROBLEM</name>
+                <identifier class="java.math.BigDecimal">24924</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SYSTEM</name>
+          <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</table>

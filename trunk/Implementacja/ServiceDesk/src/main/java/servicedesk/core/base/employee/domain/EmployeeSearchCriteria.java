@@ -4,8 +4,6 @@ import servicedesk.infrastructure.interfaces.domain.SearchCriteria;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 
-import servicedesk.core.base.employee.domain.Employee;
-
 public class EmployeeSearchCriteria implements SearchCriteria<Employee> {
 
 	private Integer id;
@@ -14,7 +12,6 @@ public class EmployeeSearchCriteria implements SearchCriteria<Employee> {
 	
 	private String lastname;
 
-	private String login;
 	
 	public Integer getId() {
 		return id;
@@ -40,14 +37,6 @@ public class EmployeeSearchCriteria implements SearchCriteria<Employee> {
 		this.lastname = lastname;
 	}
 
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
 	public String buildCondition() {
 		// TODO2 Auto-generated method stub
 		return null;
@@ -58,7 +47,6 @@ public class EmployeeSearchCriteria implements SearchCriteria<Employee> {
             if(id != null) criteria.add(Restrictions.eq("id", id));
             if(firstname != null) criteria.add(Restrictions.like("firstname", "%" + firstname + "%"));
             if(lastname != null) criteria.add(Restrictions.like("lastname", "%" + lastname + "%"));
-            if(login != null) criteria.add(Restrictions.like("login", "%" + login + "%"));
     }
 
     @Override

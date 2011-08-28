@@ -20,12 +20,12 @@
 
         <c:forEach items="${relationship.attributeValues}" var="attributeValue" varStatus="status">
             <ui:propertyItem caption="${attributeValue.attribute.name}">
-                <c:out value="attributeValues[${status.index}].value" />
+                <c:out value="${attributeValue.value}" />
             </ui:propertyItem>
         </c:forEach>
 
         <c:if test="${empty relationship.attributeValues}">
-            <ui:propertyItem caption="field.cmdb.relationship.attributes">
+            <ui:propertyItem code="field.cmdb.relationship.attributes">
                 <spring:message code="caption.cmdb.relationship.noattributes"/>
             </ui:propertyItem>
         </c:if>

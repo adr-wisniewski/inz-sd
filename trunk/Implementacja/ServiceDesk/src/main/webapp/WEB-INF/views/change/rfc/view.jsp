@@ -57,7 +57,7 @@
         </ui:propertyItem>
         
         <ui:propertyItem code="field.change.rfc.builder">
-            <link:user object="${rfc.builder}" />
+            <link:employee object="${rfc.builder}" />
         </ui:propertyItem>
         
         <ui:propertyItem code="field.change.rfc.authority">

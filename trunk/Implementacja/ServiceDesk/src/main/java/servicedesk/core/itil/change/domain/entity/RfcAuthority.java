@@ -33,13 +33,15 @@ import servicedesk.infrastructure.interfaces.domain.NamedDomainObject;
     @NamedQuery(name="RfcAuthority.isMember", query=
         "select count(*)"
         + " from RfcAuthority as rfcAuthority"
-            + " join rfcAuthority.members as member with id = :employeeId"
+            + " join rfcAuthority.members as member with employee_id = :employeeId"
         + " where rfcAuthority.id = :rfcAuthorityId"),
     @NamedQuery(name="RfcAuthority.getForCategory", query=
-        " from RfcAuthority as rfcAuthority"
+        "select rfcAuthority" 
+        + " from RfcAuthority as rfcAuthority"
             + " join rfcAuthority.categories as category with category_id = :categoryId"),
     @NamedQuery(name="RfcAuthority.getCabsForCategory", query=
-        " from RfcAuthority as rfcAuthority"
+        "select rfcAuthority" 
+        + " from RfcAuthority as rfcAuthority"
             + " join rfcAuthority.categories as category with category_id = :categoryId"
         + " where rfcAuthority.cab = true")      
 })
@@ -148,10 +150,10 @@ public class RfcAuthority implements NamedDomainObject<Integer>, Serializable {
             return false;
         }
         final RfcAuthority other = (RfcAuthority) obj;
-        if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
+        if ((this.getName() == null) ? (other.getName() != null) : !this.getName().equals(other.getName())) {
             return false;
         }
-        if (this.cab != other.cab) {
+        if (this.isCab() != other.isCab()) {
             return false;
         }
         return true;

@@ -1,0 +1,495 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">4a73f934-ec44-4551-b9bd-e5448edf43a0</identifier>
+  </ID>
+  <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5b3ba728-790e-4373-8749-40c8b53c0123</identifier>
+      </ID>
+      <name>ATTRIBUTE_CODE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9f5c6c24-5e97-4c90-b49b-4a0947dfb150</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ATTRIBUTE_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+                  <identifier class="java.math.BigDecimal">24998</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ATTRIBUTE_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+              <identifier class="java.math.BigDecimal">24998</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8d10c299-ab87-4439-894e-ce6c0b3d7eff</identifier>
+      </ID>
+      <name>ATTRIBUTE_NAME</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9455707a-9122-40ab-ab52-71cbc076a63b</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ATTRIBUTE_NAME</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+                  <identifier class="java.math.BigDecimal">24998</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ATTRIBUTE_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+              <identifier class="java.math.BigDecimal">24998</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3562c694-5155-444a-ba0f-27efb3c5c6ae</identifier>
+      </ID>
+      <name>OBJECT_CODE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c0f11556-190d-4191-90c8-fbe688d5ac0d</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>OBJECT_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+                  <identifier class="java.math.BigDecimal">24998</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OBJECT_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+              <identifier class="java.math.BigDecimal">24998</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4377c64a-265e-4699-913a-8a0a1327c035</identifier>
+      </ID>
+      <name>SIGNAL_OBJECT_ATTRIBUTE_TYP_FK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>OBJECT_CODE</name>
+          <identifier class="java.lang.String">3562c694-5155-444a-ba0f-27efb3c5c6ae</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+            <identifier class="java.lang.String">4a73f934-ec44-4551-b9bd-e5448edf43a0</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SIGNAL_OBJECT_ATTRIBUTE_TYP_FK</name>
+            <childObjectNames>
+              <childObjectName>OBJECT_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+              <identifier class="java.math.BigDecimal">24998</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SIGNAL_OBJECT_TYPES_PK</name>
+        <identifier class="java.lang.String">afaa3d87-a214-43b7-883d-16788cb244f9</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SIGNAL_OBJECT_TYPES</name>
+          <identifier class="java.lang.String">49531749-f57d-479d-b719-99c2e6c27ce2</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1d37fe36-93f3-45df-bc57-04d8378770ae</identifier>
+      </ID>
+      <name>SIGNAL_PARAM_TYPES_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ATTRIBUTE_CODE</name>
+          <identifier class="java.lang.String">5b3ba728-790e-4373-8749-40c8b53c0123</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+            <identifier class="java.lang.String">4a73f934-ec44-4551-b9bd-e5448edf43a0</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>SIGNAL_PARAM_TYPES_PK</name>
+        <identifier class="java.lang.String">ada0ee97-b998-4b5f-bba1-54d8b4a231ac</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+          <identifier class="java.lang.String">4a73f934-ec44-4551-b9bd-e5448edf43a0</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SIGNAL_PARAM_TYPES_PK</name>
+            <childObjectNames>
+              <childObjectName>ATTRIBUTE_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+              <identifier class="java.math.BigDecimal">24998</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ada0ee97-b998-4b5f-bba1-54d8b4a231ac</identifier>
+      </ID>
+      <name>SIGNAL_PARAM_TYPES_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">e647ead8-440a-45d8-993b-c4cde15a1469</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">1a57c2c0-d321-4f13-a837-af0fee08b024</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ATTRIBUTE_CODE</name>
+              <identifier class="java.lang.String">5b3ba728-790e-4373-8749-40c8b53c0123</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+                <identifier class="java.lang.String">4a73f934-ec44-4551-b9bd-e5448edf43a0</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>SIGNAL_PARAM_TYPES_PK</name>
+                      <identifier class="java.math.BigDecimal">24999</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+                        <identifier class="java.math.BigDecimal">24998</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>SIGNAL_PARAM_TYPES_PK</name>
+                  <identifier class="java.math.BigDecimal">24999</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+                    <identifier class="java.math.BigDecimal">24998</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SIGNAL_PARAM_TYPES_PK</name>
+            <identifier class="java.math.BigDecimal">24999</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+              <identifier class="java.math.BigDecimal">24998</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">f37f473a-fd1c-43ce-9c1a-b26cd8c2a12c</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>SIGNAL_PARAM_TYPES_PK</name>
+                    <identifier class="java.math.BigDecimal">24999</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+                      <identifier class="java.math.BigDecimal">24998</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SYSTEM</name>
+              <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SD</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+        <identifier class="java.math.BigDecimal">24998</identifier>
+        <schemaName>SD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d6e84298-1597-4884-aada-a9b975c885b1</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>SIGNAL_OBJECT_ATTRIBUTE_TYPES</name>
+                <identifier class="java.math.BigDecimal">24998</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SYSTEM</name>
+          <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</table>

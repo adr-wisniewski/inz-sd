@@ -76,6 +76,8 @@ public class UniversalItemAddController extends AbstractUniversalItemController 
         
         try {
             pickFormService.pick(form, bindingResult);
+            UniversalItem item = form.getItemClass().createItem();
+            map.addAttribute(item);
             return String.format("redirect:/cmdb/item/new");
         } catch(BusinessConstraintViolationException ex) {
             map.addAllAttributes(ex.getErrors().getModel());

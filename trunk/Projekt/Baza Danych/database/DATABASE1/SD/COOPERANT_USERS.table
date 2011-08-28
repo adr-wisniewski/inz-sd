@@ -1,0 +1,682 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">9f6da4de-3fcd-4131-b4d7-e8b811a140df</identifier>
+  </ID>
+  <name>COOPERANT_USERS</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">49022546-699f-4a1d-98d4-354a4472f1da</identifier>
+      </ID>
+      <name>USER_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">cc70f950-3d48-49c2-9595-6c6c8f845cbd</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>USER_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COOPERANT_USERS</name>
+                  <identifier class="java.math.BigDecimal">24892</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>USER_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COOPERANT_USERS</name>
+              <identifier class="java.math.BigDecimal">24892</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">9a1e7d2e-2da2-43ff-8a24-9ea83df9f42b</identifier>
+      </ID>
+      <name>COOPERANT_ID</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">de60d2a9-7f77-4af8-a9b2-d485eb1fc213</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">10</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.OracleDatabaseImpl</providerClass>
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>COOPERANT_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COOPERANT_USERS</name>
+                  <identifier class="java.math.BigDecimal">24892</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COOPERANT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COOPERANT_USERS</name>
+              <identifier class="java.math.BigDecimal">24892</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">6bfd6d0c-e3b7-4245-bb1c-9379d56c2bd6</identifier>
+      </ID>
+      <name>COOPERANT_USERS_COOPERANT_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>COOPERANT_ID</name>
+          <identifier class="java.lang.String">9a1e7d2e-2da2-43ff-8a24-9ea83df9f42b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COOPERANT_USERS</name>
+            <identifier class="java.lang.String">9f6da4de-3fcd-4131-b4d7-e8b811a140df</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COOPERANT_USERS_COOPERANT_FK1</name>
+            <childObjectNames>
+              <childObjectName>COOPERANT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COOPERANT_USERS</name>
+              <identifier class="java.math.BigDecimal">24892</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COOPERANTS_PK</name>
+        <identifier class="java.lang.String">ce07c511-00eb-4494-829a-6ddc154cb8ec</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COOPERANTS</name>
+          <identifier class="java.lang.String">42566c9d-dde0-40ea-a67c-d855e935fe44</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">537bfe8e-c9c7-420d-b23d-df35db9e2d48</identifier>
+      </ID>
+      <name>COOPERANT_USERS_USERS_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>USER_ID</name>
+          <identifier class="java.lang.String">49022546-699f-4a1d-98d4-354a4472f1da</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COOPERANT_USERS</name>
+            <identifier class="java.lang.String">9f6da4de-3fcd-4131-b4d7-e8b811a140df</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COOPERANT_USERS_USERS_FK1</name>
+            <childObjectNames>
+              <childObjectName>USER_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COOPERANT_USERS</name>
+              <identifier class="java.math.BigDecimal">24892</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>USERS_PK</name>
+        <identifier class="java.lang.String">212d4633-e0cc-4ccf-9255-b22a32373ec2</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>USERS</name>
+          <identifier class="java.lang.String">47def653-a491-4ea4-80c6-932ee3c9d631</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a95a3c9c-e3fa-49b2-8c81-4151dbd65cde</identifier>
+      </ID>
+      <name>COOPERANT_USERS_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>USER_ID</name>
+          <identifier class="java.lang.String">49022546-699f-4a1d-98d4-354a4472f1da</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COOPERANT_USERS</name>
+            <identifier class="java.lang.String">9f6da4de-3fcd-4131-b4d7-e8b811a140df</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COOPERANT_USERS_PK</name>
+        <identifier class="java.lang.String">84e1dd13-ff54-4470-8642-56a89c90ecc0</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COOPERANT_USERS</name>
+          <identifier class="java.lang.String">9f6da4de-3fcd-4131-b4d7-e8b811a140df</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COOPERANT_USERS_PK</name>
+            <childObjectNames>
+              <childObjectName>USER_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COOPERANT_USERS</name>
+              <identifier class="java.math.BigDecimal">24892</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+    <constraint class="oracle.javatools.db.UniqueConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">b2fa3a21-55eb-43f1-8a19-d667c69dde2a</identifier>
+      </ID>
+      <name>COOPERANT_USERS_UK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>COOPERANT_ID</name>
+          <identifier class="java.lang.String">9a1e7d2e-2da2-43ff-8a24-9ea83df9f42b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>COOPERANT_USERS</name>
+            <identifier class="java.lang.String">9f6da4de-3fcd-4131-b4d7-e8b811a140df</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>COOPERANT_USERS_UK1</name>
+        <identifier class="java.lang.String">ee3080cf-e621-4d40-967a-1f3d6d9b2da0</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>COOPERANT_USERS</name>
+          <identifier class="java.lang.String">9f6da4de-3fcd-4131-b4d7-e8b811a140df</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COOPERANT_USERS_UK1</name>
+            <childObjectNames>
+              <childObjectName>COOPERANT_ID</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COOPERANT_USERS</name>
+              <identifier class="java.math.BigDecimal">24892</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>UniqueConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">84e1dd13-ff54-4470-8642-56a89c90ecc0</identifier>
+      </ID>
+      <name>COOPERANT_USERS_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">c6188632-77c5-4b7e-ad9f-3048ce1ee273</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">bc8cc7cf-ec85-4dd1-8c4e-612c9cb879ce</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>USER_ID</name>
+              <identifier class="java.lang.String">49022546-699f-4a1d-98d4-354a4472f1da</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>COOPERANT_USERS</name>
+                <identifier class="java.lang.String">9f6da4de-3fcd-4131-b4d7-e8b811a140df</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>COOPERANT_USERS_PK</name>
+                      <identifier class="java.math.BigDecimal">24893</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>COOPERANT_USERS</name>
+                        <identifier class="java.math.BigDecimal">24892</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COOPERANT_USERS_PK</name>
+                  <identifier class="java.math.BigDecimal">24893</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>COOPERANT_USERS</name>
+                    <identifier class="java.math.BigDecimal">24892</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COOPERANT_USERS_PK</name>
+            <identifier class="java.math.BigDecimal">24893</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COOPERANT_USERS</name>
+              <identifier class="java.math.BigDecimal">24892</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">bec308c2-e4be-4382-9296-65a13b4be67a</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>COOPERANT_USERS_PK</name>
+                    <identifier class="java.math.BigDecimal">24893</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>COOPERANT_USERS</name>
+                      <identifier class="java.math.BigDecimal">24892</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SYSTEM</name>
+              <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SD</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ee3080cf-e621-4d40-967a-1f3d6d9b2da0</identifier>
+      </ID>
+      <name>COOPERANT_USERS_UK1</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">69a627fa-d1bb-45c3-b6ff-17445ce6bb46</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">7d2521c1-5c28-4bbc-9db8-51f5197ea135</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>COOPERANT_ID</name>
+              <identifier class="java.lang.String">9a1e7d2e-2da2-43ff-8a24-9ea83df9f42b</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>COOPERANT_USERS</name>
+                <identifier class="java.lang.String">9f6da4de-3fcd-4131-b4d7-e8b811a140df</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>COOPERANT_USERS_UK1</name>
+                      <identifier class="java.math.BigDecimal">24894</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>COOPERANT_USERS</name>
+                        <identifier class="java.math.BigDecimal">24892</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>COOPERANT_USERS_UK1</name>
+                  <identifier class="java.math.BigDecimal">24894</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>COOPERANT_USERS</name>
+                    <identifier class="java.math.BigDecimal">24892</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COOPERANT_USERS_UK1</name>
+            <identifier class="java.math.BigDecimal">24894</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>COOPERANT_USERS</name>
+              <identifier class="java.math.BigDecimal">24892</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">d473428e-a6b3-47be-bce7-e5e967baad2f</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>COOPERANT_USERS_UK1</name>
+                    <identifier class="java.math.BigDecimal">24894</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>COOPERANT_USERS</name>
+                      <identifier class="java.math.BigDecimal">24892</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SYSTEM</name>
+              <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SD</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>COOPERANT_USERS</name>
+        <identifier class="java.math.BigDecimal">24892</identifier>
+        <schemaName>SD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">dc30b383-ae35-41d1-9035-caae3527a444</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>COOPERANT_USERS</name>
+                <identifier class="java.math.BigDecimal">24892</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SYSTEM</name>
+          <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</table>

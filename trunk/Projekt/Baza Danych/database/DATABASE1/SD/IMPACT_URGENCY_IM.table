@@ -1,0 +1,682 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">ae2da30a-c8c4-4156-8734-ec6fb9bca336</identifier>
+  </ID>
+  <name>IMPACT_URGENCY_IM</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">79a6cecc-0f7b-46e4-9bea-95d7e9b7f433</identifier>
+      </ID>
+      <name>IMPACT_CODE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">889904b4-cf56-4937-8ca8-86bcbc073568</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>IMPACT_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>IMPACT_URGENCY_IM</name>
+                  <identifier class="java.math.BigDecimal">24918</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IMPACT_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>IMPACT_URGENCY_IM</name>
+              <identifier class="java.math.BigDecimal">24918</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f58d0a92-88b5-4d9e-8136-fd285f00e57b</identifier>
+      </ID>
+      <name>URGENCY_CODE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">6564eee6-ffd7-4eab-86c9-1dcbd0caf3ae</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>URGENCY_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>IMPACT_URGENCY_IM</name>
+                  <identifier class="java.math.BigDecimal">24918</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>URGENCY_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>IMPACT_URGENCY_IM</name>
+              <identifier class="java.math.BigDecimal">24918</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8bf5667d-6338-4775-b21d-49ae8402f552</identifier>
+      </ID>
+      <name>PRIORITY_CODE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c4d42a58-86e5-4492-9cc7-01b3fc765b00</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>CHAR</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PRIORITY_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>IMPACT_URGENCY_IM</name>
+                  <identifier class="java.math.BigDecimal">24918</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PRIORITY_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>IMPACT_URGENCY_IM</name>
+              <identifier class="java.math.BigDecimal">24918</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f3d2421c-5896-4a43-abe0-04e7f72a8f10</identifier>
+      </ID>
+      <name>IMPACT_URGENCY_IMPACT_TYP_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>IMPACT_CODE</name>
+          <identifier class="java.lang.String">79a6cecc-0f7b-46e4-9bea-95d7e9b7f433</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>IMPACT_URGENCY_IM</name>
+            <identifier class="java.lang.String">ae2da30a-c8c4-4156-8734-ec6fb9bca336</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IMPACT_URGENCY_IMPACT_TYP_FK1</name>
+            <childObjectNames>
+              <childObjectName>IMPACT_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>IMPACT_URGENCY_IM</name>
+              <identifier class="java.math.BigDecimal">24918</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>IMPACT_TYPES_PK</name>
+        <identifier class="java.lang.String">15165273-50e3-48f9-a14c-ffb43f55189f</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>IMPACT_TYPES_IM</name>
+          <identifier class="java.lang.String">3cd352a4-ff1f-4f0b-aa6b-2c2ea56696eb</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2f5d00ef-6e17-47b5-a50d-9a084cdafdd2</identifier>
+      </ID>
+      <name>IMPACT_URGENCY_PRIORITY_T_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRIORITY_CODE</name>
+          <identifier class="java.lang.String">8bf5667d-6338-4775-b21d-49ae8402f552</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>IMPACT_URGENCY_IM</name>
+            <identifier class="java.lang.String">ae2da30a-c8c4-4156-8734-ec6fb9bca336</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IMPACT_URGENCY_PRIORITY_T_FK1</name>
+            <childObjectNames>
+              <childObjectName>PRIORITY_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>IMPACT_URGENCY_IM</name>
+              <identifier class="java.math.BigDecimal">24918</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PRIORITY_TYPES_PK</name>
+        <identifier class="java.lang.String">8d3bbda2-701c-45d5-9fe5-2172a2bb1fb6</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRIORITY_TYPES_IM</name>
+          <identifier class="java.lang.String">9aadfc2e-b3f9-4dec-a57f-ae6b6c28ac3b</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">f608c057-be9e-4ac0-8d21-615795f131b4</identifier>
+      </ID>
+      <name>IMPACT_URGENCY_URGENCY_TY_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>URGENCY_CODE</name>
+          <identifier class="java.lang.String">f58d0a92-88b5-4d9e-8136-fd285f00e57b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>IMPACT_URGENCY_IM</name>
+            <identifier class="java.lang.String">ae2da30a-c8c4-4156-8734-ec6fb9bca336</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IMPACT_URGENCY_URGENCY_TY_FK1</name>
+            <childObjectNames>
+              <childObjectName>URGENCY_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>IMPACT_URGENCY_IM</name>
+              <identifier class="java.math.BigDecimal">24918</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>URGENCY_TYPES_PK</name>
+        <identifier class="java.lang.String">91a41d13-05c2-4224-8ca4-83e092e35e84</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>URGENCY_TYPES_IM</name>
+          <identifier class="java.lang.String">b26598c7-2c80-45ea-a7e1-7bdce8f46ccd</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">4cfe3052-35a3-4694-b63d-f5a39a5e93de</identifier>
+      </ID>
+      <name>IMPACT_URGENCY_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>URGENCY_CODE</name>
+          <identifier class="java.lang.String">f58d0a92-88b5-4d9e-8136-fd285f00e57b</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>IMPACT_URGENCY_IM</name>
+            <identifier class="java.lang.String">ae2da30a-c8c4-4156-8734-ec6fb9bca336</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>IMPACT_CODE</name>
+          <identifier class="java.lang.String">79a6cecc-0f7b-46e4-9bea-95d7e9b7f433</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>IMPACT_URGENCY_IM</name>
+            <identifier class="java.lang.String">ae2da30a-c8c4-4156-8734-ec6fb9bca336</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>IMPACT_URGENCY_PK</name>
+        <identifier class="java.lang.String">0755ab38-ba6e-479d-8617-7629f8b321e2</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>IMPACT_URGENCY_IM</name>
+          <identifier class="java.lang.String">ae2da30a-c8c4-4156-8734-ec6fb9bca336</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IMPACT_URGENCY_PK</name>
+            <childObjectNames>
+              <childObjectName>URGENCY_CODE</childObjectName>
+              <childObjectName>IMPACT_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>IMPACT_URGENCY_IM</name>
+              <identifier class="java.math.BigDecimal">24918</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">0755ab38-ba6e-479d-8617-7629f8b321e2</identifier>
+      </ID>
+      <name>IMPACT_URGENCY_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">39093d16-d449-47dc-8380-6f8d21f07c70</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">c77ca151-c879-4fe5-a7c3-95f15f0e4620</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>URGENCY_CODE</name>
+              <identifier class="java.lang.String">f58d0a92-88b5-4d9e-8136-fd285f00e57b</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>IMPACT_URGENCY_IM</name>
+                <identifier class="java.lang.String">ae2da30a-c8c4-4156-8734-ec6fb9bca336</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>IMPACT_URGENCY_PK</name>
+                      <identifier class="java.math.BigDecimal">24919</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>IMPACT_URGENCY_IM</name>
+                        <identifier class="java.math.BigDecimal">24918</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>IMPACT_URGENCY_PK</name>
+                  <identifier class="java.math.BigDecimal">24919</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>IMPACT_URGENCY_IM</name>
+                    <identifier class="java.math.BigDecimal">24918</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">ddbe7e81-b8b9-48e6-b0a5-34f1ccacafdb</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">807d4561-45f9-44e1-a338-aca692f290bb</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>IMPACT_CODE</name>
+              <identifier class="java.lang.String">79a6cecc-0f7b-46e4-9bea-95d7e9b7f433</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>IMPACT_URGENCY_IM</name>
+                <identifier class="java.lang.String">ae2da30a-c8c4-4156-8734-ec6fb9bca336</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>IMPACT_URGENCY_PK</name>
+                      <identifier class="java.math.BigDecimal">24919</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>IMPACT_URGENCY_IM</name>
+                        <identifier class="java.math.BigDecimal">24918</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>IMPACT_URGENCY_PK</name>
+                  <identifier class="java.math.BigDecimal">24919</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>IMPACT_URGENCY_IM</name>
+                    <identifier class="java.math.BigDecimal">24918</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IMPACT_URGENCY_PK</name>
+            <identifier class="java.math.BigDecimal">24919</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>IMPACT_URGENCY_IM</name>
+              <identifier class="java.math.BigDecimal">24918</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">9784e2e2-6749-4dde-a060-2332efcf69d8</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>IMPACT_URGENCY_PK</name>
+                    <identifier class="java.math.BigDecimal">24919</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>IMPACT_URGENCY_IM</name>
+                      <identifier class="java.math.BigDecimal">24918</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SYSTEM</name>
+              <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SD</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>IMPACT_URGENCY_IM</name>
+        <identifier class="java.math.BigDecimal">24918</identifier>
+        <schemaName>SD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">9db67be3-6099-4516-8b62-c1fae31b7b6b</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>IMPACT_URGENCY_IM</name>
+                <identifier class="java.math.BigDecimal">24918</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SYSTEM</name>
+          <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</table>

@@ -3,7 +3,7 @@
    <createdBy>Adrian</createdBy>
    <createdTime>2011-06-28 15:16:25 UTC</createdTime>
    <changedBy>Adrian</changedBy>
-   <changedTime>2011-08-20 17:03:46 UTC</changedTime>
+   <changedTime>2011-08-27 17:24:33 UTC</changedTime>
    <autoRoute>false</autoRoute>
    <boxInbox>true</boxInbox>
    <showLegend>false</showLegend>
@@ -841,6 +841,13 @@
             <point x="3275" y="935"/>
          </points>
       </Connector>
+      <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="7C4619E8-4327-7D3F-9383-602699B94018" otype="FKIndexAssociation" vid_source="460E1083-3A9F-69E1-CF4D-6680E494D82E" vid_target="E1230A65-0EB6-A776-25B3-B773782C94E9">
+         <lineWidth>1</lineWidth>
+         <points>
+            <point x="300" y="235"/>
+            <point x="8876" y="235"/>
+         </points>
+      </Connector>
       <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="7DD29E61-C3F2-4DB3-FB19-5AA7CB0B2566" otype="FKIndexAssociation" vid_source="BAC84C18-F416-F470-5622-18B10177E5E9" vid_target="C455C7D1-61BD-A5C5-C38C-B5272C7327D2">
          <lineWidth>1</lineWidth>
          <points>
@@ -1115,6 +1122,13 @@
          <points>
             <point x="8876" y="410"/>
             <point x="5196" y="597"/>
+         </points>
+      </Connector>
+      <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="DED80E5C-739E-2CBA-A947-0656F8DF8A58" otype="FKIndexAssociation" vid_source="460E1083-3A9F-69E1-CF4D-6680E494D82E" vid_target="E1230A65-0EB6-A776-25B3-B773782C94E9">
+         <lineWidth>1</lineWidth>
+         <points>
+            <point x="300" y="245"/>
+            <point x="8876" y="245"/>
          </points>
       </Connector>
       <Connector class="oracle.dbtools.crest.swingui.relational.TVFKRelation" oid="DF918112-587F-0C07-A4F0-164AF5678CD0" otype="FKIndexAssociation" vid_source="9D33D2A5-70B2-0B05-BE02-7DB83CCCE29C" vid_target="795091A4-2416-F285-CAD8-49954C7B4DCD">
