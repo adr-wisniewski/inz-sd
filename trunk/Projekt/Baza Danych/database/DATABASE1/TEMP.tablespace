@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<tablespace xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">b9babec2-4102-48be-9cef-c9ab7cc5845f</identifier>
+  </ID>
+  <name>TEMP</name>
+  <fileType>SMALLFILE</fileType>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>TEMP</name>
+        <type>TABLESPACE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleTablespaceProperties</key>
+      <value class="oracle.javatools.db.ora.OracleTablespaceProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">4e739515-c655-4d09-be92-a00ee034d1dc</identifier>
+        </ID>
+        <autoAllocate>false</autoAllocate>
+        <extentManagementType>LOCAL</extentManagementType>
+        <forceLogging>false</forceLogging>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>TEMP</name>
+                <type>TABLESPACE</type>
+              </parent>
+              <type>OracleTablespaceProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <uniformSize>1048576</uniformSize>
+      </value>
+    </entry>
+    <entry>
+      <key>TablespaceType</key>
+      <value class="oracle.javatools.db.Tablespace$TablespaceType">TEMPORARY</value>
+    </entry>
+  </properties>
+</tablespace>

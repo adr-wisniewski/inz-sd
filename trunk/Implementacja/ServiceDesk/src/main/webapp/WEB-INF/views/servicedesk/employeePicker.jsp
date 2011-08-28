@@ -11,7 +11,6 @@
 		<thead>
 			<tr>
 				<th class="fit">Id</th>
-				<th>Login</th>
 				<th><spring:message code="firstname.label" /></th>
 				<th><spring:message code="lastname.label" /></th>
 				<th class="fit noSort"></th>
@@ -19,9 +18,6 @@
 			<tr>
 				<td>
 					<form:input path="id" />
-				</td>
-				<td>
-					<form:input path="login" />
 				</td>
 				<td>
 					<form:input path="firstname" />
@@ -38,7 +34,6 @@
 		<c:forEach items="${employees}" var="e">
 			<tr>
 				<td>${e.id}</td>
-				<td>${e.login}</td>
 				<td>${e.firstname}</td>
 				<td>${e.lastname}</td>
 				<td><a href="<c:url value="/servicedesk/employeePickerChoose?id=${e.id}" />" class="standard_link"> <spring:message code="choose.label" />  </a></td>

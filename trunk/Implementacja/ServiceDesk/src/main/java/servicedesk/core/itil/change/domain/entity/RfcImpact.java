@@ -88,7 +88,7 @@ public class RfcImpact implements NamedDomainObject<Integer>, Serializable   {
             return false;
         }
        final RfcImpact other = (RfcImpact) obj;
-        if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
+        if ((this.getName() == null) ? (other.getName() != null) : !this.getName().equals(other.getName())) {
             return false;
         }
         return true;

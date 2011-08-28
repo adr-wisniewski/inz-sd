@@ -1,0 +1,121 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">98acca76-16b3-4094-b7b0-bebd1c8d4f57</identifier>
+  </ID>
+  <name>CATEGORIES_PM_V</name>
+  <SQLQuery class="oracle.javatools.db.sql.NonDeclarativeSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">ab72c6d2-77bb-4764-8be3-d9ed4a23c77b</identifier>
+    </ID>
+    <SQLText>select
+  c1.name as main_category, null as sub_category, null as sub_sub_category, category_code, name
+from
+  categories_pm c1
+where
+  c1.parent_category is null
+union all
+select
+  c2.name as main_category, c1.name as sub_category, null as sub_sub_category, c1.category_code, c1.name
+from
+  categories_pm c1
+  join categories_pm c2 on c1.parent_category = c2.category_code
+where
+  c2.parent_category is null
+union all
+select
+  c3.name as main_category, c2.name as sub_category, c1.name as sub_sub_category, c1.category_code, c1.name
+from
+  categories_pm c1
+  join categories_pm c2 on c1.parent_category = c2.category_code
+  join categories_pm c3 on c2.parent_category = c3.category_code
+where
+  c3.parent_category is null
+union all
+select
+  c4.name as main_category, c3.name as sub_category, c2.name as sub_sub_category, c1.category_code, c1.name
+from
+  categories_pm c1
+  join categories_pm c2 on c1.parent_category = c2.category_code
+  join categories_pm c3 on c2.parent_category = c3.category_code
+  join categories_pm c4 on c3.parent_category = c4.category_code
+where
+  c4.parent_category is null
+union all
+select
+  c5.name as main_category, c4.name as sub_category, c3.name as sub_sub_category, c1.category_code, c1.name
+from
+  categories_pm c1
+  join categories_pm c2 on c1.parent_category = c2.category_code
+  join categories_pm c3 on c2.parent_category = c3.category_code
+  join categories_pm c4 on c3.parent_category = c4.category_code
+  join categories_pm c5 on c4.parent_category = c3.category_code
+where
+  c5.parent_category is null</SQLText>
+    <distinct>false</distinct>
+    <orderSiblings>false</orderSiblings>
+    <queryString>select
+  c1.name as main_category, null as sub_category, null as sub_sub_category, category_code, name
+from
+  categories_pm c1
+where
+  c1.parent_category is null
+union all
+select
+  c2.name as main_category, c1.name as sub_category, null as sub_sub_category, c1.category_code, c1.name
+from
+  categories_pm c1
+  join categories_pm c2 on c1.parent_category = c2.category_code
+where
+  c2.parent_category is null
+union all
+select
+  c3.name as main_category, c2.name as sub_category, c1.name as sub_sub_category, c1.category_code, c1.name
+from
+  categories_pm c1
+  join categories_pm c2 on c1.parent_category = c2.category_code
+  join categories_pm c3 on c2.parent_category = c3.category_code
+where
+  c3.parent_category is null
+union all
+select
+  c4.name as main_category, c3.name as sub_category, c2.name as sub_sub_category, c1.category_code, c1.name
+from
+  categories_pm c1
+  join categories_pm c2 on c1.parent_category = c2.category_code
+  join categories_pm c3 on c2.parent_category = c3.category_code
+  join categories_pm c4 on c3.parent_category = c4.category_code
+where
+  c4.parent_category is null
+union all
+select
+  c5.name as main_category, c4.name as sub_category, c3.name as sub_sub_category, c1.category_code, c1.name
+from
+  categories_pm c1
+  join categories_pm c2 on c1.parent_category = c2.category_code
+  join categories_pm c3 on c2.parent_category = c3.category_code
+  join categories_pm c4 on c3.parent_category = c4.category_code
+  join categories_pm c5 on c4.parent_category = c3.category_code
+where
+  c5.parent_category is null</queryString>
+  </SQLQuery>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>CATEGORIES_PM_V</name>
+        <identifier class="java.math.BigDecimal">25036</identifier>
+        <schemaName>SD</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</view>

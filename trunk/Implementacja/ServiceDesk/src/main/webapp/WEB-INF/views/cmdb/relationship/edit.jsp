@@ -33,7 +33,7 @@
             </c:forEach>
 
             <c:if test="${empty relationship.attributeValues}">
-                <ui:propertyItem caption="field.cmdb.relationship.attributes">
+                <ui:propertyItem code="field.cmdb.relationship.attributes">
                     <spring:message code="caption.cmdb.relationship.noattributes"/>
                 </ui:propertyItem>
             </c:if>

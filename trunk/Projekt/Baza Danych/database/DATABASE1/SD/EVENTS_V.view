@@ -1,0 +1,637 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<view xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">420b1943-cc30-4ecc-b13e-378aa0080717</identifier>
+  </ID>
+  <name>EVENTS_V</name>
+  <SQLQuery class="oracle.javatools.db.sql.NonDeclarativeSQLQuery">
+    <ID class="oracle.javatools.db.IdentifierBasedID">
+      <identifier class="java.lang.String">94ae3ebe-c4e2-4f39-b0f6-54b7440b44b1</identifier>
+    </ID>
+    <SQLText>SELECT e.event_id EVENT_ID ,
+    e.subject  SUBJECT ,
+    e.creation_date  CREATION_DATE ,
+    extract(YEAR FROM e.creation_date)  AS creation_year ,
+    extract(MONTH FROM e.creation_date) AS creation_month ,
+    TO_CHAR(e.creation_date, &apos;month&apos;)   AS creation_month_name ,
+    e.event_date  EVENT_DATE ,
+    extract(YEAR FROM e.event_date)  AS event_year ,
+    extract(MONTH FROM e.event_date) AS event_month ,
+    TO_CHAR(e.event_date, &apos;month&apos;)   AS event_month_name ,
+    c.main_category  MAIN_CATEGORY ,
+    coalesce(c.sub_category, &apos;BRAK&apos;) as sub_category ,
+    c.sub_sub_category  SUB_SUB_CATEGORY ,
+    c.name AS category ,
+    es.name as significance,
+    case when e.incident_id is NULL then &apos;NIE&apos; else &apos;TAK&apos; end as incident
+FROM events e
+LEFT JOIN categories_em_v c
+ON e.category_code = c.category_code
+LEFT JOIN event_significance_types es on es.significance_code = e.significance_code</SQLText>
+    <distinct>false</distinct>
+    <orderSiblings>false</orderSiblings>
+    <selectObjects>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">d447cc33-8613-4013-befc-8cb7256af7c4</identifier>
+        </ID>
+        <alias>EVENT_ID</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">38f0d3f1-7130-4c4a-887b-a2cefe256620</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">a472d131-c96e-4020-8019-db2ae9b46fe3</identifier>
+        </ID>
+        <alias>SUBJECT</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">23fba2b3-8b11-4a30-8451-99155bb39444</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">32f19763-36f2-481a-8288-7aa091675667</identifier>
+        </ID>
+        <alias>CREATION_DATE</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">7daf407b-1e1c-4248-9dff-bf7954cb5fa3</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">dcb059b1-f429-4f13-9333-12f29fd8c4c0</identifier>
+        </ID>
+        <alias>creation_year</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">19f7c470-c0db-4dbf-ac3a-4dfbb71e19f5</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">79730672-25e0-4c26-b511-76fccfa7ace4</identifier>
+        </ID>
+        <alias>creation_month</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">49c06baf-eec5-4a5e-93d6-04973ec92764</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2153d448-e5c8-418d-8afb-82e48c02f64d</identifier>
+        </ID>
+        <alias>creation_month_name</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">978f245c-0f06-4486-a07c-36c63f983d40</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">5cd79963-7e66-4c42-addb-b00b9dc901b2</identifier>
+        </ID>
+        <alias>EVENT_DATE</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">7bf3b82e-e7a1-47cb-bf6a-9e3d387b5912</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3b8287e7-ab74-439f-b1ba-ea16c836b174</identifier>
+        </ID>
+        <alias>event_year</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">748dfee0-b6dc-428d-bbf5-91a4e5a7f5a9</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">180524e7-4270-48dd-8f21-baf4d8c91644</identifier>
+        </ID>
+        <alias>event_month</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">d42f5659-cc09-4f39-8b2c-0b99abae1960</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">0bd79675-7287-4dbd-bbbb-2bc3553838c3</identifier>
+        </ID>
+        <alias>event_month_name</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">ab3c2f66-c176-4e26-9c49-8c29a7606422</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">e7fb12e7-53f5-4559-be1e-de97c111e5c0</identifier>
+        </ID>
+        <alias>MAIN_CATEGORY</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">11af140f-0ad8-4653-87e8-4d248febb3ca</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">82381b6f-a50d-462c-849b-3107804c34d3</identifier>
+        </ID>
+        <alias>sub_category</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">95543c1c-021f-4a45-866c-7b878b193b42</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">da703068-1cc7-408d-bb16-7a7cebc92a1c</identifier>
+        </ID>
+        <alias>SUB_SUB_CATEGORY</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">1e73a8e8-e413-4fe2-abc4-6a3056728e49</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>false</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">f171e051-ad2b-49bf-aaba-f1a917026c7f</identifier>
+        </ID>
+        <alias>category</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">340d46f7-4e20-4bdd-88a3-2a4d8b0ae703</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">2af51e9c-f0b1-47f5-a88f-39f0cbe49177</identifier>
+        </ID>
+        <alias>significance</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">7aee4234-1c49-45b7-a072-1e04f535278a</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+      <selectObject>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">b6d44a81-1161-47bc-832c-caea6ea1a736</identifier>
+        </ID>
+        <alias>incident</alias>
+        <expression class="oracle.javatools.db.sql.SimpleSQLFragment">
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">3995058b-c577-4c0a-b7f4-c76f77c1e15c</identifier>
+          </ID>
+          <SQLText>null</SQLText>
+        </expression>
+        <useAs>true</useAs>
+      </selectObject>
+    </selectObjects>
+    <queryString>SELECT e.event_id EVENT_ID ,
+    e.subject  SUBJECT ,
+    e.creation_date  CREATION_DATE ,
+    extract(YEAR FROM e.creation_date)  AS creation_year ,
+    extract(MONTH FROM e.creation_date) AS creation_month ,
+    TO_CHAR(e.creation_date, &apos;month&apos;)   AS creation_month_name ,
+    e.event_date  EVENT_DATE ,
+    extract(YEAR FROM e.event_date)  AS event_year ,
+    extract(MONTH FROM e.event_date) AS event_month ,
+    TO_CHAR(e.event_date, &apos;month&apos;)   AS event_month_name ,
+    c.main_category  MAIN_CATEGORY ,
+    coalesce(c.sub_category, &apos;BRAK&apos;) as sub_category ,
+    c.sub_sub_category  SUB_SUB_CATEGORY ,
+    c.name AS category ,
+    es.name as significance,
+    case when e.incident_id is NULL then &apos;NIE&apos; else &apos;TAK&apos; end as incident
+FROM events e
+LEFT JOIN categories_em_v c
+ON e.category_code = c.category_code
+LEFT JOIN event_significance_types es on es.significance_code = e.significance_code</queryString>
+  </SQLQuery>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3cd2cc68-8f57-47f8-be29-f730d2f5542f</identifier>
+      </ID>
+      <name>EVENT_ID</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EVENT_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a5f4fc19-aa14-43cf-9f00-b9da07d36c66</identifier>
+      </ID>
+      <name>SUBJECT</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SUBJECT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">8846baca-5e06-46d7-a762-475934a08614</identifier>
+      </ID>
+      <name>CREATION_DATE</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATION_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">30b40a25-dd3e-4430-a4d7-0cc00045d9a4</identifier>
+      </ID>
+      <name>CREATION_YEAR</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATION_YEAR</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ca46c9c6-ee0c-4519-ad5d-2a5dc59ef6e1</identifier>
+      </ID>
+      <name>CREATION_MONTH</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATION_MONTH</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">6815a2cb-65cb-49d5-b603-7581516f2680</identifier>
+      </ID>
+      <name>CREATION_MONTH_NAME</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CREATION_MONTH_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">a3ba7b83-32a3-4f09-9996-77729596a78b</identifier>
+      </ID>
+      <name>EVENT_DATE</name>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EVENT_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">bf28abb0-1d71-4cd8-9f01-da7085f8ec84</identifier>
+      </ID>
+      <name>EVENT_YEAR</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EVENT_YEAR</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">3619d831-43d9-4d2f-801b-9d8e7bea8dc9</identifier>
+      </ID>
+      <name>EVENT_MONTH</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EVENT_MONTH</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">74b720c8-5e4b-47e2-8813-0f4ab267c322</identifier>
+      </ID>
+      <name>EVENT_MONTH_NAME</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EVENT_MONTH_NAME</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">428de465-44a1-4a44-ae8c-8e4e22affc6a</identifier>
+      </ID>
+      <name>MAIN_CATEGORY</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>MAIN_CATEGORY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">c13bd7c6-a538-4bc5-80f1-3f1033ce5e1e</identifier>
+      </ID>
+      <name>SUB_CATEGORY</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SUB_CATEGORY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">5859c343-d67e-49ad-b243-cad257ad4745</identifier>
+      </ID>
+      <name>SUB_SUB_CATEGORY</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SUB_SUB_CATEGORY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">231fc684-ad6b-4d9d-9bc3-0103c32bee23</identifier>
+      </ID>
+      <name>CATEGORY</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CATEGORY</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">2a52a358-657f-47f8-9dfb-044b08f420b5</identifier>
+      </ID>
+      <name>SIGNIFICANCE</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SIGNIFICANCE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">ace81074-888e-409b-b43b-6a6362a794ef</identifier>
+      </ID>
+      <name>INCIDENT</name>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>INCIDENT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>EVENTS_V</name>
+              <identifier class="java.math.BigDecimal">25037</identifier>
+              <schemaName>SD</schemaName>
+              <type>VIEW</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <forceOnCreate>false</forceOnCreate>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>EVENTS_V</name>
+        <identifier class="java.math.BigDecimal">25037</identifier>
+        <schemaName>SD</schemaName>
+        <type>VIEW</type>
+      </value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</view>

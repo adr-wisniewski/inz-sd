@@ -1,0 +1,570 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1112/offlinedb">
+  <ID class="oracle.javatools.db.IdentifierBasedID">
+    <identifier class="java.lang.String">578f04e4-fc24-492b-a048-5c7441158af7</identifier>
+  </ID>
+  <name>ROLE_PRIVILEGE</name>
+  <columns>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">e2f1a36d-9b52-47ff-89e4-952883850ccf</identifier>
+      </ID>
+      <name>ROLE_CODE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">3e06fe8c-75e1-41c6-81f7-b83c7161a68d</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ROLE_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>ROLE_PRIVILEGE</name>
+                  <identifier class="java.math.BigDecimal">24983</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ROLE_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ROLE_PRIVILEGE</name>
+              <identifier class="java.math.BigDecimal">24983</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">58ac48d2-4d8e-47de-a35c-4b2ffb482a2d</identifier>
+      </ID>
+      <name>PRIVILEGE_CODE</name>
+      <dataTypeUsage>
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">8a27896b-6092-44b7-8a15-07c3873d2c3c</identifier>
+        </ID>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">BYTE</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <providerClass>oracle.javatools.db.ora.Oracle9i</providerClass>
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>PRIVILEGE_CODE</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>ROLE_PRIVILEGE</name>
+                  <identifier class="java.math.BigDecimal">24983</identifier>
+                  <schemaName>SD</schemaName>
+                  <type>TABLE</type>
+                </parent>
+                <type>COLUMN</type>
+              </parent>
+              <type>DataTypeUsage</type>
+            </value>
+          </entry>
+        </properties>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PRIVILEGE_CODE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ROLE_PRIVILEGE</name>
+              <identifier class="java.math.BigDecimal">24983</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <constraints>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">6e876f56-4815-4d60-8f4c-be3bbbfc3428</identifier>
+      </ID>
+      <name>ROLE_PRIVILEGE_PRIVILEGE__FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRIVILEGE_CODE</name>
+          <identifier class="java.lang.String">58ac48d2-4d8e-47de-a35c-4b2ffb482a2d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ROLE_PRIVILEGE</name>
+            <identifier class="java.lang.String">578f04e4-fc24-492b-a048-5c7441158af7</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ROLE_PRIVILEGE_PRIVILEGE__FK1</name>
+            <childObjectNames>
+              <childObjectName>PRIVILEGE_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ROLE_PRIVILEGE</name>
+              <identifier class="java.math.BigDecimal">24983</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>PRIVILEGE_TYPES_PK</name>
+        <identifier class="java.lang.String">1f14047b-eb5a-45e0-8d91-127580df1f22</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRIVILEGE_TYPES</name>
+          <identifier class="java.lang.String">60705aad-a43d-44d2-82f8-8e10a103dab4</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">dd0206aa-6e74-44c7-99f0-a39025f18433</identifier>
+      </ID>
+      <name>ROLE_PRIVILEGE_ROLES_FK1</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ROLE_CODE</name>
+          <identifier class="java.lang.String">e2f1a36d-9b52-47ff-89e4-952883850ccf</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ROLE_PRIVILEGE</name>
+            <identifier class="java.lang.String">578f04e4-fc24-492b-a048-5c7441158af7</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <deleteMode>0</deleteMode>
+      <enabled>true</enabled>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ROLE_PRIVILEGE_ROLES_FK1</name>
+            <childObjectNames>
+              <childObjectName>ROLE_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ROLE_PRIVILEGE</name>
+              <identifier class="java.math.BigDecimal">24983</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>FKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+      <referenceID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ROLES_PK</name>
+        <identifier class="java.lang.String">1553ec25-5195-4e95-a5d1-e6647b95b109</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>ROLES</name>
+          <identifier class="java.lang.String">d4fb5776-d8ae-4807-a901-5d2a377f5c2b</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>CONSTRAINT</type>
+      </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">1ee26b6e-478c-4b72-a4c7-659f30207695</identifier>
+      </ID>
+      <name>ROLE_PRIVILEGE_PK</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>ROLE_CODE</name>
+          <identifier class="java.lang.String">e2f1a36d-9b52-47ff-89e4-952883850ccf</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ROLE_PRIVILEGE</name>
+            <identifier class="java.lang.String">578f04e4-fc24-492b-a048-5c7441158af7</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+        <columnID class="oracle.javatools.db.IdentifierBasedID">
+          <name>PRIVILEGE_CODE</name>
+          <identifier class="java.lang.String">58ac48d2-4d8e-47de-a35c-4b2ffb482a2d</identifier>
+          <parent class="oracle.javatools.db.IdentifierBasedID">
+            <name>ROLE_PRIVILEGE</name>
+            <identifier class="java.lang.String">578f04e4-fc24-492b-a048-5c7441158af7</identifier>
+            <schemaName>SD</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>SD</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
+      <indexID class="oracle.javatools.db.IdentifierBasedID">
+        <name>ROLE_PRIVILEGE_PK</name>
+        <identifier class="java.lang.String">11ed83c9-e638-4880-a9e2-eaca8f2a88ac</identifier>
+        <parent class="oracle.javatools.db.IdentifierBasedID">
+          <name>ROLE_PRIVILEGE</name>
+          <identifier class="java.lang.String">578f04e4-fc24-492b-a048-5c7441158af7</identifier>
+          <schemaName>SD</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <schemaName>SD</schemaName>
+        <type>INDEX</type>
+      </indexID>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ROLE_PRIVILEGE_PK</name>
+            <childObjectNames>
+              <childObjectName>ROLE_CODE</childObjectName>
+              <childObjectName>PRIVILEGE_CODE</childObjectName>
+            </childObjectNames>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ROLE_PRIVILEGE</name>
+              <identifier class="java.math.BigDecimal">24983</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <subType>PKConstraint</subType>
+            <type>CONSTRAINT</type>
+          </value>
+        </entry>
+      </properties>
+    </constraint>
+  </constraints>
+  <indexes>
+    <indexe>
+      <ID class="oracle.javatools.db.IdentifierBasedID">
+        <identifier class="java.lang.String">11ed83c9-e638-4880-a9e2-eaca8f2a88ac</identifier>
+      </ID>
+      <name>ROLE_PRIVILEGE_PK</name>
+      <columnExpressions>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">47437fde-75ea-439d-8764-292424c806c7</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">8c41b599-747f-4206-82e5-a54fdc4dcd86</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>ROLE_CODE</name>
+              <identifier class="java.lang.String">e2f1a36d-9b52-47ff-89e4-952883850ccf</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>ROLE_PRIVILEGE</name>
+                <identifier class="java.lang.String">578f04e4-fc24-492b-a048-5c7441158af7</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>ROLE_PRIVILEGE_PK</name>
+                      <identifier class="java.math.BigDecimal">24984</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>ROLE_PRIVILEGE</name>
+                        <identifier class="java.math.BigDecimal">24983</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>ROLE_PRIVILEGE_PK</name>
+                  <identifier class="java.math.BigDecimal">24984</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>ROLE_PRIVILEGE</name>
+                    <identifier class="java.math.BigDecimal">24983</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <ID class="oracle.javatools.db.IdentifierBasedID">
+            <identifier class="java.lang.String">16141bf6-c4de-45d7-bd1b-3c1d469b7734</identifier>
+          </ID>
+          <expression class="oracle.javatools.db.sql.ColumnUsage">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">3ac2b85a-434d-456d-bb16-b5e3bb291e0f</identifier>
+            </ID>
+            <objectID class="oracle.javatools.db.IdentifierBasedID">
+              <name>PRIVILEGE_CODE</name>
+              <identifier class="java.lang.String">58ac48d2-4d8e-47de-a35c-4b2ffb482a2d</identifier>
+              <parent class="oracle.javatools.db.IdentifierBasedID">
+                <name>ROLE_PRIVILEGE</name>
+                <identifier class="java.lang.String">578f04e4-fc24-492b-a048-5c7441158af7</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <schemaName>SD</schemaName>
+              <type>COLUMN</type>
+            </objectID>
+            <outerJoin>false</outerJoin>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>ROLE_PRIVILEGE_PK</name>
+                      <identifier class="java.math.BigDecimal">24984</identifier>
+                      <parent class="oracle.javatools.db.ReferenceID">
+                        <name>ROLE_PRIVILEGE</name>
+                        <identifier class="java.math.BigDecimal">24983</identifier>
+                        <schemaName>SD</schemaName>
+                        <type>TABLE</type>
+                      </parent>
+                      <schemaName>SD</schemaName>
+                      <type>INDEX</type>
+                    </parent>
+                    <type>IndexObject</type>
+                  </parent>
+                  <type>SQLFragment</type>
+                </value>
+              </entry>
+            </properties>
+            <qualified>true</qualified>
+          </expression>
+          <order>ASC</order>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>ROLE_PRIVILEGE_PK</name>
+                  <identifier class="java.math.BigDecimal">24984</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>ROLE_PRIVILEGE</name>
+                    <identifier class="java.math.BigDecimal">24983</identifier>
+                    <schemaName>SD</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SD</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ROLE_PRIVILEGE_PK</name>
+            <identifier class="java.math.BigDecimal">24984</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>ROLE_PRIVILEGE</name>
+              <identifier class="java.math.BigDecimal">24983</identifier>
+              <schemaName>SD</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SD</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <ID class="oracle.javatools.db.IdentifierBasedID">
+              <identifier class="java.lang.String">6fb3dec4-e032-4156-a465-6612b09d543e</identifier>
+            </ID>
+            <bufferMode>DEFAULT</bufferMode>
+            <freelistGroups>1</freelistGroups>
+            <freelists>1</freelists>
+            <initialExtent>65536</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>2147483645</maxExtent>
+            <minExtent>1</minExtent>
+            <percentFree>10</percentFree>
+            <properties>
+              <entry>
+                <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+                <value class="oracle.javatools.db.ReferenceID">
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>ROLE_PRIVILEGE_PK</name>
+                    <identifier class="java.math.BigDecimal">24984</identifier>
+                    <parent class="oracle.javatools.db.ReferenceID">
+                      <name>ROLE_PRIVILEGE</name>
+                      <identifier class="java.math.BigDecimal">24983</identifier>
+                      <schemaName>SD</schemaName>
+                      <type>TABLE</type>
+                    </parent>
+                    <schemaName>SD</schemaName>
+                    <type>INDEX</type>
+                  </parent>
+                  <type>OracleStorageProperties</type>
+                </value>
+              </entry>
+            </properties>
+            <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+              <name>SYSTEM</name>
+              <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <schema>
+        <name>SD</name>
+      </schema>
+      <systemGenerated>true</systemGenerated>
+    </indexe>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">localDatabase</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>ROLE_PRIVILEGE</name>
+        <identifier class="java.math.BigDecimal">24983</identifier>
+        <schemaName>SD</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <ID class="oracle.javatools.db.IdentifierBasedID">
+          <identifier class="java.lang.String">c97c34c7-b292-4309-8417-22bbf319e141</identifier>
+        </ID>
+        <bufferMode>DEFAULT</bufferMode>
+        <freelistGroups>1</freelistGroups>
+        <freelists>1</freelists>
+        <initialExtent>65536</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>2147483645</maxExtent>
+        <minExtent>1</minExtent>
+        <percentFree>10</percentFree>
+        <percentUsed>40</percentUsed>
+        <properties>
+          <entry>
+            <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+            <value class="oracle.javatools.db.ReferenceID">
+              <parent class="oracle.javatools.db.ReferenceID">
+                <name>ROLE_PRIVILEGE</name>
+                <identifier class="java.math.BigDecimal">24983</identifier>
+                <schemaName>SD</schemaName>
+                <type>TABLE</type>
+              </parent>
+              <type>OracleStorageProperties</type>
+            </value>
+          </entry>
+        </properties>
+        <tablespaceID class="oracle.javatools.db.IdentifierBasedID">
+          <name>SYSTEM</name>
+          <identifier class="java.lang.String">da6e8455-6dc7-4efd-8acc-95a4134bec32</identifier>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SD</name>
+  </schema>
+</table>
